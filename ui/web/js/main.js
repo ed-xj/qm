@@ -1,11 +1,13 @@
 window.Router = Backbone.Router.extend({
 
     routes: {
-        "": "dashboard",
-        "dashboard": "dashboard",
-        "robot": "robot",
-        "contact": "contact",
-        "employees/:id": "employeeDetails"
+        ""              : "dashboard",
+        "dashboard"     : "dashboard",
+        "robot"         : "robot",
+        "contact"       : "contact",
+        "employees/:id" : "employeeDetails",
+        "config"        : "config"
+
     },
 
     initialize: function () {
@@ -61,11 +63,19 @@ window.Router = Backbone.Router.extend({
                 $('#content').html(new EmployeeView({model: data}).render().el);
             }
         });
-    }
+    },
 
+    config: function () {
+        if (!this.configView) {
+            this.configView = new ConfigView();
+            this.configView.render();
+        }
+        $('#content').html(this.configView.el);
+        this.headerView.select('config-menu');
+    }
 });
 
-templateLoader.load(["DashboardView", "RobotView", "ContactView", "HeaderView", "EmployeeView", "EmployeeSummaryView", "EmployeeListItemView"],
+templateLoader.load(["DashboardView", "RobotView", "ContactView", "HeaderView", "EmployeeView", "EmployeeSummaryView", "EmployeeListItemView", "ConfigView"],
     function () {
         app = new Router();
         Backbone.history.start();
