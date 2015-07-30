@@ -1,0 +1,40 @@
+.dropdown-menu {
+    max-height: 400px;
+    overflow-y: scroll;
+    /*width: 220px;*/
+}
+
+.list-item {
+    padding-top: 6px;
+    padding-left: 56px;
+}
+
+.no-reports {
+    display: none;
+}
+
+.navbar-brand-logo {
+    padding: 0px;
+    float: left;
+    height: 50px;
+    width: 225px;
+}
+
+.h-spacer {
+    margin-right: 15px;
+}
+
+.panel-body-sysmsg {
+    padding: 0px 15px 0px 15px;
+    height: 400px;
+    overflow: scroll;
+}
+
+code[name=sysmsg] {
+    padding: 0px;
+}
+
+textarea.form-control-sysmsg[name=sysmsg] {
+    background-color: #FFFFFF;
+    border: none;
+}
