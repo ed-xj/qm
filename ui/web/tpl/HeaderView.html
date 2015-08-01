@@ -1,3 +1,5 @@
+<% var t = window.I18N[window.currentLang]["dashboardView"]; %>
+
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -115,43 +117,43 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
             <li class="dashboard-menu">
-                <a href="#dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                <a href="#dashboard"><i class="fa fa-fw fa-dashboard"></i> <%= t["dashboard"] %></a>
             </li>
             <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-wrench"></i> Tools <i class="fa fa-fw fa-caret-down"></i></a>
+                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-wrench"></i> <%= t["tools"] %><i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="demo" class="collapse">
                     <li class="robot-menu">
-                        <a href="#robot"><i class="fa fa-fw fa-server"></i> Robot</a>
+                        <a href="#robot"><i class="fa fa-fw fa-server"></i> <%= t["robot"] %></a>
                     </li>
                     <li class="contact-menu">
-                        <a href="#contact"><i class="fa fa-fw fa-caret-square-o-right"></i> Input1</a>
+                        <a href="#contact"><i class="fa fa-fw fa-caret-square-o-right"></i> <%= t["input1"] %></a>
                     </li>
                     <li class="contact-menu">
-                        <a href="#contact"><i class="fa fa-fw fa-caret-square-o-right"></i> Input2</a>
+                        <a href="#contact"><i class="fa fa-fw fa-caret-square-o-right"></i> <%= t["input2"] %></a>
                     </li>
                     <li class="contact-menu">
-                        <a href="#contact"><i class="fa fa-fw fa-caret-square-o-left"></i> Output1</a>
+                        <a href="#contact"><i class="fa fa-fw fa-caret-square-o-left"></i> <%= t["output1"] %></a>
                     </li>
                     <li class="contact-menu">
-                        <a href="#contact"><i class="fa fa-fw fa-caret-square-o-left"></i> Output2</a>
+                        <a href="#contact"><i class="fa fa-fw fa-caret-square-o-left"></i> <%= t["output2"] %></a>
                     </li>
                     <li class="contact-menu">
-                        <a href="#contact"><i class="fa fa-fw fa-align-justify"></i> Aligner</a>
+                        <a href="#contact"><i class="fa fa-fw fa-align-justify"></i> <%= t["aligner"] %></a>
                     </li>
                     <li class="contact-menu">
-                        <a href="#contact"><i class="fa fa-fw fa-upload"></i> Load Port</a>
+                        <a href="#contact"><i class="fa fa-fw fa-upload"></i> <%= t["load_port"] %></a>
                     </li>
                     <li class="contact-menu">
-                        <a href="#contact"><i class="fa fa-fw fa-barcode"></i> Reader1</a>
+                        <a href="#contact"><i class="fa fa-fw fa-barcode"></i> <%= t["reader1"] %></a>
                     </li>
                     <li class="contact-menu">
-                        <a href="#contact"><i class="fa fa-fw fa-cogs"></i> Process1</a>
+                        <a href="#contact"><i class="fa fa-fw fa-cogs"></i> <%= t["process1"] %></a>
                     </li>
                     <li class="contact-menu">
-                        <a href="#contact"><i class="fa fa-fw fa-list-ol"></i> Recipe</a>
+                        <a href="#contact"><i class="fa fa-fw fa-list-ol"></i> <%= t["recipe"] %></a>
                     </li>
                     <li class="config-menu">
-                        <a href="#config"><i class="fa fa-fw fa-sliders"></i> Config</a>
+                        <a href="#config"><i class="fa fa-fw fa-sliders"></i> <%= t["config"] %></a>
                     </li>
                     <!--<li class="contact-menu">-->
                         <!--<a href="#contact"><i class="fa fa-fw fa-bar-chart-o"></i> Contacts</a>-->
