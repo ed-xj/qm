@@ -6,8 +6,8 @@ window.Router = Backbone.Router.extend({
         "robot"         : "robot",
         "contact"       : "contact",
         "employees/:id" : "employeeDetails",
-        "config"        : "config"
-
+        "config"        : "config",
+        "botcom"        : "botcom",
     },
 
     initialize: function () {
@@ -72,10 +72,19 @@ window.Router = Backbone.Router.extend({
         }
         $('#content').html(this.configView.el);
         this.headerView.select('config-menu');
-    }
+    },
+
+    botcom: function () {
+        if (!this.botcomView) {
+            this.botcomView = new BotcomView();
+            this.botcomView.render();
+        }
+            $('#content').html(this.botcomView.el);
+            this.headerView.select('botcom-menu');
+    },
 });
 
-templateLoader.load(["DashboardView", "RobotView", "ContactView", "HeaderView", "EmployeeView", "EmployeeSummaryView", "EmployeeListItemView", "ConfigView"],
+templateLoader.load(["DashboardView", "RobotView", "ContactView", "HeaderView", "EmployeeView", "EmployeeSummaryView", "EmployeeListItemView", "ConfigView", "BotcomView"],
     function () {
         app = new Router();
         Backbone.history.start();
