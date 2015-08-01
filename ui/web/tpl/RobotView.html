@@ -1,4 +1,4 @@
-
+<% var t = window.I18N[window.currentLang]["robotView"] %>
 
 <div class="container-fluid">
 
@@ -6,23 +6,23 @@
     <div class="row">
         <div class="col-md-12">
             <h3 class="page-header">
-                Robot
+                <%= t["robot_title"] %>
             </h3>
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Recipe</h3>
+                            <h3 class="panel-title"><%= t["recipe"] %></h3>
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <form class="form-horizontal" role="form">
                                         <div class="form-group">
-                                            <label class="control-label col-md-4" for="recipe">Selected Recipe:</label>
+                                            <label class="control-label col-md-4" for="recipe"><%= t["selected_recipe"] %><</label>
                                             <div class="input-group col-md-8">
                                                 <input type="text" class="form-control" id="recipe"
-                                                       placeholder="Select a recipe" readonly>
+                                                                                        placeholder="<%= t["select_a_recipe"] %>" readonly>
                                                 <span class="input-group-btn">
                                                     <button class="btn btn-default" type="button">Load</button>
                                                 </span>
@@ -31,8 +31,8 @@
                                         <div class="form-group">
                                             <label class="control-label col-md-4">&nbsp;</label>
                                             <div class="input-group">
-                                                <button class="btn btn-primary h-spacer">Start</button>
-                                                <button class="btn btn-primary">Stop</button>
+                                                <button class="btn btn-primary h-spacer"><%= t["start"] %></button>
+                                                <button class="btn btn-primary"><%= t["stop"] %></button>
                                             </div>
                                         </div>
                                     </form>
@@ -55,7 +55,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Message</h3>
+                    <h3 class="panel-title"><%= t["message"] %></h3>
                 </div>
                 <div class="panel-body panel-body-sysmsg">
                     <div class="row">
@@ -73,9 +73,9 @@
     <div class="row">
         <form class="form-horizontal" role="form">
             <div class="form-group">
-                <label class="control-label col-md-2" for="cmd">Robot Command:</label>
+                <label class="control-label col-md-2" for="cmd"><%= t["robot_command"] %></label>
                 <div class="input-group col-md-8">
-                    <input type="text" class="form-control" id="cmd" placeholder="Enter a robot command">
+                    <input type="text" class="form-control" id="cmd" placeholder="<%= t["enter_command"] %>">
                 </div>
             </div>
         </form>

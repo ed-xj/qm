@@ -1,10 +1,12 @@
+<% var t = window.I18N[window.currentLang]["dashboardView"] %>
+
 <div class="container-fluid">
 
     <!-- Page Heading -->
     <div class="row">
         <div class="col-md-12">
             <h3 class="page-header">
-                System Status
+                <%= t["system_status"] %>
             </h3>
             <div class="panel panel-default">
                 <div class="panel-body">
@@ -12,11 +14,11 @@
                     <div class="hero-unit" style="height:260px;">
                         <div style="float:left; padding-left:50px;">
                             <div class="btn-group-vertical">
-                                <button type="button" class="btn btn-lg btn-danger" disabled="disabled">Error</button>
-                                <button type="button" class="btn btn-lg btn-warning" disabled="disabled">Warning</button>
-                                <button type="button" class="btn btn-lg btn-success">Normal</button>
-                                <button type="button" class="btn btn-lg btn-primary" disabled="disabled">Idle</button>
-                                <button type="button" class="btn btn-lg btn-default" disabled="disabled">Default</button>
+                                <button type="button" class="btn btn-lg btn-danger" disabled="disabled"><%= t["error"] %></button>
+                                <button type="button" class="btn btn-lg btn-warning" disabled="disabled"><%= t["warning"] %></button>
+                                <button type="button" class="btn btn-lg btn-success"><%= t["normal"] %></button>
+                                <button type="button" class="btn btn-lg btn-primary" disabled="disabled"><%= t["idle"] %></button>
+                                <button type="button" class="btn btn-lg btn-default" disabled="disabled"><%= t["default"] %></button>
                             </div>
                         </div>
                         <div style="padding-top:0px;padding-left:300px;">
@@ -34,20 +36,20 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Command</h3>
+                    <h3 class="panel-title"><%= t["command"] %></h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="recipe">Recipe:</label>
+                                    <label class="control-label col-sm-2" for="recipe"><%= t["recipe"] %></label>
 
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="recipe"
-                                               placeholder="Select a recipe" readonly>
+                                                                                placeholder="<%= t["select_recipe" %>" rtadonly>
                             <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">Load</button>
+                                <button class="btn btn-default" type="button"><%= t["load"] %></button>
                             </span>
                                     </div>
 
@@ -62,8 +64,8 @@
                                     <label class="control-label col-sm-2" for="recipe">&nbsp;</label>
 
                                     <div class="input-group">
-                                        <button class="btn btn-primary h-spacer">Start Recipe</button>
-                                        <button class="btn btn-primary">Stop Recipe</button>
+                                        <button class="btn btn-primary h-spacer"><%= t["start_recipe"] %></button>
+                                        <button class="btn btn-primary"><%= t["stop_recipe"] %></button>
                                     </div>
                                 </div>
                             </form>
@@ -80,7 +82,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">System Message</h3>
+                    <h3 class="panel-title"><%= t["system_message"] %></h3>
                 </div>
                 <div class="panel-body-sysmsg">
                     <div class="row">
