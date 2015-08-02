@@ -15,13 +15,13 @@ I18N.zh = {
         "process1"          : "处理1",
         "recipe"            : "食谱",
         "config"            : "配置",
-        "toggle_navigation" : "拨动导航";
+        "toggle_navigation" : "拨动导航",
         "view_all"          : "查看全部",
         "read_messages"     : "阅读所有新邮件",
         "profile"           : "个人",
         "inbox"             : "收件箱",
         "settings"          : "设置",
-        "logout"            : "登出",
+        "logout"            : "登出"
     },
 
     "dashboardView": {
@@ -37,7 +37,7 @@ I18N.zh = {
         "start_recipe"   : "开始食谱",
         "stop_recipe"    : "停止处方",
         "load"           : "装载",
-        "system_message" : "系统消息",
+        "system_message" : "系统消息"
     },
 
     "robotView": {
@@ -49,7 +49,7 @@ I18N.zh = {
         "stop"            : "停止",
         "message"         : "消息",
         "robot_command"   : "机器人命令",
-        "enter_command"   : "输入指令的机器人",
+        "enter_command"   : "输入指令的机器人"
     },
 
     "configView": {
@@ -62,6 +62,6 @@ I18N.zh = {
         "warning"      : "警告",
         "low"          : "低",
         "robot_log"    : "机器人日志级别",
-        "language"     : "语言",
-    },
+        "language"     : "语言"
+    }
 };
