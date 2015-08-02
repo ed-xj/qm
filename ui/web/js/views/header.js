@@ -1,6 +1,8 @@
 window.HeaderView = Backbone.View.extend({
 
-    initialize: function () {
+    initialize: function (moderator) {
+        this.moderator = moderator;
+        this.moderator.on('lang:change', this.onLangChange.bind(this));
         this.searchResults = new EmployeeCollection();
         this.searchresultsView = new EmployeeListView({model: this.searchResults, className: 'dropdown-menu'});
     },
@@ -23,6 +25,11 @@ window.HeaderView = Backbone.View.extend({
         setTimeout(function () {
             $('.dropdown').addClass('open');
         });
+    },
+
+    onLangChange: function() {
+        console.log('HeaderView::onLangChange');
+        this.render();
     },
 
     onkeypress: function (event) {
