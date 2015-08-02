@@ -1,7 +1,9 @@
 window.DashboardView = Backbone.View.extend({
 
-    initialize:function () {
+    initialize:function (moderator) {
         console.log('Initializing Dashboard View');
+        this.moderator = moderator;
+        this.moderator.on('lang:change', this.onLangChange);
         this.logmsg = '';
         this.templateParams = {sysmsg: this.logmsg};
         this.genLogMsg();
@@ -11,6 +13,10 @@ window.DashboardView = Backbone.View.extend({
 
     events:{
         "click #showMeBtn":"showMeBtnClick"
+    },
+
+    onLangChange: function() {
+        console.log('DashboardView::onLangChange');
     },
 
     genLogMsg: function() {

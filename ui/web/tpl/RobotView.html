@@ -1,28 +1,29 @@
-
+<% var t = window.I18N[window.currentLang]["robotView"] %>
 
 <div class="container-fluid">
 
     <!-- Page Heading -->
+    <!--
     <div class="row">
         <div class="col-md-12">
             <h3 class="page-header">
-                Robot
+                <%= t["robot_title"] %>
             </h3>
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Recipe</h3>
+                            <h3 class="panel-title"><%= t["recipe"] %></h3>
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <form class="form-horizontal" role="form">
                                         <div class="form-group">
-                                            <label class="control-label col-md-4" for="recipe">Selected Recipe:</label>
+                                            <label class="control-label col-md-4" for="recipe"><%= t["selected_recipe"] %></label>
                                             <div class="input-group col-md-8">
                                                 <input type="text" class="form-control" id="recipe"
-                                                       placeholder="Select a recipe" readonly>
+                                                                                        placeholder="<%= t["select_a_recipe"] %>" readonly>
                                                 <span class="input-group-btn">
                                                     <button class="btn btn-default" type="button">Load</button>
                                                 </span>
@@ -31,8 +32,8 @@
                                         <div class="form-group">
                                             <label class="control-label col-md-4">&nbsp;</label>
                                             <div class="input-group">
-                                                <button class="btn btn-primary h-spacer">Start</button>
-                                                <button class="btn btn-primary">Stop</button>
+                                                <button class="btn btn-primary h-spacer"><%= t["start"] %></button>
+                                                <button class="btn btn-primary"><%= t["stop"] %></button>
                                             </div>
                                         </div>
                                     </form>
@@ -44,42 +45,209 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
+    -->
 
 
-
-    <div>
     <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Message</h3>
-                </div>
-                <div class="panel-body panel-body-sysmsg">
-                    <div class="row">
-                        <code name="sysmsg">
-                        <!--<textarea class="form-control form-control-sysmsg" name="sysmsg" rows="10" readonly>-->
-                            <%= sysmsg %>
-                        <!--</textarea>-->
-                        </code>
+        <div class="container-fluid">
+            <div class="row">
+                <h3 class="page-header">Robot</h3>
+
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Go!</button>
+        </span>
+                    </div><!-- /input-group -->
+
+                    <br>
+
+                    <select name="sometext" class="form-control" size="20">
+                        <option>text01</option>
+                        <option>text02</option>
+                        <option>text03</option>
+                        <option>text04</option>
+                        <option>text05</option>
+                        <option>text06</option>
+                        <option>text07</option>
+                        <option>text08</option>
+                        <option>text09</option>
+                        <option>text10</option>
+                        <option>text11</option>
+                        <option>text12</option>
+                        <option>text13</option>
+                        <option>text14</option>
+                        <option>text15</option>
+                        <option>text16</option>
+                        <option>text17</option>
+                        <option>text18</option>
+                        <option>text19</option>
+                        <option>text20</option>
+                        <option>text21</option>
+                        <option>text22</option>
+                        <option>text23</option>
+                        <option>text24</option>
+                        <option>text25</option>
+                        <option>text26</option>
+                        <option>text27</option>
+                        <option>text28</option>
+                        <option>text29</option>
+                        <option>text30</option>
+                    </select>
+
+                    <br>
+
+
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <button type="button" class="btn btn-default">Refresh</button>
+                                <button type="button" class="btn btn-default">Reset F12</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1"></div>
+
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <button type="button" class="btn btn-default">Grip</button>
+                                <button type="button" class="btn btn-default">Ungrip</button>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
+
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Position</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <button type="button" class="btn btn-default">Learn</button>
+                            <button type="button" class="btn btn-default">Learn New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Motion</h3>
+                        </div>
+
+                        <div class="panel-body">
+
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+
+                                            <div class="radio">
+                                                <label><input type="radio" name="perch_inside">perch</label>
+                                            </div>
+                                            <div class="radio">
+                                                <label><input type="radio" name="perch_inside">inside</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="radio">
+                                                <label><input type="radio" name="high_low">high</label>
+                                            </div>
+                                            <div class="radio">
+                                                <label><input type="radio" name="high_low">low</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <button type="button" class="btn btn-default">Move</button>
+
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Linear
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Index
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <button type="button" class="btn btn-default">Pick</button>
+                                    <button type="button" class="btn btn-default">Place</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <form class="form-horizontal" role="form">
-            <div class="form-group">
-                <label class="control-label col-md-2" for="cmd">Robot Command:</label>
-                <div class="input-group col-md-8">
-                    <input type="text" class="form-control" id="cmd" placeholder="Enter a robot command">
+
+    <div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><%= t["message"] %></h3>
+                    </div>
+                    <div class="panel-body panel-body-sysmsg">
+                        <div class="row">
+                            <code name="sysmsg">
+                            <!--<textarea class="form-control form-control-sysmsg" name="sysmsg" rows="10" readonly>-->
+                                <%= sysmsg %>
+                            <!--</textarea>-->
+                            </code>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+        <div class="row">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="cmd"><%= t["robot_command"] %></label>
+                    <div class="input-group col-md-8">
+                        <input type="text" class="form-control" id="cmd" placeholder="<%= t["enter_command"] %>">
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 
 

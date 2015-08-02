@@ -1,7 +1,9 @@
 window.RobotView = Backbone.View.extend({
 
-    initialize:function () {
+    initialize:function (moderator) {
         console.log('Initializing Robot View');
+        this.moderator = moderator;
+        this.moderator.on('lang:change', this.onLangChange.bind(this));
         this.logmsg = '';
         this.templateParams = {sysmsg: this.logmsg};
         this.genLogMsg();
@@ -23,6 +25,11 @@ window.RobotView = Backbone.View.extend({
 
     activate: function() {
         this.genLogMsg();
+        this.render();
+    },
+
+    onLangChange: function() {
+        console.log('RobotView::onLangChange');
         this.render();
     },
 
