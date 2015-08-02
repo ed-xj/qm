@@ -56,7 +56,7 @@
                     <h3 class="panel-title"><%= t["system_status"] %></h3>
                 </div>
                 <div class="panel-body">
-                    <div class="hero-unit" style="height:260px;">
+                    <div class="hero-unit" style="height:196px;">
                         <div style="float:left; padding-left:50px;">
                             <div class="btn-group-vertical">
                                 <button type="button" class="btn btn-lg btn-danger" disabled="disabled"><%= t["error"] %></button>
@@ -66,8 +66,38 @@
                             </div>
                         </div>
                         <div style="padding-top:0px;padding-left:300px;">
-                            <img src="img/machine-diagram.jpg"
-                                 alt="" width="266" height="226">
+                            <table class="table-bordered table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>Tool</th>
+                                    <th>Status</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="success">
+                                    <td>Robot</td>
+                                    <td align="center"><span class="fa fa-fw fa-check-circle" style="color:green; text-align: center;"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Input1</td>
+                                    <td align="center"><span class="fa fa-fw fa-check-circle" style="color:green; text-align: center;"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Input2</td>
+                                    <td align="center"><span class="fa fa-fw fa-check-circle" style="color:green; text-align: center;"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Aligner</td>
+                                    <td align="center"><span class="fa fa-fw fa-check-circle" style="color:green; text-align: center;"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Camera</td>
+                                    <td align="center"><span class="fa fa-fw fa-check-circle" style="color:green; text-align: center;"></span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <!--<img src="img/machine-diagram.jpg"-->
+                                 <!--alt="" width="266" height="226">-->
                         </div>
                     </div>
                 </div>
