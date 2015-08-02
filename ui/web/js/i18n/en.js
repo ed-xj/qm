@@ -49,7 +49,28 @@ I18N.en = {
         "stop"            : "Stop",
         "message"         : "Message",
         "robot_command"   : "Robot Command:",
-        "enter_command"   : "Enter a robot command"
+        "enter_command"   : "Enter a robot command",
+        "go"              : "Go!",
+        "text"            : "text",
+        "refresh"         : "Refresh",
+        "reset_f_12"      : "Reset F12",
+        "grip"            : "Grip",
+        "ungrip"          : "Ungrip",
+        "position"        : "Position",
+        "learn"           : "Learn",
+        "learn_new"       : "Learn New",
+        "motion"          : "Motion",
+        "perch"           : "perch",
+        "inside"          : "inside",
+        "high"            : "high",
+        "low"             : "low",
+        "move"            : "Move",
+        "linear"          : "Linear",
+        "index"           : "Index",
+        "pick"            : "Pick",
+        "place"           : "Place",
+        "search_for"      : "Search For..."
+
     },
 
     "configView": {

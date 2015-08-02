@@ -49,7 +49,27 @@ I18N.zh = {
         "stop"            : "停止",
         "message"         : "消息",
         "robot_command"   : "机器人命令",
-        "enter_command"   : "输入指令的机器人"
+        "enter_command"   : "输入指令的机器人",
+        "go"              : "走！",
+        "text"            : "文本",
+        "refresh"         : "刷新",
+        "reset_f_12"      : "复位F12",
+        "grip"            : "握",
+        "ungrip"          : "停止握",
+        "position"        : "位置",
+        "learn"           : "学习",
+        "learn_new"       : "学习新",
+        "motion"          : "运动",
+        "perch"           : "鲈鱼",
+        "inside"          : "内部",
+        "high"            : "高",
+        "low"             : "低",
+        "move"            : "移动",
+        "linear"          : "线性",
+        "index"           : "指数",
+        "pick"            : "匹克",
+        "place"           : "广场",
+        "search_for"      : "搜索..."
     },
 
     "configView": {

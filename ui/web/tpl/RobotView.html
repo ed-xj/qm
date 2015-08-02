@@ -53,49 +53,49 @@
     <div class="row">
         <div class="container-fluid">
             <div class="row">
-                <h3 class="page-header">Robot</h3>
+              <h3 class="page-header"><%= t["robot_title"] %></h3>
 
                 <div class="col-md-6">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
+                        <input type="text" class="form-control" placeholder="<%= t["search_for"] %>">
         <span class="input-group-btn">
-          <button class="btn btn-default" type="button">Go!</button>
+          <button class="btn btn-default" type="button"><%= t["go"] %></button>
         </span>
                     </div><!-- /input-group -->
 
                     <br>
 
                     <select name="sometext" class="form-control" size="20">
-                        <option>text01</option>
-                        <option>text02</option>
-                        <option>text03</option>
-                        <option>text04</option>
-                        <option>text05</option>
-                        <option>text06</option>
-                        <option>text07</option>
-                        <option>text08</option>
-                        <option>text09</option>
-                        <option>text10</option>
-                        <option>text11</option>
-                        <option>text12</option>
-                        <option>text13</option>
-                        <option>text14</option>
-                        <option>text15</option>
-                        <option>text16</option>
-                        <option>text17</option>
-                        <option>text18</option>
-                        <option>text19</option>
-                        <option>text20</option>
-                        <option>text21</option>
-                        <option>text22</option>
-                        <option>text23</option>
-                        <option>text24</option>
-                        <option>text25</option>
-                        <option>text26</option>
-                        <option>text27</option>
-                        <option>text28</option>
-                        <option>text29</option>
-                        <option>text30</option>
+                      <option><%= t["text"] %>01</option>
+                      <option><%= t["text"] %>02</option>
+                      <option><%= t["text"] %>03</option>
+                      <option><%= t["text"] %>04</option>
+                      <option><%= t["text"] %>05</option>
+                      <option><%= t["text"] %>06</option>
+                      <option><%= t["text"] %>07</option>
+                      <option><%= t["text"] %>08</option>
+                      <option><%= t["text"] %>09</option>
+                      <option><%= t["text"] %>10</option>
+                      <option><%= t["text"] %>11</option>
+                      <option><%= t["text"] %>12</option>
+                      <option><%= t["text"] %>13</option>
+                      <option><%= t["text"] %>14</option>
+                      <option><%= t["text"] %>15</option>
+                      <option><%= t["text"] %>16</option>
+                      <option><%= t["text"] %>17</option>
+                      <option><%= t["text"] %>18</option>
+                      <option><%= t["text"] %>19</option>
+                      <option><%= t["text"] %>20</option>
+                      <option><%= t["text"] %>21</option>
+                      <option><%= t["text"] %>22</option>
+                      <option><%= t["text"] %>23</option>
+                      <option><%= t["text"] %>24</option>
+                      <option><%= t["text"] %>25</option>
+                      <option><%= t["text"] %>26</option>
+                      <option><%= t["text"] %>27</option>
+                      <option><%= t["text"] %>28</option>
+                      <option><%= t["text"] %>29</option>
+                      <option><%= t["text"] %>30</option>
                     </select>
 
                     <br>
@@ -104,8 +104,8 @@
                     <div class="col-md-6">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <button type="button" class="btn btn-default">Refresh</button>
-                                <button type="button" class="btn btn-default">Reset F12</button>
+                              <button type="button" class="btn btn-default"><%= t["refresh"] %></button>
+                              <button type="button" class="btn btn-default"><%= t["reset_f_12"] %></button>
                             </div>
                         </div>
                     </div>
@@ -115,8 +115,8 @@
                     <div class="col-md-6">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <button type="button" class="btn btn-default">Grip</button>
-                                <button type="button" class="btn btn-default">Ungrip</button>
+                              <button type="button" class="btn btn-default"><%= t["grip"] %></button>
+                              <button type="button" class="btn btn-default"><%= t["ungrip"] %></button>
                             </div>
                         </div>
                     </div>
@@ -126,12 +126,12 @@
                 <div class="col-md-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Position</h3>
+                          <h3 class="panel-title"><%= t["position"] %></h3>
                         </div>
 
                         <div class="panel-body">
-                            <button type="button" class="btn btn-default">Learn</button>
-                            <button type="button" class="btn btn-default">Learn New</button>
+                          <button type="button" class="btn btn-default"><%= t["learn"] %></button>
+                          <button type="button" class="btn btn-default"><%= t["learn_new"] %></button>
                         </div>
 
                     </div>
@@ -139,7 +139,7 @@
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Motion</h3>
+                          <h3 class="panel-title"><%= t["motion"] %></h3>
                         </div>
 
                         <div class="panel-body">
@@ -151,10 +151,10 @@
                                         <div class="panel-body">
 
                                             <div class="radio">
-                                                <label><input type="radio" name="perch_inside">perch</label>
+                                              <label><input type="radio" name="perch_inside"><%= t["perch"] %></label>
                                             </div>
                                             <div class="radio">
-                                                <label><input type="radio" name="perch_inside">inside</label>
+                                              <label><input type="radio" name="perch_inside"><%= t["inside"] %></label>
                                             </div>
 
                                         </div>
@@ -163,17 +163,17 @@
                                     <div class="panel panel-default">
                                         <div class="panel-body">
                                             <div class="radio">
-                                                <label><input type="radio" name="high_low">high</label>
+                                              <label><input type="radio" name="high_low"><%= t["high"] %></label>
                                             </div>
                                             <div class="radio">
-                                                <label><input type="radio" name="high_low">low</label>
+                                              <label><input type="radio" name="high_low"><%= t["low"] %></label>
                                             </div>
 
                                         </div>
                                     </div>
 
 
-                                    <button type="button" class="btn btn-default">Move</button>
+                                    <button type="button" class="btn btn-default"><%= t["move"] %></button>
 
                                 </div>
                             </div>
@@ -183,7 +183,7 @@
                                 <div class="col-md-6">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox"> Linear
+                                          <input type="checkbox"> <%= t["linear"] %>
                                         </label>
                                     </div>
                                 </div>
@@ -192,7 +192,7 @@
 
                                     <div class="dropdown">
                                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            Index
+                                            <%= t["index"] %>
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -207,8 +207,8 @@
 
                             <div class="panel panel-default">
                                 <div class="panel-body">
-                                    <button type="button" class="btn btn-default">Pick</button>
-                                    <button type="button" class="btn btn-default">Place</button>
+                                  <button type="button" class="btn btn-default"><%= t["pick"] %></button>
+                                  <button type="button" class="btn btn-default"><%= t["place"] %></button>
                                 </div>
                             </div>
                         </div>
