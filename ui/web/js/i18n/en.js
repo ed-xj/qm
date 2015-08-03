@@ -70,7 +70,6 @@ I18N.en = {
         "pick"            : "Pick",
         "place"           : "Place",
         "search_for"      : "Search For..."
-
     },
 
     "configView": {
