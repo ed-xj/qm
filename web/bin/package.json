@@ -1,0 +1,7 @@
+{
+    "name": "qm-web",
+    "version": "0.0.1",
+    "dependencies": {
+        "ini": "1.3.4"
+    }
+}
