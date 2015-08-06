@@ -1,19 +1,31 @@
-window.iniString = "[Tabs]\n\
-    tabs_0=input\n\
-    tabs_name_0=Input1\n\
-    tabs_1=input\n\
-    tabs_name_1=Input2\n\
-    tabs_2=output\n\
-    tabs_name_2=Output1\n\
-    tabs_3=output\n\
-    tabs_name_3=Output2\n\
-    tabs_4=aligner\n\
-    tabs_name_4=Aligner\n\
-    tabs_5=load_port\n\
-    tabs_name_5=Load Port\n\
-    tabs_6=reader\n\
-    tabs_name_6=Reader1\n\
-    tabs_7=process\n\
-    tabs_name_7=Process1\n\
-    tabs_8=recipe\n\
-    tabs_name_8=Recipe\n";
+window.iniJson = {
+    "input": [
+        "Input1",
+        "Input2"
+    ],
+
+    "output": [
+        "Output1",
+        "Outpu2"
+    ],
+
+    "aligner": [
+        "Aligner"
+    ],
+
+    "loadport": [
+        "Load Port"
+    ],
+
+    "reader": [
+        "Reader1"
+    ],
+
+    "process": [
+        "Process1"
+    ],
+
+    "recipe": [
+        "Recipe"
+    ]
+};
