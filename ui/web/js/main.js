@@ -7,7 +7,7 @@ window.Router = Backbone.Router.extend({
         "contact"       : "contact",
         "employees/:id" : "employeeDetails",
         "config"        : "config",
-        "botcom"        : "botcom",
+        "botcom"        : "botcom"
     },
 
     moderator: _.extend({}, Backbone.Events),
@@ -85,11 +85,15 @@ window.Router = Backbone.Router.extend({
         }
             $('#content').html(this.botcomView.el);
             this.headerView.select('botcom-menu');
-    },
+    }
 });
 
 templateLoader.load(["DashboardView", "RobotView", "ContactView", "HeaderView", "EmployeeView", "EmployeeSummaryView", "EmployeeListItemView", "ConfigView", "BotcomView"],
     function () {
-        app = new Router();
-        Backbone.history.start();
+        $.get('/cgi-bin/get-config.js', function(cfg) {
+            window.iniCfg = cfg;
+            console.log('config data json:'+JSON.stringify(cfg));
+            app = new Router();
+            Backbone.history.start();
+        }, 'json');
     });

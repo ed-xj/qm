@@ -123,28 +123,40 @@
                 <a href="#robot"><i class="fa fa-fw fa-server"></i> <%= t["robot"] %></a>
             </li>
 
-
-            <% var tabItems = iniSettings.sect.items[0].items %>
-
-            <% console.log(tabItems) %>
-
-            <% for(var i = 0; i <= tabItems.length; i += 2) { %>
-
-                <% console.log(tabItems[i]); %>
-
-                <% if (!(tabItems[i] && tabItems[i + 1])) { %>
-                    <% break; %>
-                <% } %>
-
-                <% console.log(tabItems[i]) %>
+            <% var types = ['input','output','aligner', 'loadport', 'reader']; %>
+            <% var inputs = window.iniCfg.input %>
+            <% if (inputs) { %>
+            <% var keys = _.keys(inputs); %>
+            <% var type = 'input'; %>
+            <%  for (var i=0; i < keys.length; i++) { %>
+            <%      console.log('input key:'+keys[i]+' value:'+inputs[keys[i]]); %>
 
                 <li class="contact-menu">
-                    <% console.log(tabItems[i + 1].value) %>
-                    <a href="#contact"><i class="fa fa-fw <%= tabMapFontAwesome[tabItems[i].value] %>"></i> <%= tabItems[i + 1].value %></a>
+                    <a href="#contact"><i class="fa fa-fw <%= tabMapFontAwesome[type] %>"></i> <%= inputs[keys[i]] %></a>
                 </li>
 
-
+            <%  } %>
             <% } %>
+
+            <!--<% var tabItems = iniSettings.sect.items[0].items %>-->
+
+            <!--<% console.log("tabItems==>"+tabItems) %>-->
+
+            <!--<% for(var i = 0; i <= tabItems.length; i += 2) { %>-->
+
+                <!--<% console.log("one tab==>"+tabItems[i]); %>-->
+
+                <!--<% if (!(tabItems[i] && tabItems[i + 1])) { %>-->
+                    <!--<% break; %>-->
+                <!--<% } %>-->
+
+                <!--<li class="contact-menu">-->
+                    <!--<% console.log("one tab value==>"+tabItems[i + 1].value) %>-->
+                    <!--<a href="#contact"><i class="fa fa-fw <%= tabMapFontAwesome[tabItems[i].value] %>"></i> <%= tabItems[i + 1].value %></a>-->
+                <!--</li>-->
+
+
+            <!--<% } %>-->
 
 
 <!--
