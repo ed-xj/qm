@@ -5,14 +5,10 @@ window.HeaderView = Backbone.View.extend({
         this.moderator.on('lang:change', this.onLangChange.bind(this));
         this.searchResults = new EmployeeCollection();
         this.searchresultsView = new EmployeeListView({model: this.searchResults, className: 'dropdown-menu'});
-
-        // We'll ajax this later and re-render on completion of the ajax call
-        // For now, I've put a ini-string inside of window.iniString
-        this.iniSettings = Ini.parse(window.iniString);
     },
 
     render: function () {
-        $(this.el).html(this.template({iniSettings: this.iniSettings, tabMapFontAwesome: this.tabMapFontAwesome}));
+        $(this.el).html(this.template({tabMapFontAwesome: this.tabMapFontAwesome}));
         $('.navbar-search', this.el).append(this.searchresultsView.render().el);
         return this;
     },
@@ -51,7 +47,7 @@ window.HeaderView = Backbone.View.extend({
         "input"     : "fa-caret-square-o-right",
         "output"    : "fa-caret-square-o-left",
         "aligner"   : "fa-align-justify",
-        "load_port" : "fa-upload",
+        "loadport"  : "fa-upload",
         "reader"    : "fa-barcode",
         "process"   : "fa-cogs",
         "recipe"    : "fa-list-ol"

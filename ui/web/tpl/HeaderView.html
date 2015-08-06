@@ -124,27 +124,18 @@
             </li>
 
 
-            <% var tabItems = iniSettings.sect.items[0].items %>
 
-            <% console.log(tabItems) %>
+            <% var tabKeys = ["input", "output", "aligner", "loadport", "process", "recipe"]; %>
 
-            <% for(var i = 0; i <= tabItems.length; i += 2) { %>
+            <% for(var i = 0; i != tabKeys.length; ++i) { %>
+                <% var currentTabArr = window.iniJson[tabKeys[i]]; %>
+                <% for(var j = 0; j != currentTabArr.length; ++j) { %>
+                  <li class="contact-menu">
+                      <a href="#contact"><i class="fa fa-fw <%= tabMapFontAwesome[tabKeys[i]]; %>"></i> <%= currentTabArr[j]; %></a>
+                  </li>
 
-                <% console.log(tabItems[i]); %>
-
-                <% if (!(tabItems[i] && tabItems[i + 1])) { %>
-                    <% break; %>
-                <% } %>
-
-                <% console.log(tabItems[i]) %>
-
-                <li class="contact-menu">
-                    <% console.log(tabItems[i + 1].value) %>
-                    <a href="#contact"><i class="fa fa-fw <%= tabMapFontAwesome[tabItems[i].value] %>"></i> <%= tabItems[i + 1].value %></a>
-                </li>
-
-
-            <% } %>
+                <% }; %>
+            <% }; %>
 
 
 <!--
