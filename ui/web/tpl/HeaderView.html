@@ -124,18 +124,17 @@
             </li>
 
 
-
-            <% var tabKeys = ["input", "output", "aligner", "loadport", "process", "recipe"]; %>
-
-            <% for(var i = 0; i != tabKeys.length; ++i) { %>
-                <% var currentTabArr = window.iniJson[tabKeys[i]]; %>
-                <% for(var j = 0; j != currentTabArr.length; ++j) { %>
-                  <li class="contact-menu">
-                      <a href="#contact"><i class="fa fa-fw <%= tabMapFontAwesome[tabKeys[i]] %>"></i> <%= currentTabArr[j] %></a>
-                  </li>
-
-                <% }; %>
-            <% }; %>
+            <% var tabKeys = ["input", "output", "aligner", "loadport", "process", "recipe"] %>
+            <% if (window.iniCfg && window.iniCfg.input) { %>
+              <% for(var i = 0; i != tabKeys.length; ++i) { %>
+                  <% var currentTabArr = window.iniCfg.input[tabKeys[i]] %>
+                  <% for(var j = 0; j != currentTabArr.length; ++j) { %>
+                    <li class="contact-menu">
+                        <a href="#contact"><i class="fa fa-fw <%= tabMapFontAwesome[tabKeys[i]] %>"></i> <%= currentTabArr[j] %></a>
+                    </li>
+                <% } %>
+              <% } %>
+            <% } %>
 
 
 <!--
