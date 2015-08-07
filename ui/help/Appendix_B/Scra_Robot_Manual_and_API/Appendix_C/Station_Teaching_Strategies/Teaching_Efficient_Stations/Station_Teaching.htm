@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Station Teaching</title>
+<link rel="StyleSheet" href="../../../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../../../..";
+gCommonRootRelPath = "../../../../..";
+gTopicId = "7.1.11.1.1.0_4";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > Appendix C > Station Teaching Strategies > Teaching Efficient Stations" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../../../ehlpdhtm.js"></script>
+
+<h1>Station Teaching</h1>
+<p style="font-size: 14pt; line-height: 150%;">The two most valuable tools 
+ available for station teaching are the teach pendant and a transparent, 
+ scribed test wafer. The teach pendant is used to jog the robot from place 
+ to place, but can also display current robot position, which is important 
+ when trying to determine proper high and low index positions. The scribed 
+ wafer lets you verify that a station is properly situated with respect 
+ to a prealigner or tool chuck.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Some guidelines:</p>
+<ul style="list-style: disc; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Teach the 
+	 prealigner station(s) first. Begin by placing the transparent wafer 
+	 on the prealigner and performing an alignment. Jog the robot to the 
+	 inside position, lining up the center and edges of the test wafer 
+	 with the scribe lines on the end effector.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Once the 
+	 prealigner station has been taught, teach every other stations after 
+	 getting a fresh alignment of the wafer. In other words, if you align 
+	 and pick a wafer, then bump it getting into a cassette, realign the 
+	 wafer before continuing to teach the station.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Make liberal 
+	 use of &quot;jog modes&quot;. (See AppendixA, &quot;Jog Modes and 
+	 Reference Frames,&quot; for a complete discussion.) The default jog 
+	 mode is &quot;joint&quot;, which simple jogs each joint individually. 
+	 However, the other modes can be quite useful. For example, after teaching 
+	 an cassette's inside position, &quot;tool&quot; mode can be used to 
+	 bring the end effector straight out of the cassette.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">On stations 
+	 where payloads will be picked and placed, teach the inside first. 
+	 This makes finding the proper perch position easy (see above).</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">With round 
+	 payloads, a more efficient exit strategy for bringing a payload out 
+	 of a station may be not to go in a straight line, but begin turning 
+	 the payload on the way out. That way, the robot is better positioned 
+	 to move on to the next station.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">If learning 
+	 a cassette station at the bottom slot reduces the visibility of payload 
+	 alignment, or is otherwise inconvenient, learn the station at a different 
+	 slot. Then, use the command &quot;set [station name] index [slot number]&quot; 
+	 to indicate at which slot the station was learned.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">For each 
+	 station, remember to set the number of slots, the station type, the 
+	 pitch (space between payloads), and stroke (vertical travel during 
+	 a pick or place). After all the stations have been taught, teach the 
+	 vias (waypoints between stations). Keep a chart of all the stations, 
+	 showing the vias from each station to the others.</p></li>
+</ul>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Figure C-1 - Via Table Example</p>
+</body>
+</html>

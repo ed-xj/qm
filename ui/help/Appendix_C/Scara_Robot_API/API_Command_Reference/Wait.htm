@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+ <title>Wait</title>
+<link rel="StyleSheet" href="../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "8.1.1.0_53";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix C > Scara Robot API > API Command Reference" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+
+<h1>Wait <span style="font-size: 18pt;">- Wait for completion of an action.</span></h1>
+<p style="font-size: 14pt; font-weight: normal; font-style: italic; text-decoration: none; ">type: 
+ queued</p>
+<h2 style="font-size: 18pt;">Syntax</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">wait 
+ {align | modone | flipper | prealigner [{1 | 2}]}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">wait 
+ input {1 | 2 | 3 | 4 | 5 | 6 | 7 | 8} {off | on}</p>
+<h2 style="font-size: 18pt;">Arguments</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">align</span>: 
+ waits until a prealigner alignment operation has completed.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">modone</span>: 
+ waits until all queued robot motions have completed. DOES NOT WAIT FOR 
+ FLIPPER MOVES.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">flipper</span>: 
+ waits until a flipper motion has completed.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">input</span>: 
+ waits until the digital input line specified by {input-num} is at the 
+ specified state. Valid input line numbers are 1 to 8 in the base system; 
+ optional I/O may increase the available lines.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">prealigner</span>: 
+ waits until the default prealigner is finished. Using the optional arguments 
+ &quot;1&quot; or &quot;2&quot; waits for the specified prealigner to finish.</p>
+<h2 style="font-size: 18pt;">Description</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">Wait</span> 
+ causes the command queue to pause until the specified action is complete 
+ or condition met. <span style="font-weight: bold;">Wait</span> <span style="font-style: italic;">only</span> 
+ effects the execution of queued commands; the command interpreter will 
+ accept commands, immediate mode commands will be executed, and queued 
+ commands will still be appended to the queue, even if a <span style="font-weight: bold;">wait</span> 
+ is active.</p>
+<h2 style="font-size: 18pt;">Events</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ END-WAIT-ALIGN&lt;tab&gt;{host command, as received}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ END-WAIT-MODONE&lt;tab&gt;{host command, as received}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ END-WAIT-INPUT&lt;tab&gt;{host command, as received}</p>
+<h2 style="font-size: 18pt;">Examples</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">move 
+ prealigner ; go to the aligner perch</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">wait 
+ align ; done yet?</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">pick 
+ prealigner ; get the aligned wafer</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">The robot will <span style="font-weight: bold;">move</span> 
+ to the &quot;prealigner&quot; station, and decelerate to a stop. When 
+ the alignment operation is complete, it will then proceed with the <span 
+	 style="font-weight: bold;">pick</span> operation, removing the wafer 
+ from the &quot;prealigner&quot; station.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">move 
+ load2 blend 70 ; move to loadport 2</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">wait 
+ input 2 on ; wait for the door to open</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">place 
+ load2 speed 60 ; put wafer in loadport</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">The robot will <span style="font-weight: bold;">move</span> 
+ to the &quot;load2&quot; station, and if <span style="font-weight: bold;">input 
+ 2</span> is not on when the robot reaches the deceleration point for the 
+ station, it will decelerate to a stop at the <span style="font-weight: bold;">perch</span> 
+ point for &quot;load2&quot;. Since the <span style="font-weight: bold;">move</span> 
+ command before the <span style="font-weight: bold;">wait</span> has a 
+ <span style="font-weight: bold;">blend</span> of 70, if <span style="font-weight: bold;">input 
+ 2</span> was already <span style="font-weight: bold;">on</span>, the robot 
+ would only decelerate slightly before continuing to the <span style="font-weight: bold;">inside</span> 
+ position of &quot;load2&quot; to do the wafer <span style="font-weight: bold;">place</span>. 
+ If <span style="font-weight: bold;">input 2</span> should become <span 
+	 style="font-weight: bold;">on</span> after the robot has reached the 
+ deceleration point (and is decelerating to a stop) the robot will then 
+ resume the move.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">move 
+ &quot;via 1&quot; ; move robot clear</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">wait 
+ modone ; wait until it's there</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">output 
+ 1 on ; close the door</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">The robot will <span style="font-weight: bold;">move</span> 
+ to the &quot;via 1&quot; station and decelerate to a stop. As soon as 
+ the robot has stopped, <span style="font-weight: bold;">output 1</span> 
+ will be set to <span style="font-weight: bold;">1</span>. Without the 
+ <span style="font-weight: bold;">wait modone</span> command, <span style="font-weight: bold;">output 
+ 1</span> would be set <span style="font-weight: bold;">on</span> as soon 
+ as the <span style="font-weight: bold;">move</span> to &quot;via 1&quot; 
+ had <span style="font-style: italic;">started</span>.</p>
+</body>
+</html>

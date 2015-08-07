@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Robot Configuration Parameters</title>
+<link rel="StyleSheet" href="../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "8.1.4.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix C > Scara Robot API > Appendix C" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+
+<h1>Robot Configuration Parameters</h1>
+<p style="font-size: 14pt;">Configure various robot related variables.</p>
+<h2 style="font-size: 18pt;">Syntax</h2>
+<p style="font-size: 14pt;">Config {Get|Set} Robot {Args}</p>
+<h2 style="font-size: 18pt;">Arguments</h2>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Sim: 
+ When the robot is simulated, the controller reacts to commands from the 
+ host as if a robot was connected. Simulated motions are modeled, and take 
+ as long as real motions would take.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">True 
+ : Robot is simulated.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">False: 
+ Normal operation.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Sim_WaitInput: 
+ This specifies if the robot waits for user inputs be at a certain state 
+ before proceding..</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">True 
+ : All inputs are simulated.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">False: 
+ Normal operation.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Sim_com:</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">True 
+ : The communication between the controller and robot is simulated.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">False: 
+ Normal operation.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">HWSync: 
+ To reduce latency involved due to the communication between the controller’s 
+ processor and the motion controller, a low level hardware handshake is 
+ used.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">True 
+ : Hardware handshake is enabled.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">False: 
+ Hardware handshake is disabled.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">HWSync_Timeout: 
+ This is the amount of time (in milliseconds) to wait for a motion complete 
+ event.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Com_Port: 
+ Specifies the serial port to which the robot is connected to.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Com_Baud: 
+ Specifies the baud rate for serial communication. This is currently fixed 
+ at 57600.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Vac_Swap: 
+ The robot with vacuum option has two vacuum lines, this variable specifies 
+ if they are logically swapped.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">True 
+ : Vacuum line 1 and 2 are swapped.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">False: 
+ Vacuum line 1 and 2 are not swapped.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Vac_Both: 
+ This variable specifies if both the vacuum solenoids are turned on when 
+ a grip command is issued. This allows faster vacuum build time.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">True 
+ : Both the Vacuum lines are turned on when a grip command or vacon command 
+ is issued.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">False: 
+ Only the specified vacuum line is turned on when a grip or vacon command 
+ is issued.</p>
+<p style="background-color: #ffff00; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Vac_Thresh: 
+ Specifies the threshold for the house vacuum. This can be between 0 and 
+ 1.</p>
+<h2 style="font-size: 18pt;">Examples</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">To see all the Robot related 
+ configuration variables:</p>
+<p style="font-family: Consolas, monospace; font-weight: bold; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">config get robot</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&gt;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set Robot Sim = False</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set Robot Sim_WaitInput = False</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set Robot Sim_Com = True</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set Robot HWSync = False</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set Robot HWSync_Timeout = 60000</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set Robot Com_Port = COM2</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set Robot Com_Baud = 57600</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set Robot Vac_Swap = False</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set Robot Vac_Both = False</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set Robot Vac_Thresh = 0.50</p>
+<p>&#160;</p>
+</body>
+</html>

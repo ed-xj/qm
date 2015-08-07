@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Servo Commands (Apply to the chuck)</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "9.1.0_12";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix D > Aligner Manual - API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Servo Commands <span style="font-size: 16pt;">(Apply to the chuck)</span></h1>
+<table cellspacing="0" width="100%">
+	<col style="width: 19.292%;" />
+	<col style="width: 80.708%;" />
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%;"><span 
+		 style="font-size: 14pt;">SVE</span></p></td>
+		<td><p style="font-size: 14pt; line-height: 150%;">Enables servo 
+		 control of the slide motor. This must be enabled for the slide 
+		 to perform moves and maintain its position. The error status must 
+		 be clear prior to executing this command.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%;"><span 
+		 style="font-size: 14pt;">SVD</span></p></td>
+		<td><p style="font-size: 14pt; line-height: 150%;">Disables the 
+		 servo allowing for manual positioning of the slide. This may be 
+		 useful in manually teaching a station position.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%;"><span 
+		 style="font-size: 14pt;">SVG</span></p></td>
+		<td><p style="line-height: 150%;"><span style="font-size: 14pt;">Gets 
+		 servo status. Returns E if enabled and D if disabled. </span></p></td>
+	</tr>
+</table>
+<p>&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">there are two edition of 
+ servo commands!!!!!</p>
+<table style="line-height: 150%;" cellspacing="0" width="100%">
+	<col style="width: 19.292%;" />
+	<col style="width: 80.708%;" />
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">SVE</span></td>
+		<td><span style="font-size: 14pt;">Enable servo motor (chuck for 
+		 aligner). </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">SVD</span></td>
+		<td><span style="font-size: 14pt;">Disable servo to allow manual 
+		 positioning. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">SVG</span></td>
+		<td><span style="font-size: 14pt;">Returns E if the servo is enabled 
+		 and D if it is disabled. </span></td>
+	</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,1 @@
+gXMLBuffer ="<?xml version=\"1.0\" encoding=\"utf-8\" ?><data  src=\"toc9.js\"  name=\"Appendix B\"><book name=\"Jog Modes and Reference Frames\" src=\"toc29.js\" /></data>";

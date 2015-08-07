@@ -1,0 +1,4 @@
+(function() {
+var toc =  [ { "type" : "item", "name" : "Troubleshooting", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Appendix_A/Troubleshooting/Troubleshooting.htm" }, { "type" : "item", "name" : "Power-up, Connection Troubleshooting", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Appendix_A/Troubleshooting/Power-up,_Connection_Troubleshooting.htm" }, { "type" : "item", "name" : "Motion Issues", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Appendix_A/Troubleshooting/Motion_Issues.htm" }, { "type" : "item", "name" : "End Effector Issue", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Appendix_A/Troubleshooting/End_Effector_Issue.htm" }, { "type" : "book", "name" : "Recovering From Popped Belts", "key" : "toc27" } ];
+window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, { sync:true });
+})();

@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Learn</title>
+<link rel="StyleSheet" href="../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "8.1.1.0_22";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix C > Scara Robot API > API Command Reference" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+
+<h1>Learn <span style="font-size: 18pt;">- Set a station pose to the current 
+ position and end-effector number.</span></h1>
+<p style="font-size: 14pt; font-weight: normal; font-style: italic; text-decoration: none; ">type: 
+ queued</p>
+<h2 style="font-size: 18pt;">Syntax</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt;">learn {<span 
+	 style="font-style: italic;">station</span>} {inside | perch} (<span 
+	 style="font-style: italic;">index</span>)</p>
+<h2 style="font-size: 18pt;">Arguments</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">The first argument is a <span 
+	 style="font-weight: bold;">station</span> name. If it contains whitespace 
+ characters, it must be enclosed in double quotation marks. After the station 
+ name comes either the keyword <span style="font-weight: bold;">inside</span> 
+ or <span style="font-weight: bold;">perch</span>.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">inside</span>: 
+ Indicates that the pose being learned is inside the named station, as 
+ opposed to the <span style="font-weight: bold;">perch</span> pose, which 
+ is supposed to be a safe approach point for the station.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">perch</span>: 
+ Indicates that the position is the <span style="font-weight: bold;">perch</span>, 
+ or safe approach pose for the named station.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">index</span>: 
+ see <span style="font-weight: bold; font-style: italic;"><a href="../Appendix_A/Motion_Command_Arguments.htm">Appendix 
+ A</a></span>, <a href="../Appendix_A/Motion_Command_Arguments.htm"><span 
+	 style="font-weight: bold; font-style: italic;">MOTION</span> <span 
+	 style="font-weight: bold; font-style: italic;">COMMAND</span> <span 
+	 style="font-weight: bold; font-style: italic;">ARGUMENTS</span></a>.</p>
+<h2 style="font-size: 18pt;">Description</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Sets the configuration for 
+ a station, either the inside position or the perch position, as indicated 
+ in the parameters. The current robot position (and flipper position if 
+ the end-effector has a flipper) is used to set the station data.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">If no index number is specified 
+ as a third argument, he learned robot position will correspond to the 
+ <span style="font-style: italic;">high</span>, or <span style="font-style: italic;">stroked 
+ up</span>, Z elevation for index (slot) 1 of the pose. See <span style="font-weight: bold;">Appendix 
+ A</span>, <span style="font-weight: bold;">MOTION COMMAND ARGUMENTS</span>, 
+ <span style="font-weight: bold;">Pick</span>, and <span style="font-weight: bold;">Place</span> 
+ for information on indexing.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">The purpose of the <span style="font-weight: bold;">perch</span> 
+ position is to indicate a pose from which it is safe to go into the station 
+ (the <span style="font-weight: bold;">inside</span> position) with the 
+ end-effector traveling in a straight line. Currently, it is the user’s 
+ responsibility to see to it that, that is the case.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">The controller will make all 
+ motions between the inside and perch positions linear, unless the station 
+ has the RTHETA attribute set to true, in which case the move will be done 
+ using joint-interpolation.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Note: The &quot;current end-effector&quot; 
+ is used to set the station. See command <a href="EFnum.htm" style="font-size: 14pt;">EFnum</a>.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">It is an error to attempt 
+ to <span style="font-weight: bold;">learn</span> a position when the robot 
+ is in motion.</p>
+<h2 style="font-size: 18pt;">Events</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt;">!E END-LEARN&lt;tab&gt;{<span 
+	 style="font-style: italic;">host command, as received</span>}</p>
+<h2 style="font-size: 18pt;">Examples</h2>
+</body>
+</html>

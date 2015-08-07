@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Testing Learned Station</title>
+<link rel="StyleSheet" href="../../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../../..";
+gCommonRootRelPath = "../../../..";
+gTopicId = "7.1.8.1.0_6";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > Teaching Stations > Teaching Stations" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../../ehlpdhtm.js"></script>
+
+<h1>Testing Learned Station</h1>
+<p style="font-size: 14pt; line-height: 150%;">Once you have taught a series 
+ of stations, you will need to verify that those stations work correctly. 
+ </p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The IR-800's control language 
+ allows you to pick or place wafers at a station by using the commands 
+ &quot;pick&quot; and &quot;place&quot;. These commands automatically move 
+ the robot through the appropriate sequences of lowering the Z-height, 
+ moving into a cassette, raising the Z-height to lift the wafer, gripping 
+ the wafer, exiting the cassette, and moving to the perch position.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">You may also command the 
+ robot to move directly to a station using the &quot;move&quot; command. 
+ When you execute the &quot;move&quot; command to move to a particular 
+ station, you will by default move to the perch position. This is to prevent 
+ inadvertently entering a cassette or tool chuck. You may move the robot 
+ to a station’s inside position, but only by moving to that station’s perch 
+ position first. If you attempt to move to an inside position without first 
+ moving to the perch, you will receive an error message.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The format of the &quot;pick&quot; 
+ command is as follows:</p>
+<p style="font-size: 14pt; line-height: 150%;">[cookie] pick <span style="font-style: italic;">station_name</span> 
+ (<span style="font-style: italic;">motion_arguments</span>)</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">(The <span style="font-style: italic;">cookie</span> 
+ argument allows you to place a numeric identifier by the command to facilitate 
+ matching of commands with their responses. The <span style="font-style: italic;">cookie</span> 
+ argument is optional.)</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The format of the &quot;place&quot; 
+ and &quot;move&quot; commands is the same. See the <span style="background-color: #ffff00;">M800 
+ Robot Applications Programming Interface manual</span> for a complete 
+ description of these commands and related motion arguments.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<ol style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Set your 
+	 speed to 3%.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Verify that 
+	 a wafer is present on the end-effector.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Ensure that 
+	 the teach pendant and robot stop button are within reaching distance.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;"><span>Type 
+	 in the command &quot;place </span><span style="font-style: italic;">station_name</span><span> 
+	 index&quot;.</span></p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;"><span>Press 
+	 &quot;Enter&quot; on the host keyboard to execute the command. The 
+	 robot will now place the wafer at the station specified by </span><span 
+	 style="font-style: italic;">station_name</span><span>, in the slot 
+	 number specified by </span><span style="font-style: italic;">index</span><span>.</span></p></li>
+</ol>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">If something goes wrong, 
+ you can either fine tune the station position (called &quot;touching up 
+ the station&quot;, or you can re-teach the entire station. See the section 
+ below, &quot;Station Touch-up&quot;. If everything worked as predicted, 
+ you can attempt to pick the wafer.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<ol start="6" style="list-style: decimal;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;"><span>Type 
+	 the command &quot;pick </span><span style="font-style: italic;">station_name 
+	 index</span><span>&quot;.</span></p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;"><span>Press 
+	 &quot;Enter&quot; on the host keyboard to execute the command. The 
+	 robot will now pick up the wafer at the station specified by </span><span 
+	 style="font-style: italic;">station_name</span><span>, in the slot 
+	 number specified by </span><span style="font-style: italic;">index</span><span>. 
+	 If this succeeds you can begin to increase the speed gradually.</span></p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;"><span>Repeat 
+	 steps 4 and 5 until you are able to reach your maximum operating speed.</span></p></li>
+</ol>
+</body>
+</html>

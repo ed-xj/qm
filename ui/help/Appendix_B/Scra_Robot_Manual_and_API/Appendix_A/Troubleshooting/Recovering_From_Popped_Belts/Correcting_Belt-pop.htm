@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Correcting Belt-pop</title>
+<link rel="StyleSheet" href="../../../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../../../..";
+gCommonRootRelPath = "../../../../..";
+gTopicId = "7.1.9.1.1.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > Appendix A > Troubleshooting > Recovering From Popped Belts" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../../../ehlpdhtm.js"></script>
+
+<h1>Correcting Belt-pop</h1>
+<p style="font-size: 14pt; line-height: 150%;">Note that this procedure 
+ requires care and attention. Careless execution can result in additional 
+ joint error, and possibly a bent end effector.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">If the joint error is a 
+ result of a popped belt, it can usually be corrected by popping the belt 
+ in the opposite direction. If the joint error is due to a slipped joint, 
+ remastering the robot is required, and additionally the robot should be 
+ serviced to correct the source of slippage.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<ol style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">With the 
+	 robot in the position described in section two (above), be sure the 
+	 teach pendant switch is off, and all E-Stop buttons are in the operate 
+	 position. Servo the robot by either pressing the &quot;Reset&quot; 
+	 button on the teach pendant or sending the &quot;RESET&quot; command 
+	 from the host. Do not proceed if there are any errors that prevent 
+	 the robot from servoing.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">If the problem 
+	 arm segment is the aft- or fore-arm, hold the root end of the arm 
+	 segment (the one that it pivots on) in place with one hand, and with 
+	 the other hand give a firm, momentary push in the correct direction 
+	 to restore alignment. It is important to hold the root side in place 
+	 when attempting to move the fore-arm so that the aft-arm does not 
+	 unintentionally move. The arm will be initially springy but stiffer 
+	 as you press against it, and at some point you will hear a pronounced 
+	 &quot;pop&quot;. It is possible the belt has slipped more than one 
+	 tooth, so continue until the arm is in alignment.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">If the problem 
+	 is with the end-effector, hold the wrist end of the fore-arm firmly 
+	 in place and grasp the end-effector near the end. If the end-effector 
+	 is on a flipper, make sure it is flat so as best to handle the sideways 
+	 stress. Apply a firm, momentary pressure in the correct direction 
+	 to restore alignment until you here a &quot;pop&quot;. Check the alignment 
+	 and repeat as needed.</p></li>
+</ol>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">If you are unable to restore 
+ correct alignment with the above procedure, such that one pop moves it 
+ past the center position, then get the arm as close as possible to the 
+ correct position, and re-master the robot.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">In almost all cases this 
+ process restores the robot to its exact previous orientation and re-teaching 
+ of stations is not required. <span style="font-style: italic;">However, 
+ when first running the robot after this process, do so at a slow speed 
+ and have the teach pendant or other robotstop switch handy while verifying 
+ correct operation.</span></p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">If the stations are not 
+ still correct, then the robot should be re-mastered.</p>
+</body>
+</html>

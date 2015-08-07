@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Align Commands</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "9.1.0_7";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix D > Aligner Manual - API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Align Commands</h1>
+<table cellspacing="0" width="100%">
+	<col style="width: 19.309%;" />
+	<col style="width: 80.691%;" />
+	<tr>
+		<td style="vertical-align: top;"><p style="margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt; 
+											 line-height: 150%;"><span 
+		 style="font-size: 14pt;">APF</span></p></td>
+		<td><p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+				 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Loads 
+		 the wafer to the chuck, performs a measurement cycle, aligns the 
+		 wafer’s primary fiducial (notch or flat) to the angle specified 
+		 by the SOA command, and returns when all motion is complete.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt; 
+											 line-height: 150%;"><span 
+		 style="font-size: 14pt;">ALN</span></p></td>
+		<td><p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+				 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Loads 
+		 the wafer to the chuck, performs a measurement cycle, aligns the 
+		 wafer’s notch or flat to the specified SOA angle, turns off the 
+		 vacuum chuck, and raises the lifting pins, and returns when all 
+		 motion is complete.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt; 
+											 line-height: 150%;"><span 
+		 style="font-size: 14pt;">RWP</span></p></td>
+		<td><p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+				 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Loads 
+		 the wafer to the chuck, performs a measurement cycle and aligns 
+		 the wafer’s primary fiducial (notch) to the angle specified by 
+		 the SOA command. Returned angles are in millidegrees from 0 to 
+		 359999 measured CW from the sensor as viewed from above. Return 
+		 will not be sent until all motion is complete or there is a failure.</p>
+		<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+			 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+		<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+			 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Returns 
+		 the following values:</p>
+		<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+			 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&lt;s32 
+		 bit&gt; Radial eccentricity in microns</p>
+		<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+			 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&lt;s32 
+		 bit&gt; Eccentricity vector angle in millidegrees (0 to 359999)</p>
+		<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+			 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&lt;s32 
+		 bit&gt; Primary fiducial angle in millidegrees (0 to 359999)</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt; 
+											 line-height: 150%;"><span 
+		 style="font-size: 14pt;">SOA&lt;s32bit&gt;</span></p></td>
+		<td><p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+				 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Sets 
+		 the offset angle (measured CW from the sensor looking down from 
+		 above the aligner) that the notch or flat will be centered at 
+		 after the APF, ALN, or RWP command.</p></td>
+	</tr>
+</table>
+</body>
+</html>

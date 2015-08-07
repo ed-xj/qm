@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+ <title>Pick</title>
+<link rel="StyleSheet" href="../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "8.1.1.0_30";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix C > Scara Robot API > API Command Reference" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+
+<h1>Pick <span style="font-size: 18pt;">- Move to station , pick up wafer, 
+ and clear station.</span></h1>
+<p style="font-size: 14pt; font-weight: normal; font-style: italic; text-decoration: none; ">type: 
+ queued</p>
+<h2 style="font-size: 18pt;">Syntax</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt;">pick {station} 
+ (<span style="font-style: italic;">motion-arguments</span>)</p>
+<h2 style="font-size: 18pt;">Arguments</h2>
+<p style="font-size: 14pt;">See <span style="font-weight: bold;"><a href="../Appendix_A/Motion_Command_Arguments.htm">MOTION 
+ COMMAND ARGUMENTS</a></span>, <a href="../Appendix_A/Motion_Command_Arguments.htm">Appendix 
+ A</a>.</p>
+<h2 style="font-size: 18pt;">Description</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Moves to the <span style="font-weight: bold;">perch</span> 
+ position of the indicated station, then moves <span style="font-weight: bold;">inside</span>, 
+ picks up a wafer, and moves out to the <span style="font-weight: bold;">perch</span> 
+ position.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">The action of picking up the 
+ wafer has a number of subactions that can vary depending upon what kind 
+ of end-effector is in use, and upon whether the station is a prealigner 
+ or not. A typical set of actions would be to come into the station low, 
+ stroke up and grip the wafer, then exit from the station high holding 
+ the wafer.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">For a given pose (<span style="font-weight: bold;">inside</span> 
+ or <span style="font-weight: bold;">perch</span>) and <span style="font-weight: bold;">index</span>, 
+ the low Z elevation is defined by:</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Low(index).Z = pose.Z + (index-1) 
+ * station.pitch – station.stroke</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Similarly, the high Z elevation 
+ is defined by:</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">High(index).Z = pose.Z + (index-1) 
+ * station.pitch</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%; font-size: 14pt;">Notice that the high Z elevation 
+ defined for a pose is the &quot;stroked up&quot; position. To set station.pitch, 
+ and station.stroke, see the Set command. To set pose.Z (along with the 
+ shoulder, elbow, wrist, and optional flipper positions), see <span style="font-weight: bold;"><a 
+	 href="Set.htm">Set</a></span> and <span style="font-weight: bold;"><a 
+	 href="Learn.htm" style="font-size: 14pt;">Learn</a></span>.</p>
+<h2 style="font-size: 18pt;">Events</h2>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Note: 
+ For clarity, only the initial parts of the event messages are given below. 
+ Each one will be terminated, as always, with a tab character followed 
+ by the host’s command that precipitated the event.</p>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ PERCH-PICK – The robot has reached the lower perch position.</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ INSIDE-PICK – The robot reached the inside of the station.</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ PA-OFF-PICK - (Prealigner station only)Prealigner has released wafer, 
+ and is ready for pickup.</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ GRIP-RETRY-PICK –(Gripping EE Only) – The first grip attempt failed.</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ GRIP-PICK - (Gripping EE Only) – The wafer has been gripped.</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ STROKE-PICK – The robot has stroked up.</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ VACON-PICK - (Vacuum EE only) – Vacuum sensed; wafer present.</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ END-PICK – The robot has reached the upper perch position. The pick command 
+ is finished.</p>
+<h2 style="font-size: 18pt;">Examples</h2>
+</body>
+</html>

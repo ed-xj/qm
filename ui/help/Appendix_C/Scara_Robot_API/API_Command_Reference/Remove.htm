@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Remove</title>
+<link rel="StyleSheet" href="../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "8.1.1.0_35";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix C > Scara Robot API > API Command Reference" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+
+<h1>Remove <span style="font-size: 18pt;">- Delete a station database from 
+ non-volatile memory.</span></h1>
+<p style="font-size: 14pt; font-weight: normal; font-style: italic; text-decoration: none; ">type: 
+ immediate</p>
+<h2 style="font-size: 18pt;">Syntax</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt;">remove {<span 
+	 style="font-style: italic;">file-name</span> | <span style="font-style: italic;">*</span>}</p>
+<h2 style="font-size: 18pt;">Arguments</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Specify a <span style="font-weight: bold;">file-name</span> 
+ to be deleted. The file name must be eight characters or less, of standard 
+ DOS filename characters.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">An asterisk (or &quot;splat,&quot; 
+ *) passed as an argument will delete ALL station databases.</p>
+<h2 style="font-size: 18pt;">Description</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Deletes the specified station 
+ database from non-volatile memory.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%; font-size: 14pt;">See also: <span style="font-weight: bold;"><a 
+	 href="GetStation(s).htm" style="font-size: 14pt;">Getstations</a></span>, 
+ <span style="font-weight: bold;"><a href="Restore.htm">Restore</a></span>, 
+ <span style="font-weight: bold;"><a href="Remove.htm" style="font-size: 14pt;">Remove</a></span>, 
+ <span style="font-weight: bold;"><a href="Dir.htm" style="font-size: 14pt;">Dir</a></span>.</p>
+<h2 style="font-size: 18pt;">Events</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt;">!E END-REMOVE&lt;tab&gt;{<span 
+	 style="font-style: italic;">host command, as received</span>}</p>
+<h2 style="font-size: 18pt;">Examples</h2>
+</body>
+</html>

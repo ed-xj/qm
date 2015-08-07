@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+ <title>Motion Issues</title>
+<link rel="StyleSheet" href="../../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../../..";
+gCommonRootRelPath = "../../../..";
+gTopicId = "7.1.9.1.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > Appendix A > Troubleshooting" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../../ehlpdhtm.js"></script>
+
+<h1>Motion Issues</h1>
+<p style="font-size: 14pt; line-height: 150%;"><span style="font-weight: bold;">Symptom:</span> 
+ Robot won’t move when commanded. Receive the error &quot;<span style="font-family: Consolas, monospace;">!E 
+ ERROR 4 - move station: First command after fault, abort, master or power-up 
+ must be RESET</span>&quot;.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Issue the &quot;reset&quot; 
+ command.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<hr style="line-height: 150%;" width="50%" align="center" />
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;"><span style="font-weight: bold;">Symptom:</span> 
+ Receive the following error:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 67 - CTR Servo: E-stop</p>
+<p style="margin-left: 40px; font-family: Arial, sans-serif; font-size: 14pt; 
+	 line-height: 150%;">Then, after issuing &quot;reset&quot;, received:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 276 - reset: Unable to servo motors</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 271 - reset: Abort called</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 4 - reset: First command after fault, 
+ abort, master or power-up must be RESET</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 67 - CTR Servo: SERVO: User E-stop is 
+ engaged. (pre_servo_check)</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 67 - CTR Servo: SERVO: Connection to 
+ servo amp lost (1)</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 67 - CTR Servo: SERVO: Connection to 
+ servo amp lost (1)</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold; font-style: italic;">Check:</span> User 
+ e-stop circuit has been triggered. (This is the connection through the 
+ user I/O port).</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Reset user e-stop circuit, 
+ if safe. Issue &quot;reset&quot; command.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Correct break in user e-stop 
+ circuit. Issue &quot;reset&quot; command.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Return controller to vendor 
+ for repair.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<hr style="line-height: 150%;" width="50%" align="center" />
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;"><span style="font-weight: bold;">Symptom:</span> 
+ Received the following error:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 67 - CTR Servo: Teach Pendant E-stop</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">Then, 
+ after issuing &quot;reset&quot; received:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 276 - reset: Unable to servo motors</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 271 - reset: Abort called</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 4 - reset: First command after fault, 
+ abort, master or power-up must be RESET</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 67 - CTR Servo: SERVO: Teach pendant 
+ E-stop is engaged. (pre_servo_check)</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 67 - CTR Servo: SERVO: Connection to 
+ servo amp lost (1)</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 67 - CTR Servo: SERVO: Connection to 
+ servo amp lost (1)</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold; font-style: italic;">Check:</span> Teach 
+ pendant e-stop switch has been triggered.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Turn teach pendant e-stop 
+ switch clockwise to reset. Issue the &quot;reset&quot; command.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold; font-style: italic;">Check:</span> Teach 
+ pendant live-man switch has been triggered.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Release live-man switch 
+ completely, then squeeze to middle position. Issue the &quot;reset&quot; 
+ command.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold; font-style: italic;">Check:</span> Unplug 
+ teach pendant, and plug in dummy plug (supplied with the controller). 
+ Issue the reset command. Reset command is successful.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Teach pendant defective. 
+ Return to vendor for replacement.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold; font-style: italic;">Check:</span> Unplug 
+ teach pendant, and plug in dummy plug (supplied with the controller). 
+ Issue the reset command. Reset command is unsuccessful.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Return controller to vendor 
+ for repair.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<hr style="line-height: 150%;" width="50%" align="center" />
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;"><span style="font-weight: bold;">Symptom</span>: 
+ Received the following error message:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 64 - move test1 linear: Illegal config 
+ change - Motion command failed</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 67 - CTR Servo: Illegal config change</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold; font-style: italic;">Check:</span> During 
+ linear moves (i.e. moves from perch to inside, or moves using the &quot;linear&quot; 
+ motion argument) the wrist may not cross over the shoulder. This change 
+ from one side of the shoulder to the other is called a configuration change.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Change stations so configuration 
+ change is not required.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Remove the &quot;linear&quot; 
+ argument from the motion command. </p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">CAUTION:</span> When first attempting the 
+ move, use low speed and be prepared to use the e-stop to stop the robot, 
+ or damage to the robot, payload, or workspace may result.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<hr style="line-height: 150%;" width="50%" align="center" />
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 0px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Symptom:</span> Received the following 
+ error:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 47 - move test2 inside index 4: Attempt 
+ to change index inside station</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold; font-style: italic;">Check:</span> The commanded 
+ motion inside a station must remain at the same index number. Movement 
+ between high and low positions of the same index (e.g., 3 and -3) is allowed.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Correct the motion commands 
+ to prevent moving between indices at the station’s inside position.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<hr style="line-height: 150%;" width="50%" align="center" />
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 0px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Symptom:</span> Received the following 
+ error:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 48 - move test2 inside: Attempt to go 
+ inside station, but not at perch</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold; font-style: italic;">Check:</span> The commanded 
+ motion to an inside station must go through the corresponding perch position.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Correct the motion commands 
+ to require a movement to the proper perch position before moving to the 
+ inside position.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<hr style="line-height: 150%;" width="50%" align="center" />
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 0px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Symptom:</span> Received the following 
+ error:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 49 - move test1: Attempt to leave station, 
+ but not through perch</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold; font-style: italic;">Check:</span> The commanded 
+ motion from an inside position must go through the corresponding perch 
+ position.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Correct the motion commands 
+ to require a movement to the proper perch position before continuing to 
+ the next move.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<hr style="line-height: 150%;" width="50%" align="center" />
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 0px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Symptom:</span> Received the following 
+ error:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 146 - move test2 index 5: Attempt to 
+ stroke while entering or leaving station</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Check:</span> The commanded motion between 
+ and inside and perch position of a station must remain at the same Z position.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Correct the motion commands 
+ to prevent Z motion when moving between perch and inside positions.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<hr style="line-height: 150%;" width="50%" align="center" />
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 0px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Symptom:</span> Received the following 
+ error:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">!E ERROR 37 - move test1 index 5: Index out of 
+ range for station</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold; font-style: italic;">Check:</span> The commanded 
+ motion referenced an index position that is outside the set range for 
+ that station. Issue the command &quot;getstation [station name]&quot; 
+ to check the index value for that station.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Correct the motion commands 
+ or the station index value to allow the desired motion.</p>
+</body>
+</html>

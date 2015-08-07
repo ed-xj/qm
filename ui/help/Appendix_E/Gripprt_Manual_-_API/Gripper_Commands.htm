@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Gripper Commands</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "10.1.0_10";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix E > Gripprt Manual - API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Gripper Commands</h1>
+<table cellspacing="0" width="100%">
+	<col style="width: 19.292%;" />
+	<col style="width: 80.708%;" />
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">GF</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; font-family: Arial, sans-serif;">Returns 
+		 the &lt;u16bit&gt; current value of the grip force sensor. </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">GG</p></td>
+		<td><p style="font-size: 14pt; line-height: 150%; font-family: Arial, sans-serif;">Starts 
+		 grip sequence. Returns G immediately if command echo is enabled, 
+		 and then returns another G when the grip is completed successfully 
+		 or F if it fails.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">GR</p></td>
+		<td><p style="font-size: 14pt; line-height: 150%; font-family: Arial, sans-serif;">Starts 
+		 release sequence. Returns G immediately if command echo is enabled, 
+		 and then returns R when the release is completed successfully 
+		 or F if it fails.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">GU</p></td>
+		<td><p style="font-size: 14pt; line-height: 150%; font-family: Arial, sans-serif;">Starts 
+		 pin up sequence. Returns G immediately if command echo is enabled, 
+		 and then returns U when the up motion is completed successfully 
+		 or F if it fails.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">GD</p></td>
+		<td><p style="font-size: 14pt; line-height: 150%; font-family: Arial, sans-serif;">Starts 
+		 the pin down sequence. Returns G immediately if command echo is 
+		 enabled, and then returns D when the down motion is completed 
+		 successfully or F if it fails.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">GSG</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; font-family: Arial, sans-serif;">Gets 
+		 the grip status. Returns one character as follows: </p>
+		<p style="margin-left: 40px; font-size: 14pt; line-height: 150%; 
+			 font-family: Arial, sans-serif;">B – Busy gripping or releasing</p>
+		<p style="margin-left: 40px; font-size: 14pt; line-height: 150%; 
+			 font-family: Arial, sans-serif;">G – Gripped</p>
+		<p style="margin-left: 40px; font-size: 14pt; line-height: 150%; 
+			 font-family: Arial, sans-serif;">R – Released</p>
+		<p style="margin-left: 40px; font-size: 14pt; line-height: 150%; 
+			 font-family: Arial, sans-serif;">E – Error</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">GSP</p></td>
+		<td><p style="font-size: 14pt; line-height: 150%; font-family: Arial, sans-serif;">Gets 
+		 the pin status. Returns one character as follows:</p>
+		<p style="margin-left: 40px; font-size: 14pt; line-height: 150%; 
+			 font-family: Arial, sans-serif;">B – Busy gripping or releasing</p>
+		<p style="margin-left: 40px; font-size: 14pt; line-height: 150%; 
+			 font-family: Arial, sans-serif;">U – Up</p>
+		<p style="margin-left: 40px; font-size: 14pt; line-height: 150%; 
+			 font-family: Arial, sans-serif;">D – Down</p>
+		<p style="margin-left: 40px; font-size: 14pt; line-height: 150%; 
+			 font-family: Arial, sans-serif;">E – Error</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">GT</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; font-family: Arial, sans-serif;">Returns 
+		 the unsigned 16-bit value stored in the variable named type. This 
+		 can be used to identify the gripper. </p></td>
+	</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Move Commands (primarily used for diagnostics)</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "10.1.0_15";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix E > Gripprt Manual - API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Move Commands (primarily used for diagnostics)</h1>
+<table cellspacing="0" width="100%">
+	<col style="width: 19.292%;" />
+	<col style="width: 80.708%;" />
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">MPV0&lt;s16bit&gt;&lt;u16bit&gt;</p></td>
+		<td style="vertical-align: top;"><p style="font-size: 14pt; line-height: 150%; 
+											 font-family: Arial, sans-serif;">Starts 
+		 motion of stepper 0 to the specified position in the first param 
+		 using the velocity specified in the second param with a fixed 
+		 acceleration of 5000.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">MP0&lt;s16bit&gt;</p></td>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">Starts 
+		 motion of stepper 0 to the specified position using the jog velocity. 
+		 </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">MP1&lt;s16bit&gt;</p></td>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">Starts 
+		 motion of stepper 1 to the specified position using the jog velocity. 
+		 </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">MP2&lt;s16bit&gt;</p></td>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">Starts 
+		 motion of stepper 2 to the specified position using the jog velocity. 
+		 </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">MH0</p></td>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">Starts 
+		 a move to the home position for stepper 0. </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">MH1</p></td>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">Starts 
+		 a move to the home position for stepper 1. </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">MH2</p></td>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 font-family: Arial, sans-serif;">Starts 
+		 a move to the home position for stepper 2. </p></td>
+	</tr>
+</table>
+</body>
+</html>

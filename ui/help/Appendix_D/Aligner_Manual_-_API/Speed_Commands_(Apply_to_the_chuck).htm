@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Speed Commands (Apply to the chuck)</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "9.1.0_17";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix D > Aligner Manual - API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Speed Commands (Apply to the chuck)</h1>
+<p style="font-size: 14pt; line-height: 150%;">There are 4 selectable speeds 
+ that apply to the move, jog, and stationing commands. These 4 speeds are 
+ numbered 0-3 with 0 defaulting to the slowest speed and 3 the fastest. 
+ Each of these speeds contain an acceleration and a velocity. Once a speed 
+ has been selected, it remains selected until another speed is selected. 
+ The values for the acceleration and velocity may be edited in RAM and 
+ stored and recalled from flash. At startup, the RAM values are loaded 
+ from flash and speed 1 is selected. The jogging commands operate at speed 
+ 0. The units for the velocities are interpolator units per sample. The 
+ acceleration values are in interpolator units per sample squared. See 
+ the trajectory commands section for unit conversions.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<table style="line-height: 150%;" cellspacing="0" width="100%">
+	<col style="width: 19.292%;" />
+	<col style="width: 80.708%;" />
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">SS#</span></td>
+		<td><p style="font-size: 14pt;">Selects the speed number #. The 
+		 range of the number # is 0-3 where 0 defaults to the slowest and 
+		 3 to the fastest.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">SVW#&lt;u32bit&gt;</span></td>
+		<td><span style="font-size: 14pt;">Writes Speed # Velocity. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">SAW#&lt;u32bit&gt;</span></td>
+		<td><span style="font-size: 14pt;">Writes Speed # Acceleration. 
+		 </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">SVR#</span></td>
+		<td><span style="font-size: 14pt;">Reads Speed # Velocity Returns 
+		 &lt;u32bit&gt; value. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">SAR#</span></td>
+		<td><span style="font-size: 14pt;">Reads Speed # Acceleration. 
+		 Returns &lt;u32bit&gt; value. </span></td>
+	</tr>
+</table>
+</body>
+</html>

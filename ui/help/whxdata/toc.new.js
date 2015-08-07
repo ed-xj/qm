@@ -1,0 +1,4 @@
+(function() {
+var toc =  [ { "type" : "item", "name" : "Cover", "url" : "Cover.htm" }, { "type" : "book", "name" : "Introduction", "key" : "toc1", "url" : "Introduction/General_Description.htm" }, { "type" : "item", "name" : "Reference", "url" : "Reference.htm" }, { "type" : "book", "name" : "Safety", "key" : "toc2" }, { "type" : "book", "name" : "Description of Tool Components", "key" : "toc4" }, { "type" : "book", "name" : "System Software", "key" : "toc5" }, { "type" : "book", "name" : "Subcomponent Manuals", "key" : "toc6" }, { "type" : "book", "name" : "Appendix A", "key" : "toc7", "url" : "Appendix_A/Appendix_A.htm" }, { "type" : "book", "name" : "Appendix B", "key" : "toc8" }, { "type" : "book", "name" : "Appendix C", "key" : "toc34" }, { "type" : "book", "name" : "Appendix D", "key" : "toc43" }, { "type" : "book", "name" : "Appendix E", "key" : "toc45" } ];
+window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, { sync:true });
+})();

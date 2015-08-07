@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Linear Motions</title>
+<link rel="StyleSheet" href="../../../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../../../..";
+gCommonRootRelPath = "../../../../..";
+gTopicId = "7.1.11.1.2.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > Appendix C > Station Teaching Strategies > Putting Scripts Together" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../../../ehlpdhtm.js"></script>
+
+<h1>Linear Motions</h1>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">In some cases, joint interpolated 
+ motions are inappropriate, and may lead to interference in the work area. 
+ In these cases, the &quot;linear&quot; motion argument may be used to 
+ straighten the path of the robot's payload.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Example:</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">move 
+ pdo2 linear</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Note that linear moves cannot 
+ be performed in situation that would lead to the wrist crossing over the 
+ shoulder. This will result in an &quot;illegal configuration change&quot; 
+ error message, since the robot is passing through a singularity.</p>
+</body>
+</html>

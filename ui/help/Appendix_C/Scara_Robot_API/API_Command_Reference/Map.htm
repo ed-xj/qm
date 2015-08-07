@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Map</title>
+<link rel="StyleSheet" href="../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "8.1.1.0_24";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix C > Scara Robot API > API Command Reference" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+
+<h1>Map <span style="font-size: 18pt;">- Perform a wafer-mapping operation 
+ on a station.</span></h1>
+<p style="font-size: 14pt; font-weight: normal; font-style: italic; text-decoration: none; ">type: 
+ queued</p>
+<h2 style="font-size: 18pt;">Syntax</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt;">map {<span 
+	 style="font-style: italic;">station</span>} (data) (<span style="font-style: italic;">motion-arguments</span>)</p>
+<h2 style="font-size: 18pt;">Arguments</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">The <span style="font-weight: bold;">data</span> 
+ keyword indicates that all edge data is to be returned as well as the 
+ wafer map.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">See <a href="../Appendix_A/Motion_Command_Arguments.htm"><span 
+	 style="font-weight: bold;">MOTION</span> <span style="font-weight: bold;">COMMAND</span> 
+ <span style="font-weight: bold;">ARGUMENTS</span></a>, <a href="../Appendix_A/Motion_Command_Arguments.htm">Appendix 
+ A</a>.</p>
+<h2 style="font-size: 18pt;">Description</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">Map</span> 
+ performs a high-level mapping operation of a station of type <span style="font-weight: bold;">cassette</span>. 
+ Two edge collection passes are made, one starting at the lower left of 
+ the cassette (facing into the cassette opening) and moving to the upper 
+ left, and another moving from the upper right to the lower right. (The 
+ exact position of these vertical moves depend upon taught station positions.) 
+ The edge data is processed, and a text string is returned that indicates 
+ wafer presence or wafer misloading in each slot of the cassette. The string 
+ is made up of numbers, one number for each slot, starting at 1. A &quot;0&quot; 
+ indicates no wafer seen, a &quot;1&quot; means a wafer is present and 
+ correctly slotted, and a &quot;2&quot; means a wafer was seen but is not 
+ correctly positioned.</p>
+<h2 style="font-size: 18pt;">Events</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ PERCH-MAP&lt;tab&gt;{<span style="font-style: italic;">host command, as 
+ received</span>}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ LEFT-LO-MAP&lt;tab&gt;{<span style="font-style: italic;">host command, 
+ as received</span>}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ LEFT-HI-MAP&lt;tab&gt;{<span style="font-style: italic;">host command, 
+ as received</span>}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ RIGHT-HI-MAP&lt;tab&gt;{<span style="font-style: italic;">host command, 
+ as received</span>}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ RIGHT-LO-MAP&lt;tab&gt;{<span style="font-style: italic;">host command, 
+ as received</span>}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP [wafer map]</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ END-MAP&lt;tab&gt;{<span style="font-style: italic;">host command, as 
+ received</span>}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">If 
+ the <span style="font-weight: bold;">data</span> keyword was specified:</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ PERCH-MAP&lt;tab&gt;{<span style="font-style: italic;">host command, as 
+ received</span>}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ LEFT-LO-MAP&lt;tab&gt;{<span style="font-style: italic;">host command, 
+ as received</span>}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ LEFT-HI-MAP&lt;tab&gt;{<span style="font-style: italic;">host command, 
+ as received</span>}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP A NumSamples=[n], NumSeen=[n]</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP A [sample-num], [edge], [Z-pos]</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">…</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">(rest 
+ of left data points)</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">…</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ RIGHT-HI-MAP&lt;tab&gt;{<span style="font-style: italic;">host command, 
+ as received</span>}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ RIGHT-LO-MAP&lt;tab&gt;{<span style="font-style: italic;">host command, 
+ as received</span>}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP A NumSamples=[n], NumSeen=[n]</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP A [sample-num], [edge], [Z-pos]</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">…</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">(rest 
+ of right data points)</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">…</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP [wafer map]</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ END-MAP&lt;tab&gt;{<span style="font-style: italic;">host command, as 
+ received</span>}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Where:</p>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;"><span 
+	 style="font-family: Consolas, monospace;">[sample-num]</span> = edge 
+ number</p>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;"><span 
+	 style="font-family: Consolas, monospace;">[edge]</span> = 1 (wafer 
+ edge) or 0 (no wafer)</p>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;"><span 
+	 style="font-family: Consolas, monospace;">[z-pos]</span> = robot height 
+ (in millimeters)</p>
+<h2 style="font-size: 18pt;">Examples</h2>
+<p style="font-weight: bold; font-family: Consolas, monospace; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">MAP K DATA</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&gt;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ PERCH-MAPMAP K DATA;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ LEFT-LO-MAPMAP K DATA;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ LEFT-HI-MAPMAP K DATA;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K NumSamples=10, NumSeen=10</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 1, 1, 16.027</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 2, 0, 16.580</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 3, 1, 67.075</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 4, 0, 68.524</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 5, 1, 71.907</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 6, 0, 74.081</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 7, 1, 104.687</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 8, 0, 106.144</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 9, 1, 168.143</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 10, 0, 168.896</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ RIGHT-HI-MAPMAP K DATA;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ RIGHT-LO-MAPMAP K DATA;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K NumSamples=10, NumSeen=10</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 1, 1, 169.289</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 2, 0, 168.345</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 3, 1, 105.847</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 4, 0, 104.149</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 5, 1, 70.825</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 6, 0, 69.368</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 7, 1, 67.666</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 8, 0, 65.960</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 9, 1, 16.825</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP K 10, 0, 16.297</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!S 
+ MAP 1000000022000010000000001</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ END-MAPMAP K DATA</p>
+</body>
+</html>

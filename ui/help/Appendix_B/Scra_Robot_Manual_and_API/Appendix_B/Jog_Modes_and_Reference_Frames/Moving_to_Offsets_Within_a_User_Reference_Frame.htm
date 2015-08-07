@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+ <title>Moving to Offsets Within a User Reference Frame</title>
+<link rel="StyleSheet" href="../../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../../..";
+gCommonRootRelPath = "../../../..";
+gTopicId = "7.1.10.1.0_7";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > Appendix B > Jog Modes and Reference Frames" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../../ehlpdhtm.js"></script>
+
+<h1>Moving to Offsets Within a User Reference Frame</h1>
+<p style="font-size: 14pt; line-height: 150%;">The robot also has the ability 
+ to move to arbitrary offsets from a taught station within a user-defined 
+ reference frame. User reference frames are set with respect to the robot's 
+ XYZWPR reference frame, also known as &quot;world&quot; reference frame. 
+ (See above for a discussion of the world reference frame.)</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Button 
+ Action Direction</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Z-/Z+ 
+ Jogs the robot up and down (Z axis) + is up</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">X/R-/+</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Shoulder</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Jogs 
+ along the X axis + moves the end effector in</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">the 
+ +X direction with respect</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">to 
+ the user reference frame</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Y/</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Theta 
+ -/+</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Elbow</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Jogs 
+ along the Y axis + moves the end effector in</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">the 
+ +Y direction with respect</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">to 
+ the world reference frame</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Wrist 
+ 1 -/+ Rotates the end-effector around the</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">&quot;tool 
+ point&quot;</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">+ 
+ is counterclockwise.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">With the robot in the &quot;home&quot; 
+ position, and with an end effector tool length of 304mm, issuing the command 
+ RCP XYZWPR would give the following:</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">!S 
+ rcp ACTUAL-X 304.000</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">!S 
+ rcp ACTUAL-Y 0.000</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">!S 
+ rcp ACTUAL-Z 0.000</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">!S 
+ rcp ACTUAL-W 0.000</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">!S 
+ rcp ACTUAL-P 0.000</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">!S 
+ rcp ACTUAL-R 0.000</p>
+<p style="font-size: 14pt; line-height: 150%;">This indicates the current 
+ payload center point in &quot;world&quot; coordinates.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">As an example, assume a 
+ station &quot;TEST&quot;, configured as shown below. Issuing the</p>
+<p style="font-size: 14pt; line-height: 150%;">command &quot;MOVE TEST 
+ OFFSET XYZW 20, 0, 0, 0&quot; would move the robot to</p>
+<p style="font-size: 14pt; line-height: 150%;">station &quot;TEST&quot;, 
+ but offset 20mm in the +X direction with respect to the robot's</p>
+<p style="font-size: 14pt; line-height: 150%;">&quot;world&quot; reference 
+ frame.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">A second station, &quot;TEST2&quot;, 
+ has the same configuration, but with the wrist rotated</p>
+<p style="font-size: 14pt; line-height: 150%;">90 degrees. Issuing the 
+ command &quot;MOVE TEST2 OFFSET XYZW 20, 0, 0, 0&quot;</p>
+<p style="font-size: 14pt; line-height: 150%;">would also move the robot 
+ 20 mm in the +X direction with respect to the robot's</p>
+<p style="font-size: 14pt; line-height: 150%;">&quot;world&quot; reference 
+ frame.</p>
+<p style="font-size: 14pt; line-height: 150%;">+X</p>
+<p style="font-size: 14pt; line-height: 150%;">+Y</p>
+<p style="font-size: 14pt; line-height: 150%;">+W</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">To have offset moves performed 
+ with respect to an arbitrary reference frame (such as a certain position 
+ of the end effector), we employ the SETFRAME command to set a user reference 
+ frame at the desired position. (A user reference frame may be defined 
+ at any point in the robot’s area of reach.) Offset moves can then be specified 
+ relative to this frame.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">In the illustration below, 
+ issuing the command &quot;MOVE TEST2 OFFSET XYZW 20, 0, 0, 0 FRAME FRAME1&quot; 
+ would move the robot to station &quot;TEST21&quot;, but offset 20mm in 
+ the +X direction with respect to the &quot;FRAME1&quot; reference frame, 
+ previously defined by the user.</p>
+<p style="font-size: 14pt; line-height: 150%;">Station &quot;TEST&quot; 
+ move &quot;TEST&quot; OFFSET XYZW</p>
+<p style="font-size: 14pt; line-height: 150%;">20, 0, 0, 0</p>
+<p style="font-size: 14pt; line-height: 150%;">Station &quot;TEST2&quot; 
+ move &quot;TEST2&quot; OFFSET XYZW</p>
+<p style="font-size: 14pt; line-height: 150%;">20, 0, 0, 0</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Note that an offset that 
+ was +20 in the positive X direction with respect to the &quot;world&quot; 
+ reference frame is –20 in the negative Y direction with respect to the 
+ user frame &quot;FRAME1&quot;.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">To ensure that an offset 
+ move is performed in a linear fashion, use the &quot;LINEAR&quot; motion 
+ parameter in the move command, e.g., &quot;MOVE TEST2 LINEAR OFFSET XYZW 
+ 20,0,0,0 FRAME FRAME1&quot;.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The following steps describe 
+ setting and using user reference frames to move to station offsets:</p>
+<ol style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="font-size: 14pt; line-height: 150%;">Verify 
+	 that the tool reference frame is set correctly. (This step only needs 
+	 to be performed once.)</p></li>
+	<ul style="list-style: disc; font-size: 14pt;">
+		<li style="font-size: 14pt;"><p style="font-size: 14pt; line-height: 150%;">Issue 
+		 the command &quot;CONFIG GET&quot;.</p></li>
+		<li style="font-size: 14pt;"><p style="font-size: 14pt; line-height: 150%;">Assuming 
+		 that there is only one end effector, verify the line &quot;Config 
+		 Set EndEffector1 Frame_X = &quot; [distance from center of wrist 
+		 to payload center in mm]. If it is not correct, issue the command 
+		 &quot;CONFIG SET ENDEFFECTOR1</p></li>
+	</ul>
+</ol>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 80px; background-color: #ffff00; font-size: 14pt; 
+	 line-height: 150%;">User Frame &quot;FRAME1&quot;</p>
+<p style="margin-left: 80px; background-color: #ffff00; font-size: 14pt; 
+	 line-height: 150%;">Station &quot;TEST2&quot;</p>
+<p style="margin-left: 80px; background-color: #ffff00; font-size: 14pt; 
+	 line-height: 150%;">move &quot;TEST2&quot; OFFSET XYZW</p>
+<p style="margin-left: 80px; background-color: #ffff00; font-size: 14pt; 
+	 line-height: 150%;">20, 0, 0, 0 FRAME FRAME1</p>
+<p style="margin-left: 80px; background-color: #ffff00; font-size: 14pt; 
+	 line-height: 150%;">+X</p>
+<p style="margin-left: 80px; background-color: #ffff00; font-size: 14pt; 
+	 line-height: 150%;">+Y</p>
+<p style="margin-left: 80px; background-color: #ffff00; font-size: 14pt; 
+	 line-height: 150%;">+W</p>
+<p style="margin-left: 80px; background-color: #ffff00; font-size: 14pt; 
+	 line-height: 150%;">User Frame &quot;FRAME1&quot;</p>
+<p style="margin-left: 80px; background-color: #ffff00; font-size: 14pt; 
+	 line-height: 150%;">Station &quot;TEST2&quot;</p>
+<p style="margin-left: 80px; background-color: #ffff00; font-size: 14pt; 
+	 line-height: 150%;">move &quot;TEST2&quot; OFFSET XYZW</p>
+<p style="margin-left: 80px; background-color: #ffff00; font-size: 14pt; 
+	 line-height: 150%;">0, -20, 0, 0 FRAME FRAME1</p>
+<p style="margin-left: 80px; background-color: #ffff00; font-size: 14pt; 
+	 line-height: 150%;">+X</p>
+<p style="margin-left: 80px; background-color: #ffff00; font-size: 14pt; 
+	 line-height: 150%;">+Y</p>
+<p style="margin-left: 80px; background-color: #ffff00; font-size: 14pt; 
+	 line-height: 150%;">+W</p>
+<p style="margin-left: 80px; background-color: #ffff00; font-size: 14pt; 
+	 line-height: 150%;">FRAME_X = [x]&quot;, where x is the correct distance 
+ from wrist center to payload</p>
+<p style="margin-left: 80px; background-color: #ffff00; font-size: 14pt; 
+	 line-height: 150%;">center.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<ul style="list-style: disc; font-size: 14pt;">
+	<ul style="list-style: disc; font-size: 14pt;">
+		<li style="font-size: 14pt;"><p style="font-size: 14pt; line-height: 150%;">After 
+		 performing this update, issue the command &quot;CONFIG SAVE&quot; 
+		 to save the new value.</p></li>
+	</ul>
+</ul>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<ol start="2" style="list-style: decimal;">
+	<li style="font-size: 14pt;"><p style="font-size: 14pt; line-height: 150%;">Move 
+	 to the exact location that the new (user) reference frame origin is 
+	 to be. Note that the origin is defined by the center of the payload.</p></li>
+	<li style="font-size: 14pt;"><p style="font-size: 14pt; line-height: 150%;">If 
+	 necessary, issue the command &quot;LEARN [station name] PERCH&quot;, 
+	 to create a station at this location.</p></li>
+	<li style="font-size: 14pt;"><p style="font-size: 14pt; line-height: 150%;">Issue 
+	 the command &quot;RCP XYZWPR&quot;. This will give you the current 
+	 coordinates of the payload center in &quot;world&quot; reference frame 
+	 coordinates.</p></li>
+	<li style="font-size: 14pt;"><p style="font-size: 14pt; line-height: 150%;">Issue 
+	 the command &quot;SETFRAME [frame name] [x] [y] [z] [w]&quot;, where 
+	 x, y, z, and w are the world frame coordinate of the payload center 
+	 from the RCP command. (P and R values are not used, as user frames 
+	 do not support arbitrary pitch and roll offsets.) This sets a user 
+	 reference frame at the current station.</p></li>
+	<li><p style="line-height: 150%;"><span style="font-size: 14pt;">To 
+	 move to X-Y offsets within this reference frame, issue the command 
+	 &quot;MOVE [station name] OFFSET XYZW [x], [y], [z], [w] FRAME [frame 
+	 name]&quot;, where x, y, and z represent the desired offset from the 
+	 station in mm, and w represents the desired rotation about the payload 
+	 center, with respect to the specified user reference frame</span>.</p></li>
+</ol>
+</body>
+</html>

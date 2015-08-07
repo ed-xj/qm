@@ -1,0 +1,648 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>API Quick Reference</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "8.1.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix C > Scara Robot API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>API Quick Reference</h1>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Abort</span> 
+ – <span style="font-size: 14pt;">Abort robot motion quickly and de-servo 
+ the motors</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">abort</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Align 
+ </span>– <span style="font-size: 14pt;">Start an alignment operation on 
+ the PA-800 prealigner</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">align 
+ {1 | 2} {notch | flat} {wafer-size} [station name]</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Config</span> 
+ – <span style="font-size: 14pt;">Access system configuration settings</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ {save|restore} {filename}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ get (category (item))</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set {category} {item} (=) {value}</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Delete</span> 
+ – <span style="font-size: 14pt;">Delete one, or all stations</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">delete 
+ {station-name | *}</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">DeleteFrame</span> 
+ – <span style="font-size: 14pt;">Delete one, or all user-defined frames</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">DeleteFrame 
+ {frame-name | *}</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Dir</span> 
+ – <span style="font-size: 14pt;">List a directory of station database 
+ files in non-volatile memory</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">dir 
+ (match-pattern)</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">EFnum</span> 
+ – <span style="font-size: 14pt;">Change the current end-effector number</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">efnum 
+ {1 | 2}</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Event</span> 
+ – <span style="font-size: 14pt;">Send a message (&quot;user event&quot;) 
+ from the controller to the host</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Fiduciary</span> 
+ – <span style="font-size: 14pt;">Set the desired angle of the aligned 
+ fiducial notch or flat</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">fiduciary 
+ {angle}</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Flip</span> 
+ – <span style="font-size: 14pt;">Rotate the end-effector flipper to a 
+ specified angle</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">flip 
+ {abs|rel}{angle1, angle2...} {speed|fspeed} {1-100} {acc|facc} {1-100}</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Flipper</span> 
+ –<span style="font-size: 14pt;"> Command the end-effector flipper</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">flipper 
+ {on | off | center | zero | home}</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Flush</span> 
+ – <span style="font-size: 14pt;">Abort motion smoothly and flush the command 
+ queue</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: Immediate</p>
+<p style="font-family: Consolas, monospace; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">flush</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Get</span> 
+ – <span style="font-size: 14pt;">Return the state of an end-effector or 
+ input/output line</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: Immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">get 
+ grip {1|2}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">get 
+ {input|output} {1-8}</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">GetFrame(s)</span> 
+ – <span style="font-size: 14pt;">Output listing of user-defined frames</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">getframe(s) 
+ (frame-name)</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">GetStation(s)</span> 
+ – <span style="font-size: 14pt;">Output listing of station data</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">getstation(s) 
+ (station-name)</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">GetXYZWPR</span> 
+ – <span style="font-size: 14pt;">Return station position data in world 
+ coordinates</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: Immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">getxyzwpr 
+ {station} (frame {userframe})</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Grip</span> 
+ – <span style="font-size: 14pt;">Open or close the gripper (or vacuum) 
+ on a specified end-effector</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">grip 
+ {1 | 2} {on | off}</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Help</span> 
+ – <span style="font-size: 14pt;">Provide a list of commands and syntax</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">help 
+ (command)</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Init</span> 
+ –<span style="font-size: 14pt;"> Initialize the specified device</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">init 
+ {flipper | prealigner} {comm port} {baud rate}</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">LCM</span> 
+ – <span style="font-size: 14pt;">Last Completed Motion; report last completed 
+ motion</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">lcm</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Learn</span> 
+ – <span style="font-size: 14pt;">Set a station pose to the current position 
+ and end-effector number</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">learn 
+ {station} {inside | perch} (index)</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Logfile</span> 
+ –<span style="font-size: 14pt;"> Output a record of commands, responses, 
+ and events</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">logfile 
+ (old) (number)</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Map</span> 
+ –<span style="font-size: 14pt;"> Perform a wafer-mapping operation on 
+ a station</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">map 
+ {station} (data) (motion-arguments)</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Mapper</span> 
+ – <span style="font-size: 14pt;">Operate the wafer mapper</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">mapper 
+ {init | on | off | status}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">mapper 
+ data [XYZWPR]</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">mapper 
+ data frame (frame-name)</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Move</span> 
+ –<span style="font-size: 14pt;"> Move to a specified station pose (inside 
+ or perch)</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">move 
+ {station} (motion-arguments)</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Output</span> 
+ – <span style="font-size: 14pt;">Set the state of an output line</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">output 
+ {1-8} {off | on}</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Passcontrol</span> 
+ – <span style="font-size: 14pt;">Relinquish control to the teach pendant</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">passcontrol</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Pause</span> 
+ –<span style="font-size: 14pt;"> Suspend robot motion for resumption later</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">pause</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Pick</span> 
+ –<span style="font-size: 14pt;"> Move to station, pick up wafer, and clear 
+ station</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">pick 
+ {station} (motion-arguments)</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Place</span> 
+ – <span style="font-size: 14pt;">Move to station, release wafer, and clear 
+ station</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">place 
+ {station} (motion-arguments)</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">RCP</span> 
+ – <span style="font-size: 14pt;">Read Current Position; output current 
+ robot position</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: Immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">rcp</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">rcp 
+ xyzwpr</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">rcp 
+ xyzwpr frame (frame-name)</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Recover</span> 
+ – <span style="font-size: 14pt;">Move to the perch position of the current 
+ station</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">recover 
+ [speed]</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Release</span> 
+ – <span style="font-size: 14pt;">Do the stroke and ungrip required to 
+ release a wafer</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">release 
+ {station} (motion-arguments)</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Remove</span> 
+ – <span style="font-size: 14pt;">Delete a station database from non-volatile 
+ memory</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">remove 
+ {file-name | *}</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Reset</span> 
+ –<span style="font-size: 14pt;"> Abort motion smoothly, flush command 
+ queue and clear faults</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: Immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">reset</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Restore</span> 
+ –<span style="font-size: 14pt;"> Read stored station, frame data into 
+ current database</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">restore 
+ {file-name}</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Resume</span> 
+ – <span style="font-size: 14pt;">Resume motion after Pause command</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">resume</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Retract</span> 
+ – <span style="font-size: 14pt;">Move safely out from inside a station 
+ to perch position</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">retract 
+ (({acc|blend|linear|speed} {num}) …)</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">RTP</span> 
+ – <span style="font-size: 14pt;">Read Target Position; return the commanded 
+ (target) position</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">rtp</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Save</span> 
+ – <span style="font-size: 14pt;">Saves current station data, user-defined 
+ frames</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">save 
+ {file-name}</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Seize</span> 
+ – <span style="font-size: 14pt;">Do the stroke and grip required to seize 
+ a wafer</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">seize 
+ {station} (motion-arguments)</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Set</span> 
+ – <span style="font-size: 14pt;">Set a station database attribute</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">set 
+ {station} {inside | perch} {Z | *} {{shoulder | *} {elbow | *} {wrist 
+ | *} {flip | *}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">set 
+ ( station) {inside | perch} near {station2} xyzwpr {x} {y} { z} {w} {p} 
+ {r}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">set 
+ {station} {pitch | stroke | slots | efnum} {num}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">set 
+ {stations} type {cassette | prealigner [{1 | 2}]| elevator}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">set 
+ rtheta {true | false}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">set 
+ (station) mapcal {LeftLow, LeftHigh, RightHigh, RightLow}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">set 
+ (station) {inside | perch} near ( station2) frame (framename) xyzwpr {x} 
+ {y} {z} {w} {p} {r}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">set 
+ {station} inputs {approach} {inside} {wafer}</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">SetFrame</span> 
+ – <span style="font-size: 14pt;">Set a user frame definition</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">setframe 
+ {frame} {x} {y} {z} {w}</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Sim</span> 
+ – <span style="font-size: 14pt;">Simulate a function or hardware</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">sim 
+ {flipper | gripper | gripdetect | prealigner [{1 | 2 | *}]| robot | vacdetect 
+ | vacuum}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">sim 
+ waitinput {*|1|2|3|4|5|6|7|8}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Speed</span> 
+ – <span style="font-size: 14pt;">Set speed-override setting</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">speed 
+ (percent)</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Status</span> 
+ – <span style="font-size: 14pt;">Report various status information</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">status</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Unsim</span> 
+ – <span style="font-size: 14pt;">Un-simulate a function or hardware</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">unsim 
+ {flipper | gripper | gripdetect | prealigner [{1 | 2 | *}]| robot | vacuum 
+ | vacdetect}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">unsim 
+ waitinput {*|1|2|3|4|5|6|7|8}</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">VacOff</span> 
+ – <span style="font-size: 14pt;">Turn off end-effector vacuum</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">vacoff 
+ (end-effector-number)</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">VacOn</span> 
+ – <span style="font-size: 14pt;">Turn on vacuum</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">vacon 
+ (end-effector-number)</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">VacThreshSet</span> 
+ – <span style="font-size: 14pt;">Set vacuum threshold values</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">vacthreshset 
+ {house-atmos} {ef1-diff} {ef2-diff}</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Version</span> 
+ – <span style="font-size: 14pt;">Display version numbers</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: immediate</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">version</p>
+<p style="margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-size: 18pt;">Wait</span> 
+ – <span style="font-size: 14pt;">Wait for the completion of an action</span></p>
+<p style="font-style: italic; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Type: queued</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">wait 
+ {align | modone | flipper | prealigner [{1 | 2}]}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">wait 
+ input {1 | 2 | 3 | 4 | 5 | 6 | 7 | 8} {off | on}</p>
+</body>
+</html>

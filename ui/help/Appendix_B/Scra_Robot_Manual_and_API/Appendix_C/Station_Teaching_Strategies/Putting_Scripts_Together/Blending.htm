@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Blending</title>
+<link rel="StyleSheet" href="../../../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../../../..";
+gCommonRootRelPath = "../../../../..";
+gTopicId = "7.1.11.1.2.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > Appendix C > Station Teaching Strategies > Putting Scripts Together" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../../../ehlpdhtm.js"></script>
+
+<h1>Blending</h1>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">The first motion arguments 
+ to be applied are the blend arguments. Blend arguments give the robot 
+ its smoothest motions by blending moves into the moves that follow them, 
+ effectively by accelerating into the following move while the previous 
+ move is still decelerating. In this way, the robot doesn't come to a complete 
+ stop between moves, which keeps cycle times to a minimum.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">The most common blend argument 
+ is &quot;blend 100&quot;, used like this:</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">move 
+ via3 blend 100</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">move 
+ pdo1</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">PDO1 PDO2 PA1 TOOL1 TOOL2</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">PDO1 X VIA3 Direct VIA2,</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">VIA1</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">VIA2,</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">VIA4</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">PDO2 VIA3 X Linear VIA3,</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">VIA1</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">VIA5,</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">VIA4</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">PA1 Direct Linear X Direct VIA2,</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">then</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">linear</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">TOOL1 VIA1,</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">VIA2</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">VIA1,</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">VIA3</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">Direct X VIA2</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">TOOL2 VIA4,</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">VIA2</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">VIA4,</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">VIA5</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">VIA2</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">linear</p>
+<p style="font-family: Arial, sans-serif; background-color: #ffff00; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">VIA2 X</p>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">This 
+ instructs the robot to move to the station called &quot;via3&quot;, but 
+ as the deceleration to &quot;via3&quot; begins, to begin the acceleration 
+ for the move to &quot;pdo1&quot;. Without the blend command, the robot 
+ will come to a stop at via3 before beginning the move to &quot;pdo1&quot;. 
+ The &quot;100&quot; argument is the percentage of overlap between the 
+ deceleration of the first move and the acceleration of the second move.</p>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Sometimes, 
+ when a large move is followed by a very small move, standard blending 
+ is not enough. In this case, the use of a leading &quot;F&quot; before 
+ the percentage argument allows the smaller move to be partially or completely 
+ subsumed by the larger movement (depending on the percentage specified).</p>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">An 
+ example:</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">move 
+ via3 blend F75</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">For 
+ pick and place moves, it is better to specify which portion of the move 
+ is supposed to incorporate the blend. Use the pblend (blend the move to 
+ the perch to the move inside), iblend (blend the move inside to the stroke), 
+ blend (blend the stroke to the move back to the perch), and blend (blend 
+ the move to the perch to the next move) arguments to achieve the desired 
+ results.</p>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Note 
+ that the path taken by the robot under the control of blend arguments 
+ is not speed-dependent.</p>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>User I/O Connector</title>
+<link rel="StyleSheet" href="../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "7.1.4.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > User IO Interface" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+<h1>User I/O Connector</h1>
+<p style="font-size: 14pt; line-height: 150%;">The user I/O connector on 
+ the back panel of the IR-820C is a DB-37F(female) connector. The user 
+ must provide a DB-37M(male) connector to carry e-stop and user I/O connections.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Figure 1 - EB-37F user I/O 
+ connector (pin one indicated with green triangle)</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The user I/O connector exposes 
+ the available user inputs and outputs, as well as various voltage and 
+ ground connections. The table below shows the user I/O connector signals. 
+ See the IR-820 Application Programming Interface Manual for instructions 
+ on accessing these signals.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">User I/O Connector, 37 D-sub:</p>
+<table style=" left:0px; top:284px; line-height:150%; width:100%; max-width:456px;" cellspacing="0">
+	<col style="width: 12.906%;" />
+	<col style="width: 31.606%;" />
+	<col style="width: 13.317%;" />
+	<col style="width: 42.171%;" />
+	<tr>
+		<td><span style="font-size: 14pt;">Pin # /</span></td>
+		<td><span style="font-size: 14pt;">Signal Name</span></td>
+		<td><span style="font-size: 14pt;">Pin # /</span></td>
+		<td><span style="font-size: 14pt;">Signal Name</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">1</span></td>
+		<td><span style="font-size: 14pt;">FRAME</span></td>
+		<td><span style="font-size: 14pt;">20</span></td>
+		<td><span style="font-size: 14pt;">Output 5</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">2</span></td>
+		<td><span style="font-size: 14pt;">24VDC</span></td>
+		<td><span style="font-size: 14pt;">21</span></td>
+		<td><span style="font-size: 14pt;">Output 6</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">3</span></td>
+		<td><span style="font-size: 14pt;">24VDC</span></td>
+		<td><span style="font-size: 14pt;">22</span></td>
+		<td><span style="font-size: 14pt;">Output 7</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">4</span></td>
+		<td><span style="font-size: 14pt;">GND</span></td>
+		<td><span style="font-size: 14pt;">23</span></td>
+		<td><span style="font-size: 14pt;">Output 8</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">5</span></td>
+		<td><span style="font-size: 14pt;">GND</span></td>
+		<td><span style="font-size: 14pt;">24</span></td>
+		<td><span style="font-size: 14pt;">PW1</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">6</span></td>
+		<td><span style="font-size: 14pt;">In 24VDC</span></td>
+		<td><span style="font-size: 14pt;">25</span></td>
+		<td><span style="font-size: 14pt;">PW2</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">7</span></td>
+		<td><span style="font-size: 14pt;">Input 1</span></td>
+		<td><span style="font-size: 14pt;">26</span></td>
+		<td><span style="font-size: 14pt;">PW3</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">8</span></td>
+		<td><span style="font-size: 14pt;">Input 2</span></td>
+		<td><span style="font-size: 14pt;">27</span></td>
+		<td><span style="font-size: 14pt;">PW4</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">9</span></td>
+		<td><span style="font-size: 14pt;">Input 3</span></td>
+		<td><span style="font-size: 14pt;">28</span></td>
+		<td><span style="font-size: 14pt;">PW5</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">10</span></td>
+		<td><span style="font-size: 14pt;">Input 4</span></td>
+		<td><span style="font-size: 14pt;">29</span></td>
+		<td><span style="font-size: 14pt;">PW6</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">11</span></td>
+		<td><span style="font-size: 14pt;">Input 5</span></td>
+		<td><span style="font-size: 14pt;">30</span></td>
+		<td><span style="font-size: 14pt;">PW7</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">12</span></td>
+		<td><span style="font-size: 14pt;">Input 6</span></td>
+		<td><span style="font-size: 14pt;">31</span></td>
+		<td><span style="font-size: 14pt;">PW8</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">13</span></td>
+		<td><span style="font-size: 14pt;">Input 7</span></td>
+		<td><span style="font-size: 14pt;">32</span></td>
+		<td><span style="font-size: 14pt;">E-STOP Out 1</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">14</span></td>
+		<td><span style="font-size: 14pt;">Input 8</span></td>
+		<td><span style="font-size: 14pt;">33</span></td>
+		<td><span style="font-size: 14pt;">E-STOP Out 2</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">15</span></td>
+		<td><span style="font-size: 14pt;">Out Common</span></td>
+		<td><span style="font-size: 14pt;">34</span></td>
+		<td><span style="font-size: 14pt;">24VDC</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">16</span></td>
+		<td><span style="font-size: 14pt;">Output 1</span></td>
+		<td><span style="font-size: 14pt;">35</span></td>
+		<td><span style="font-size: 14pt;">E-STOP In</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">17</span></td>
+		<td><span style="font-size: 14pt;">Output 2</span></td>
+		<td><span style="font-size: 14pt;">36</span></td>
+		<td><span style="font-size: 14pt;">Encoder Latch Input</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">18</span></td>
+		<td><span style="font-size: 14pt;">Output 3</span></td>
+		<td><span style="font-size: 14pt;">37</span></td>
+		<td><span style="font-size: 14pt;">GND</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-size: 14pt;">19</span></td>
+		<td><span style="font-size: 14pt;">Output 4</span></td>
+		<td>&#160;</td>
+		<td>&#160;</td>
+	</tr>
+</table>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The following notes apply 
+ to the User I/O port, and should be considered when interfacing with the 
+ user I/O port:</p>
+<ul style="list-style: disc; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">24VDC (pin 
+	 2, 3, 4, 5, 34, 37) is provided for user needs. Maximum load is 1A.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">FRAME (pin 
+	 1) can be used for shielding purposes.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Controller 
+	 has sinking digital outputs and inputs. In order to use the digital 
+	 I/Os, 24VDC should be applied between pin 6 (positive) and pin 15 
+	 (negative). the user has an option of either using the controller 
+	 24V supply or 24V supply of his choice. In the case of using the controller 
+	 power supply, the user should connect pin 6 (In 24VDC) to 24VDC and 
+	 pin 15 (Out Common) to GND. In the case where a different power supply 
+	 is used, its voltage should be in the 20VDC to 26VDC range, and it 
+	 should be capable of handling a 1A load.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Output 1 
+	 through Output 8 (pin 16-23)are sinking open collector outputs, with 
+	 a maximum current of 100mA each.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Input 1 
+	 through Input 8 (pin 7-14)are used by pulling them down to pin15 (Out 
+	 Common) level. Input LOW - maximum 4V. Input HIGH - minimum 18V or 
+	 open.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">PW1 through 
+	 PW8 (pin 24-31) are pass-through wires that allow the user to bring 
+	 the signals of his choice to the robot writ. Maximum current per wire 
+	 is 1A. Maximum voltage between wires is 24VDC or 24VAC.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Pin 32 and 
+	 33 provide dry E-stop contact. Under normal conditions the contact 
+	 is closed. In case of E-stop event it is open.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">The user 
+	 should provide 24VDC on E-stop In (pin 35) in order to enable the 
+	 motor power. Removing 24VDC from this pin will disable the motors.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">The Encoder 
+	 Latch Input is faster than other inputs, in order to provide accurate 
+	 position latching.</p></li>
+</ul>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The following schematic 
+ shows some example uses of input and output signals:</p>
+<p style="font-size: 14pt; line-height: 150%; background-color: #ffff00;">???????</p>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Laser Edge Sensor Commands</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "9.1.0_20";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix D > Aligner Manual - API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Laser Edge Sensor Commands</h1>
+<table style="line-height: 150%;" cellspacing="0" width="100%">
+	<col style="width: 19.292%;" />
+	<col style="width: 80.708%;" />
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">LPE</span></td>
+		<td><span style="font-size: 14pt;">Enables power to the laser sensor. 
+		 </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">LPD</span></td>
+		<td><span style="font-size: 14pt;">Disables power to the laser 
+		 sensor. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">LE</span></td>
+		<td><span style="font-size: 14pt;">Enables the sensor. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">LD</span></td>
+		<td><span style="font-size: 14pt;">Disables the sensor. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">LR</span></td>
+		<td><span style="font-size: 14pt;">Returns the edge sensor reading 
+		 in &lt;u16bit&gt; format. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">LCE</span></td>
+		<td><p style="font-size: 14pt;">Calibrates the edge sensor by setting 
+		 the variable cal_empty. The sensor should be completely un-blocked 
+		 when calling this function. The command will also return the value 
+		 in the &lt;u16bit&gt; format. After calibrating both the blocked 
+		 and empty variables, they should be saved to flash with the mfas 
+		 command.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">LCB</span></td>
+		<td><p style="font-size: 14pt;">Calibrates the edge sensor by setting 
+		 the variable cal_blocked. The sensor should be completely blocked 
+		 when calling this function. The command will also return the value 
+		 in the &lt;u16bit&gt; format. After calibrating both the blocked 
+		 and empty variables, they should be saved to flash with the mfas 
+		 command.</p></td>
+	</tr>
+</table>
+</body>
+</html>

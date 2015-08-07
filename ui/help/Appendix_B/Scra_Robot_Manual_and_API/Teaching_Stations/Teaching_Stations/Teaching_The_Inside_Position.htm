@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Teaching The Inside Position</title>
+<link rel="StyleSheet" href="../../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../../..";
+gCommonRootRelPath = "../../../..";
+gTopicId = "7.1.8.1.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > Teaching Stations > Teaching Stations" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../../ehlpdhtm.js"></script>
+
+<h1>Teaching The Inside Position</h1>
+<p style="font-size: 14pt; line-height: 150%;">In this section you will 
+ teach the robot the positions necessary to pick or place a wafer within 
+ a wafer cassette.</p>
+<ol style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Place a 
+	 wafer on the center of the end effector.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">From the 
+	 host control program, issue the command &quot;grip 1 on&quot;. This 
+	 will cause the end effector to grip the wafer.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">On the teach 
+	 pendant, pick a jog mode that is appropriate to the kind of stations 
+	 you will be teaching. Generally, you should use &quot;Tool&quot; or 
+	 &quot;World&quot; mode for most situations. Use &quot;R-Theta&quot; 
+	 mode only when specifically teaching an R-Theta station.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">On the teaching 
+	 pendant, verify that the jogging speed is below 5%.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Jog the 
+	 robot so the end effector and wafer are facing the cassette.</p></li>
+</ol>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Figure 9-1 - Facing the 
+ cassette</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<ol start="6" style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Jog the 
+	 robot so that the wafer is centered in the bottom cassette slot.</p></li>
+</ol>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Figure 9-2 - The wafer centered 
+ at the bottom slot</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<ol start="7" style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Jog the 
+	 robot to extend the wafer far enough into the cassette to guarantee 
+	 the wafer is balanced correctly.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Turn the 
+	 teach pendant switch to the off position.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;"><span>In 
+	 the host program, type the command &quot;learn </span><span style="font-style: italic;">station_name</span><span> 
+	 inside&quot;, where </span><span style="font-style: italic;">station_name</span><span> 
+	 is the label you wish to apply to this station.</span></p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Press &quot;Enter&quot; 
+	 on the host keyboard to execute the command.</p></li>
+</ol>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Note: The naming convention 
+ for all station is as follows:</p>
+<ul style="list-style: disc; font-size: 14pt;">
+	<li style="font-weight: bold; font-size: 14pt;"><p style="line-height: 150%;">Station 
+	 names must be 8 characters or less.</p></li>
+	<li style="font-weight: bold; font-size: 14pt;"><p style="line-height: 150%;">Station 
+	 names can not contain spaces or punctuation.</p></li>
+	<li style="font-weight: bold; font-size: 14pt;"><p style="line-height: 150%;">Station 
+	 names are not case-sensitive.</p></li>
+	<li style="font-weight: bold; font-size: 14pt;"><p style="line-height: 150%;">Station 
+	 names must be alpha-numerical.</p></li>
+</ul>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Figure 9-3 - The wafer inside 
+ the cassette</p>
+</body>
+</html>

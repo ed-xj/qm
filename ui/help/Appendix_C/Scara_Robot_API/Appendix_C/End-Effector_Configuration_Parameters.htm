@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+ <title>End-Effector Configuration Parameters</title>
+<link rel="StyleSheet" href="../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "8.1.4.0_5";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix C > Scara Robot API > Appendix C" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+
+<h1>End-Effector Configuration Parameters</h1>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Configure various end-effector 
+ related variables. Note that the subsystem identifier is specific to the 
+ end-effector who's parameters are being specified. The subsystem identifier 
+ is &quot;endeffector1&quot; for the primary end-effector, and &quot;endeffector2&quot; 
+ for the secondary end-effector.</p>
+<h2 style="font-size: 18pt;">Syntax</h2>
+<p style="font-size: 14pt;">Config {Get|Set} {Endeffector1| Endeffector2} 
+ {Args}</p>
+<h2 style="font-size: 18pt;">Arguments</h2>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Type: 
+ This specifies the type of end effector and can be any of the following 
+ types.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">None 
+ : No endeffector mounted.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">VacGrip 
+ : Vacuum end effector.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">GripGrip 
+ : Edge gripping end effector.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">RampedGrip 
+ : Edge gripping end effector.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">MMGrip 
+ : Multimetrixs edge gripping end effector..</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">MMVacGrip 
+ : Multimetrixs double-sided vacuum. end effector.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">SimGripper 
+ : Specifies whether to simulate the grip operation.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">True 
+ : Simulate gripper operation.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">False: 
+ Normal operation.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Sim_Grip_Detect 
+ : Specifies whether to simulate only the grip detection part of the grip 
+ command.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">(When 
+ &quot;SimGripper&quot; is false, and &quot;Sim_Grip_Detect&quot; is true, 
+ the gripping operation will take place, but its success or failure will 
+ not be checked.)</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">True 
+ : Simulate grip detection operation.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">False: 
+ Normal operation.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Frame_X 
+ : X coordinate of the endeffector center point.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Frame_Y 
+ : Y coordinate of the endeffector center point.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Frame_Z 
+ : Z coordinate of the endeffector center point.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Frame_R 
+ : Yaw in case of RJ3.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Com_Port: 
+ Specifies the serial port to which the endeffector is connected to.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Com_Baud: 
+ Specifies the baud rate for serial communication. This is currently fixed 
+ at 19200.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">HWSync: 
+ To reduce latency involved due to the communication between the SBC and 
+ Endeffector, a low level hardware handshake is used.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">True 
+ : Hardware handshake is enabled.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">False: 
+ Hardware handshake is disabled.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Kp, 
+ Ki, Kd, Il : PID parameters for the flipping endeffector.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Torque_limit 
+ : This specifies the flipper torque limit and can be between 0 and 100. 
+ The higher the value, the higher the flipper’s deservoing threshold.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">R_Axis 
+ : This specifies if a rotational axis (Flipper) is present on the endeffector.</p>
+<p style="background-color: #ffff00; font-size: 14pt; line-height: 150%;">Vac_Thresh: 
+ Specifies the threshold for the endeffector vacuum. This can be between 
+ 0 and 1.</p>
+<h2 style="font-size: 18pt; line-height: 150%;">Examples</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">To see all the Endeffector 
+ 1 related configuration variables:</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ Get Endeffector1</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&gt;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 Type = VacGrip</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 SimGripper = False</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 Sim_Grip_Detect = False</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 Frame_X = 187.706</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 Frame_Y = 0.000</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 Frame_Z = 0.000</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 Frame_R = 0.000</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 Com_Port = UnInitialized</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 Com_Baud = 19200</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 HWSync = False</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 Kp = 130</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 Ki = 80</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 Kd = 0</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 Il = 100</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 Torque_Limit = 100</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 R_Axis = None</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ set EndEffector1 Vac_Thresh = 0.25</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-family: Arial, sans-serif; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">To 
+ see all the Endeffector 2 related configuration variables:</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">config 
+ get Endeffector2</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&gt;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 Type = None</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 SimGripper = False</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 Sim_Grip_Detect = False</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 Frame_X = 187.706</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 Frame_Y = 0.000</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 Frame_Z = 0.000</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 Frame_R = 0.000</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 Com_Port = UnInitialized</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 Com_Baud = 19200</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 HWSync = False</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 Kp = 130</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 Ki = 80</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 Kd = 0</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 Il = 100</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 Torque_Limit = 100</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 R_Axis = None</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Config 
+ set EndEffector2 Vac_Thresh = 0.25</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ END-CONFIGConfig get Endeffector2</p>
+<p>&#160;</p>
+</body>
+</html>

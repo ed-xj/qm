@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Asserting Control</title>
+<link rel="StyleSheet" href="../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "7.1.7.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > The Teach Pendant" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+<h1>Asserting Control</h1>
+<p style="font-size: 14pt; line-height: 150%;">For safety, control of the 
+ robot is exclusive: The robot may be under the control of the teach pendant, 
+ or under the control of the host, but not both at the same time.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">To pass control to the teach 
+ pendant from the host:</p>
+<ol style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">From the 
+	 host communication program, issue the command &quot;PASS CONTROL&quot;.</p></li>
+</ol>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">This 
+ releases control to the next entity to assert control. If the teach pendant 
+ is used to jog the robot after the &quot;PASS CONTROL&quot; command is 
+ issued, control passes to the teach pendant. If the host is used to control 
+ the robot after the &quot;PASS CONTROL&quot; command is issued, the host 
+ regains control.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 0px; font-size: 14pt; line-height: 150%;">To pass 
+ control from the teach pendant to the host:</p>
+<ol style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">On the teach pendant 
+	 keypad, press the &quot;Pass Control&quot; button.</p></li>
+</ol>
+<p style="margin-left: 0px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 0px; font-size: 14pt; line-height: 150%;">Figure 
+ 1 - Teach pendant with liveman switch<span style="font-size: 14pt; line-height: 150%;">s 
+ with the host &quot;PASS CONTROL&quot; command, this releases control 
+ to the next entity to assert control.</span></p>
+</body>
+</html>

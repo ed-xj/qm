@@ -1,0 +1,4 @@
+(function() {
+var toc =  [ { "type" : "item", "name" : "Leveling the Robot", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Unpacking_and_Installation/Leveling_the_robot/Levleing_the_Robot.htm" }, { "type" : "item", "name" : "Getting the Robot Ready", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Unpacking_and_Installation/Leveling_the_robot/Getting_the_Robot_Ready.htm" }, { "type" : "item", "name" : "Leveling the Axis", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Unpacking_and_Installation/Leveling_the_robot/Leveling_the_Axis.htm" } ];
+window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, { sync:true });
+})();

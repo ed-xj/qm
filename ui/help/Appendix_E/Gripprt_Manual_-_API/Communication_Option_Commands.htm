@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Communication Option Commands</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "10.1.0_7";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix E > Gripprt Manual - API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Communication Option Commands</h1>
+<table cellspacing="0" width="100%">
+	<col style="width: 19.309%;" />
+	<col style="width: 80.691%;" />
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">c</p></td>
+		<td><p style="font-size: 14pt; line-height: 150%; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Forces 
+		 the next command to use CRC16 checksums. If there is a syntax 
+		 error before the next command is received, it will be executed 
+		 in the globally set mode.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">t</p></td>
+		<td><p style="font-size: 14pt; line-height: 150%; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Forces 
+		 the next command to operate in text mode. If there is a syntax 
+		 error before the next command is received, it will be executed 
+		 in the globally set mode.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">b</p></td>
+		<td><p style="font-size: 14pt; line-height: 150%; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Forces 
+		 the next command to operate in binary mode. If there is a syntax 
+		 error before the next command is received, it will be executed 
+		 in the globally set mode.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">x</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Forces 
+		 the next command to use hexadecimal format for its return values.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">OBE</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Enables 
+		 the binary parameter option globally. (Text Disabled) </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">OBD</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Disables 
+		 the binary parameter option globally. Text Enabled) </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">OBG</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Returns 
+		 E if the binary parameter option is enabled or D if it is disabled. 
+		 </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">OCE</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Enables 
+		 the CRC16 checksum option globally. </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">OCD</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Disables 
+		 the CRC16 checksum option globally. </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">OCG</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Returns 
+		 E if the CRC16 checksum option is enabled or D if it is disabled.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;" bgcolor="#FFFF00"><p style="line-height: 150%; 
+			 font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+			 margin-bottom: 0pt;">ODE</p></td>
+		<td bgcolor="#FFFF00"><p style="line-height: 150%; font-size: 14pt; 
+								 margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+								 margin-bottom: 0pt;">Enables the digital 
+		 control option globally. </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;" bgcolor="#FFFF00"><p style="line-height: 150%; 
+			 font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+			 margin-bottom: 0pt;">ODD</p></td>
+		<td bgcolor="#FFFF00"><p style="line-height: 150%; font-size: 14pt; 
+								 margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+								 margin-bottom: 0pt;">Disables the digital 
+		 control option globally. </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;" bgcolor="#FFFF00"><p style="line-height: 150%; 
+			 font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+			 margin-bottom: 0pt;">ODG</p></td>
+		<td bgcolor="#FFFF00"><p style="line-height: 150%; font-size: 14pt; 
+								 margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+								 margin-bottom: 0pt;">Returns E if the 
+		 digital control option is enabled or D if it if disabled. </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">OTE</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Enables 
+		 the terminating character option globally. </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">OTD</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Disables 
+		 the terminating character option globally. </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">OTG</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Returns 
+		 E if the terminating character option is enabled or D if it is 
+		 disabled. </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">OEE</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Enables 
+		 the command echo option globally. </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">OED</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Disables 
+		 the command echo option globally. </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">OEG</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Returns 
+		 E if the command echo option is enabled or D if it is disabled. 
+		 </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">ORE</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Enables 
+		 the response CR option globally. </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">ORD</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Disables 
+		 the response CR option globally. </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt; 
+											 margin-left: 0in; margin-right: 0in; 
+											 margin-top: 0pt; margin-bottom: 0pt;">ORG</p></td>
+		<td><p style="line-height: 150%; font-size: 14pt; margin-left: 0in; 
+				 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt;">Returns 
+		 E if the response CR option is enabled or D if it is disabled. 
+		 </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;" bgcolor="#FFFF00"><p style="line-height: 150%; 
+			 font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+			 margin-bottom: 0pt;">BAUD&lt;u32bit&gt;</p></td>
+		<td bgcolor="#FFFF00"><p style="font-size: 14pt; line-height: 150%; 
+								 margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+								 margin-bottom: 0pt;">Sets RS232 baud rate 
+		 variable named baud. The return will be sent immediately at the 
+		 old baud rate and communication should not be attempted at the 
+		 new rate until 3 seconds after receiving the response at the old 
+		 baud rate.</p></td>
+	</tr>
+</table>
+</body>
+</html>

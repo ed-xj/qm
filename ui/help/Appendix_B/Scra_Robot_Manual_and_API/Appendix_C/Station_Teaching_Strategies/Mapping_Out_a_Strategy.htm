@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+ <title>Mapping Out a Strategy</title>
+<link rel="StyleSheet" href="../../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../../..";
+gCommonRootRelPath = "../../../..";
+gTopicId = "7.1.11.1.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > Appendix C > Station Teaching Strategies" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../../ehlpdhtm.js"></script>
+
+<h1>Mapping Out a Strategy</h1>
+<p style="font-size: 14pt; line-height: 150%;">The first step in optimizing 
+ an application is mapping out a strategy. You will save a lot of work 
+ by planning the station database on paper before teaching the robot.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">In this section, we will 
+ go through the basic steps of planning your station database.</p>
+<p style="font-size: 14pt; line-height: 150%;">Start with layout drawing, 
+ and ask the following questions:</p>
+<ul style="list-style: disc; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">What are 
+	 the primary stations? (Ignore vias or waypoints for now)</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">What sequencing 
+	 is required by the application? What are the primary paths the payloads 
+	 are expected to take?</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Where are 
+	 the wait points/bottlenecks? Some examples include process duration, 
+	 prealigner time, and waiting for PDOs or loadlocks to open and close.</p></li>
+</ul>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The answers to these questions 
+ can help you determine approximate station locations and paths to be taken. 
+ Draw a chart showing station combinations and planned paths between each. 
+ Note that some paths may not include a payload, increasing move flexibility 
+ for the move. (I.e., the end effector may be able to get through a particular 
+ path only when no payload is present. This may be necessary between transfers, 
+ but should be handled carefully.)</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Pay careful attention to 
+ the following limitations:</p>
+<ul style="list-style: disc;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Each of 
+	 the theta joints is limited to +/-320 degrees (640 degrees total rotation), 
+	 so at some point in the cycle, you will have to plan for an &quot;unwrap&quot; 
+	 move.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Linear motions 
+	 can only performed in situations where the wrist does not cross over 
+	 the shoulder unless the station parameter &quot;rtheta&quot; is set 
+	 to &quot;true&quot;.</p></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Move Commands (Apply to the chuck)</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "9.1.0_16";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix D > Aligner Manual - API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Move Commands <span style="font-size: 16pt;">(Apply to the chuck)</span></h1>
+<table cellspacing="0" width="100%">
+	<col style="width: 19.292%;" />
+	<col style="width: 80.708%;" />
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%;"><span 
+		 style="font-size: 14pt;">H</span></p></td>
+		<td><p style="line-height: 150%;"><span style="font-size: 14pt;">Halts 
+		 motion (same as TH). </span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%;"><span 
+		 style="font-size: 14pt;">MAM&lt;32bit&gt;</span></p></td>
+		<td><p style="font-size: 14pt; line-height: 150%;">Starts a move 
+		 to the absolute position in millidegrees at the currently selected 
+		 speed. Must not already be in motion.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%;"><span 
+		 style="font-size: 14pt;">MRM&lt;32bit&gt;</span></p></td>
+		<td><p style="line-height: 150%;"><span style="font-size: 14pt;">Starts 
+		 a move to the relative position in millidegrees at the currently 
+		 selected speed. </span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%;"><span 
+		 style="font-size: 14pt;">MAC&lt;32bit&gt;</span></p></td>
+		<td><p style="font-size: 14pt; line-height: 150%;">Starts a move 
+		 to the absolute position in counts at the currently selected speed. 
+		 Must not already be in motion.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%;"><span 
+		 style="font-size: 14pt;">MRC&lt;32bit&gt;</span></p></td>
+		<td><p style="line-height: 150%;"><span style="font-size: 14pt;">Starts 
+		 a move to the relative position in counts at the currently selected 
+		 speed. </span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%;"><span 
+		 style="font-size: 14pt;">MIL</span></p></td>
+		<td><p style="line-height: 150%;"><span style="font-size: 14pt;">Causes 
+		 the next move command to ignore the user position limits. </span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%;"><span 
+		 style="font-size: 14pt;">MD</span></p></td>
+		<td><p style="line-height: 150%;"><span style="font-size: 14pt;">Return 
+		 1 if the move is done and 0 if the last move trajectory is not 
+		 complete. </span></p></td>
+	</tr>
+</table>
+</body>
+</html>

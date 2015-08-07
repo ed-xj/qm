@@ -1,0 +1,337 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Set</title>
+<link rel="StyleSheet" href="../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "8.1.1.0_43";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix C > Scara Robot API > API Command Reference" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+
+<h1>Set <span style="font-size: 18pt;">- Set a station database attribute.</span></h1>
+<p style="font-size: 14pt; font-weight: normal; font-style: italic; text-decoration: none; ">type: 
+ queued</p>
+<h2 style="font-size: 18pt;">Syntax</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">set 
+ {<span style="font-style: italic;">station</span>} {inside | perch} {Z 
+ | *} {{<span style="font-style: italic;">shoulder</span> | *} {<span style="font-style: italic;">elbow</span> 
+ | *} {<span style="font-style: italic;">wrist</span> | *} {<span style="font-style: italic;">flip</span> 
+ | *}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">set 
+ (<span style="font-style: italic;">station</span>) {inside | perch} near 
+ {<span style="font-style: italic;">station2</span>} xyzwpr {<span style="font-style: italic;">x</span>} 
+ {<span style="font-style: italic;">y</span>} {<span style="font-style: italic;">z</span>} 
+ {<span style="font-style: italic;">w</span>} {<span style="font-style: italic;">p</span>} 
+ {<span style="font-style: italic;">r</span>}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">set 
+ {<span style="font-style: italic;">station</span>} {pitch | stroke | slots 
+ | efnum} {<span style="font-style: italic;">num</span>}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">set 
+ {<span style="font-style: italic;">stations</span>} type {cassette | prealigner 
+ [{1 | 2}]| elevator}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">set 
+ rtheta {true | false}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">set 
+ (<span style="font-style: italic;">station</span>) mapcal {<span style="font-style: italic;">LeftLow</span>, 
+ <span style="font-style: italic;">LeftHigh</span>, <span style="font-style: italic;">RightHigh</span>, 
+ <span style="font-style: italic;">RightLow</span>}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">set 
+ (<span style="font-style: italic;">station</span>) {inside | perch} near 
+ (<span style="font-style: italic;">station2</span>) frame (<span style="font-style: italic;">framename</span>) 
+ xyzwpr {<span style="font-style: italic;">x</span>} {<span style="font-style: italic;">y</span>} 
+ {<span style="font-style: italic;">z</span>} {<span style="font-style: italic;">w</span>} 
+ {<span style="font-style: italic;">p</span>} {<span style="font-style: italic;">r</span>}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">set 
+ {<span style="font-style: italic;">station</span>} inputs {<span style="font-style: italic;">approach</span>} 
+ {<span style="font-style: italic;">inside</span>} {<span style="font-style: italic;">wafer</span>}</p>
+<h2 style="font-size: 18pt;">Arguments</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">station</span>: 
+ A contiguous string of alpha-numeric characters, or any printable text 
+ enclosed in double quotation marks.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">pitch</span>: 
+ Indicates the vertical or Z distance between slots. Must be followed by 
+ a floating point number in C or C++ format. Pitch is measured in millimeters.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">stroke</span>: 
+ Indicates the distance to stroke up when seizing a wafer or stroke down 
+ when releasing a wafer. Must be followed by a floating point number in 
+ C or C++ format. Stroke is measured in millimeters.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">slots</span>: 
+ Indicates the number of slots or indices in the station. It must be followed 
+ by a positive integer.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">efnum</span>: 
+ Indicates the end-effector number applicable for the station. Currently 
+ must be the integer 1 or 2.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">cassette</span>: 
+ Indicates the station contains horizontally oriented payloads.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">prealigner</span>: 
+ Indicatest the station is a prealigner. By using the optional &quot;1&quot; 
+ or &quot;2&quot; arguments, a particular prealigner may be associated 
+ with a station name. (See <span style="font-weight: bold;"><a href="Align.htm" 
+	 style="font-size: 14pt;">Align</a></span>.)</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">elevator</span>: 
+ Indicates the station contains vertically oriented payloads. &quot;Stroke&quot; 
+ then refers to the horizontal travel required during a pick or place operation. 
+ &quot;Perch&quot; and &quot;inside&quot; positions refer to the high and 
+ low z-positions, respectively.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">inside</span> 
+ or <span style="font-family: Consolas, monospace;">perch</span>: Indicates 
+ that the numbers which follow are joint angles for the <span style="font-weight: bold;">inside</span> 
+ or <span style="font-weight: bold;">perch</span> pose of the station. 
+ The numbers, in C or C++ floating point format, must occur in the order 
+ <span style="font-weight: bold;">Z</span>, <span style="font-weight: bold;">shoulder</span>, 
+ <span style="font-weight: bold;">elbow</span>, <span style="font-weight: bold;">wrist</span>, 
+ and (is a flipper/gripper is present) <span style="font-weight: bold;">flip</span>. 
+ <span style="font-weight: bold;">Z</span> is measured in millimeters. 
+ The others are measured in degrees. The indicated <span style="font-weight: bold;">Z</span> 
+ position should be the high or stroked-up elevation for index 1.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">mapCal</span>: 
+ Indicates that the four numbers following are the Z axis positions at 
+ the station corresponding to the four corners of a mapping operation. 
+ Typically one initially sets the numbers, not with a <span style="font-weight: bold;"><a 
+	 href="Set.htm">SET</a></span> command, but by executing a <span style="font-style: italic;">MAP</span> 
+ (<span style="font-style: italic;">station</span>) <span style="font-style: italic;">LEARN</span> 
+ command. That has the effect of learning the four corners and recording 
+ them in the station database as though you had executed <span style="font-style: italic;">SET</span> 
+ (<span style="font-style: italic;">station</span>) m<span style="font-style: italic;">apCal</span>. 
+ The command <span style="font-style: italic;">SET</span> (<span style="font-style: italic;">station</span>) 
+ m<span style="font-style: italic;">apCal</span> itself is typically used 
+ only in conjunction with the SAVE, RESTORE, and GETSTATIONS commands. 
+ The <span style="font-weight: bold;"><a href="Save.htm">SAVE</a></span> 
+ command writes <span style="font-style: italic;">SET</span> (<span style="font-style: italic;">station</span>) 
+ <span style="font-style: italic;">mapcal</span> instructions (among others) 
+ to the station database file. The GETSTATIONS command sends them to the 
+ host. The RESTORE command executes the commands that are in named station 
+ database file that was saved using the <span style="font-weight: bold;"><a 
+	 href="Save.htm">SAVE</a></span> command. The Z axis positions are 
+ in the order, left-bottom, left-top, right-top, right-bottom.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">* (<span style="font-weight: bold;">Splat</span>) 
+ May be given instead of a numerical argument in place of Z, shoulder, 
+ elbow, wrist or flip to leave the corresponding value unchanged. This 
+ option is intended to simplify data entry and reduce errors when only 
+ one value change is to be entered. See examples.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">near</span>: 
+ If the keyword <span style="font-weight: bold;">near</span> is used, the 
+ closest arm joint rotational angles to those of station2 will be adopted, 
+ thus preventing the visual ambiguity that may arise form the feature that 
+ joint angles may have values greater than 360 degrees. In other words, 
+ using the <span style="font-weight: bold;">near</span> syntax prevents 
+ the unwanted possibility of having the robot move from a station with, 
+ say, a wrist angle of 18 degrees to a station whose wrist angle, though 
+ appearing identical by visual inspection, is 360+18 = 378 degrees, causing 
+ the wrist to rotate unnecessarily druing this movement.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">xyzwpr:</span> 
+ This is used in conjunction with NEAR to indicate that the parameters 
+ are in XYZWPR format, rather than joint angles and displacements.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">frame:</span> 
+ This indicates that the XYZWPR input parameters are to be interpreted 
+ in the context of a user-defined frame, not world frame.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">inputs:</span> 
+ Sets the input lines to be checked before performing certain operations 
+ during <span style="font-weight: bold;">MOVE</span>s and <span style="font-weight: bold;">PICK</span> 
+ and <span style="font-weight: bold;">PLACE</span> operations. The command 
+ takes three arguments:</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-style: italic;">SET</span> 
+ (<span style="font-style: italic;">station</span>) <span style="font-style: italic;">INPUTS</span> 
+ (<span style="font-style: italic;">approach</span>), (<span style="font-style: italic;">inside</span>), 
+ (<span style="font-style: italic;">release</span>)</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">The three arguments respectively 
+ define the input required to approach the station, move into the station, 
+ and release the wafer.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Each argument must be either 
+ the keyword NONE, indicating no input checking is to be performed (the 
+ default), an asterisk or &quot;splat&quot; (*), indicating the value is 
+ to remain unchanged, or an attribute-value pair that specifies an input 
+ line number and the required state:</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">(input-number) = (state)</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">The valid values for (state) 
+ are ON and OFF. The input line specified must be physically present or 
+ an error will be generated.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Please refer to the <a href="../Appendix_B/Automatic_Input-state_Checking/Description.htm">Appendix 
+ B</a>, &quot;<a href="../Appendix_B/Automatic_Input-state_Checking/Description.htm">Using 
+ Automatic Station input-State Checking</a>&quot; for a full description 
+ of the <span style="font-weight: bold;">SET INPUTS</span> command.</p>
+<h2 style="font-size: 18pt;">Description</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">This sets one or more station 
+ attributes in the current station database. The first argument is a station 
+ name. If it contains whitespace characters, it must be enclosed in double 
+ quotation marks. After the station name comes any of several attribute 
+ names, as described above. Most attributes require one or more floating 
+ point numbers. Numbers may be in any format you can generate with a C 
+ &quot;printf&quot; command. Inside and perch require four numbers, with 
+ an optional fifth for a flipper angle.</p>
+<h2 style="font-size: 18pt;">Events</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt;">!E END-SET&lt;tab&gt;{<span 
+	 style="font-style: italic;">host command, as received</span>}</p>
+<h2 style="font-size: 18pt;">Examples</h2>
+<p style="font-family: Consolas, monospace; font-weight: bold; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">set alfa pitch 10</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&gt;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ END-SET set alfa pitch 10</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-family: Consolas, monospace; font-weight: bold; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">set alfa inside 11.11 22.22 33.33 44.44</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&gt;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ END-SET set alfa inside 11.11 22.22 33.33 44.44</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-family: Consolas, monospace; font-weight: bold; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">set alfa inside * * 77.7777 *</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&gt;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ END-SET set alfa inside * * 77.7777 *</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-family: Consolas, monospace; font-weight: bold; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">getstations</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&gt;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Set 
+ &quot;alfa&quot; Pitch 10.000</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Set 
+ &quot;alfa&quot; Stroke 3.125</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Set 
+ &quot;alfa&quot; Index 1</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">{...}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Set 
+ &quot;alfa&quot; Inside 11.110 22.220 77.7777 44.440</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Set 
+ &quot;alfa&quot; Perch {...}</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ END-GETSTATION getstations</p>
+</body>
+</html>

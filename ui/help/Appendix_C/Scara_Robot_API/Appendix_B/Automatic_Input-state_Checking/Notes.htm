@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Notes</title>
+<link rel="StyleSheet" href="../../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../../..";
+gCommonRootRelPath = "../../../..";
+gTopicId = "8.1.3.1.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix C > Scara Robot API > Appendix B > Automatic Input-state Checking" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../../ehlpdhtm.js"></script>
+
+<h1>Notes</h1>
+<ol style="list-style: decimal;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">The &quot;approach&quot; 
+	 input qualifier is only applied when moving to a station's perch from 
+	 outside the station; it does not apply to all moves to the station's 
+	 perch. For example, in a <span style="font-weight: bold;">PICK</span> 
+	 or <span style="font-weight: bold;">PLACE</span> operation, the input 
+	 would be checked only before initiating the move to the station. The 
+	 input line would not be checked before moving from the inside of the 
+	 station back out to the perch; this is to prevent deadlock conditions 
+	 with wafer presence sensing.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;"><span>If 
+	 the station being approached is of type &quot;elevator&quot;, then 
+	 during a </span><span style="font-weight: bold;">PICK</span><span> 
+	 operation the initial move to the station is actually to the &quot;inside 
+	 index –1&quot; position; in this case both the &quot;approach&quot; 
+	 and &quot;inside&quot; input rules will be applied (ANDed) before 
+	 the move to the station.</span></p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;"><span>The 
+	 commands </span><span style="font-weight: bold;">GRIP OFF</span><span> 
+	 and </span><span style="font-weight: bold;">VACOFF</span><span> will 
+	 not consult the &quot;release&quot; rule for a station.</span></p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;"><span>The 
+	 action of the input rules is effected by the command </span><span 
+	 style="font-weight: bold;">SIM</span><span> </span><span style="font-weight: bold;">WAITINPUT</span><span>.</span></p></li>
+</ol>
+</body>
+</html>

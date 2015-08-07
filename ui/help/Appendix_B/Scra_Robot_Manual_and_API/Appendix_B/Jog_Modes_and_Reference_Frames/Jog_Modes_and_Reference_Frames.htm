@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Jog Modes and Reference Frames</title>
+<link rel="StyleSheet" href="../../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../../..";
+gCommonRootRelPath = "../../../..";
+gTopicId = "7.1.10.1.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > Appendix B > Jog Modes and Reference Frames" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../../ehlpdhtm.js"></script>
+
+<h1>Jog Modes and Reference Frames</h1>
+<p style="font-size: 14pt; line-height: 150%;">This appendix discusses 
+ the frames of reference in which the robot can be moved via the teach 
+ pendant or via API commands. When jogging the robot, these frames of reference 
+ are called &quot;jog modes&quot;. Otherwise, they are simply called &quot;reference 
+ frames&quot;.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">You can also move the robot 
+ relative to some of these reference frames using API commands.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The five jog modes available 
+ are:</p>
+<ul style="list-style: disc; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Joint - 
+	 used to jog each joint individually.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">R-Theta 
+	 - used to emulate the motion of an R-Theta robot.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Tool - reference 
+	 frame based on the position and orientation of a wafer on the end 
+	 effector.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">World - 
+	 reference frame based on the position and orientation of the robot 
+	 (this can be changed by user to reflect a user reference frame).</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">User - reference 
+	 frame based on an arbitrary, user-specified displacement of the World 
+	 reference frame origin.</p></li>
+</ul>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Of these, Joint, World, 
+ and User are also available for moving the robot using the API.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">You can select jog modes 
+ by repeatedly pressing the &quot;Jog Mode&quot; key on the teach pendant 
+ until the desired mode is displayed on the teach pendant's screen.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The jog keys on the teach 
+ pendant are located on the right-hand section of the panel. The following 
+ sections describe how the buttons correspond to robot movements in each 
+ of the modes.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Moving the robot with respect 
+ to a particular reference frame, using the API, is covered later in this 
+ appendix.</p>
+</body>
+</html>

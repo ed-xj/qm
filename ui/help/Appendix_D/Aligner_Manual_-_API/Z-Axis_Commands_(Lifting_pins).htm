@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Z-Axis Commands (Lifting pins)</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "9.1.0_14";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix D > Aligner Manual - API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Z-Axis Commands <span style="font-size: 16pt;">(Lifting pins)</span></h1>
+<p style="font-size: 14pt; line-height: 150%;">Note that the Z-Axis uses 
+ an open-loop micro-stepper and position values are in microsteps increasing 
+ in the upward direction.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<table style="line-height: 150%;" cellspacing="0" width="100%">
+	<col style="width: 19.292%;" />
+	<col style="width: 80.708%;" />
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">ZE</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">Enables 
+		 the z‐axis and energizes the motor’s windings. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">ZD</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">Disables 
+		 the z‐axis. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">ZHM</span></td>
+		<td style="vertical-align: top;"><p style="font-size: 14pt;">Moves 
+		 the lifting pins to the home flag near the bottom of their range 
+		 of motion and sets the position to zero.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">ZHS</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">Returns 
+		 1 or 0 to indicate the current state of the Z‐axis home sensor. 
+		 </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">ZMU</span></td>
+		<td style="vertical-align: top;"><p style="font-size: 14pt;">Turns 
+		 off the vacuum to the chuck, homes the axis if needed, and moves 
+		 the lifting pins to the position set by the variable pins_up_psn 
+		 used for wafer transfer with a robot.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">ZMD</span></td>
+		<td style="vertical-align: top;"><p style="font-size: 14pt;">Homes 
+		 the axis if needed and moves the lifting pins to the position 
+		 set by the variable pins_dn_psn which should be just below the 
+		 wafer but not touching it while the wafer rests on the chuck.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">ZMP&lt;s16bit&gt;, 
+		 </span>
+		<br /><span style="font-size: 14pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;u16bit&gt;, 
+		 </span>
+		<br /><span style="font-size: 14pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><p style="font-size: 14pt;">Starts 
+		 move to the position specified in the first parameter at the velocity 
+		 of the second parameter and acceleration of the third parameter.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">ZRS</span></td>
+		<td style="vertical-align: top;"><p style="font-size: 14pt;">Reads 
+		 the state of the Z‐axis and returns one of the following:</p>
+		<p style="font-size: 14pt;">H if the axis is not referenced to 
+		 home.</p>
+		<p style="font-size: 14pt;">U if the axis is in the Up position.</p>
+		<p style="font-size: 14pt;">D if the axis is in the Down position.</p>
+		<p style="font-size: 14pt;">P if the axis is referenced to home 
+		 but not in the up or down position.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">ZP</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">Returns 
+		 the &lt;s16bit&gt; value of the Z‐axis position. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">ZZ</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">Sets 
+		 the current position to zero and clears the homed state. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">ZS</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">Stops 
+		 motion of the Z-Axis. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">UWC</span></td>
+		<td style="vertical-align: top;"><p style="font-size: 14pt;">Unloads 
+		 a wafer from the chuck by releasing the vacuum hold and raising 
+		 the wafer off the chuck with the lifting pins.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">LWC</span></td>
+		<td style="vertical-align: top;"><p style="font-size: 14pt;">Loads 
+		 a wafer to the chuck by lowering the wafer onto the chuck with 
+		 the lifting pins and taking hold of the wafer with the vacuum 
+		 on.</p></td>
+	</tr>
+</table>
+</body>
+</html>

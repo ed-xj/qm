@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>End Effector Issue</title>
+<link rel="StyleSheet" href="../../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../../..";
+gCommonRootRelPath = "../../../..";
+gTopicId = "7.1.9.1.0_4";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > Appendix A > Troubleshooting" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../../ehlpdhtm.js"></script>
+
+<h1>End Effector Issue</h1>
+<p style="font-size: 14pt; line-height: 150%;"><span style="font-weight: bold;">Symptom:</span> 
+ Vacuum end effector is installed, and the command &quot;grip 1 on&quot; 
+ succeeds, but no vacuum is present on the end effector.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold; font-style: italic;">Check:</span> Issue 
+ the command &quot;config get robot&quot;. Verify that &quot;sim_com&quot; 
+ is set to &quot;false&quot;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Issue the following commands:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">config set Robot Sim_Com = false</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">reset</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">If the 
+ problem is solved, issue the command:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">config save</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Check:</span> Issue the command &quot;config 
+ get endeffector1&quot; or &quot;config get endeffector2&quot;, depending 
+ on the end effector concerned. Verify that &quot;SimGripper&quot; and 
+ &quot;Sim_Grip_Detect&quot; are set to &quot;false&quot;.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Issue the following commands</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">config set EndEffector1 SimGripper = false</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">config set EndEffector1 Sim_Grip_Detect = false</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">config set EndEffector2 SimGripper = false ; if 
+ used</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">config set EndEffector2 Sim_Grip_Detect = false 
+ ; if used</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">reset</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">If the 
+ problem is solved, issue the command:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">config save</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold; font-style: italic;">Check:</span> Issue 
+ the command &quot;config get robot&quot;. Verify that &quot;VacSwap&quot; 
+ is set to &quot;false&quot;. This setting allows the user to switch the 
+ activation of the vacuum to the wrist vacuum barbs if necessary. If set 
+ to true, &quot;grip 1 on&quot; would activate vacuum barb 2 and vice versa.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Issue the following commands:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">config set Robot VacSwap = false</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">reset</p>
+<p style="margin-left: 40px; font-family: Arial, sans-serif; font-size: 14pt; 
+	 line-height: 150%;">If the problem is solved, issue the command:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">config save</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">&#160;</p>
+<hr style="line-height: 150%;" width="50%" align="center" />
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;"><span style="font-weight: bold;">Symptom:</span> 
+ Vacuum end effector is installed, but issuing the command &quot;grip 1 
+ on&quot; results in a &quot;vacuum sense timeout error&quot;.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold; font-style: italic;">Check:</span> Issue 
+ the command &quot;config get endeffector1&quot; or &quot;config get endeffector2&quot;, 
+ depending on the end effector concerned. Verify that &quot;Type&quot; 
+ is set to &quot;VacGrip&quot;.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Issue the following commands:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">config set EndEffector1 Type = VacGrip</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">reset</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">If the 
+ problem is solved, issue the command:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">config save</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold; font-style: italic;">Check:</span> Issue 
+ the command &quot;config get robot&quot;. Verify that &quot;VacSwap&quot; 
+ is set to &quot;false&quot;. This setting allows the user to switch the 
+ activation of the vacuum to the wrist vacuum barbs if necessary. If set 
+ to true, &quot;grip 1 on&quot; would activate vacuum barb 2 and vice versa.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;"><span 
+	 style="font-weight: bold;">Remedy:</span> Issue the following commands</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">config set Robot VacSwap = false</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">reset</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">If the 
+ problem is solved, issue the command:</p>
+<p style="margin-left: 40px; font-family: Consolas, monospace; font-size: 14pt; 
+	 line-height: 150%;">config save</p>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Summary</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "9.1.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix D > Aligner Manual - API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Summary</h1>
+<p style="font-size: 14pt; line-height: 150%;">This document describes 
+ the serial command set for the rev 2.4 aligner firmware.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">DB-15 Connector Pinnout</p>
+<table style="line-height: 150%; border-collapse: separate;" cellspacing="0" 
+		 border="1">
+	<col width="45" />
+	<col width="212" />
+	<col width="51" />
+	<col width="199" />
+	<col width="199" />
+	<tr>
+		<td><p style="text-align: center; font-weight: bold; font-size: 14pt;">PIN</p></td>
+		<td><p style="text-align: center; font-weight: bold; font-size: 14pt;">SIGNAL</p></td>
+		<td><p style="text-align: center; font-weight: bold; font-size: 14pt;">DIR</p></td>
+		<td><p style="text-align: center; font-weight: bold; font-size: 14pt;">RS232 
+		 HOST CONN</p></td>
+		<td><p style="text-align: center; font-weight: bold; font-size: 14pt;">RS422 
+		 HOST CONN</p></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center; font-size: 14pt;">1</p></td>
+		<td><span style="font-size: 14pt;">RS422 TX+</span></td>
+		<td><p style="text-align: center; mso-char-type: symbol; mso-symbol-font-family: Wingdings; 
+				 font-weight: normal; font-size: 14pt;">→</p></td>
+		<td><span style="font-size: 14pt;">No connect</span></td>
+		<td><span style="font-size: 14pt;">RS422 RX+</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center; font-size: 14pt;">2</p></td>
+		<td><span style="font-size: 14pt;">RS232 TX / RS422 TX-</span></td>
+		<td><p style="text-align: center; mso-char-type: symbol; mso-symbol-font-family: Wingdings; 
+				 font-size: 14pt;">→</p></td>
+		<td><span style="font-size: 14pt;">RS232 RX</span></td>
+		<td><span style="font-size: 14pt;">RS422 RX-</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center; font-size: 14pt;">3</p></td>
+		<td><span style="font-size: 14pt;">RS232 RX / RS422 RX+</span></td>
+		<td><p style="text-align: center; font-size: 14pt;">←</p></td>
+		<td><span style="font-size: 14pt;">RS232 TX</span></td>
+		<td><span style="font-size: 14pt;">RS422 TX+</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center; font-size: 14pt;">4</p></td>
+		<td><span style="font-size: 14pt;">RS232 DTR / RS422 RX-</span></td>
+		<td><p style="text-align: center; font-size: 14pt;">←</p></td>
+		<td><span style="font-size: 14pt;">RS232 DTR</span></td>
+		<td><span style="font-size: 14pt;">RS422 TX-</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center; font-size: 14pt;">5</p></td>
+		<td><span style="font-size: 14pt;">Signal ground</span></td>
+		<td><p style="text-align: center; font-size: 14pt;">&#160;</p></td>
+		<td><span style="font-size: 14pt;">GND</span></td>
+		<td><span style="font-size: 14pt;">GND</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center; font-size: 14pt;">6</p></td>
+		<td><span style="font-size: 14pt;">24V power return from aligner</span></td>
+		<td><p style="text-align: center; mso-char-type: symbol; mso-symbol-font-family: Wingdings; 
+				 font-size: 14pt;">→</p></td>
+		<td><span style="font-size: 14pt;">GND</span></td>
+		<td><span style="font-size: 14pt;">GND</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center; font-size: 14pt;">7</p></td>
+		<td><span style="font-size: 14pt;">24V power supply to aligner</span></td>
+		<td><p style="text-align: center; font-size: 14pt;">←</p></td>
+		<td><span style="font-size: 14pt;">24V</span></td>
+		<td><span style="font-size: 14pt;">24V</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center; font-size: 14pt;">8</p></td>
+		<td><span style="font-size: 14pt;">24V power supply to aligner</span></td>
+		<td><p style="text-align: center; font-size: 14pt;">←</p></td>
+		<td><span style="font-size: 14pt;">24V</span></td>
+		<td><span style="font-size: 14pt;">24V</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center; font-size: 14pt;">9</p></td>
+		<td><span style="font-size: 14pt;">No connect</span></td>
+		<td><p style="text-align: center; font-size: 14pt;">&#160;</p></td>
+		<td><span style="font-size: 14pt;">No connect</span></td>
+		<td><span style="font-size: 14pt;">No connect</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center; font-size: 14pt;">10</p></td>
+		<td><span style="font-size: 14pt;">No connect</span></td>
+		<td><p style="text-align: center; font-size: 14pt;">&#160;</p></td>
+		<td><span style="font-size: 14pt;">No connect</span></td>
+		<td><span style="font-size: 14pt;">No connect</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center; font-size: 14pt;">11</p></td>
+		<td><span style="font-size: 14pt;">No connect</span></td>
+		<td><p style="text-align: center; font-size: 14pt;">&#160;</p></td>
+		<td><span style="font-size: 14pt;">No connect</span></td>
+		<td><span style="font-size: 14pt;">No connect</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center; font-size: 14pt;">12</p></td>
+		<td><span style="font-size: 14pt;">No connect</span></td>
+		<td><p style="text-align: center; font-size: 14pt;">&#160;</p></td>
+		<td><span style="font-size: 14pt;">No connect</span></td>
+		<td><span style="font-size: 14pt;">No connect</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center; font-size: 14pt;">13</p></td>
+		<td><span style="font-size: 14pt;">24V power return from aligner</span></td>
+		<td><p style="text-align: center; mso-symbol-font-family: Wingdings; 
+				 font-size: 14pt;">→</p></td>
+		<td><span style="font-size: 14pt;">GND</span></td>
+		<td><span style="font-size: 14pt;">GND</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center; font-size: 14pt;">14</p></td>
+		<td><span style="font-size: 14pt;">24V power return from aligner</span></td>
+		<td><p style="text-align: center; mso-symbol-font-family: Wingdings; 
+				 font-size: 14pt;">→</p></td>
+		<td><span style="font-size: 14pt;">GND</span></td>
+		<td><span style="font-size: 14pt;">GND</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center; font-size: 14pt;">15</p></td>
+		<td><span style="font-size: 14pt;">24V power supply to aligner</span></td>
+		<td><p style="text-align: center; font-size: 14pt;">←</p></td>
+		<td><span style="font-size: 14pt;">24V</span></td>
+		<td><span style="font-size: 14pt;">24V</span></td>
+	</tr>
+</table>
+</body>
+</html>

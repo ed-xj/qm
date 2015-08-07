@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Communication Options</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "9.1.0_6";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix D > Aligner Manual - API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Communication Options</h1>
+<p style="font-size: 14pt; line-height: 150%;">The 4 communication options 
+ that may be enabled and disabled are described below:</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<ul style="list-style: disc; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;"><span style="font-weight: bold;">Command 
+	 Echo Option</span><span> (default Enabled)</span></p></li>
+</ul>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">Commands 
+ can be categorized as either immediate or non‐immediate. Immediate commands 
+ are executed quickly as soon as they are received and do not have to wait 
+ for any mechanical process to complete. Non‐immediate commands, such as 
+ the move commands, may take variable amounts of time to complete. If the 
+ command echo response option is enabled, each command will respond immediately 
+ with the first character of the command to signify success or the character 
+ F to signify an error. Even the non‐immediate commands will return quickly 
+ with the command echo to let the host know the action has begun execution. 
+ To determine when a non‐immediate process is complete, there are status 
+ request commands. If there are any syntax errors, the question mark character 
+ will immediately be sent to indicate that the device failed parsing the 
+ command at that point and no operations were performed. Commands that 
+ return a value will return the echo response before returning the value.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<ul style="list-style: disc; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;"><span style="font-weight: bold;">Terminating 
+	 Character Option</span> (default Enabled)</p></li>
+</ul>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">If the 
+ terminating character option is enabled, all commands must be terminated 
+ with a carriage return character or a semicolon at the end of the command 
+ before they will execute.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<ul style="list-style: disc; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;"><span style="font-weight: bold;">Response 
+	 Carriage Return Option</span> (default Enabled)</p></li>
+</ul>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">If the 
+ response carriage return option is enabled, all commands will complete 
+ with a carriage return. This applies to all commands whether they pass 
+ or fail execution or parsing. *This option should be enabled, when using 
+ the text mode on commands that return a value, to know where the value 
+ ends.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<ul style="list-style: disc; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;"><span style="font-weight: bold;">Binary 
+	 Parameter Option</span> (default Disabled)</p></li>
+</ul>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">If the 
+ binary parameter option is enabled, the actual data bytes that form the 
+ value of command arguments and returns are sent or received starting with 
+ the least significant byte. All bytes must be sent for the size of the 
+ parameter (4 bytes sent for &lt;s32bit&gt;). Binary interpretation may 
+ be forced, even when it is globally disabled, by preceding the command 
+ with a lower case b character. With the binary parameter option disabled, 
+ these values are transferred in decimal text format as shown below.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&lt;u16bit&gt; 
+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;(5 decimal digits max)</p>
+<p style="margin-left: 80px; font-size: 14pt; line-height: 150%;">Valid 
+ arguments: &#160;&#160;&#160;&#160;&#160;&#160;&#160;00123, +123, 123, 
+ 0, +0000</p>
+<p style="margin-left: 80px; font-size: 14pt; line-height: 150%;">Returns: 
+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;123, 
+ 0</p>
+<p style="margin-left: 80px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&lt;s16bit&gt; 
+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;(5 decimal digits max)</p>
+<p style="margin-left: 80px; font-size: 14pt; line-height: 150%;">Valid 
+ arguments: &#160;&#160;&#160;&#160;&#160;&#160;&#160;00123, +123, 123, 
+ 0, +0000, ‐123, ‐00123</p>
+<p style="margin-left: 80px; font-size: 14pt; line-height: 150%;">Returns: 
+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+123, 
+ +0, ‐123</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&lt;u32bit&gt; 
+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;(10 decimal digits max)</p>
+<p style="margin-left: 80px; font-size: 14pt; line-height: 150%;">Valid 
+ arguments: &#160;&#160;&#160;&#160;&#160;&#160;&#160;0000123, +123, 12345670, 
+ 0, +000</p>
+<p style="margin-left: 80px; font-size: 14pt; line-height: 150%;">Returns: 
+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;123, 
+ 0</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&lt;s32bit&gt; 
+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;(10 decimal digits max)</p>
+<p style="margin-left: 80px; font-size: 14pt; line-height: 150%;">Valid 
+ arguments: &#160;&#160;&#160;&#160;&#160;&#160;&#160;00123456, +12345670, 
+ ‐123, 0, +0000000000</p>
+<p style="margin-left: 80px; font-size: 14pt; line-height: 150%;">Returns: 
+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+123, 
+ +0, ‐12345670, +1234500000</p>
+<p style="margin-left: 80px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">Note 
+ that signed returns will always contain the sign symbol. Numeric arguments 
+ sent as text must have one of the terminating characters at the end of 
+ the number. Only signed numbers may include a minus sign. If no sign is 
+ included, the number is interpreted as being positive. The response carriage 
+ return option should be enabled when reading a value returned with the 
+ binary parameter option disabled to indicate where the number ends. When 
+ sending multiple parameters with binary mode disabled, use a space or 
+ comma to separate the values.</p>
+</body>
+</html>

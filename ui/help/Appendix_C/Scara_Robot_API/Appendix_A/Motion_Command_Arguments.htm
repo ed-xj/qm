@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Motion Command Arguments</title>
+<link rel="StyleSheet" href="../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "8.1.2.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix C > Scara Robot API > Appendix A" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+<h1>Motion Command Arguments</h1>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">The arguments described below 
+ apply to the motion commands, <span style="font-weight: bold;"><a href="../API_Command_Reference/Move.htm">MOVE</a></span>, 
+ <span style="font-weight: bold;"><a href="../API_Command_Reference/Pick.htm">PICK</a></span>, 
+ <span style="font-weight: bold;"><a href="../API_Command_Reference/Place.htm">PLACE</a></span>, 
+ <span style="font-weight: bold;"><a href="../API_Command_Reference/Seize.htm">SEIZE</a></span>, 
+ <span style="font-weight: bold;"><a href="../API_Command_Reference/Release.htm">RELEASE</a></span> 
+ and, partially, to <span style="font-weight: bold;"><a href="../API_Command_Reference/Retract.htm">RETRACT</a></span>. 
+ See also the entries for those specific commands.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Syntax</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Arguments are either lone 
+ keywords, like <span style="font-weight: bold;">linear</span>, or they 
+ consist of a keyword followed by one or more numeric values. &quot;<span 
+	 style="font-weight: bold;">Syntactic sugar&quot;</span> The processor 
+ will parse (and ignore) commas and equal signs, which the host program 
+ may use to make the commands more readable. The semicolon, &quot; ; &quot; 
+ can be used for comments. All symbols on one line following</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">a semicolon will be ignored.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-weight: bold; font-size: 14pt; margin-left: 0in; margin-right: 0in; 
+	 margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">Arguments</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">Station 
+ name</span>: The <span style="font-style: italic;">first</span> argument 
+ to any motion command must be a station name. All other arguments are 
+ optional.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">Inside</span> 
+ or <span style="font-weight: bold;">perch</span>, if present, must appear 
+ after the station name. Other arguments may appear in any order.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">Inside</span>/<span 
+	 style="font-weight: bold;">Perch</span>: For motion commands <span 
+	 style="font-style: italic;">other than</span> <span style="font-weight: bold;">pick</span> 
+ and <span style="font-weight: bold;">place</span>, the <span style="font-style: italic;">second</span> 
+ argument may be the keyword <span style="font-weight: bold;">inside</span> 
+ or <span style="font-weight: bold;">perch</span>, indicating which pose 
+ is the commanded or target pose. If neither keyword is second, perch is 
+ assumed. Pick and place do not require the <span style="font-weight: bold;">inside</span> 
+ or <span style="font-weight: bold;">perch</span> keywords, and will ignore 
+ them if present.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">The <span style="font-style: italic;">remaining</span> 
+ arguments, enumerated below, may occur in any order. If an argument requires 
+ one or more values, they are coded as floating point numbers which may 
+ be in any C or C++ format.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">Index 
+ {num}</span>: Specify which slot. Indexes begin at one. Default is one. 
+ A <span style="font-weight: bold;">negative index</span> in a motion command 
+ other than pick or place means that the motion is to finish at the low, 
+ or stroked-down position for the indicated slot. For example, <span style="font-family: Consolas, monospace;">move 
+ &quot;Tool&quot; index = -2</span> means to move to the stroked-down position 
+ at slot number 2. (The equal sign is optional.) A positive index means 
+ to come in at the stroked-up or high position. <span style="font-weight: bold;">Pick</span> 
+ and <span style="font-weight: bold;">place</span> ignore the sign of the 
+ index, as they automatically perform the stroke-up or stroke-down as is 
+ appropriate.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">Offset 
+ {num} {num} {num} {num} [num]</span>: Move to the station position plus 
+ a specified offset. Offsets are by default specified in millimeters (z) 
+ and degrees (shoulder, elbow, wrist). If the end-effector for the station 
+ has a flipper, specify a fifth number, the flipper offset, in degrees. 
+ </p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Note: The offset should be 
+ small enough that it remains safe to move between perch and inside points 
+ in a straight line.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">Offset 
+ xyzw {num}{num}{num}{num}[num]</span>: Move to the station position plus 
+ an offset specified as xyz Cartesian coordinates (millimeters) and wrist 
+ angle (degrees). If the end-effector for the station has a flipper, the 
+ offset must specify a fifth number, the flipper offset in degrees. </p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Note: The offset should be 
+ small enough that it remains safe to move between perch and inside points 
+ in a straight line.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">Offset 
+ tool {num}{num}{num}{num}</span>: Move to the station position plus an 
+ offset specified as xyz Cartesian coordinates (millimeters) and tool angle 
+ (degrees), with respect to the tool reference frame.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">Linear</span>: 
+ Move the end-effector center point in a straight line. By default, motions 
+ from perch to inside or inside to perch at the same station are linear. 
+ Other moves are joint interpolated by default.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">Blend 
+ {percent}</span>: Blend the motion with any subsequent motion. Specify 
+ a blend coefficient in the range –1 to 100. By convention, a blend of 
+ –1 means to come to a stop and seek the command position with highest 
+ accuracy. Minus one is the default that is used if there is no blend argument 
+ in the command. Other numbers indicate how much a following motion command 
+ can blend (round the corner) with the one containing the blend argument. 
+ The represents a percentage of the motion’s deceleration time, the time 
+ during which the motion would decelerate to a stop if no following motion 
+ were to blend with it.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Blend commands associated 
+ with pick or place commands automatically apply to the last portion of 
+ the command, i.e., the move out to the perch position, which blends into 
+ the following move.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">WARNING</span>: 
+ <span style="font-style: italic;">Blending may occasionally lead to undesireable 
+ effects, such as cutting corners that are not meant to be cut, or moves 
+ that exceed allowable acceleration or velocity (which will result in errors). 
+ Be cautious, and use low speeds until the safety of the robot and equipment 
+ is assured.</span></p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Specialized versions of the 
+ blend command apply only to parts of pick or place commands. &quot;Pblend&quot; 
+ controls the blending of the move from the perch to the inside positions.&quot;Iblend&quot; 
+ controls the blending of the move from the inside position through the 
+ stroke. &quot;Sblend&quot; controls the blend from the stroke move through 
+ the move back out to perch.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Preceding the blend percentage 
+ with the letter &quot; F &quot; (e.g. &quot;F100&quot;) uses the minimum 
+ of the deceleration time of the current move and the acceleration time 
+ of next move to decide when to start the next move. This improves performance 
+ when blending a long move into a following short move by completely aborbing 
+ the short move’s acceleration and deceleration profile into that of the 
+ longer move.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Note: Elevator-type (vertical) 
+ stations behave somewhat differently, since during pick operations they 
+ move directly to the &quot;inside&quot; positions. By using the &quot;iblend&quot; 
+ parameter with the &quot; F &quot; prefix, the move coming in to pick 
+ a wafer can be smoothed out. In this case, the blend absorbs the short 
+ move from index -1 to index 1into the move coming into the</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">initial index -1 position. 
+ Example: &quot;pick elevator iblend F100&quot;.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">Speed 
+ {percent}</span>: Move with a top speed on each joint of at most the specified 
+ percentage of the joint speed limit. The argument must be in the range 
+ 1-100. The joint speed limit itself is the product the global speed setting 
+ which is a robot tuning parameter set in the factory by IRSI, the percentage 
+ specified by this SPEED parameter, and the speed override percentage, 
+ which is set on the teach pendant or using the SPEED command. In other 
+ words, the speed setting in the motion command and the speed parameter 
+ the host can set with the SPEED command are multiplicative.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Specialized versions of the 
+ speed command apply only to parts of pick or place commands. &quot;Ispeed&quot; 
+ controls the speed of the move from perch to inside. &quot;Sspeed&quot; 
+ controls the speed during the inside stroke move. &quot;Ospeed&quot; controls 
+ the speed of the move from inside to perch.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">Acc 
+ {percent}</span>: Move with accelerations specified as a percentage of 
+ the standard acceleration. The argument must be 20 or greater. The top 
+ limit is yet to be determined. Use extreme caution when moving at high 
+ accelerations. Test at lower accelerations, and increase the number gradually. 
+ There is no global ACC command that is analogous to the</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">global Speed command described 
+ above.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">Push_x 
+ {num} Push_y {num}</span>: – Move the end effector beyond the inside low 
+ position by the amount specified in mm, with respect to the tool reference 
+ frame, then return to the inside low position and continue with the operation. 
+ <span style="font-weight: bold;">Applies to Pick operations only.</span></p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">WARNING</span>: 
+ <span style="font-style: italic;">The &quot;Push&quot; argument is intended 
+ for end effectors having a spring-loaded pusher mechanism. Use of this 
+ argument with any other end effector type may result in wafer or equipment 
+ damage.</span></p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-weight: bold;">Delay 
+ {num}</span>: – On a place operation, delay moving from the inside high 
+ position to the inside low position by the amount specified in milliseconds 
+ to allow the vacuum chuck to repressurize. This is generally not needed 
+ for horizontal (e.g., cassette or chuck) stations. This is intended for 
+ vertical stations where the wafer or other payload is not as well supported. 
+ <span style="font-weight: bold;">Applies to Place operations using a vacuum 
+ chuck end effector only.</span></p>
+</body>
+</html>

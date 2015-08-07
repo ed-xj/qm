@@ -1,0 +1,1 @@
+gXMLBuffer ="<?xml version=\"1.0\" encoding=\"utf-8\" ?><data  src=\"toc9.js\"  name=\"Mastering The Robot\"><item name=\"Mastering The Robot\" url=\"Appendix_B/Scra_Robot_Manual_and_API/Mastering_The_Robot/Mastering_The_Robot.htm\" /><item name=\"Mastering The IR-820\" url=\"Appendix_B/Scra_Robot_Manual_and_API/Mastering_The_Robot/Mastering_The_IR-820.htm\" /></data>";

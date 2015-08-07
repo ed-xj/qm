@@ -1,0 +1,4 @@
+(function() {
+var toc =  [ { "type" : "item", "name" : "Station Teaching Strategies", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Appendix_C/Station_Teaching_Strategies/Station_Teaching_Strategies.htm" }, { "type" : "item", "name" : "Mapping Out a Strategy", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Appendix_C/Station_Teaching_Strategies/Mapping_Out_a_Strategy.htm" }, { "type" : "book", "name" : "Teaching Efficient Stations", "key" : "toc32" }, { "type" : "book", "name" : "Putting Scripts Together", "key" : "toc33" }, { "type" : "item", "name" : "Conclusion", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Appendix_C/Station_Teaching_Strategies/Conclusion.htm" } ];
+window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, { sync:true });
+})();

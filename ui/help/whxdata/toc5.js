@@ -1,0 +1,1 @@
+gXMLBuffer ="<?xml version=\"1.0\" encoding=\"utf-8\" ?><data  src=\"toc.js\"  name=\"System Software\"><item name=\"Automatic Mode\" url=\"System_Software/Automatic_Mode.htm\" /><item name=\"Semi Automatic Mode\" url=\"System_Software/Semi_Automatic_Mode.htm\" /><item name=\"Manual Mode\" url=\"System_Software/Introduction.htm\" /></data>";

@@ -1,0 +1,4 @@
+(function() {
+var toc =  [ { "type" : "item", "name" : "General Description", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Description_of_System_Components/Robot_Mechanical_Unit_(RMU)/General_Description.htm" }, { "type" : "item", "name" : "Cooling", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Description_of_System_Components/Robot_Mechanical_Unit_(RMU)/Cooling.htm" }, { "type" : "item", "name" : "Vacuum Hoses", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Description_of_System_Components/Robot_Mechanical_Unit_(RMU)/Vacuum_Hoses.htm" }, { "type" : "item", "name" : "Robot Mounting", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Description_of_System_Components/Robot_Mechanical_Unit_(RMU)/Robot_Mounting.htm" } ];
+window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, { sync:true });
+})();

@@ -1,0 +1,1633 @@
+﻿/* Style Sheet created by ImportPDF 1.0 */
+
+BODY {
+	font-family:Arial;
+	background-color:#ffffff;
+	font-size:13.18pt;
+	padding-left:0pt;
+}
+
+DIV {
+	font-size:13.18pt;
+	padding:0pt;
+	margin:0pt;
+}
+
+P {
+	margin:0;
+	font-size:13.18pt;
+}
+
+OL {
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+UL {
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+span.PdfCharStyle1 {
+	font-family:'Calibri'  , Calibri, sans-serif;
+	font-size:11pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:21;
+}
+
+span.PdfCharStyle2 {
+	font-family:'Calibri'  , Calibri, sans-serif;
+	font-size:18pt;
+	font-weight:normal;
+	color:#008000;
+	x-used-count:1;
+}
+
+span.PdfCharStyle4 {
+	font-family:'Calibri'  , Calibri, sans-serif;
+	font-size:14pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:40;
+}
+
+span.PdfCharStyle5 {
+	font-family:'Calibri'  , Calibri, sans-serif;
+	font-size:18pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:1;
+}
+
+span.PdfCharStyle8 {
+	font-family:'Calibri'  , Calibri, sans-serif;
+	font-size:18pt;
+	font-weight:normal;
+	color:#ff0000;
+	x-used-count:5;
+}
+
+span.PdfCharStyle11 {
+	font-family:'Calibri'  , Calibri, sans-serif;
+	font-size:22pt;
+	font-weight:normal;
+	color:#008000;
+	x-used-count:2;
+}
+
+span.PdfCharStyle12 {
+	font-family:'Calibri'  , Calibri, sans-serif;
+	font-size:12pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:2;
+}
+
+span.PdfCharStyle13 {
+	font-family:'Calibri-Bold'  , Calibri, sans-serif;
+	font-size:14pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:86;
+}
+
+span.PdfCharStyle15 {
+	font-family:'Calibri-Italic'  , Calibri, sans-serif;
+	font-size:14pt;
+	font-weight:normal;
+	font-style:italic;
+	color:#000000;
+	x-used-count:3;
+}
+
+span.PdfCharStyle17 {
+	font-family:'Calibri-Bold'  , Calibri, sans-serif;
+	font-size:14pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#0070c0;
+	x-used-count:1;
+}
+
+span.PdfCharStyle27 {
+	font-family:'Arial-Bold MT'  , Arial, sans-serif;
+	font-size:12pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#e4210f;
+	x-used-count:2;
+}
+
+span.PdfCharStyle28 {
+	font-family:'Times New Roman PS-Bold MT'  , Times, serif;
+	font-size:10pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:578;
+}
+
+span.PdfCharStyle29 {
+	font-family:'Arial-Bold MT'  , Arial, sans-serif;
+	font-size:24pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:95;
+}
+
+span.PdfCharStyle30 {
+	font-family:'Arial-Bold MT'  , Arial, sans-serif;
+	font-size:19pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:43;
+}
+
+span.PdfCharStyle31 {
+	font-family:'Arial-Bold MT'  , Arial, sans-serif;
+	font-size:60pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#ffffff;
+	x-used-count:19;
+}
+
+span.PdfCharStyle32 {
+	font-family:'Times New Roman PSMT'  , Times, serif;
+	font-size:10pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:812;
+}
+
+span.PdfCharStyle33 {
+	font-family:'Arial-Bold MT'  , Arial, sans-serif;
+	font-size:12pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:5;
+}
+
+span.PdfCharStyle36 {
+	font-family:'Times New Roman PSMT'  , Times, serif;
+	font-size:9pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:43;
+}
+
+span.PdfCharStyle37 {
+	font-family:'Times New Roman PS-Italic MT'  , Times, serif;
+	font-size:10pt;
+	font-weight:normal;
+	font-style:italic;
+	color:#000000;
+	x-used-count:55;
+}
+
+span.PdfCharStyle38 {
+	font-family:'Arial-Bold MT'  , Arial, sans-serif;
+	font-size:11pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:1;
+}
+
+span.PdfCharStyle39 {
+	font-family:'Arial MT'  , Arial, sans-serif;
+	font-size:18pt;
+	font-weight:normal;
+	color:#ff360f;
+	x-used-count:3;
+}
+
+span.PdfCharStyle42 {
+	font-family:'Symbol MT'  , Symbol, sans-serif;
+	font-size:10pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:1;
+}
+
+span.PdfCharStyle43 {
+	font-family:'Arial-Bold MT'  , Arial, sans-serif;
+	font-size:9pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:218;
+}
+
+span.PdfCharStyle44 {
+	font-family:'Times New Roman PSMT'  , Times, serif;
+	font-size:44pt;
+	font-weight:normal;
+	color:#e4210f;
+	x-used-count:1;
+}
+
+span.PdfCharStyle45 {
+	font-family:'Arial MT'  , Arial, sans-serif;
+	font-size:7pt;
+	font-weight:normal;
+	color:#000082;
+	x-used-count:1;
+}
+
+span.PdfCharStyle46 {
+	font-family:'Arial MT'  , Arial, sans-serif;
+	font-size:7pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:1;
+}
+
+span.PdfCharStyle48 {
+	font-family:'Arial-Bold MT'  , Arial, sans-serif;
+	font-size:13pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:1;
+}
+
+span.PdfCharStyle50 {
+	font-family:'Arial-Bold MT'  , Arial, sans-serif;
+	font-size:8pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#e4210f;
+	x-used-count:115;
+}
+
+span.PdfCharStyle51 {
+	font-family:'Arial-Bold Italic MT'  , Arial, sans-serif;
+	font-size:9pt;
+	font-weight:normal;
+	font-weight:bold;
+	font-style:italic;
+	color:#000000;
+	x-used-count:27;
+}
+
+span.PdfCharStyle52 {
+	font-family:'Symbol MT'  , Symbol, sans-serif;
+	font-size:9pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:8;
+}
+
+span.PdfCharStyle53 {
+	font-family:'Times New Roman PS-Bold MT'  , Times, serif;
+	font-size:10pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#ff360f;
+	x-used-count:12;
+}
+
+span.PdfCharStyle54 {
+	font-family:'Arial-Bold MT'  , Arial, sans-serif;
+	font-size:8pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#ff360f;
+	x-used-count:74;
+}
+
+span.PdfCharStyle57 {
+	font-family:'Times New Roman PS-Bold MT'  , Times, serif;
+	font-size:9pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:27;
+}
+
+span.PdfCharStyle58 {
+	font-family:'Times New Roman PS-Italic MT'  , Times, serif;
+	font-size:8pt;
+	font-weight:normal;
+	font-style:italic;
+	color:#000000;
+	x-used-count:6;
+}
+
+span.PdfCharStyle59 {
+	font-family:'Times New Roman PS-Bold Italic MT'  , Times, serif;
+	font-size:10pt;
+	font-weight:normal;
+	font-weight:bold;
+	font-style:italic;
+	color:#000000;
+	x-used-count:55;
+}
+
+span.PdfCharStyle61 {
+	font-family:monospace;
+	font-size:9pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:223;
+}
+
+span.PdfCharStyle62 {
+	font-family:'Arial-Bold MT'  , Arial, sans-serif;
+	font-size:8pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:10;
+}
+
+span.PdfCharStyle64 {
+	font-family:monospace;
+	font-size:10pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:55;
+}
+
+span.PdfCharStyle65 {
+	font-family:'Arial-Bold MT'  , Arial, sans-serif;
+	font-size:10pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:1226;
+}
+
+span.PdfCharStyle67 {
+	font-family:'Arial MT'  , Arial, sans-serif;
+	font-size:9pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:6;
+}
+
+span.PdfCharStyle68 {
+	font-family:'Arial MT'  , Arial, sans-serif;
+	font-size:10pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:1218;
+}
+
+span.PdfCharStyle69 {
+	font-family:'Times New Roman PS-Italic MT'  , Times, serif;
+	font-size:9pt;
+	font-weight:normal;
+	font-style:italic;
+	color:#000000;
+	x-used-count:1;
+}
+
+span.PdfCharStyle71 {
+	font-family:'Times New Roman PSMT'  , Times, serif;
+	font-size:10pt;
+	font-weight:normal;
+	color:#0000ff;
+	x-used-count:21;
+}
+
+span.PdfCharStyle72 {
+	font-family:'Times New Roman PS-Bold MT'  , Times, serif;
+	font-size:10pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#0000ff;
+	x-used-count:1;
+}
+
+span.PdfCharStyle74 {
+	font-family:'Times New Roman PS-Bold MT'  , Times, serif;
+	font-size:12pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:47;
+}
+
+span.PdfCharStyle75 {
+	font-family:monospace;
+	font-size:9pt;
+	font-weight:normal;
+	font-style:italic;
+	color:#000000;
+	x-used-count:132;
+}
+
+span.PdfCharStyle78 {
+	font-family:'Arial-Bold Italic MT'  , Arial, sans-serif;
+	font-size:8pt;
+	font-weight:normal;
+	font-weight:bold;
+	font-style:italic;
+	color:#000000;
+	x-used-count:1;
+}
+
+span.PdfCharStyle79 {
+	font-family:monospace;
+	font-size:9pt;
+	font-weight:normal;
+	color:#0000ff;
+	x-used-count:5;
+}
+
+span.PdfCharStyle80 {
+	font-family:monospace;
+	font-size:10pt;
+	font-weight:normal;
+	font-style:italic;
+	color:#000000;
+	x-used-count:19;
+}
+
+span.PdfCharStyle81 {
+	font-family:monospace;
+	font-size:10pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:17;
+}
+
+span.PdfCharStyle82 {
+	font-family:'Times New Roman PS-Bold MT'  , Times, serif;
+	font-size:7pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#e4210f;
+	x-used-count:1;
+}
+
+span.PdfCharStyle84 {
+	font-family:'Arial-Bold MT'  , Arial, sans-serif;
+	font-size:23pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#e4210f;
+	x-used-count:7;
+}
+
+span.PdfCharStyle86 {
+	font-family:'Wingdings-Regular'  , Wingdings, sans-serif;
+	font-size:11pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:10;
+}
+
+span.PdfCharStyle87 {
+	font-family:'Calibri'  , Calibri, sans-serif;
+	font-size:10pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:1;
+}
+
+span.PdfCharStyle88 {
+	font-family:'Calibri-Bold'  , Calibri, sans-serif;
+	font-size:12pt;
+	font-weight:normal;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:1;
+}
+
+span.PdfCharStyle89 {
+	font-family:'Calibri'  , Calibri, sans-serif;
+	font-size:12pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:1;
+}
+
+span.PdfCharStyle90 {
+	font-family:'Calibri'  , Calibri, sans-serif;
+	font-size:9pt;
+	font-weight:normal;
+	vertical-align:super;
+	color:#000000;
+	x-used-count:1;
+}
+
+span.PdfCharStyle91 {
+	font-family:monospace;
+	font-size:7pt;
+	font-weight:normal;
+	vertical-align:super;
+	color:#000000;
+	x-used-count:1;
+}
+
+span.PdfCharStyle92 {
+	font-family:'Arial-Bold MT'  , Arial, sans-serif;
+	font-size:14pt;
+	font-weight:normal;
+	font-weight:bold;
+	vertical-align:super;
+	color:#000000;
+	x-used-count:47;
+}
+
+span.PdfCharStyle93 {
+	font-family:'Arial-Black'  , Arial, sans-serif;
+	font-size:11pt;
+	font-weight:normal;
+	font-weight:bold;
+	vertical-align:super;
+	color:#000000;
+	x-used-count:3;
+}
+
+span.PdfCharStyle94 {
+	font-family:'Times New Roman PS-Bold MT'  , Times, serif;
+	font-size:12pt;
+	font-weight:normal;
+	font-weight:bold;
+	vertical-align:super;
+	color:#000000;
+	x-used-count:1;
+}
+
+span.PdfCharStyle95 {
+	font-family:'Arial-Bold MT'  , Arial, sans-serif;
+	font-size:12pt;
+	font-weight:normal;
+	font-weight:bold;
+	vertical-align:super;
+	color:#e4210f;
+	x-used-count:5;
+}
+
+p.PdfParaStyle01 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:11pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:235;
+}
+
+p.PdfParaStyle02 {
+	margin-top:10px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:11pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:25;
+}
+
+p.PdfParaStyle03 {
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:18pt;
+	font-weight:normal;
+	color:#008000;
+	x-used-count:5;
+}
+
+p.PdfParaStyle04 {
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:11pt;
+	font-weight:normal;
+	color:#008000;
+	x-used-count:1;
+}
+
+p.PdfParaStyle05 {
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:14pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:3;
+}
+
+p.PdfParaStyle06 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:14pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:124;
+}
+
+p.PdfParaStyle07 {
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:18pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:1;
+}
+
+p.PdfParaStyle08 {
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:11pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:49;
+}
+
+p.PdfParaStyle09 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:18pt;
+	font-weight:normal;
+	color:#008000;
+	x-used-count:21;
+}
+
+p.PdfParaStyle10 {
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:28pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:1;
+}
+
+p.PdfParaStyle11 {
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:28pt;
+	font-weight:normal;
+	color:#ff0000;
+	x-used-count:1;
+}
+
+p.PdfParaStyle12 {
+	margin-top:0px;
+	margin-left:40px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:14pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:24;
+}
+
+p.PdfParaStyle13 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:40px;
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:14pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:9;
+}
+
+p.PdfParaStyle14 {
+	margin-top:40px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:11pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:44;
+}
+
+p.PdfParaStyle15 {
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:14pt;
+	font-weight:normal;
+	color:#008000;
+	x-used-count:1;
+}
+
+p.PdfParaStyle16 {
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:18pt;
+	font-weight:normal;
+	color:#ff0000;
+	x-used-count:6;
+}
+
+p.PdfParaStyle17 {
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:14pt;
+	font-weight:normal;
+	color:#ff0000;
+	x-used-count:1;
+}
+
+p.PdfParaStyle18 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:18pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:14;
+}
+
+p.PdfParaStyle19 {
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:22pt;
+	font-weight:normal;
+	color:#008000;
+	x-used-count:3;
+}
+
+p.PdfParaStyle20 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:12pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:37;
+}
+
+p.PdfParaStyle21 {
+	margin-top:50px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:11pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:23;
+}
+
+p.PdfParaStyle22 {
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:12pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:7;
+}
+
+p.PdfParaStyle23 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri-Bold'   , Calibri, sans-serif;
+	font-size:14pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:333;
+}
+
+p.PdfParaStyle24 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri-Bold'   , Calibri, sans-serif;
+	font-size:18pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:26;
+}
+
+p.PdfParaStyle25 {
+	font-family:'Calibri-Italic'   , Calibri, sans-serif;
+	font-size:14pt;
+	font-weight:normal;
+	font-style:italic;
+	color:#000000;
+	x-used-count:3;
+}
+
+p.PdfParaStyle26 {
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:12pt;
+	font-weight:normal;
+	color:#00b0f0;
+	x-used-count:1;
+}
+
+p.PdfParaStyle27 {
+	font-family:'Calibri-Bold'   , Calibri, sans-serif;
+	font-size:14pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:7;
+}
+
+p.PdfParaStyle28 {
+	font-family:'Calibri-Bold'   , Calibri, sans-serif;
+	font-size:22pt;
+	font-weight:bold;
+	color:#008000;
+	x-used-count:2;
+}
+
+p.PdfParaStyle29 {
+	margin-top:30px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:11pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:99;
+}
+
+p.PdfParaStyle30 {
+	margin-top:0px;
+	margin-left:10px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri-Bold'   , Calibri, sans-serif;
+	font-size:14pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:320;
+}
+
+p.PdfParaStyle31 {
+	margin-top:0px;
+	margin-left:10px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:11pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:52;
+}
+
+p.PdfParaStyle32 {
+	font-family:'Arial MT'   , Arial, sans-serif;
+	font-size:30pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:2;
+}
+
+p.PdfParaStyle33 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial-Bold MT'   , Arial, sans-serif;
+	font-size:12pt;
+	font-weight:bold;
+	color:#ff0f00;
+	x-used-count:14;
+}
+
+p.PdfParaStyle34 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PSMT'   , Times, serif;
+	font-size:12pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:75;
+}
+
+p.PdfParaStyle35 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PS-Bold MT'   , Times, serif;
+	font-size:8pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:238;
+}
+
+p.PdfParaStyle36 {
+	font-family:'Times New Roman PS-Bold MT'   , Times, serif;
+	font-size:7pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:4;
+}
+
+p.PdfParaStyle37 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial MT'   , Arial, sans-serif;
+	font-size:18pt;
+	font-weight:normal;
+	color:#ff0f00;
+	x-used-count:36;
+}
+
+p.PdfParaStyle38 {
+	font-family:'Arial-Bold MT'   , Arial, sans-serif;
+	font-size:12pt;
+	font-weight:bold;
+	color:#e4210f;
+	x-used-count:5;
+}
+
+p.PdfParaStyle39 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PS-Bold MT'   , Times, serif;
+	font-size:10pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:353;
+}
+
+p.PdfParaStyle40 {
+	margin-top:40px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial-Bold MT'   , Arial, sans-serif;
+	font-size:24pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:8;
+}
+
+p.PdfParaStyle41 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PSMT'   , Times, serif;
+	font-size:10pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:798;
+}
+
+p.PdfParaStyle42 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial-Bold MT'   , Arial, sans-serif;
+	font-size:12pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:100;
+}
+
+p.PdfParaStyle43 {
+	margin-top:60px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PS-Bold MT'   , Times, serif;
+	font-size:8pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:14;
+}
+
+p.PdfParaStyle44 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PS-Bold MT'   , Times, serif;
+	font-size:12pt;
+	font-weight:bold;
+	color:#ffffff;
+	x-used-count:132;
+}
+
+p.PdfParaStyle45 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial-Bold MT'   , Arial, sans-serif;
+	font-size:60pt;
+	font-weight:bold;
+	color:#ffffff;
+	x-used-count:7;
+}
+
+p.PdfParaStyle46 {
+	margin-top:20px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PSMT'   , Times, serif;
+	font-size:10pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:10;
+}
+
+p.PdfParaStyle47 {
+	margin-top:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PSMT'   , Times, serif;
+	font-size:9pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:36;
+}
+
+p.PdfParaStyle48 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PSMT'   , Times, serif;
+	font-size:9pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:195;
+}
+
+p.PdfParaStyle49 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PS-Italic MT'   , Times, serif;
+	font-size:10pt;
+	font-weight:normal;
+	font-style:italic;
+	color:#000000;
+	x-used-count:79;
+}
+
+p.PdfParaStyle50 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial-Bold MT'   , Arial, sans-serif;
+	font-size:11pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:29;
+}
+
+p.PdfParaStyle51 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial MT'   , Arial, sans-serif;
+	font-size:18pt;
+	font-weight:normal;
+	color:#ff360f;
+	x-used-count:78;
+}
+
+p.PdfParaStyle52 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PS-Bold MT'   , Times, serif;
+	font-size:10pt;
+	font-weight:bold;
+	color:#e4210f;
+	x-used-count:44;
+}
+
+p.PdfParaStyle53 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial MT'   , Arial, sans-serif;
+	font-size:18pt;
+	font-weight:normal;
+	color:#e4210f;
+	x-used-count:37;
+}
+
+p.PdfParaStyle54 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial-Bold MT'   , Arial, sans-serif;
+	font-size:9pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:23;
+}
+
+p.PdfParaStyle55 {
+	margin-top:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PSMT'   , Times, serif;
+	font-size:10pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:36;
+}
+
+p.PdfParaStyle56 {
+	font-family:'Arial MT'   , Arial, sans-serif;
+	font-size:7pt;
+	font-weight:normal;
+	color:#000082;
+	x-used-count:3;
+}
+
+p.PdfParaStyle57 {
+	font-family:'Arial MT'   , Arial, sans-serif;
+	font-size:7pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:1;
+}
+
+p.PdfParaStyle58 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:monospace;
+	font-size:7pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:54;
+}
+
+p.PdfParaStyle59 {
+	font-family:'Arial-Bold MT'   , Arial, sans-serif;
+	font-size:13pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:3;
+}
+
+p.PdfParaStyle60 {
+	font-family:monospace;
+	font-size:7pt;
+	font-weight:normal;
+	vertical-align:super;
+	color:#000000;
+	x-used-count:1;
+}
+
+p.PdfParaStyle61 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial MT'   , Arial, sans-serif;
+	font-size:8pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:15;
+}
+
+p.PdfParaStyle62 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial-Bold MT'   , Arial, sans-serif;
+	font-size:8pt;
+	font-weight:bold;
+	color:#e4210f;
+	x-used-count:111;
+}
+
+p.PdfParaStyle63 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PS-Bold MT'   , Times, serif;
+	font-size:10pt;
+	font-weight:bold;
+	color:#ff360f;
+	x-used-count:22;
+}
+
+p.PdfParaStyle64 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial-Bold MT'   , Arial, sans-serif;
+	font-size:8pt;
+	font-weight:bold;
+	color:#ff360f;
+	x-used-count:68;
+}
+
+p.PdfParaStyle65 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PS-Bold MT'   , Times, serif;
+	font-size:7pt;
+	font-weight:bold;
+	color:#ff360f;
+	x-used-count:140;
+}
+
+p.PdfParaStyle66 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PS-Bold MT'   , Times, serif;
+	font-size:9pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:11;
+}
+
+p.PdfParaStyle67 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PS-Bold Italic MT'   , Times, serif;
+	font-size:10pt;
+	font-weight:bold;
+	font-style:italic;
+	color:#000000;
+	x-used-count:88;
+}
+
+p.PdfParaStyle68 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial-Bold MT'   , Arial, sans-serif;
+	font-size:23pt;
+	font-weight:bold;
+	color:#ff360f;
+	x-used-count:14;
+}
+
+p.PdfParaStyle69 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:monospace;
+	font-size:9pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:486;
+}
+
+p.PdfParaStyle70 {
+	font-family:monospace;
+	font-size:9pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:4;
+}
+
+p.PdfParaStyle71 {
+	font-family:'Times New Roman PS-Bold MT'   , Times, serif;
+	font-size:10pt;
+	font-weight:bold;
+	color:#ff0f00;
+	x-used-count:5;
+}
+
+p.PdfParaStyle72 {
+	font-family:'Arial-Bold MT'   , Arial, sans-serif;
+	font-size:8pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:4;
+}
+
+p.PdfParaStyle73 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial-Bold MT'   , Arial, sans-serif;
+	font-size:10pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:1322;
+}
+
+p.PdfParaStyle74 {
+	font-family:'Times New Roman PS-Bold MT'   , Times, serif;
+	font-size:9pt;
+	font-weight:bold;
+	color:#e4210f;
+	x-used-count:3;
+}
+
+p.PdfParaStyle75 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial MT'   , Arial, sans-serif;
+	font-size:9pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:18;
+}
+
+p.PdfParaStyle76 {
+	font-family:'Arial MT'   , Arial, sans-serif;
+	font-size:18pt;
+	font-weight:normal;
+	color:#ff0f00;
+	x-used-count:1;
+}
+
+p.PdfParaStyle77 {
+	font-family:'Arial MT'   , Arial, sans-serif;
+	font-size:10pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:4;
+}
+
+p.PdfParaStyle78 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:monospace;
+	font-size:10pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:171;
+}
+
+p.PdfParaStyle79 {
+	font-family:'Times New Roman PSMT'   , Times, serif;
+	font-size:9pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:2;
+}
+
+p.PdfParaStyle80 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PS-Italic MT'   , Times, serif;
+	font-size:9pt;
+	font-weight:normal;
+	font-style:italic;
+	color:#000000;
+	x-used-count:96;
+}
+
+p.PdfParaStyle81 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial-Bold MT'   , Arial, sans-serif;
+	font-size:24pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:52;
+}
+
+p.PdfParaStyle82 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Arial-Bold MT'   , Arial, sans-serif;
+	font-size:15pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:259;
+}
+
+p.PdfParaStyle83 {
+	font-family:'Times New Roman PSMT'   , Times, serif;
+	font-size:10pt;
+	font-weight:normal;
+	color:#0000ff;
+	x-used-count:2;
+}
+
+p.PdfParaStyle84 {
+	font-family:'Times New Roman PS-Bold MT'   , Times, serif;
+	font-size:10pt;
+	font-weight:bold;
+	color:#0000ff;
+	x-used-count:1;
+}
+
+p.PdfParaStyle85 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:monospace;
+	font-size:9pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:82;
+}
+
+p.PdfParaStyle86 {
+	margin-top:20px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:11pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:287;
+}
+
+p.PdfParaStyle87 {
+	font-family:'Arial MT'   , Arial, sans-serif;
+	font-size:12pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:4;
+}
+
+p.PdfParaStyle88 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PS-Bold MT'   , Times, serif;
+	font-size:7pt;
+	font-weight:bold;
+	color:#e4210f;
+	x-used-count:39;
+}
+
+p.PdfParaStyle89 {
+	font-family:'Times New Roman PSMT'   , Times, serif;
+	font-size:11pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:1;
+}
+
+p.PdfParaStyle90 {
+	font-family:monospace;
+	font-size:10pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:2;
+}
+
+p.PdfParaStyle91 {
+	margin-top:10px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Times New Roman PSMT'   , Times, serif;
+	font-size:12pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:20;
+}
+
+p.PdfParaStyle92 {
+	font-family:'Calibri-Bold'   , Calibri, sans-serif;
+	font-size:11pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:5;
+}
+
+p.PdfParaStyle93 {
+	margin-top:0px;
+	margin-left:20px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:11pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:10;
+}
+
+p.PdfParaStyle94 {
+	margin-top:0px;
+	margin-left:10px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Wingdings-Regular'   , Wingdings, sans-serif;
+	font-size:11pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:10;
+}
+
+p.PdfParaStyle95 {
+	font-family:'Times New Roman PS-Bold MT'   , Times, serif;
+	font-size:10pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:4;
+}
+
+p.PdfParaStyle96 {
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:10pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:5;
+}
+
+p.PdfParaStyle97 {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-indent:0px;
+	font-family:'Calibri'   , Calibri, sans-serif;
+	font-size:10pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:10;
+}
+
+p.PdfParaStyle98 {
+	font-family:'Times New Roman PSMT'   , Times, serif;
+	font-size:12pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:9;
+}
+
+p.PdfParaStyle99 {
+	font-family:'Calibri-Bold'   , Calibri, sans-serif;
+	font-size:12pt;
+	font-weight:bold;
+	color:#000000;
+	x-used-count:1;
+}
+
+p.PdfParaStyle100 {
+	font-family:'Times New Roman PSMT'   , Times, serif;
+	font-size:10pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:10;
+}
+
+li.p-PdfParaStyle70 {
+	font-family:monospace;
+	font-size:9pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:4;
+}
+
+li.p-PdfParaStyle55 {
+	font-family:'Times New Roman PSMT'    , Times, serif;
+	font-size:10pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:36;
+}
+
+li.p-PdfParaStyle47 {
+	font-family:'Times New Roman PSMT'    , Times, serif;
+	font-size:9pt;
+	font-weight:normal;
+	color:#000000;
+	x-used-count:36;
+}

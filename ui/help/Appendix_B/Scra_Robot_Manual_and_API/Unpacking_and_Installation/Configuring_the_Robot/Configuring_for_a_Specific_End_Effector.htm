@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Configuring for a Specific End Effector</title>
+<link rel="StyleSheet" href="../../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../../..";
+gCommonRootRelPath = "../../../..";
+gTopicId = "7.1.5.2.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > Unpacking and Installation > Configuring the Robot" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../../ehlpdhtm.js"></script>
+
+<h1>Configuring for a Specific End Effector</h1>
+<p style="font-size: 14pt; line-height: 150%;">Setting up the robot to 
+ use a customer supplied and effector requires setting the controller's 
+ configuration to specify the correct end effector type and length.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The following instructions 
+ apply to vacuum-grip end effectors.</p>
+<ol style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Mount the 
+	 end effector on the robot's wrist.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Attach the 
+	 end effector's vacuum inlet to one of the vacuum barb on the wrist. 
+	 (Use whichever is most convenient. This will be checked and configured 
+	 later.)</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Seal the 
+	 remaining vacuum barb by attaching to it a short length of vacuum 
+	 hose, blocked with ball bearing.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Power on 
+	 the robot.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Verify that 
+	 an active vacuum source is plugged into the back of the robot. You 
+	 should hear vacuum pulling through the end effector.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Establish 
+	 a host connection to the controller.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">From the 
+	 host control program, issue the command &quot;Reset&quot;.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Issue the 
+	 command &quot;config get endeffector1&quot;. This will show all the 
+	 configuration options for end effector 1. (For a complete description 
+	 of all the configuration options, see the API Manual.)</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Verify that 
+	 the end effector type is set to &quot;VacGrip&quot;. If not, issue 
+	 the command &quot;config set endeffector 1 type = vacgrip&quot;.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Verify that 
+	 &quot;SimGripper&quot; and &quot;Sim_Grip_Detect&quot; are set to 
+	 &quot;false&quot;. If not, issue the commands &quot;config set endeffector1 
+	 SimGripper = false&quot; and &quot;config set endeffector1 Sim_Grip_Detect 
+	 = false&quot; and &quot;config set endeffector1 Sim_Grip_Detect = 
+	 false&quot;.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Issue the 
+	 command &quot;grip 1 off&quot;. The vacuum should stop flowing through 
+	 the end effector. If it does not. issue the command &quot;config set 
+	 robot vac_swap = true&quot; and then &quot;reset&quot;. Again issue 
+	 the command &quot;grip 1 off&quot;.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Place a 
+	 payload on the end effector and issue the command &quot;grip1 on&quot;. 
+	 The payload should now be secured to the end effector. Issue the command 
+	 &quot;grip 1 off&quot; to release it.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Issue the 
+	 command &quot;config save&quot;. This will save configuration information 
+	 you have changed up to this point.</p></li>
+</ol>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">In order for the robot to 
+ execute linear motions correctly, the controller has to know the length 
+ of the end effector being used. This is done by first measuring the distance 
+ from the center of the robot's wrist joint to the center of the end effector's 
+ payload, then modifying a configuration variable in the controller using 
+ a host connection.</p>
+<ol style="list-style: decimal;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Pace a test 
+	 payload with centerline markings on the end effector.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Measure 
+	 the distance between the center of rotation of the end effector mount 
+	 and the center of the payload, in millimeters.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">From the 
+	 host control program, issue the command &quot;config set endeffector1 
+	 frame_x = distance in mm&quot;.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Issue the 
+	 command &quot;config save&quot;.</p></li>
+</ol>
+</body>
+</html>

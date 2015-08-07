@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Stationing Commands (Apply to the chuck)</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "9.1.0_21";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix D > Aligner Manual - API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Stationing Commands (Apply to the chuck)</h1>
+<p style="font-size: 14pt; line-height: 150%;">There are 10 station positions, 
+ numbered 0 through 3, plus 3 special stations, that may be taught or edited 
+ in RAM, and saved to non‐volatile flash memory. On startup, the flash 
+ values are loaded. See the memory commands to see how to store all current 
+ settings into flash memory. The three special stations are Z, P, and N. 
+ Z is the user zero offset that modifies the zero position. This value 
+ should normally be zero. At the zero position, the aligner is near the 
+ negative end of its full motion. P is the positive move limit position. 
+ And N is the negative move limit position.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<table style="line-height: 150%;" cellspacing="0" width="100%">
+	<col style="width: 19.292%;" />
+	<col style="width: 80.708%;" />
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">NT#</span></td>
+		<td><span style="font-size: 14pt;">Teaches the current position 
+		 for station position #. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">NRM#</span></td>
+		<td><span style="font-size: 14pt;">Returns the station position 
+		 in millidegrees &lt;s32bit&gt;. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">NRC#</span></td>
+		<td><span style="font-size: 14pt;">Returns the station position 
+		 in counts &lt;s32bit&gt;. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">NWM#&lt;s32bit&gt;</span></td>
+		<td><span style="font-size: 14pt;">Writes the station position 
+		 in millidegrees. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">NMC#&lt;s32bit&gt;</span></td>
+		<td><span style="font-size: 14pt;">Writes the station position 
+		 in counts. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">NM#</span></td>
+		<td><p style="font-size: 14pt;">Moves at the currently selected 
+		 speed to the position in RAM for station number #. If the slide 
+		 is already in motion when this command is called, the current 
+		 motion will be stopped and the command will fail.</p></td>
+	</tr>
+</table>
+</body>
+</html>

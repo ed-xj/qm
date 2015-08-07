@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Description</title>
+<link rel="StyleSheet" href="../../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../../..";
+gCommonRootRelPath = "../../../..";
+gTopicId = "8.1.3.1.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix C > Scara Robot API > Appendix B > Automatic Input-state Checking" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../../ehlpdhtm.js"></script>
+
+<h1>Description</h1>
+<p style="font-size: 14pt; line-height: 150%;">There are three general 
+ cases where input line checking is desirable before initiating a</p>
+<p style="font-size: 14pt; line-height: 150%;">motion:</p>
+<ol style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Before moving 
+	 to a station's perch position from outside the station. An object 
+	 (door, wafer, etc) may be in the way and cause a collision during 
+	 the approach to the station.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Before moving 
+	 from a station's perch position to its inside position, such as when 
+	 waiting for a PDO to open before entering a cassette.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Before releasing 
+	 a wafer. In stations that require handing the wafer off to other automation, 
+	 releasing at the wrong time could result in a dropped wafer.</p></li>
+</ol>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The <span style="font-weight: bold;"><a 
+	 href="../../API_Command_Reference/Set.htm">SET</a></span> command 
+ accepts a station attribute, <span style="font-weight: bold;">INPUTS</span>. 
+ It takes a list of three arguments:</p>
+<p style="font-size: 14pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">SET 
+ (</span><span style="font-family: Consolas, monospace; font-style: italic;">station</span><span 
+	 style="font-family: Consolas, monospace;">) INPUTS (</span><span style="font-family: Consolas, monospace; 
+	 font-style: italic;">approach</span><span style="font-family: Consolas, monospace;">), 
+ (</span><span style="font-family: Consolas, monospace; font-style: italic;">inside</span><span 
+	 style="font-family: Consolas, monospace;">), (</span><span style="font-family: Consolas, monospace; 
+	 font-style: italic;">release</span><span style="font-family: Consolas, monospace;">)</span> 
+ The three arguments respectively define the input required to approach 
+ the station, move into the station, and release the wafer.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Each argument must be either 
+ the keyword <span style="font-weight: bold;">NONE</span>, indicating no 
+ input checking is to be</p>
+<p style="font-size: 14pt; line-height: 150%;">performed (the default), 
+ an asterisk or &quot;splat&quot; (*), indicating the value is to remain 
+ unchanged, or an attribute-value pair that specifies an input line number 
+ and the required state:</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">(<span 
+	 style="font-style: italic;">input-number</span>) = (<span style="font-style: italic;">state</span>)</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The valid values for (<span 
+	 style="font-style: italic;">state</span>) are <span style="font-weight: bold;">ON</span> 
+ and <span style="font-weight: bold;">OFF</span>. The input line specified 
+ must be physically present or an error will be generated.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Examples:</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">SET 
+ C1 INPUTS NONE, 2=ON, NONE</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">SET 
+ ELEV INPUTS 3=OFF, NONE, 2=ON</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">SET 
+ ELEV INPUTS NONE, *, *</p>
+</body>
+</html>

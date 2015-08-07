@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Host Configuration Parameters</title>
+<link rel="StyleSheet" href="../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "8.1.4.0_11";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix C > Scara Robot API > Appendix C" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+
+<h1>Host Configuration Parameters</h1>
+<p style="font-size: 14pt;">Host communication-relatived variables.</p>
+<h2 style="font-size: 18pt;">Syntax</h2>
+<p style="font-size: 14pt;">Config {Get|Set} {Host} {Args}</p>
+<h2 style="font-size: 18pt;">Arguments</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Com_Port: {TCP:5001 | COM4 
+ | CONSOLE}</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Com_Baud: {19200}</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">EOT: {True | False}</p>
+<h2 style="font-size: 18pt;">Examples</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">config 
+ get host</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">&gt;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">config 
+ set Com_Port = TCP:5001</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">config 
+ set Com_Baud = 19200</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">config 
+ set EOT = False</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<ol style="list-style: lower-alpha; font-size: 14pt;">
+	<li style="margin-left: -20px; font-size: 14pt;"><p style="line-height: 150%;">Host 
+	 Type: TCP on port 5001</p></li>
+</ol>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">config 
+ get host</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">&gt;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">config 
+ set Com_Port = TCP:5001</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">config 
+ set Com_Baud = 19200</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<ol start="2" style="list-style: lower-alpha; font-size: 14pt;">
+	<li style="margin-left: -20px; font-size: 14pt;"><p style="line-height: 150%;">Host 
+	 type: Serial on COM 4 at 19200 baud</p></li>
+</ol>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">config 
+ get host</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">&gt;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">config 
+ set Com_Port = COM4</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">config 
+ set Com_Baud = 19200</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<ol start="3" style="list-style: lower-alpha; font-size: 14pt;">
+	<li style="margin-left: -20px; font-size: 14pt;"><p style="line-height: 150%;">Host 
+	 Type: Console IO</p></li>
+</ol>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">config 
+ get host</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">&gt;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; line-height: 150%;">config 
+ set Com_Port = Console</p>
+<p>&#160;</p>
+</body>
+</html>

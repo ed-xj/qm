@@ -1,0 +1,4 @@
+(function() {
+var toc =  [ { "type" : "item", "name" : "Robot Mechanical Unit (RMU)", "url" : "Description_of_Tool_Components/Robot_Mechanical_Unit_(RMU).htm" }, { "type" : "item", "name" : "Scara Controller", "url" : "Description_of_Tool_Components/Scara_Controller.htm" }, { "type" : "item", "name" : "Flipper", "url" : "Description_of_Tool_Components/Flipper.htm" }, { "type" : "item", "name" : "Gripper (Vortex/Edge gripper)", "url" : "Description_of_Tool_Components/Gripper_(Vortex_Edge_gripper).htm" }, { "type" : "item", "name" : "Pre-Aligner", "url" : "Description_of_Tool_Components/Pre-Aligner.htm" }, { "type" : "item", "name" : "Mapper", "url" : "Description_of_Tool_Components/Mapper.htm" }, { "type" : "item", "name" : "PLC", "url" : "Description_of_Tool_Components/PLC.htm" }, { "type" : "item", "name" : "Load Port", "url" : "Description_of_Tool_Components/Load_Port.htm" } ];
+window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, { sync:true });
+})();

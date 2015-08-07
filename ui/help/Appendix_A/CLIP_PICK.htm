@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2015" />
+<title>CLIP_PICK</title>
+<link rel="StyleSheet" href="../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "..";
+gCommonRootRelPath = "..";
+gTopicId = "6.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix A" />
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js"></script>
+
+
+<h1>CLIP_PICK</h1>
+<table style="line-height: 150%;" cellspacing="0" width="100%" border="1">
+	<col style="width: 33%;" />
+	<col style="width: 67%;" />
+	<tr>
+		<td style="border-top-style: Solid; border-left-width: 4px; border-left-style: Solid; 
+			 border-top-width: 4px;"><span style="font-size: 14pt;">COMMAND</span></td>
+		<td style="border-top-style: Solid; border-top-width: 4px; border-right-width: 4px; 
+			 border-right-style: Solid;"><span style="font-size: 14pt;">CLIP_PICK</span></td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 4px; border-left-style: Solid;"><span 
+		 style="font-size: 14pt;">DEVICE</span></td>
+		<td style="border-right-width: 4px; border-right-style: Solid;"><span 
+		 style="font-size: 14pt;">ROBOT (APPLICATOR)</span></td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 4px; border-left-style: Solid;"><span 
+		 style="font-size: 14pt;">PROCESS 1</span></td>
+		<td style="border-right-width: 4px; border-right-style: Solid;"><span 
+		 style="font-size: 14pt;">YES</span></td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 4px; border-left-style: Solid;"><span 
+		 style="font-size: 14pt;">PROCESS 2</span></td>
+		<td style="border-right-width: 4px; border-right-style: Solid;"><span 
+		 style="font-size: 14pt;">NO</span></td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 4px; border-left-style: Solid;"><span 
+		 style="font-size: 14pt;">WAIT UNTIL COMPLETE</span></td>
+		<td style="border-right-width: 4px; border-right-style: Solid;"><span 
+		 style="font-size: 14pt;">YES</span></td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 4px; border-left-style: Solid;"><span 
+		 style="font-size: 14pt;">WILL JUMP</span></td>
+		<td style="border-right-width: 4px; border-right-style: Solid;"><span 
+		 style="font-size: 14pt;">YES</span></td>
+	</tr>
+	<tr>
+		<td style="border-bottom-style: Solid; border-left-width: 4px; 
+			 border-left-style: Solid; border-bottom-width: 4px;"><span 
+		 style="font-size: 14pt;">EXAMPLE</span></td>
+		<td style="border-bottom-style: Solid; border-bottom-width: 4px; 
+			 border-right-width: 4px; border-right-style: Solid;"><span 
+		 style="font-size: 14pt;">#CLIP_PICK###</span></td>
+	</tr>
+</table>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="line-height: 150%; font-weight: bold; font-size: 18pt;">DESCRIPTION</p>
+<p style="font-size: 14pt; line-height: 150%;">Prepares the applicator 
+ to pick a clip from the clip drum. Moves the scara robot to the correct 
+ index required to pick a clip.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="line-height: 150%; font-weight: bold; font-size: 18pt;">NOTES</p>
+<p style="font-size: 14pt; line-height: 150%;">The scara robot will move 
+ to the correct index reported from the clip drum. Use the command <a href="CLIP_POSITION.htm" 
+	 style="font-size: 14pt;">CLIP_POSITION</a> prior to issuing this command.</p>
+</body>
+</html>

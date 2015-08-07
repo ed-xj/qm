@@ -1,0 +1,4 @@
+(function() {
+var toc =  [ { "type" : "item", "name" : "Putting Scripts Together", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Appendix_C/Station_Teaching_Strategies/Putting_Scripts_Together/Putting_Scripts_Together.htm" }, { "type" : "item", "name" : "Blending", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Appendix_C/Station_Teaching_Strategies/Putting_Scripts_Together/Blending.htm" }, { "type" : "item", "name" : "Linear Motions", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Appendix_C/Station_Teaching_Strategies/Putting_Scripts_Together/Linear_Motions.htm" }, { "type" : "item", "name" : "Speed and Acceleration", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Appendix_C/Station_Teaching_Strategies/Putting_Scripts_Together/Speed_and_Acceleration.htm" } ];
+window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, { sync:true });
+})();

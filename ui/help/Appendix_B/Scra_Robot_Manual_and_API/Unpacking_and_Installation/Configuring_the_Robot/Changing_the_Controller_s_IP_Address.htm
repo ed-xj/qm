@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Changing the Controller's IP Address</title>
+<link rel="StyleSheet" href="../../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../../..";
+gCommonRootRelPath = "../../../..";
+gTopicId = "7.1.5.2.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > Unpacking and Installation > Configuring the Robot" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../../ehlpdhtm.js"></script>
+
+<h1>Changing the Controller's IP Address</h1>
+<p style="font-size: 14pt; line-height: 150%;">The controller comes from 
+ the factory with a default IP address of 10.0.99.99, and a subnet mask 
+ of 255.255.255.0. If this is not compatible with your application, the 
+ IP address and subnet mask can be changed. This instruction describes 
+ how to change the IP address of the IRSI controller/robot in order to 
+ be compatible with different networks.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Materials required:</p>
+<ul style="list-style: disc; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Host Computer</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Null Ethernet 
+	 Cable</p></li>
+</ul>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Procedure:</p>
+<p style="font-size: 14pt; line-height: 150%;">The IP address of host computer 
+ must be temporarily changed to communicate with IRSI controller/robot. 
+ This will be IP: 10.0.X.X (where &quot;X.X&quot; is some address other 
+ than the controler's) and subnet mask: 255.255.0.0. These instructions 
+ assume you are using Windows 2000.</p>
+<ol style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">On the host 
+	 computer, right click on Network Places.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Click on 
+	 Local Area Connection.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Click properties.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Highlight 
+	 Internet Protocol (TCP/IP).</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Click properties. 
+	 (Make a note of the addresses you change so you can change them back 
+	 when you are finished.)</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Change the 
+	 IP address to : 10.0.X.X.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Change the 
+	 subnet mask should be: 255.255.0.0.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Click &quot;OK&quot;.</p></li>
+</ol>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The next step is to connect 
+ to the controller using FTP, and retrieve the tcpip.cfg file from the 
+ controller.</p>
+<ol style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Connect 
+	 a null cable from host computer to IRSI controller port labeled &quot;Ethernet&quot;.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">From the 
+	 host's Start menu, click &quot;Run...&quot;.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">In the &quot;Open:&quot; 
+	 text box, type &quot;cmd&quot;, and click on &quot;OK&quot;.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">In the DOS 
+	 console window, at the command prompt, type &quot;cd\&quot; and press 
+	 &quot;Enter&quot; to go to the computer's root directory.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">At the command 
+	 prompt, type &quot;md irtemp&quot; to create a temporary directory 
+	 where you can place and edit file.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">At the command 
+	 prompt, type &quot;cd irtemp&quot; to enter the newly created temporary 
+	 directory.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">At command 
+	 prompt type &quot;FTP 10.0.99.99&quot;.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">When prompted 
+	 for a user ID, press &quot;Enter&quot;.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">When prompted 
+	 for a password, press &quot;Enter&quot;.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">At the command 
+	 prompt, type &quot;get tcpip.cfg&quot;.</p></li>
+</ol>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The next step is to edit 
+ the tcpip.cfg file</p>
+<ol style="list-style: decimal;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Using windows 
+	 Explorer, navigate to the &quot;irtemp&quot; directory.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Open the 
+	 tcpip.cfg with a text editor. The second line of the file (the first 
+	 IP address) is the IP address assigned to the controller. Change this 
+	 to the desired IP address. The third line of the file (the second 
+	 address) is the subnet mask. Change this to the desired subnet mask 
+	 value.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Save the 
+	 changes to the file, and exit the text editor.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">At command 
+	 prompt in the console window, type &quot;put tcpip.cfg&quot;.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">End the 
+	 FTP session by typing &quot;bye&quot; in the console window, followed 
+	 by &quot;exit&quot;.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Restore 
+	 the host computer's original TCP/IP configuration using the notes 
+	 from above.</p></li>
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Power cycle 
+	 the IRSI controller.</p></li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Variable Commands</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "10.1.0_8";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix E > Gripprt Manual - API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Variable Commands</h1>
+<table cellspacing="0" width="100%">
+	<col style="width: 19.292%;" />
+	<col style="width: 80.708%;" />
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt;">VR&lt;name&gt;</p></td>
+		<td><p style="font-size: 14pt; line-height: 150%;">Reads the value 
+		 of the variable named in the argument &lt;name&gt; from RAM. The 
+		 return format depends on the variable read.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt;">VFR&lt;name&gt;</p></td>
+		<td><p style="font-size: 14pt; line-height: 150%;">Reads the value 
+		 of the variable named in the argument &lt;name&gt; from RAM like 
+		 the VR command, but also lists the bits if the variable is a bitfield 
+		 type variable.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt;">VBS&lt;name&gt;&lt;bit&gt;</p></td>
+		<td><p style="font-size: 14pt; line-height: 150%;">Sets the bit 
+		 number specified in the &lt;bit&gt; param of the bitfield variable 
+		 specified in the &lt;name&gt; param. Bits are numbered with the 
+		 LSB as zero.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt;">VBC&lt;name&gt;&lt;bit&gt;</p></td>
+		<td><p style="font-size: 14pt; line-height: 150%;">Clears the bit 
+		 number specified in the &lt;bit&gt; param of the bitfield variable 
+		 specified in the &lt;name&gt; param. Bits are numbered with the 
+		 LSB as zero.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt;">VW&lt;name&gt;&lt;val&gt;</p></td>
+		<td><p style="font-size: 14pt; line-height: 150%;">Writes the value 
+		 specified in the second argument &lt;val&gt; to the variable named 
+		 in the first argument &lt;name&gt; to RAM. The argument value 
+		 depends on the variable being set.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt;">VL</p></td>
+		<td><p style="font-size: 14pt; line-height: 150%;">Outputs a list 
+		 of all the variables available and their current values. This 
+		 command is intended for manual use on a terminal for diagnostics. 
+		 One line is output for each variable and uses the syntax of the 
+		 VW command to allow simple cut and paste operations for setting 
+		 new values.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%; font-size: 14pt;">VFL</p></td>
+		<td><p style="font-size: 14pt; line-height: 150%;">Lists all variables 
+		 as the VL command, but also lists the bits for each bitfield type 
+		 variable.</p></td>
+	</tr>
+</table>
+<p>&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The following variables 
+ are available:</p>
+<table style="line-height: 150%;" cellspacing="0" width="100%">
+	<col style="width: 16.955%;" />
+	<col style="width: 13.736%;" />
+	<col style="width: 69.309%;" />
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">comm_cnfg</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u32bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Serial 
+		 host communications configuration bits.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">can_comm_cnfg</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u32bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">CANBUS 
+		 host communications configuration bits.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">sys_cnfg</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">System 
+		 configuration bits.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">io_cnfg</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">System 
+		 I/O configuration bits.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">level_cnfg</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">System 
+		 I/O levels configuration bits.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">type</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Gripper 
+		 type identifier returned by GT command.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">baud</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u32bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Baud 
+		 rate for host serial communications.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">jog_vel</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Slow 
+		 velocity for jogging linear travel of gripping tips.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">pin_jog_vel</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Slow 
+		 velocity for jogging pin rotational movement of gripping tips.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">grip_vel</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Velocity 
+		 used during grip motion.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">grip_acc</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Acceleration 
+		 used during grip motion.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">release_vel</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Velocity 
+		 used during release motion.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">release_acc</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Acceleration 
+		 used during release motion.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">*extend_vel</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Velocity 
+		 used during extend motion of special type gripper.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">*extend_acc</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Acceleration 
+		 used during extend motion of special type gripper.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">*retract_vel</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Velocity 
+		 used during retract motion of special type gripper.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">*retract_acc</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Acceleration 
+		 used during retract motion of special type gripper.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">pin_vel</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Velocity 
+		 used during pin rotation of gripping tips.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">pin_acc</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Acceleration 
+		 used during pin rotation of gripping tips.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">pin_down_psn</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Allows 
+		 software adjustment of rational tips in the down state.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">*grip_psn</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Pincher 
+		 gripped position for special type gripper.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">grip_fail_psn</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Max 
+		 travel of gripping tip from released position.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">*extend_fail_psn</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Max 
+		 travel of gripping tip from released position.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">grip_force</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Grip 
+		 holding force.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">deglitch_filter</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Discrete 
+		 input sampling filter count for deglitching signals.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">move_current_0</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Current 
+		 setting for stepper 0 motor while in motion.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">hold_current_0</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Current 
+		 setting for stepper 0 motor while in motion.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">move_current_1</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Current 
+		 setting for stepper 1 motor while in motion.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">hold_current_1</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Current 
+		 setting for stepper 1 motor while in motion.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">move_current_2</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Current 
+		 setting for stepper 2 motor while in motion.</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">hold_current_2</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt; 
+												 font-family: Arial, sans-serif;">Current 
+		 setting for stepper 2 motor while in motion.</span></td>
+	</tr>
+</table>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">* These variables are not 
+ used by most grippers but are used on clip applicator style grippers only.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Note: Editing the variables 
+ above should only be done with full comprehension of what the effects. 
+ This document does not provide the information needed for such understanding. 
+ Please contact QM to learn more.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Using the memory commands 
+ below, all the variable values may be transferred to and from FLASH.</p>
+</body>
+</html>

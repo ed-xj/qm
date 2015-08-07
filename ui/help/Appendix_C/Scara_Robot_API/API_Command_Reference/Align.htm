@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Align</title>
+<link rel="StyleSheet" href="../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "8.1.1.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix C > Scara Robot API > API Command Reference" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+
+<h1>Align <span style="font-size: 18pt;">- Start an alignment operation 
+ on the PA-800 prealigner.</span></h1>
+<p style="font-size: 14pt; font-weight: normal; font-style: italic; text-decoration: none; ">type: 
+ queued </p>
+<h2 style="font-size: 18pt;">Syntax</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt;">align {1 
+ | 2} {notch | flat} {<span style="font-style: italic;">wafer-size</span>} 
+ [station name]</p>
+<h2 style="font-size: 18pt;">Arguments</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">{1 
+ | 2}</span>: Specifies the prealigner which is to do the aligning.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">notch</span>: 
+ (default): Tells the PA-800 to expect a notched wafer.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">flat</span>: 
+ Tells the PA-800 to expect a wafer with a flat.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">wafer-size</span>: 
+ Diameter of wafer in millimeters. Default is 200. Valid sizes are 100, 
+ 150, 200 and 300.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">station 
+ name</span>: aligns using the prealigner associated with the specified 
+ station.</p>
+<h2 style="font-size: 18pt;">Description</h2>
+<p style="font-size: 14pt; line-height: 150%;"><span style="font-weight: bold;">Align</span> 
+ starts the prealigner to finding the center and orientation of the wafer. 
+ When the prealigner is finished doing that, the controller sends the host 
+ an END-ALIGN event. The <span style="font-weight: bold;">align</span> 
+ command does not block execution of the command queue while the prealigner 
+ is working. The host program may synchronize subsequent operations (such 
+ as removing an aligned wafer) in either of two ways: </p>
+<ol style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">The host may wait 
+	 for the END-ALIGN event before sending commands that must not execute 
+	 until the prealigner finishes.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">The host may issue 
+	 the <span style="font-weight: bold;">wait align</span> command ahead 
+	 of commands that must not execute until the prealigner finishes. The 
+	 <span style="font-weight: bold;">wait align</span> command blocks 
+	 execution of the command queue until the END-ALIGN event occurs.</p></li>
+</ol>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">When the controller sends 
+ the END-ALIGN event to the host, the wafer is ready to be picked up centered 
+ on the endeffector. </p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">By default, the wafer will 
+ be prepared for pick-up with the notch or flat at zero orientation (under 
+ the light house). Optionally, the host may issue the <span style="font-weight: bold;">fiduciary</span> 
+ command prior to the first call to <span style="font-weight: bold;">align</span> 
+ to change the defined orientation of an aligned wafer.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Note: When &quot;align mode&quot; 
+ (see &quot;Config&quot;) is set to &quot;robot&quot;, the robot will automatically 
+ make the XY adjustment by picking up at a point not exactly at the taught 
+ prealigner inside position, but centered under the wafer. The controller 
+ automatically makes the position adjustment, based on data sent from the 
+ prealigner, when the host issues a <span style="font-weight: bold;">move</span> 
+ command into the prealigner or a <span style="font-weight: bold;">pick</span> 
+ command at the prealigner.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">See also: <span style="font-weight: bold; 
+	 font-style: italic;"><a href="Fiduciary.htm">Fiduciary</a></span>, 
+ <span style="font-weight: bold; font-style: italic; background-color: #ffff00;">Wait 
+ align</span>.</p>
+<h2 style="font-size: 18pt;">Events</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt;">!E END-ALIGN&lt;tab&gt;{<span 
+	 style="font-style: italic;">host command, as received</span>}</p>
+<h2 style="font-size: 18pt;">Examples</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">fiduciary 
+ 180 ; notch to be closest to the robot’s wrist</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">place 
+ pre ; put wafer in prealigner</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">align 
+ notch ; start aligning</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">pick 
+ tool ; get processed wafer</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">place 
+ load1 index 5 ; put it away</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">move 
+ pre blend 100 ; go back to prealigner</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">wait 
+ align ; be sure alignment is done</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">pick 
+ pre ; get the wafer</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">place 
+ tool ; put wafer in processing station</p>
+<p style="font-family: Consolas, monospace; font-weight: bold; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">The robot will place a wafer 
+ in the prealigner, and alignment will start. It will then get a wafer 
+ from the &quot;tool&quot; station, and place it into station &quot;load1&quot; 
+ in slot 1. The robot will then move to the &quot;pre&quot; station, and 
+ decelerate to a stop if the alignment has not completed. Otherwise, the 
+ <span style="font-weight: bold;">wait align</span> command will complete 
+ and due to the blend 100 qualifier on</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">the <span style="font-weight: bold;">move</span> 
+ statement, the <span style="font-weight: bold;">pick</span> operation 
+ will begin without the robot stopping.</p>
+</body>
+</html>

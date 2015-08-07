@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Variable Commands</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "9.1.0_18";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix D > Aligner Manual - API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Variable Commands</h1>
+<table style="line-height: 150%;" cellspacing="0" width="100%">
+	<col style="width: 19.292%;" />
+	<col style="width: 80.708%;" />
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">VR&lt;name&gt;</span></td>
+		<td><p style="font-size: 14pt;">Reads the value of the variable 
+		 named in the argument &lt;name&gt; from RAM. The return format 
+		 depends on the variable read.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">VW&lt;name&gt;&lt;val&gt;</span></td>
+		<td><p style="font-size: 14pt;">Writes the value specified in the 
+		 second argument &lt;val&gt; to the variable named in the first 
+		 argument &lt;name&gt; to RAM. The argument value depends on the 
+		 variable being set.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">VL</span></td>
+		<td><p style="font-size: 14pt;">Outputs a list of all the variables 
+		 available and their current values. This command is intended for 
+		 manual use on a terminal for diagnostics. One line is output for 
+		 each variable and uses the syntax of the VW command to allow simple 
+		 cut and paste operations for setting new values.</p></td>
+	</tr>
+</table>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">The following variables 
+ are available:</p>
+<table style="line-height: 150%;" cellspacing="0" width="100%">
+	<col style="width: 16.955%;" />
+	<col style="width: 13.736%;" />
+	<col style="width: 69.309%;" />
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">mP</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;s32bit&gt; 
+		 &#160;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">measured 
+		 position of the chuck angle in encoder counts (72000 per rev)</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">mE</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;s32bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">measured 
+		 servo error in encoder counts</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">pwm</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">for 
+		 internal use only</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">comm_cnfg</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">holds 
+		 the communication configuration setting bits</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">sys_cnfg</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">holds 
+		 the system configuration setting bits</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">baud</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u32bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">baud 
+		 rate (will be used at startup if saved to flash)</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">cnts_per_rot</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u32bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">chuck 
+		 resolution (do not change)</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">ks</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">scale 
+		 factor for all servo gains</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">kp</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">proportional 
+		 servo gain</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">ki</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">integral 
+		 servo gain</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">ki_m</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">integral 
+		 servo gain while in motion</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">kd</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">derivative 
+		 servo gain</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">err_lim</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">servo 
+		 error limit</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">isum_lim</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u32bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">integrator 
+		 limit</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">isum_lim_m</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u32bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">integrator 
+		 limit while in motion</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">cal_empty</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">alignment 
+		 sensor calibration value with sensor completely unblocked</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">cal_blocked</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">alignment 
+		 sensor calibration value with sensor completely blocked</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">vac_min</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">minimum 
+		 vacuum level in ADC counts to indicate a gripped wafer</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">fine_calc</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">setting 
+		 for align algorithms</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">fid_width</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;s32bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">diagnostic 
+		 width of fiducial in millidegrees</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">orient_ang</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;s32bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">angle 
+		 of fiducial orientation after align in millidegrees</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">max_notch</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;s32bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">max 
+		 allowed value of measured width of notch in millidegrees</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">max_flat</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;s32bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">max 
+		 allowed value of measured width of flat in millidegrees</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">min_flat</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;s32bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">min 
+		 allowed value of measured width of flat in millidegrees</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">z_homed</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u8bit&gt;</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">diagnostic</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">pins_up_psn</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;s16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">pins 
+		 up position of z‐axis in stepper counts from home</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">pins_dn_psn</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;s16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">pins 
+		 down position of z‐axis in stepper counts from home</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">pins_up_vel</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">velocity 
+		 for pins up move of z‐axis</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">pins_dn_vel</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">velocity 
+		 for pins down move of z‐axis</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">pins_up_acc</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">acceleration 
+		 for pins up move of z‐axis</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">pins_dn_acc</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">acceleration 
+		 for pins down move of z‐axis</span></td>
+	</tr>
+	<tr style="height: 35px;">
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">rel_del_ms</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">&lt;u16bit&gt;*</span></td>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">millisecond 
+		 delay before turning off the vacuum chuck and raising pins</span></td>
+	</tr>
+</table>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">* Using the memory commands 
+ below, all the variable values marked with an asterisk above may be transferred 
+ to and from FLASH.</p>
+</body>
+</html>

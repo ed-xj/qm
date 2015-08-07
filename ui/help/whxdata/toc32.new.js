@@ -1,0 +1,4 @@
+(function() {
+var toc =  [ { "type" : "item", "name" : "Teaching Efficient Stations", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Appendix_C/Station_Teaching_Strategies/Teaching_Efficient_Stations/Teaching_Efficient_Stations.htm" }, { "type" : "item", "name" : "Verifying Configuration", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Appendix_C/Station_Teaching_Strategies/Teaching_Efficient_Stations/Verifying_Configuration.htm" }, { "type" : "item", "name" : "Leveling", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Appendix_C/Station_Teaching_Strategies/Teaching_Efficient_Stations/Leveling.htm" }, { "type" : "item", "name" : "Station Teaching", "url" : "Appendix_B/Scra_Robot_Manual_and_API/Appendix_C/Station_Teaching_Strategies/Teaching_Efficient_Stations/Station_Teaching.htm" } ];
+window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, { sync:true });
+})();

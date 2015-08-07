@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Speed and Acceleration</title>
+<link rel="StyleSheet" href="../../../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../../../..";
+gCommonRootRelPath = "../../../../..";
+gTopicId = "7.1.11.1.2.0_4";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > Appendix C > Station Teaching Strategies > Putting Scripts Together" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../../../ehlpdhtm.js"></script>
+
+<h1>Speed and Acceleration</h1>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Once the overall shape of 
+ the sequence is determined by &quot;blend&quot; and &quot;linear&quot; 
+ arguments, the final touches are made by adjusting the speed and acceleration 
+ parameters of stations as necessary.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Ideally, the sequence should 
+ be able to run at 100% speed at all locations, however this is not always 
+ the case. For example, running the stroke up or down moves inside a cassette 
+ at 100% speed might be too jarring, depending on the payload, in that 
+ case, the &quot;sspeed&quot; argument on the pick or place could be used 
+ to slow that portion of the operation to acceptable levels.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Note that the percentage specified 
+ is a percentage of the current speed, not maximum speed.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Some examples:</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">pick 
+ pdo1 index 5 sspeed 50 ; During the pick, stroke at 50% speed</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">place 
+ pdo1 index 10 ispeed 60 ; During the place, move inside at 60% speed</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">pick 
+ pdo3 index 1 ispeed 90 ospeed 60; Go in at 90%, leave at 60%</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">move 
+ via1 speed 80 ; Make the move to &quot;via1&quot; at 80% speed</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">The use of acceleration arguments 
+ can smooth out moves be reducing the acceleration rate. This may be desirable 
+ in applications where friction alone is holding a payload. </p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">Example:</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">pick 
+ pdo1 acc 70 ; Accelerate at 70%</p>
+</body>
+</html>

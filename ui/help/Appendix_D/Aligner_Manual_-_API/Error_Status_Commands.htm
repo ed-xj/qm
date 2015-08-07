@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Error Status Commands</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "9.1.0_11";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix D > Aligner Manual - API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Error Status Commands</h1>
+<table cellspacing="0" width="100%">
+	<col style="width: 19.292%;" />
+	<col style="width: 80.708%;" />
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%;"><span 
+		 style="font-size: 14pt;">ESC</span></p></td>
+		<td><p style="line-height: 150%;"><span style="font-size: 14pt;">Clears 
+		 the Error Status. </span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%;"><span 
+		 style="font-size: 14pt;">ESG</span></p></td>
+		<td><p style="line-height: 150%;"><span style="font-size: 14pt;">Returns 
+		 1 if any errors have occurred since the last ESC command. The 
+		 return is zero, 0 if there have been no errors. </span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%;"><span 
+		 style="font-size: 14pt;">ESF</span></p></td>
+		<td><p style="line-height: 150%;"><span style="font-size: 14pt;">Returns 
+		 the code of the first error encountered since the error status 
+		 was clear. If the return is zero, the error status is clear indicating 
+		 no errors have occurred since the last ESC. Returns a two digit 
+		 hexidecimal number in text form. </span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%;"><span 
+		 style="font-size: 14pt;">ESL</span></p></td>
+		<td><p style="line-height: 150%;"><span style="font-size: 14pt;">Returns 
+		 the code of the last error encountered. (Most recently encountered 
+		 error.) Returns a two digit hexidecimal number in text form. </span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><p style="line-height: 150%;"><span 
+		 style="font-size: 14pt;">ESB</span></p></td>
+		<td><p style="line-height: 150%;"><span style="font-size: 14pt;">Returns 
+		 the last command that failed. </span></p></td>
+	</tr>
+</table>
+</body>
+</html>

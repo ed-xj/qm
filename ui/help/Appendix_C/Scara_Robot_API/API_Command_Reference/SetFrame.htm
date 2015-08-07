@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+ <title>SetFrame</title>
+<link rel="StyleSheet" href="../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "8.1.1.0_44";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix C > Scara Robot API > API Command Reference" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+
+<h1>SetFrame <span style="font-size: 18pt;">- Set a user frame definition.</span></h1>
+<p style="font-size: 14pt; font-weight: normal; font-style: italic; text-decoration: none; ">type: 
+ queued</p>
+<h2 style="font-size: 18pt;">Syntax</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt;">setframe 
+ {frame} {x} {y} {z} {w}</p>
+<h2 style="font-size: 18pt;">Arguments</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">frame</span>: 
+ A contiguous string of alpha-numeric characters, or any printable text 
+ enclosed in double quotation marks.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;"><span style="font-family: Consolas, monospace;">x</span><span 
+	 style="font-family: Arial, sans-serif;">,</span><span style="font-family: Consolas, monospace;"> 
+ y</span><span style="font-family: Arial, sans-serif;">,</span><span style="font-family: Consolas, monospace;"> 
+ z</span><span style="font-family: Arial, sans-serif;">,</span><span style="font-family: Consolas, monospace;"> 
+ w</span>: (in millimeters) and the W (Yaw) rotation (in degrees) of a 
+ user-defined frame. Parameters are evaluated in world frame.</p>
+<h2 style="font-size: 18pt;">Description</h2>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">You may define up to nine 
+ frames of reference (&quot;user frames&quot;). Because the end-effector 
+ is constrained to lie in a plane parallel to the world frame's xy plane, 
+ we do not support frames with an arbitrary pitch. Thus the frame is defined 
+ only by its x,y,z origin in the world frame, and its w rotation (yaw) 
+ relative to the world frame. Frames may be specified in the API calls 
+ <span style="font-style: italic;">SET</span>, <span style="font-style: italic;">RCP</span>, 
+ and <span style="font-style: italic;">MAPPER</span> <span style="font-style: italic;">DATA</span>. 
+ Frames may also be used for teach pendant jogging.</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; margin-left: 0in; margin-right: 0in; margin-top: 0pt; 
+	 margin-bottom: 0pt; line-height: 150%;">See also, <span style="font-weight: bold;"><a 
+	 href="Save.htm" style="font-size: 14pt;">SAVE</a></span>, <a href="Restore.htm" 
+	 style="font-weight: bold; font-size: 14pt;">RESTORE</a>, <a href="GetFrame(s).htm" 
+	 style="font-weight: bold; font-size: 14pt;">GETFRAMES</a>, <a href="Set.htm" 
+	 style="font-weight: bold; font-size: 14pt;">SET</a>, <a href="RCP.htm" 
+															 style="font-weight: bold; 
+															 font-size: 14pt;">RCP</a>, 
+ and <span style="font-weight: bold;"><a href="Mapper.htm" style="font-size: 14pt;">MAPPER</a></span>.</p>
+<h2 style="font-size: 18pt;">Events</h2>
+<p style="font-family: Consolas, monospace; font-size: 14pt;">!E END-SETFRAME&lt;tab&gt;{<span 
+	 style="font-style: italic;">host command, as received</span>}</p>
+<h2 style="font-size: 18pt;">Examples</h2>
+<p style="font-family: Consolas, monospace; font-weight: bold; font-size: 14pt; 
+	 margin-left: 0in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; 
+	 line-height: 150%;">Setframe &quot;my frame&quot; 23.692, -66.392, 
+ 88.02, 90</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">&gt;</p>
+<p style="font-family: Consolas, monospace; font-size: 14pt; margin-left: 0in; 
+	 margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; line-height: 150%;">!E 
+ END-SETFRAMESetframe &quot;my frame&quot; 23.692, -66.392, 88.02, 90</p>
+</body>
+</html>

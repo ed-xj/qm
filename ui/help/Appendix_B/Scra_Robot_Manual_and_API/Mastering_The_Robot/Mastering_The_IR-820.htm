@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+<title>Mastering The IR-820</title>
+<link rel="StyleSheet" href="../../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "7.1.6.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B > Scra Robot Manual > Mastering The Robot" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+<h1>Mastering The IR-820</h1>
+<p style="font-size: 14pt; line-height: 150%;">Mastering and calibrating 
+ the robot establishes with the controller a correlation between servo 
+ encoder position and the robot's hard and soft stops. This process begins 
+ with moving the robot to a known position, and then telling the controller 
+ that it has arrived there.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Note: The robot is mastered 
+ at the factory prior to shipment. Mastering will not have to be done unless 
+ the batteries have come loose during shipment, or if the robot has been 
+ stored for an extended period. The robot does not need to be remastered 
+ during the course of normal operations.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">Prepare for mastering:</p>
+<ol style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="line-height: 150%;">Lower the 
+	 Z-axis slowly until you hit the hard stop. You should just be able 
+	 to see light between the robot's aft arm and its top deck.</p></li>
+</ol>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">Note: 
+ When the robot actually arrives at the hard stop, you may receive a &quot;current 
+ excess&quot; alarm. If you receive this alarm, press the &quot;RESET&quot; 
+ button to clear it.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<ol start="2" style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">Press the &quot;E-stop&quot; 
+	 button to de-servo the robot.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">Gently rotate 
+	 the aft arm until it hits the hard stop.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">Gently rotate 
+	 the aft arm in the opposite direction about 360 degree until it faces 
+	 directly away from the battery compartment lid on the top flange of 
+	 the robot. This is the aft arm's approximate center position, as the 
+	 arm can move about 720 degree total.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">Gently rotate 
+	 the forearm until it hits the hard stop.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">Gently rotate 
+	 the forearm in the opposite direction about 360 degree until it points 
+	 toward the battery compartment. This is the forearm approximate center 
+	 position.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">Gently rotate 
+	 the wrist until it hits the hard stop.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">Gently rotate 
+	 the wrist in the opposite direction about 360 degree until it points 
+	 directly away from the battery compartment. This is the wrist's approximate 
+	 center position.</p></li>
+</ol>
+<p style="margin-left: 0px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 0px; font-size: 14pt; line-height: 150%;">Mastering:</p>
+<ol style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">Insert the mastering 
+	 peg into the hole provided in the top deck.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">The mastering 
+	 position of the robot is achieved when all three arms touch the mastering 
+	 peg on the side opposite the battery box. Press the &quot;E-stop&quot; 
+	 button and move all of the arms manually counter clockwise close to 
+	 the mastering peg, so that as each arm is being backed onto the mastering 
+	 peg, the arm above it will not hit first.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">Place the teach 
+	 pendant in &quot;JOINT&quot; mode by pressing the &quot;COORD&quot; 
+	 button until &quot;JOINT&quot; appears on the teach pendant display.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">Very slowly jog 
+	 the aft arm at 1% speed counterclockwise until it just touches the 
+	 mastering peg.</p></li>
+</ol>
+<p style="margin-left: 0px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">Note: 
+ The arm may touch the raised ring on the mastering ped first, or it may 
+ touch the recessed area first. Whichever touches first, that is the correct 
+ position.</p>
+<p style="margin-left: 40px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<ol start="5" style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">Slowly jog the 
+	 forearm counterclockwise until it just touches the mastering peg.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">Slowly jog the 
+	 wrist counterclockwise until it just touches the mastering peg.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">From the teach 
+	 pendant, press the &quot;pass control&quot; button.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">From the host 
+	 communication program, issue the command &quot;master&quot;.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">Waiting six seconds 
+	 for the mastering to complete.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">From the host 
+	 communication program, issue the command &quot;reset&quot;.</p></li>
+</ol>
+<p style="margin-left: 0px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 0px; font-size: 14pt; line-height: 150%;">Finishing 
+ up:</p>
+<ol style="list-style: decimal; font-size: 14pt;">
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">From the host 
+	 communication program, issue the command &quot;pass control&quot;.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">Using the teach 
+	 pendant &quot;-Y&quot; button (which moves the forearm clockwise), 
+	 back the arms off the mastering peg.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">Press the &quot;E-stop&quot; 
+	 button to de-servo the robot.</p></li>
+	<li style="font-size: 14pt;"><p style="margin-left: 0px; font-size: 14pt; 
+									 line-height: 150%;">Unscrew the mastering 
+	 peg.</p></li>
+</ol>
+<p style="margin-left: 0px; font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="margin-left: 0px; font-size: 14pt; line-height: 150%;">The robot 
+ is now mastered and ready to use.</p>
+</body>
+</html>

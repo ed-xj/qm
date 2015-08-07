@@ -1,0 +1,4 @@
+(function() {
+var toc =  [ { "type" : "book", "name" : "Introduction", "key" : "toc10" }, { "type" : "item", "name" : "References", "url" : "Appendix_B/Scra_Robot_Manual_and_API/References.htm" }, { "type" : "book", "name" : "Safety", "key" : "toc11" }, { "type" : "book", "name" : "Description of System Components", "key" : "toc13" }, { "type" : "book", "name" : "User IO Interface", "key" : "toc16" }, { "type" : "book", "name" : "Unpacking and Installation", "key" : "toc17" }, { "type" : "book", "name" : "Mastering The Robot", "key" : "toc20" }, { "type" : "book", "name" : "The Teach Pendant", "key" : "toc21" }, { "type" : "book", "name" : "Teaching Stations", "key" : "toc23" }, { "type" : "book", "name" : "Appendix A", "key" : "toc25" }, { "type" : "book", "name" : "Appendix B", "key" : "toc28" }, { "type" : "book", "name" : "Appendix C", "key" : "toc30" } ];
+window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, { sync:true });
+})();

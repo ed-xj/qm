@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2015" />
+ <title>Position Commands (Apply to the chuck)</title>
+<link rel="StyleSheet" href="../../s_QM_2.2_MANUAL.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "9.1.0_15";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix D > Aligner Manual - API" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Position Commands <span style="font-size: 16pt;">(Apply to the chuck)</span></h1>
+<p style="font-size: 14pt; line-height: 150%;">Positions are maintained 
+ and operated upon internally in encoder counts and interpolator counts. 
+ Some commands allow the host to use micron or millidegree units instead 
+ of counts, but internally the values are just converted to and from counts. 
+ There are 8388.6 interpolator counts per micron and 128 encoder counts 
+ per millimeter. Absolute moves issued while the slide is already in motion 
+ will cause the current motion to stop and return an error.</p>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<table style="line-height: 150%;" cellspacing="0" width="100%">
+	<col style="width: 19.292%;" />
+	<col style="width: 80.708%;" />
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">PMR</span></td>
+		<td><span style="font-size: 14pt;">Returns the &lt;s32bit&gt; command 
+		 position in millidegrees. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">PCR</span></td>
+		<td><span style="font-size: 14pt;">Returns the &lt;s32 bit&gt; 
+		 command position in counts. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">PCA</span></td>
+		<td><span style="font-size: 14pt;">Returns the &lt;s32bit&gt; actual 
+		 position in counts. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">PCE</span></td>
+		<td><span style="font-size: 14pt;">Returns the &lt;s16bit&gt; current 
+		 position servo error in counts. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">PCW&lt;s32bit&gt;</span></td>
+		<td><p style="font-size: 14pt;">Writes the current position in 
+		 counts to the aligner.</p>
+		<p style="font-size: 14pt;">(Shouldn’t need this command for normal 
+		 operation.)</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">PMW&lt;s32bit&gt;</span></td>
+		<td><p style="font-size: 14pt;">Writes the current position in 
+		 millidegrees to the aligner.</p>
+		<p style="font-size: 14pt;">(Shouldn’t need this command for normal 
+		 operation.)</p></td>
+	</tr>
+</table>
+<p style="font-size: 14pt; line-height: 150%;">&#160;</p>
+<p style="font-size: 14pt; line-height: 150%;">For internal use only:</p>
+<table style="line-height: 150%;" cellspacing="0" width="100%">
+	<col style="width: 19.292%;" />
+	<col style="width: 80.708%;" />
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">PLP</span></td>
+		<td><span style="font-size: 14pt;">Learn positive hardstop. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">PLN</span></td>
+		<td><span style="font-size: 14pt;">Learns negative hardstop. </span></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-size: 14pt;">PZ</span></td>
+		<td><span style="font-size: 14pt;">Set current position to zero 
+		 - Allows for manual zeroing of the slide position. </span></td>
+	</tr>
+</table>
+</body>
+</html>
