@@ -1,4 +1,5 @@
-#!/usr/local/bin/node
+#!/usr/bin/env node
+
 var fs = require('fs');
 var ini = require('ini');
 var iniFile = __dirname + '/../config/system.ini';
