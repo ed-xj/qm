@@ -21,7 +21,8 @@ I18N.zh = {
         "profile"           : "个人",
         "inbox"             : "收件箱",
         "settings"          : "设置",
-        "logout"            : "登出"
+        "logout"            : "登出",
+        "help"              : "帮帮我",
     },
 
     "dashboardView": {

@@ -21,7 +21,8 @@ I18N.en = {
         "profile"           : "Profile",
         "inbox"             : "Inbox",
         "settings"          : "Settings",
-        "logout"            : "Log Out"
+        "logout"            : "Log Out",
+        "help"              : "Help"
     },
 
     "dashboardView": {
