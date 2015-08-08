@@ -56,13 +56,17 @@
               <h3 class="page-header"><%= t["robot_title"] %></h3>
 
                 <div class="col-md-6">
-                  <a id="robotHelpModal" class="col-md-1 btn btn-primary">
-                    <i class="fa fa-question"></i>
-                  </a>
-                    <div class="input-group col-md-11">
+
+                    <div class="input-group col-md-12">
                         <input type="text" class="form-control" placeholder="<%= t["search_for"] %>">
         <span class="input-group-btn">
           <button class="btn btn-default" type="button"><%= t["go"] %></button>
+        </span>
+
+        <span class="input-group-btn">
+          <button id="robotHelpModal" class="btn btn-default" type="button">
+                    <i class="fa fa-question"></i>
+          </button>
         </span>
                     </div><!-- /input-group -->
 
