@@ -12,7 +12,9 @@ window.RobotView = Backbone.View.extend({
     },
 
     events:{
-        "click #showMeBtn":"showMeBtnClick"
+        "click #showMeBtn"     : "showMeBtnClick",
+        "click #robotHelpModal": "showHelpModal"
+
     },
 
     genLogMsg: function() {
@@ -41,6 +43,12 @@ window.RobotView = Backbone.View.extend({
 
     showMeBtnClick:function () {
         app.headerView.search();
+    },
+
+    showHelpModal: function () {
+        var frameSrc = "/ui/help/index.htm#t=Safety%2FDefinitions.htm";
+        $("#myIframe").attr("src", frameSrc);
+        $("#myModal").modal({show: true});
     }
 
 });

@@ -56,10 +56,17 @@
               <h3 class="page-header"><%= t["robot_title"] %></h3>
 
                 <div class="col-md-6">
-                    <div class="input-group">
+
+                    <div class="input-group col-md-12">
                         <input type="text" class="form-control" placeholder="<%= t["search_for"] %>">
         <span class="input-group-btn">
           <button class="btn btn-default" type="button"><%= t["go"] %></button>
+        </span>
+
+        <span class="input-group-btn">
+          <button id="robotHelpModal" class="btn btn-default" type="button">
+                    <i class="fa fa-question"></i>
+          </button>
         </span>
                     </div><!-- /input-group -->
 
@@ -253,4 +260,23 @@
 
 
 </div>
+
+
+<!-- Robot Help Modal -->
+
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+          <iframe id="myIframe" src="" style="zoom:0.60" frameborder="0" height="500" width="99.6%"></iframe>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
 <!-- /.container-fluid -->
