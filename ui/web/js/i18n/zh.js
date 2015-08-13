@@ -38,7 +38,9 @@ I18N.zh = {
         "start_recipe"   : "开始食谱",
         "stop_recipe"    : "停止处方",
         "load"           : "装载",
-        "system_message" : "系统消息"
+        "system_message" : "系统消息",
+        "home"           : "家",
+        "recover"        : "恢复"
     },
 
     "robotView": {
