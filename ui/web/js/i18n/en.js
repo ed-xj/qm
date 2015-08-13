@@ -38,7 +38,9 @@ I18N.en = {
         "start_recipe"   : "Start Recipe",
         "stop_recipe"    : "Stop Recipe",
         "load"           : "Load",
-        "system_message" : "System Message"
+        "system_message" : "System Message",
+        "home"           : "Home",
+        "recover"        : "Recover"
     },
 
     "robotView": {
