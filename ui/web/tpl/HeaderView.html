@@ -1,4 +1,4 @@
-<% var t = window.I18N[window.currentLang]["headerView"]; %>
+<% var t = window.I18N[window.currentLang]["headerView"] %>
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -113,7 +113,7 @@
 
                 <li class="divider"></li>
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-power-off"></i> <%= t["logout"] %></a>
+                    <a id="logout" href="#"><i class="fa fa-fw fa-power-off"></i> <%= t["logout"] %></a>
                 </li>
             </ul>
         </li>
@@ -124,29 +124,41 @@
             <li class="dashboard-menu">
                 <a href="#dashboard"><i class="fa fa-fw fa-dashboard"></i> <%= t["dashboard"] %></a>
             </li>
-            <li class="robot-menu">
-                <a href="#robot"><i class="fa fa-fw fa-server"></i> <%= t["robot"] %></a>
-            </li>
 
-            <% var types = ['input','output','aligner', 'loadport', 'reader']; %>
-
-            <% var type = types.shift(); %>
-            <% while (type) { %>
-                <% var inputs = window.iniCfg[type] %>
-                <% if (inputs) { %>
-                <% var keys = _.keys(inputs); %>
-                <% var type = 'input'; %>
-                <%  for (var i=0; i < keys.length; i++) { %>
-                <!--<%      console.log('input key:'+keys[i]+' value:'+inputs[keys[i]]); %>-->
-
-                <li class="contact-menu">
-                    <a href="#contact"><i class="fa fa-fw <%= tabMapFontAwesome[type] %>"></i> <%= inputs[keys[i]] %></a>
-                </li>
-
-                <%  } %>
-                <% } %>
-            <% type = types.shift(); %>
+            <% if (localStorage.userRole == 'operator') { %>
+              <% var userRoleClassName = " operatorRole"; %>
+            <% } else { %>
+              <% var userRoleClassName = '' %>
             <% } %>
+
+            <% if (localStorage.userRole !== 'operator') { %>
+              <li class="robot-menu <%= userRoleClassName %>">
+                <a href="#robot"><i class="fa fa-fw fa-server"></i> <%= t["robot"] %></a>
+              </li>
+            <% } %>
+
+              <% var types = ['input','output','aligner', 'loadport', 'reader']; %>
+
+              <% var type = types.shift(); %>
+              <% while (type) { %>
+                  <% var inputs = window.iniCfg[type] %>
+                  <% if (inputs) { %>
+                  <% var keys = _.keys(inputs); %>
+                  <% var type = 'input'; %>
+                  <%  for (var i=0; i < keys.length; i++) { %>
+                  <!--<%      console.log('input key:'+keys[i]+' value:'+inputs[keys[i]]); %>-->
+
+            <% if (localStorage.userRole !== 'operator') { %>
+                  <li class="contact-menu <%= userRoleClassName %>" >
+                    <a href="#contact"><i class="fa fa-fw <%= tabMapFontAwesome[type] %>"></i> <%= inputs[keys[i]] %></a>
+                  </li>
+            <% } %>
+
+                  <%  } %>
+                  <% } %>
+              <% type = types.shift(); %>
+              <% } %>
+
 
 
 <!--
@@ -178,9 +190,11 @@
                 <a href="#contact"><i class="fa fa-fw fa-list-ol"></i> <%= t["recipe"] %></a>
             </li>
 -->
-            <li class="config-menu">
+            <% if (localStorage.userRole !== 'operator') { %>
+              <li class="config-menu <%= userRoleClassName %>">
                 <a href="#config"><i class="fa fa-fw fa-sliders"></i> <%= t["config"] %></a>
-            </li>
+              </li>
+            <% } %>
 
             <!--<li>-->
                 <!--<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-wrench"></i> <%= t["tools"] %><i class="fa fa-fw fa-caret-down"></i></a>-->

@@ -1,7 +1,7 @@
 window.Router = Backbone.Router.extend({
 
     routes: {
-        ""              : "dashboard",
+        ""              : "login",
         "dashboard"     : "dashboard",
         "robot"         : "robot",
         "contact"       : "contact",
@@ -13,16 +13,42 @@ window.Router = Backbone.Router.extend({
     moderator: _.extend({}, Backbone.Events),
 
     initialize: function () {
-        this.headerView = new HeaderView(this.moderator);
-        $('.header').html(this.headerView.render().el);
+    },
 
-        // Close the search dropdown on click anywhere in the UI
-        $('body').click(function () {
-            $('.dropdown').removeClass("open");
-        });
+    darkPageWrapper: function() {
+        $('#page-wrapper').css('background-color', '#222');
+    },
+
+    lightPageWrapper: function() {
+        $('#page-wrapper').css('background-color', '#fff');
+    },
+
+    header: function () {
+        if (!this.headerView) {
+            this.headerView = new HeaderView(this.moderator);
+            $('.header').html(this.headerView.render().el);
+        } else {
+            $('.header').show();
+            this.headerView.activate();
+            this.headerView.delegateEvents();
+        }
+    },
+
+    login: function () {
+        this.darkPageWrapper();
+        if (((localStorage.user === undefined) || (localStorage.user === '')) &&
+            ((localStorage.userRole === undefined) || (localStorage.userRole === ''))) {
+            this.loginView = new LoginView(this.moderator);
+            $("#content").html(this.loginView.render().el);
+        } else {
+            this.navigate("#dashboard");
+        }
     },
 
     dashboard: function () {
+        this.header();
+        this.lightPageWrapper();
+
         // Since the home view never changes, we instantiate it and render it only once
         if (!this.dashboardView) {
             this.dashboardView = new DashboardView(this.moderator);
@@ -36,6 +62,9 @@ window.Router = Backbone.Router.extend({
     },
 
     robot: function () {
+        this.header();
+        this.lightPageWrapper();
+
         if (!this.robotView) {
             this.robotView = new RobotView(this.moderator);
             this.robotView.render();
@@ -48,6 +77,9 @@ window.Router = Backbone.Router.extend({
     },
 
     contact: function () {
+        this.header();
+        this.lightPageWrapper();
+
         if (!this.contactView) {
             this.contactView = new ContactView();
             this.contactView.render();
@@ -68,6 +100,9 @@ window.Router = Backbone.Router.extend({
     },
 
     config: function () {
+        this.header();
+        this.lightPageWrapper();
+
         if (!this.configView) {
             this.configView = new ConfigView(this.moderator);
             this.configView.render();
@@ -79,6 +114,9 @@ window.Router = Backbone.Router.extend({
     },
 
     botcom: function () {
+        this.header();
+        this.lightPageWrapper();
+
         if (!this.botcomView) {
             this.botcomView = new BotcomView();
             this.botcomView.render();
@@ -88,12 +126,12 @@ window.Router = Backbone.Router.extend({
     }
 });
 
-templateLoader.load(["DashboardView", "RobotView", "ContactView", "HeaderView", "EmployeeView", "EmployeeSummaryView", "EmployeeListItemView", "ConfigView", "BotcomView"],
+templateLoader.load(["DashboardView", "RobotView", "ContactView", "HeaderView", "EmployeeView", "EmployeeSummaryView", "EmployeeListItemView", "ConfigView", "BotcomView", "LoginView"],
     function () {
         $.get('/cgi-bin/get-config.js', function(cfg) {
             window.iniCfg = cfg;
             console.log('config data json:'+JSON.stringify(cfg));
-            app = new Router();
+            window.app = new Router();
             Backbone.history.start();
         }, 'json');
     });

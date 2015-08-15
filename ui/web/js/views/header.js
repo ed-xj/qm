@@ -7,6 +7,10 @@ window.HeaderView = Backbone.View.extend({
         this.searchresultsView = new EmployeeListView({model: this.searchResults, className: 'dropdown-menu'});
     },
 
+    activate: function() {
+        this.render();
+    },
+
     render: function () {
         $(this.el).html(this.template({tabMapFontAwesome: this.tabMapFontAwesome}));
         $('.navbar-search', this.el).append(this.searchresultsView.render().el);
@@ -15,7 +19,8 @@ window.HeaderView = Backbone.View.extend({
 
     events: {
         "keyup .search-query": "search",
-        "keypress .search-query": "onkeypress"
+        "keypress .search-query": "onkeypress",
+        "click #logout": "logout"
     },
 
     search: function () {
@@ -25,6 +30,13 @@ window.HeaderView = Backbone.View.extend({
         setTimeout(function () {
             $('.dropdown').addClass('open');
         });
+    },
+
+    logout: function() {
+        localStorage.setItem("user", "");
+        localStorage.setItem("userRole", "");
+        $('.header').hide();
+        window.app.navigate("/", {trigger: true});
     },
 
     onLangChange: function() {
