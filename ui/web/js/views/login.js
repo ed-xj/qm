@@ -14,11 +14,14 @@ window.LoginView = Backbone.View.extend({
         var iniPassword = window.iniCfg.userpassword[username];
         if (!iniPassword || iniPassword != password) {
             this.credentialsNotFound();
+            localStorage.setItem("user", "");
+            localStorage.setItem("userRole", "");
             return;
         }
-        window.user = username;
-        window.userRole = window.iniCfg.userrole[username];
-        window.location = window.location + "#dashboard";
+
+        localStorage.setItem("user", username);
+        localStorage.setItem("userRole", window.iniCfg.userrole[username]);
+        window.app.navigate("#dashboard", {trigger: true});
     },
 
     credentialsNotFound: function () {

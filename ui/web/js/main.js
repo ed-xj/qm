@@ -15,20 +15,40 @@ window.Router = Backbone.Router.extend({
     initialize: function () {
     },
 
+    darkPageWrapper: function() {
+        $('#page-wrapper').css('background-color', '#222');
+    },
+
+    lightPageWrapper: function() {
+        $('#page-wrapper').css('background-color', '#fff');
+    },
+
     header: function () {
         if (!this.headerView) {
             this.headerView = new HeaderView(this.moderator);
             $('.header').html(this.headerView.render().el);
+        } else {
+            $('.header').show();
+            this.headerView.activate();
+            this.headerView.delegateEvents();
         }
     },
 
     login: function () {
-        this.loginView = new LoginView(this.moderator);
-        $("#content").html(this.loginView.render().el);
+        this.darkPageWrapper();
+        if (((localStorage.user === undefined) || (localStorage.user === '')) &&
+            ((localStorage.userRole === undefined) || (localStorage.userRole === ''))) {
+            this.loginView = new LoginView(this.moderator);
+            $("#content").html(this.loginView.render().el);
+        } else {
+            this.navigate("#dashboard");
+        }
     },
 
     dashboard: function () {
         this.header();
+        this.lightPageWrapper();
+
         // Since the home view never changes, we instantiate it and render it only once
         if (!this.dashboardView) {
             this.dashboardView = new DashboardView(this.moderator);
@@ -43,6 +63,8 @@ window.Router = Backbone.Router.extend({
 
     robot: function () {
         this.header();
+        this.lightPageWrapper();
+
         if (!this.robotView) {
             this.robotView = new RobotView(this.moderator);
             this.robotView.render();
@@ -56,6 +78,8 @@ window.Router = Backbone.Router.extend({
 
     contact: function () {
         this.header();
+        this.lightPageWrapper();
+
         if (!this.contactView) {
             this.contactView = new ContactView();
             this.contactView.render();
@@ -77,6 +101,8 @@ window.Router = Backbone.Router.extend({
 
     config: function () {
         this.header();
+        this.lightPageWrapper();
+
         if (!this.configView) {
             this.configView = new ConfigView(this.moderator);
             this.configView.render();
@@ -89,6 +115,8 @@ window.Router = Backbone.Router.extend({
 
     botcom: function () {
         this.header();
+        this.lightPageWrapper();
+
         if (!this.botcomView) {
             this.botcomView = new BotcomView();
             this.botcomView.render();
@@ -103,7 +131,7 @@ templateLoader.load(["DashboardView", "RobotView", "ContactView", "HeaderView", 
         $.get('/cgi-bin/get-config.js', function(cfg) {
             window.iniCfg = cfg;
             console.log('config data json:'+JSON.stringify(cfg));
-            app = new Router();
+            window.app = new Router();
             Backbone.history.start();
         }, 'json');
     });

@@ -16,6 +16,7 @@ html, body {
 }
 
 .operatorRole {
+    display: none;
     background-color: grey;
 }
 
@@ -51,6 +52,10 @@ html, body {
     width: 100%;
     padding: 0;
     background-color: #fff;
+}
+
+#page-wrapper-authless {
+    background-color: #222;
 }
 
 .huge {
