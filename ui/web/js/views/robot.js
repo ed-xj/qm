@@ -35,9 +35,23 @@ window.RobotView = Backbone.View.extend({
         this.render();
     },
 
+    disableControls: function(role) {
+        if (role && role.toLowerCase() === 'operator') {
+            $(this.el).find('input, button').each(function(index){
+                $(this).prop('disabled', true);
+                // console.log( index + ": " + $( this ).text() );
+            });
+//            $(this.el).find('button').each(function(index){
+//                $(this).prop('disabled', true);
+//                // console.log( index + ": " + $( this ).text() );
+//            });
+        }
+    },
+
     render:function () {
         this.templateParams = {sysmsg: this.logmsg};
         $(this.el).html(this.template(this.templateParams));
+        this.disableControls(localStorage.userRole);
         return this;
     },
 
