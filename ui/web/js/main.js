@@ -7,7 +7,8 @@ window.Router = Backbone.Router.extend({
         "contact"       : "contact",
         "employees/:id" : "employeeDetails",
         "config"        : "config",
-        "botcom"        : "botcom"
+        "botcom"        : "botcom",
+        "Input1"        : "Input1"
     },
 
     moderator: _.extend({}, Backbone.Events),
@@ -120,13 +121,28 @@ window.Router = Backbone.Router.extend({
         if (!this.botcomView) {
             this.botcomView = new BotcomView();
             this.botcomView.render();
+        } else {
+            this.botcomView.delegateEvents();
         }
-            $('#content').html(this.botcomView.el);
-            this.headerView.select('botcom-menu');
+        $('#content').html(this.botcomView.el);
+        this.headerView.select('botcom-menu');
+    },
+
+    Input1: function() {
+        console.log("Router calling input1");
+        this.header();
+        if (!this.Input1View) {
+            this.Input1View = new Input1View();
+            this.Input1View.render();
+        } else {
+            this.Input1View.undelegateEvents();
+        }
+        $('#content').html(this.Input1View.el);
+        this.headerView.select('Input1-menu');
     }
 });
 
-templateLoader.load(["DashboardView", "RobotView", "ContactView", "HeaderView", "EmployeeView", "EmployeeSummaryView", "EmployeeListItemView", "ConfigView", "BotcomView", "LoginView"],
+templateLoader.load(["DashboardView", "RobotView", "ContactView", "HeaderView", "EmployeeView", "EmployeeSummaryView", "EmployeeListItemView", "ConfigView", "BotcomView", "LoginView", "Input1View"],
     function () {
         $.get('/cgi-bin/get-config.js', function(cfg) {
             window.iniCfg = cfg;

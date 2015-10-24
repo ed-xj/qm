@@ -69,8 +69,8 @@
                   <!--<%      console.log('input key:'+keys[i]+' value:'+inputs[keys[i]]); %>-->
 
             <% if (true || localStorage.userRole !== 'operator') { %>
-                  <li class="contact-menu <%= userRoleClassName %>" >
-                    <a href="#contact"><i class="fa fa-fw <%= tabMapFontAwesome[type] %>"></i> <%= inputs[keys[i]] %></a>
+                  <li class="<%= inputs[keys[i]] %>-menu <%= userRoleClassName %>" >
+                    <a href="#<%= inputs[keys[i]] %>"><i class="fa fa-fw <%= tabMapFontAwesome[type] %>"></i> <%= inputs[keys[i]] %></a>
                   </li>
             <% } %>
 
