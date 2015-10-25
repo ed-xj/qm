@@ -3,8 +3,6 @@ window.HeaderView = Backbone.View.extend({
     initialize: function (moderator) {
         this.moderator = moderator;
         this.moderator.on('lang:change', this.onLangChange.bind(this));
-        this.searchResults = new EmployeeCollection();
-        this.searchresultsView = new EmployeeListView({model: this.searchResults, className: 'dropdown-menu'});
     },
 
     activate: function() {
@@ -13,7 +11,6 @@ window.HeaderView = Backbone.View.extend({
 
     render: function () {
         $(this.el).html(this.template({tabMapFontAwesome: this.tabMapFontAwesome}));
-        $('.navbar-search', this.el).append(this.searchresultsView.render().el);
         return this;
     },
 

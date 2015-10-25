@@ -1,0 +1,21 @@
+body {
+	color: white;
+}
+
+code[name="sysmsg"] {
+	color: red;
+	background-color: #666666;
+}
+
+.container-fluid {
+	background-color: #555555;
+}
+
+.panel{
+	background-color: #666666;
+	/*box-shadow: 2px 2px 2px #888888;*/
+}
+
+.panel > .panel-heading {
+	background-color: #B8B8B8;
+}

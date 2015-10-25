@@ -142,12 +142,21 @@ window.Router = Backbone.Router.extend({
     }
 });
 
-templateLoader.load(["DashboardView", "RobotView", "ContactView", "HeaderView", "EmployeeView", "EmployeeSummaryView", "EmployeeListItemView", "ConfigView", "BotcomView", "LoginView", "Input1View"],
-    function () {
-        $.get('/cgi-bin/get-config.js', function(cfg) {
-            window.iniCfg = cfg;
-            console.log('config data json:'+JSON.stringify(cfg));
-            window.app = new Router();
-            Backbone.history.start();
-        }, 'json');
-    });
+templateLoader.load(["DashboardView",
+                     "RobotView",
+                     "ContactView",
+                     "HeaderView",
+                     "ConfigView",
+                     "BotcomView",
+                     "LoginView",
+                     "Input1View"
+                    ], function () {
+                        // load the server side configuration to drive the UI rendering
+                        $.get('/cgi-bin/get-config.js', function(cfg) {
+                            window.iniCfg = cfg;
+                            console.log('config data json:'+JSON.stringify(cfg));
+                            window.app = new Router();
+                            Backbone.history.start();
+                        }, 'json');
+                    }
+);
