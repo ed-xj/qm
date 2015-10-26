@@ -72,7 +72,10 @@ I18N.en = {
         "index"           : "Index",
         "pick"            : "Pick",
         "place"           : "Place",
-        "search_for"      : "Search For..."
+        "search_for"      : "Search For...",
+        "station"         : "Station",
+        "pose"            : "Pose",
+        "high-low"        : "High-Low"
     },
 
     "configView": {

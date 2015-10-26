@@ -12,7 +12,11 @@ window.DashboardView = Backbone.View.extend({
     },
 
     events:{
-        "click #showMeBtn":"showMeBtnClick"
+        // "click #showMeBtn":"showMeBtnClick",
+        "click #load_recipe":"loadRecipeBtnClick",      // load recipe
+        "click #start_recipe":"startRecipeBtnClick",    // start recipe
+        "click #stop_recipe":"stopRecipeBtnClick",      // stop recipe
+        "change code[name='sysmsg']":"autoScrollDown",  // auto scroll to bottom
     },
 
     onLangChange: function() {
@@ -20,10 +24,12 @@ window.DashboardView = Backbone.View.extend({
     },
 
     genLogMsg: function() {
+        // System Messages
         for (var i=0; i<Math.floor((Math.random() * 1000) + 1); i++) {
             this.logmsg += ((new Date()) + ':system log messages ' + i);
             this.logmsg += '<br>';
         }
+       
         this.templateParams = {sysmsg: this.logmsg};
     },
 
@@ -38,8 +44,66 @@ window.DashboardView = Backbone.View.extend({
         return this;
     },
 
-    showMeBtnClick:function () {
-        app.headerView.search();
-    }
+    // showMeBtnClick:function () {
+    //     app.headerView.search();
+    // },
 
+    // AJAX POST
+    ajaxCall: function(json, msg) {
+        $.ajax({
+            url: "/node/socket/tcp_example_JSON_client.js",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(json),
+            datatype: "json",
+            success: function(data) {
+                console.log("AJAX POST Sucess(" + msg + ")");
+                console.log(data.message);
+                // show message in Message section, and trigger "change" event
+                $("code[name='sysmsg']").append(new Date() + ' system log messages: ' + data.message + "<br>").trigger("change");
+            },
+            error: function(error) {
+                console.log("Some error in fetching the notification");
+            }
+        });
+    },
+
+    loadRecipeBtnClick:function () {
+        // Build up JSON
+        var json = {
+                "CmdDest":"SCHD",
+                "CmdType":"",
+                "message":"load_recipe"
+            };
+        // AJAX POST
+        this.ajaxCall(json, "load recipe");
+    },
+
+    startRecipeBtnClick:function () {
+        // Build up JSON
+        var json = {
+                "CmdDest":"SCHD",
+                "CmdType":"",
+                "message":"start_recipe"
+            };
+        // AJAX POST
+        this.ajaxCall(json, "start recipe");
+    },
+
+    stopRecipeBtnClick:function () {
+        // Build up JSON
+        var json = {
+                "CmdDest":"SCHD",
+                "CmdType":"",
+                "message":"stop_recipe"
+            };
+        // AJAX POST
+        this.ajaxCall(json, "stop recipe");
+    },
+
+    autoScrollDown: function (e) {
+        // auto scroll down
+        var scrollTarget = $(e.currentTarget).parent().parent();
+        scrollTarget.scrollTop(scrollTarget.get(0).scrollHeight); 
+    },
 });

@@ -17,6 +17,7 @@ window.HeaderView = Backbone.View.extend({
     events: {
         "keyup .search-query": "search",
         "keypress .search-query": "onkeypress",
+
         "click #logout": "logout"
     },
 

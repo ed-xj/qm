@@ -1,5 +1,4 @@
 <% var t = window.I18N[window.currentLang]["robotView"] %>
-
 <div class="container-fluid">
 
     <!-- Page Heading -->
@@ -56,11 +55,10 @@
               <h3 class="page-header"><%= t["robot_title"] %></h3>
 
                 <div class="col-md-6">
-
-                    <div class="input-group col-md-12">
+                    <div class="input-group  col-md-12">
                         <input type="text" class="form-control" placeholder="<%= t["search_for"] %>">
         <span class="input-group-btn">
-          <button class="btn btn-default" type="button"><%= t["go"] %></button>
+          <button class="btn btn-default" type="button" id="go_btn"><%= t["go"] %></button>
         </span>
 
         <span class="input-group-btn">
@@ -111,19 +109,19 @@
                     <div class="col-md-6">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                              <button type="button" class="btn btn-default"><%= t["refresh"] %></button>
-                              <button type="button" class="btn btn-default"><%= t["reset_f_12"] %></button>
+                              <button type="button" class="btn btn-default" id="refresh"><%= t["refresh"] %></button>
+                              <button type="button" class="btn btn-default" id="reset_f_12"><%= t["reset_f_12"] %></button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-1"></div>
+                    <!-- <div class="col-md-1"></div> -->
 
                     <div class="col-md-6">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                              <button type="button" class="btn btn-default"><%= t["grip"] %></button>
-                              <button type="button" class="btn btn-default"><%= t["ungrip"] %></button>
+                              <button type="button" class="btn btn-default" id="grip"><%= t["grip"] %></button>
+                              <button type="button" class="btn btn-default" id="ungrip"><%= t["ungrip"] %></button>
                             </div>
                         </div>
                     </div>
@@ -137,8 +135,8 @@
                         </div>
 
                         <div class="panel-body">
-                          <button type="button" class="btn btn-default"><%= t["learn"] %></button>
-                          <button type="button" class="btn btn-default"><%= t["learn_new"] %></button>
+                          <button type="button" class="btn btn-default" id="learn"><%= t["learn"] %></button>
+                          <button type="button" class="btn btn-default" id="learn_new"><%= t["learn_new"] %></button>
                         </div>
 
                     </div>
@@ -154,7 +152,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-body">
 
-                                    <div class="panel panel-default">
+                                    <!-- <div class="col-md-5 panel panel-default">
                                         <div class="panel-body">
 
                                             <div class="radio">
@@ -167,7 +165,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="panel panel-default">
+                                    <div class="col-md-5 col-md-offset-2 panel panel-default">
                                         <div class="panel-body">
                                             <div class="radio">
                                               <label><input type="radio" name="high_low"><%= t["high"] %></label>
@@ -177,11 +175,66 @@
                                             </div>
 
                                         </div>
+                                    </div> -->
+
+                                    <!-- move button -->
+                                    <div class="col-md-3">
+                                      <button type="button" class="btn btn-default" id="move" action="/"><%= t["move"] %></button>
                                     </div>
+                                    <!-- station index -->
+                                    <div class="col-md-3">
+                                      <div class="dropdown">
+                                          <button class="btn btn-default dropdown-toggle" type="button" id="stationMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <%= t["station"] %>
+                                              <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" aria-labelledby="stationMenu">
+                                              <li><a value="stn1">Station1</a></li>
+                                              <li><a value="stn2">Station2</a></li>
+                                              <li><a value="stn3">Station3</a></li>
+                                              <li><a value="stn4">Station4</a></li>
+                                          </ul>
+                                      </div>
+                                    </div>
+                                    <!-- perch -->
+                                    <div class="col-md-3">
+                                      <div class="dropdown">
+                                          <button class="btn btn-default dropdown-toggle" type="button" id="poseMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <%= t["pose"] %>
+                                              <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" aria-labelledby="poseMenu">
+                                              <li><a value="perch"><%= t["perch"] %></a></li>
+                                              <li><a value="inside"><%= t["inside"] %></a></li>
+                                          </ul>
+                                      </div>
+                                    </div>
+                                    <!-- <div class="col-md-3 panel panel-default">
+                                        <div class="panel-body">
 
+                                            <div class="radio">
+                                              <label><input type="radio" name="perch_inside"><%= t["perch"] %></label>
+                                            </div>
+                                            <div class="radio">
+                                              <label><input type="radio" name="perch_inside"><%= t["inside"] %></label>
+                                            </div>
 
-                                    <button type="button" class="btn btn-default"><%= t["move"] %></button>
+                                        </div>
+                                    </div> -->
 
+                                    <!-- high low -->
+                                    <div class="col-md-3">
+                                      <div class="dropdown">
+                                          <button class="btn btn-default dropdown-toggle" type="button" id="highlowMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <%= t["high-low"] %>
+                                              <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" aria-labelledby="highlowMenu">
+                                              <li><a value="high"><%= t["high"] %></a></li>
+                                              <li><a value="low"><%= t["low"] %></a></li>
+                                          </ul>
+                                      </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -190,7 +243,7 @@
                                 <div class="col-md-6">
                                     <div class="checkbox">
                                         <label>
-                                          <input type="checkbox"> <%= t["linear"] %>
+                                          <input type="checkbox" id="linearCheckbox"> <%= t["linear"] %>
                                         </label>
                                     </div>
                                 </div>
@@ -198,15 +251,15 @@
                                 <div class="col-md-6">
 
                                     <div class="dropdown">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="indexMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                             <%= t["index"] %>
                                             <span class="caret"></span>
                                         </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
+                                        <ul class="dropdown-menu" aria-labelledby="indexMenu">
+                                            <li><a value="idx1">Index1</a></li>
+                                            <li><a value="idx2">Index2</a></li>
+                                            <li><a value="idx3">Index3</a></li>
+                                            <li><a value="idx4">Index4</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -214,8 +267,8 @@
 
                             <div class="panel panel-default">
                                 <div class="panel-body">
-                                  <button type="button" class="btn btn-default"><%= t["pick"] %></button>
-                                  <button type="button" class="btn btn-default"><%= t["place"] %></button>
+                                  <button type="button" class="btn btn-default" id="pick"><%= t["pick"] %></button>
+                                  <button type="button" class="btn btn-default" id="place"><%= t["place"] %></button>
                                 </div>
                             </div>
                         </div>

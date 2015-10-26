@@ -21,9 +21,9 @@
 
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="recipe" placeholder="<%= t['select_recipe'] %>" readonly>
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"><%= t["load"] %></button>
-                            </span>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button" id="load_recipe"><%= t["load"] %></button>
+                                        </span>
                                     </div>
 
                                     <!--<div class="col-sm-8" style="padding-right:4px;">-->
@@ -35,6 +35,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-sm-2" for="recipe">&nbsp;</label>
+
+                                    <div class="input-group">
+                                        <label class="control-label col-sm-2" for="recipe">&nbsp;</label>
 
                                     <div class="input-group">
                                         <button class="btn btn-primary h-spacer"><%= t["start_recipe"] %></button>
@@ -72,7 +75,6 @@
                                 <button type="button" class="btn btn-lg btn-primary" disabled="disabled"><%= t["idle"] %>&nbsp;</button>
                             </div>
                         </div>
-
                         <div style="padding-top:0px;padding-left:300px;">
                             <table class="table-bordered table-condensed">
                                 <thead>
@@ -109,19 +111,29 @@
                         </div>
 
 
+
                         <div style="padding-top:0px;padding-left:600px;position:relative;bottom:187px;">
 
                           <div class="radio">
+
                             <label><input type="radio" name="secs" value="localonline" checked>Local Online</label>
+
                           </div>
 
+
                           <div class="radio">
+
                             <label><input type="radio" name="secs" value="remoteonline">Remote Online</label>
+
                           </div>
 
+
                           <div class="radio">
+
                             <label><input type="radio" name="secs" value="offline">Offline</label>
+
                           </div>
+
 
                         </div>
 

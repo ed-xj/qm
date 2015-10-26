@@ -72,7 +72,10 @@ I18N.zh = {
         "index"           : "指数",
         "pick"            : "匹克",
         "place"           : "广场",
-        "search_for"      : "搜索..."
+        "search_for"      : "搜索...",
+        "station"         : "站",
+        "pose"            : "姿度",
+        "high-low"        : "高低"
     },
 
     "configView": {
