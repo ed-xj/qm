@@ -3,8 +3,9 @@ window.Input1View = Backbone.View.extend({
         this.moderator = moderator;
     },
 
-    events : {
-        "change #lang": "changeLang"
+    events: {
+        "change #lang"         : "changeLang",
+        "change .cassette-type": "handleCassetteChange"
     },
 
     changeLang: function(event) {
@@ -13,7 +14,12 @@ window.Input1View = Backbone.View.extend({
         this.render();
     },
 
+    handleCassetteChange: function() {
+        console.log("handleCassetteChange");
+    },
+
     render: function () {
         $(this.el).html(this.template());
+        return this;
     }
 });

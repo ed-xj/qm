@@ -135,7 +135,7 @@ window.Router = Backbone.Router.extend({
             this.Input1View = new Input1View();
             this.Input1View.render();
         } else {
-            this.Input1View.undelegateEvents();
+            this.Input1View.delegateEvents();
         }
         $('#content').html(this.Input1View.el);
         this.headerView.select('Input1-menu');
