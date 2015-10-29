@@ -1,0 +1,296 @@
+<% var t = window.I18N[window.currentLang]["configView"] %>
+
+<div class="row">
+    <div class="col-xs-12">
+        <h3 class="page-header">
+            <!--<%= t["config_title"] %>-->
+            Input Station 1
+        </h3>
+        <div class="row">
+            <div class="col-xs-4">
+                <div>
+                    <form action="" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="control-label col-xs-6" style="text-align:left;">Station</label>
+                            <div class="col-xs-6">
+                                <select class="form-control">
+                                    <option>INPUT_1</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-6" style="text-align:left;">Level</label>
+                            <div class="col-xs-6">
+                                <select class="form-control">
+                                    <option>1</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-6 text-right" style="text-align:left;"><span>Cassette Type</span></label>
+                            <div class="col-xs-6">
+                                <select class="form-control cassette-type">
+                                    <option>Standard</option>
+                                    <option>Thin</option>
+                                    <option>Thick</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-6 text-right" style="text-align:left;">FOUP</label>
+                            <div class="col-xs-6">
+                                <div class="btn-group">
+                                    <button class="btn btn-default btn-sm" id="openFoup" type="button">Open FOUP</button>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div class="btn-group">
+                                    <button class="btn btn-default btn-sm"id="closeFoup" type="button">Close FOUP</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-6 text-right" style="text-align:left;">CASETTE</label>
+                            <div class="col-xs-6">
+                                <div class="btn-group">
+                                    <button class="btn btn-default btn-sm" id="loadCasette" type="button">LOAD CASETTE</button>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div class="btn-group">
+                                    <button class="btn btn-default btn-sm" id="unloadCasette" type="button">UNLOAD CASETTE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <form action="" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="control-label col-xs-6 text-right" style="text-align:left;">DOOR</label>
+                            <div class="col-xs-6">
+                                <div class="btn-group">
+                                    <button class="btn btn-default btn-sm" id="openDoor" type="button">OPEN DOOR</button>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div class="btn-group">
+                                    <button class="btn btn-default btn-sm" id="closeDoor" type="button">CLOSE DOOR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <form action="" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="control-label col-xs-6 text-right" style="text-align:left;">DATA</label>
+                            <div class="col-xs-6">
+                                <div class="btn-group">
+                                    <button class="btn btn-default btn-sm" id="restoreData" type="button">RESTORE DATA</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <table class="table table-condensed wafer-slots">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>SLOTS</th>
+                        </tr>
+                    </thead>
+                    <tbody id="slots">
+                        <tr>
+                            <th scope="row">25</th>
+                            <td id="slot25"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">24</th>
+                            <td id="slot24"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">23</th>
+                            <td id="slot23"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">22</th>
+                            <td id="slot22"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">21</th>
+                            <td id="slot21"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">20</th>
+                            <td id="slot20"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">19</th>
+                            <td id="slot19"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">18</th>
+                            <td id="slot18"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">17</th>
+                            <td id="slot17"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">16</th>
+                            <td id="slot16"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">15</th>
+                            <td id="slot15"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">14</th>
+                            <td id="slot14"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">13</th>
+                            <td id="slot13"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">12</th>
+                            <td id="slot12"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">11</th>
+                            <td id="slot11"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td id="slot10"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td id="slot9"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td id="slot8"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td id="slot7"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td id="slot6"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td id="slot5"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td id="slot4"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td id="slot3"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td id="slot2"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td id="slot1"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-xs-4">
+                <div>
+                    <form action="" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="control-label col-xs-6" style="text-align:left;">GET STANDARD</label>
+                            <div class="col-xs-6">
+                                <button class="btn btn-default btn-sm" id="getStandard" type="button">GET STANDARD</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <form action="" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="control-label col-xs-6" style="text-align:left;">PUT STANDARD</label>
+                            <div class="col-xs-6">
+                                <button class="btn btn-default btn-sm" id="putStandard" type="button">PUT STANDARD</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <form action="" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="control-label col-xs-6" style="text-align:left;">MAP STANDARD</label>
+                            <div class="col-xs-6">
+                                <button class="btn btn-default btn-sm" id="mapStandard" type="button">MAP STANDARD</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <form action="" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="control-label col-xs-6" style="text-align:left;">GET WRAP BELOW</label>
+                            <div class="col-xs-6">
+                                <button class="btn btn-default btn-sm" id="getWrapBelow" type="button">GET WRAP BELOW</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <form action="" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="control-label col-xs-6" style="text-align:left;">PUT WRAP BELOW</label>
+                            <div class="col-xs-6">
+                                <button class="btn btn-default btn-sm" id="putWrapBelow" type="button">PUT WRAP BELOW</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <form action="" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="control-label col-xs-6" style="text-align:left;">MAP WRAP BELOW</label>
+                            <div class="col-xs-6">
+                                <button class="btn btn-default btn-sm" id="mapWrapBelow" type="button">MAP WRAP BELOW</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <form action="" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="control-label col-xs-6" style="text-align:left;">GET WRAP ABOVE</label>
+                            <div class="col-xs-6">
+                                <button class="btn btn-default btn-sm" id="getWrapAbove" type="button">GET WRAP ABOVE</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <form action="" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="control-label col-xs-6" style="text-align:left;">PUT WRAP ABOVE</label>
+                            <div class="col-xs-6">
+                                <button class="btn btn-default btn-sm" id="putWrapAbove" type="button">PUT WRAP ABOVE</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <form action="" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="control-label col-xs-6" style="text-align:left;">MAP WRAP ABOVE</label>
+                            <div class="col-xs-6">
+                                <button class="btn btn-default btn-sm" id="mapWrapAbove" type="button">MAP WRAP ABOVE</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

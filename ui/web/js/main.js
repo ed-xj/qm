@@ -8,7 +8,8 @@ window.Router = Backbone.Router.extend({
         "employees/:id" : "employeeDetails",
         "config"        : "config",
         "botcom"        : "botcom",
-        "Input1"        : "Input1"
+        "Input1"        : "Input1",
+        "Input2"        : "Input2"
     },
 
     moderator: _.extend({}, Backbone.Events),
@@ -139,6 +140,19 @@ window.Router = Backbone.Router.extend({
         }
         $('#content').html(this.Input1View.el);
         this.headerView.select('Input1-menu');
+    },
+
+    Input2: function() {
+        console.log("Router calling input2");
+        this.header();
+        if (!this.Input2View) {
+            this.Input2View = new Input2View();
+            this.Input2View.render();
+        } else {
+            this.Input2View.delegateEvents();
+        }
+        $('#content').html(this.Input2View.el);
+        this.headerView.select('Input2-menu');
     }
 });
 
@@ -149,7 +163,8 @@ templateLoader.load(["DashboardView",
                      "ConfigView",
                      "BotcomView",
                      "LoginView",
-                     "Input1View"
+                     "Input1View",
+                     "Input2View"
                     ], function () {
                         // load the server side configuration to drive the UI rendering
                         $.get('/cgi-bin/get-config.js', function(cfg) {
