@@ -6,7 +6,7 @@ window.ConfigView = Backbone.View.extend({
     events : {
         "click #slow":"slowBtnClick",       // set speed to slow
         "click #medium":"mediumBtnClick",   // set speed to medium
-        "click #fast":"fastBtnClick",       // set speed to fast
+        "click #high":"highBtnClick",       // set speed to fast
         "change #syslog":"syslogLevel",     // system log level (not ready)
         "change #robotlog":"robotlogLevel", // robot log level (not ready)
         "change #lang":"changeLang",        // change language
@@ -24,7 +24,7 @@ window.ConfigView = Backbone.View.extend({
 
     ajaxCall: function(json, msg) {
         $.ajax({
-            url: "/node/socket/tcp_example_JSON_client.js",
+            url: "/cgi-bin/tcp_socket_client.js",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify(json),
@@ -63,15 +63,15 @@ window.ConfigView = Backbone.View.extend({
         this.ajaxCall(json, "medium");
     },
 
-    fastBtnClick:function () {
+    highBtnClick:function () {
         // Build up JSON
         var json = {
                 "CmdDest":"SCHD",
                 "CmdType":"",
-                "message":"speed fast"
+                "message":"speed high"
             };
         // AJAX POST
-        this.ajaxCall(json, "fast");
+        this.ajaxCall(json, "high");
     },
 
     syslogLevel:function () {

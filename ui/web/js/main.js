@@ -152,8 +152,7 @@ templateLoader.load(["DashboardView",
                      "Input1View"
                     ], function () {
                         // load the server side configuration to drive the UI rendering
-                        $.get('/node/get-config.js', function(cfg) {
-                        // $.get('/cgi-bin/get-config.js', function(cfg) {
+                        $.get('/cgi-bin/get-config.js', function(cfg) {
                             window.iniCfg = cfg;
                             console.log('config data json:'+JSON.stringify(cfg));
                             window.app = new Router();

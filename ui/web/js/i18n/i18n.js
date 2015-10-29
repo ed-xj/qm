@@ -1,1 +1,1 @@
-window.currentLang = "zh";
+window.currentLang = "en";
