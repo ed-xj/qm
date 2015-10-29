@@ -83,9 +83,8 @@ window.RobotView = Backbone.View.extend({
     // },
 
     ajaxCall: function(json, msg) {
-    // ajaxCall: function(json, msg, callback) {
         $.ajax({
-            url: "/cgi-bin/tcp_socket_client.js",
+            url: "/node/socket/tcp_example_JSON_client.js",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify(json),
@@ -93,10 +92,8 @@ window.RobotView = Backbone.View.extend({
             success: function(data) {
                 console.log("AJAX POST Sucess(" + msg + ")");
                 console.log(data.message);
-                // callback(data);
                 // show message in Message section, and trigger "change" event
                 $("code[name='sysmsg']").append(new Date() + ' system log messages: ' + data.message + "<br>").trigger("change");
-
             },
             error: function(error) {
                 console.log("Some error in fetching the notification");
@@ -113,9 +110,6 @@ window.RobotView = Backbone.View.extend({
             };
         // AJAX POST
         this.ajaxCall(json, "go");
-        // callback function
-        // this.ajaxCall(json, "go", function(data){
-        // });
     },
 
     showHelpModal: function () {
