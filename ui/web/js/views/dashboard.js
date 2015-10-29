@@ -16,6 +16,9 @@ window.DashboardView = Backbone.View.extend({
         "click #load_recipe":"loadRecipeBtnClick",      // load recipe
         "click #start_recipe":"startRecipeBtnClick",    // start recipe
         "click #stop_recipe":"stopRecipeBtnClick",      // stop recipe
+        "click #home":"homeBtnClick",                   // home
+        "click #recover":"recoverBtnClick",             // recover
+        "change input[name='secs']":"onlineStatus",     // online status 
         "change code[name='sysmsg']":"autoScrollDown",  // auto scroll to bottom
     },
 
@@ -51,7 +54,7 @@ window.DashboardView = Backbone.View.extend({
     // AJAX POST
     ajaxCall: function(json, msg) {
         $.ajax({
-            url: "/node/socket/tcp_example_JSON_client.js",
+            url: "/cgi-bin/tcp_socket_client.js",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify(json),
@@ -99,6 +102,33 @@ window.DashboardView = Backbone.View.extend({
             };
         // AJAX POST
         this.ajaxCall(json, "stop recipe");
+    },
+
+    homeBtnClick: function () {
+        // Build up JSON
+        var json = {
+                "CmdDest":"SCHD",
+                "CmdType":"",
+                "message":"home"
+            };
+        // AJAX POST
+        this.ajaxCall(json, "home");
+    },
+
+    recoverBtnClick: function () {
+        // Build up JSON
+        var json = {
+                "CmdDest":"SCHD",
+                "CmdType":"",
+                "message":"recover"
+            };
+        // AJAX POST
+        this.ajaxCall(json, "recover");
+    },
+
+    onlineStatus: function () {
+        // online status
+        var status = $("input[name='secs']:checked").attr("value");
     },
 
     autoScrollDown: function (e) {

@@ -1,4 +1,5 @@
-#!/usr/local/bin/node
+#!/Program Files/nodejs/node
+//#!/usr/local/bin/node
 
 var fs = require('fs');
 var ini = require('ini');
