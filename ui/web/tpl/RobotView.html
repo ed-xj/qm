@@ -4,12 +4,12 @@
     <!-- Page Heading -->
     <!--
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-xs-12">
             <h3 class="page-header">
                 <%= t["robot_title"] %>
             </h3>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-xs-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title"><%= t["recipe"] %></h3>
@@ -19,8 +19,8 @@
                                 <div class="col-lg-6">
                                     <form class="form-horizontal" role="form">
                                         <div class="form-group">
-                                            <label class="control-label col-md-4" for="recipe"><%= t["selected_recipe"] %></label>
-                                            <div class="input-group col-md-8">
+                                            <label class="control-label col-xs-4" for="recipe"><%= t["selected_recipe"] %></label>
+                                            <div class="input-group col-xs-8">
                                                 <input type="text" class="form-control" id="recipe"
                                                                                         placeholder="<%= t["select_a_recipe"] %>" readonly>
                                                 <span class="input-group-btn">
@@ -29,7 +29,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-4">&nbsp;</label>
+                                            <label class="control-label col-xs-4">&nbsp;</label>
                                             <div class="input-group">
                                                 <button class="btn btn-primary h-spacer"><%= t["start"] %></button>
                                                 <button class="btn btn-primary"><%= t["stop"] %></button>
@@ -54,8 +54,8 @@
             <div class="row">
               <h3 class="page-header"><%= t["robot_title"] %></h3>
 
-                <div class="col-md-6">
-                    <div class="input-group  col-md-12">
+                <div class="col-xs-6">
+                    <div class="input-group  col-xs-12">
                         <input type="text" class="form-control" placeholder="<%= t["search_for"] %>">
         <span class="input-group-btn">
           <button class="btn btn-default" type="button" id="go_btn"><%= t["go"] %></button>
@@ -106,7 +106,7 @@
                     <br>
 
 
-                    <div class="col-md-6">
+                    <div class="col-xs-6">
                         <div class="panel panel-default">
                             <div class="panel-body">
                               <button type="button" class="btn btn-default" id="refresh"><%= t["refresh"] %></button>
@@ -115,9 +115,9 @@
                         </div>
                     </div>
 
-                    <!-- <div class="col-md-1"></div> -->
+                    <!-- <div class="col-xs-1"></div> -->
 
-                    <div class="col-md-6">
+                    <div class="col-xs-6">
                         <div class="panel panel-default">
                             <div class="panel-body">
                               <button type="button" class="btn btn-default" id="grip"><%= t["grip"] %></button>
@@ -128,7 +128,7 @@
 
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-xs-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                           <h3 class="panel-title"><%= t["position"] %></h3>
@@ -152,7 +152,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-body">
 
-                                    <!-- <div class="col-md-5 panel panel-default">
+                                    <!-- <div class="col-xs-5 panel panel-default">
                                         <div class="panel-body">
 
                                             <div class="radio">
@@ -165,7 +165,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-5 col-md-offset-2 panel panel-default">
+                                    <div class="col-xs-5 col-xs-offset-2 panel panel-default">
                                         <div class="panel-body">
                                             <div class="radio">
                                               <label><input type="radio" name="high_low"><%= t["high"] %></label>
@@ -178,11 +178,11 @@
                                     </div> -->
 
                                     <!-- move button -->
-                                    <div class="col-md-3">
+                                    <div class="col-xs-3">
                                       <button type="button" class="btn btn-default" id="move" action="/"><%= t["move"] %></button>
                                     </div>
                                     <!-- station index -->
-                                    <div class="col-md-3">
+                                    <div class="col-xs-3">
                                       <div class="dropdown">
                                           <button class="btn btn-default dropdown-toggle" type="button" id="stationMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                               <%= t["station"] %>
@@ -197,7 +197,7 @@
                                       </div>
                                     </div>
                                     <!-- perch -->
-                                    <div class="col-md-3">
+                                    <div class="col-xs-3">
                                       <div class="dropdown">
                                           <button class="btn btn-default dropdown-toggle" type="button" id="poseMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                               <%= t["pose"] %>
@@ -209,7 +209,7 @@
                                           </ul>
                                       </div>
                                     </div>
-                                    <!-- <div class="col-md-3 panel panel-default">
+                                    <!-- <div class="col-xs-3 panel panel-default">
                                         <div class="panel-body">
 
                                             <div class="radio">
@@ -223,7 +223,7 @@
                                     </div> -->
 
                                     <!-- high low -->
-                                    <div class="col-md-3">
+                                    <div class="col-xs-3">
                                       <div class="dropdown">
                                           <button class="btn btn-default dropdown-toggle" type="button" id="highlowMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                               <%= t["high-low"] %>
@@ -240,7 +240,7 @@
 
 
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-xs-6">
                                     <div class="checkbox">
                                         <label>
                                           <input type="checkbox" id="linearCheckbox"> <%= t["linear"] %>
@@ -248,7 +248,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-xs-6">
 
                                     <div class="dropdown">
                                         <button class="btn btn-default dropdown-toggle" type="button" id="indexMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -280,7 +280,7 @@
 
     <div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title"><%= t["message"] %></h3>
@@ -301,8 +301,8 @@
         <div class="row">
             <form class="form-horizontal" role="form">
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="cmd"><%= t["robot_command"] %></label>
-                    <div class="input-group col-md-8">
+                    <label class="control-label col-xs-2" for="cmd"><%= t["robot_command"] %></label>
+                    <div class="input-group col-xs-8">
                         <input type="text" class="form-control" id="cmd" placeholder="<%= t["enter_command"] %>">
                     </div>
                 </div>
