@@ -129,6 +129,7 @@ window.DashboardView = Backbone.View.extend({
     onlineStatus: function () {
         // online status
         var status = $("input[name='secs']:checked").attr("value");
+        console.log("online status changed to "+status)
     },
 
     autoScrollDown: function (e) {
