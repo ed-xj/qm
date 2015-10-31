@@ -83,6 +83,7 @@ window.ConfigView = Backbone.View.extend({
         //     };
         // // AJAX POST
         // this.ajaxCall(json, "fast");
+        console.log("syslogLevel changed");
     },
 
     robotlogLevel:function () {
@@ -94,5 +95,6 @@ window.ConfigView = Backbone.View.extend({
         //     };
         // // AJAX POST
         // this.ajaxCall(json, "fast");
+        console.log("robotlogLevel changed");
     }
 });
