@@ -9,13 +9,7 @@ window.Router = Backbone.Router.extend({
         "config"        : "config",
         "botcom"        : "botcom",
         "Input1"        : "Input1",
-        "Input2"        : "Input2",
-        "Input3"        : "Input3",
-        "Input4"        : "Input4",
-        "Input5"        : "Input5",
-        "Input6"        : "Input6",
-        "Input7"        : "Input7",
-        "Input8"        : "Input8"
+        "Input2"        : "Input2"
     },
 
     moderator: _.extend({}, Backbone.Events),
@@ -136,49 +130,29 @@ window.Router = Backbone.Router.extend({
     },
 
     Input1: function() {
-        this.renderInput(this.Input1View, 'Input1');
+        console.log("Router calling input1");
+        this.header();
+        if (!this.Input1View) {
+            this.Input1View = new Input1View();
+            this.Input1View.render();
+        } else {
+            this.Input1View.delegateEvents();
+        }
+        $('#content').html(this.Input1View.el);
+        this.headerView.select('Input1-menu');
     },
 
     Input2: function() {
-        this.renderInput(this.Input2View, 'Input2');
-    },
-
-    Input3: function() {
-        this.renderInput(this.Input3View, 'Input3');
-    },
-
-    Input4: function() {
-        this.renderInput(this.Input4View, 'Input4');
-    },
-
-    Input5: function() {
-        this.renderInput(this.Input5View, 'Input5');
-    },
-
-    Input6: function() {
-        this.renderInput(this.Input2View, 'Input6');
-    },
-
-    Input7: function() {
-        this.renderInput(this.Input2View, 'Input7');
-    },
-
-    Input8: function() {
-        this.renderInput(this.Input8View, 'Input8');
-    },
-
-    renderInput: function(inputView, inputName) {
-        console.log("Router calling " + inputName);
+        console.log("Router calling input2");
         this.header();
-        if (!inputView) {
-            eval("this." + inputName + "View = new " + inputName + "View();");
-            eval("inputView = this." + inputName + "View;");
-            eval("this." + inputName + "View.render();");
+        if (!this.Input2View) {
+            this.Input2View = new Input2View();
+            this.Input2View.render();
         } else {
-            inputView.delegateEvents();
+            this.Input2View.delegateEvents();
         }
-        $('#content').html(inputView.el);
-        this.headerView.select(inputName + '-menu');
+        $('#content').html(this.Input2View.el);
+        this.headerView.select('Input2-menu');
     }
 });
 
@@ -190,13 +164,7 @@ templateLoader.load(["DashboardView",
                      "BotcomView",
                      "LoginView",
                      "Input1View",
-                     "Input2View",
-                     "Input3View",
-                     "Input4View",
-                     "Input5View",
-                     "Input6View",
-                     "Input7View",
-                     "Input8View"
+                     "Input2View"
                     ], function () {
                         // load the server side configuration to drive the UI rendering
                         $.get('/cgi-bin/get-config.js', function(cfg) {
