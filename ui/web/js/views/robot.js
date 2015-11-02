@@ -1,4 +1,4 @@
-window.RobotView = Backbone.View.extend({
+window.RobotView = window.BaseView.extend({
 
     initialize: function (moderator) {
         console.log('Initializing Robot View');
@@ -82,25 +82,11 @@ window.RobotView = Backbone.View.extend({
     //     app.headerView.search();
     // },
 
-    ajaxCall: function(json, msg) {
-    // ajaxCall: function(json, msg, callback) { 
-        $.ajax({
-            url: "/cgi-bin/tcp_socket_client.js",
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify(json),
-            datatype: "json",
-            success: function(data) {
-                console.log("AJAX POST Sucess(" + msg + ")");
-                console.log(data.message);
-                // callback(data);
-                // show message in Message section, and trigger "change" event
-                $("code[name='sysmsg']").append(new Date() + ' system log messages: ' + data.message + "<br>").trigger("change");
-            },
-            error: function(error) {
-                console.log("Some error in fetching the notification");
-            }
-        });
+    ajaxUrl: "/cgi-bin/tcp_socket_client.js",
+    
+    callBack: function(data) {
+        // show message in Message section, and trigger "change" event
+        $("code[name='sysmsg']").append(new Date() + ' system log messages: ' + data.message + "<br>").trigger("change");
     },
 
 // Button click events
@@ -111,10 +97,7 @@ window.RobotView = Backbone.View.extend({
                 "CmdType":"GO"
             };
         // AJAX POST
-        this.ajaxCall(json, "go");
-        // callback function
-        // this.ajaxCall(json, "go", function(data){
-        // });
+        this.ajaxCall(this.ajaxUrl, json, "go", this.callBack);
     },
 
     showHelpModal: function () {
@@ -130,7 +113,7 @@ window.RobotView = Backbone.View.extend({
                 "CmdType":"REFERSH"
             };
         // AJAX POST
-        this.ajaxCall(json, "refersh");
+        this.ajaxCall(this.ajaxUrl, json, "refersh", this.callBack);
     },
 
     resetf12BtnCLick: function () {
@@ -140,7 +123,7 @@ window.RobotView = Backbone.View.extend({
                 "CmdType":"RESET F12"
             };
         // AJAX POST
-        this.ajaxCall(json, "resetF12");
+        this.ajaxCall(this.ajaxUrl, json, "resetF12", this.callBack);
     },
 
     gripBtnCLick: function () {
@@ -150,7 +133,7 @@ window.RobotView = Backbone.View.extend({
                 "CmdType":"GRIP"
             };
         // AJAX POST
-        this.ajaxCall(json, "grip");
+        this.ajaxCall(this.ajaxUrl, json, "grip", this.callBack);
     },
 
     ungripBtnCLick: function() {
@@ -160,7 +143,7 @@ window.RobotView = Backbone.View.extend({
                 "CmdType":"UNGRIP"
             };
         // AJAX POST
-        this.ajaxCall(json, "ungrip");
+        this.ajaxCall(this.ajaxUrl, json, "ungrip", this.callBack);
     },
 
     learnBtnCLick:function () {
@@ -170,7 +153,7 @@ window.RobotView = Backbone.View.extend({
                 "CmdType":"LEARN"
             };
         // AJAX POST
-        this.ajaxCall(json, "learn");        
+        this.ajaxCall(this.ajaxUrl, json, "learn", this.callBack);    
     },
 
     learnNewBtnCLick: function() {
@@ -180,7 +163,7 @@ window.RobotView = Backbone.View.extend({
                 "CmdType":"LEARN NEW"
             };
         //AJAX POST
-        this.ajaxCall(json, "learn_new");
+        this.ajaxCall(this.ajaxUrl, json, "learn_new", this.callBack);
     },
 
     moveBtnClick:function () {
@@ -197,7 +180,7 @@ window.RobotView = Backbone.View.extend({
                     "CmdType":"MOVE"
                 };
             // AJAX POST
-            this.ajaxCall(json, "move");
+            this.ajaxCall(this.ajaxUrl, json, "move", this.callBack);
         } else {
             alert("Please select correct staion, pose, high-low or index");
         }
@@ -241,7 +224,7 @@ window.RobotView = Backbone.View.extend({
                 "CmdType":"PICK"
             };
         // AJAX POST
-        this.ajaxCall(json, "pick");
+        this.ajaxCall(this.ajaxUrl, json, "pick", this.callBack);
     },
 
     placeBtnCLick: function() {
@@ -251,7 +234,7 @@ window.RobotView = Backbone.View.extend({
                 "CmdType":"PLACE"
             };
         // AJAX POST
-        this.ajaxCall(json, "place");
+        this.ajaxCall(this.ajaxUrl, json, "place", this.callBack);
     },
 
     autoScrollDown: function (e) {
@@ -276,7 +259,7 @@ window.RobotView = Backbone.View.extend({
                     "message":command
                 };
                 // AJAX POST
-                this.ajaxCall(json, "robot command");
+                this.ajaxCall(this.ajaxUrl, json, "robot command", this.callBack);
             }
         }
     }

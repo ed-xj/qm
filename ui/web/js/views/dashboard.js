@@ -1,4 +1,4 @@
-window.DashboardView = Backbone.View.extend({
+window.DashboardView = window.BaseView.extend({
 
     initialize:function (moderator) {
         console.log('Initializing Dashboard View');
@@ -51,24 +51,11 @@ window.DashboardView = Backbone.View.extend({
     //     app.headerView.search();
     // },
 
-    // AJAX POST
-    ajaxCall: function(json, msg) {
-        $.ajax({
-            url: "/cgi-bin/tcp_socket_client.js",
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify(json),
-            datatype: "json",
-            success: function(data) {
-                console.log("AJAX POST Sucess(" + msg + ")");
-                console.log(data.message);
-                // show message in Message section, and trigger "change" event
-                $("code[name='sysmsg']").append(new Date() + ' system log messages: ' + data.message + "<br>").trigger("change");
-            },
-            error: function(error) {
-                console.log("Some error in fetching the notification");
-            }
-        });
+    ajaxUrl: "/cgi-bin/tcp_socket_client.js",
+    
+    callBack: function(data) {
+        // show message in Message section, and trigger "change" event
+        $("code[name='sysmsg']").append(new Date() + ' system log messages: ' + data.message + "<br>").trigger("change");
     },
 
     loadRecipeBtnClick:function () {
@@ -79,7 +66,7 @@ window.DashboardView = Backbone.View.extend({
                 "message":"load_recipe"
             };
         // AJAX POST
-        this.ajaxCall(json, "load recipe");
+        this.ajaxCall(this.ajaxUrl, json, "load recipe", this.callBack);
     },
 
     startRecipeBtnClick:function () {
@@ -90,7 +77,7 @@ window.DashboardView = Backbone.View.extend({
                 "message":"start_recipe"
             };
         // AJAX POST
-        this.ajaxCall(json, "start recipe");
+        this.ajaxCall(this.ajaxUrl, json, "start recipe", this.callBack);
     },
 
     stopRecipeBtnClick:function () {
@@ -102,6 +89,7 @@ window.DashboardView = Backbone.View.extend({
             };
         // AJAX POST
         this.ajaxCall(json, "stop recipe");
+        this.ajaxCall(this.ajaxUrl, json, "stop recipe", this.callBack);
     },
 
     homeBtnClick: function () {
@@ -112,7 +100,7 @@ window.DashboardView = Backbone.View.extend({
                 "message":"home"
             };
         // AJAX POST
-        this.ajaxCall(json, "home");
+        this.ajaxCall(this.ajaxUrl, json, "home", this.callBack);
     },
 
     recoverBtnClick: function () {
@@ -123,7 +111,7 @@ window.DashboardView = Backbone.View.extend({
                 "message":"recover"
             };
         // AJAX POST
-        this.ajaxCall(json, "recover");
+        this.ajaxCall(this.ajaxUrl, json, "recover", this.callBack);
     },
 
     onlineStatus: function () {

@@ -1,6 +1,5 @@
 window.InputModel = Backbone.Model.extend({
-    viewName: null,
-    feild1: null
+    viewName: null
 });
 
 window.InputBaseView = window.BaseView.extend({
@@ -53,9 +52,22 @@ window.InputBaseView = window.BaseView.extend({
         for (i=0; i<map.length; i++) {
             if (map[i]===1) {
                 var slot = "#slot"+(i+1);
-                $(slot).children("td").css("background-color","yellow"); 
+                //$(slot).children("td").css("background-color","yellow"); 
+                $(slot).css("background-color","yellow");
             }
         }
+    },
+
+    ajaxUrl: "/cgi-bin/tcp_socket_client.js",
+
+    callBack: function(data) {
+        if (data.map === true)
+            if (data.message.length !== 25)
+                alert("Mapping Error, slot count is not correct");
+            else {
+                var v = new InputBaseView();
+                v.slotMapping(data.message);
+            }
     },
 
     openFoupBtnCLick: function () {
@@ -66,9 +78,7 @@ window.InputBaseView = window.BaseView.extend({
                 "CmdType":"openFoup"
             };
         // AJAX POST
-        this.ajaxCall(json, "openFoup");
-        // this.ajaxCall(json, "openFoup", function(data){
-        // });
+        this.ajaxCall(this.ajaxUrl, json, "openFoup", this.callBack);
     },
 
     closeFoupBtnCLick: function () {
@@ -78,7 +88,7 @@ window.InputBaseView = window.BaseView.extend({
                 "CmdType":"closeFoup"
             };
         // AJAX POST
-        this.ajaxCall(json, "closeFoup");
+        this.ajaxCall(this.ajaxUrl, json, "closeFoup", this.callBack);
     },
 
     loadCasetteBtnCLick: function () {
@@ -88,7 +98,7 @@ window.InputBaseView = window.BaseView.extend({
                 "CmdType":"loadCasette"
             };
         // AJAX POST
-        this.ajaxCall(json, "loadCasette");
+        this.ajaxCall(this.ajaxUrl, json, "loadCasette", this.callBack);
     },
 
     unloadCasetteBtnCLick: function () {
@@ -98,7 +108,7 @@ window.InputBaseView = window.BaseView.extend({
                 "CmdType":"unloadCasette"
             };
         // AJAX POST
-        this.ajaxCall(json, "unloadCasette");
+        this.ajaxCall(this.ajaxUrl, json, "unloadCasette", this.callBack);
     },
 
     openDoorBtnCLick: function () {
@@ -108,7 +118,7 @@ window.InputBaseView = window.BaseView.extend({
                 "CmdType":"openDoor"
             };
         // AJAX POST
-        this.ajaxCall(json, "openDoor");
+        this.ajaxCall(this.ajaxUrl, json, "openDoor", this.callBack);
     },
 
     closeDoorBtnCLick: function () {
@@ -118,7 +128,7 @@ window.InputBaseView = window.BaseView.extend({
                 "CmdType":"closeDoor"
             };
         // AJAX POST
-        this.ajaxCall(json, "closeDoor");
+        this.ajaxCall(this.ajaxUrl, json, "closeDoor", this.callBack);
     },
 
     restoreDataBtnCLick: function () {
@@ -129,7 +139,7 @@ window.InputBaseView = window.BaseView.extend({
                 "CmdType":"restoreData"
             };
         // AJAX POST
-        this.ajaxCall(json, "restoreData");
+        this.ajaxCall(this.ajaxUrl, json, "restoreData", this.callBack);
     },
 
     getStandardBtnCLick: function () {
@@ -139,7 +149,7 @@ window.InputBaseView = window.BaseView.extend({
                 "CmdType":"getStandard"
             };
         // AJAX POST
-        this.ajaxCall(json, "getStandard");
+        this.ajaxCall(this.ajaxUrl, json, "getStandard", this.callBack);
     },
 
     putStandardBtnCLick: function () {
@@ -149,7 +159,7 @@ window.InputBaseView = window.BaseView.extend({
                 "CmdType":"putStandard"
             };
         // AJAX POST
-        this.ajaxCall(json, "putStandard");
+        this.ajaxCall(this.ajaxUrl, json, "putStandard", this.callBack);
     },
 
     mapStandardBtnCLick: function () {
@@ -159,7 +169,7 @@ window.InputBaseView = window.BaseView.extend({
                 "CmdType":"mapStandard"
             };
         // AJAX POST
-        this.ajaxCall(json, "mapStandard");
+        this.ajaxCall(this.ajaxUrl, json, "mapStandard", this.callBack);
     },
 
     getWrapBelowBtnCLick: function () {
@@ -169,7 +179,7 @@ window.InputBaseView = window.BaseView.extend({
                 "CmdType":"getWrapBelow"
             };
         // AJAX POST
-        this.ajaxCall(json, "getWrapBelow");
+        this.ajaxCall(this.ajaxUrl, json, "getWrapBelow", this.callBack);
     },
 
     putWrapBelowBtnCLick: function () {
@@ -179,7 +189,7 @@ window.InputBaseView = window.BaseView.extend({
                 "CmdType":"putWrapBelow"
             };
         // AJAX POST
-        this.ajaxCall(json, "putWrapBelow");
+        this.ajaxCall(this.ajaxUrl, json, "putWrapBelow", this.callBack);
     },
 
     mapWrapBelowBtnCLick: function () {
@@ -189,7 +199,7 @@ window.InputBaseView = window.BaseView.extend({
                 "CmdType":"mapWrapBelow"
             };
         // AJAX POST
-        this.ajaxCall(json, "mapWrapBelow");
+        this.ajaxCall(this.ajaxUrl, json, "mapWrapBelow", this.callBack);
     },
 
     getWrapAboveBtnCLick: function () {
@@ -199,7 +209,7 @@ window.InputBaseView = window.BaseView.extend({
                 "CmdType":"getWrapAbove"
             };
         // AJAX POST
-        this.ajaxCall(json, "getWrapAbove");
+        this.ajaxCall(this.ajaxUrl, json, "getWrapAbove", this.callBack);
     },
 
     putWrapAboveBtnCLick: function () {
@@ -209,7 +219,7 @@ window.InputBaseView = window.BaseView.extend({
                 "CmdType":"putWrapAbove"
             };
         // AJAX POST
-        this.ajaxCall(json, "putWrapAbove");
+        this.ajaxCall(this.ajaxUrl, json, "putWrapAbove", this.callBack);
     },
 
     mapWrapAboveBtnCLick: function () {
@@ -219,6 +229,6 @@ window.InputBaseView = window.BaseView.extend({
                 "CmdType":"mapWrapAbove"
             };
         // AJAX POST
-        this.ajaxCall(json, "mapWrapAbove");
+        this.ajaxCall(this.ajaxUrl, json, "mapWrapAbove", this.callBack);
     }
 });
