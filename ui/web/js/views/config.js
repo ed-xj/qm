@@ -1,4 +1,4 @@
-window.ConfigView = Backbone.View.extend({
+window.ConfigView = window.BaseView.extend({
     initialize: function (moderator) {
         this.moderator = moderator;
     },
@@ -22,25 +22,8 @@ window.ConfigView = Backbone.View.extend({
         $(this.el).html(this.template());
     },
 
-    ajaxCall: function(json, msg) {
-        $.ajax({
-            url: "/cgi-bin/tcp_socket_client.js",
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify(json),
-            datatype: "json",
-            success: function(data) {
-                console.log("AJAX POST Sucess(" + msg + ")");
-                console.log(data.message);
-                // show message in Message section, and trigger "change" event
-                // $("code[name='sysmsg']").append(new Date() + ' system log messages: ' + data.message + "<br>").trigger("change");     
-            },
-            error: function(error) {
-                console.log("Some error in fetching the notification");
-            }
-        });
-    },
-
+    ajaxUrl: "/cgi-bin/tcp_socket_client.js",
+    
     slowBtnClick:function () {
         // Build up JSON
         var json = {
@@ -49,7 +32,7 @@ window.ConfigView = Backbone.View.extend({
                 "message":"speed slow"
             };
         // AJAX POST
-        this.ajaxCall(json, "slow");
+        this.ajaxCall(this.ajaxUrl, json, "slow");
     },
 
     mediumBtnClick:function () {
@@ -60,7 +43,7 @@ window.ConfigView = Backbone.View.extend({
                 "message":"speed medium"
             };
         // AJAX POST
-        this.ajaxCall(json, "medium");
+        this.ajaxCall(this.ajaxUrl, json, "medium");
     },
 
     highBtnClick:function () {
@@ -71,7 +54,7 @@ window.ConfigView = Backbone.View.extend({
                 "message":"speed high"
             };
         // AJAX POST
-        this.ajaxCall(json, "high");
+        this.ajaxCall(this.ajaxUrl, json, "high");
     },
 
     syslogLevel:function () {

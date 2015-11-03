@@ -1,8 +1,8 @@
-window.Input2View = window.InputBaseView.extend({
+window.Input5View = window.InputBaseView.extend({
     initialize: function (moderator) {
-        window.Input2View.__super__.initialize.apply(this, moderator);
+        window.Input5View.__super__.initialize.apply(this, moderator);
         this.model = new window.InputModel();
-        this.model.viewName = "Input2";
+        this.model.viewName = "Input5";
     },
 
     events : {
