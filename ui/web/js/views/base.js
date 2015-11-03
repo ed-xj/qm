@@ -2,7 +2,7 @@ window.BaseView = Backbone.View.extend({
     // ajaxCall: function(json, msg) {
     ajaxCall: function(ajaxUrl, json, msg, succCallback, errCallback) {
         $.ajax({
-            url: "/cgi-bin/tcp_socket_client.js",
+            url: ajaxUrl ||  "/cgi-bin/tcp_socket_client.js",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify(json),
