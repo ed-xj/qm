@@ -166,7 +166,8 @@ window.InputBaseView = window.BaseView.extend({
         // Build up JSON
         var json = {
                 "CmdDest":"SCHD",
-                "CmdType":"mapStandard"
+                "CmdType":"mapStandard",
+                "StationID": this.model.get('viewName')
             };
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "mapStandard", this.callBack);
