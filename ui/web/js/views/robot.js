@@ -101,9 +101,9 @@ window.RobotView = window.BaseView.extend({
     },
 
     showHelpModal: function () {
-    var frameSrc = "/ui/help/index.htm#t=Safety%2FDefinitions.htm";
-    $("#myIframe").attr("src", frameSrc);
-    $("#myModal").modal({show: true});
+        var frameSrc = "/ui/help/index.htm#t=Safety%2FDefinitions.htm";
+        $("#myIframe").attr("src", frameSrc);
+        $("#myModal").modal({show: true});
     },
 
     refershBtnCLick: function () {

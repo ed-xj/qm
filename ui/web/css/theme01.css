@@ -17,17 +17,22 @@ code[name="sysmsg"] {
 }
 
 .panel > .panel-heading {
+	color: white;
 	/*background-color: #B8B8B8;*/
-	background: -webkit-linear-gradient(90deg, #B8B8B8 0%, #efefef 100%); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(90deg, #B8B8B8, #efefef); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(90deg, #B8B8B8, #efefef); /* For Firefox 3.6 to 15 */
-	/*background: linear-gradient(90deg, #B8B8B8, #efefef); /* Standard syntax */*/
+	background: -webkit-linear-gradient(90deg, #B8B8B8 0%, #000099 100%); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(90deg, #B8B8B8, #000099); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(90deg, #B8B8B8, #000099); /* For Firefox 3.6 to 15 */
+	/*background: linear-gradient(90deg, #B8B8B8, #efefef); /* Standard syntax */
+}
+
+.panel-body {
+	background-color: #E5E5FF;
 }
 
 .btn-default {
-	/*background-color: #CCCCCC;*/
-	background: -webkit-linear-gradient(90deg, #CCCCCC 0%, #FFFFFF 100%); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(90deg, #CCCCCC, #FFFFFF); /* For Opera 11.1 to 12.0 */
+	/*background-color: #CCCCCC;
+	background: -webkit-linear-gradient(90deg, #CCCCCC 0%, #FFFFFF 100%); /* For Safari 5.1 to 6.0 
+	background: -o-linear-gradient(90deg, #CCCCCC, #FFFFFF); /* For Opera 11.1 to 12.0 
 	background: -moz-linear-gradient(90deg, #CCCCCC, #FFFFFF); /* For Firefox 3.6 to 15 */
-	/*background: linear-gradient(90deg, #CCCCCC, #FFFFFF); /* Standard syntax */*/
+	/*background: linear-gradient(90deg, #CCCCCC, #FFFFFF); /* Standard syntax */
 }
