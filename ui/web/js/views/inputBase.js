@@ -61,13 +61,14 @@ window.InputBaseView = window.BaseView.extend({
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
 
     callBack: function(data) {
-        if (data.map === true)
+        if (data.map === true) {
             if (data.message.length !== 25)
                 alert("Mapping Error, slot count is not correct");
             else {
                 var v = new InputBaseView();
                 v.slotMapping(data.message);
             }
+        }
     },
 
     openFoupBtnCLick: function () {
@@ -166,7 +167,8 @@ window.InputBaseView = window.BaseView.extend({
         // Build up JSON
         var json = {
                 "CmdDest":"SCHD",
-                "CmdType":"mapStandard"
+                "CmdType":"mapStandard",
+                "StationID": this.model.get('viewName')
             };
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "mapStandard", this.callBack);

@@ -2,7 +2,7 @@ window.Input5View = window.InputBaseView.extend({
     initialize: function (moderator) {
         window.Input5View.__super__.initialize.apply(this, moderator);
         this.model = new window.InputModel();
-        this.model.viewName = "Input5";
+        this.model.set('viewName', "Input5");
     },
 
     events : {
