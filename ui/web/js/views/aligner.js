@@ -4,7 +4,6 @@ window.AlignerView = window.BaseView.extend({
     },
 
     events : {
-        // "change #lang": "changeLang",
         "click #readIt":"readItBtnCLick",               // read it
         "click #alignWafer":"alignWaferBtnCLick",       // align wafer
         "click #getWafer":"getWaferBtnCLick",           // get wafer
@@ -24,8 +23,8 @@ window.AlignerView = window.BaseView.extend({
         // Build up JSON
         var json = {
                 "CmdDest":"SCHD",
-                "CmdType":"",
-                "message":"readIt"
+                "CmdType":"readIt",
+                "message":""
             };
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "readIt");
@@ -35,8 +34,8 @@ window.AlignerView = window.BaseView.extend({
         // Build up JSON
         var json = {
                 "CmdDest":"SCHD",
-                "CmdType":"",
-                "message":"alignWafer"
+                "CmdType":"alignWafer",
+                "message":""
             };
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "alignWafer");
@@ -46,8 +45,8 @@ window.AlignerView = window.BaseView.extend({
         // Build up JSON
         var json = {
                 "CmdDest":"SCHD",
-                "CmdType":"",
-                "message":"getWafer"
+                "CmdType":"getWafer",
+                "message":""
             };
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "getWafer");
@@ -57,8 +56,8 @@ window.AlignerView = window.BaseView.extend({
         // Build up JSON
         var json = {
                 "CmdDest":"SCHD",
-                "CmdType":"",
-                "message":"putWafer"
+                "CmdType":"putWafer",
+                "message":""
             };
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putWafer");
@@ -68,8 +67,8 @@ window.AlignerView = window.BaseView.extend({
         // Build up JSON
         var json = {
                 "CmdDest":"SCHD",
-                "CmdType":"",
-                "message":"getTop"
+                "CmdType":"getTop",
+                "message":""
             };
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "getTop");
@@ -79,8 +78,8 @@ window.AlignerView = window.BaseView.extend({
         // Build up JSON
         var json = {
                 "CmdDest":"SCHD",
-                "CmdType":"",
-                "message":"putTop"
+                "CmdType":"putTop",
+                "message":""
             };
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putTop");
