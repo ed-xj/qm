@@ -7,7 +7,7 @@ window.RecipeView = window.BaseView.extend({
         "click .chk-all":"chkAllCLick",               // check all
         "click .chk-none":"chkNoneCLick",               // check none
         "click .chk-element":"chkElemCLick",               // check element
-        "click #save":"saveBtnCLick",               // save
+        "click #saveRecipe":"saveRecipeBtnCLick",               // save
     },
 
     render: function () {
@@ -50,7 +50,7 @@ window.RecipeView = window.BaseView.extend({
         alert("Save succeed.");
     },
     
-    saveBtnCLick:function () {
+    saveRecipeBtnCLick:function () {
         // Build up JSON
         var json = {
                 "CmdDest":"SCHD",
