@@ -16,6 +16,7 @@ window.Router = Backbone.Router.extend({
         "Input6"        : "Input6",
         "Input7"        : "Input7",
         "Input8"        : "Input8",
+        "Aligner"       : "Aligner",
         "Recipe"        : "Recipe"
     },
 
@@ -182,6 +183,20 @@ window.Router = Backbone.Router.extend({
         this.headerView.select(inputName + '-menu');
     },
 
+    Aligner: function () {
+        this.header();
+        this.lightPageWrapper();
+
+        if (!this.alignerView) {
+            this.alignerView = new AlignerView(this.moderator);
+            this.alignerView.render();
+        } else {
+            this.alignerView.delegateEvents(); // delegate events when the view is recycled
+        }
+        $('#content').html(this.alignerView.el);
+        this.headerView.select('aligner-menu');
+    },
+
     Recipe: function () {
         this.header();
         this.lightPageWrapper();
@@ -212,6 +227,7 @@ templateLoader.load(["DashboardView",
                      "Input6View",
                      "Input7View",
                      "Input8View",
+                     "AlignerView",
                      "RecipeView"
                     ], function () {
                         // load the server side configuration to drive the UI rendering
