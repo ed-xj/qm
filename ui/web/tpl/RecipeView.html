@@ -30,21 +30,21 @@
                         <label class="control-label col-xs-12" style="text-align:left;">SOURCE</label>
                         <select name="sometext" class="form-control"></select>
                         <br>
-                        <div class="col-xs-12" style="overflow-y:auto; height:250px">
+                        <div class="col-xs-12 chk-group" style="overflow-y:auto; height:250px">
                             <div class="checkbox">
                               <label>
-                                <input type="checkbox" value="">ALL
+                                <input class="chk-all" type="checkbox" value="">ALL
                               </label>
                             </div>
                             <div class="checkbox">
                               <label>
-                                <input type="checkbox" value="">NONE
+                                <input class="chk-none" type="checkbox" value="">NONE
                               </label>
                             </div>
                             <% for (var i=0; i < 24; i++) { %>
                             <div class="checkbox">
                               <label>
-                                <input type="checkbox" value=""><%= i+1 %>
+                                <input class="chk-element" type="checkbox" value=""><%= i+1 %>
                               </label>
                             </div>
                             <% } %>
@@ -69,21 +69,21 @@
                         <label class="control-label col-xs-12" style="text-align:left;">DESTINATION</label>
                         <select name="sometext" class="form-control"></select>
                         <br>
-                        <div class="col-xs-12" style="overflow-y:auto; height:250px">
+                        <div class="col-xs-12 chk-group" style="overflow-y:auto; height:250px">
                             <div class="checkbox">
                               <label>
-                                <input type="checkbox" value="">ALL
+                                <input class="chk-all" type="checkbox" value="">ALL
                               </label>
                             </div>
                             <div class="checkbox">
                               <label>
-                                <input type="checkbox" value="">NONE
+                                <input class="chk-none" type="checkbox" value="">NONE
                               </label>
                             </div>
                             <% for (var i=0; i < 24; i++) { %>
                             <div class="checkbox">
                               <label>
-                                <input type="checkbox" value=""><%= i+1 %>
+                                <input class="chk-element" type="checkbox" value=""><%= i+1 %>
                               </label>
                             </div>
                             <% } %>
