@@ -194,7 +194,7 @@ window.Router = Backbone.Router.extend({
             this.alignerView.delegateEvents(); // delegate events when the view is recycled
         }
         $('#content').html(this.alignerView.el);
-        this.headerView.select('aligner-menu');
+        this.headerView.select('Aligner-menu');
     },
 
     Recipe: function () {
@@ -208,7 +208,7 @@ window.Router = Backbone.Router.extend({
             this.recipeView.delegateEvents(); // delegate events when the view is recycled
         }
         $('#content').html(this.recipeView.el);
-        this.headerView.select('recipe-menu');
+        this.headerView.select('Recipe-menu');
     }
 });
 
