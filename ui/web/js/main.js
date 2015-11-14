@@ -15,7 +15,9 @@ window.Router = Backbone.Router.extend({
         "Input5"        : "Input5",
         "Input6"        : "Input6",
         "Input7"        : "Input7",
-        "Input8"        : "Input8"
+        "Input8"        : "Input8",
+        "Aligner"       : "Aligner",
+        "Recipe"        : "Recipe"
     },
 
     moderator: _.extend({}, Backbone.Events),
@@ -179,6 +181,34 @@ window.Router = Backbone.Router.extend({
         }
         $('#content').html(inputView.el);
         this.headerView.select(inputName + '-menu');
+    },
+
+    Aligner: function () {
+        this.header();
+        this.lightPageWrapper();
+
+        if (!this.alignerView) {
+            this.alignerView = new AlignerView(this.moderator);
+            this.alignerView.render();
+        } else {
+            this.alignerView.delegateEvents(); // delegate events when the view is recycled
+        }
+        $('#content').html(this.alignerView.el);
+        this.headerView.select('Aligner-menu');
+    },
+
+    Recipe: function () {
+        this.header();
+        this.lightPageWrapper();
+
+        if (!this.recipeView) {
+            this.recipeView = new RecipeView(this.moderator);
+            this.recipeView.render();
+        } else {
+            this.recipeView.delegateEvents(); // delegate events when the view is recycled
+        }
+        $('#content').html(this.recipeView.el);
+        this.headerView.select('Recipe-menu');
     }
 });
 
@@ -196,7 +226,9 @@ templateLoader.load(["DashboardView",
                      "Input5View",
                      "Input6View",
                      "Input7View",
-                     "Input8View"
+                     "Input8View",
+                     "AlignerView",
+                     "RecipeView"
                     ], function () {
                         // load the server side configuration to drive the UI rendering
                         $.get('/cgi-bin/get-config.js', function(cfg) {
