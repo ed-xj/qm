@@ -9,7 +9,7 @@ window.BaseView = Backbone.View.extend({
             datatype: "json",
             success: function(data) {
                 console.log("AJAX POST Sucess(" + msg + ")");
-                console.log(data.message);
+                console.log(data.Message);
                 if (succCallback) succCallback(data);
             },
             error: function(error) {

@@ -1,51 +1,56 @@
 // utility.js
 // encode and decode JSON
 
-module.exports = {
-	// Build up JSON from UI to server
-	encodeJSON: function (dest, type, id, cmd, param, msg, recipe) {
-		return json = {
-			"CmdDest":dest,
-			"CmdType":type,
-			"StationID":id,
-			"Cmd":cmd,
-			"Param":param,
-			"Message":msg,
-			"Recipe":recipe
-		};
-	},
+// Build up JSON
+var encodeJSON = function (dest, type, id, cmd, param, msg) {
+	return json = {
+		"CmdDest":dest,
+		"CmdType":type,
+		"StationID":id,
+		"Cmd":cmd,
+		"Param":param,
+		"Message":msg,
+	};
+};
 
-	// var json = {
-	// 		"CmdDest":SCHD / UI / DB,
-	//      "CmdType":"cmdtype",
-	//      "StationID":"stationid",
-	//		"Error":true/false,
-	//		"Status":"status",
-	// 		"Param":"parameters (could be any type)",
-	// 		"Message":"some messages"
-	//     };
-	// decode JSON from server to UI
-	decodeJSON: function (json) {
-		// Error msg
-		if (json.Error) {
-			console.log("Some ERROR occurred");
-			return json.Message;
-		} else {
-			// System status
-			if (CmdType === "status") {
-				console.log("system status");
-				return json.Param;
-			}
-			// System msg 
-			else if (CmdType === "sysmsg") {
-				console.log("system message");
-				return json.Message;
-			}
-			// Mapping
-			else if (CmdType === "mapping") {
-				console.log("slot mapping");
-				return json.Param;
-			}
+// var json = {
+// 		"CmdDest":SCHD / UI / DB,
+//      "CmdType":"cmdtype",
+//      "StationID":"stationid",
+//		"Status":"status",
+// 		"Param":"parameters (could be any type)",
+// 		"Message":"some messages"
+//     };
+// decode JSON from Apache to UI
+var decodeJSON = function (json) {
+	if (json.CmdDest==="SCHD") {
+		switch (json.CmdType) {
+		    case "ERROR":
+		        break;
+		    case "MAPPING":
+		        break;
+		    case "STATUS":
+		        break;
+		    case "RECIPE":
+		        break;
+		    case "COMMAND":
+			    break;
+		}
+	} else if (json.CmdDest==="UI") {
+		switch (json.CmdType) {
+		    case "ERROR":
+		        break;
+		    case "MAPPING":
+		        break;
+		    case "STATUS":
+		        break;
+		    case "RECIPE":
+		        break;
+		    case "COMMAND":
+			    break;
 		}
 	}
-}
+};
+
+exports.encodeJSON = encodeJSON;
+exports.decodeJSON = decodeJSON;

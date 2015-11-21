@@ -21,7 +21,7 @@ window.RobotView = window.BaseView.extend({
         //"click #showMeBtn":"showMeBtnClick",
         "click #go_btn":"goBtnCLick",           // go
         "click #robotHelpModal": "showHelpModal",// help
-        "click #refersh":"refershBtnCLick",     // refersh
+        "click #refresh":"refershBtnCLick",     // refresh
         "click #reset_f_12":"resetf12BtnCLick", // resetF12
         "click #grip":"gripBtnCLick",           // grip
         "click #ungrip":"ungripBtnCLick",       // ungrip
@@ -86,16 +86,13 @@ window.RobotView = window.BaseView.extend({
     
     callBack: function(data) {
         // show message in Message section, and trigger "change" event
-        $("code[name='sysmsg']").append(new Date() + ' system log messages: ' + data.message + "<br>").trigger("change");
+        $("code[name='sysmsg']").append(new Date() + ':system log messages ' + data.message + "<br>").trigger("change");
     },
 
 // Button click events
     goBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"GO"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "GO", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "go", this.callBack);
     },
@@ -108,60 +105,42 @@ window.RobotView = window.BaseView.extend({
 
     refershBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"REFERSH"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "REFERSH", null, null);
         // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "refersh", this.callBack);
+        this.ajaxCall(this.ajaxUrl, json, "refresh", this.callBack);
     },
 
     resetf12BtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"RESET F12"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "RESETF12", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "resetF12", this.callBack);
     },
 
     gripBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"GRIP"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "GRIP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "grip", this.callBack);
     },
 
     ungripBtnCLick: function() {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"UNGRIP"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "UNGRIP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "ungrip", this.callBack);
     },
 
     learnBtnCLick:function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"LEARN"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "LEARN", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "learn", this.callBack);    
     },
 
     learnNewBtnCLick: function() {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"LEARN NEW"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "LEARN_NEW", null, null);
         //AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "learn_new", this.callBack);
     },
@@ -175,10 +154,7 @@ window.RobotView = window.BaseView.extend({
             var linearbox = $("#linearCheckbox").is(':checked');    // TRUE if checked, FALSE if nonchecked
 
             // Build up JSON
-            var json = {
-                    "CmdDest":"SCHD",
-                    "CmdType":"MOVE"
-                };
+            var json = encodeJSON("SCHD", "COMMAND", null, "MOVE", this.moveAttr, null);
             // AJAX POST
             this.ajaxCall(this.ajaxUrl, json, "move", this.callBack);
         } else {
@@ -219,20 +195,14 @@ window.RobotView = window.BaseView.extend({
 
     pickBtnCLick: function() {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"PICK"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "PICK", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "pick", this.callBack);
     },
 
     placeBtnCLick: function() {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"PLACE"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "PLACE", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "place", this.callBack);
     },
@@ -251,15 +221,11 @@ window.RobotView = window.BaseView.extend({
             if (command === "") {
                 alert("Please in put command.");
             } else {
-                console.log("command sent: " + command);
                 // Build up JSON
-                var json = {
-                    "CmdDest":"SCHD",
-                    "CmdType":"CMD",
-                    "message":command
-                };
+                var json = encodeJSON("SCHD", "COMMAND", null, command, null, null);
                 // AJAX POST
                 this.ajaxCall(this.ajaxUrl, json, "robot command", this.callBack);
+                console.log("command sent: " + command);
             }
         }
     }

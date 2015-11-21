@@ -46,14 +46,16 @@ window.InputBaseView = window.BaseView.extend({
     },
 
     slotMapping: function (map) {
-        // clear slots color
-        $("#slots").children().children("td").css("background-color","transparent");
+        // clear slots color and text
+        $("#slots").children().children("td").text("")
+        $("#slots").children().children("td").removeAttr("style");
         // render slots color with yellow if there is a wafer
         for (i=0; i<map.length; i++) {
             if (map[i]===1) {
-                var slot = "#slot"+(i+1);
-                //$(slot).children("td").css("background-color","yellow"); 
+                var slot = "#slot"+(i+1); 
+                $(slot).text(slot);
                 $(slot).css("background-color","yellow");
+                $(slot).css("box-shadow","2px 2px 2px #888888");
             }
         }
     },
@@ -66,7 +68,7 @@ window.InputBaseView = window.BaseView.extend({
                 alert("Mapping Error, slot count is not correct");
             else {
                 var v = new InputBaseView();
-                v.slotMapping(data.message);
+                v.slotMapping(data.Message);
             }
         }
     },
@@ -74,163 +76,122 @@ window.InputBaseView = window.BaseView.extend({
     openFoupBtnCLick: function () {
         // Build up JSON
         console.log("model:" + this.model.viewName);
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"openFoup"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "OPENFOUP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "openFoup", this.callBack);
     },
 
     closeFoupBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"closeFoup"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "CLOSEFOUP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "closeFoup", this.callBack);
     },
 
     loadCasetteBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"loadCasette"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "LOADCASETTE", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "loadCasette", this.callBack);
     },
 
     unloadCasetteBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"unloadCasette"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "UNLOADCASETTE", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "unloadCasette", this.callBack);
     },
 
     openDoorBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"openDoor"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "OPENFDOOR", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "openDoor", this.callBack);
     },
 
     closeDoorBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"closeDoor"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "CLOSEDOOR", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "closeDoor", this.callBack);
     },
 
     restoreDataBtnCLick: function () {
-        $("#slots").children().children("td").css("background-color","transparent");
+        // clear slots color and text
+        $("#slots").children().children("td").text("");
+        $("#slots").children().children("td").removeAttr("style");
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"restoreData"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "RESTOREDATA", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "restoreData", this.callBack);
     },
 
     getStandardBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"getStandard"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "GETSTANDARD", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "getStandard", this.callBack);
     },
 
     putStandardBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"putStandard"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "PUTSTANDARD", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putStandard", this.callBack);
     },
 
     mapStandardBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"mapStandard",
-                "StationID": this.model.get('viewName')
-            };
+        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "MAPSTANDARD", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "mapStandard", this.callBack);
     },
 
     getWrapBelowBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"getWrapBelow"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "GETWRAPBELOW", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "getWrapBelow", this.callBack);
     },
 
     putWrapBelowBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"putWrapBelow"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "PUTWRAPBELOW", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putWrapBelow", this.callBack);
     },
 
     mapWrapBelowBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"mapWrapBelow"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "MAPWRAPBELOW", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "mapWrapBelow", this.callBack);
     },
 
     getWrapAboveBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"getWrapAbove"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "GETWRAPABOVE", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "getWrapAbove", this.callBack);
     },
 
     putWrapAboveBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"putWrapAbove"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "PUTWRAPABOVE", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putWrapAbove", this.callBack);
     },
 
     mapWrapAboveBtnCLick: function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"mapWrapAbove"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "MAPWRAPABOVE", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "mapWrapAbove", this.callBack);
     }
+
+    // slotClick: function (e) {
+    //     alert("clicked");
+    //     var slotTarget = $(e.currentTarget);
+    //     console.log("clicked!");
+    // }
 });
