@@ -21,66 +21,42 @@ window.AlignerView = window.BaseView.extend({
     
     readItBtnCLick:function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"readIt",
-                "message":""
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "READIT", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "readIt");
     },
     
     alignWaferBtnCLick:function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"alignWafer",
-                "message":""
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "ALIGNWAFER", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "alignWafer");
     },
     
     getWaferBtnCLick:function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"getWafer",
-                "message":""
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "GETWAFER", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "getWafer");
     },
     
     putWaferBtnCLick:function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"putWafer",
-                "message":""
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "PUTWAFER", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putWafer");
     },
     
     getTopBtnCLick:function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"getTop",
-                "message":""
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "GETTOP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "getTop");
     },
     
     putTopFoupBtnCLick:function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"putTop",
-                "message":""
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "PUTTOP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putTop");
     }

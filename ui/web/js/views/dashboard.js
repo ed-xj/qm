@@ -60,11 +60,6 @@ window.DashboardView = window.BaseView.extend({
 
     loadRecipeBtnClick:function () {
         // Build up JSON
-        // var json = {
-        //         "CmdDest":"SCHD",
-        //         "CmdType":"",
-        //         "message":"load_recipe"
-        //     };
         var json = encodeJSON("SCHD", "COMMAND", null, "LOADRECIPE", null/*recipe*/, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "load recipe", this.callBack);
@@ -72,11 +67,6 @@ window.DashboardView = window.BaseView.extend({
 
     startRecipeBtnClick:function () {
         // Build up JSON
-        // var json = {
-        //         "CmdDest":"SCHD",
-        //         "CmdType":"",
-        //         "message":"start_recipe"
-        //     };
         var json = encodeJSON("SCHD", "COMMAND", null, "STARTRECIPE", null/*recipe*/, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "start recipe", this.callBack);
@@ -84,11 +74,6 @@ window.DashboardView = window.BaseView.extend({
 
     stopRecipeBtnClick:function () {
         // Build up JSON
-        // var json = {
-        //         "CmdDest":"SCHD",
-        //         "CmdType":"",
-        //         "message":"stop_recipe"
-        //     };
         var json = encodeJSON("SCHD", "COMMAND", null, "STOPRECIPE", null/*recipe*/, null);
         // AJAX POST
         this.ajaxCall(json, "stop recipe");
@@ -97,11 +82,6 @@ window.DashboardView = window.BaseView.extend({
 
     homeBtnClick: function () {
         // Build up JSON
-        // var json = {
-        //         "CmdDest":"SCHD",
-        //         "CmdType":"",
-        //         "message":"home"
-        //     };
         var json = encodeJSON("SCHD", "COMMAND", null, "HOME", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "home", this.callBack);
@@ -109,11 +89,6 @@ window.DashboardView = window.BaseView.extend({
 
     recoverBtnClick: function () {
         // Build up JSON
-        // var json = {
-        //         "CmdDest":"SCHD",
-        //         "CmdType":"",
-        //         "message":"recover"
-        //     };
         var json = encodeJSON("SCHD", "COMMAND", null, "RECOVER", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "recover", this.callBack);
@@ -122,12 +97,12 @@ window.DashboardView = window.BaseView.extend({
     onlineStatus: function () {
         // online status
         var status = $("input[name='secs']:checked").attr("value");
-        console.log("online status changed to "+status)
+        console.log("online status changed to "+status);
     },
 
     autoScrollDown: function (e) {
         // auto scroll down
         var scrollTarget = $(e.currentTarget).parent().parent();
-        scrollTarget.scrollTop(scrollTarget.get(0).scrollHeight); 
+        scrollTarget.scrollTop(scrollTarget.get(0).scrollHeight);
     },
 });

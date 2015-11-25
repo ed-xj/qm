@@ -17,7 +17,7 @@ var encodeJSON = function (dest, type, id, cmd, param, msg) {
 // 		"CmdDest":SCHD / UI / DB,
 //      "CmdType":"cmdtype",
 //      "StationID":"stationid",
-//		"Status":"status",
+//		"Cmd":"command",
 // 		"Param":"parameters (could be any type)",
 // 		"Message":"some messages"
 //     };
@@ -52,5 +52,6 @@ var decodeJSON = function (json) {
 	}
 };
 
+// for Apache use
 exports.encodeJSON = encodeJSON;
 exports.decodeJSON = decodeJSON;

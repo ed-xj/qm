@@ -27,7 +27,8 @@ window.InputBaseView = window.BaseView.extend({
         "click #mapWrapBelow":"mapWrapBelowBtnCLick",   // map wrap below
         "click #getWrapAbove":"getWrapAboveBtnCLick",   // get wrap above
         "click #putWrapAbove":"putWrapAboveBtnCLick",   // put wrap above
-        "click #mapWrapAbove":"mapWrapAboveBtnCLick"    // map wrap above
+        "click #mapWrapAbove":"mapWrapAboveBtnCLick",   // map wrap above
+        "click #slots":"slotClick"
     },
 
     // changeLang: function(event) {
@@ -187,11 +188,11 @@ window.InputBaseView = window.BaseView.extend({
         var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "MAPWRAPABOVE", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "mapWrapAbove", this.callBack);
-    }
+    },
 
-    // slotClick: function (e) {
-    //     alert("clicked");
-    //     var slotTarget = $(e.currentTarget);
-    //     console.log("clicked!");
-    // }
+    slotClick: function (e) {
+        alert("clicked");
+        var slotTarget = $(e.currentTarget);
+        console.log("clicked!");
+    }
 });

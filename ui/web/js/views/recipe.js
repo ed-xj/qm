@@ -5,9 +5,9 @@ window.RecipeView = window.BaseView.extend({
 
     events : {
         "click .chk-all":"chkAllCLick",               // check all
-        "click .chk-none":"chkNoneCLick",               // check none
-        "click .chk-element":"chkElemCLick",               // check element
-        "click #saveRecipe":"saveRecipeBtnCLick",               // save
+        "click .chk-none":"chkNoneCLick",             // check none
+        "click .chk-element":"chkElemCLick",          // check element
+        "click #saveRecipe":"saveRecipeBtnCLick",     // save
     },
 
     render: function () {
@@ -52,14 +52,15 @@ window.RecipeView = window.BaseView.extend({
     
     saveRecipeBtnCLick:function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"saveRecipe",
-                "message":"",
-                "recipe":{
-                    "xxx":"xxx" // todo
-                }
-            };
+        // var json = {
+        //         "CmdDest":"SCHD",
+        //         "CmdType":"saveRecipe",
+        //         "message":"",
+        //         "recipe":{
+        //             "xxx":"xxx" // todo
+        //         }
+        //     };
+        var json = encodeJSON("SCHD", "COMMAND", null, "SAVERECIPE", null/*recipe*/, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "saveRecipe", this.callBack);
     }
