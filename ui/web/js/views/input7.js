@@ -23,6 +23,7 @@ window.Input7View = window.InputBaseView.extend({
         "click #mapWrapBelow":"mapWrapBelowBtnCLick",   // map wrap below
         "click #getWrapAbove":"getWrapAboveBtnCLick",   // get wrap above
         "click #putWrapAbove":"putWrapAboveBtnCLick",   // put wrap above
-        "click #mapWrapAbove":"mapWrapAboveBtnCLick"    // map wrap above
+        "click #mapWrapAbove"  :"mapWrapAboveBtnCLick",    // map wrap above
+        "click #slots"         :"slotClick"
     }
 });
