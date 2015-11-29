@@ -4,8 +4,6 @@ window.Router = Backbone.Router.extend({
         ""              : "login",
         "dashboard"     : "dashboard",
         "robot"         : "robot",
-        "contact"       : "contact",
-        "employees/:id" : "employeeDetails",
         "config"        : "config",
         "botcom"        : "botcom",
         "Input1"        : "Input1",
@@ -17,7 +15,8 @@ window.Router = Backbone.Router.extend({
         "Input7"        : "Input7",
         "Input8"        : "Input8",
         "Aligner"       : "Aligner",
-        "Recipe"        : "Recipe"
+        "Recipe"        : "Recipe",
+        "Transfer"      : "Transfer"
     },
 
     moderator: _.extend({}, Backbone.Events),
@@ -86,29 +85,6 @@ window.Router = Backbone.Router.extend({
         this.headerView.select('robot-menu');
     },
 
-    contact: function () {
-        this.header();
-        this.lightPageWrapper();
-
-        if (!this.contactView) {
-            this.contactView = new ContactView();
-            this.contactView.render();
-        }
-        $('#content').html(this.contactView.el);
-        this.headerView.select('contact-menu');
-    },
-
-    employeeDetails: function (id) {
-        var employee = new Employee({id: id});
-        employee.fetch({
-            success: function (data) {
-                // Note that we could also 'recycle' the same instance of EmployeeFullView
-                // instead of creating new instances
-                $('#content').html(new EmployeeView({model: data}).render().el);
-            }
-        });
-    },
-
     config: function () {
         this.header();
         this.lightPageWrapper();
@@ -172,6 +148,8 @@ window.Router = Backbone.Router.extend({
     renderInput: function(inputView, inputName) {
         console.log("Router calling " + inputName);
         this.header();
+        this.lightPageWrapper();
+
         if (!inputView) {
             eval("this." + inputName + "View = new " + inputName + "View();");
             eval("inputView = this." + inputName + "View;");
@@ -209,6 +187,20 @@ window.Router = Backbone.Router.extend({
         }
         $('#content').html(this.recipeView.el);
         this.headerView.select('Recipe-menu');
+    },
+
+    Transfer: function() {
+        this.header();
+        this.lightPageWrapper();
+
+        if (!this.transferView) {
+            this.transferView = new TransferView();
+            this.transferView.render();
+        } else {
+            this.transferView.delegateEvents();
+        }
+        $('#content').html(this.transferView.el);
+        this.headerView.select('Transfer-menu');
     }
 });
 
@@ -228,7 +220,8 @@ templateLoader.load(["DashboardView",
                      "Input7View",
                      "Input8View",
                      "AlignerView",
-                     "RecipeView"
+                     "RecipeView",
+                     "TransferView"
                     ], function () {
                         // load the server side configuration to drive the UI rendering
                         $.get('/cgi-bin/get-config.js', function(cfg) {
