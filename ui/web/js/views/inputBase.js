@@ -54,29 +54,29 @@ window.InputBaseView = window.BaseView.extend({
 
     openFoupBtnCLick: function () {
         // Build up JSON
-        console.log("model:" + this.model.viewName);
-        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "OPENFOUP", null, null);
+        console.log("model:" + this.model.get('viewName'));
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "OPENFOUP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "openFoup", this.callBack);
     },
 
     closeFoupBtnCLick: function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "CLOSEFOUP", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "CLOSEFOUP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "closeFoup", this.callBack);
     },
 
     loadCasetteBtnCLick: function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "LOADCASETTE", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "LOADCASETTE", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "loadCasette", this.callBack);
     },
 
     unloadCasetteBtnCLick: function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "UNLOADCASETTE", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "UNLOADCASETTE", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "unloadCasette", this.callBack);
     },
@@ -100,76 +100,83 @@ window.InputBaseView = window.BaseView.extend({
         $("#slots").children().children("td").text("");
         $("#slots").children().children("td").removeAttr("style");
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "RESTOREDATA", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "RESTOREDATA", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "restoreData", this.callBack);
     },
 
     getStandardBtnCLick: function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "GETSTANDARD", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "GETSTANDARD", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "getStandard", this.callBack);
     },
 
     putStandardBtnCLick: function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "PUTSTANDARD", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "PUTSTANDARD", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putStandard", this.callBack);
     },
 
     mapStandardBtnCLick: function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "MAPSTANDARD", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "MAPSTANDARD", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "mapStandard", this.callBack);
     },
 
     getWrapBelowBtnCLick: function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "GETWRAPBELOW", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "GETWRAPBELOW", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "getWrapBelow", this.callBack);
     },
 
     putWrapBelowBtnCLick: function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "PUTWRAPBELOW", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "PUTWRAPBELOW", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putWrapBelow", this.callBack);
     },
 
     mapWrapBelowBtnCLick: function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "MAPWRAPBELOW", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "MAPWRAPBELOW", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "mapWrapBelow", this.callBack);
     },
 
     getWrapAboveBtnCLick: function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "GETWRAPABOVE", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "GETWRAPABOVE", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "getWrapAbove", this.callBack);
     },
 
     putWrapAboveBtnCLick: function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "PUTWRAPABOVE", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "PUTWRAPABOVE", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putWrapAbove", this.callBack);
     },
 
     mapWrapAboveBtnCLick: function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.viewName, "MAPWRAPABOVE", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "MAPWRAPABOVE", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "mapWrapAbove", this.callBack);
     },
 
     slotClick: function (e) {
         var slotTarget = $(e.currentTarget);
-        console.log('inputBase: slotClick');
+        var highlighted_slot = slotTarget.parent().parent().children();
+        console.log('inputBase: station: '+this.model.get('viewName')+', slot: '+slotTarget.attr('id'));
+        if (slotTarget.parent().hasClass('highlight')) {
+            slotTarget.parent().removeClass('highlight');
+        } else {
+            highlighted_slot.removeClass('highlight');
+            slotTarget.parent().addClass('highlight');
+        }
     }
 });
