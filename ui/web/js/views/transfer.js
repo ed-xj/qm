@@ -78,13 +78,13 @@ window.TransferView = Backbone.View.extend({
     slotClick: function (e) {
         // has to include station ID to complete mapping
         var slotTarget = $(e.currentTarget);
-        var highlighted_slot = slotTarget.parent().parent().children();
-        console.log('inputBase: station: '+ "slot:"+slotTarget.attr('id'));
-        if (slotTarget.parent().hasClass('highlight')) {
-            slotTarget.parent().removeClass('highlight');
+        var selected_slot = slotTarget.parent().parent().children();
+        console.log('inputBase: slot:' + slotTarget.attr('id'));
+        if (slotTarget.parent().hasClass('selected')) {
+            slotTarget.parent().removeClass('selected');
         } else {
-            highlighted_slot.removeClass('highlight');
-            slotTarget.parent().addClass('highlight');
+            selected_slot.removeClass('selected');
+            slotTarget.parent().addClass('selected');
         }
     }
     // Merge

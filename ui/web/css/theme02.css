@@ -191,6 +191,6 @@ ul.alert-dropdown {
 }
 
 /*Slot mapping*/
-.highlight > td{
+.selected > td:nth-child(2){
   border: 2px solid red;
 }

@@ -24,6 +24,7 @@ window.Input1View = window.InputBaseView.extend({
         "click #getWrapAbove":"getWrapAboveBtnCLick",   // get wrap above
         "click #putWrapAbove":"putWrapAboveBtnCLick",   // put wrap above
         "click #mapWrapAbove":"mapWrapAboveBtnCLick",   // map wrap above
-        "click #slots tr > td":"slotClick"              // slot click
+        "click #slots tr > td":"slotClick",             // slot click
+        // "dblclick #slots tr > td":"slotdbClick"            // slot double click
     }
 });

@@ -7,6 +7,7 @@ window.InputBaseView = window.BaseView.extend({
 
     initialize: function (moderator) {
         this.moderator = moderator;
+        this.slotTarget = null;
     },
 
     // changeLang: function(event) {
@@ -41,15 +42,33 @@ window.InputBaseView = window.BaseView.extend({
 
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
 
+    // Union function
     callBack: function(data) {
-        if (data.map === true) {
-            if (data.message.length !== 25)
-                alert("Mapping Error, slot count is not correct");
-            else {
-                var v = new InputBaseView();
-                v.slotMapping(data.Message);
+        if (data.Cmd === "MAPPING") {
+            var v = new InputBaseView();
+            if (data.Param.index === 0) {
+                if (data.Param.status.length !== 25)
+                    alert("Mapping Error, slot count is not correct");
+                else {
+                    // var v = new InputBaseView();
+                    v.slotMapping(data.Param.status);
+                }
+            } else {
+                var slot = "#slot"+(data.Param.index);
+                if (data.Param.index < 1 ||  data.Param.index >50)
+                    alert("Mapping Error, slot count is not correct");
+                else {
+                    if (data.Param.status === 1) {
+                        // var v = new InputBaseView();
+                        $(slot).css("background-color","yellow");
+                        $(slot).css("box-shadow","2px 2px 2px #888888");
+                    } else {
+                        $(slot).text("");
+                        $(slot).removeAttr("style");
+                    }
+                }
             }
-        }
+        } else {}
     },
 
     openFoupBtnCLick: function () {
@@ -107,16 +126,36 @@ window.InputBaseView = window.BaseView.extend({
 
     getStandardBtnCLick: function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "GETSTANDARD", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "getStandard", this.callBack);
+        if (this.slotTarget !== null) {
+            var slotindex = this.slotTarget.siblings('th').text();
+            var param = {
+                    "index": Number(slotindex),
+                    "status": null,
+                    "waferID": null
+                };
+            var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "GETSTANDARD", param, null);
+            // AJAX POST
+            this.ajaxCall(this.ajaxUrl, json, "getStandard", this.callBack);
+        } else {
+            alert("Slot select fail.");
+        }
     },
 
     putStandardBtnCLick: function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "PUTSTANDARD", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "putStandard", this.callBack);
+        if (this.slotTarget !== null) {
+            var slotindex = this.slotTarget.siblings('th').text();
+            var param = {
+                    "index": Number(slotindex),
+                    "status": null,
+                    "waferID": null
+                };
+            var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "PUTSTANDARD", param, null);
+            // AJAX POST
+            this.ajaxCall(this.ajaxUrl, json, "putStandard", this.callBack);
+        } else {
+            alert("Slot select fail.");
+        }
     },
 
     mapStandardBtnCLick: function () {
@@ -169,14 +208,19 @@ window.InputBaseView = window.BaseView.extend({
     },
 
     slotClick: function (e) {
-        var slotTarget = $(e.currentTarget);
-        var highlighted_slot = slotTarget.parent().parent().children();
-        console.log('inputBase: station: '+this.model.get('viewName')+', slot: '+slotTarget.attr('id'));
-        if (slotTarget.parent().hasClass('highlight')) {
-            slotTarget.parent().removeClass('highlight');
+        this.slotTarget = $(e.currentTarget);
+        var selected_slot = this.slotTarget.parent().parent().children();
+        console.log('inputBase: station: '+this.model.get('viewName')+', slot: '+ this.slotTarget.attr('id'));
+        if (this.slotTarget.parent().hasClass('selected')) {
+            this.slotTarget.parent().removeClass('selected');
+            this.slotTarget = null;
         } else {
-            highlighted_slot.removeClass('highlight');
-            slotTarget.parent().addClass('highlight');
+            selected_slot.removeClass('selected');
+            this.slotTarget.parent().addClass('selected');
         }
     }
+
+    // slotdbClick: function (e) {
+    //     alert($(e.currentTarget))
+    // }
 });
