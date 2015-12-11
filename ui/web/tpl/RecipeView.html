@@ -4,13 +4,18 @@
     <div class="col-xs-12">
         <h3 class="page-header">Recipe</h3>
         <div class="row">
-            <div class="input-group col-xs-3" style="margin: 0 auto;">
-                <input type="text" class="form-control">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" id="saveRecipe">SAVE RECIPE</button>
-                </span>
+            <div class="col-xs-12">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="recipeName">[Recipe Name]</label>
+                    <input type="text" class="form-control" id="recipeName" placeholder="">
+                </div>
+                <button class="btn btn-default">SAVE RECIPE</button>
+            </form>
             </div>
-            <hr>
+        </div>
+        <div class="row">
+            <div>&nbsp;</div>
         </div>
         <div class="row">
             <div class="col-xs-2 form-group">
@@ -19,18 +24,18 @@
                         <label class="control-label col-xs-12" style="text-align:left;">UNLOAD ORDER</label>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="unloadOrder" value="1">BOTTOM-TOP
+                                <input type="radio" name="unloadOrder1" value="1" checked>BOTTOM-TOP
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="unloadOrder" value="2">TOP-BOTTOM
+                                <input type="radio" name="unloadOrder1" value="2">TOP-BOTTOM
                             </label>
                         </div>
                         <label class="control-label col-xs-12" style="text-align:left;">SOURCE</label>
                         <select name="sometext" class="form-control"></select>
                         <br>
-                        <div class="col-xs-12 chk-group" style="overflow-y:auto; height:250px">
+                        <div class="col-xs-12 chk-group" id="unloadOrder1" style="overflow-y:auto; height:750px">
                             <div class="checkbox">
                               <label>
                                 <input class="chk-all" type="checkbox" value="">ALL
@@ -41,7 +46,7 @@
                                 <input class="chk-none" type="checkbox" value="">NONE
                               </label>
                             </div>
-                            <% for (var i=0; i < 24; i++) { %>
+                            <% for (var i=0; i < 25; i++) { %>
                             <div class="checkbox">
                               <label>
                                 <input class="chk-element" type="checkbox" value="<%= i+1 %>"><%= i+1 %>
@@ -58,18 +63,18 @@
                         <label class="control-label col-xs-12" style="text-align:left;">UNLOAD ORDER</label>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="unloadOrder" value="1">BOTTOM-TOP
+                                <input type="radio" name="unloadOrder2" value="1" checked>BOTTOM-TOP
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="unloadOrder" value="2">TOP-BOTTOM
+                                <input type="radio" name="unloadOrder2" value="2">TOP-BOTTOM
                             </label>
                         </div>
                         <label class="control-label col-xs-12" style="text-align:left;">DESTINATION</label>
                         <select name="sometext" class="form-control"></select>
                         <br>
-                        <div class="col-xs-12 chk-group" style="overflow-y:auto; height:250px">
+                        <div class="col-xs-12 chk-group" id="unloadOrder2" style="overflow-y:auto; height:750px">
                             <div class="checkbox">
                               <label>
                                 <input class="chk-all" type="checkbox" value="">ALL
@@ -80,7 +85,7 @@
                                 <input class="chk-none" type="checkbox" value="">NONE
                               </label>
                             </div>
-                            <% for (var i=0; i < 24; i++) { %>
+                            <% for (var i=0; i < 25; i++) { %>
                             <div class="checkbox">
                               <label>
                                 <input class="chk-element" type="checkbox" value="<%= i+1 %>"><%= i+1 %>
@@ -137,16 +142,18 @@
                             <thead>
                                 <tr>
                                     <th class="col-xs-2">&nbsp;</th>
-                                    <th class="col-xs-4">CMD</th>
+                                    <th class="col-xs-2">CMD</th>
                                     <th class="col-xs-6">DATA</th>
+                                    <th class="col-xs-2">GOTO</th>
                                 </tr>
                             </thead>
                             <tbody style="height: 250px;">
                                 <% for (var i=0; i < 50; i++) { %>
                                 <tr>
                                     <td class="col-xs-2" style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
-                                    <td class="col-xs-4"><input class="form-control" type="text"></td>
+                                    <td class="col-xs-2"><input class="form-control" type="text"></td>
                                     <td class="col-xs-6"><input class="form-control" type="text"></td>
+                                    <td class="col-xs-2"> <button class="btn btn-default">GO TO</button></td>
                                 </tr>
                                 <% } %>
                             </tbody>
@@ -183,16 +190,18 @@
                             <thead>
                                 <tr>
                                     <th class="col-xs-2"></th>
-                                    <th class="col-xs-4">CMD</th>
+                                    <th class="col-xs-2">CMD</th>
                                     <th class="col-xs-6">DATA</th>
+                                    <th class="col-xs-2">GOTO</th>
                                 </tr>
                             </thead>
                             <tbody style="height: 250px;">
                                 <% for (var i=0; i < 50; i++) { %>
                                 <tr>
                                     <td class="col-xs-2" style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
-                                    <td class="col-xs-4"><input class="form-control" type="text"></td>
+                                    <td class="col-xs-2"><input class="form-control" type="text"></td>
                                     <td class="col-xs-6"><input class="form-control" type="text"></td>
+                                    <td class="col-xs-2"> <button class="btn btn-default">GO TO</button></td>
                                 </tr>
                                 <% } %>
                             </tbody>

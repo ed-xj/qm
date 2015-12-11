@@ -1,6 +1,8 @@
 window.RecipeView = window.BaseView.extend({
     initialize: function (moderator) {
         this.moderator = moderator;
+        this.unloadOrder1 = 'b2t';
+        this.unloadOrder2 = 'b2t';
     },
 
     events : {
@@ -8,6 +10,8 @@ window.RecipeView = window.BaseView.extend({
         "click .chk-none":"chkNoneCLick",             // check none
         "click .chk-element":"chkElemCLick",          // check element
         "click #saveRecipe":"saveRecipeBtnCLick",     // save
+        "click input[name=unloadOrder1]": "updateUnloadOrder1",
+        "click input[name=unloadOrder2]": "updateUnloadOrder2"
     },
 
     render: function () {
@@ -43,6 +47,51 @@ window.RecipeView = window.BaseView.extend({
         }
     },
 
+    reverseSlots: function(id, order) {
+        var selector = 'div#' + id;
+        var elem = this.$(selector);
+        var checks = elem.children('div.checkbox').get();
+        var all = checks.shift();
+        var none = checks.shift();
+        elem.append([all, none].concat(checks.reverse()));
+    },
+
+    updateUnloadOrder1: function(e) {
+        var val = e.currentTarget.value;
+        switch (val) {
+            case '1':
+                if (this.unloadOrder1 == 't2b') {
+                    this.reverseSlots("unloadOrder1", 't2b');
+                    this.unloadOrder1 = 'b2t';
+                }
+                break;
+            case '2':
+                if (this.unloadOrder1 == 'b2t') {
+                    this.reverseSlots("unloadOrder1", 'b2t');
+                    this.unloadOrder1 = 't2b';
+                }
+                break
+        }
+    },
+
+    updateUnloadOrder2: function(e) {
+        var val = e.currentTarget.value;
+        switch (val) {
+            case '1':
+                if (this.unloadOrder2 == 't2b') {
+                    this.reverseSlots("unloadOrder2", 't2b');
+                    this.unloadOrder2 = 'b2t';
+                }
+                break;
+            case '2':
+                if (this.unloadOrder2 == 'b2t') {
+                    this.reverseSlots("unloadOrder2", 'b2t');
+                    this.unloadOrder2 = 't2b';
+                }
+                break
+        }
+
+    },
 
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
 

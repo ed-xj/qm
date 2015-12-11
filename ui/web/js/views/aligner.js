@@ -13,7 +13,20 @@ window.AlignerView = window.BaseView.extend({
     },
 
     render: function () {
+        var callback = function(){
+            this.$('.spinner .btn:first-of-type').on('click', function() {
+                var val =  parseInt(this.$('.spinner input').val(), 10);
+                if (val < 359)
+                    this.$('.spinner input').val( val + 1);
+            }.bind(this));
+            this.$('.spinner .btn:last-of-type').on('click', function() {
+                var val =  parseInt(this.$('.spinner input').val(), 10);
+                if (val > 1)
+                    this.$('.spinner input').val( val - 1);
+            }.bind(this));}.bind(this);
+
         $(this.el).html(this.template());
+        setTimeout(callback, 1);
         return this;
     },
 
