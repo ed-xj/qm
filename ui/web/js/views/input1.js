@@ -20,8 +20,8 @@ window.Input1View = window.InputBaseView.extend({
         "click #getWaferType":"getWaferTypeBtnCLick",     // get standard
         "click #putWaferType":"putWaferTypeBtnCLick",     // put standard
         "click #mapWaferType":"mapWaferTypeBtnCLick",     // map standard
+        "dblclick #slots tr > td":"slotIdDblCkick",       // slot id double click
         "click #slots tr > td":"slotClick",               // slot click
-        "dblclick #slots tr > th":"slotIdDblCkick",       // slot id double click
         "focusout .wafer-id-input":"handleWaferIdChange"  // wafer id change
     }
 });

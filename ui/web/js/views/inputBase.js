@@ -131,7 +131,11 @@ window.InputBaseView = window.BaseView.extend({
 
     updateIdBtnCLick: function () {
         // TODO
-        console.log("updateIdBtnCLick");
+        var waferIDArray = new Array();
+        $(".wafer-id").each(function(){
+            waferIDArray.push($(this).text());
+        });
+        console.log("updateIdBtnCLick. id:" + waferIDArray.toString());
     },
 
     getWaferTypeBtnCLick: function () {
@@ -178,92 +182,6 @@ window.InputBaseView = window.BaseView.extend({
         this.ajaxCall(this.ajaxUrl, json, "mapStandard", this.callBack);
     },
 
-    // To be removed after wafer type change for all input view.
-    // START >>
-    getStandardBtnCLick: function () {
-        // Build up JSON
-        if (this.slotTarget !== null) {
-            var slotindex = this.slotTarget.siblings('th').text();
-            var mapparam = {
-                    "index": Number(slotindex),
-                    "status": null,
-                    "waferID": null
-                };
-            var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "GETSTANDARD", mapparam, null);
-            // AJAX POST
-            this.ajaxCall(this.ajaxUrl, json, "getStandard", this.callBack);
-        } else {
-            alert("Slot select fail.");
-        }
-    },
-
-    putStandardBtnCLick: function () {
-        // Build up JSON
-        if (this.slotTarget !== null) {
-            var slotindex = this.slotTarget.siblings('th').text();
-            var mapparam = {
-                    "index": Number(slotindex),
-                    "status": null,
-                    "waferID": null
-                };
-            var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "PUTSTANDARD", mapparam, null);
-            // AJAX POST
-            this.ajaxCall(this.ajaxUrl, json, "putStandard", this.callBack);
-        } else {
-            alert("Slot select fail.");
-        }
-    },
-
-    mapStandardBtnCLick: function () {
-        // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "MAPSTANDARD", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "mapStandard", this.callBack);
-    },
-
-    getWrapBelowBtnCLick: function () {
-        // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "GETWRAPBELOW", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "getWrapBelow", this.callBack);
-    },
-
-    putWrapBelowBtnCLick: function () {
-        // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "PUTWRAPBELOW", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "putWrapBelow", this.callBack);
-    },
-
-    mapWrapBelowBtnCLick: function () {
-        // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "MAPWRAPBELOW", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "mapWrapBelow", this.callBack);
-    },
-
-    getWrapAboveBtnCLick: function () {
-        // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "GETWRAPABOVE", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "getWrapAbove", this.callBack);
-    },
-
-    putWrapAboveBtnCLick: function () {
-        // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "PUTWRAPABOVE", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "putWrapAbove", this.callBack);
-    },
-
-    mapWrapAboveBtnCLick: function () {
-        // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "MAPWRAPABOVE", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "mapWrapAbove", this.callBack);
-    },
-    // END <<
-
     slotClick: function (e) {
         this.slotTarget = $(e.currentTarget);
         var selected_slot = this.slotTarget.parent().parent().children();
@@ -279,24 +197,18 @@ window.InputBaseView = window.BaseView.extend({
     },
 
     slotIdDblCkick: function(e) {
-        var th = $(e.currentTarget);
-        th.find('label').hide();
-        th.find('input[type="text"]').show().focus();
-    },
-
-    slotIdDblCkick: function(e) {
-        var th = $(e.currentTarget);
-        th.find('.wafer-id').hide();
-        th.find('.wafer-id-input').val(th.find('.wafer-id').text());
-        th.find('.wafer-id-input').show().focus();
-        th.find('.wafer-id-input').select();
+        var td = $(e.currentTarget);
+        td.find('.wafer-id').hide();
+        td.find('.wafer-id-input').val(td.find('.wafer-id').text());
+        td.find('.wafer-id-input').show().focus();
+        td.find('.wafer-id-input').select();
     },
 
     handleWaferIdChange: function(e) {
         var text = $(e.currentTarget);
         text.hide();
-        var th = $(e.currentTarget).parent();
-        th.find('.wafer-id').text(text.val());
-        th.find('.wafer-id').show();
+        var td = $(e.currentTarget).parent();
+        td.find('.wafer-id').text(text.val());
+        td.find('.wafer-id').show();
     }
 });
