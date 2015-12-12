@@ -9,7 +9,7 @@ window.AlignerView = window.BaseView.extend({
         "click #getWafer":"getWaferBtnCLick",           // get wafer
         "click #putWafer":"putWaferBtnCLick",           // put wafer
         "click #getTop":"getTopBtnCLick",               // get top
-        "click #putTop":"putTopFoupBtnCLick"            // put top
+        "click #putTop":"putTopBtnCLick"            // put top
     },
 
     render: function () {
@@ -34,42 +34,42 @@ window.AlignerView = window.BaseView.extend({
     
     readItBtnCLick:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "READIT", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", "aligner", "READIT", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "readIt");
     },
     
     alignWaferBtnCLick:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "ALIGNWAFER", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", "aligner", "ALIGNWAFER", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "alignWafer");
     },
     
     getWaferBtnCLick:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "GETWAFER", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", "aligner", "GETWAFER", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "getWafer");
     },
     
     putWaferBtnCLick:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "PUTWAFER", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", "aligner", "PUTWAFER", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putWafer");
     },
     
     getTopBtnCLick:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "GETTOP", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", "aligner", "GETTOP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "getTop");
     },
     
-    putTopFoupBtnCLick:function () {
+    putTopBtnCLick:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "PUTTOP", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", "aligner", "PUTTOP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putTop");
     }

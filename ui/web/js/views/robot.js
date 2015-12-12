@@ -11,6 +11,7 @@ window.RobotView = window.BaseView.extend({
             station:'stn',
             pose:'pose',
             highlow:'hl',
+            linear:null,
             index:'idx'
         };
 //        this.template = _.template(directory.utils.templateLoader.get('home'));
@@ -44,7 +45,6 @@ window.RobotView = window.BaseView.extend({
             this.logmsg += ((new Date()) + ':system log messages ' + i);
             this.logmsg += '<br>';
         }
-
         this.templateParams = {sysmsg: this.logmsg};
     },
 
@@ -86,7 +86,25 @@ window.RobotView = window.BaseView.extend({
     
     callBack: function(data) {
         // show message in Message section, and trigger "change" event
-        $("code[name='sysmsg']").append(new Date() + ':system log messages ' + data.message + "<br>").trigger("change");
+        $("code[name='sysmsg']").append(new Date() + ':system log messages ' + data.Message + "<br>").trigger("change");
+    },
+
+    // motion ( move, pick, place )
+    motionFunc: function(data) {
+        // ditinguish if user selected or not
+        if ( this.moveAttr.station !== "stn" && this.moveAttr.pose !== "pose" && this.moveAttr.highlow !== "hl" && this.moveAttr.index !== "idx") {
+            // console.log("test are "+this.moveAttr.station+this.moveAttr.pose+this.moveAttr.highlow+this.moveAttr.index);
+
+            // linear checkbox
+            this.moveAttr.linear = $("#linearCheckbox").is(':checked');    // TRUE if checked, FALSE if nonchecked
+
+            // Build up JSON
+            var json = encodeJSON("SCHD", "COMMAND", this.moveAttr.station, data.toUpperCase(), this.moveAttr, "Command "+data);
+            // AJAX POST
+            this.ajaxCall(this.ajaxUrl, json, data, this.callBack);
+        } else {
+            alert("Please select correct staion, pose, high-low, linear or index");
+        }
     },
 
 // Button click events
@@ -146,20 +164,21 @@ window.RobotView = window.BaseView.extend({
     },
 
     moveBtnClick:function () {
-        // ditinguish if user selected or not
-        if ( this.moveAttr.station !== "stn" && this.moveAttr.pose !== "pose" && this.moveAttr.highlow !== "hl" && this.moveAttr.index !== "idx") {
-            // console.log("test are "+this.moveAttr.station+this.moveAttr.pose+this.moveAttr.highlow+this.moveAttr.index);
+        // // ditinguish if user selected or not
+        // if ( this.moveAttr.station !== "stn" && this.moveAttr.pose !== "pose" && this.moveAttr.highlow !== "hl" && this.moveAttr.index !== "idx") {
+        //     // console.log("test are "+this.moveAttr.station+this.moveAttr.pose+this.moveAttr.highlow+this.moveAttr.index);
 
-            // linear checkbox
-            var linearbox = $("#linearCheckbox").is(':checked');    // TRUE if checked, FALSE if nonchecked
+        //     // linear checkbox
+        //     this.moveAttr.linear = $("#linearCheckbox").is(':checked');    // TRUE if checked, FALSE if nonchecked
 
-            // Build up JSON
-            var json = encodeJSON("SCHD", "COMMAND", null, "MOVE", this.moveAttr, null);
-            // AJAX POST
-            this.ajaxCall(this.ajaxUrl, json, "move", this.callBack);
-        } else {
-            alert("Please select correct staion, pose, high-low or index");
-        }
+        //     // Build up JSON
+        //     var json = encodeJSON("SCHD", "COMMAND", null, "MOVE", this.moveAttr, this.moveAttr.station);
+        //     // AJAX POST
+        //     this.ajaxCall(this.ajaxUrl, json, "move", this.callBack);
+        // } else {
+        //     alert("Please select correct staion, pose, high-low, linear or index");
+        // }
+        this.motionFunc("move");
     },
 
     moveBtnRightClick: function (event) {
@@ -194,17 +213,19 @@ window.RobotView = window.BaseView.extend({
     },
 
     pickBtnCLick: function() {
-        // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "PICK", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "pick", this.callBack);
+        // // Build up JSON
+        // var json = encodeJSON("SCHD", "COMMAND", null, "PICK", null, null);
+        // // AJAX POST
+        // this.ajaxCall(this.ajaxUrl, json, "pick", this.callBack);
+        this.motionFunc("pick");
     },
 
     placeBtnCLick: function() {
-        // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "PLACE", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "place", this.callBack);
+        // // Build up JSON
+        // var json = encodeJSON("SCHD", "COMMAND", null, "PLACE", null, null);
+        // // AJAX POST
+        // this.ajaxCall(this.ajaxUrl, json, "place", this.callBack);
+        this.motionFunc("place");
     },
 
     autoScrollDown: function (e) {

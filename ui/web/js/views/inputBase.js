@@ -8,13 +8,8 @@ window.InputBaseView = window.BaseView.extend({
     initialize: function (moderator) {
         this.moderator = moderator;
         this.slotTarget = null;
+        // this.stationID = 
     },
-
-    // changeLang: function(event) {
-    //     window.currentLang = event.target.value;
-    //     this.moderator.trigger('lang:change');
-    //     this.render();
-    // },
 
     handleCassetteChange: function() {
         console.log("handleCassetteChange");
@@ -128,12 +123,12 @@ window.InputBaseView = window.BaseView.extend({
         // Build up JSON
         if (this.slotTarget !== null) {
             var slotindex = this.slotTarget.siblings('th').text();
-            var param = {
+            var mapparam = {
                     "index": Number(slotindex),
                     "status": null,
                     "waferID": null
                 };
-            var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "GETSTANDARD", param, null);
+            var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "GETSTANDARD", mapparam, null);
             // AJAX POST
             this.ajaxCall(this.ajaxUrl, json, "getStandard", this.callBack);
         } else {
@@ -145,12 +140,12 @@ window.InputBaseView = window.BaseView.extend({
         // Build up JSON
         if (this.slotTarget !== null) {
             var slotindex = this.slotTarget.siblings('th').text();
-            var param = {
+            var mapparam = {
                     "index": Number(slotindex),
                     "status": null,
                     "waferID": null
                 };
-            var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "PUTSTANDARD", param, null);
+            var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "PUTSTANDARD", mapparam, null);
             // AJAX POST
             this.ajaxCall(this.ajaxUrl, json, "putStandard", this.callBack);
         } else {
@@ -210,17 +205,14 @@ window.InputBaseView = window.BaseView.extend({
     slotClick: function (e) {
         this.slotTarget = $(e.currentTarget);
         var selected_slot = this.slotTarget.parent().parent().children();
-        console.log('inputBase: station: '+this.model.get('viewName')+', slot: '+ this.slotTarget.attr('id'));
         if (this.slotTarget.parent().hasClass('selected')) {
             this.slotTarget.parent().removeClass('selected');
+            console.log('inputBase: '+this.model.get('viewName')+', slot: '+ this.slotTarget.attr('id')+' unselected.');
             this.slotTarget = null;
         } else {
             selected_slot.removeClass('selected');
             this.slotTarget.parent().addClass('selected');
+            console.log('inputBase: '+this.model.get('viewName')+', slot: '+ this.slotTarget.attr('id')+' selected.');
         }
     }
-
-    // slotdbClick: function (e) {
-    //     alert($(e.currentTarget))
-    // }
 });

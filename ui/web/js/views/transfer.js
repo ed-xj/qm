@@ -1,4 +1,5 @@
-window.TransferView = Backbone.View.extend({
+// window.TransferView = Backbone.View.extend({
+window.TransferView = window.BaseView.extend({
     initialize: function () {
         this.mode = 'split';
         // All inputs casette maping and wafer ID
@@ -9,10 +10,13 @@ window.TransferView = Backbone.View.extend({
         "click #mergeRadio":"handleMergeMode",
         "click #resequenceRadio":"handleResequenceMode",
         // Split
+        "change #srcStation":"splitSrcStationSelect",
         "click #slots tr td:nth-child(7n+2)":"slotClick",   // slot click
         // Merge
         "click #slotsSrc tr > td":"slotClick",              // source slot click
-        "click #slotsTarget tr > td":"slotClick"            // target slot click
+        "click #slotsTarget tr > td":"slotClick",           // target slot click
+        //resequence
+        "click #go":"goBtnClick"
     },
 
     render: function () {
@@ -22,6 +26,10 @@ window.TransferView = Backbone.View.extend({
             that.synchMode();
         }, 1);
     },
+
+    ajaxUrl: "/cgi-bin/tcp_socket_client.js",
+
+    callBack: function(data) {},
 
     synchMode: function() {
         var splitPanel      = $('#splitPanel'),
@@ -59,6 +67,10 @@ window.TransferView = Backbone.View.extend({
     },
 
     // Split
+    splitSrcStationSelect: function() {
+        var srcstn = $('#srcStation option:selected').val()
+    },
+
     slotMapping: function (map) {
         // has to include station ID to complete mapping
         // clear slots color and text
@@ -86,12 +98,34 @@ window.TransferView = Backbone.View.extend({
             selected_slot.removeClass('selected');
             slotTarget.parent().addClass('selected');
         }
-    }
+    },
     // Merge
 
     // Resequence
-    // id="sortASC" / id="sortDEC"
-    // testfield id="idMask"
-    // source station (select id="reqSrcStation" option 1-8)
-    // target station (select id="reqSrcStation" option 1-8)
+    resequence: function() {
+        // Build up JSON
+        var so = $('input[name=sortOrder]:checked').attr('id').toUpperCase();
+        var im = $('#idMask').val();
+        var rsStn = $('#reqSrcStation option:selected').val()       // type string
+        var rtStn = $('#reqTargetStation option:selected').val()    // type string
+        var reseq = {
+            sortorder: so,
+            idmask: im,
+            srcstation: Number(rsStn),
+            targetstation: Number(rtStn)
+        }
+        var json = encodeJSON("SCHD", "COMMAND", null, "RESEQUENCE", reseq, null);
+        // AJAX POST
+        this.ajaxCall(this.ajaxUrl, json, "transfer - resequence");
+    },
+
+    goBtnClick: function() {
+        if (this.mode === 'split') {
+        } else if (this.mode === 'merge') {
+
+        } else if (this.mode ==='resequence') {
+            this.resequence()
+        } else
+            alert('Transfer mode error, please select again.');
+    }
 });
