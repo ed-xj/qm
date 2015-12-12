@@ -1,0 +1,2179 @@
+<div class="container-fluid">
+  <div class="row">
+    <h3 class="page-header">Transfer</h3>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel">
+                <!--<div class="pabel-heading"><h3>Panel heading without title</h3></div>-->
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label">Transfer Mode</label>
+                                <span class="">
+                                    <!--<label>-->
+                                        <!--<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>-->
+                                        <!--Option one is this and that&mdash;be sure to include why it's great-->
+                                    <!--</label>-->
+                                    <label class="radio-inline"><input type="radio" id="splitRadio" name="txmode" value="split" checked>Split</label>
+                                    <label class="radio-inline"><input type="radio" id="mergeRadio" name="txmode" value="merge">Merge</label>
+                                    <label class="radio-inline"><input type="radio" id="resequenceRadio" name="txmode" value="resequence">Resequence</label>
+                                </span>
+                                <button class="btn btn-default btn-sm col-sm-offset-1" id="go">GO</button>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div id="splitPanel" class="form-group">
+                                        <div class="form-group">
+                                            <label for="srcStation" class="control-label">Source Station</label>
+                                            <select id="srcStation">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                            </select>
+                                        </div>
+                                        <table class="table table-condensed wafer-slots">
+                                                <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>SLOTS</th>
+                                                    <th>TARGET STATION</th>
+                                                    <th>TARGET SLOT</th>
+                                                    <th>ALIGN</th>
+                                                    <th>OCR</th>
+                                                    <th>FLIP</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="slots">
+                                                <tr>
+                                                    <th scope="row">25</th>
+                                                    <td id="slot25"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot25" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot25" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">24</th>
+                                                    <td id="slot24"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot24" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot24" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">23</th>
+                                                    <td id="slot23"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot23" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot23" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">22</th>
+                                                    <td id="slot22"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot22" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot22" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">21</th>
+                                                    <td id="slot21"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot21" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot21" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">20</th>
+                                                    <td id="slot20"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot20" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot20" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">19</th>
+                                                    <td id="slot19"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot19" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot19" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">18</th>
+                                                    <td id="slot18"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot18" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot18" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">17</th>
+                                                    <td id="slot17"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot17" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot17" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">16</th>
+                                                    <td id="slot16"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot16" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot16" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">15</th>
+                                                    <td id="slot15"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot15" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot15" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">14</th>
+                                                    <td id="slot14"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot14" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot14" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">13</th>
+                                                    <td id="slot13"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot13" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot13" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">12</th>
+                                                    <td id="slot12"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot12" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot12" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">11</th>
+                                                    <td id="slot11"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot11" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot11" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">10</th>
+                                                    <td id="slot10"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot10" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot10" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">9</th>
+                                                    <td id="slot9"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot9" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot9" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">8</th>
+                                                    <td id="slot8"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot8" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot8" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">7</th>
+                                                    <td id="slot7"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot7" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot7" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">6</th>
+                                                    <td id="slot6"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot6" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot6" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">5</th>
+                                                    <td id="slot5"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot5" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot5" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">4</th>
+                                                    <td id="slot4"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot4" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot4" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td id="slot3"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot3" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot3" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td id="slot2"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot2" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot2" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td id="slot1"></td>
+                                                    <td>
+                                                        <select id="targetStationForSlot1" style="width:100%;">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="targetSlotForSlot1" style="width:100%;">
+                                                            <option>25</option>
+                                                            <option>24</option>
+                                                            <option>23</option>
+                                                            <option>22</option>
+                                                            <option>21</option>
+                                                            <option>20</option>
+                                                            <option>19</option>
+                                                            <option>18</option>
+                                                            <option>17</option>
+                                                            <option>16</option>
+                                                            <option>15</option>
+                                                            <option>14</option>
+                                                            <option>13</option>
+                                                            <option>12</option>
+                                                            <option>11</option>
+                                                            <option>10</option>
+                                                            <option>9</option>
+                                                            <option>8</option>
+                                                            <option>7</option>
+                                                            <option>6</option>
+                                                            <option>5</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                            <option>2</option>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="mergePanel" class="panel form-group">
+                                <div class="form-group">
+                                    <span>Source Station</span>
+                                    <select id="srcMergeStation">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                    </select>
+                                    <button id="addSrcStationBtn">Add</button>
+                                    <button id="removeSrcStationBtn">remove</button>
+                                </div>
+                                <ul id="srcMergeStationPills" class="nav nav-pills bg-info panel-body">
+                                    <li class="active"><a href="#">Station1</a></li>
+                                    <li><a href="#">Station3</a></li>
+                                </ul>
+                                <div class="form-group">
+                                    <span>Target Station</span>
+                                    <select id="targetMergeStation">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                    </select>
+                                    <button id="addTargetStationBtn">Add</button>
+                                    <button id="removeTargetStationBtn">remove</button>
+                                </div>
+                                <ul id="targetMergeStationPills" class="nav nav-pills bg-info panel-body">
+                                    <li class="active"><a href="#">Station4</a></li>
+                                    <li><a href="#">Station5</a></li>
+                                    <li><a href="#">Station8</a></li>
+                                </ul>
+                                <div class="row">
+                                    <div class="panel-body">
+                                        <div class="col-xs-4">
+                                            <table class="table table-condensed wafer-slots">
+                                                <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>SLOTS</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="slotsSrc">
+                                                <tr>
+                                                    <th scope="row">25</th>
+                                                    <td id="slot25"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">24</th>
+                                                    <td id="slot24"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">23</th>
+                                                    <td id="slot23"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">22</th>
+                                                    <td id="slot22"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">21</th>
+                                                    <td id="slot21"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">20</th>
+                                                    <td id="slot20"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">19</th>
+                                                    <td id="slot19"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">18</th>
+                                                    <td id="slot18"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">17</th>
+                                                    <td id="slot17"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">16</th>
+                                                    <td id="slot16"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">15</th>
+                                                    <td id="slot15"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">14</th>
+                                                    <td id="slot14"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">13</th>
+                                                    <td id="slot13"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">12</th>
+                                                    <td id="slot12"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">11</th>
+                                                    <td id="slot11"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">10</th>
+                                                    <td id="slot10"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">9</th>
+                                                    <td id="slot9"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">8</th>
+                                                    <td id="slot8"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">7</th>
+                                                    <td id="slot7"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">6</th>
+                                                    <td id="slot6"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">5</th>
+                                                    <td id="slot5"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">4</th>
+                                                    <td id="slot4"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td id="slot3"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td id="slot2"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td id="slot1"></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <table class="table table-condensed  wafer-slots">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Align</th>
+                                                        <th>OCR</th>
+                                                        <th>Flip</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"/>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <table class="table table-condensed wafer-slots">
+                                                <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>SLOTS</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="slotsTarget">
+                                                <tr>
+                                                    <th scope="row">25</th>
+                                                    <td id="slot25"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">24</th>
+                                                    <td id="slot24"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">23</th>
+                                                    <td id="slot23"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">22</th>
+                                                    <td id="slot22"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">21</th>
+                                                    <td id="slot21"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">20</th>
+                                                    <td id="slot20"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">19</th>
+                                                    <td id="slot19"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">18</th>
+                                                    <td id="slot18"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">17</th>
+                                                    <td id="slot17"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">16</th>
+                                                    <td id="slot16"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">15</th>
+                                                    <td id="slot15"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">14</th>
+                                                    <td id="slot14"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">13</th>
+                                                    <td id="slot13"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">12</th>
+                                                    <td id="slot12"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">11</th>
+                                                    <td id="slot11"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">10</th>
+                                                    <td id="slot10"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">9</th>
+                                                    <td id="slot9"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">8</th>
+                                                    <td id="slot8"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">7</th>
+                                                    <td id="slot7"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">6</th>
+                                                    <td id="slot6"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">5</th>
+                                                    <td id="slot5"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">4</th>
+                                                    <td id="slot4"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td id="slot3"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td id="slot2"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td id="slot1"></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="resequencePanel" class="panel form-group">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Sort Order</label>
+                                    <span class="">
+                                        <label class="radio-inline"><input type="radio" id="sortASC" name="sortOrder" checked>Ascending</label>
+                                        <label class="radio-inline"><input type="radio" id="sortDEC" name="sortOrder">Descending</label>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="idMask" class="control-label col-sm-2">ID Mask</label>
+                                    <span class="">
+                                        <input type="text" id="idMask" name="idMask">
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="reqSrcStation" class="control-label col-sm-2">Source Station</label>
+                                    <span class="">
+                                        <select id="reqSrcStation">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                        </select>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="reqTargetStation" class="control-label col-sm-2">Target Station</label>
+                                    <span class="">
+                                        <select id="reqTargetStation">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                        </select>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  </div>
+</div>

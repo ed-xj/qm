@@ -26,57 +26,37 @@ window.ConfigView = window.BaseView.extend({
     
     slowBtnClick:function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"",
-                "message":"speed slow"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "SPEEDSLOW", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "slow");
     },
 
     mediumBtnClick:function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"",
-                "message":"speed medium"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "SPEEDMEDIUM", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "medium");
     },
 
     highBtnClick:function () {
         // Build up JSON
-        var json = {
-                "CmdDest":"SCHD",
-                "CmdType":"",
-                "message":"speed high"
-            };
+        var json = encodeJSON("SCHD", "COMMAND", null, "SPEEDHIGH", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "high");
     },
 
     syslogLevel:function () {
-        // // Build up JSON
-        // var json = {
-        //         "CmdDest":"SCHD",
-        //         "CmdType":"",
-        //         "message":"load_recipe"
-        //     };
-        // // AJAX POST
+        // Build up JSON
+        var json = encodeJSON("SCHD", "COMMAND", null, "SPEEDHIGH", null, null);
+        // AJAX POST
         // this.ajaxCall(json, "fast");
         console.log("syslogLevel changed");
     },
 
     robotlogLevel:function () {
-        // // Build up JSON
-        // var json = {
-        //         "CmdDest":"SCHD",
-        //         "CmdType":"",
-        //         "message":"load_recipe"
-        //     };
-        // // AJAX POST
+        // Build up JSON
+        var json = encodeJSON("SCHD", "COMMAND", null, "SPEEDHIGH", null, null);
+        // AJAX POST
         // this.ajaxCall(json, "fast");
         console.log("robotlogLevel changed");
     }

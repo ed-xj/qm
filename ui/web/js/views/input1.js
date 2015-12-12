@@ -7,7 +7,7 @@ window.Input1View = window.InputBaseView.extend({
 
     events : {
         // "change #lang": "changeLang",
-        "change .cassette-type": "handleCassetteChange",
+        "change .cassette-type":"handleCassetteChange", // casette change
         "click #openFoup":"openFoupBtnCLick",           // open foup
         "click #closeFoup":"closeFoupBtnCLick",         // close foup
         "click #loadCasette":"loadCasetteBtnCLick",     // load casette
@@ -23,6 +23,7 @@ window.Input1View = window.InputBaseView.extend({
         "click #mapWrapBelow":"mapWrapBelowBtnCLick",   // map wrap below
         "click #getWrapAbove":"getWrapAboveBtnCLick",   // get wrap above
         "click #putWrapAbove":"putWrapAboveBtnCLick",   // put wrap above
-        "click #mapWrapAbove":"mapWrapAboveBtnCLick"    // map wrap above
+        "click #mapWrapAbove":"mapWrapAboveBtnCLick",   // map wrap above
+        "click #slots tr > td":"slotClick"              // slot click
     }
 });

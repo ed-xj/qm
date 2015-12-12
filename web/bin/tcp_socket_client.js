@@ -20,20 +20,18 @@ var client = new net.Socket();
 // keep socket open(alive).
 client.setKeepAlive(true,30);
 
-
 ///////////////////////////////////////////////////////////////////////
 // AJAX //
 // var sys = require("sys");
 var stdin = process.openStdin();
 // var stdin = process.stdin();
-
 // stdin.resume();
 stdin.setEncoding('utf8');
 var inputData = '';
 
 /////////////////////////////////////////////
-// write to file
-// var fs = require('fs');
+// JSON encode and decode
+var util = require('../../ui/web/lib/utility.js');
 
 //////////////////////////////////////////////////////////////////////
 // Socket events
@@ -48,19 +46,13 @@ client.on('data', function (data) {
 
 	// close socket
 	client.end();
-	
-	// write to a file
-	// fs.writeFile('return.txt', JSON.stringify(parseddata), function(err) {
-	//     if(err) {
-	//         return console.log(err);
-	//     }
-	//     // console.log(JSON.stringify({'message':'write to file'}));
-	// });
 });
 
 // socket error event
 client.on('error', function() {
-	console.log(JSON.stringify({"message":"Socket connection ERROR"}));
+	// JSON encode
+	var json = util.encodeJSON("UI", "ERROR", null, null, null, "Socket connection ERROR");
+	console.log(JSON.stringify(json));//{"Message":"Socket connection ERROR"}));
 });
 
 // client.on('end', function () {

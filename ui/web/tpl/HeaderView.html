@@ -53,7 +53,7 @@
             </li>
             <% } %>
 
-              <% var types = ['input','output','aligner', 'loadport', 'reader']; %>
+              <% var types = ['input','output','aligner', 'loadport', 'recipe', 'transfer']; %>
 
               <% var type = types.shift(); %>
               <% while (type) { %>
@@ -75,96 +75,13 @@
               <% type = types.shift(); %>
               <% } %>
 
-
-<!--
-            <li class="contact-menu">
-                <a href="#contact"><i class="fa fa-fw fa-caret-square-o-right"></i> <%= t["input1"] %></a>
-            </li>
-            <li class="contact-menu">
-                <a href="#contact"><i class="fa fa-fw fa-caret-square-o-right"></i> <%= t["input2"] %></a>
-            </li>
-            <li class="contact-menu">
-                <a href="#contact"><i class="fa fa-fw fa-caret-square-o-left"></i> <%= t["output1"] %></a>
-            </li>
-            <li class="contact-menu">
-                <a href="#contact"><i class="fa fa-fw fa-caret-square-o-left"></i> <%= t["output2"] %></a>
-            </li>
-            <li class="contact-menu">
-                <a href="#contact"><i class="fa fa-fw fa-align-justify"></i> <%= t["aligner"] %></a>
-            </li>
-            <li class="contact-menu">
-                <a href="#contact"><i class="fa fa-fw fa-upload"></i> <%= t["load_port"] %></a>
-            </li>
-            <li class="contact-menu">
-                <a href="#contact"><i class="fa fa-fw fa-barcode"></i> <%= t["reader1"] %></a>
-            </li>
-            <li class="contact-menu">
-                <a href="#contact"><i class="fa fa-fw fa-cogs"></i> <%= t["process1"] %></a>
-            </li>
-            <li class="contact-menu">
-                <a href="#contact"><i class="fa fa-fw fa-list-ol"></i> <%= t["recipe"] %></a>
-            </li>
--->
             <% if (localStorage.userRole !== 'operator') { %>
               <li class="config-menu <%= userRoleClassName %>">
                 <a href="#config"><i class="fa fa-fw fa-sliders"></i> <%= t["config"] %></a>
               </li>
 
             <% } %>
-            <!--<li>-->
-                <!--<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-wrench"></i> <%= t["tools"] %><i class="fa fa-fw fa-caret-down"></i></a>-->
-                <!--<ul id="demo" class="collapse">-->
-                    <!--<li class="botcom-menu">-->
-                        <!--<a href="#botcom"><i class="fa fa-fw fa-lightbulb-o"></i> Botcom</a>-->
-                    <!--</li>-->
-                    <!--<li class="contact-menu">-->
-                        <!--<a href="#contact"><i class="fa fa-fw fa-bar-chart-o"></i> Contacts</a>-->
-                    <!--</li>-->
-                    <!--<li class="charts-menu">-->
-                        <!--<a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--<a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--<a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--<a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--<a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--<a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--<a href="login.html"><i class="fa fa-fw fa-file"></i> Login Page</a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--<a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            <!--</li>-->
         </ul>
     </div>
     <!-- /.navbar-collapse -->
 </nav>
-<!--<div class="navbar navbar-fixed-top">-->
-    <!--<div class="navbar-inner">-->
-        <!--<div class="container">-->
-
-            <!--<a class="brand" href="#">Backbone Directory</a>-->
-
-            <!--<div class="nav-collapse">-->
-                <!--<ul class="nav">-->
-                    <!--<li class="home-menu active"><a href="#">Home</a></li>-->
-                    <!--<li class="contact-menu"><a href="#contact">Contact</a></li>-->
-                <!--</ul>-->
-                <!--<form class="navbar-search pull-right dropdown">-->
-                    <!--<input id="searchText" type="text" class="search-query dropdown-toggle" placeholder="Search" autocomplete="off">-->
-                <!--</form>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->

@@ -1,0 +1,214 @@
+<% var t = window.I18N[window.currentLang]["configView"] %>
+
+<div class="row">
+    <div class="col-xs-12">
+        <h3 class="page-header">Recipe</h3>
+        <div class="row">
+            <div class="col-xs-12">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="recipeName">[Recipe Name]</label>
+                    <input type="text" class="form-control" id="recipeName" placeholder="">
+                </div>
+                <button class="btn btn-default">SAVE RECIPE</button>
+            </form>
+            </div>
+        </div>
+        <div class="row">
+            <div>&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 form-group">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <label class="control-label col-xs-12" style="text-align:left;">UNLOAD ORDER</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="unloadOrder1" value="1" checked>BOTTOM-TOP
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="unloadOrder1" value="2">TOP-BOTTOM
+                            </label>
+                        </div>
+                        <label class="control-label col-xs-12" style="text-align:left;">SOURCE</label>
+                        <select name="sometext" class="form-control"></select>
+                        <br>
+                        <div class="col-xs-12 chk-group" id="unloadOrder1" style="overflow-y:auto; height:750px">
+                            <div class="checkbox">
+                              <label>
+                                <input class="chk-all" type="checkbox" value="">ALL
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input class="chk-none" type="checkbox" value="">NONE
+                              </label>
+                            </div>
+                            <% for (var i=0; i < 25; i++) { %>
+                            <div class="checkbox">
+                              <label>
+                                <input class="chk-element" type="checkbox" value="<%= i+1 %>"><%= i+1 %>
+                              </label>
+                            </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-2 form-group">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <label class="control-label col-xs-12" style="text-align:left;">UNLOAD ORDER</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="unloadOrder2" value="1" checked>BOTTOM-TOP
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="unloadOrder2" value="2">TOP-BOTTOM
+                            </label>
+                        </div>
+                        <label class="control-label col-xs-12" style="text-align:left;">DESTINATION</label>
+                        <select name="sometext" class="form-control"></select>
+                        <br>
+                        <div class="col-xs-12 chk-group" id="unloadOrder2" style="overflow-y:auto; height:750px">
+                            <div class="checkbox">
+                              <label>
+                                <input class="chk-all" type="checkbox" value="">ALL
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input class="chk-none" type="checkbox" value="">NONE
+                              </label>
+                            </div>
+                            <% for (var i=0; i < 25; i++) { %>
+                            <div class="checkbox">
+                              <label>
+                                <input class="chk-element" type="checkbox" value="<%= i+1 %>"><%= i+1 %>
+                              </label>
+                            </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4 form-group">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <label class="control-label col-xs-12" style="text-align:left;">TYPE</label>
+                        <div class="radio">
+                            <div class="radio-inline">
+                                <label>
+                                    <input type="radio" name="type" value="1">STD
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input type="radio" name="type" value="2">THIN
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input type="radio" name="type" value="2">A_TYPE
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input type="radio" name="type" value="2">B_TYPE
+                                </label>
+                            </div>
+                        </div>
+                        <label class="control-label col-xs-6" style="text-align:left;">PROCESS 1</label>
+                        <div class="col-xs-6">
+                            <label class="control-label col-xs-12" style="text-align:left;">USAGE</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="usage1" value="1">DISABLE
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="usage1" value="2">ENABLE
+                                </label>
+                            </div>
+                        </div>
+                        <label class="control-label col-xs-12" style="text-align:left;">SEQUENCE 1</label>
+                        <br>
+                        <table class="table table-fixed">
+                            <thead>
+                                <tr>
+                                    <th class="col-xs-2">&nbsp;</th>
+                                    <th class="col-xs-2">CMD</th>
+                                    <th class="col-xs-6">DATA</th>
+                                    <th class="col-xs-2">GOTO</th>
+                                </tr>
+                            </thead>
+                            <tbody style="height: 250px;">
+                                <% for (var i=0; i < 50; i++) { %>
+                                <tr>
+                                    <td class="col-xs-2" style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
+                                    <td class="col-xs-2"><input class="form-control" type="text"></td>
+                                    <td class="col-xs-6"><input class="form-control" type="text"></td>
+                                    <td class="col-xs-2"> <button class="btn btn-default">GO TO</button></td>
+                                </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4 form-group">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <label class="control-label col-xs-12" style="text-align:left;">&nbsp;</label>
+                        <div class="radio">
+                            <div class="radio-inline">
+                                <label>&nbsp;</label>
+                            </div>
+                        </div>
+                        <label class="control-label col-xs-6" style="text-align:left;">PROCESS 2</label>
+                        <div class="col-xs-6">
+                            <label class="control-label col-xs-12" style="text-align:left;">USAGE</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="usage2" value="1">DISABLE
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="usage2" value="2">ENABLE
+                                </label>
+                            </div>
+                        </div>
+                        <label class="control-label col-xs-12" style="text-align:left;">SEQUENCE 2</label>
+                        <br>
+                        <table class="table table-fixed">
+                            <thead>
+                                <tr>
+                                    <th class="col-xs-2"></th>
+                                    <th class="col-xs-2">CMD</th>
+                                    <th class="col-xs-6">DATA</th>
+                                    <th class="col-xs-2">GOTO</th>
+                                </tr>
+                            </thead>
+                            <tbody style="height: 250px;">
+                                <% for (var i=0; i < 50; i++) { %>
+                                <tr>
+                                    <td class="col-xs-2" style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
+                                    <td class="col-xs-2"><input class="form-control" type="text"></td>
+                                    <td class="col-xs-6"><input class="form-control" type="text"></td>
+                                    <td class="col-xs-2"> <button class="btn btn-default">GO TO</button></td>
+                                </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

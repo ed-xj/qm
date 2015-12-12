@@ -55,3 +55,24 @@ table.wafer-slots th {
     background-color: #f7f7f9;
     border: 1px solid #e1e1e8;
 }
+
+.table-fixed thead {
+  width: 97%;
+}
+
+.table-fixed tbody {
+  overflow-y: auto;
+  width: 100%;
+}
+
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+  display: block;
+}
+
+.table-fixed tbody td, .table-fixed thead > tr> th {
+  border-bottom-width: 0;
+}
+
+.table-fixed thead > tr> th {
+  float: left;
+}
