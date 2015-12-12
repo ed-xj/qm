@@ -11,6 +11,16 @@ window.InputBaseView = window.BaseView.extend({
         // this.stationID = 
     },
 
+    handleWaferTypeChange: function() {
+        var waferType = $("#waferType").val();
+        $("#getWaferTypeLabel").text("GET " + waferType);
+        $("#getWaferType").text("GET " + waferType);
+        $("#putWaferTypeLabel").text("PUT " + waferType);
+        $("#putWaferType").text("PUT " + waferType);
+        $("#mapWaferTypeLabel").text("MAP " + waferType);
+        $("#mapWaferType").text("MAP " + waferType);
+    },
+
     handleCassetteChange: function() {
         console.log("handleCassetteChange");
     },
@@ -119,6 +129,57 @@ window.InputBaseView = window.BaseView.extend({
         this.ajaxCall(this.ajaxUrl, json, "restoreData", this.callBack);
     },
 
+    updateIdBtnCLick: function () {
+        // TODO
+        console.log("updateIdBtnCLick");
+    },
+
+    getWaferTypeBtnCLick: function () {
+        // Build up JSON
+        if (this.slotTarget !== null) {
+            var slotindex = this.slotTarget.siblings('th').text();
+            var mapparam = {
+                    "index": Number(slotindex),
+                    "status": null,
+                    "waferID": null
+                };
+            var action = "GET" + $("#waferType").val();
+            var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), action, mapparam, null);
+            // AJAX POST
+            this.ajaxCall(this.ajaxUrl, json, "getStandard", this.callBack);
+        } else {
+            alert("Slot select fail.");
+        }
+    },
+
+    putWaferTypeBtnCLick: function () {
+        // Build up JSON
+        if (this.slotTarget !== null) {
+            var slotindex = this.slotTarget.siblings('th').text();
+            var mapparam = {
+                    "index": Number(slotindex),
+                    "status": null,
+                    "waferID": null
+                };
+            var action = "PUT" + $("#waferType").val();
+            var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), action, mapparam, null);
+            // AJAX POST
+            this.ajaxCall(this.ajaxUrl, json, "putStandard", this.callBack);
+        } else {
+            alert("Slot select fail.");
+        }
+    },
+
+    mapWaferTypeBtnCLick: function () {
+        // Build up JSON
+        var action = "MAP" + $("#waferType").val();
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), action, null, null);
+        // AJAX POST
+        this.ajaxCall(this.ajaxUrl, json, "mapStandard", this.callBack);
+    },
+
+    // To be removed after wafer type change for all input view.
+    // START >>
     getStandardBtnCLick: function () {
         // Build up JSON
         if (this.slotTarget !== null) {
@@ -201,6 +262,7 @@ window.InputBaseView = window.BaseView.extend({
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "mapWrapAbove", this.callBack);
     },
+    // END <<
 
     slotClick: function (e) {
         this.slotTarget = $(e.currentTarget);
@@ -214,5 +276,27 @@ window.InputBaseView = window.BaseView.extend({
             this.slotTarget.parent().addClass('selected');
             console.log('inputBase: '+this.model.get('viewName')+', slot: '+ this.slotTarget.attr('id')+' selected.');
         }
+    },
+
+    slotIdDblCkick: function(e) {
+        var th = $(e.currentTarget);
+        th.find('label').hide();
+        th.find('input[type="text"]').show().focus();
+    },
+
+    slotIdDblCkick: function(e) {
+        var th = $(e.currentTarget);
+        th.find('.wafer-id').hide();
+        th.find('.wafer-id-input').val(th.find('.wafer-id').text());
+        th.find('.wafer-id-input').show().focus();
+        th.find('.wafer-id-input').select();
+    },
+
+    handleWaferIdChange: function(e) {
+        var text = $(e.currentTarget);
+        text.hide();
+        var th = $(e.currentTarget).parent();
+        th.find('.wafer-id').text(text.val());
+        th.find('.wafer-id').show();
     }
 });
