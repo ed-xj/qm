@@ -134,11 +134,11 @@ window.Router = Backbone.Router.extend({
     },
 
     Input6: function() {
-        this.renderInput(this.Input2View, 'Input6');
+        this.renderInput(this.Input6View, 'Input6');
     },
 
     Input7: function() {
-        this.renderInput(this.Input2View, 'Input7');
+        this.renderInput(this.Input7View, 'Input7');
     },
 
     Input8: function() {

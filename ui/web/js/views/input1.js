@@ -7,23 +7,21 @@ window.Input1View = window.InputBaseView.extend({
 
     events : {
         // "change #lang": "changeLang",
-        "change .cassette-type":"handleCassetteChange", // casette change
-        "click #openFoup":"openFoupBtnCLick",           // open foup
-        "click #closeFoup":"closeFoupBtnCLick",         // close foup
-        "click #loadCasette":"loadCasetteBtnCLick",     // load casette
-        "click #unloadCasette":"unloadCasetteBtnCLick", // unload casette
-        "click #openDoor":"openDoorBtnCLick",           // open door
-        "click #closeDoor":"closeDoorBtnCLick",         // close door
-        "click #restoreData":"restoreDataBtnCLick",     // restore data
-        "click #getStandard":"getStandardBtnCLick",     // get standard
-        "click #putStandard":"putStandardBtnCLick",     // put standard
-        "click #mapStandard":"mapStandardBtnCLick",     // map standard
-        "click #getWrapBelow":"getWrapBelowBtnCLick",   // get wrap below
-        "click #putWrapBelow":"putWrapBelowBtnCLick",   // put wrap below
-        "click #mapWrapBelow":"mapWrapBelowBtnCLick",   // map wrap below
-        "click #getWrapAbove":"getWrapAboveBtnCLick",   // get wrap above
-        "click #putWrapAbove":"putWrapAboveBtnCLick",   // put wrap above
-        "click #mapWrapAbove":"mapWrapAboveBtnCLick",   // map wrap above
-        "click #slots tr > td":"slotClick"              // slot click
+        "change #waferType":"handleWaferTypeChange",      // change wafer type
+        "change .cassette-type":"handleCassetteChange",   // casette change
+        "click #openFoup":"openFoupBtnCLick",             // open foup
+        "click #closeFoup":"closeFoupBtnCLick",           // close foup
+        "click #loadCasette":"loadCasetteBtnCLick",       // load casette
+        "click #unloadCasette":"unloadCasetteBtnCLick",   // unload casette
+        "click #openDoor":"openDoorBtnCLick",             // open door
+        "click #closeDoor":"closeDoorBtnCLick",           // close door
+        "click #restoreData":"restoreDataBtnCLick",       // restore data
+        "click #updateId":"updateIdBtnCLick",             // update ID
+        "click #getWaferType":"getWaferTypeBtnCLick",     // get standard
+        "click #putWaferType":"putWaferTypeBtnCLick",     // put standard
+        "click #mapWaferType":"mapWaferTypeBtnCLick",     // map standard
+        "dblclick #slots tr > td":"slotIdDblCkick",       // slot id double click
+        "click #slots tr > td":"slotClick",               // slot click
+        "focusout .wafer-id-input":"handleWaferIdChange"  // wafer id change
     }
 });
