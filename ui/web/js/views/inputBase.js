@@ -8,7 +8,6 @@ window.InputBaseView = window.BaseView.extend({
     initialize: function (moderator) {
         this.moderator = moderator;
         this.slotTarget = null;
-        // this.stationID = 
     },
 
     handleWaferTypeChange: function() {
@@ -19,10 +18,12 @@ window.InputBaseView = window.BaseView.extend({
         $("#putWaferType").text("PUT " + waferType);
         $("#mapWaferTypeLabel").text("MAP " + waferType);
         $("#mapWaferType").text("MAP " + waferType);
+        console.log("wafer type: " + waferType);
     },
 
     handleCassetteChange: function() {
-        console.log("handleCassetteChange");
+        var cassette = $('#cassette-type').val()       // type string
+        console.log("handleCassetteChange: "+ cassette);
     },
 
     render: function () {
@@ -50,12 +51,12 @@ window.InputBaseView = window.BaseView.extend({
     // Union function
     callBack: function(data) {
         if (data.Cmd === "MAPPING") {
-            var v = new InputBaseView();
+            // var v = new InputBaseView();
             if (data.Param.index === 0) {
                 if (data.Param.status.length !== 25)
                     alert("Mapping Error, slot count is not correct");
                 else {
-                    // var v = new InputBaseView();
+                    var v = new InputBaseView();
                     v.slotMapping(data.Param.status);
                 }
             } else {
@@ -136,16 +137,20 @@ window.InputBaseView = window.BaseView.extend({
             waferIDArray.push($(this).text());
         });
         console.log("updateIdBtnCLick. id:" + waferIDArray.toString());
+        // Build up JSON
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "UPDATEID", waferIDArray, null);
+        // AJAX POST
+        this.ajaxCall(this.ajaxUrl, json, "updateID", this.callBack);
     },
 
     getWaferTypeBtnCLick: function () {
         // Build up JSON
         if (this.slotTarget !== null) {
-            var slotindex = this.slotTarget.siblings('th').text();
+            //var slotindex = this.slotTarget.siblings('th').text();
             var mapparam = {
-                    "index": Number(slotindex),
+                    "index": Number(this.slotTarget.siblings('th').text()),
                     "status": null,
-                    "waferID": null
+                    "waferID": this.slotTarget.children('.wafer-id').text()
                 };
             var action = "GET" + $("#waferType").val();
             var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), action, mapparam, null);
@@ -159,11 +164,11 @@ window.InputBaseView = window.BaseView.extend({
     putWaferTypeBtnCLick: function () {
         // Build up JSON
         if (this.slotTarget !== null) {
-            var slotindex = this.slotTarget.siblings('th').text();
+            //var slotindex = this.slotTarget.siblings('th').text();
             var mapparam = {
-                    "index": Number(slotindex),
+                    "index": Number(this.slotTarget.siblings('th').text()),
                     "status": null,
-                    "waferID": null
+                    "waferID": this.slotTarget.children('.wafer-id').text()
                 };
             var action = "PUT" + $("#waferType").val();
             var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), action, mapparam, null);

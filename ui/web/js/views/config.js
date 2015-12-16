@@ -46,11 +46,12 @@ window.ConfigView = window.BaseView.extend({
     },
 
     syslogLevel:function () {
+
         // Build up JSON
         var json = encodeJSON("SCHD", "COMMAND", null, "SPEEDHIGH", null, null);
         // AJAX POST
         // this.ajaxCall(json, "fast");
-        console.log("syslogLevel changed");
+        console.log("syslogLevel changed " + ($('#syslog').val()));
     },
 
     robotlogLevel:function () {

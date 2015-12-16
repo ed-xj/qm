@@ -55,7 +55,7 @@ window.DashboardView = window.BaseView.extend({
     
     callBack: function(data) {
         // show message in Message section, and trigger "change" event
-        $("code[name='sysmsg']").append(new Date() + ' system log messages: ' + data.message + "<br>").trigger("change");
+        $("code[name='sysmsg']").append(new Date() + ' system log messages: ' + data.Message + "<br>").trigger("change");
     },
 
     loadRecipeBtnClick:function () {
@@ -76,7 +76,6 @@ window.DashboardView = window.BaseView.extend({
         // Build up JSON
         var json = encodeJSON("SCHD", "COMMAND", null, "STOPRECIPE", null/*recipe*/, null);
         // AJAX POST
-        this.ajaxCall(json, "stop recipe");
         this.ajaxCall(this.ajaxUrl, json, "stop recipe", this.callBack);
     },
 

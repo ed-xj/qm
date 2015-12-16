@@ -109,10 +109,16 @@ window.RobotView = window.BaseView.extend({
 
 // Button click events
     goBtnCLick: function () {
-        // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "GO", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "go", this.callBack);
+        var command = $('#cmd').val();
+        if (command === "") {
+            alert("Please in put command.");
+        } else {
+            // Build up JSON
+            var json = encodeJSON("SCHD", "COMMAND", null, "GO", command, null);
+            // AJAX POST
+            this.ajaxCall(this.ajaxUrl, json, "go", this.callBack);
+            console.log("command sent: " + command);
+        }
     },
 
     showHelpModal: function () {
@@ -237,17 +243,7 @@ window.RobotView = window.BaseView.extend({
     robotCommandEnter: function (e) {
         // enter key
         if(e.which === 13) {
-            // Get text value
-            var command = $('#cmd').val();
-            if (command === "") {
-                alert("Please in put command.");
-            } else {
-                // Build up JSON
-                var json = encodeJSON("SCHD", "COMMAND", null, command, null, null);
-                // AJAX POST
-                this.ajaxCall(this.ajaxUrl, json, "robot command", this.callBack);
-                console.log("command sent: " + command);
-            }
+            this.goBtnCLick();
         }
     }
 });
