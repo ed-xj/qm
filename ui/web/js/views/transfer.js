@@ -10,7 +10,7 @@ window.TransferView = window.BaseView.extend({
         "click #mergeRadio":"handleMergeMode",
         "click #resequenceRadio":"handleResequenceMode",
         // Split
-        "change #srcStation":"splitSrcStationSelect",
+        // "change #srcStation":"splitSrcStationSelect",
         "click #slots tr td:nth-child(7n+2)":"slotClick",   // slot click
         // Merge
         "click #slotsSrc tr > td":"slotClick",              // source slot click
@@ -29,7 +29,9 @@ window.TransferView = window.BaseView.extend({
 
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
 
-    callBack: function(data) {},
+    callBack: function(data) {
+
+    },
 
     synchMode: function() {
         var splitPanel      = $('#splitPanel'),
@@ -67,8 +69,35 @@ window.TransferView = window.BaseView.extend({
     },
 
     // Split
-    splitSrcStationSelect: function() {
-        var srcstn = $('#srcStation option:selected').val()
+    // splitSrcStationSelect: function() {
+    //     var srcstn = $('#srcStation').val();
+    //     console.log("station" + srcstn);
+    // },
+
+    splitInfo: function () {
+        // bind all data
+        // var srcstn = $('#srcStation').val();    // station ID
+        var splitInfoArray = new Array();
+        $("#slots tr").each(function(){
+            if ($(this).hasClass('selected')) {
+                var thisSlot = $(this).children('th').text()
+                // build up JSON
+                var slotInfoJSON = {
+                    targetstn : Number($('#targetStationForSlot'+thisSlot).val()),
+                    targetslot : Number($('#targetSlotForSlot'+thisSlot).val()),
+                    align : $(this).children('td:eq(3)').children().children().is(':checked'),
+                    ocr : $(this).children('td:eq(4)').children().children().is(':checked'),
+                    flip : $(this).children('td:last').children().children().is(':checked')
+                }
+                splitInfoArray.push(slotInfoJSON)
+            } else {
+                splitInfoArray.push(null);
+            }
+        });
+        // Build up JSON
+        var json = encodeJSON("SCHD", "COMMAND", "station"+$('#srcStation').val(), "SPLIT", splitInfoArray, null);
+        // AJAX POST
+        this.ajaxCall(this.ajaxUrl, json, "transfer - split");
     },
 
     slotMapping: function (map) {
@@ -95,7 +124,8 @@ window.TransferView = window.BaseView.extend({
         if (slotTarget.parent().hasClass('selected')) {
             slotTarget.parent().removeClass('selected');
         } else {
-            selected_slot.removeClass('selected');
+            if(this.mode === "merge")
+                selected_slot.removeClass('selected');
             slotTarget.parent().addClass('selected');
         }
     },
@@ -106,8 +136,8 @@ window.TransferView = window.BaseView.extend({
         // Build up JSON
         var so = $('input[name=sortOrder]:checked').attr('id').toUpperCase();
         var im = $('#idMask').val();
-        var rsStn = $('#reqSrcStation option:selected').val()       // type string
-        var rtStn = $('#reqTargetStation option:selected').val()    // type string
+        var rsStn = $('#reqSrcStation').val()       // type string
+        var rtStn = $('#reqTargetStation').val()    // type string
         var reseq = {
             sortorder: so,
             idmask: im,
@@ -121,6 +151,7 @@ window.TransferView = window.BaseView.extend({
 
     goBtnClick: function() {
         if (this.mode === 'split') {
+            this.splitInfo();
         } else if (this.mode === 'merge') {
 
         } else if (this.mode ==='resequence') {

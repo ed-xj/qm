@@ -6,6 +6,7 @@ window.AlignerView = window.BaseView.extend({
     events : {
         "click #readIt":"readItBtnCLick",               // read it
         "click #alignWafer":"alignWaferBtnCLick",       // align wafer
+        "click #updateId":"updateIDBtnCLick",
         "click #getWafer":"getWaferBtnCLick",           // get wafer
         "click #putWafer":"putWaferBtnCLick",           // put wafer
         "click #getTop":"getTopBtnCLick",               // get top
@@ -33,17 +34,30 @@ window.AlignerView = window.BaseView.extend({
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
     
     readItBtnCLick:function () {
+        var text = $('#readItText').val()
+        console.log(text)
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", "aligner", "READIT", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", "aligner", "READIT", text, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "readIt");
     },
     
     alignWaferBtnCLick:function () {
+        var alignWafer = $('#alignWaferId').val()
+        console.log(alignWafer)
         // Build up JSON
         var json = encodeJSON("SCHD", "COMMAND", "aligner", "ALIGNWAFER", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "alignWafer");
+    },
+
+    updateIDBtnCLick: function() {
+        var id = $('#updateIdText').val()
+        console.log(id)
+        // Build up JSON
+        var json = encodeJSON("SCHD", "COMMAND", "aligner", "UPDATEID", id, null);
+        // AJAX POST
+        this.ajaxCall(this.ajaxUrl, json, "updateid");
     },
     
     getWaferBtnCLick:function () {

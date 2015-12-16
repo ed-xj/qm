@@ -90,7 +90,6 @@ window.RecipeView = window.BaseView.extend({
                 }
                 break
         }
-
     },
 
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
