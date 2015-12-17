@@ -10,9 +10,12 @@ window.TransferView = window.BaseView.extend({
         "click #mergeRadio":"handleMergeMode",
         "click #resequenceRadio":"handleResequenceMode",
         // Split
-        // "change #srcStation":"splitSrcStationSelect",
         "click #slots tr td:nth-child(7n+2)":"slotClick",   // slot click
         // Merge
+        "click #addSrcStationBtn":"addSrcStationBtnClick",
+        "click #removeSrcStationBtn":"removeSrcStationBtnClick",
+        "click #addTargetStationBtn":"addTargetStationBtnClick",
+        "click #removeTargetStationBtn":"removeTargetStationBtnClick",
         "click #slotsSrc tr > td":"slotClick",              // source slot click
         "click #slotsTarget tr > td":"slotClick",           // target slot click
         //resequence
@@ -69,11 +72,6 @@ window.TransferView = window.BaseView.extend({
     },
 
     // Split
-    // splitSrcStationSelect: function() {
-    //     var srcstn = $('#srcStation').val();
-    //     console.log("station" + srcstn);
-    // },
-
     splitInfo: function () {
         // bind all data
         // var srcstn = $('#srcStation').val();    // station ID
@@ -130,19 +128,53 @@ window.TransferView = window.BaseView.extend({
         }
     },
     // Merge
+    mergeInfo: function () {
+
+    },
+
+    addSrcStationBtnClick: function () {
+        var exist = $('#srcMergeStationPills li a').text()
+        var srcstn = "Station" + $('#srcMergeStation').val()
+        if (exist.search(srcstn) < 0)
+            $('#srcMergeStationPills').append("<li><a href='#'>"+srcstn+"</a></li>")
+        else
+            alert(srcstn+" is already in the list.")
+    },
+    removeSrcStationBtnClick: function () {
+        var exist = $('#srcMergeStationPills li a').text()
+        var srcstn = "Station" + $('#srcMergeStation').val()
+        var index = exist.search(srcstn)
+        if (index >= 0)
+            $('#srcMergeStationPills li:nth-child('+((index/8)+1)+')').remove()
+        else
+            alert(srcstn+" is not in the list.")
+    },
+    addTargetStationBtnClick: function () {
+        var exist = $('#targetMergeStationPills li a').text()
+        var srcstn = "Station" + $('#targetMergeStation').val()
+        if (exist.search(srcstn) < 0)
+            $('#targetMergeStationPills').append("<li><a href='#'>"+srcstn+"</a></li>")
+        else
+            alert(srcstn+" is already in the list.")
+    },
+    removeTargetStationBtnClick: function () {
+        var exist = $('#targetMergeStationPills li a').text()
+        var srcstn = "Station" + $('#targetMergeStation').val()
+        var index = exist.search(srcstn)
+        if (index >= 0)
+            $('#targetMergeStationPills li:nth-child('+((index/8)+1)+')').remove()
+        else
+            alert(srcstn+" is not in the list.")
+    },
 
     // Resequence
     resequence: function() {
         // Build up JSON
-        var so = $('input[name=sortOrder]:checked').attr('id').toUpperCase();
-        var im = $('#idMask').val();
-        var rsStn = $('#reqSrcStation').val()       // type string
-        var rtStn = $('#reqTargetStation').val()    // type string
         var reseq = {
-            sortorder: so,
-            idmask: im,
-            srcstation: Number(rsStn),
-            targetstation: Number(rtStn)
+            sortorder: $('input[name=sortOrder]:checked').attr('id').toUpperCase(),
+            idmask: $('#idMask').val(),
+            srcstation: Number($('#reqSrcStation').val()),
+            targetstation: Number($('#reqTargetStation').val())
         }
         var json = encodeJSON("SCHD", "COMMAND", null, "RESEQUENCE", reseq, null);
         // AJAX POST
@@ -153,7 +185,7 @@ window.TransferView = window.BaseView.extend({
         if (this.mode === 'split') {
             this.splitInfo();
         } else if (this.mode === 'merge') {
-
+            this.mergeInfo()
         } else if (this.mode ==='resequence') {
             this.resequence()
         } else
