@@ -80,14 +80,13 @@ window.TransferView = window.BaseView.extend({
             if ($(this).hasClass('selected')) {
                 var thisSlot = $(this).children('th').text()
                 // build up JSON
-                var slotInfoJSON = {
+                splitInfoArray.push({
                     targetstn : Number($('#targetStationForSlot'+thisSlot).val()),
                     targetslot : Number($('#targetSlotForSlot'+thisSlot).val()),
                     align : $(this).children('td:eq(3)').children().children().is(':checked'),
                     ocr : $(this).children('td:eq(4)').children().children().is(':checked'),
                     flip : $(this).children('td:last').children().children().is(':checked')
-                }
-                splitInfoArray.push(slotInfoJSON)
+                })
             } else {
                 splitInfoArray.push(null);
             }
@@ -127,6 +126,7 @@ window.TransferView = window.BaseView.extend({
             slotTarget.parent().addClass('selected');
         }
     },
+
     // Merge
     mergeInfo: function () {
 
@@ -140,6 +140,7 @@ window.TransferView = window.BaseView.extend({
         else
             alert(srcstn+" is already in the list.")
     },
+
     removeSrcStationBtnClick: function () {
         var exist = $('#srcMergeStationPills li a').text()
         var srcstn = "Station" + $('#srcMergeStation').val()
@@ -149,6 +150,7 @@ window.TransferView = window.BaseView.extend({
         else
             alert(srcstn+" is not in the list.")
     },
+
     addTargetStationBtnClick: function () {
         var exist = $('#targetMergeStationPills li a').text()
         var srcstn = "Station" + $('#targetMergeStation').val()
@@ -157,6 +159,7 @@ window.TransferView = window.BaseView.extend({
         else
             alert(srcstn+" is already in the list.")
     },
+
     removeTargetStationBtnClick: function () {
         var exist = $('#targetMergeStationPills li a').text()
         var srcstn = "Station" + $('#targetMergeStation').val()
