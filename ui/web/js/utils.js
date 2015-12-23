@@ -19,3 +19,18 @@ window.templateLoader = {
     }
 
 };
+
+// Extend underscore's template() to allow inclusions
+window.template = function(str, data) {
+    // match "<% include template-id %>"
+    return _.template(
+        str.replace(
+            /<%\s*include\s*(.*?)\s*%>/g,
+            function(match, templateId) {
+                var el = document.getElementById(templateId);
+                return el ? el.innerHTML : '';
+            }
+        ),
+        data
+    );
+};

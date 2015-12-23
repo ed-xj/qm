@@ -76,3 +76,23 @@ table.wafer-slots th {
 .table-fixed thead > tr> th {
   float: left;
 }
+
+#statusBar {
+    float: right;
+    position: relative;
+    top: 64px;
+    right: 5px;
+}
+
+#statusBar button {
+    border: 0px;
+}
+
+@media screen and (min-width: 768px) {
+    #statusBar {
+        float: right;
+        position: relative;
+        top: 15px;
+        right: 5px;
+    }
+}
