@@ -8,6 +8,7 @@ window.InputBaseView = window.BaseView.extend({
     initialize: function (moderator) {
         this.moderator = moderator;
         this.slotTarget = null;
+        // this.systemInfo = new systemInfo()
     },
 
     handleWaferTypeChange: function() {
@@ -44,6 +45,8 @@ window.InputBaseView = window.BaseView.extend({
                 $(slot).css("box-shadow","2px 2px 2px #888888");
             }
         }
+        // systemInfo
+        this.systemInfo.getStation(1).map = map
     },
 
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",

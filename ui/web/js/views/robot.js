@@ -19,7 +19,6 @@ window.RobotView = window.BaseView.extend({
     },
 
     events:{
-        //"click #showMeBtn":"showMeBtnClick",
         "click #go_btn":"goBtnCLick",           // go
         "click #robotHelpModal": "showHelpModal",// help
         "click #refresh":"refershBtnCLick",     // refresh
@@ -77,10 +76,6 @@ window.RobotView = window.BaseView.extend({
         this.disableControls(localStorage.userRole);
         return this;
     },
-
-    // showMeBtnClick:function () {
-    //     app.headerView.search();
-    // },
 
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
     
@@ -170,20 +165,6 @@ window.RobotView = window.BaseView.extend({
     },
 
     moveBtnClick:function () {
-        // // ditinguish if user selected or not
-        // if ( this.moveAttr.station !== "stn" && this.moveAttr.pose !== "pose" && this.moveAttr.highlow !== "hl" && this.moveAttr.index !== "idx") {
-        //     // console.log("test are "+this.moveAttr.station+this.moveAttr.pose+this.moveAttr.highlow+this.moveAttr.index);
-
-        //     // linear checkbox
-        //     this.moveAttr.linear = $("#linearCheckbox").is(':checked');    // TRUE if checked, FALSE if nonchecked
-
-        //     // Build up JSON
-        //     var json = encodeJSON("SCHD", "COMMAND", null, "MOVE", this.moveAttr, this.moveAttr.station);
-        //     // AJAX POST
-        //     this.ajaxCall(this.ajaxUrl, json, "move", this.callBack);
-        // } else {
-        //     alert("Please select correct staion, pose, high-low, linear or index");
-        // }
         this.motionFunc("move");
     },
 
@@ -219,18 +200,10 @@ window.RobotView = window.BaseView.extend({
     },
 
     pickBtnCLick: function() {
-        // // Build up JSON
-        // var json = encodeJSON("SCHD", "COMMAND", null, "PICK", null, null);
-        // // AJAX POST
-        // this.ajaxCall(this.ajaxUrl, json, "pick", this.callBack);
         this.motionFunc("pick");
     },
 
     placeBtnCLick: function() {
-        // // Build up JSON
-        // var json = encodeJSON("SCHD", "COMMAND", null, "PLACE", null, null);
-        // // AJAX POST
-        // this.ajaxCall(this.ajaxUrl, json, "place", this.callBack);
         this.motionFunc("place");
     },
 

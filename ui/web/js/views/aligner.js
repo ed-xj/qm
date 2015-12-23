@@ -37,7 +37,7 @@ window.AlignerView = window.BaseView.extend({
         var text = $('#readItText').val()
         console.log(text)
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", "aligner", "READIT", text, null);
+        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "READIT", text, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "readIt");
     },
@@ -46,44 +46,46 @@ window.AlignerView = window.BaseView.extend({
         var alignWafer = $('#alignWaferId').val()
         console.log(alignWafer)
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", "aligner", "ALIGNWAFER", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", "Aligner", "ALIGNWAFER", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "alignWafer");
     },
 
     updateIDBtnCLick: function() {
         var id = $('#updateIdText').val()
-        console.log(id)
-        // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", "aligner", "UPDATEID", id, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "updateid");
+        // console.log(id)
+        if (id !== "") {
+            // Build up JSON
+            var json = encodeJSON("SCHD", "COMMAND", "Aligner", "UPDATEID", id, null);
+            // AJAX POST
+            this.ajaxCall(this.ajaxUrl, json, "updateid");
+        }
     },
     
     getWaferBtnCLick:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", "aligner", "GETWAFER", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", "Aligner", "GETWAFER", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "getWafer");
     },
     
     putWaferBtnCLick:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", "aligner", "PUTWAFER", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", "Aligner", "PUTWAFER", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putWafer");
     },
     
     getTopBtnCLick:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", "aligner", "GETTOP", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", "Aligner", "GETTOP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "getTop");
     },
     
     putTopBtnCLick:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", "aligner", "PUTTOP", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", "Aligner", "PUTTOP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putTop");
     }

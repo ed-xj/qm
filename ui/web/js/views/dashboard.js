@@ -7,15 +7,15 @@ window.DashboardView = window.BaseView.extend({
         this.logmsg = '';
         this.templateParams = {sysmsg: this.logmsg};
         this.genLogMsg();
+        this.systemInfo = new systemInfo()
 //        this.template = _.template(directory.utils.templateLoader.get('home'));
 //        this.template = templates['Home'];
     },
 
     events:{
-        // "click #showMeBtn":"showMeBtnClick",
-        "click #load_recipe":"loadRecipeBtnClick",      // load recipe
-        "click #start_recipe":"startRecipeBtnClick",    // start recipe
-        "click #stop_recipe":"stopRecipeBtnClick",      // stop recipe
+        "click #loadrecipe":"loadRecipeBtnClick",      // load recipe
+        "click #startrecipe":"startRecipeBtnClick",    // start recipe
+        "click #stoprecipe":"stopRecipeBtnClick",      // stop recipe
         "click #home":"homeBtnClick",                   // home
         "click #recover":"recoverBtnClick",             // recover
         "change input[name='secs']":"onlineStatus",     // online status
@@ -47,10 +47,6 @@ window.DashboardView = window.BaseView.extend({
         return this;
     },
 
-    // showMeBtnClick:function () {
-    //     app.headerView.search();
-    // },
-
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
     
     callBack: function(data) {
@@ -59,8 +55,19 @@ window.DashboardView = window.BaseView.extend({
     },
 
     loadRecipeBtnClick:function () {
+        //
+        // model object for system status and slotmapping
+        console.log(this.systemInfo.get('sysStatus'))
+        var a = this.systemInfo.getStation(1)
+        console.log(a.map.toString())
+        a.station = 7
+        this.systemInfo.set('sysStatus',"running")
+        console.log(this.systemInfo.get('sysStatus'))
+        //
+
+        var recipe = $('#recipe').val()
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "LOADRECIPE", null/*recipe*/, null);
+        var json = encodeJSON("SCHD", "COMMAND", null, "LOADRECIPE", recipe, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "load recipe", this.callBack);
     },

@@ -46,19 +46,18 @@ window.ConfigView = window.BaseView.extend({
     },
 
     syslogLevel:function () {
-
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "SPEEDHIGH", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", null, "SYSLOGLEVEL", null, null);
         // AJAX POST
-        // this.ajaxCall(json, "fast");
-        console.log("syslogLevel changed " + ($('#syslog').val()));
+        this.ajaxCall(this.ajaxUrl, json, "syslogLevel");
+        console.log("syslogLevel changed " + $('#syslog').val());
     },
 
     robotlogLevel:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "SPEEDHIGH", null, null);
+        var json = encodeJSON("SCHD", "COMMAND", null, "ROBOTLOGLEVEL", null, null);
         // AJAX POST
-        // this.ajaxCall(json, "fast");
-        console.log("robotlogLevel changed");
+        this.ajaxCall(this.ajaxUrl, json, "robotloglevel");
+        console.log("robotlogLevel changed " + $('#robotlog').val());
     }
 });

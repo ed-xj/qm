@@ -10,7 +10,7 @@
                     <label for="recipeName">[Recipe Name]</label>
                     <input type="text" class="form-control" id="recipeName" placeholder="">
                 </div>
-                <button class="btn btn-default">SAVE RECIPE</button>
+                <button class="btn btn-default" id='saveRecipe'>SAVE RECIPE</button>
             </form>
             </div>
         </div>
@@ -103,22 +103,22 @@
                         <div class="radio">
                             <div class="radio-inline">
                                 <label>
-                                    <input type="radio" name="type" value="1">STD
+                                    <input type="radio" name="type" value="STD">STD
                                 </label>
                             </div>
                             <div class="radio-inline">
                                 <label>
-                                    <input type="radio" name="type" value="2">THIN
+                                    <input type="radio" name="type" value="THIN">THIN
                                 </label>
                             </div>
                             <div class="radio-inline">
                                 <label>
-                                    <input type="radio" name="type" value="2">A_TYPE
+                                    <input type="radio" name="type" value="A_TYPE">A_TYPE
                                 </label>
                             </div>
                             <div class="radio-inline">
                                 <label>
-                                    <input type="radio" name="type" value="2">B_TYPE
+                                    <input type="radio" name="type" value="B_TYPE">B_TYPE
                                 </label>
                             </div>
                         </div>
@@ -147,7 +147,7 @@
                                     <th class="col-xs-2">GOTO</th>
                                 </tr>
                             </thead>
-                            <tbody style="height: 250px;">
+                            <tbody style="height: 250px;" id="sequence1">
                                 <% for (var i=0; i < 50; i++) { %>
                                 <tr>
                                     <td class="col-xs-2" style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
@@ -195,7 +195,7 @@
                                     <th class="col-xs-2">GOTO</th>
                                 </tr>
                             </thead>
-                            <tbody style="height: 250px;">
+                            <tbody style="height: 250px;" id="sequence2">
                                 <% for (var i=0; i < 50; i++) { %>
                                 <tr>
                                     <td class="col-xs-2" style="text-align: center; vertical-align: middle;"><%= i+1 %></td>

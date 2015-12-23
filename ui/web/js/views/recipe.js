@@ -97,18 +97,114 @@ window.RecipeView = window.BaseView.extend({
     callBack: function(data) {
         alert("Save succeed.");
     },
+
+    unloadOrder: function () {
+        var element1 = new Array()
+        var element2 = new Array()
+        if ($('#unloadOrder1 .chk-all').is(':checked')) {
+            element1 = Array.apply(null, Array(25)).map(Number.prototype.valueOf,1);
+        } else if ($('#unloadOrder1 .chk-none').is(':checked')){
+            element1 = Array.apply(null, Array(25)).map(Number.prototype.valueOf,0);
+        } else {
+            $('#unloadOrder1 .chk-element').each( function() {
+                if ($(this).is(':checked'))
+                    element1.push(1)
+                else
+                    element1.push(0)
+            })
+        }
+        var src = {
+            order:this.unloadOrder1,
+            source:null,
+            index:element1
+        }
+
+        if ($('#unloadOrder2 .chk-all').is(':checked')) {
+            element2 = Array.apply(null, Array(25)).map(Number.prototype.valueOf,1);
+        } else if ($('#unloadOrder2 .chk-none').is(':checked')){
+            element2 = Array.apply(null, Array(25)).map(Number.prototype.valueOf,0);
+        } else {
+            $('#unloadOrder2 .chk-element').each( function() {
+                if ($(this).is(':checked'))
+                    element2.push(1)
+                else
+                    element2.push(0)
+            })
+        }
+        var dest = {
+            order:this.unloadOrder2,
+            source:null,
+            index:element2
+        }
+        return {
+            src:src,
+            dest:dest
+        }
+    },
+
+    sequence: function () {
+        var sequence1 = new Array()
+        var sequence2 = new Array()
+        $('#sequence1 tr').each( function () {
+            if ( $(this).children('td:eq(1)').children().val() !== "") {
+                sequence1.push({
+                    CMD:$(this).children('td:eq(1)').children().val(),
+                    DATA:$(this).children('td:eq(2)').children().val()
+                    //GOTO: $(this).children('td:eq(3)').children().val()
+                })
+            }
+        })
+        $('#sequence2 tr').each( function () {
+            if ( $(this).children('td:eq(1)').children().val() !== "") {
+                sequence2.push({
+                    CMD:$(this).children('td:eq(1)').children().val(),
+                    DATA:$(this).children('td:eq(2)').children().val()
+                    //GOTO: $(this).children('td:eq(3)').children().val()
+                })
+            }
+        })
+
+        return {
+            seq1:sequence1,
+            seq2:sequence2
+        }
+    },
     
+    // TODO
     saveRecipeBtnCLick:function () {
         // Build up JSON
-        // var json = {
-        //         "CmdDest":"SCHD",
-        //         "CmdType":"saveRecipe",
-        //         "message":"",
-        //         "recipe":{
-        //             "xxx":"xxx" // todo
-        //         }
-        //     };
-        var json = encodeJSON("SCHD", "COMMAND", null, "SAVERECIPE", null/*recipe*/, null);
+        var recipename = $('#recipeName').val()                 // recipe name
+        var order = this.unloadOrder()                          // unload order (.src) and (.dest)
+
+        // (TODO) check if box is checked
+        if ($('input[name=type]').is(':checked'))
+            var type = $('input[name=type]:checked').val()      // type
+        else 
+            alert("Please check TYPE")
+
+        if ($('input[name=usage1]').is(':checked') && $('input[name=usage2]').is(':checked')) {
+            var usage1 = $('input[name=usage1]').val()          // usage en/disable
+            var usage2 = $('input[name=usage2]').val()          // usage en/disable
+        } else 
+            alert("Please check USAGE")
+        var sequence = this.sequence()                          // sequence 1(.seq1) and 2(.seq2)
+
+        var recipe = {
+            name:recipename,
+            source:order.src,
+            destination:order.dest,
+            type:type,
+            process1:{
+                usage:usage1,
+                sequence:sequence.seq1
+            },
+            process2:{
+                usage:usage2,
+                sequence:sequence.seq2
+            }
+        }
+
+        var json = encodeJSON("SCHD", "COMMAND", null, "SAVERECIPE", recipe, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "saveRecipe", this.callBack);
     }
