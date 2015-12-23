@@ -2,16 +2,21 @@
 window.TransferView = window.BaseView.extend({
     initialize: function () {
         this.mode = 'split';
+        this.systemInfo = new systemInfo()
         // All inputs casette maping and wafer ID
+        this.srcSlotMapping()
     },
 
     events: {
         "click #splitRadio":"handleSplitMode",
         "click #mergeRadio":"handleMergeMode",
         "click #resequenceRadio":"handleResequenceMode",
+        "change #srcStation":"srcSlotMapping",
         // Split
         "click #slots tr td:nth-child(7n+2)":"slotClick",   // slot click
         // Merge
+        "click #srcMergeStationPills li":"pillsSelected",
+        "click #targetMergeStationPills li":"pillsSelected",
         "click #addSrcStationBtn":"addSrcStationBtnClick",
         "click #removeSrcStationBtn":"removeSrcStationBtnClick",
         "click #addTargetStationBtn":"addTargetStationBtnClick",
@@ -71,10 +76,16 @@ window.TransferView = window.BaseView.extend({
         this.synchMode(false, false, true);
     },
 
+    srcSlotMapping: function () {  // TODO
+        var stn = $('#srcStation').val()
+        // slot mapping
+        var s = this.systemInfo.getStation(stn)
+        // this.slotMapping(s.get('map'))
+    },
+
     // Split
     splitInfo: function () {
         // bind all data
-        // var srcstn = $('#srcStation').val();    // station ID
         var splitInfoArray = new Array();
         $("#slots tr").each(function(){
             if ($(this).hasClass('selected')) {
@@ -100,8 +111,8 @@ window.TransferView = window.BaseView.extend({
     slotMapping: function (map) {
         // has to include station ID to complete mapping
         // clear slots color and text
-        $("#slots").children().children("td").text("")
-        $("#slots").children().children("td").removeAttr("style");
+        $("#slots").children().children("td:nth-child(7n+2)").text("")
+        $("#slots").children().children("td:nth-child(7n+2)").removeAttr("style");
         // render slots color with yellow if there is a wafer
         for (i=0; i<map.length; i++) {
             if (map[i]===1) {
@@ -132,6 +143,14 @@ window.TransferView = window.BaseView.extend({
 
     },
 
+    pillsSelected: function (e) {
+        var li = $(e.currentTarget)
+        if (li.hasClass('selected'))
+            li.removeClass('selected')
+        else
+            li.addClass('selected')
+    },
+
     addSrcStationBtnClick: function () {
         var exist = $('#srcMergeStationPills li a').text()
         var srcstn = "Station" + $('#srcMergeStation').val()
@@ -145,10 +164,15 @@ window.TransferView = window.BaseView.extend({
         var exist = $('#srcMergeStationPills li a').text()
         var srcstn = "Station" + $('#srcMergeStation').val()
         var index = exist.search(srcstn)
-        if (index >= 0)
-            $('#srcMergeStationPills li:nth-child('+((index/8)+1)+')').remove()
-        else
-            alert(srcstn+" is not in the list.")
+        
+        if ($('#srcMergeStationPills li').hasClass('selected'))
+            $('#srcMergeStationPills li.selected').remove()
+        else {
+            if (index >= 0)
+                $('#srcMergeStationPills li:nth-child('+((index/8)+1)+')').remove()
+            else
+                alert(srcstn+" is not in the list.")
+        }
     },
 
     addTargetStationBtnClick: function () {
@@ -164,10 +188,14 @@ window.TransferView = window.BaseView.extend({
         var exist = $('#targetMergeStationPills li a').text()
         var srcstn = "Station" + $('#targetMergeStation').val()
         var index = exist.search(srcstn)
-        if (index >= 0)
-            $('#targetMergeStationPills li:nth-child('+((index/8)+1)+')').remove()
-        else
-            alert(srcstn+" is not in the list.")
+        if ($('#targetMergeStationPills li').hasClass('selected'))
+            $('#targetMergeStationPills li.selected').remove()
+        else {
+            if (index >= 0)
+                $('#targetMergeStationPills li:nth-child('+((index/8)+1)+')').remove()
+            else
+                alert(srcstn+" is not in the list.")
+        }
     },
 
     // Resequence
