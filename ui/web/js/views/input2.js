@@ -1,6 +1,6 @@
 window.Input2View = window.InputBaseView.extend({
     initialize: function (moderator) {
-        window.Input2View.__super__.initialize.apply(this, moderator);
+        window.Input2View.__super__.initialize.apply(this, [moderator]);
         this.model = new window.InputModel();
         this.model.set('viewName', "Input2");
     },

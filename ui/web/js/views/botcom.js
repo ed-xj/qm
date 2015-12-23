@@ -1,5 +1,6 @@
 window.BotcomView = Backbone.View.extend({
-    initialize: function () {
+    initialize: function (moderator) {
+        this.moderator = moderator;
     },
 
     render: function () {

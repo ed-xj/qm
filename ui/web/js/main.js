@@ -19,7 +19,7 @@ window.Router = Backbone.Router.extend({
         "Transfer"      : "Transfer"
     },
 
-    moderator: _.extend({}, Backbone.Events),
+    moderator: _.extend((new systemInfo()), Backbone.Events),
 
     initialize: function () {
     },
@@ -104,7 +104,7 @@ window.Router = Backbone.Router.extend({
         this.lightPageWrapper();
 
         if (!this.botcomView) {
-            this.botcomView = new BotcomView();
+            this.botcomView = new BotcomView(this.moderator);
             this.botcomView.render();
         } else {
             this.botcomView.delegateEvents();
@@ -151,7 +151,7 @@ window.Router = Backbone.Router.extend({
         this.lightPageWrapper();
 
         if (!inputView) {
-            eval("this." + inputName + "View = new " + inputName + "View();");
+            eval("this." + inputName + "View = new " + inputName + "View(this.moderator);");
             eval("inputView = this." + inputName + "View;");
             eval("this." + inputName + "View.render();");
         } else {
@@ -194,7 +194,7 @@ window.Router = Backbone.Router.extend({
         this.lightPageWrapper();
 
         if (!this.transferView) {
-            this.transferView = new TransferView();
+            this.transferView = new TransferView(this.moderator);
             this.transferView.render();
         } else {
             this.transferView.delegateEvents();
