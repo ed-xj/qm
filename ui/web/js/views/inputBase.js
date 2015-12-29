@@ -12,7 +12,7 @@ window.InputBaseView = window.BaseView.extend({
     },
 
     getViewIndex: function() {
-       return +this.model.get('viewName')[this.model.get('viewName').length-1];
+       return +this.model.get('viewName')[this.model.get('viewName').length-1] - 1;
     },
 
     handleWaferTypeChange: function() {
