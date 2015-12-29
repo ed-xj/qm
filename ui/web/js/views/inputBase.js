@@ -11,7 +11,12 @@ window.InputBaseView = window.BaseView.extend({
         // this.systemInfo = new systemInfo()
     },
 
+    getViewIndex: function() {
+       return +this.model.get('viewName')[this.model.get('viewName').length-1];
+    },
+
     handleWaferTypeChange: function() {
+        var myMap = this.moderator.get('station')[this.getViewIndex()];
         var waferType = $("#waferType").val();
         $("#getWaferTypeLabel").text("GET " + waferType);
         $("#getWaferType").text("GET " + waferType);
@@ -19,7 +24,7 @@ window.InputBaseView = window.BaseView.extend({
         $("#putWaferType").text("PUT " + waferType);
         $("#mapWaferTypeLabel").text("MAP " + waferType);
         $("#mapWaferType").text("MAP " + waferType);
-        console.log("wafer type: " + waferType);
+        console.log("wafer type: " + waferType+' slot Map:'+ JSON.stringify(myMap));
     },
 
     handleCassetteChange: function() {
