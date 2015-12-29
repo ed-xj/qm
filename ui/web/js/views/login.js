@@ -21,6 +21,7 @@ window.LoginView = Backbone.View.extend({
 
         localStorage.setItem("user", username);
         localStorage.setItem("userRole", window.iniCfg.userrole[username]);
+        $('#statusBar').show();
         window.app.navigate("#dashboard", {trigger: true});
     },
 

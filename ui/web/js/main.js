@@ -16,7 +16,8 @@ window.Router = Backbone.Router.extend({
         "Input8"        : "Input8",
         "Aligner"       : "Aligner",
         "Recipe"        : "Recipe",
-        "Transfer"      : "Transfer"
+        "Transfer"      : "Transfer",
+        "*path"         : "handleDefaultRoute"
     },
 
     moderator: _.extend((new systemInfo()), Backbone.Events),
@@ -30,6 +31,11 @@ window.Router = Backbone.Router.extend({
 
     lightPageWrapper: function() {
         $('#page-wrapper').css('background-color', '#fff');
+    },
+
+    // Route to login when nothing in the path match our routes
+    handleDefaultRoute: function() {
+        this.login();
     },
 
     header: function () {
@@ -47,10 +53,12 @@ window.Router = Backbone.Router.extend({
         this.darkPageWrapper();
         if (((localStorage.user === undefined) || (localStorage.user === '')) &&
             ((localStorage.userRole === undefined) || (localStorage.userRole === ''))) {
+            $('#statusBar').hide();
             this.loginView = new LoginView(this.moderator);
             $("#content").html(this.loginView.render().el);
         } else {
-            this.navigate("#dashboard");
+            $('#statusBar').show();
+            this.navigate("#dashboard", {trigger: true});
         }
     },
 
