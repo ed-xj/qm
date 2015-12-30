@@ -8,15 +8,16 @@ window.InputBaseView = window.BaseView.extend({
     initialize: function (moderator) {
         this.moderator = moderator;
         this.slotTarget = null;
-        // this.systemInfo = new systemInfo()
+        this.myMap = null;
     },
 
-    getViewIndex: function() {
-       return +this.model.get('viewName')[this.model.get('viewName').length-1] - 1;
+    getStation: function() {
+        var index = +this.model.get('viewName')[this.model.get('viewName').length-1] - 1;
+        return this.moderator.get('station')[index];
     },
 
     handleWaferTypeChange: function() {
-        var myMap = this.moderator.get('station')[this.getViewIndex()];
+        var station = this.getStation();
         var waferType = $("#waferType").val();
         $("#getWaferTypeLabel").text("GET " + waferType);
         $("#getWaferType").text("GET " + waferType);
@@ -24,7 +25,7 @@ window.InputBaseView = window.BaseView.extend({
         $("#putWaferType").text("PUT " + waferType);
         $("#mapWaferTypeLabel").text("MAP " + waferType);
         $("#mapWaferType").text("MAP " + waferType);
-        console.log("wafer type: " + waferType+' slot Map:'+ JSON.stringify(myMap));
+        console.log("wafer type: " + waferType+' slot Map:'+ JSON.stringify(station));
     },
 
     handleCassetteChange: function() {
@@ -37,21 +38,21 @@ window.InputBaseView = window.BaseView.extend({
         return this;
     },
 
-    slotMapping: function (map) {
+    slotMapping: function (data) {
+        var map = data.status
+        var waferid = data.waferID 
         // clear slots color and text
-        $("#slots").children().children("td").text("")
+        $(".wafer-id").text("")
         $("#slots").children().children("td").removeAttr("style");
         // render slots color with yellow if there is a wafer
         for (i=0; i<map.length; i++) {
             if (map[i]===1) {
                 var slot = "#slot"+(i+1); 
-                $(slot).text(slot);
-                $(slot).css("background-color","yellow");
-                $(slot).css("box-shadow","2px 2px 2px #888888");
+                $(slot).children('label').text(waferid[i]); //waferid
+                $(slot).addClass('full');
             }
         }
-        // systemInfo
-        this.systemInfo.getStation(1).map = map
+        // update mapping info
     },
 
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
@@ -59,13 +60,13 @@ window.InputBaseView = window.BaseView.extend({
     // Union function
     callBack: function(data) {
         if (data.Cmd === "MAPPING") {
-            // var v = new InputBaseView();
             if (data.Param.index === 0) {
                 if (data.Param.status.length !== 25)
                     alert("Mapping Error, slot count is not correct");
                 else {
                     var v = new InputBaseView();
-                    v.slotMapping(data.Param.status);
+                    v.slotMapping(data.Param);
+                    // update mapping info
                 }
             } else {
                 var slot = "#slot"+(data.Param.index);
@@ -73,12 +74,13 @@ window.InputBaseView = window.BaseView.extend({
                     alert("Mapping Error, slot count is not correct");
                 else {
                     if (data.Param.status === 1) {
-                        // var v = new InputBaseView();
-                        $(slot).css("background-color","yellow");
-                        $(slot).css("box-shadow","2px 2px 2px #888888");
+                        $(slot).children('label').text(slot);
+                        $(slot).addClass('full');
+                        // update mapping info
                     } else {
-                        $(slot).text("");
-                        $(slot).removeAttr("style");
+                        $(slot).children('label').text("");
+                        $(slot).removeClass('full');
+                        // update mapping info
                     }
                 }
             }
@@ -130,8 +132,8 @@ window.InputBaseView = window.BaseView.extend({
 
     restoreDataBtnCLick: function () {
         // clear slots color and text
-        $("#slots").children().children("td").text("");
-        $("#slots").children().children("td").removeAttr("style");
+        $(".wafer-id").text("")
+        $("#slots").children().children("td").removeClass("full");
         // Build up JSON
         var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "RESTOREDATA", null, null);
         // AJAX POST
@@ -149,12 +151,13 @@ window.InputBaseView = window.BaseView.extend({
         var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "UPDATEID", waferIDArray, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "updateID", this.callBack);
+        // update wafer id to systemInfo
+        this.getStation().waferID = waferIDArray;
     },
 
     getWaferTypeBtnCLick: function () {
         // Build up JSON
         if (this.slotTarget !== null) {
-            //var slotindex = this.slotTarget.siblings('th').text();
             var mapparam = {
                     "index": Number(this.slotTarget.siblings('th').text()),
                     "status": null,
@@ -172,7 +175,6 @@ window.InputBaseView = window.BaseView.extend({
     putWaferTypeBtnCLick: function () {
         // Build up JSON
         if (this.slotTarget !== null) {
-            //var slotindex = this.slotTarget.siblings('th').text();
             var mapparam = {
                     "index": Number(this.slotTarget.siblings('th').text()),
                     "status": null,

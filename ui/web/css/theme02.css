@@ -56,6 +56,10 @@ code[name="sysmsg"] {
     background-color: #E6E6E6;
 }
 
+.btn-group-vertical > .btn, #statusBar > .btn{
+  border: 2px solid white;
+}
+
 .btn.btn-default:hover:not(.dropdown-toggle) {
     border: 1px solid #3c4049;
     color: #FFFFFF;
@@ -191,6 +195,12 @@ ul.alert-dropdown {
 }
 
 /*Slot mapping*/
-.selected > td:nth-child(2), li.selected{
+.selected > td:nth-child(2), li.selected {
   border: 2px solid red;
+}
+
+/*wafer*/
+.full {
+  background-color: yellow;
+  box-shadow: 2px 2px 2px 2px #888888;
 }

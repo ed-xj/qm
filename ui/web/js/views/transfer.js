@@ -1,10 +1,9 @@
 // window.TransferView = Backbone.View.extend({
 window.TransferView = window.BaseView.extend({
-    initialize: function () {
+    initialize: function (moderator) {
         this.mode = 'split';
-        this.systemInfo = new systemInfo()
+        this.moderator = moderator;
         // All inputs casette maping and wafer ID
-        this.srcSlotMapping()
     },
 
     events: {
@@ -33,6 +32,7 @@ window.TransferView = window.BaseView.extend({
         setTimeout(function() {
             that.synchMode();
         }, 1);
+        this.srcSlotMapping();
     },
 
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
@@ -76,11 +76,13 @@ window.TransferView = window.BaseView.extend({
         this.synchMode(false, false, true);
     },
 
-    srcSlotMapping: function () {  // TODO
+    srcSlotMapping: function () {
         var stn = $('#srcStation').val()
+        if (typeof stn === "undefined")
+            stn = 1
         // slot mapping
-        var s = this.systemInfo.getStation(stn)
-        // this.slotMapping(s.get('map'))
+        var s = this.moderator.getStation(stn)
+        this.slotMapping(s.map)
     },
 
     // Split
@@ -118,8 +120,7 @@ window.TransferView = window.BaseView.extend({
             if (map[i]===1) {
                 var slot = "#slot"+(i+1); 
                 $(slot).text(slot);
-                $(slot).css("background-color","yellow");
-                $(slot).css("box-shadow","2px 2px 2px #888888");
+                $(slot).addClass('full');
             }
         }
     },

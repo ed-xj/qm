@@ -7,7 +7,6 @@ window.DashboardView = window.BaseView.extend({
         this.logmsg = '';
         this.templateParams = {sysmsg: this.logmsg};
         this.genLogMsg();
-        this.systemInfo = new systemInfo()
 //        this.template = _.template(directory.utils.templateLoader.get('home'));
 //        this.template = templates['Home'];
     },
@@ -54,15 +53,22 @@ window.DashboardView = window.BaseView.extend({
         $("code[name='sysmsg']").append(new Date() + ' system log messages: ' + data.Message + "<br>").trigger("change");
     },
 
+    systemStatus: function () {
+        // Build up JSON
+        var json = encodeJSON("SCHD", "STATUS", null, "SYSSTATUS", null, null);
+        // AJAX POST
+        this.ajaxCall(this.ajaxUrl, json, "status", this.callBack);
+    },
+
     loadRecipeBtnClick:function () {
         //
         // model object for system status and slotmapping
-        console.log(this.systemInfo.get('sysStatus'))
-        var a = this.systemInfo.getStation(1)
+        console.log(this.moderator.get('sysStatus'))
+        var a = this.moderator.getStation(1)
         console.log(a.map.toString())
         a.station = 7
-        this.systemInfo.set('sysStatus',"running")
-        console.log(this.systemInfo.get('sysStatus'))
+        this.moderator.set('sysStatus',"running")
+        console.log(this.moderator.get('sysStatus'))
         //
 
         var recipe = $('#recipe').val()
@@ -110,5 +116,5 @@ window.DashboardView = window.BaseView.extend({
         // auto scroll down
         var scrollTarget = $(e.currentTarget).parent().parent();
         scrollTarget.scrollTop(scrollTarget.get(0).scrollHeight);
-    },
+    }
 });

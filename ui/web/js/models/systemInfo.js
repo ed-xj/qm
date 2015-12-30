@@ -1,6 +1,6 @@
 // TODO
 //create a model 
-var systemInfo= Backbone.Model.extend({ 
+var systemInfo = Backbone.Model.extend({ 
 	//set default values of property 
 	defaults: { 
 		sysStatus : null,
@@ -16,7 +16,7 @@ var systemInfo= Backbone.Model.extend({
             if(this.hasChanged('sysStatus')){
                 console.log('sysStatus has been changed');
             }
-            if(this.hasChanged('stationMapping')){
+            if(this.hasChanged('station')){
                 console.log('stationMapping has been changed');
             }
         });
@@ -24,24 +24,32 @@ var systemInfo= Backbone.Model.extend({
 	 
 	stationInit : function() { 
 		var slotMap = new Array()
-		var stationCount = 8
+		var stationCount = 8	// dynamic load station count
 		for (var i = 0; i < stationCount; i++) {
 			slotMap.push(
 			{
-				station: i+1,
+				stationID: i+1,
 				map: Array.apply(null, Array(25)).map( function(){return 0}),
-				slotID: Array.apply(null, Array(25)).map(function(){return null})
+				waferID: Array.apply(null, Array(25)).map(function(){return null})
 			})
 		}
 		return slotMap
-	}, 
+	},
+
+	systemStatus: function () {
+		
+	},
 
 	getStation: function(stn) {
 		var stnInfo = this.get('station')
 		return stnInfo[stn-1];
 	},
 
-	mappingChange : function(stn, status) {
+	getMap: function(stn) {
+		return stn.get('map')
+	},
+
+	mapChange : function(stn, status) {
 		if (stn !== this.station[stn-1].station) {
 			alert('Erroring: map storing error!')
 		}
@@ -57,7 +65,7 @@ var systemInfo= Backbone.Model.extend({
 		else {
 			if (this.station[stn-1].map[index] !== status) {
 				this.station[stn-1].map[index] = status
-				alert('re-mapping station '+stn); 
+				alert('re-mapping station'+stn); 
 			}
 			else
 				alert('slot mapping warning')

@@ -32,6 +32,7 @@ I18N.en = {
         "normal"         : "Running",
         "idle"           : "",
         "deafult"        : "",
+        "dashboard"      : "Dashboard",
         "command"        : "Command",
         "recipe"         : "Recipe:",
         "select_recipe"  : "Select a recipe",

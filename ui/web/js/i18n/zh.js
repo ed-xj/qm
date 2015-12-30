@@ -32,6 +32,7 @@ I18N.zh = {
         "normal"         : "運作",
         "idle"           : "",
         "deafult"        : "默认",
+        "dashboard"      : "仪表盘",
         "command"        : "命令",
         "recipe"         : "配方",
         "select_recipe"  : "选择配方",
