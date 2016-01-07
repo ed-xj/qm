@@ -1,27 +1,36 @@
 // window.TransferView = Backbone.View.extend({
 window.TransferView = window.BaseView.extend({
     initialize: function (moderator) {
-        this.mode = 'split';
+        this.mode = 'quicksort';
         this.moderator = moderator;
-        // All inputs casette maping and wafer ID
+        this.start = null;
+        this.targetRecipe = 1;
     },
 
     events: {
-        "click #splitRadio":"handleSplitMode",
-        "click #mergeRadio":"handleMergeMode",
+        // "click #splitRadio":"handleSplitMode",
+        // "click #mergeRadio":"handleMergeMode",
+        "click #quicksortRadio":"handleQuickSortMode",
         "click #resequenceRadio":"handleResequenceMode",
-        "change #srcStation":"srcSlotMapping",
-        // Split
-        "click #slots tr td:nth-child(7n+2)":"slotClick",   // slot click
-        // Merge
-        "click #srcMergeStationPills li":"pillsSelected",
-        "click #targetMergeStationPills li":"pillsSelected",
-        "click #addSrcStationBtn":"addSrcStationBtnClick",
-        "click #removeSrcStationBtn":"removeSrcStationBtnClick",
-        "click #addTargetStationBtn":"addTargetStationBtnClick",
-        "click #removeTargetStationBtn":"removeTargetStationBtnClick",
-        "click #slotsSrc tr > td":"slotClick",              // source slot click
-        "click #slotsTarget tr > td":"slotClick",           // target slot click
+        // quick sort
+        "click #slots tr > td":"slotClick",
+        "click #updateInventory":"updateInventoryClick",
+        "click #submitBtn":"submitBtnClick",
+        "click #executeBtn":"executeBtnClick",
+        "click #removelastBtn":"removelastBtnClick",
+        "click #startBtn":"startBtnClick",
+        "click #finishBtn":"finishBtnClick",
+        // // split
+        // "click #slots tr td:nth-child(7n+2)":"slotClick",   // slot click
+        // // Merge
+        // "click #srcMergeStationPills li":"pillsSelected",
+        // "click #targetMergeStationPills li":"pillsSelected",
+        // "click #addSrcStationBtn":"addSrcStationBtnClick",
+        // "click #removeSrcStationBtn":"removeSrcStationBtnClick",
+        // "click #addTargetStationBtn":"addTargetStationBtnClick",
+        // "click #removeTargetStationBtn":"removeTargetStationBtnClick",
+        // "click #slotsSrc tr > td":"slotClick",              // source slot click
+        // "click #slotsTarget tr > td":"slotClick",           // target slot click
         //resequence
         "click #go":"goBtnClick"
     },
@@ -32,7 +41,7 @@ window.TransferView = window.BaseView.extend({
         setTimeout(function() {
             that.synchMode();
         }, 1);
-        this.srcSlotMapping();
+        // this.stnSlotMapping();
     },
 
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
@@ -42,162 +51,275 @@ window.TransferView = window.BaseView.extend({
     },
 
     synchMode: function() {
-        var splitPanel      = $('#splitPanel'),
-            mergePanel      = $('#mergePanel'),
+        // var splitPanel      = $('#splitPanel'),
+        //     mergePanel      = $('#mergePanel'),
+        var quicksortPanel  = $('#quicksortPanel'),
             resequencePanel = $('#resequencePanel');
 
-        if (this.mode === 'split') {
-            splitPanel.show();
-            mergePanel.hide();
-            resequencePanel.hide();
-        } else if (this.mode === 'merge') {
-            splitPanel.hide();
-            mergePanel.show();
+        // if (this.mode === 'split') {
+        //     splitPanel.show();
+        //     mergePanel.hide();
+        //     resequencePanel.hide();
+        // } else if (this.mode === 'merge') {
+        //     splitPanel.hide();
+        //     mergePanel.show();
+        //     resequencePanel.hide();
+        if (this.mode === 'quicksort') {
+            // splitPanel.show();
+            // mergePanel.hide();
+            quicksortPanel.show();
             resequencePanel.hide();
         } else {
-            splitPanel.hide();
-            mergePanel.hide();
+            // splitPanel.hide();
+            // mergePanel.hide();
+            quicksortPanel.hide();
             resequencePanel.show();
         }
     },
 
-    handleSplitMode: function() {
-        this.mode = 'split';
-        this.synchMode(true, false, false);
-    },
+    // handleSplitMode: function() {
+    //     this.mode = 'split';
+    //     this.synchMode(true, false, false);
+    // },
 
-    handleMergeMode: function() {
-        this.mode = 'merge';
-        this.synchMode(false, true, false);
+    // handleMergeMode: function() {
+    //     this.mode = 'merge';
+    //     this.synchMode(false, true, false);
+    // },
+
+    handleQuickSortMode: function() {
+        this.mode = 'quicksort';
+        this.synchMode(true, false);
     },
 
     handleResequenceMode: function() {
         this.mode = 'resequence';
-        this.synchMode(false, false, true);
+        this.synchMode(false, true);
     },
 
-    srcSlotMapping: function () {
-        var stn = $('#srcStation').val()
-        if (typeof stn === "undefined")
-            stn = 1
-        // slot mapping
-        var s = this.moderator.getStation(stn)
-        this.slotMapping(s.map)
+    stnSlotMapping: function () {
+        var stncount = this.moderator.get('station').length
+        // all slot mapping
+        for (var i = 0; i < stncount; i++) {
+            this.slotMapping(this.moderator.get('station')[i],i+1)
+        };
     },
 
     // Split
-    splitInfo: function () {
-        // bind all data
-        var splitInfoArray = new Array();
-        $("#slots tr").each(function(){
-            if ($(this).hasClass('selected')) {
-                var thisSlot = $(this).children('th').text()
-                // build up JSON
-                splitInfoArray.push({
-                    targetstn : Number($('#targetStationForSlot'+thisSlot).val()),
-                    targetslot : Number($('#targetSlotForSlot'+thisSlot).val()),
-                    align : $(this).children('td:eq(3)').children().children().is(':checked'),
-                    ocr : $(this).children('td:eq(4)').children().children().is(':checked'),
-                    flip : $(this).children('td:last').children().children().is(':checked')
-                })
-            } else {
-                splitInfoArray.push(null);
-            }
-        });
-        // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", "station"+$('#srcStation').val(), "SPLIT", splitInfoArray, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "transfer - split");
-    },
+    // splitInfo: function () {
+    //     // bind all data
+    //     var splitInfoArray = new Array();
+    //     $("#slots tr").each(function(){
+    //         if ($(this).hasClass('selected')) {
+    //             var thisSlot = $(this).children('th').text()
+    //             // build up JSON
+    //             splitInfoArray.push({
+    //                 targetstn : Number($('#targetStationForSlot'+thisSlot).val()),
+    //                 targetslot : Number($('#targetSlotForSlot'+thisSlot).val()),
+    //                 align : $(this).children('td:eq(3)').children().children().is(':checked'),
+    //                 ocr : $(this).children('td:eq(4)').children().children().is(':checked'),
+    //                 flip : $(this).children('td:last').children().children().is(':checked')
+    //             })
+    //         } else {
+    //             splitInfoArray.push(null);
+    //         }
+    //     });
+    //     // Build up JSON
+    //     var json = encodeJSON("SCHD", "COMMAND", "station"+$('#srcStation').val(), "SPLIT", splitInfoArray, null);
+    //     // AJAX POST
+    //     this.ajaxCall(this.ajaxUrl, json, "transfer - split");
+    // },
 
-    slotMapping: function (map) {
-        // has to include station ID to complete mapping
+    slotMapping: function (data) {
+        var map = data.map
+        var waferid = data.waferID 
+        var stnid = ".stn"+data.stationID
         // clear slots color and text
-        $("#slots").children().children("td:nth-child(7n+2)").text("")
-        $("#slots").children().children("td:nth-child(7n+2)").removeAttr("style");
+        $(stnid).children().children("td").text("")
+        $(stnid).children().children("td").removeClass("full");
         // render slots color with yellow if there is a wafer
         for (i=0; i<map.length; i++) {
             if (map[i]===1) {
-                var slot = "#slot"+(i+1); 
-                $(slot).text(slot);
-                $(slot).addClass('full');
+                $(stnid).children().children("#slot"+(i+1)).text(waferid[i]); //waferid
+                $(stnid).children().children("#slot"+(i+1)).addClass('full');
             }
         }
     },
 
     slotClick: function (e) {
-        // has to include station ID to complete mapping
-        var slotTarget = $(e.currentTarget);
-        var selected_slot = slotTarget.parent().parent().children();
-        console.log('inputBase: slot:' + slotTarget.attr('id'));
-        if (slotTarget.parent().hasClass('selected')) {
-            slotTarget.parent().removeClass('selected');
+        if (this.start !== null) {
+            var slotTarget = $(e.currentTarget);
+            var selected_slot = slotTarget.parent().parent().children();
+            var station = slotTarget.parent().parent().attr("class");
+            if (this.start) {
+                if(!slotTarget.parent().hasClass('finish')) {
+                    if (slotTarget.parent().hasClass('start')) {
+                        $('.start').removeClass('start')
+                        $('#startfield').val("")
+                    } else {
+                        $('.start').removeClass('start')
+                        slotTarget.parent().addClass('start');
+                        $('#startfield').val(station+slotTarget.attr('id'));
+                        console.log("select start:"+station + ', ' +  slotTarget.attr('id'));
+                    }
+                }
+            } else {
+                if (!slotTarget.parent().hasClass('start')) {
+                    if (slotTarget.parent().hasClass('finish')) {
+                        $('.finish').removeClass('finish')
+                        $('#finishfield').val("");
+                    } else {
+                        $('.finish').removeClass('finish')
+                        slotTarget.parent().addClass('finish');
+                        $('#finishfield').val( station+slotTarget.attr('id'));
+                        console.log("select finish:"+station + ', ' +  slotTarget.attr('id'));
+                    }
+                }
+            }
+        }
+    },
+
+    updateInventoryClick: function () {
+        // this.stnSlotMapping();
+        var stncount = this.moderator.get('station').length
+        // all slot mapping
+        for (var i = 0; i < stncount; i++) {
+            this.slotMapping(this.moderator.get('station')[i],i+1)
+        };
+        console.log("inventory updated.")
+    },
+
+    submitBtnClick: function () {
+        var start = $('#startfield').val(),
+            finish = $('#finishfield').val();
+        if (start === "") {
+            alert("please input start slot")
+            if (finish === "")
+                    alert("please input finish slot")
         } else {
-            if(this.mode === "merge")
-                selected_slot.removeClass('selected');
-            slotTarget.parent().addClass('selected');
+            if (finish === "")
+                alert("please input finish slot")
+            else {
+                var recipe = start+"_"+finish;
+                if ($('#ocrCheckbox').is(':checked'))
+                    recipe = recipe+"_O"
+                if($('#alignCheckbox').is(':checked'))
+                    recipe = recipe+"_A"
+                if($('#flipCheckbox').is(':checked'))
+                    recipe = recipe+"_F"
+                
+                // for (var i = 1; i <= 25; i++) {
+                //     if ($('#recipe'+i).text() === "") {
+                //         $('#recipe'+i).text(recipe);
+                //         break;
+                //     }
+                // };
+                $('#recipe'+this.targetRecipe).text(recipe);
+                this.targetRecipe++;
+                if (this.targetRecipe > 25) {
+                    this.targetRecipe = 25;
+                    alert("no more space");
+                }
+            }
+        }
+    },
+
+    executeBtnClick: function () {
+        // Build up JSON
+        var recipes = {}
+        var json = encodeJSON("SCHD", "COMMAND", null, "QUICKSORT", recipes, null);
+        // AJAX POST
+        this.ajaxCall(this.ajaxUrl, json, "transfer - quicksort");
+    },
+
+    removelastBtnClick: function () {
+        // for (var i = 25; i >=0; i--) {
+        //     if ($('#recipe'+i).text() !== "") {
+        //         $('#recipe'+i).text("");
+        //         break;
+        //     }
+        // }
+        $('#recipe'+(this.targetRecipe-1)).text("");
+        this.targetRecipe--;
+        if (this.targetRecipe < 1) {
+            this.targetRecipe = 1;
+            alert("no recipes")
+        }
+    },
+
+   startBtnClick: function () {
+        if (!this.start || this.start === null) {
+            this.start = true;
+            console.log("start selecting...")
+        }
+    },
+
+    finishBtnClick: function () {
+        if (this.start || this.start === null) {
+            this.start = false;
+            console.log("finish selecting...")
         }
     },
 
     // Merge
-    mergeInfo: function () {
+    // mergeInfo: function () {
 
-    },
+    // },
 
-    pillsSelected: function (e) {
-        var li = $(e.currentTarget)
-        if (li.hasClass('selected'))
-            li.removeClass('selected')
-        else
-            li.addClass('selected')
-    },
+    // pillsSelected: function (e) {
+    //     var li = $(e.currentTarget)
+    //     if (li.hasClass('selected'))
+    //         li.removeClass('selected')
+    //     else
+    //         li.addClass('selected')
+    // },
 
-    addSrcStationBtnClick: function () {
-        var exist = $('#srcMergeStationPills li a').text()
-        var srcstn = "Station" + $('#srcMergeStation').val()
-        if (exist.search(srcstn) < 0)
-            $('#srcMergeStationPills').append("<li><a href='#'>"+srcstn+"</a></li>")
-        else
-            alert(srcstn+" is already in the list.")
-    },
+    // addSrcStationBtnClick: function () {
+    //     var exist = $('#srcMergeStationPills li a').text()
+    //     var srcstn = "Station" + $('#srcMergeStation').val()
+    //     if (exist.search(srcstn) < 0)
+    //         $('#srcMergeStationPills').append("<li><a href='#'>"+srcstn+"</a></li>")
+    //     else
+    //         alert(srcstn+" is already in the list.")
+    // },
 
-    removeSrcStationBtnClick: function () {
-        var exist = $('#srcMergeStationPills li a').text()
-        var srcstn = "Station" + $('#srcMergeStation').val()
-        var index = exist.search(srcstn)
+    // removeSrcStationBtnClick: function () {
+    //     var exist = $('#srcMergeStationPills li a').text()
+    //     var srcstn = "Station" + $('#srcMergeStation').val()
+    //     var index = exist.search(srcstn)
         
-        if ($('#srcMergeStationPills li').hasClass('selected'))
-            $('#srcMergeStationPills li.selected').remove()
-        else {
-            if (index >= 0)
-                $('#srcMergeStationPills li:nth-child('+((index/8)+1)+')').remove()
-            else
-                alert(srcstn+" is not in the list.")
-        }
-    },
+    //     if ($('#srcMergeStationPills li').hasClass('selected'))
+    //         $('#srcMergeStationPills li.selected').remove()
+    //     else {
+    //         if (index >= 0)
+    //             $('#srcMergeStationPills li:nth-child('+((index/8)+1)+')').remove()
+    //         else
+    //             alert(srcstn+" is not in the list.")
+    //     }
+    // },
 
-    addTargetStationBtnClick: function () {
-        var exist = $('#targetMergeStationPills li a').text()
-        var srcstn = "Station" + $('#targetMergeStation').val()
-        if (exist.search(srcstn) < 0)
-            $('#targetMergeStationPills').append("<li><a href='#'>"+srcstn+"</a></li>")
-        else
-            alert(srcstn+" is already in the list.")
-    },
+    // addTargetStationBtnClick: function () {
+    //     var exist = $('#targetMergeStationPills li a').text()
+    //     var srcstn = "Station" + $('#targetMergeStation').val()
+    //     if (exist.search(srcstn) < 0)
+    //         $('#targetMergeStationPills').append("<li><a href='#'>"+srcstn+"</a></li>")
+    //     else
+    //         alert(srcstn+" is already in the list.")
+    // },
 
-    removeTargetStationBtnClick: function () {
-        var exist = $('#targetMergeStationPills li a').text()
-        var srcstn = "Station" + $('#targetMergeStation').val()
-        var index = exist.search(srcstn)
-        if ($('#targetMergeStationPills li').hasClass('selected'))
-            $('#targetMergeStationPills li.selected').remove()
-        else {
-            if (index >= 0)
-                $('#targetMergeStationPills li:nth-child('+((index/8)+1)+')').remove()
-            else
-                alert(srcstn+" is not in the list.")
-        }
-    },
+    // removeTargetStationBtnClick: function () {
+    //     var exist = $('#targetMergeStationPills li a').text()
+    //     var srcstn = "Station" + $('#targetMergeStation').val()
+    //     var index = exist.search(srcstn)
+    //     if ($('#targetMergeStationPills li').hasClass('selected'))
+    //         $('#targetMergeStationPills li.selected').remove()
+    //     else {
+    //         if (index >= 0)
+    //             $('#targetMergeStationPills li:nth-child('+((index/8)+1)+')').remove()
+    //         else
+    //             alert(srcstn+" is not in the list.")
+    //     }
+    // },
 
     // Resequence
     resequence: function() {
@@ -214,10 +336,8 @@ window.TransferView = window.BaseView.extend({
     },
 
     goBtnClick: function() {
-        if (this.mode === 'split') {
-            this.splitInfo();
-        } else if (this.mode === 'merge') {
-            this.mergeInfo()
+        if (this.mode === 'quicksort') {
+
         } else if (this.mode ==='resequence') {
             this.resequence()
         } else

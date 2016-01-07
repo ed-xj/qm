@@ -1,5 +1,19 @@
 html, #page-wrapper > .container-fluid {
-  background-color: rgb(241,242,244);
+  /*background-color: rgb(231,232,234);*/
+  background-color: #d7d9d7;
+}
+
+nav[role=navigation] {
+  /*border-radius: 4px;*/
+  border-style: solid;
+  border-width: 1px;
+  border-color: #c6c6c6;
+  box-sizing: border-box;
+  background: -webkit-linear-gradient(90deg, #0b0b0b 0%, #45494d 100%);
+  background: -moz-linear-gradient(90deg, #0b0b0b 0%, #45494d 100%);
+  background: -o-linear-gradient(90deg, #0b0b0b 0%, #45494d 100%);
+  background: -ms-linear-gradient(90deg, #0b0b0b 0%, #45494d 100%);
+  background: linear-gradient(0deg, #0b0b0b 0%, #45494d 100%);
 }
 
 .panel, select[name="sometext"] {
@@ -34,6 +48,10 @@ code[name="sysmsg"] {
   /*background-color: #F0F0F0;*/
 }
 
+.panel, #statusBar, .btn-group-vertical, select {
+  box-shadow: 1px 2px 2px #888888;
+}
+
 .panel > .panel-heading {
   color: #fff;
   border: 1px solid #3c4049;
@@ -49,18 +67,28 @@ code[name="sysmsg"] {
 }
 
 .panel-body {
-  /*background-color: #f5f5f5;*/
+  background-color: #f5f5f5;
 }
 
 .table-striped tbody > tr:nth-child(odd) > td, .table-striped tbody > tr:nth-child(odd) > th {
     background-color: #E6E6E6;
 }
 
+/*btn*/
+.btn {
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+}
+
+.btn-group-vertical {
+  /*border: 1px solid black;*/
+  border-radius: 5px;
+}
+
 .btn-group-vertical > .btn, #statusBar > .btn{
   border: 2px solid white;
 }
 
-.btn.btn-default:hover:not(.dropdown-toggle) {
+.btn.btn-default:active, .btn.btn-default:after {
     border: 1px solid #3c4049;
     color: #FFFFFF;
     background-color: #4e525d;
@@ -71,6 +99,10 @@ code[name="sysmsg"] {
     background-image: -o-linear-gradient(top, #4e525d 0, #3c4049 100%);
     background-image: linear-gradient(to bottom, #4e525d 0, #3c4049 100%);
     filter: progid:dximagetransform.microsoft.gradient(startColorstr='#4e525d', endColorstr='#3c4049', GradientType=0);
+}
+/*table*/
+.table:not(.table-fixed), .table-bordered {
+  box-shadow: 1px 2px 2px #888888;
 }
 
 /* Top Navigation */
@@ -203,4 +235,12 @@ ul.alert-dropdown {
 .full {
   background-color: yellow;
   box-shadow: 2px 2px 2px 2px #888888;
+}
+
+/*quick sort*/
+.start {
+  border: 2px solid green;
+}
+.finish {
+  border: 2px solid red;
 }

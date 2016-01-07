@@ -8,7 +8,6 @@ window.InputBaseView = window.BaseView.extend({
     initialize: function (moderator) {
         this.moderator = moderator;
         this.slotTarget = null;
-        this.myMap = null;
     },
 
     getStation: function() {
@@ -52,7 +51,6 @@ window.InputBaseView = window.BaseView.extend({
                 $(slot).addClass('full');
             }
         }
-        // update mapping info
     },
 
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
@@ -60,27 +58,36 @@ window.InputBaseView = window.BaseView.extend({
     // Union function
     callBack: function(data) {
         if (data.Cmd === "MAPPING") {
-            if (data.Param.index === 0) {
-                if (data.Param.status.length !== 25)
+            var index = data.Param.index
+            var status = data.Param.status
+            var id = data.Param.waferID
+            if (index === 0) {
+                if (status.length !== 25)
                     alert("Mapping Error, slot count is not correct");
                 else {
                     var v = new InputBaseView();
                     v.slotMapping(data.Param);
                     // update mapping info
+                    this.getStation().map = status;
+                    this.getStation().waferID = id;
                 }
             } else {
-                var slot = "#slot"+(data.Param.index);
-                if (data.Param.index < 1 ||  data.Param.index >50)
+                var slot = "#slot"+(index);
+                if (index < 1 ||  index >50)
                     alert("Mapping Error, slot count is not correct");
                 else {
-                    if (data.Param.status === 1) {
+                    if (status === 1) {
                         $(slot).children('label').text(slot);
                         $(slot).addClass('full');
                         // update mapping info
+                        this.getStation().map[index-1] = status;
+                        this.getStation().waferID[index-1] = id;
                     } else {
                         $(slot).children('label').text("");
                         $(slot).removeClass('full');
                         // update mapping info
+                        this.getStation().map[index-1] = status;
+                        this.getStation().waferID[index-1] = id;
                     }
                 }
             }
@@ -117,6 +124,9 @@ window.InputBaseView = window.BaseView.extend({
     },
 
     openDoorBtnCLick: function () {
+        // clear slots color and text
+        $(".wafer-id").text("")
+        $("#slots").children().children("td").removeClass("full");
         // Build up JSON
         var json = encodeJSON("SCHD", "COMMAND", null, "OPENFDOOR", null, null);
         // AJAX POST
@@ -166,7 +176,7 @@ window.InputBaseView = window.BaseView.extend({
             var action = "GET" + $("#waferType").val();
             var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), action, mapparam, null);
             // AJAX POST
-            this.ajaxCall(this.ajaxUrl, json, "getStandard", this.callBack);
+            this.ajaxCall(this.ajaxUrl, json, "getStandard", this.callBack.bind(this));
         } else {
             alert("Slot select fail.");
         }
@@ -183,7 +193,7 @@ window.InputBaseView = window.BaseView.extend({
             var action = "PUT" + $("#waferType").val();
             var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), action, mapparam, null);
             // AJAX POST
-            this.ajaxCall(this.ajaxUrl, json, "putStandard", this.callBack);
+            this.ajaxCall(this.ajaxUrl, json, "putStandard", this.callBack.bind(this));
         } else {
             alert("Slot select fail.");
         }
@@ -194,7 +204,7 @@ window.InputBaseView = window.BaseView.extend({
         var action = "MAP" + $("#waferType").val();
         var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), action, null, null);
         // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "mapStandard", this.callBack);
+        var map = this.ajaxCall(this.ajaxUrl, json, "mapStandard", this.callBack.bind(this));
     },
 
     slotClick: function (e) {
