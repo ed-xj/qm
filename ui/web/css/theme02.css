@@ -231,10 +231,15 @@ ul.alert-dropdown {
   border: 2px solid red;
 }
 
+.disable {
+  background-color: black;
+  color:white;
+}
+
 /*wafer*/
 .full {
   background-color: yellow;
-  box-shadow: 2px 2px 2px 2px #888888;
+  box-shadow: 2px 2px 0px 0px #888888;
 }
 
 /*quick sort*/
@@ -243,4 +248,7 @@ ul.alert-dropdown {
 }
 .finish {
   border: 2px solid red;
+}
+.doing {
+  background-color: orange;
 }

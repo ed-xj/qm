@@ -14,7 +14,7 @@ window.TransferView = window.BaseView.extend({
         "click #resequenceRadio":"handleResequenceMode",
         // quick sort
         "click #slots tr > td":"slotClick",
-        "click #updateInventory":"updateInventoryClick",
+        "click #updateInventoryBtn":"updateInventoryClick",
         "click #submitBtn":"submitBtnClick",
         "click #executeBtn":"executeBtnClick",
         "click #removelastBtn":"removelastBtnClick",
@@ -142,6 +142,9 @@ window.TransferView = window.BaseView.extend({
             if (map[i]===1) {
                 $(stnid).children().children("#slot"+(i+1)).text(waferid[i]); //waferid
                 $(stnid).children().children("#slot"+(i+1)).addClass('full');
+            } else if (waferid[i] === "X") {
+                 $(stnid).children().children("#slot"+(i+1)).addClass('disable');
+                  $(stnid).children().children("#slot"+(i+1)).text("X");
             }
         }
     },
@@ -149,29 +152,26 @@ window.TransferView = window.BaseView.extend({
     slotClick: function (e) {
         if (this.start !== null) {
             var slotTarget = $(e.currentTarget);
-            var selected_slot = slotTarget.parent().parent().children();
-            var station = slotTarget.parent().parent().attr("class");
-            if (this.start) {
-                if(!slotTarget.parent().hasClass('finish')) {
-                    if (slotTarget.parent().hasClass('start')) {
+            if (!slotTarget.hasClass('disable') && !slotTarget.hasClass('doing')) {
+                var station = slotTarget.parent().parent().attr("class");
+                if (this.start && slotTarget.hasClass('full')) {
+                    if (slotTarget.hasClass('start')) {
                         $('.start').removeClass('start')
                         $('#startfield').val("")
                     } else {
                         $('.start').removeClass('start')
-                        slotTarget.parent().addClass('start');
+                        slotTarget.addClass('start');
                         $('#startfield').val(station+slotTarget.attr('id'));
                         console.log("select start:"+station + ', ' +  slotTarget.attr('id'));
                     }
-                }
-            } else {
-                if (!slotTarget.parent().hasClass('start')) {
-                    if (slotTarget.parent().hasClass('finish')) {
+                } else if (!this.start && !slotTarget.hasClass('full')) {
+                    if (slotTarget.hasClass('finish')) {
                         $('.finish').removeClass('finish')
                         $('#finishfield').val("");
                     } else {
                         $('.finish').removeClass('finish')
-                        slotTarget.parent().addClass('finish');
-                        $('#finishfield').val( station+slotTarget.attr('id'));
+                        slotTarget.addClass('finish');
+                        $('#finishfield').val(station+slotTarget.attr('id'));
                         console.log("select finish:"+station + ', ' +  slotTarget.attr('id'));
                     }
                 }
@@ -200,56 +200,85 @@ window.TransferView = window.BaseView.extend({
             if (finish === "")
                 alert("please input finish slot")
             else {
-                var recipe = start+"_"+finish;
+                var recipe = start+","+finish;
                 if ($('#ocrCheckbox').is(':checked'))
-                    recipe = recipe+"_O"
+                    recipe = recipe+",O"
                 if($('#alignCheckbox').is(':checked'))
-                    recipe = recipe+"_A"
+                    recipe = recipe+",A"
                 if($('#flipCheckbox').is(':checked'))
-                    recipe = recipe+"_F"
+                    recipe = recipe+",F"
                 
-                // for (var i = 1; i <= 25; i++) {
-                //     if ($('#recipe'+i).text() === "") {
-                //         $('#recipe'+i).text(recipe);
-                //         break;
-                //     }
-                // };
                 $('#recipe'+this.targetRecipe).text(recipe);
+                $('.start').text("S"+this.targetRecipe);
+                $('.finish').text("T"+this.targetRecipe);
+                $('.start').addClass('recipe'+this.targetRecipe);
+                $('.finish').addClass('recipe'+this.targetRecipe);
+                $('.recipe'+this.targetRecipe).addClass('doing');
                 this.targetRecipe++;
                 if (this.targetRecipe > 25) {
                     this.targetRecipe = 25;
                     alert("no more space");
                 }
+                $('.start').removeClass('start');
+                $('.finish').removeClass('finish');
+                this.start = null;
+                $('#startfield').val("");
+                $('#finishfield').val("");
+                $('#startfield').css('background-color','white');
+                $('#finishfield').css('background-color','white');
+                $('#updateInventoryBtn').prop('disabled', true);
             }
         }
     },
 
     executeBtnClick: function () {
         // Build up JSON
-        var recipes = {}
-        var json = encodeJSON("SCHD", "COMMAND", null, "QUICKSORT", recipes, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "transfer - quicksort");
+        var recipesArray = new Array()
+        $("#recipes td").each(function(){
+            if ($(this).text() !== "") {
+                recipesArray.push($(this).text());
+            }
+        });
+        if (recipesArray.length !== 0) {
+            var json = encodeJSON("SCHD", "COMMAND", null, "QUICKSORT", recipesArray, null);
+            // AJAX POST
+            this.ajaxCall(this.ajaxUrl, json, "transfer - quicksort");
+        }
+        this.start = null;
     },
 
     removelastBtnClick: function () {
-        // for (var i = 25; i >=0; i--) {
-        //     if ($('#recipe'+i).text() !== "") {
-        //         $('#recipe'+i).text("");
-        //         break;
-        //     }
-        // }
-        $('#recipe'+(this.targetRecipe-1)).text("");
+        var that = this;
+        $('#recipe'+(this.targetRecipe-1)).text("");    // recipe table (right)
+
+        $('.recipe'+(this.targetRecipe-1)).each( function () {
+            if ($(this).hasClass('full')) {
+                var stn = $(this).parent().parent('tbody').attr('class');
+                var slot = $(this).siblings('th').text();
+                stn = stn.match(/\d+$/);
+                var wid = that.moderator.get('station')[stn-1].waferID[parseInt(slot,10)-1];
+                $(this).text(wid);
+            }
+            else
+                $(this).text("")
+        })     // station slot (left)
+        $('.recipe'+(this.targetRecipe-1)).removeClass('doing');
+        $('.recipe'+(this.targetRecipe-1)).removeClass('recipe'+(this.targetRecipe-1));     // station slot (left)
         this.targetRecipe--;
         if (this.targetRecipe < 1) {
             this.targetRecipe = 1;
             alert("no recipes")
+        } else if (this.targetRecipe = 1) {
+            $('#updateInventoryBtn').prop('disabled', false);
         }
+        this.start = null;
     },
 
    startBtnClick: function () {
         if (!this.start || this.start === null) {
             this.start = true;
+            $('#startfield').css('background-color','lightblue')
+            $('#finishfield').css('background-color','white')
             console.log("start selecting...")
         }
     },
@@ -257,6 +286,8 @@ window.TransferView = window.BaseView.extend({
     finishBtnClick: function () {
         if (this.start || this.start === null) {
             this.start = false;
+            $('#startfield').css('background-color','white')
+            $('#finishfield').css('background-color','lightblue')
             console.log("finish selecting...")
         }
     },
@@ -337,9 +368,9 @@ window.TransferView = window.BaseView.extend({
 
     goBtnClick: function() {
         if (this.mode === 'quicksort') {
-
+            this.executeBtnClick();
         } else if (this.mode ==='resequence') {
-            this.resequence()
+            this.resequence();
         } else
             alert('Transfer mode error, please select again.');
     }

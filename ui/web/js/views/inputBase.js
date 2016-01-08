@@ -28,7 +28,20 @@ window.InputBaseView = window.BaseView.extend({
     },
 
     handleCassetteChange: function() {
+        // $('tr td').removeAttr('class');
+        // $('tr td:odd').children('.wafer-id').text("");
         var cassette = $('#cassette-type').val()       // type string
+        if (cassette === "13 Cassette") {
+            $('tr td:odd').addClass('disable');
+            $('tr td:odd').children('.wafer-id').text("Unavailable");
+            for (var i =  1; i <25; i+=2) {
+                this.getStation().map[i] = "X";
+                this.getStation().waferID[i] = "X";
+            };
+        } else {
+            $('.disable').children('.wafer-id').text("")
+            $('.disable').removeClass('disable')
+        }
         console.log("handleCassetteChange: "+ cassette);
     },
 
@@ -41,7 +54,7 @@ window.InputBaseView = window.BaseView.extend({
         var map = data.status
         var waferid = data.waferID 
         // clear slots color and text
-        $(".wafer-id").text("")
+        // $(".wafer-id").text("")
         $("#slots").children().children("td").removeAttr("style");
         // render slots color with yellow if there is a wafer
         for (i=0; i<map.length; i++) {
@@ -91,7 +104,7 @@ window.InputBaseView = window.BaseView.extend({
                     }
                 }
             }
-        } else {}
+        } else if (data.Cmd === "ERROR") {}
     },
 
     openFoupBtnCLick: function () {
@@ -154,7 +167,10 @@ window.InputBaseView = window.BaseView.extend({
         // TODO
         var waferIDArray = new Array();
         $(".wafer-id").each(function(){
-            waferIDArray.push($(this).text());
+            if ($(this).text() === "Unavailable") {
+                waferIDArray.push("X");
+            } else
+                waferIDArray.push($(this).text());
         });
         console.log("updateIdBtnCLick. id:" + waferIDArray.toString());
         // Build up JSON
@@ -209,24 +225,28 @@ window.InputBaseView = window.BaseView.extend({
 
     slotClick: function (e) {
         this.slotTarget = $(e.currentTarget);
-        var selected_slot = this.slotTarget.parent().parent().children();
-        if (this.slotTarget.parent().hasClass('selected')) {
-            this.slotTarget.parent().removeClass('selected');
-            console.log('inputBase: '+this.model.get('viewName')+', slot: '+ this.slotTarget.attr('id')+' unselected.');
-            this.slotTarget = null;
-        } else {
-            selected_slot.removeClass('selected');
-            this.slotTarget.parent().addClass('selected');
-            console.log('inputBase: '+this.model.get('viewName')+', slot: '+ this.slotTarget.attr('id')+' selected.');
+        if (!this.slotTarget.hasClass('disable')) {
+            var selected_slot = this.slotTarget.parent().parent().children();
+            if (this.slotTarget.parent().hasClass('selected')) {
+                this.slotTarget.parent().removeClass('selected');
+                console.log('inputBase: '+this.model.get('viewName')+', slot: '+ this.slotTarget.attr('id')+' unselected.');
+                this.slotTarget = null;
+            } else {
+                selected_slot.removeClass('selected');
+                this.slotTarget.parent().addClass('selected');
+                console.log('inputBase: '+this.model.get('viewName')+', slot: '+ this.slotTarget.attr('id')+' selected.');
+            }
         }
     },
 
     slotIdDblCkick: function(e) {
         var td = $(e.currentTarget);
-        td.find('.wafer-id').hide();
-        td.find('.wafer-id-input').val(td.find('.wafer-id').text());
-        td.find('.wafer-id-input').show().focus();
-        td.find('.wafer-id-input').select();
+        if (!td.hasClass('disable')) {
+            td.find('.wafer-id').hide();
+            td.find('.wafer-id-input').val(td.find('.wafer-id').text());
+            td.find('.wafer-id-input').show().focus();
+            td.find('.wafer-id-input').select();
+        }
     },
 
     handleWaferIdChange: function(e) {
