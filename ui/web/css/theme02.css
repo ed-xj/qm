@@ -227,7 +227,7 @@ ul.alert-dropdown {
 }
 
 /*Slot mapping*/
-.selected > td:nth-child(2), li.selected {
+.selected > td {
   border: 2px solid red;
 }
 
@@ -245,6 +245,7 @@ ul.alert-dropdown {
 /*quick sort*/
 .start {
   border: 2px solid green;
+  border-top: 2px solid green;
 }
 .finish {
   border: 2px solid red;

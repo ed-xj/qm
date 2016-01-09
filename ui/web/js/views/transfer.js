@@ -41,7 +41,6 @@ window.TransferView = window.BaseView.extend({
         setTimeout(function() {
             that.synchMode();
         }, 1);
-        // this.stnSlotMapping();
     },
 
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
@@ -180,7 +179,6 @@ window.TransferView = window.BaseView.extend({
     },
 
     updateInventoryClick: function () {
-        // this.stnSlotMapping();
         var stncount = this.moderator.get('station').length
         // all slot mapping
         for (var i = 0; i < stncount; i++) {
@@ -232,19 +230,23 @@ window.TransferView = window.BaseView.extend({
     },
 
     executeBtnClick: function () {
-        // Build up JSON
-        var recipesArray = new Array()
-        $("#recipes td").each(function(){
-            if ($(this).text() !== "") {
-                recipesArray.push($(this).text());
-            }
-        });
-        if (recipesArray.length !== 0) {
+        if (this.targetRecipe > 1) {
+            // Build up JSON
+            var recipesArray = new Array()
+            $("#recipes td").each(function(){
+                if ($(this).text() !== "") {
+                    recipesArray.push($(this).text());
+                }
+            });
             var json = encodeJSON("SCHD", "COMMAND", null, "QUICKSORT", recipesArray, null);
             // AJAX POST
             this.ajaxCall(this.ajaxUrl, json, "transfer - quicksort");
+            this.start = null;
+            $('#startfield').css('background-color','white');
+            $('#finishfield').css('background-color','white');
+        } else {
+            alert("no repies to execute")
         }
-        this.start = null;
     },
 
     removelastBtnClick: function () {
@@ -268,7 +270,7 @@ window.TransferView = window.BaseView.extend({
         if (this.targetRecipe < 1) {
             this.targetRecipe = 1;
             alert("no recipes")
-        } else if (this.targetRecipe = 1) {
+        } else if (this.targetRecipe === 1) {
             $('#updateInventoryBtn').prop('disabled', false);
         }
         this.start = null;
