@@ -80,7 +80,8 @@ window.DashboardView = window.BaseView.extend({
 
     startRecipeBtnClick:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "STARTRECIPE", null/*recipe*/, null);
+        var recipe = $('#recipe').val()
+        var json = encodeJSON("SCHD", "COMMAND", null, "STARTRECIPE", recipe, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "start recipe", this.callBack);
     },

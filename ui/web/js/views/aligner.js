@@ -35,20 +35,24 @@ window.AlignerView = window.BaseView.extend({
     
     readItBtnCLick:function () {
         var text = $('#readItText').val()
-        console.log(text)
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "READIT", text, null);
+        var json = encodeJSON("SCHD", "COMMAND", "Aligner", "READIT", text, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "readIt");
     },
     
     alignWaferBtnCLick:function () {
-        var alignWafer = $('#alignWaferId').val()
-        console.log(alignWafer)
-        // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", "Aligner", "ALIGNWAFER", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "alignWafer");
+        var alignWaferId = $('#alignWaferId').val()
+        var alignWaferIdField = $("#alignWaferIdField").val();
+        console.log(alignWaferId)
+        if (alignWaferId >359 || alignWaferId <0) {
+            alert("Warning: align angle should be between 0 and 359")
+        } else {
+            // Build up JSON
+            var json = encodeJSON("SCHD", "COMMAND", "Aligner", "ALIGNWAFER", alignWaferId, null);
+            // AJAX POST
+            this.ajaxCall(this.ajaxUrl, json, "alignWafer");
+        }
     },
 
     updateIDBtnCLick: function() {

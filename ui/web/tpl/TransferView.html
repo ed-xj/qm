@@ -2263,24 +2263,33 @@
                     </div> -->
                     <div class="row">
                         <div class="col-xs-12">
-                            <div id="resequencePanel" class="panel form-group">
-                                <div class="form-group">
+                            <div id="resequencePanel" class="panel form-horizontal">
+                                <div class="form-group" style="margin-top:10px;">
                                     <label class="control-label col-sm-2">Sort Order</label>
-                                    <span class="">
+                                    <div class="col-sm-4">
                                         <label class="radio-inline"><input type="radio" id="sortASC" name="sortOrder" checked>Ascending</label>
                                         <label class="radio-inline"><input type="radio" id="sortDEC" name="sortOrder">Descending</label>
-                                    </span>
-                                </div>
+                                    </div>
+                                    <div class="btn-group col-sm-6" data-toggle="buttons">
+                                         <label class="btn btn-default col-xs-6"  id="sortASC">
+                                            <input type="radio" name="type">Ascending
+                                        </label>
+                                        <label class="btn btn-default col-xs-6" id="sortDEC">
+                                            <input type="radio" name="type">Descending
+                                        </label>
+                                    </div>
+
+                                </div><br>
                                 <div class="form-group">
                                     <label for="idMask" class="control-label col-sm-2">ID Mask</label>
-                                    <span class="">
-                                        <input type="text" id="idMask" name="idMask">
-                                    </span>
-                                </div>
+                                    <div class="col-xs-6">
+                                        <input type="text" class="form-control" id="idMask" name="idMask">
+                                    </div>
+                                </div><br>
                                 <div class="form-group">
                                     <label for="reqSrcStation" class="control-label col-sm-2">Source Station</label>
-                                    <span class="">
-                                        <select id="reqSrcStation">
+                                    <div class="col-xs-3">
+                                        <select class="form-control" id="reqSrcStation">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -2290,12 +2299,12 @@
                                             <option>7</option>
                                             <option>8</option>
                                         </select>
-                                    </span>
-                                </div>
+                                    </div>
+                                </div><br>
                                 <div class="form-group">
                                     <label for="reqTargetStation" class="control-label col-sm-2">Target Station</label>
-                                    <span class="">
-                                        <select id="reqTargetStation">
+                                    <div class="col-xs-3">
+                                        <select class="form-control" id="reqTargetStation">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -2305,7 +2314,7 @@
                                             <option>7</option>
                                             <option>8</option>
                                         </select>
-                                    </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

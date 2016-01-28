@@ -11,6 +11,7 @@
                     <input type="text" class="form-control" id="recipeName" placeholder="">
                 </div>
                 <button class="btn btn-default" id='saveRecipe'>SAVE RECIPE</button>
+                <button class="btn btn-default" id='loadRecipe'>LOAD RECIPE</button>
             </form>
             </div>
         </div>
@@ -22,7 +23,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <label class="control-label col-xs-12" style="text-align:left;">UNLOAD ORDER</label>
-                        <div class="radio">
+                        <!-- <div class="radio">
                             <label>
                                 <input type="radio" name="unloadOrder1" value="1" checked>BOTTOM-TOP
                             </label>
@@ -31,8 +32,16 @@
                             <label>
                                 <input type="radio" name="unloadOrder1" value="2">TOP-BOTTOM
                             </label>
+                        </div> -->
+                        <div class="btn-group" data-toggle="buttons">
+                             <label class="btn btn-default">
+                                <input type="radio" name="unloadOrder1" value="1" checked>BOTTOM-TOP
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="unloadOrder1" value="2">TOP-BOTTOM
+                            </label>
                         </div>
-                        <label class="control-label col-xs-12" style="text-align:left;">SOURCE</label>
+                        <label class="control-label col-xs-12" style="text-align:left; margin-top:10px;">SOURCE</label>
                         <select name="sometext" class="form-control"></select>
                         <br>
                         <div class="col-xs-12 chk-group" id="unloadOrder1" style="overflow-y:auto; height:700px">
@@ -100,7 +109,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <label class="control-label col-xs-12" style="text-align:left;">TYPE</label>
-                        <div class="radio">
+                        <!-- <div class="radio">
                             <div class="radio-inline">
                                 <label>
                                     <input type="radio" name="type" value="STD">STD
@@ -121,10 +130,24 @@
                                     <input type="radio" name="type" value="B_TYPE">B_TYPE
                                 </label>
                             </div>
+                        </div> -->
+                        <div class="btn-group col-xs-12" data-toggle="buttons">
+                             <label class="btn btn-default col-xs-3">
+                                <input type="radio" name="type" value="STD" checked>STD
+                            </label>
+                            <label class="btn btn-default col-xs-3">
+                                <input type="radio" name="type" value="THIN">THIN
+                            </label>
+                            <label class="btn btn-default col-xs-3">
+                                <input type="radio" name="type" value="A_TYPE">A_TYPE
+                            </label>
+                            <label class="btn btn-default col-xs-3">
+                                <input type="radio" name="type" value="B_TYPE">B_TYPE
+                            </label>
                         </div>
-                        <label class="control-label col-xs-6" style="text-align:left;">PROCESS 1</label>
+                        <label class="control-label col-xs-6" style="text-align:left; margin-top:10px;">PROCESS 1</label>
                         <div class="col-xs-6">
-                            <label class="control-label col-xs-12" style="text-align:left;">USAGE</label>
+                            <label class="control-label col-xs-12" style="text-align:left; margin-top:10px;">USAGE</label>
                             <div class="radio">
                                 <label>
                                     <input type="radio" name="usage1" value="1">DISABLE
@@ -141,8 +164,8 @@
                         <table class="table table-fixed">
                             <thead>
                                 <tr>
-                                    <th class="col-xs-2">&nbsp;</th>
-                                    <th class="col-xs-2">CMD</th>
+                                    <th class="col-xs-1">&nbsp;</th>
+                                    <th class="col-xs-3">CMD</th>
                                     <th class="col-xs-6">DATA</th>
                                     <th class="col-xs-2">GOTO</th>
                                 </tr>
@@ -150,8 +173,8 @@
                             <tbody style="height: 621px;" id="sequence1">
                                 <% for (var i=0; i < 50; i++) { %>
                                 <tr>
-                                    <td class="col-xs-2" style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
-                                    <td class="col-xs-2"><input class="form-control" type="text"></td>
+                                    <td class="col-xs-1" style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
+                                    <td class="col-xs-3"><input class="form-control" type="text"></td>
                                     <td class="col-xs-6"><input class="form-control" type="text"></td>
                                     <td class="col-xs-2"><input class="form-control" type="text"></td>
                                 </tr>
@@ -189,8 +212,8 @@
                         <table class="table table-fixed">
                             <thead>
                                 <tr>
-                                    <th class="col-xs-2"></th>
-                                    <th class="col-xs-2">CMD</th>
+                                    <th class="col-xs-1"></th>
+                                    <th class="col-xs-3">CMD</th>
                                     <th class="col-xs-6">DATA</th>
                                     <th class="col-xs-2">GOTO</th>
                                 </tr>
@@ -198,8 +221,8 @@
                             <tbody style="height: 642px;" id="sequence2">
                                 <% for (var i=0; i < 50; i++) { %>
                                 <tr>
-                                    <td class="col-xs-2" style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
-                                    <td class="col-xs-2"><input class="form-control" type="text"></td>
+                                    <td class="col-xs-1" style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
+                                    <td class="col-xs-3"><input class="form-control" type="text"></td>
                                     <td class="col-xs-6"><input class="form-control" type="text"></td>
                                     <td class="col-xs-2"><input class="form-control" type="text"></td>
                                 </tr>

@@ -7,8 +7,8 @@ window.ConfigView = window.BaseView.extend({
         "click #slow":"slowBtnClick",       // set speed to slow
         "click #medium":"mediumBtnClick",   // set speed to medium
         "click #high":"highBtnClick",       // set speed to fast
-        "change #syslog":"syslogLevel",     // system log level (not ready)
-        "change #robotlog":"robotlogLevel", // robot log level (not ready)
+        "change #syslog":"syslogLevel",     // system log level
+        "change #robotlog":"robotlogLevel", // robot log level
         "change #lang":"changeLang",        // change language
     },
 

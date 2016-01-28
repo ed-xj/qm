@@ -9,7 +9,8 @@ window.RecipeView = window.BaseView.extend({
         "click .chk-all":"chkAllCLick",               // check all
         "click .chk-none":"chkNoneCLick",             // check none
         "click .chk-element":"chkElemCLick",          // check element
-        "click #saveRecipe":"saveRecipeBtnCLick",     // save
+        "click #saveRecipe":"saveRecipeBtnCLick",     // save recipe
+        "click #loadRecipe":"loadRecipeBtnCLick",     // load recipe
         "click input[name=unloadOrder1]": "updateUnloadOrder1",
         "click input[name=unloadOrder2]": "updateUnloadOrder2"
     },
@@ -177,7 +178,8 @@ window.RecipeView = window.BaseView.extend({
         var order = this.unloadOrder()                          // unload order (.src) and (.dest)
 
         // (TODO) check if box is checked
-        if ($('input[name=type]').is(':checked'))
+        // if ($('input[name=type]').is(':checked'))
+        if ($('input[name=type]').hasClass('active'))
             var type = $('input[name=type]:checked').val()      // type
         else 
             alert("Please check TYPE")
@@ -187,6 +189,7 @@ window.RecipeView = window.BaseView.extend({
             var usage2 = $('input[name=usage2]').val()          // usage en/disable
         } else 
             alert("Please check USAGE")
+
         var sequence = this.sequence()                          // sequence 1(.seq1) and 2(.seq2)
 
         var recipe = {
@@ -207,5 +210,11 @@ window.RecipeView = window.BaseView.extend({
         var json = encodeJSON("SCHD", "COMMAND", null, "SAVERECIPE", recipe, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "saveRecipe", this.callBack);
+    },
+
+    // TODO
+    loadRecipeBtnCLick:function () {
+        // load up recipe
+        console.log("load recipe btn pressed");
     }
 });

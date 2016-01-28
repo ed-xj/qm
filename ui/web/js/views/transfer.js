@@ -32,6 +32,7 @@ window.TransferView = window.BaseView.extend({
         // "click #slotsSrc tr > td":"slotClick",              // source slot click
         // "click #slotsTarget tr > td":"slotClick",           // target slot click
         //resequence
+        // add handle radio btn click function
         "click #go":"goBtnClick"
     },
 
@@ -286,11 +287,13 @@ window.TransferView = window.BaseView.extend({
     },
 
     finishBtnClick: function () {
-        if (this.start || this.start === null) {
-            this.start = false;
-            $('#startfield').css('background-color','white')
-            $('#finishfield').css('background-color','lightblue')
-            console.log("finish selecting...")
+        if (this.start) {
+            if ($('#startfield').val() !== "") {
+                this.start = false;
+                $('#startfield').css('background-color','white')
+                $('#finishfield').css('background-color','lightblue')
+                console.log("finish selecting...")
+            }
         }
     },
 
