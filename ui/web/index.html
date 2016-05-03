@@ -43,13 +43,18 @@
     <div class="header">
     </div>
     <div id="page-wrapper">
-        <div id="statusBar" class="btn-group">
-            <button type="button" class="btn btn-danger btn-ms">Error</button>
-            <button type="button" class="btn btn-warning btn-ms">Idle</button>
-            <button type="button" class="btn btn-success btn-ms">Running</button>
-            <button type="button" class="btn btn-info btn-ms">&nbsp;</button>
+        <!-- fixed to top right -->
+        <div id="statusBar" class="btn-group-vertical" style="margin-top:40px;position:fixed;z-index:100">
+            <button type="button" class="btn btn-danger btn-ms btn-block">Error</button>
+            <button type="button" class="btn btn-warning btn-ms btn-block">Idle</button>
+            <button type="button" class="btn btn-success btn-ms btn-block">Running</button>
+            <button type="button" class="btn btn-info btn-ms btn-block">&nbsp;</button>
         </div>
-        <div id="content" class="container-fluid">
+        <!-- put more button in -->
+<!--         <div id="statusBar" style="margin-top:40px;margin-right:100px;position:fixed;z-index:100">
+            <em>CLOCK</em>
+        </div>
+ -->        <div id="content" class="container-fluid" style="top:0px">
         </div>
     </div>
 </div>
@@ -64,7 +69,9 @@
 <script src="lib/underscore-1.8.3.js"></script>
 <script src="lib/backbone-1.2.1.js"></script>
 <script src="lib/bootstrap-spinedit.js"></script>
-<script src="lib/utility.js"></script>
+<!-- <script src="lib/utility.js"></script> -->
+<!-- log system -->
+<!-- <script src="lib/logsystem-ui.js"></script> -->
 
 <script src="js/sample_ini.js"></script>
 <script src="js/i18n/en.js"></script>

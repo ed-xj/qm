@@ -41,7 +41,11 @@ I18N.zh = {
         "load"           : "装载",
         "system_message" : "系统消息",
         "home"           : "家",
-        "recover"        : "恢复"
+        "recover"        : "恢复",
+        "speed"          : "速度",
+        "slow"           : "慢",
+        "medium"         : "中",
+        "high"           : "高"
     },
 
     "robotView": {
@@ -81,13 +85,11 @@ I18N.zh = {
 
     "configView": {
         "config_title" : "配置",
-        "speed"        : "速度",
-        "slow"         : "慢",
-        "medium"       : "中",
-        "high"         : "高",
         "system_log"   : "系统日志级别",
         "warning"      : "警告",
         "low"          : "低",
+        "medium"       : "中",
+        "high"         : "高",
         "robot_log"    : "机器人日志级别",
         "language"     : "语言"
     }

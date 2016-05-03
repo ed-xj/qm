@@ -23,6 +23,40 @@ window.Router = Backbone.Router.extend({
     moderator: _.extend((new systemInfo()), Backbone.Events),
 
     initialize: function () {
+        ///////////////////////////////
+        // uncomment when Ui is done //
+        ///////////////////////////////
+        // $(window).bind("beforeunload", function() {
+        //     var message = 'Important: You are leaving this page.';
+        //     // if (typeof event == 'undefined') {
+        //     //     event = window.event;
+        //     // }
+        //     if (event) {
+        //         event.returnValue = message;
+        //     }
+        //     return message;
+        // });
+
+        // $(window).unload( function () {
+        //     var json = {
+        //          "CmdDest":"APACHE",
+        //          "CmdType":"COMMAND",
+        //          "StationID":null,
+        //          "Cmd":"LOG",
+        //          "Param":null,
+        //          "Message":"client UI unload."
+        //         };
+
+        //     $.ajax({
+        //         url: "/cgi-bin/tcp_socket_client.js",
+        //         type: "POST",
+        //         contentType: "application/json",
+        //         data: JSON.stringify(json),
+        //         datatype: "json",
+        //         async:false
+        //     });
+        //     console.log("Bye!")
+        // })
     },
 
     darkPageWrapper: function() {
@@ -191,6 +225,7 @@ window.Router = Backbone.Router.extend({
             this.recipeView = new RecipeView(this.moderator);
             this.recipeView.render();
         } else {
+            // this.recipeView.activate();
             this.recipeView.delegateEvents(); // delegate events when the view is recycled
         }
         $('#content').html(this.recipeView.el);

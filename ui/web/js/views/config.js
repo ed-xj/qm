@@ -4,12 +4,11 @@ window.ConfigView = window.BaseView.extend({
     },
 
     events : {
-        "click #slow":"slowBtnClick",       // set speed to slow
-        "click #medium":"mediumBtnClick",   // set speed to medium
-        "click #high":"highBtnClick",       // set speed to fast
         "change #syslog":"syslogLevel",     // system log level
         "change #robotlog":"robotlogLevel", // robot log level
         "change #lang":"changeLang",        // change language
+        // add secs/gem event
+        "click #secsBtn":"secsBtnClick",
     },
 
     changeLang: function(event) {
@@ -24,40 +23,48 @@ window.ConfigView = window.BaseView.extend({
 
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
     
-    slowBtnClick:function () {
-        // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "SPEEDSLOW", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "slow");
-    },
-
-    mediumBtnClick:function () {
-        // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "SPEEDMEDIUM", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "medium");
-    },
-
-    highBtnClick:function () {
-        // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "SPEEDHIGH", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "high");
-    },
-
     syslogLevel:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "SYSLOGLEVEL", null, null);
+        var json = this.encodeJSON("SCHD", "COMMAND", null, "SYSLOGLEVEL", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "syslogLevel");
         console.log("syslogLevel changed " + $('#syslog').val());
+        this.moderator.trigger('syslog:change');
     },
 
     robotlogLevel:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", null, "ROBOTLOGLEVEL", null, null);
+        var json = this.encodeJSON("SCHD", "COMMAND", null, "ROBOTLOGLEVEL", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "robotloglevel");
         console.log("robotlogLevel changed " + $('#robotlog').val());
+        this.moderator.trigger('robotlog:change');
+    },
+
+    secsBtnClick: function (e) {
+        var secsCmd = ""
+        var tmp_cmd = $(e.currentTarget).attr("name")
+        switch ($(e.currentTarget).attr("name")) {
+            case "connect":
+                secsCmd = "CONNECT"
+                break;
+            case "disconnect":
+                secsCmd = "DISCONNECT"
+                break;
+            case "sc3":
+                secsCmd = tmp_cmd
+                break;
+            case "sc4":
+                secsCmd = tmp_cmd
+                break;
+            case "sc5":
+                secsCmd = tmp_cmd
+                break;
+        }
+        var msg = "SECS/GEM cmd " + secsCmd
+        // Build up JSON
+        var json = this.encodeJSON("SCHD", "COMMAND", "SECS/GEM", secsCmd, null, msg);
+        //AJAX POST
+        this.ajaxCall(this.ajaxUrl, json, "secsCmd", this.callBack);
     }
 });

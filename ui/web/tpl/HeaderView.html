@@ -84,4 +84,24 @@
         </ul>
     </div>
     <!-- /.navbar-collapse -->
+
+    <div id="statusBar" class="btn-group-vertical" style="margin-top:800px;width:81px;height:81px;position:fixed;z-index:100">
+        <button id="help" type="button" class="btn btn-default btn-ms btn-block" style="height:81px;"><i class="fa fa-question fa-2x" aria-hidden="true"></i><br>HELP</button>
+    </div>
 </nav>
+
+<!-- Robot Help Modal -->
+
+<div id="helpModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content"  style="width:1000px; margin-left:-250px; height:1000px">
+      <div class="modal-header">
+        <button type="button" class="close btn-lg" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg" aria-hidden="true"></i></button>
+                <h4 class="modal-title">User Manual.</h4>
+      </div>
+      <div class="modal-body" style="height:1000px">
+          <iframe id="helpIframe" src="" style="zoom:0.60" frameborder="0" height="90%" width="99.6%"></iframe>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

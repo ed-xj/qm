@@ -13,6 +13,7 @@ window.TransferView = window.BaseView.extend({
         "click #quicksortRadio":"handleQuickSortMode",
         "click #resequenceRadio":"handleResequenceMode",
         // quick sort
+        "click #onoff":"onoffStations",
         "click #slots tr > td":"slotClick",
         "click #updateInventoryBtn":"updateInventoryClick",
         "click #submitBtn":"submitBtnClick",
@@ -53,7 +54,7 @@ window.TransferView = window.BaseView.extend({
     synchMode: function() {
         // var splitPanel      = $('#splitPanel'),
         //     mergePanel      = $('#mergePanel'),
-        var quicksortPanel  = $('#quicksortPanel'),
+        var quicksortPanel  = $('div[id=quicksortPanel]'),
             resequencePanel = $('#resequencePanel');
 
         // if (this.mode === 'split') {
@@ -97,6 +98,15 @@ window.TransferView = window.BaseView.extend({
         this.synchMode(false, true);
     },
 
+    onoffStations: function (e) {
+        var station = $(e.currentTarget);
+        if (station.hasClass('active')) {
+            $("td#"+station.val()).hide()
+        } else {
+            $("td#"+station.val()).show()
+        }
+    },
+
     stnSlotMapping: function () {
         var stncount = this.moderator.get('station').length
         // all slot mapping
@@ -125,7 +135,7 @@ window.TransferView = window.BaseView.extend({
     //         }
     //     });
     //     // Build up JSON
-    //     var json = encodeJSON("SCHD", "COMMAND", "station"+$('#srcStation').val(), "SPLIT", splitInfoArray, null);
+    //     var json = this.encodeJSON("SCHD", "COMMAND", "station"+$('#srcStation').val(), "SPLIT", splitInfoArray, null);
     //     // AJAX POST
     //     this.ajaxCall(this.ajaxUrl, json, "transfer - split");
     // },
@@ -226,6 +236,7 @@ window.TransferView = window.BaseView.extend({
                 $('#startfield').css('background-color','white');
                 $('#finishfield').css('background-color','white');
                 $('#updateInventoryBtn').prop('disabled', true);
+                $('button[id=onoff]').prop('disabled', true);
             }
         }
     },
@@ -239,7 +250,7 @@ window.TransferView = window.BaseView.extend({
                     recipesArray.push($(this).text());
                 }
             });
-            var json = encodeJSON("SCHD", "COMMAND", null, "QUICKSORT", recipesArray, null);
+            var json = this.encodeJSON("SCHD", "COMMAND", null, "QUICKSORT", recipesArray, null);
             // AJAX POST
             this.ajaxCall(this.ajaxUrl, json, "transfer - quicksort");
             this.start = null;
@@ -273,6 +284,7 @@ window.TransferView = window.BaseView.extend({
             alert("no recipes")
         } else if (this.targetRecipe === 1) {
             $('#updateInventoryBtn').prop('disabled', false);
+            $('button[id=onoff]').prop('disabled', false);
         }
         this.start = null;
     },
@@ -361,14 +373,14 @@ window.TransferView = window.BaseView.extend({
     resequence: function() {
         // Build up JSON
         var reseq = {
-            sortorder: $('input[name=sortOrder]:checked').attr('id').toUpperCase(),
+            sortorder: $('label[name=sortOrder].active').attr('id').toUpperCase(),
             idmask: $('#idMask').val(),
-            srcstation: Number($('#reqSrcStation').val()),
-            targetstation: Number($('#reqTargetStation').val())
+            srcstation: Number($('#reqSrcStation').val().toUpperCase()),
+            targetstation: Number($('#reqTargetStation').val().toUpperCase())
         }
-        var json = encodeJSON("SCHD", "COMMAND", null, "RESEQUENCE", reseq, null);
+        var json = this.encodeJSON("SCHD", "COMMAND", null, "RESEQUENCE", reseq, null);
         // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "transfer - resequence");
+        this.ajaxCall(this.ajaxUrl, json, "transfer - resequence", this.callBack);
     },
 
     goBtnClick: function() {

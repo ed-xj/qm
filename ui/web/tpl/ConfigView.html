@@ -1,70 +1,114 @@
 <% var t = window.I18N[window.currentLang]["configView"] %>
-
-<div class="row">
-    <div class="col-xs-12">
-        <h3 class="page-header">
-            <%= t["config_title"] %>
-        </h3>
-        <div class="col-xs-6">
-            <form action="" class="form-horizontal" role="form">
-                <div class="form-group">
-                    <label class="control-label col-xs-2"><%= t["speed"] %></label>
-
-                    <div class="col-xs-10">
-                        <button class="btn btn-primary" id="slow"><%= t["slow"] %></button>
-                        <button class="btn btn-primary" id="medium"><%= t["medium"] %></button>
-                        <button class="btn btn-primary" id="high"><%= t["high"] %></button>
+<div class="container-fluid" style="padding-right:90px">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="page-header">
+                <%= t["config_title"] %>
+            </h3>
+            
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Log Level</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="syslog"><%= t["system_log"] %></label>
+                                <select class="form-control input-lg" id="syslog">
+                                    <option><%= t["high"] %></option>
+                                    <option><%= t["medium"] %></option>
+                                    <option><%= t["low"] %></option>
+                                    <option><%= t["warning"] %></option>
+                                    
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="robotlog"><%= t["robot_log"] %></label>
+                                <select class="form-control input-lg" id="robotlog">
+                                    <option><%= t["high"] %></option>
+                                    <option><%= t["medium"] %></option>
+                                    <option><%= t["low"] %></option>
+                                    <option><%= t["warning"] %></option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </form>
-        </div>
+    <!--         </div>
 
-        <div class="row">
-            <div class="col-xs-8">
-                <form action="">
-                    <div class="form-group">
-                        <label for="syslog"><%= t["system_log"] %></label>
-                        <select class="form-control" id="syslog">
-                            <option><%= t["warning"] %></option>
-                            <option><%= t["low"] %></option>
-                            <option><%= t["medium"] %></option>
-                            <option><%= t["high"] %></option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="robotlog"><%= t["robot_log"] %></label>
-                        <select class="form-control" id="robotlog">
-                            <option><%= t["warning"] %></option>
-                            <option><%= t["low"] %></option>
-                            <option><%= t["medium"] %></option>
-                            <option><%= t["high"] %></option>
-                        </select>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-xs-8">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><%= t["language"] %></h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <div class="form-group">
-                                    <label for="lang"><%= t["langauge"] %></label>
-                                    <select class="form-control" id="lang">
-
-                                        <option value="en" <% if (window.currentLang === 'en') { %>selected<%}%> >English</option>
-                                        <option value="zh" <% if (window.currentLang === 'zh') { %>selected<%}%>>普通话</option>
-                                    </select>
+            <div class="row"> -->
+                <div class="col-xs-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><%= t["language"] %></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label for="lang"><%= t["langauge"] %></label>
+                                        <select class="form-control input-lg" id="lang">
+                                            <option value="en" <% if (window.currentLang === 'en') { %>selected<%}%> >English</option>
+                                            <option value="zh" <% if (window.currentLang === 'zh') { %>selected<%}%>>普通话</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-offset-2 col-xs-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">SECS/GEM</h3>
+                        </div>
+                        <div class="panel-body-sysmsg"  style="background-color:black">
+                            <div class="row">
+                                <code name="sysmsg">
+                                </code>
+                            </div>
+                        </div>
+                        <div class="btn-group btn-group-justified">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-success" id="secsBtn" name="connect">CONNECT</button>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-danger" id="secsBtn" name="connect">DISCONNECT</button>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default" id="secsBtn" name="sc3">SECSGEM 3</button>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default" id="secsBtn" name="sc4">SECSGEM 4</button>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default" id="secsBtn" name="sc5">SECSGEM 5</button>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom:0px;padding:15px 0; background-color: #f5f5f5">
+                            <div class="input-group col-xs-offset-2 col-xs-8">
+                                <input type="text" class="form-control" id="cmd" placeholder="Enter a SECS/GEM command">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default btn" type="button" id="go_btn">send</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="control-label col-xs-2" for="cmd"><%= t["robot_command"] %></label>
+                        <div class="input-group col-xs-8">
+                            <input type="text" class="form-control" id="cmd" placeholder="<%= t["enter_command"] %>">
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" id="go_btn">go</button>
+                            </span>
+                        </div>
+                    </div>
+                </form> -->
                 </div>
             </div>
         </div>

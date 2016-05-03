@@ -34,8 +34,8 @@
 
 .panel-body-sysmsg {
     padding: 0px 15px 0px 15px;
-    height: 400px;
-    overflow: scroll;
+    height: 350px;
+    overflow-y: scroll;
 }
 
 code[name=sysmsg] {

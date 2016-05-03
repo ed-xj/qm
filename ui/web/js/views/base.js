@@ -13,8 +13,60 @@ window.BaseView = Backbone.View.extend({
             },
             error: function(error) {
                 console.log("Some error in fetching the notification");
+                console.log(error);
                 if (errCallback) errCallback(error);
             }
         });
-    }
+    },
+
+    // long polling
+    systemStatus: function() { 
+        var GUI_LOG_URL = "/cgi-bin/system_status.js"
+        $.ajax({ url: GUI_LOG_URL, success: function(data){
+            //Update your dashboard gauge
+            // salesGauge.setValue(data.value);
+        }, dataType: "json", complete: systemStatus, timeout: 30000 }); 
+    },
+
+    // JSON encode and decode
+    encodeJSON: function(dest, type, id, cmd, param, msg) {
+        return json = {
+            "CmdDest":dest,
+            "CmdType":type,
+            "StationID":id,
+            "Cmd":cmd,
+            "Param":param,
+            "Message":msg,
+        };
+    },
+
+    // decodeJSON = function (json) {
+    //     if (json.CmdDest==="SCHD") {
+    //         switch (json.CmdType) {
+    //             case "ERROR":
+    //                 break;
+    //             case "MAPPING":
+    //                 break;
+    //             case "STATUS":
+    //                 break;
+    //             case "RECIPE":
+    //                 break;
+    //             case "COMMAND":
+    //                 break;
+    //         }
+    //     } else if (json.CmdDest==="UI") {
+    //         switch (json.CmdType) {
+    //             case "ERROR":
+    //                 break;
+    //             case "MAPPING":
+    //                 break;
+    //             case "STATUS":
+    //                 break;
+    //             case "RECIPE":
+    //                 break;
+    //             case "COMMAND":
+    //                 break;
+    //         }
+    //     }
+    // }
 });

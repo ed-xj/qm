@@ -1,237 +1,333 @@
-<% var t = window.I18N[window.currentLang]["configView"] %>
-
-<div class="row">
-    <div class="col-xs-12">
-        <h3 class="page-header">Recipe</h3>
-        <div class="row">
-            <div class="col-xs-12">
-            <form class="form-inline">
-                <div class="form-group">
-                    <label for="recipeName">[Recipe Name]</label>
-                    <input type="text" class="form-control" id="recipeName" placeholder="">
-                </div>
-                <button class="btn btn-default" id='saveRecipe'>SAVE RECIPE</button>
-                <button class="btn btn-default" id='loadRecipe'>LOAD RECIPE</button>
-            </form>
-            </div>
-        </div>
-        <div class="row">
-            <div>&nbsp;</div>
-        </div>
-        <div class="row">
-            <div class="col-xs-2 form-group">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <label class="control-label col-xs-12" style="text-align:left;">UNLOAD ORDER</label>
-                        <!-- <div class="radio">
-                            <label>
-                                <input type="radio" name="unloadOrder1" value="1" checked>BOTTOM-TOP
-                            </label>
+<% var t = window.I18N[window.currentLang]["recipeView"] %>
+<div class="container-fluid" style="padding-right:100px">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="page-header">Recipe</h3>
+            <div class="row">
+                <div class="col-xs-12" style="text-align:center;">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="recipeName">[Recipe Name]</label>
+                            <input type="text" class="form-control input-lg" id="recipeName" placeholder="Please select a recipe.">
                         </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="unloadOrder1" value="2">TOP-BOTTOM
-                            </label>
-                        </div> -->
-                        <div class="btn-group" data-toggle="buttons">
-                             <label class="btn btn-default">
-                                <input type="radio" name="unloadOrder1" value="1" checked>BOTTOM-TOP
-                            </label>
-                            <label class="btn btn-default">
-                                <input type="radio" name="unloadOrder1" value="2">TOP-BOTTOM
-                            </label>
-                        </div>
-                        <label class="control-label col-xs-12" style="text-align:left; margin-top:10px;">SOURCE</label>
-                        <select name="sometext" class="form-control"></select>
-                        <br>
-                        <div class="col-xs-12 chk-group" id="unloadOrder1" style="overflow-y:auto; height:700px">
-                            <div class="checkbox">
-                              <label>
-                                <input class="chk-all" type="checkbox" value="">ALL
-                              </label>
-                            </div>
-                            <div class="checkbox">
-                              <label>
-                                <input class="chk-none" type="checkbox" value="">NONE
-                              </label>
-                            </div>
-                            <% for (var i=0; i < 25; i++) { %>
-                            <div class="checkbox">
-                              <label>
-                                <input class="chk-element" type="checkbox" value="<%= i+1 %>"><%= i+1 %>
-                              </label>
-                            </div>
-                            <% } %>
-                        </div>
-                    </div>
+                        <button class="btn btn-default btn-lg" id='saveRecipe'>SAVE RECIPE</button>
+                        <button class="btn btn-default btn-lg" id='loadRecipe'>LOAD RECIPE</button>
+                    </form>
                 </div>
             </div>
-            <div class="col-xs-2 form-group">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <label class="control-label col-xs-12" style="text-align:left;">UNLOAD ORDER</label>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="unloadOrder2" value="1" checked>BOTTOM-TOP
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="unloadOrder2" value="2">TOP-BOTTOM
-                            </label>
-                        </div>
-                        <label class="control-label col-xs-12" style="text-align:left;">DESTINATION</label>
-                        <select name="sometext" class="form-control"></select>
-                        <br>
-                        <div class="col-xs-12 chk-group" id="unloadOrder2" style="overflow-y:auto; height:700px">
-                            <div class="checkbox">
-                              <label>
-                                <input class="chk-all" type="checkbox" value="">ALL
-                              </label>
-                            </div>
-                            <div class="checkbox">
-                              <label>
-                                <input class="chk-none" type="checkbox" value="">NONE
-                              </label>
-                            </div>
-                            <% for (var i=0; i < 25; i++) { %>
-                            <div class="checkbox">
-                              <label>
-                                <input class="chk-element" type="checkbox" value="<%= i+1 %>"><%= i+1 %>
-                              </label>
-                            </div>
-                            <% } %>
-                        </div>
-                    </div>
-                </div>
+            <div class="row">
+                <div>&nbsp;</div>
             </div>
-            <div class="col-xs-4 form-group">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <label class="control-label col-xs-12" style="text-align:left;">TYPE</label>
-                        <!-- <div class="radio">
-                            <div class="radio-inline">
+            <div class="row">
+                <div class="col-xs-2 form-group">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <label class="control-label col-xs-12" style="text-align:left;">UNLOAD ORDER</label>
+                            <!-- <div class="radio">
                                 <label>
-                                    <input type="radio" name="type" value="STD">STD
+                                    <input type="radio" name="unloadOrder1" value="1" checked>BOTTOM-TOP
                                 </label>
                             </div>
-                            <div class="radio-inline">
+                            <div class="radio">
                                 <label>
+                                    <input type="radio" name="unloadOrder1" value="2">TOP-BOTTOM
+                                </label>
+                            </div> -->
+                            <div class="btn-group-vertical btn-block" data-toggle="buttons">
+                                 <label class="btn btn-default btn-lg active" style="border:none;">
+                                    <input type="radio" name="unloadOrder1" value="1">BOTTOM-TOP
+                                </label>
+                                <label class="btn btn-default btn-lg" style="border:none;">
+                                    <input type="radio" name="unloadOrder1" value="2">TOP-BOTTOM
+                                </label>
+                            </div>
+                            <label class="control-label col-xs-12" style="margin-top:10px;">SOURCE</label>
+                            <select name="src-stn" class="form-control input-lg">
+                                <!-- <option value="">input1</option>
+                                <option value="">input2</option>
+                                <option value="">input3</option>
+                                <option value="">input4</option>
+                                <option value="">input5</option> -->
+                                <% var types = ['input', 'output']; %>
+                                <% var type = types.shift(); %>
+                                <% while (type) { %>
+                                    <% var inputs = window.iniCfg[type] %>
+                                    <% if (inputs) { %>
+                                        <% var keys = _.keys(inputs); %>
+                                        <% var type = 'input'; %>
+                                        <% for (var i=0; i < keys.length; i++) { %>
+                                            <option value="<%= inputs[keys[i]] %>"><%= inputs[keys[i]] %></option>
+                                        <% } %>
+                                    <% } %>
+                                    <% type = types.shift(); %>
+                                <% } %>
+                            </select>
+                            <!-- <br> -->
+                            <div class="col-xs-12 chk-group" id="unloadOrder1" style="overflow-y:auto;padding-bottom:4px;">
+                                <div class="checkbox">
+                                  <label class="checkbox-inline">
+                                    <input class="chk-all chk-lg" type="checkbox" value="">ALL
+                                  </label>
+                                <!-- </div>
+                                <div class="checkbox-inline col-xs-6"> -->
+                                  <label class="checkbox-inline">
+                                    <input class="chk-odd chk-lg" type="checkbox" value="">ODD
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input class="chk-none chk-lg" type="checkbox" value="" checked>NONE
+                                  </label>
+                                </div>
+                                <% for (var i=0; i < 25; i++) { %>
+                                <div class="checkbox">
+                                  <label>
+                                    <input class="chk-element chk-lg" type="checkbox" value="<%= i+1 %>"><%= i+1 %>
+                                  </label>
+                                </div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-2 form-group">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <label class="control-label col-xs-12" style="text-align:left;">UNLOAD ORDER</label>
+                            <!-- <div class="radio">
+                                <label>
+                                    <input type="radio" name="unloadOrder2" value="1" checked>BOTTOM-TOP
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="unloadOrder2" value="2">TOP-BOTTOM
+                                </label>
+                            </div> -->
+                            <div class="btn-group-vertical btn-block" data-toggle="buttons">
+                                 <label class="btn btn-default btn-lg active" style="border:none;">
+                                    <input type="radio" name="unloadOrder2" value="1">BOTTOM-TOP
+                                </label>
+                                <label class="btn btn-default btn-lg" style="border:none;">
+                                    <input type="radio" name="unloadOrder2" value="2">TOP-BOTTOM
+                                </label>
+                            </div>
+                            <label class="control-label col-xs-12" style="margin-top:10px;">DESTINATION</label>
+                            <select name="dest-stn" class="form-control input-lg">
+                                <!-- <option value="">input1</option>
+                                <option value="">input2</option>
+                                <option value="">input3</option>
+                                <option value="">input4</option>
+                                <option value="">input5</option> -->
+                                <% var types = ['input']; %>
+                                <% var type = types.shift(); %>
+                                <% while (type) { %>
+                                    <% var inputs = window.iniCfg[type] %>
+                                    <% if (inputs) { %>
+                                        <% var keys = _.keys(inputs); %>
+                                        <% var type = 'input'; %>
+                                        <%  for (var i=0; i < keys.length; i++) { %>
+                                            <option value="<%= inputs[keys[i]] %>"><%= inputs[keys[i]] %></option>
+                                        <% } %>
+                                    <% } %>
+                                    <% type = types.shift(); %>
+                                <% } %>
+                            </select>
+                            <!-- <br> -->
+                            <div class="col-xs-12 chk-group" id="unloadOrder2" style="overflow-y:auto; padding-bottom:4px">
+                                <div class="checkbox">
+                                  <label class="checkbox-inline">
+                                    <input class="chk-all chk-lg" type="checkbox" value="">ALL
+                                  </label>
+                                <!-- </div>
+                                <div class="checkbox-inline col-xs-6"> -->
+                                  <label class="checkbox-inline">
+                                    <input class="chk-odd chk-lg" type="checkbox" value="">ODD
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                    <input class="chk-none chk-lg" type="checkbox" value="" checked>NONE
+                                  </label>
+                                </div>
+                                <% for (var i=0; i < 25; i++) { %>
+                                <div class="checkbox">
+                                  <label>
+                                    <input class="chk-element chk-lg" type="checkbox" value="<%= i+1 %>"><%= i+1 %>
+                                  </label>
+                                </div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-8 form-group" style="margin-bottom:10px">
+                    <div class="panel panel-default" style="margin-bottom:0px">
+                        <div class="panel-body">
+                            <label class="control-label col-xs-12" style="padding-left:0;">WAFER TYPE</label>
+                            <!-- <div class="radio">
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="type" value="STD">STD
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="type" value="THIN">THIN
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="type" value="A_TYPE">A_TYPE
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="type" value="B_TYPE">B_TYPE
+                                    </label>
+                                </div>
+                            </div> -->
+                            <div class="btn-group col-xs-12" data-toggle="buttons" style="padding:0;">
+                                 <label class="btn btn-default btn-lg col-xs-3 active">
+                                    <input type="radio" name="type" value="STD" checked>STD
+                                </label>
+                                <label class="btn btn-default btn-lg col-xs-3" style="margin-left:0px;">
                                     <input type="radio" name="type" value="THIN">THIN
                                 </label>
-                            </div>
-                            <div class="radio-inline">
-                                <label>
+                                <label class="btn btn-default btn-lg col-xs-3" style="margin-left:0px;">
                                     <input type="radio" name="type" value="A_TYPE">A_TYPE
                                 </label>
-                            </div>
-                            <div class="radio-inline">
-                                <label>
+                                <label class="btn btn-default btn-lg col-xs-3" style="margin-left:0px;">
                                     <input type="radio" name="type" value="B_TYPE">B_TYPE
                                 </label>
                             </div>
-                        </div> -->
-                        <div class="btn-group col-xs-12" data-toggle="buttons">
-                             <label class="btn btn-default col-xs-3">
-                                <input type="radio" name="type" value="STD" checked>STD
-                            </label>
-                            <label class="btn btn-default col-xs-3">
-                                <input type="radio" name="type" value="THIN">THIN
-                            </label>
-                            <label class="btn btn-default col-xs-3">
-                                <input type="radio" name="type" value="A_TYPE">A_TYPE
-                            </label>
-                            <label class="btn btn-default col-xs-3">
-                                <input type="radio" name="type" value="B_TYPE">B_TYPE
-                            </label>
                         </div>
-                        <label class="control-label col-xs-6" style="text-align:left; margin-top:10px;">PROCESS 1</label>
-                        <div class="col-xs-6">
-                            <label class="control-label col-xs-12" style="text-align:left; margin-top:10px;">USAGE</label>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="usage1" value="1">DISABLE
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="usage1" value="2">ENABLE
-                                </label>
-                            </div>
-                        </div>
-                        <label class="control-label col-xs-12" style="text-align:left;">SEQUENCE 1</label>
-                        <br>
-                        <table class="table table-fixed">
-                            <thead>
-                                <tr>
-                                    <th class="col-xs-1">&nbsp;</th>
-                                    <th class="col-xs-3">CMD</th>
-                                    <th class="col-xs-6">DATA</th>
-                                    <th class="col-xs-2">GOTO</th>
-                                </tr>
-                            </thead>
-                            <tbody style="height: 621px;" id="sequence1">
-                                <% for (var i=0; i < 50; i++) { %>
-                                <tr>
-                                    <td class="col-xs-1" style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
-                                    <td class="col-xs-3"><input class="form-control" type="text"></td>
-                                    <td class="col-xs-6"><input class="form-control" type="text"></td>
-                                    <td class="col-xs-2"><input class="form-control" type="text"></td>
-                                </tr>
-                                <% } %>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-4 form-group">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <label class="control-label col-xs-12" style="text-align:left;">&nbsp;</label>
-                        <div class="radio">
-                            <div class="radio-inline">
-                                <label>&nbsp;</label>
+                <div class="col-xs-4 form-group">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <label class="control-label col-xs-4" style="padding-left:0; margin-top:10px;">PROCESS 1</label>
+                            <div class="col-xs-8">
+                                <label class="control-label col-xs-12" style="text-align:left; margin-top:10px;">USAGE</label>
+                                <!-- <div class="radio">
+                                    <label>
+                                        <input type="radio" name="usage1" value="1">DISABLE
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="usage1" value="2">ENABLE
+                                    </label>
+                                </div> -->
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-default btn-lg col-xs-6" style="border:none">
+                                        <input type="radio" name="usage1" value="0">DISABLE
+                                    </label>
+                                    <label class="btn btn-default btn-lg col-xs-6 active" style="border:none">
+                                        <input type="radio" name="usage1" value="1">ENABLE
+                                    </label>
+                                </div>
+
                             </div>
+                            <label class="control-label col-xs-12" style="padding-left:0">SEQUENCE 1</label>
+                            <br>
+                            <table class="table table-fixed" style="margin-bottom:0px">
+                                <thead>
+                                    <tr>
+                                        <th class="col-xs-1">#</th>
+                                        <th class="col-xs-3">CMD</th>
+                                        <th class="col-xs-6">DATA</th>
+                                        <th class="col-xs-2">GOTO</th>
+                                    </tr>
+                                </thead>
+                                <tbody style="height: 635px;" id="sequence1">
+                                    <% for (var i=0; i < 50; i++) { %>
+                                    <tr>
+                                        <td class="col-xs-1" style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
+                                        <td class="col-xs-3"><input class="form-control" type="text"></td>
+                                        <td class="col-xs-6"><input class="form-control" type="text"></td>
+                                        <td class="col-xs-2"><input class="form-control" type="text"></td>
+                                    </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
                         </div>
-                        <label class="control-label col-xs-6" style="text-align:left;">PROCESS 2</label>
-                        <div class="col-xs-6">
-                            <label class="control-label col-xs-12" style="text-align:left;">USAGE</label>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="usage2" value="1">DISABLE
-                                </label>
+                    </div>
+                </div>
+                <div class="col-xs-4 form-group">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <label class="control-label col-xs-4" style="padding-left:0; margin-top:10px;">PROCESS 2</label>
+                            <div class="col-xs-8">
+                                <label class="control-label col-xs-12" style="text-align:left; margin-top:10px;">USAGE</label>
+                                <!-- <div class="radio">
+                                    <label>
+                                        <input type="radio" name="usage2" value="1">DISABLE
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="usage2" value="2">ENABLE
+                                    </label>
+                                </div> -->
+
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-default btn-lg col-xs-6" style="border:none">
+                                        <input type="radio" name="usage2" value="0">DISABLE
+                                    </label>
+                                    <label class="btn btn-default btn-lg col-xs-6 active" style="border:none">
+                                        <input type="radio" name="usage2" value="1">ENABLE
+                                    </label>
+                                </div>
                             </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="usage2" value="2">ENABLE
-                                </label>
-                            </div>
+                            <label class="control-label col-xs-12" style="padding-left:0">SEQUENCE 2</label>
+                            <br>
+                            <table class="table table-fixed" style="margin-bottom:0px">
+                                <thead>
+                                    <tr>
+                                        <th class="col-xs-1">#</th>
+                                        <th class="col-xs-3">CMD</th>
+                                        <th class="col-xs-6">DATA</th>
+                                        <th class="col-xs-2">GOTO</th>
+                                    </tr>
+                                </thead>
+                                <tbody style="height: 635px;" id="sequence2">
+                                    <% for (var i=0; i < 50; i++) { %>
+                                    <tr>
+                                        <td class="col-xs-1" style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
+                                        <td class="col-xs-3"><input class="form-control" type="text"></td>
+                                        <td class="col-xs-6"><input class="form-control" type="text"></td>
+                                        <td class="col-xs-2"><input class="form-control" type="text"></td>
+                                    </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
                         </div>
-                        <label class="control-label col-xs-12" style="text-align:left;">SEQUENCE 2</label>
-                        <br>
-                        <table class="table table-fixed">
-                            <thead>
-                                <tr>
-                                    <th class="col-xs-1"></th>
-                                    <th class="col-xs-3">CMD</th>
-                                    <th class="col-xs-6">DATA</th>
-                                    <th class="col-xs-2">GOTO</th>
-                                </tr>
-                            </thead>
-                            <tbody style="height: 642px;" id="sequence2">
-                                <% for (var i=0; i < 50; i++) { %>
-                                <tr>
-                                    <td class="col-xs-1" style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
-                                    <td class="col-xs-3"><input class="form-control" type="text"></td>
-                                    <td class="col-xs-6"><input class="form-control" type="text"></td>
-                                    <td class="col-xs-2"><input class="form-control" type="text"></td>
-                                </tr>
-                                <% } %>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Recipe Modal -->
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close btn-lg" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg" aria-hidden="true"></i></button>
+                <h4 class="modal-title">Please select a recipe.</h4>
+            </div>
+            <div class="modal-body">
+                <div>Recipe 1</div>
+                <div>Recipe 2</div>
+                <div>Recipe 3</div>
+                <div>Recipe 4</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Done</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

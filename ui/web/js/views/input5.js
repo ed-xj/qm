@@ -24,5 +24,4 @@ window.Input5View = window.InputBaseView.extend({
         "click #slots tr > td":"slotClick",               // slot click
         "focusout .wafer-id-input":"handleWaferIdChange"  // wafer id change
     }
-
 });

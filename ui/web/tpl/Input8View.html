@@ -1,150 +1,168 @@
 <% var t = window.I18N[window.currentLang]["configView"] %>
-
-<div class="row">
-    <div class="col-xs-12">
-        <h3 class="page-header">
-            <!--<%= t["config_title"] %>-->
-            Input Station 8
-        </h3>
-        <div class="row">
-            <div class="col-xs-4">
-                <div>
-                    <form action="" class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="control-label col-xs-6" style="text-align:left;">Wafer Type</label>
-                            <div class="col-xs-6">
-                                <select class="form-control" id="waferType">
-                                    <option value="STANDARD">Standard</option>
-                                    <option value="THIN">Thin</option>
-                                    <option value="THICK">Thick</option>
-                                    <option value="WRAP BELOW">Wrap Below</option>
-                                    <option value="WRAP ABOVE">Wrap Above</option>
-                                </select>
-                            </div>
+<div class="container-fluid" style="padding-right:90px">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="page-header">
+                    <!--<%= t["config_title"] %>-->
+                    Input Station 8
+            </h3>       
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <form action="" class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-5" style="text-align:left;">Wafer Type</label>
+                                    <div class="col-xs-7">
+                                        <select class="form-control" id="waferType">
+                                            <option value="STANDARD">Standard</option>
+                                            <option value="THIN">Thin</option>
+                                            <option value="THICK">Thick</option>
+                                            <option value="WRAP BELOW">Wrap Below</option>
+                                            <option value="WRAP ABOVE">Wrap Above</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-xs-5 text-right" style="text-align:left;"><span>Cassette Type</span></label>
+                                    <div class="col-xs-7">
+                                        <select class="form-control cassette-type" id="cassette-type">
+                                            <!-- add more cassette if needed -->
+                                            <option>25 Foup</option>
+                                            <option>13 Foup</option>
+                                            <option>25 Cassette</option>
+                                            <option>13 Cassette</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-body"  id="foup-btn-group">
+                                        <div class="form-group">
+                                            <label class="control-label col-xs-4 text-right" style="text-align:left;">FOUP</label>
+                                            <div class="col-xs-8">
+                                                <div class="btn-group btn-block">
+                                                    <button class="btn btn-default btn-lg btn-block" id="openFoup" type="button">Open FOUP</button>
+                                                </div>
+                                                <div>&nbsp;</div>
+                                                <div class="btn-group btn-block">
+                                                    <button class="btn btn-default btn-lg btn-block"id="closeFoup" type="button">Close FOUP</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body" id="cassette-btn-group">
+                                        <div class="form-group">
+                                            <label class="control-label col-xs-4 text-right" style="text-align:left;">CASSETTE</label>
+                                            <div class="col-xs-8">
+                                                <div class="btn-group btn-block">
+                                                    <button class="btn btn-default btn-lg btn-block" id="loadCasette" type="button">LOAD CASSETTE</button>
+                                                </div>
+                                                <div>&nbsp;</div>
+                                                <div class="btn-group btn-block">
+                                                    <button class="btn btn-default btn-lg btn-block" id="unloadCasette" type="button">UNLOAD CASSETTE</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <form action="" class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-4 text-right" style="text-align:left;">DOOR</label>
+                                    <div class="col-xs-8">
+                                        <div class="btn-group btn-block">
+                                            <button class="btn btn-default btn-lg btn-block" id="openDoor" type="button">OPEN DOOR</button>
+                                        </div>
+                                        <div>&nbsp;</div>
+                                        <div class="btn-group btn-block">
+                                            <button class="btn btn-default btn-lg btn-block" id="closeDoor" type="button">CLOSE DOOR</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <form action="" class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-4 text-right" style="text-align:left;">DATA</label>
+                                    <div class="col-xs-8">
+                                        <div class="btn-group btn-block">
+                                            <button class="btn btn-default btn-lg btn-block" id="restoreData" type="button">RESTORE DATA</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <form action="" class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-4 text-right" style="text-align:left;">UPDATE</label>
+                                    <div class="col-xs-8">
+                                        <div class="btn-group btn-block">
+                                            <button class="btn btn-default btn-lg btn-block" id="updateId" type="button">UPDATE ID</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <label class="control-label col-xs-6 text-right" style="text-align:left;"><span>Cassette Type</span></label>
-                            <div class="col-xs-6">
-                                <select class="form-control cassette-type" id="cassette-type">
-                                    <option>25 Foup</option>
-                                    <option>13 Foup</option>
-                                    <option>25 Cassette</option>
-                                    <option>13 Cassette</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-xs-6 text-right" style="text-align:left;">FOUP</label>
-                            <div class="col-xs-6">
-                                <div class="btn-group">
-                                    <button class="btn btn-default btn-sm" id="openFoup" type="button">Open FOUP</button>
-                                </div>
-                                <div>&nbsp;</div>
-                                <div class="btn-group">
-                                    <button class="btn btn-default btn-sm"id="closeFoup" type="button">Close FOUP</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-xs-6 text-right" style="text-align:left;">CASETTE</label>
-                            <div class="col-xs-6">
-                                <div class="btn-group">
-                                    <button class="btn btn-default btn-sm" id="loadCasette" type="button">LOAD CASETTE</button>
-                                </div>
-                                <div>&nbsp;</div>
-                                <div class="btn-group">
-                                    <button class="btn btn-default btn-sm" id="unloadCasette" type="button">UNLOAD CASETTE</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <form action="" class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="control-label col-xs-6 text-right" style="text-align:left;">DOOR</label>
-                            <div class="col-xs-6">
-                                <div class="btn-group">
-                                    <button class="btn btn-default btn-sm" id="openDoor" type="button">OPEN DOOR</button>
-                                </div>
-                                <div>&nbsp;</div>
-                                <div class="btn-group">
-                                    <button class="btn btn-default btn-sm" id="closeDoor" type="button">CLOSE DOOR</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <form action="" class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="control-label col-xs-6 text-right" style="text-align:left;">DATA</label>
-                            <div class="col-xs-6">
-                                <div class="btn-group">
-                                    <button class="btn btn-default btn-sm" id="restoreData" type="button">RESTORE DATA</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <form action="" class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="control-label col-xs-6 text-right" style="text-align:left;">UPDATE</label>
-                            <div class="col-xs-6">
-                                <div class="btn-group">
-                                    <button class="btn btn-default btn-sm" id="updateId" type="button">UPDATE ID</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-4">
-                <table class="table table-condensed wafer-slots">
-                    <thead>
-                        <tr>
-                            <th width="30%">#</th>
-                            <th>SLOTS</th>
-                        </tr>
-                    </thead>
-                    <tbody id="slots">
-                        <% for (var i=25; i > 0; i--) { %>
-                        <tr>
-                            <th scope="row"><%= i %></th>
-                            <td id="slot<%= i %>">
-                                <label class="control-label wafer-id"></label>
-                                <input type="text" class="form-control wafer-id-input" style="display:none;" />
-                            </td>
-                        </tr>
-                        <% } %>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-xs-4">
-                <div>
-                    <form action="" class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="control-label col-xs-6" style="text-align:left;" id="getWaferTypeLabel">GET STANDARD</label>
-                            <div class="col-xs-6">
-                                <button class="btn btn-default btn-sm" id="getWaferType" type="button">GET STANDARD</button>
-                            </div>
+                <div class="col-xs-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <table class="table table-condensed wafer-slots" style="margin:auto">
+                                <thead>
+                                    <tr>
+                                        <th width="15%">#</th>
+                                        <th>SLOTS</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="slots">
+                                    <% for (var i=25; i > 0; i--) { %>
+                                    <tr>
+                                        <th scope="row"><%= i %></th>
+                                        <td id="slot<%= i %>">
+                                            <label class="control-label wafer-id"></label>
+                                            <input type="text" class="form-control wafer-id-input" style="display:none;" />
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
                         </div>
-                    </form>
+                    </div>
                 </div>
-                <div>
-                    <form action="" class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="control-label col-xs-6" style="text-align:left;" id="putWaferTypeLabel">PUT STANDARD</label>
-                            <div class="col-xs-6">
-                                <button class="btn btn-default btn-sm" id="putWaferType" type="button">PUT STANDARD</button>
+                <div class="col-xs-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div>
+                                <form action="" class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-4" style="text-align:left;" id="getWaferTypeLabel">GET STANDARD</label>
+                                        <div class="col-xs-8">
+                                            <button class="btn btn-default btn-lg btn-block" id="getWaferType" type="button">GET STANDARD</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div>
+                                <form action="" class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-4" style="text-align:left;" id="putWaferTypeLabel">PUT STANDARD</label>
+                                        <div class="col-xs-8">
+                                            <button class="btn btn-default btn-lg btn-block" id="putWaferType" type="button">PUT STANDARD</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div>
+                                <form action="" class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-4" style="text-align:left;" id="mapWaferTypeLabel">MAP STANDARD</label>
+                                        <div class="col-xs-8">
+                                            <button class="btn btn-default btn-lg btn-block" id="mapWaferType" type="button">MAP STANDARD</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div>
-                    <form action="" class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="control-label col-xs-6" style="text-align:left;" id="mapWaferTypeLabel">MAP STANDARD</label>
-                            <div class="col-xs-6">
-                                <button class="btn btn-default btn-sm" id="mapWaferType" type="button">MAP STANDARD</button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

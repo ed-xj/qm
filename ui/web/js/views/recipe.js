@@ -6,13 +6,17 @@ window.RecipeView = window.BaseView.extend({
     },
 
     events : {
-        "click .chk-all":"chkAllCLick",               // check all
-        "click .chk-none":"chkNoneCLick",             // check none
-        "click .chk-element":"chkElemCLick",          // check element
-        "click #saveRecipe":"saveRecipeBtnCLick",     // save recipe
-        "click #loadRecipe":"loadRecipeBtnCLick",     // load recipe
-        "click input[name=unloadOrder1]": "updateUnloadOrder1",
-        "click input[name=unloadOrder2]": "updateUnloadOrder2"
+        "click #loadRecipe": "showRecipeModal",      // recipe modal
+        "click .chk-all":"chkAllClick",               // check all
+        "click .chk-odd":"chkODDClick",               // check all
+        "click .chk-none":"chkNoneClick",             // check none
+        "click .chk-element":"chkElemClick",          // check element
+        "click #saveRecipe":"saveRecipeBtnClick",     // save recipe
+        // "click #loadRecipe":"loadRecipeBtnClick",     // load recipe
+        "change input[name='unloadOrder1']": "updateUnloadOrder1",  // change order of slots
+        "change input[name='unloadOrder2']": "updateUnloadOrder2",
+        "change input[name='usage1']":"updateUsage1",   // enable/disable seq 1
+        "change input[name='usage2']":"updateUsage2"    // enable/disable seq 2
     },
 
     render: function () {
@@ -20,21 +24,36 @@ window.RecipeView = window.BaseView.extend({
         return this;
     },
 
-    chkAllCLick:function (e) {
+    showRecipeModal: function () {
+        $("#myModal").modal({show: true});
+    },
+
+    chkAllClick:function (e) {
         var chkGroup = $(e.currentTarget).parents(".chk-group:first");
         chkGroup.find(".chk-element").prop("checked", "checked");
         chkGroup.find(".chk-none").prop("checked", "");
+        chkGroup.find(".chk-odd").prop("checked", "");
         chkGroup.find(".chk-all").prop("checked", "checked");
     },
 
-    chkNoneCLick:function (e) {
+    chkODDClick: function (e) {
+        var chkGroup = $(e.currentTarget).parents(".chk-group:first");
+        chkGroup.find(".chk-element").prop("checked", "");
+        chkGroup.find(".chk-element:even").prop("checked", "checked");
+        chkGroup.find(".chk-none").prop("checked", "");
+        chkGroup.find(".chk-all").prop("checked", "");
+        chkGroup.find(".chk-odd").prop("checked", "checked");
+    },
+
+    chkNoneClick:function (e) {
         var chkGroup = $(e.currentTarget).parents(".chk-group:first");
         chkGroup.find(".chk-element").prop("checked", "");
         chkGroup.find(".chk-all").prop("checked", "");
+        chkGroup.find(".chk-odd").prop("checked", "");
         chkGroup.find(".chk-none").prop("checked", "checked");
     },
 
-    chkElemCLick:function (e) {
+    chkElemClick:function (e) {
         var chkGroup = $(e.currentTarget).parents(".chk-group:first");
         if (chkGroup.find(".chk-element:checked").length == chkGroup.find(".chk-element").length) {
             chkGroup.find(".chk-all").prop("checked", "checked");
@@ -48,11 +67,12 @@ window.RecipeView = window.BaseView.extend({
         }
     },
 
-    reverseSlots: function(id, order) {
+    reverseSlots: function(id) {
         var selector = 'div#' + id;
         var elem = this.$(selector);
         var checks = elem.children('div.checkbox').get();
         var all = checks.shift();
+        // var odd = checks.shift();
         var none = checks.shift();
         elem.append([all, none].concat(checks.reverse()));
     },
@@ -62,16 +82,16 @@ window.RecipeView = window.BaseView.extend({
         switch (val) {
             case '1':
                 if (this.unloadOrder1 == 't2b') {
-                    this.reverseSlots("unloadOrder1", 't2b');
+                    this.reverseSlots("unloadOrder1");
                     this.unloadOrder1 = 'b2t';
                 }
                 break;
             case '2':
                 if (this.unloadOrder1 == 'b2t') {
-                    this.reverseSlots("unloadOrder1", 'b2t');
+                    this.reverseSlots("unloadOrder1");
                     this.unloadOrder1 = 't2b';
                 }
-                break
+                break;
         }
     },
 
@@ -80,18 +100,46 @@ window.RecipeView = window.BaseView.extend({
         switch (val) {
             case '1':
                 if (this.unloadOrder2 == 't2b') {
-                    this.reverseSlots("unloadOrder2", 't2b');
+                    this.reverseSlots("unloadOrder2");
                     this.unloadOrder2 = 'b2t';
                 }
                 break;
             case '2':
                 if (this.unloadOrder2 == 'b2t') {
-                    this.reverseSlots("unloadOrder2", 'b2t');
+                    this.reverseSlots("unloadOrder2");
                     this.unloadOrder2 = 't2b';
                 }
-                break
+                break;
         }
     },
+
+    updateUsage1:function(e) {
+        var val = e.currentTarget.value;
+        switch (val) {
+            case '0':
+                $('#sequence1 tr td').children('input').attr("readonly", true)
+                $('#sequence1 tr td').children('input').attr("disabled", "disabled")
+                break;
+            case '1':
+                $('#sequence1 tr td').children('input').attr("readonly", false)
+                $('#sequence1 tr td').children('input').removeAttr("disabled")
+                break;
+        }
+    },
+
+    updateUsage2:function(e) {
+        var val = e.currentTarget.value;
+        switch (val) {
+            case '0':
+                $('#sequence2 tr td').children('input').attr("readonly", true)
+                $('#sequence2 tr td').children('input').attr("disabled", "disabled")
+                break;
+            case '1':
+                $('#sequence2 tr td').children('input').attr("readonly", false)
+                $('#sequence2 tr td').children('input').removeAttr("disabled")
+                break;
+        }
+    },  
 
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
 
@@ -116,7 +164,7 @@ window.RecipeView = window.BaseView.extend({
         }
         var src = {
             order:this.unloadOrder1,
-            source:null,
+            source:$("select[name='src-stn']").val(),
             index:element1
         }
 
@@ -134,7 +182,7 @@ window.RecipeView = window.BaseView.extend({
         }
         var dest = {
             order:this.unloadOrder2,
-            source:null,
+            source:$("select[name='dest-stn']").val(),
             index:element2
         }
         return {
@@ -150,8 +198,8 @@ window.RecipeView = window.BaseView.extend({
             if ( $(this).children('td:eq(1)').children().val() !== "") {
                 sequence1.push({
                     CMD:$(this).children('td:eq(1)').children().val(),
-                    DATA:$(this).children('td:eq(2)').children().val()
-                    //GOTO: $(this).children('td:eq(3)').children().val()
+                    DATA:$(this).children('td:eq(2)').children().val(),
+                    GOTO: $(this).children('td:eq(3)').children().val()
                 })
             }
         })
@@ -159,8 +207,8 @@ window.RecipeView = window.BaseView.extend({
             if ( $(this).children('td:eq(1)').children().val() !== "") {
                 sequence2.push({
                     CMD:$(this).children('td:eq(1)').children().val(),
-                    DATA:$(this).children('td:eq(2)').children().val()
-                    //GOTO: $(this).children('td:eq(3)').children().val()
+                    DATA:$(this).children('td:eq(2)').children().val(),
+                    GOTO: $(this).children('td:eq(3)').children().val()
                 })
             }
         })
@@ -172,21 +220,20 @@ window.RecipeView = window.BaseView.extend({
     },
     
     // TODO
-    saveRecipeBtnCLick:function () {
+    saveRecipeBtnClick:function () {
         // Build up JSON
         var recipename = $('#recipeName').val()                 // recipe name
         var order = this.unloadOrder()                          // unload order (.src) and (.dest)
 
         // (TODO) check if box is checked
-        // if ($('input[name=type]').is(':checked'))
-        if ($('input[name=type]').hasClass('active'))
-            var type = $('input[name=type]:checked').val()      // type
+        if ($("input[name='type']").parent().hasClass('active'))
+            var type = $("input[name='type']").parent('.active').children().val()      // type
         else 
             alert("Please check TYPE")
 
-        if ($('input[name=usage1]').is(':checked') && $('input[name=usage2]').is(':checked')) {
-            var usage1 = $('input[name=usage1]').val()          // usage en/disable
-            var usage2 = $('input[name=usage2]').val()          // usage en/disable
+        if ($('input[name=usage1]').parent().hasClass('active') && $('input[name=usage2]').parent().hasClass('active')) {
+            var usage1 = $('input[name=usage1]').parent('.active').children().val()          // usage en/disable
+            var usage2 = $('input[name=usage2]').parent('.active').children().val()          // usage en/disable
         } else 
             alert("Please check USAGE")
 
@@ -207,13 +254,17 @@ window.RecipeView = window.BaseView.extend({
             }
         }
 
-        var json = encodeJSON("SCHD", "COMMAND", null, "SAVERECIPE", recipe, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "saveRecipe", this.callBack);
+        if (recipename !== "") {
+            var json = this.encodeJSON("SCHD", "COMMAND", null, "SAVERECIPE", recipe, null);
+            // AJAX POST
+            this.ajaxCall(this.ajaxUrl, json, "saveRecipe", this.callBack);
+        } else {
+            alert("Please input recipe name.")
+        }
     },
 
     // TODO
-    loadRecipeBtnCLick:function () {
+    loadRecipeBtnClick:function () {
         // load up recipe
         console.log("load recipe btn pressed");
     }

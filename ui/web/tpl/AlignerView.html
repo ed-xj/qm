@@ -1,90 +1,124 @@
 <% var t = window.I18N[window.currentLang]["configView"] %>
+<div class="container-fluid" style="padding-right:100px">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="page-header">Aligner</h3>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Aligner</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form action="" class="form-horizontal" role="form">
+                                <div class = "form-group">
+                                    <div class="col-xs-4">
+                                        <button class="btn btn-default btn-lg btn-block" id="alignWafer" type="button">ALIGN<br>WAFER</button>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <!-- Solution 1 -->
+                             <!--            <div class="input-group spinner">
+                                            <input type="text" class="form-control input-lg" value="0" id="alignWaferId">
+                                            <div class="input-group-btn-vertical">
+                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                            </div>
+                                        </div> -->
+                                        <!-- Solution 2 -->
+                                        <div class="input-group spinner" style="width:100%">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default btn-lg" type="button"><i class="fa fa-caret-down"></i></button>
+                                            </span>
+                                            <input type="text" class="form-control input-lg" value="0" id="alignWaferId">
+                                            <span class="input-group-addon">° (degree)</span>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default btn-lg" type="button"><i class="fa fa-caret-up"></i></button>
+                                            </span>                                            
+                                        </div><br>                               
+                                        <!-- bootstrap slider -->
+                                        <form class="col-xs-12">
+                                            <input type="range" value="0" min="0" max="359"  step="1" name="w-angle" list="w-angle">
+                                            <datalist id="w-angle">
+                                                <option value="0">
+                                                <option value="90">
+                                                <option value="180">
+                                                <option value="270">
+                                                <option value="359">
+                                            </datalist>
+                                            <span>
+                                                <label>0°</label>
+                                                <label style="float:right;">359°</label>
+                                            </span>
+                                        </form>
+                                    </div>
 
-<div class="row">
-    <div class="col-xs-12">
-        <h3 class="page-header">Aligner</h3>
-        <div class="row">
-            <div class="col-xs-4 form-group">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <form action="" class="form-horizontal" role="form">
-                            <div class = "form-group">
-                                <div class="col-xs-4">
-                                    <button class="btn btn-default btn-sm" id="readIt" type="button">READ IT</button>
+                                    <!-- <div class="col-xs-4">
+                                        <input type="text" class="form-control input-lg" id="alignWaferIdField">
+                                    </div> -->
                                 </div>
-                                <div class="col-xs-4">
-                                    &nbsp;
+                                <div class = "form-group">
+                                    <div class="col-xs-12">
+                                        <label class="control-label" style="text-align:left;">ALIGNER</label>
+                                    </div>
                                 </div>
-                                <div class="col-xs-4">
-                                    <input type="text" class="form-control" id="readItText">
-                                </div>
-                            </div>
-                            <div class = "form-group">
-                                <div class="col-xs-4">
-                                    <button class="btn btn-default btn-sm" id="alignWafer" type="button">ALIGN WAFER</button>
-                                </div>
-                                <div class="col-xs-4">
-                                    <div class="input-group spinner">
-                                        <input type="text" class="form-control" value="0" id="alignWaferId">
-                                        <div class="input-group-btn-vertical">
-                                            <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
-                                            <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div class = "form-group-vertical">
+                                                    <button class="btn btn-default btn-lg btn-block" id="getWafer" type="button">GET WAFER</button>
+                                                    <br>
+                                                    <button class="btn btn-default btn-lg btn-block" id="putWafer" type="button">PUT WAFER</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                        <!--<select name="sometext" class="form-control">-->
-                                        <!--<option value="0">0</option>-->
-                                        <!--<option value="0">1</option>-->
-                                        <!--<option value="0">2</option>-->
-                                        <!--<option value="0">3</option>-->
-                                        <!--<option value="0">4</option>-->
-                                        <!--<option value="0">5</option>-->
-                                        <!--<option value="0">6</option>-->
-                                        <!--<option value="0">7</option>-->
-                                        <!--<option value="0">8</option>-->
-                                        <!--<option value="0">9</option>-->
-                                    <!--</select>-->
+                                    <div class="col-xs-6">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div class = "form-group-vertical">
+                                                    <button class="btn btn-default btn-lg btn-block" id="getTop" type="button">GET TOP</button>
+                                                    <br>
+                                                    <button class="btn btn-default btn-lg btn-block" id="putTop" type="button">PUT TOP</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-xs-4">
-                                    <input type="text" class="form-control" id="alignWaferIdField">
-                                </div>
-                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">OCR</h3>
+                        </div>
+                        <div class="panel-body">
                             <div class = "form-group">
                                 <div class="col-xs-4">
-                                    <input class="form-control" type="text" id="updateIdText">
+                                    <button class="btn btn-default btn-lg btn-block" id="readId" type="button">READ ID</button>
                                 </div>
                                 <div class="col-xs-4">
                                     &nbsp;
                                 </div>
                                 <div class="col-xs-4">
-                                    <button class="btn btn-default btn-sm" id="updateId" type="button">Update ID</button>
+                                    <input type="text" class="form-control input-lg" id="readIdText">
                                 </div>
-                            </div>
-                            <div class = "form-group">
-                                <div class="col-xs-12">
-                                    <label class="control-label" style="text-align:left;">ALIGNER</label>
-                                </div>
-                            </div>
-                            <div class = "form-group">
+<!--                             </div>
+                            <div class = "form-group"> -->
+                                <div>&nbsp;</div>
                                 <div class="col-xs-4">
-                                    <button class="btn btn-default btn-sm" id="getWafer" type="button">GET WAFER</button>
+                                    <button class="btn btn-default btn-lg btn-block" id="updateId" type="button">Update ID</button>
                                 </div>
-                            </div>
-                            <div class = "form-group">
                                 <div class="col-xs-4">
-                                    <button class="btn btn-default btn-sm" id="putWafer" type="button">PUT WAFER</button>
+                                    <label class="control-label" >Wafer ID</label>
                                 </div>
-                            </div>
-                            <div class = "form-group">
                                 <div class="col-xs-4">
-                                    <button class="btn btn-default btn-sm" id="getTop" type="button">GET TOP</button>
+                                    <input class="form-control input-lg" type="text" id="updateIdText">
                                 </div>
                             </div>
-                            <div class = "form-group">
-                                <div class="col-xs-4">
-                                    <button class="btn btn-default btn-sm" id="putTop" type="button">PUT TOP</button>
-                                </div>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>

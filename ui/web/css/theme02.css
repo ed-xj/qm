@@ -48,7 +48,7 @@ code[name="sysmsg"] {
   /*background-color: #F0F0F0;*/
 }
 
-.panel, #statusBar, .btn-group-vertical, select {
+.panel, #statusBar, .btn-group-vertical, .btn-group, select {
   box-shadow: 1px 2px 2px #888888;
 }
 
@@ -79,7 +79,7 @@ code[name="sysmsg"] {
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.15);
 }
 
-.btn-group-vertical {
+.btn-group, .btn-group-vertical {
   /*border: 1px solid black;*/
   border-radius: 5px;
 }
@@ -252,4 +252,25 @@ ul.alert-dropdown {
 }
 .doing {
   background-color: orange;
+}
+
+/*check box*/
+.chk-lg {
+  width:20px;
+  height:20px;
+}
+
+label > input[type=checkbox]{
+    position: relative;
+    vertical-align: middle;
+    bottom: 1px;
+}
+
+.continer {
+  display:table;
+}
+
+.column {
+  display:table-cell;
+  width:auto;
 }

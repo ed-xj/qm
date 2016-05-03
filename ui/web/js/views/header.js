@@ -3,6 +3,8 @@ window.HeaderView = Backbone.View.extend({
     initialize: function (moderator) {
         this.moderator = moderator;
         this.moderator.on('lang:change', this.onLangChange.bind(this));
+        this.moderator.on('syslog:change', this.onSysLogChange.bind(this));
+        this.moderator.on('robotlog:change', this.onSysLogChange.bind(this));
     },
 
     activate: function() {
@@ -17,8 +19,8 @@ window.HeaderView = Backbone.View.extend({
     events: {
         "keyup .search-query": "search",
         "keypress .search-query": "onkeypress",
-
-        "click #logout": "logout"
+        "click #logout": "logout",
+        "click #help": "showHelpModal"
     },
 
     search: function () {
@@ -42,6 +44,14 @@ window.HeaderView = Backbone.View.extend({
         this.render();
     },
 
+    onSysLogChange: function() {
+        console.log('HeaderView::onSysLogChange');
+    },
+
+    onRobotLogChange: function() {
+        console.log('HeaderView::onRobotLogChange');
+    },
+
     onkeypress: function (event) {
         if (event.keyCode == 13) {
             event.preventDefault();
@@ -51,6 +61,12 @@ window.HeaderView = Backbone.View.extend({
     select: function(menuItem) {
         $('.nav li').removeClass('active');
         $('.' + menuItem).addClass('active');
+    },
+
+    showHelpModal: function () {
+        var frameSrc = "/ui/help/index.htm#t=Cover.htm";
+        $("#helpIframe").attr("src", frameSrc);
+        $("#helpModal").modal({show: true});
     },
 
     tabMapFontAwesome: {

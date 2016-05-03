@@ -1,0 +1,2 @@
+
+2016/04/21 18:58:19 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"rc2","Param":null,"Message":"robot cmd rc2"}This file was created at 2016/04/21 18:58:19 >> 

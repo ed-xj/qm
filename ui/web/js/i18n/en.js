@@ -34,14 +34,18 @@ I18N.en = {
         "deafult"        : "",
         "dashboard"      : "Dashboard",
         "command"        : "Command",
-        "recipe"         : "Recipe:",
+        "recipe"         : "Recipe",
         "select_recipe"  : "Select a recipe",
         "start_recipe"   : "Start Recipe",
         "stop_recipe"    : "Stop Recipe",
         "load"           : "Load",
         "system_message" : "System Message",
         "home"           : "Home",
-        "recover"        : "Recover"
+        "recover"        : "Recover",
+        "speed"          : "Speed",
+        "slow"           : "Slow",
+        "medium"         : "Medium",
+        "high"           : "High"
     },
 
     "robotView": {
@@ -52,7 +56,7 @@ I18N.en = {
         "start"           : "Start",
         "stop"            : "Stop",
         "message"         : "Message",
-        "robot_command"   : "Robot Command:",
+        "robot_command"   : "Robot Command",
         "enter_command"   : "Enter a robot command",
         "go"              : "Go!",
         "text"            : "text",
@@ -81,13 +85,11 @@ I18N.en = {
 
     "configView": {
         "config_title" : "Config",
-        "speed"        : "Speed:",
-        "slow"         : "Slow",
-        "medium"       : "Medium",
-        "high"         : "High",
         "system_log"   : "System Log Level",
         "warning"      : "Warning",
         "low"          : "Low",
+        "medium"       : "Medium",
+        "high"         : "High",
         "robot_log"    : "Robot Log Level",
         "language"     : "Language"
     }

@@ -4,26 +4,43 @@ window.AlignerView = window.BaseView.extend({
     },
 
     events : {
-        "click #readIt":"readItBtnCLick",               // read it
-        "click #alignWafer":"alignWaferBtnCLick",       // align wafer
-        "click #updateId":"updateIDBtnCLick",
-        "click #getWafer":"getWaferBtnCLick",           // get wafer
-        "click #putWafer":"putWaferBtnCLick",           // put wafer
-        "click #getTop":"getTopBtnCLick",               // get top
-        "click #putTop":"putTopBtnCLick"            // put top
+        "click #readId":"readIdBtnClick",               // read it
+        "click #alignWafer":"alignWaferBtnClick",       // align wafer
+        "change #alignWaferId":"alignWaferIdChg",
+        "input input[name='w-angle']":"alignWaferSliderChg",
+        "click #updateId":"updateIDBtnClick",
+        "click #getWafer":"getWaferBtnClick",           // get wafer
+        "click #putWafer":"putWaferBtnClick",           // put wafer
+        "click #getTop":"getTopBtnClick",               // get top
+        "click #putTop":"putTopBtnClick"            // put top
     },
 
     render: function () {
         var callback = function(){
-            this.$('.spinner .btn:first-of-type').on('click', function() {
-                var val =  parseInt(this.$('.spinner input').val(), 10);
+            // Solution 1
+            // this.$('.spinner span .btn:first-of-type').on('click', function() {
+            //     var val =  parseInt(this.$('.spinner input').val(), 10);
+            //     if (val < 359)
+            //         this.$('.spinner input').val( val + 1);
+            // }.bind(this));
+            // this.$('.spinner span .btn:last-of-type').on('click', function() {
+            //     var val =  parseInt(this.$('.spinner input').val(), 10);
+            //     if (val > 1)
+            //         this.$('.spinner input').val( val - 1);
+            // }.bind(this));}.bind(this);
+
+            // Solution 2
+            this.$('.fa-caret-up').parent('button').on('click', function() {
+                var val =  parseInt(this.$('#alignWaferId').val(), 10);
                 if (val < 359)
-                    this.$('.spinner input').val( val + 1);
+                    this.$('#alignWaferId').val( val + 1);
+                $("input[name='w-angle']").val(this.$('#alignWaferId').val())
             }.bind(this));
-            this.$('.spinner .btn:last-of-type').on('click', function() {
-                var val =  parseInt(this.$('.spinner input').val(), 10);
-                if (val > 1)
-                    this.$('.spinner input').val( val - 1);
+            this.$('.fa-caret-down').parent('button').on('click', function() {
+                var val =  parseInt(this.$('#alignWaferId').val(), 10);
+                if (val > 0)
+                    this.$('#alignWaferId').val( val - 1);
+                $("input[name='w-angle']").val(this.$('#alignWaferId').val())
             }.bind(this));}.bind(this);
 
         $(this.el).html(this.template());
@@ -33,63 +50,71 @@ window.AlignerView = window.BaseView.extend({
 
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
     
-    readItBtnCLick:function () {
-        var text = $('#readItText').val()
+    readIdBtnClick:function () {
+        var text = $('#readIdText').val()
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", "Aligner", "READIT", text, null);
+        var json = this.encodeJSON("SCHD", "COMMAND", "Aligner", "READID", text, null);
         // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "readIt");
+        this.ajaxCall(this.ajaxUrl, json, "readId");
     },
     
-    alignWaferBtnCLick:function () {
+    alignWaferBtnClick:function () {
         var alignWaferId = $('#alignWaferId').val()
-        var alignWaferIdField = $("#alignWaferIdField").val();
+        // var alignWaferIdField = $("#alignWaferIdField").val();
         console.log(alignWaferId)
         if (alignWaferId >359 || alignWaferId <0) {
-            alert("Warning: align angle should be between 0 and 359")
+            alert("Warning: align angle should be between 0° and 359°")
         } else {
             // Build up JSON
-            var json = encodeJSON("SCHD", "COMMAND", "Aligner", "ALIGNWAFER", alignWaferId, null);
+            var json = this.encodeJSON("SCHD", "COMMAND", "Aligner", "ALIGNWAFER", alignWaferId, null);
             // AJAX POST
             this.ajaxCall(this.ajaxUrl, json, "alignWafer");
         }
     },
 
-    updateIDBtnCLick: function() {
+    alignWaferIdChg: function (e) {
+        $("input[name='w-angle']").val($(e.currentTarget).val())
+    },
+
+    alignWaferSliderChg: function (e) {
+        $("#alignWaferId").val($(e.currentTarget).val())
+    },
+
+    updateIDBtnClick: function() {
         var id = $('#updateIdText').val()
         // console.log(id)
         if (id !== "") {
             // Build up JSON
-            var json = encodeJSON("SCHD", "COMMAND", "Aligner", "UPDATEID", id, null);
+            var json = this.encodeJSON("SCHD", "COMMAND", "Aligner", "UPDATEID", id, null);
             // AJAX POST
             this.ajaxCall(this.ajaxUrl, json, "updateid");
         }
     },
     
-    getWaferBtnCLick:function () {
+    getWaferBtnClick:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", "Aligner", "GETWAFER", null, null);
+        var json = this.encodeJSON("SCHD", "COMMAND", "Aligner", "GETWAFER", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "getWafer");
     },
     
-    putWaferBtnCLick:function () {
+    putWaferBtnClick:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", "Aligner", "PUTWAFER", null, null);
+        var json = this.encodeJSON("SCHD", "COMMAND", "Aligner", "PUTWAFER", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putWafer");
     },
     
-    getTopBtnCLick:function () {
+    getTopBtnClick:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", "Aligner", "GETTOP", null, null);
+        var json = this.encodeJSON("SCHD", "COMMAND", "Aligner", "GETTOP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "getTop");
     },
     
-    putTopBtnCLick:function () {
+    putTopBtnClick:function () {
         // Build up JSON
-        var json = encodeJSON("SCHD", "COMMAND", "Aligner", "PUTTOP", null, null);
+        var json = this.encodeJSON("SCHD", "COMMAND", "Aligner", "PUTTOP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putTop");
     }
