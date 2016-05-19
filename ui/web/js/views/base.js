@@ -12,9 +12,12 @@ window.BaseView = Backbone.View.extend({
                 if (succCallback) succCallback(data);
             },
             error: function(error) {
-                console.log("Some error in fetching the notification");
+                console.log("AJAX ERROR, some error in fetching the notification.");
                 console.log(error);
                 if (errCallback) errCallback(error);
+            },
+            complete: function() {
+                // do something after ajax call complete
             }
         });
     },

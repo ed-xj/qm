@@ -1,0 +1,2 @@
+
+2016/05/10 19:02:45 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"Aligner","Cmd":"ALIGNWAFER","Param":"90","Message":null}This file was created at 2016/05/10 19:02:45 >> 

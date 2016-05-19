@@ -1,0 +1,2 @@
+
+2016/05/10 19:02:38 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}

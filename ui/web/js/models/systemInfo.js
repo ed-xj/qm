@@ -3,8 +3,9 @@
 var systemInfo = Backbone.Model.extend({ 
 	//set default values of property 
 	defaults: { 
-		sysStatus : null,
-		station: []
+		sysStatus: null,
+		station: [],
+		recipe: ""
 	},
 
 	initialize: function() {
@@ -18,6 +19,9 @@ var systemInfo = Backbone.Model.extend({
             }
             if(this.hasChanged('station')){
                 console.log('stationMapping has been changed');
+            }
+            if(this.hasChanged('recipe')){
+                console.log('loaded recipe has been changed');
             }
         });
 	},

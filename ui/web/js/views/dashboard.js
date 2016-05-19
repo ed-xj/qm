@@ -3,10 +3,10 @@ window.DashboardView = window.BaseView.extend({
     initialize:function (moderator) {
         console.log('Initializing Dashboard View');
         this.moderator = moderator;
-        this.moderator.on('lang:change', this.onLangChange);
+        this.moderator.on('lang:change', this.onLangChange.bind(this));
         this.logmsg = '';
         this.templateParams = {sysmsg: this.logmsg};
-        this.genLogMsg();
+        // this.genLogMsg();
 //        this.template = _.template(directory.utils.templateLoader.get('home'));
 //        this.template = templates['Home'];
     },
@@ -23,10 +23,13 @@ window.DashboardView = window.BaseView.extend({
         "click #high":"highBtnClick",       // set speed to fast
         "change input[name='secs']":"onlineStatus",     // online status
         "change code[name='sysmsg']":"autoScrollDown",  // auto scroll to bottom
+        "click .recipe-name":"recipeClick",
+        "click .recipe-done":"modalDoneBtnClick"
     },
 
     onLangChange: function() {
         console.log('DashboardView::onLangChange');
+        this.render()
     },
 
     genLogMsg: function() {
@@ -42,8 +45,8 @@ window.DashboardView = window.BaseView.extend({
     },
 
     activate: function() {
-        this.genLogMsg();
-        this.render();
+        // this.genLogMsg();
+        // this.render();
     },
 
     render:function () {
@@ -55,13 +58,17 @@ window.DashboardView = window.BaseView.extend({
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
     
     callBack: function(data) {
-        if (data.CmdType === "ERROR") {
-            alert(data.Message);
+        // if (data.CmdType === "ERROR") {
+        //     alert(data.Message);
+        // }
+        var arrow = " >> "
+        if (data.CmdDest === "UI") {
+            arrow = " << "
         }
         // show message in Message section, and trigger "change" event
         var d = new Date()
         d = d.getFullYear()+"/"+("0"+(d.getMonth()+1)).slice(-2)+"/"+("0"+d.getDate()).slice(-2)+" "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2)+":"+("0"+d.getSeconds()).slice(-2)
-        $("code[name='sysmsg']").append(d + ' >> ' + data.Message + "<br>").trigger("change");
+        $("code[name='sysmsg']").append(d + arrow + data.Message + "<br>").trigger("change");
     },
 
     systemStatus: function () {
@@ -72,7 +79,7 @@ window.DashboardView = window.BaseView.extend({
     },
 
     showRecipeModal: function () {
-        $("#myModal").modal({show: true});
+        $("#Modal-recipe").modal({show: true});
     },
 
     loadRecipeBtnClick:function () {
@@ -82,11 +89,14 @@ window.DashboardView = window.BaseView.extend({
         var a = this.moderator.getStation(1)
         console.log(a.map.toString())
         a.station = 7
-        this.moderator.set('sysStatus',"running")
-        console.log(this.moderator.get('sysStatus'))
+        this.moderator.set('sysStatus',"running")       // write to systemInfo
+        console.log(this.moderator.get('sysStatus'))    // read from systemInfo
         //
 
-        var recipe = $('#recipe').val()
+        var recipe = $('#recipeModal').val()
+        // update recipe name to systemInfo      
+        this.moderator.set("recipe",recipe)
+
         // Build up JSON
         var json = this.encodeJSON("SCHD", "COMMAND", null, "LOADRECIPE", recipe, null);
         // AJAX POST
@@ -95,7 +105,7 @@ window.DashboardView = window.BaseView.extend({
 
     startRecipeBtnClick:function () {
         // Build up JSON
-        var recipe = $('#recipe').val()
+        var recipe = $('#recipeModal').val()
         var json = this.encodeJSON("SCHD", "COMMAND", null, "STARTRECIPE", recipe, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "start recipe", this.callBack);
@@ -103,7 +113,8 @@ window.DashboardView = window.BaseView.extend({
 
     stopRecipeBtnClick:function () {
         // Build up JSON
-        var json = this.encodeJSON("SCHD", "COMMAND", null, "STOPRECIPE", null/*recipe*/, null);
+        var recipe = $('#recipeModal').val()
+        var json = this.encodeJSON("SCHD", "COMMAND", null, "STOPRECIPE", recipe, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "stop recipe", this.callBack);
     },
@@ -160,5 +171,15 @@ window.DashboardView = window.BaseView.extend({
         // auto scroll down
         var scrollTarget = $(e.currentTarget).parent().parent();
         scrollTarget.scrollTop(scrollTarget.get(0).scrollHeight);
+    },
+
+    recipeClick: function (e) {     // single selection
+        $(".recipe-name.success").removeClass("success")
+        $(e.currentTarget).addClass("success")
+    },
+
+    modalDoneBtnClick: function () {
+        var r = $(".recipe-name.success > td").text()   
+        $("#recipeModal").val(r)                    // show recipe name in input
     }
 });

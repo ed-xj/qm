@@ -19,10 +19,10 @@ var net = require('net');
 var HOST = '127.0.0.1';
 var PORT = 1337;
 
-// create a new socket object.
+// check if socket is already connected. If not, create a new socket object.
 var client = new net.Socket();
 // keep socket open(alive). Find a best time.
-client.setKeepAlive(true,30);
+client.setKeepAlive(true,600000);
 
 ///////////////////////////////////////////////////////////////////////
 // AJAX //
@@ -41,15 +41,22 @@ var util = require('../../ui/web/lib/utility.js');
 // Socket events
 // add a data event to client side.
 // 'data' is what scheduler respond back.
-client.on('data', function (data) {
 
+// var testdata = []	// testing push and pop
+
+client.on('data', function (data) {
 	// parse data send from scheduler
 	var parseddata = JSON.parse(data);
 	// console out, send to browser
 	console.log(JSON.stringify(parseddata));
-	
 	// close socket
 	client.end();
+
+	// push and pop
+	// testdata.push(JSON.stringify(JSON.parse(data)))
+	// if (testdata.length !== 0) {
+
+	// }
 
 	// server log
 	var message = "Receive data from Socket(scheduler). Close Socket." + JSON.stringify(parseddata);
@@ -58,6 +65,11 @@ client.on('data', function (data) {
 	log.appendToFile(now, message);
 	log.checkFileCreatedTime(now);
 });
+
+// socket "end" event
+// client.on('end', function() {
+// 	var get = testdata.shift()
+// });
 
 // socket error event
 client.on('error', function() {
@@ -91,15 +103,7 @@ client.on('error', function() {
 stdin.on('data', function (data) {
 	inputData = data;//.toString().trim();
 	// inputData = JSON.parse(data);
-	// server log
-	var message = "AJAX event receive from UI. " + JSON.stringify(JSON.parse(inputData));
-	var now = moment();
-	log.fileExist(now);
-	log.appendToFile(now, message);
-	log.checkFileCreatedTime(now);
-});
 
-stdin.on('end', function () {
 	// Parse JSON data
 	var parsedData = JSON.parse(inputData);
 
@@ -126,4 +130,41 @@ stdin.on('end', function () {
 	}
 	else
 		console.log(JSON.stringify({"message": "Other, might be error"}));
+
+
+	// server log
+	var message = "AJAX event receive from UI. " + JSON.stringify(JSON.parse(inputData));
+	var now = moment();
+	log.fileExist(now);
+	log.appendToFile(now, message);
+	log.checkFileCreatedTime(now);
 });
+
+// stdin.on('end', function () {
+// 	// Parse JSON data
+// 	var parsedData = JSON.parse(inputData);
+
+// 	// stdout, send it back to UI browser.
+// 	if (parsedData.CmdDest === "SCHD") {
+// 		// connect socket
+// 		client.connect(PORT, HOST);
+// 		// console.log(JSON.stringify({"message": "Direction to SCHD"}));
+// 		// send to scheduler through socket
+// 		client.write(inputData);
+// 		// server log
+// 		var message = "Connect Socket. Send data through Socket to scheduler. " + JSON.stringify(parsedData);
+// 		var now = moment();
+// 		log.fileExist(now);
+// 		log.appendToFile(now, message);
+// 		log.checkFileCreatedTime(now);
+// 	}
+// 	else if (parsedData.CmdDest === "APACHE") {
+// 		// console.log(JSON.stringify({"message": "Direction to DB"}));
+// 		var now = moment();
+// 		log.fileExist(now);
+// 		log.appendToFile(now, parsedData.Message);
+// 		log.renameAndSave(now);
+// 	}
+// 	else
+// 		console.log(JSON.stringify({"message": "Other, might be error"}));
+// });

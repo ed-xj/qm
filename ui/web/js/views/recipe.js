@@ -12,11 +12,15 @@ window.RecipeView = window.BaseView.extend({
         "click .chk-none":"chkNoneClick",             // check none
         "click .chk-element":"chkElemClick",          // check element
         "click #saveRecipe":"saveRecipeBtnClick",     // save recipe
-        // "click #loadRecipe":"loadRecipeBtnClick",     // load recipe
+        "click #loadRecipe":"loadRecipeBtnClick",     // load recipe
         "change input[name='unloadOrder1']": "updateUnloadOrder1",  // change order of slots
         "change input[name='unloadOrder2']": "updateUnloadOrder2",
         "change input[name='usage1']":"updateUsage1",   // enable/disable seq 1
         "change input[name='usage2']":"updateUsage2"    // enable/disable seq 2
+    },
+
+    activate: function() {
+
     },
 
     render: function () {
@@ -145,6 +149,12 @@ window.RecipeView = window.BaseView.extend({
 
     callBack: function(data) {
         alert("Save succeed.");
+        switch (data.Cmd) {
+            case "RECIPE":
+                // do something
+                break;
+        }
+
     },
 
     unloadOrder: function () {

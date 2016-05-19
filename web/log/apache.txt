@@ -1,0 +1,170 @@
+
+2016/05/11 15:13:17 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"reset","Param":null,"Message":"robot cmd reset"}This file was created at 2016/05/11 15:13:17 >> 
+
+2016/05/11 15:13:17 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"reset","Param":null,"Message":"robot cmd reset"}
+2016/05/11 15:13:18 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/11 15:15:29 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"GO","Param":"reset","Message":null}
+2016/05/11 15:15:29 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"GO","Param":"reset","Message":null}
+2016/05/11 15:15:30 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/11 15:39:51 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"sc5","Param":null,"Message":"SECS/GEM cmd sc5"}
+2016/05/11 15:39:51 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"sc5","Param":null,"Message":"SECS/GEM cmd sc5"}
+2016/05/11 15:39:52 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/11 15:40:59 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"rcp","Param":null,"Message":"robot cmd rcp"}
+2016/05/11 15:40:59 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"rcp","Param":null,"Message":"robot cmd rcp"}
+2016/05/11 15:41:00 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/11 15:41:01 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"reset","Param":null,"Message":"robot cmd reset"}
+2016/05/11 15:41:01 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"reset","Param":null,"Message":"robot cmd reset"}
+2016/05/11 15:41:02 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/11 15:41:49 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LEARN_NEW","Param":null,"Message":null}
+2016/05/11 15:41:49 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LEARN_NEW","Param":null,"Message":null}
+2016/05/11 15:41:50 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/11 15:42:39 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LEARN","Param":null,"Message":null}
+2016/05/11 15:42:39 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LEARN","Param":null,"Message":null}
+2016/05/11 15:42:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 14:32:46 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 14:32:46 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 14:32:47 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 14:32:59 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 14:32:59 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 14:32:59 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 14:33:03 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDMEDIUM","Param":null,"Message":null}
+2016/05/12 14:33:03 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDMEDIUM","Param":null,"Message":null}
+2016/05/12 14:33:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 14:39:53 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/12 14:39:53 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/12 14:39:55 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 17:15:39 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 17:15:39 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 17:15:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 17:16:24 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 17:16:24 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 17:16:24 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 17:16:33 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 17:16:33 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 17:17:24 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 17:33:49 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 17:33:49 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 17:33:49 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 17:33:57 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDHIGH","Param":null,"Message":null}
+2016/05/12 17:33:57 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDHIGH","Param":null,"Message":null}
+2016/05/12 17:33:57 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 17:34:00 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDHIGH","Param":null,"Message":null}
+2016/05/12 17:34:00 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDHIGH","Param":null,"Message":null}
+2016/05/12 17:34:00 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 17:34:01 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDHIGH","Param":null,"Message":null}
+2016/05/12 17:34:01 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDHIGH","Param":null,"Message":null}
+2016/05/12 17:34:01 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 17:34:40 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 17:34:40 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 17:34:41 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 17:34:48 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 17:34:48 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 17:35:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 17:35:52 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 17:35:52 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 17:35:52 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 17:36:39 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 18:41:57 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 18:41:57 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 18:41:58 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 18:42:34 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 18:42:34 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 18:42:34 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:42:48 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 18:42:48 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 18:42:48 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:43:15 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 18:44:33 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 18:44:33 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/12 18:44:33 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:46:10 >> AJAX event receive from UI. {"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:46:37 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:46:37 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:46:37 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:46:45 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:46:45 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:46:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 18:46:50 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:46:50 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:46:50 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:46:50 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:46:55 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:46:55 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:46:55 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 18:47:16 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"Hello","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:47:16 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"Hello","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:47:17 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:47:17 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:47:35 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"Hello","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:47:35 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"Hello","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:47:35 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:47:49 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:47:49 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:47:49 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:47:52 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:47:52 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:47:52 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 18:47:58 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:47:58 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:47:59 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:47:59 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:00 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:00 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:00 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 18:48:02 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:02 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:02 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:02 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:12 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:12 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:14 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 18:48:24 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:24 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:25 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:25 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:28 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:28 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:28 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 18:48:35 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:35 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:35 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:35 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:36 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:36 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:36 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 18:48:37 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:37 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:37 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:37 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:37 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:37 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 18:48:38 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:38 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:38 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:38 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:39 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:39 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:39 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 18:48:39 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:39 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:39 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:39 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:40 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:40 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 18:48:40 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:40 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:40 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:41 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:41 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/12 18:48:41 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:41 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:41 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/12 18:48:42 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/16 16:04:22 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LOADRECIPE","Param":"","Message":null}
+2016/05/16 16:04:22 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LOADRECIPE","Param":"","Message":null}
+2016/05/16 16:04:23 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/16 16:40:25 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LOADRECIPE","Param":"","Message":null}
+2016/05/16 16:40:25 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LOADRECIPE","Param":"","Message":null}
+2016/05/16 16:40:26 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}

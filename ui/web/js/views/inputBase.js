@@ -16,7 +16,7 @@ window.InputBaseView = window.BaseView.extend({
     },
 
     handleWaferTypeChange: function() {
-        var station = this.getStation();
+        // var station = this.getStation();
         var waferType = $("#waferType").val();
         $("#getWaferTypeLabel").text("GET " + waferType);
         $("#getWaferType").text("GET " + waferType);
@@ -24,7 +24,7 @@ window.InputBaseView = window.BaseView.extend({
         $("#putWaferType").text("PUT " + waferType);
         $("#mapWaferTypeLabel").text("MAP " + waferType);
         $("#mapWaferType").text("MAP " + waferType);
-        console.log("wafer type: " + waferType+' slot Map:'+ JSON.stringify(station));
+        // console.log("wafer type: " + waferType+' slot Map:'+ JSON.stringify(station));
     },
 
     handleCassetteChange: function() {
@@ -71,6 +71,11 @@ window.InputBaseView = window.BaseView.extend({
                 $(slot).children('label').text(waferid[i]); //waferid
                 // $(slot).addClass('full');
                 $(slot).parent().addClass('warning');    //bootstrap
+            } else if (map[i]===2) {
+                var slot = "#slot"+(i+1); 
+                $(slot).children('label').text(waferid[i]); //waferid
+                // $(slot).addClass('full');
+                $(slot).parent().addClass('error');    //bootstrap
             }
         }
     },
@@ -79,11 +84,13 @@ window.InputBaseView = window.BaseView.extend({
 
     // Union function
     callBack: function(data) {
-        var d = new Date()
-        d = d.getFullYear()+"/"+(d.getMonth()+1)+"/"+d.getDate()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()
-        $("code[name='robotmsg']").append(d + ' system log messages: ' + data.Message + "<br>").trigger("change");
+        // var d = new Date()
+        // d = d.getFullYear()+"/"+(d.getMonth()+1)+"/"+d.getDate()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()
+        // $("code[name='robotmsg']").append(d + ' system log messages: ' + data.Message + "<br>").trigger("change");
 
-        if (data.Cmd === "MAPPING") {
+        switch (data.Cmd) {
+            case "MAPPING":
+        // if (data.Cmd === "MAPPING") {
             var index = data.Param.index
             var status = data.Param.status
             var id = data.Param.waferID
@@ -119,7 +126,12 @@ window.InputBaseView = window.BaseView.extend({
                     }
                 }
             }
-        } else if (data.Cmd === "ERROR") {}
+            break;
+            case "ERROR":
+            // do something
+            break;
+        }
+        // } else if (data.Cmd === "ERROR") {}
     },
 
     openFoupBtnCLick: function (e) {

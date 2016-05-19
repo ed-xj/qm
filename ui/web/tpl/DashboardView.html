@@ -20,7 +20,7 @@
                         <div class="row">
                             <div class="col-xs-10">
                                 <form class="form-horizontal" role="form">
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin-bottom:-5px;">
                                         <!-- <label class="control-label col-xs-2" for="recipe"><%= t["recipe"] %></label> -->
 
                                         <div class="input-group col-xs-offset-1">
@@ -29,7 +29,6 @@
                                                 <button class="btn btn-default btn-lg" type="button" id="loadrecipe"><%= t["load"] %></button>
                                             </span>
                                         </div><br>
-
                                         <!--<div class="col-sm-8" style="padding-right:4px;">-->
                                         <!--<input type="text" class="form-control" id="recipe" placeholder="Select a recipe" readonly>-->
                                         <!--</div>-->
@@ -46,14 +45,29 @@
                                             <!--<button class="btn btn-default" id="stop_recipe"><%= t["stop_recipe"] %></button>-->
                                         <!--</div>-->
                                         <!-- <br> -->
-                                        <div class=" col-xs-offset-1">
-                                            <button class="btn btn-default btn-lg h-spacer" id="startrecipe"><%= t["start_recipe"] %></button>
-                                            <button class="btn btn-default btn-lg h-spacer" id="stoprecipe"><%= t["stop_recipe"] %></button><br><br>
-                                            <button class="btn btn-default btn-lg h-spacer" id="home"><%= t["home"] %></button>
-                                            <button class="btn btn-default btn-lg h-spacer" id="recover"><%= t["recover"] %></button>
+                                        <div class="col-xs-offset-1">
+                                            <div class="col-xs-4">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-body">
+                                                        <div class="form-group" style="margin:auto;">
+                                                            <button class="btn btn-default btn-lg btn-block h-spacer" id="startrecipe"><%= t["start_recipe"] %></button><br>
+                                                            <button class="btn btn-default btn-lg btn-block h-spacer" id="stoprecipe"><%= t["stop_recipe"] %></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                  <div class="form-group" style="margin:auto;">
+                                                    <button class="btn btn-default btn-lg btn-block h-spacer" id="home"><%= t["home"] %></button><br>
+                                                    <button class="btn btn-default btn-lg btn-block h-spacer" id="recover"><%= t["recover"] %></button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                                               
+                                    </div>         
                                 </form>
                             </div>
                         </div>
@@ -68,7 +82,6 @@
                     <div class="panel-body">
                         <div class="form-group">
                             <!-- <label class="control-label col-xs-2"><%= t["speed"] %></label> -->
-
                             <div>
                                 <button class="btn btn-default btn-lg btn-block h-spacer" id="slow"><%= t["slow"] %></button><br>
                                 <button class="btn btn-default btn-lg btn-block h-spacer" id="medium"><%= t["medium"] %></button><br>
@@ -82,7 +95,7 @@
     <!-- </div> -->
 
     <div class="row">
-        <div class="col-xs-9">
+        <div class="col-xs-10">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title"><%= t["system_status"] %></h3>
@@ -90,7 +103,7 @@
                 <div class="panel-body">
                     <div class="hero-unit" style="height:200px;">
                         <div class="col-xs-6">
-                                                        <table class="table-bordered table-condensed table-striped">
+                            <table class="table-bordered table-condensed table-striped">
                                 <thead>
                                 <tr>
                                     <th>Tool</th>
@@ -130,7 +143,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-3">
+        <div class="col-xs-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Online Status
@@ -147,13 +160,13 @@
                                 <button type="button" class="btn btn-lg btn-default" disabled="disabled"><%= t["idle"] %>&nbsp;</button>
                             </div>
                         </div> -->
-                        <div><br>
+                        <div>
                             <div class="btn-group-vertical btn-block" data-toggle="buttons">
                                 <label class="btn btn-default btn-lg active" style="border:none;">
-                                    <input type="radio" name="secs" value="online_local">Online Local
+                                    <input type="radio" name="secs" value="online_local">Online<br>Local
                                 </label>
                                 <label class="btn btn-default btn-lg" style="border:none;">
-                                    <input type="radio" name="secs" value="online_remote">Online Remote
+                                    <input type="radio" name="secs" value="online_remote">Online<br>Remote
                                 </label>
                                 <label class="btn btn-default btn-lg" style="border:none;">
                                     <input type="radio" name="secs" value="offline">Offline
@@ -173,8 +186,8 @@
                     <h3 class="panel-title"><%= t["system_message"] %></h3>
                 </div>
                 <div class="panel-body-sysmsg">
-                    <div class="row">
-                        <code name="sysmsg">
+                    <div class="row" style="padding-left:10px">
+                        <code name="sysmsg"  style="padding-left: 0px;">
                             <!--<textarea class="form-control form-control-sysmsg" name="sysmsg" rows="10" readonly>-->
                             <%= sysmsg %>
                             <!--</textarea>-->
@@ -187,21 +200,49 @@
 </div>
 
 <!-- Recipe Modal -->
-<div id="myModal" class="modal fade">
+<div id="Modal-recipe" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close btn-lg" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg" aria-hidden="true"></i></button>
                 <h4 class="modal-title">Please select a recipe.</h4>
             </div>
-            <div class="modal-body">
-                <div>Recipe 1</div>
-                <div>Recipe 2</div>
-                <div>Recipe 3</div>
-                <div>Recipe 4</div>
+            <div class="modal-body" style="y-overflow:scroll">
+                <!-- <div class="row">
+                    <div class="col-xs-6">
+                        <h2 class="recipe-name">Recipe 1</h2>
+                        <h2 class="recipe-name">Recipe 2</h2>
+                    </div>
+                    <div class="col-xs-6">
+                        <h2 class="recipe-name">Recipe 3</h2>
+                        <h2 class="recipe-name">Recipe 4</h2>
+                    </div>
+                </div> -->
+
+                <table class="table">
+                    <tbody>
+                        <tr class="recipe-name">
+                            <td><h2>Recipe 1</h2></td>
+                        </tr>
+                        <tr class="recipe-name">
+                            <td><h2>Recipe 2</h2></td>
+                        </tr>
+                        <tr class="recipe-name">
+                            <td><h2>Recipe 3</h2></td>
+                        </tr>
+                        <tr class="recipe-name">
+                            <td><h2>Recipe 4</h2></td>
+                        </tr>
+                        <tr class="recipe-name">
+                            <td><h2>Recipe 5</h2></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Done</button>
+                <button type="button" class="btn btn-default btn-lg recipe-done" data-dismiss="modal">Done</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

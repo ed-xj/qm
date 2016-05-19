@@ -5,8 +5,8 @@ window.RobotView = window.BaseView.extend({
         this.moderator = moderator;
         this.moderator.on('lang:change', this.onLangChange.bind(this));
         this.logmsg = '';
-        this.templateParams = {sysmsg: this.logmsg};
-        this.genLogMsg();
+        this.templateParams = {robotmsg: this.logmsg};
+        // this.genLogMsg();
         this.moveAttr = {
             station:'stn',
             pose:'pose',
@@ -25,7 +25,7 @@ window.RobotView = window.BaseView.extend({
         "click #reset_f_12":"resetf12BtnClick", // resetF12
         "click #grip":"gripBtnClick",           // grip
         "click #ungrip":"ungripBtnClick",       // ungrip
-        // "click #learn":"learnBtnClick",         // learn
+        "click #learn":"learnBtnClick",         // learn
         "click #learn_new":"learnNewBtnClick",  // learn new
         "click #move":"moveBtnClick",           // move
         "contextmenu #move":"moveBtnRightClick",// move (right click)
@@ -45,12 +45,12 @@ window.RobotView = window.BaseView.extend({
             this.logmsg += ((new Date()) + ':system log messages ' + i);
             this.logmsg += '<br>';
         }
-        this.templateParams = {sysmsg: this.logmsg};
+        this.templateParams = {robotmsg: this.logmsg};
     },
 
     activate: function() {
-        this.genLogMsg();
-        this.render();
+        // this.genLogMsg();
+        // this.render();
     },
 
     onLangChange: function() {
@@ -72,7 +72,7 @@ window.RobotView = window.BaseView.extend({
     },
 
     render: function () {
-        this.templateParams = {sysmsg: this.logmsg};
+        this.templateParams = {robotmsg: this.logmsg};
         $(this.el).html(this.template(this.templateParams));
         this.disableControls(localStorage.userRole);
         return this;
@@ -82,9 +82,13 @@ window.RobotView = window.BaseView.extend({
     
     callBack: function(data) {
         // show message in Message section, and trigger "change" event
+        var arrow = " >> "
+        if (data.CmdDest === "UI") {
+            arrow = " << "
+        }
         var d = new Date()
         d = d.getFullYear()+"/"+("0"+(d.getMonth()+1)).slice(-2)+"/"+("0"+d.getDate()).slice(-2)+" "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2)+":"+("0"+d.getSeconds()).slice(-2)
-        $("code[name='robotmsg']").append(d + ' >> ' + data.Message + "<br>").trigger("change");
+        $("code[name='robotmsg']").append(d + arrow + data.Message + "<br>").trigger("change");
     },
 
     // motion ( move, pick, place )
@@ -108,9 +112,11 @@ window.RobotView = window.BaseView.extend({
 // Button click events
     goBtnClick: function () {
         var command = $('#cmd').val();
-        // if (command === "") {
-        //     alert("Please in put a command.");
-        // } else {
+        if (command === "") {
+            command = "\n"
+        } 
+        // else {
+            this.callBack({Message:command})
             // Build up JSON
             var json = this.encodeJSON("SCHD", "COMMAND", null, "GO", command, null);
             // AJAX POST
@@ -230,24 +236,26 @@ window.RobotView = window.BaseView.extend({
     robotCmdBtnClick: function (e) {
         var robotCmd = ""
         var tmp_cmd = $(e.currentTarget).attr("name")
-        switch ($(e.currentTarget).attr("name")) {
+        var value = $(e.currentTarget).val()
+        switch (tmp_cmd) {
             case "rc1":
-                robotCmd = "RESET"
+                robotCmd = value
                 break;
             case "rc2":
-                robotCmd = tmp_cmd
+                robotCmd = value
                 break;
             case "rc3":
-                robotCmd = tmp_cmd
+                robotCmd = value
                 break;
             case "rc4":
-                robotCmd = tmp_cmd
+                robotCmd = value
                 break;
             case "rc5":
-                robotCmd = tmp_cmd
+                robotCmd = value
                 break;
         }
         var msg = "robot cmd " + robotCmd
+        this.callBack({Message:robotCmd})   // Robot cmd msg
         // Build up JSON
         var json = this.encodeJSON("SCHD", "COMMAND", "ROBOT", robotCmd, null, msg);
         //AJAX POST
@@ -265,12 +273,5 @@ window.RobotView = window.BaseView.extend({
         if(e.which === 13) {
             this.goBtnClick();
         }
-    },
-
-    now: function(data) {
-        // show message in Message section, and trigger "change" event
-        var d = new Date()
-        d = d.getFullYear()+"/"+("0"+(d.getMonth()+1)).slice(-2)+"/"+("0"+d.getDate()).slice(-2)+" "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2)+":"+("0"+d.getSeconds()).slice(-2)
-        $("code[name='robotmsg']").append(d + ' >> ' + data.Message + "<br>").trigger("change");
     }
 });

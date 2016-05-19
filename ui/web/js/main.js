@@ -135,6 +135,7 @@ window.Router = Backbone.Router.extend({
             this.configView = new ConfigView(this.moderator);
             this.configView.render();
         } else {
+            this.configView.activate();
             this.configView.delegateEvents(); // delegate events when the view is recycled
         }
         $('#content').html(this.configView.el);
@@ -225,7 +226,7 @@ window.Router = Backbone.Router.extend({
             this.recipeView = new RecipeView(this.moderator);
             this.recipeView.render();
         } else {
-            // this.recipeView.activate();
+            this.recipeView.activate();
             this.recipeView.delegateEvents(); // delegate events when the view is recycled
         }
         $('#content').html(this.recipeView.el);
