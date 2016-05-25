@@ -85,8 +85,8 @@ window.ConfigView = window.BaseView.extend({
                 secsCmd = tmp_cmd
                 break;
         }
-        var msg = "SECS/GEM cmd " + secsCmd
-        this.callBack({Message:secsCmd})
+        var msg = "SECS/GEM : " + secsCmd
+        this.callBack({Message:msg})
         // Build up JSON
         var json = this.encodeJSON("SCHD", "COMMAND", "SECS/GEM", secsCmd, null, msg);
         //AJAX POST

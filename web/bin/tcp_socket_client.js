@@ -55,7 +55,6 @@ client.on('data', function (data) {
 	// push and pop
 	// testdata.push(JSON.stringify(JSON.parse(data)))
 	// if (testdata.length !== 0) {
-
 	// }
 
 	// server log
