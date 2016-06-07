@@ -1,0 +1,589 @@
+
+2016/05/20 15:50:51 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"reset","Param":null,"Message":"robot cmd reset"}
+2016/05/20 15:50:51 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"reset","Param":null,"Message":"robot cmd reset"}
+2016/05/20 15:50:52 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/20 15:51:49 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"GRIP","Param":null,"Message":null}
+2016/05/20 15:51:49 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"GRIP","Param":null,"Message":null}
+2016/05/20 15:51:50 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/20 15:51:58 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"reset","Param":null,"Message":"robot cmd reset"}
+2016/05/20 15:51:58 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"reset","Param":null,"Message":"robot cmd reset"}
+2016/05/20 15:51:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/20 15:52:05 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"rc5","Param":null,"Message":"robot cmd rc5"}
+2016/05/20 15:52:05 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"rc5","Param":null,"Message":"robot cmd rc5"}
+2016/05/20 15:52:06 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/20 16:06:48 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"PICK","Param":null,"Message":null}
+2016/05/20 16:06:48 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"PICK","Param":null,"Message":null}
+2016/05/20 16:06:49 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/20 17:17:58 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"Input4","Cmd":"MOVE","Param":{"station":"Input4","pose":"perch","highlow":"high","index":"idx1"},"Message":"Command move"}
+2016/05/20 17:17:58 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"Input4","Cmd":"MOVE","Param":{"station":"Input4","pose":"perch","highlow":"high","index":"idx1"},"Message":"Command move"}
+2016/05/20 17:17:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/20 17:31:15 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"CONNECT","Param":null,"Message":"SECS/GEM cmd CONNECT"}
+2016/05/20 17:31:15 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"CONNECT","Param":null,"Message":"SECS/GEM cmd CONNECT"}
+2016/05/20 17:31:16 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/20 17:31:19 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"CONNECT","Param":null,"Message":"SECS/GEM cmd CONNECT"}
+2016/05/20 17:31:19 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"CONNECT","Param":null,"Message":"SECS/GEM cmd CONNECT"}
+2016/05/20 17:31:20 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/20 17:31:21 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"DISCONNECT","Param":null,"Message":"SECS/GEM cmd DISCONNECT"}
+2016/05/20 17:31:21 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"DISCONNECT","Param":null,"Message":"SECS/GEM cmd DISCONNECT"}
+2016/05/20 17:31:22 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/20 17:31:25 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"sc3","Param":null,"Message":"SECS/GEM cmd sc3"}
+2016/05/20 17:31:25 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"sc3","Param":null,"Message":"SECS/GEM cmd sc3"}
+2016/05/20 17:31:26 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/20 17:32:40 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"CONNECT","Param":null,"Message":"SECS/GEM : CONNECT"}
+2016/05/20 17:32:40 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"CONNECT","Param":null,"Message":"SECS/GEM : CONNECT"}
+2016/05/20 17:32:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/20 17:36:53 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"sc3","Param":null,"Message":"SECS/GEM : sc3"}
+2016/05/20 17:36:53 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"sc3","Param":null,"Message":"SECS/GEM : sc3"}
+2016/05/20 17:36:55 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/20 17:36:56 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"sc4","Param":null,"Message":"SECS/GEM : sc4"}
+2016/05/20 17:36:56 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"sc4","Param":null,"Message":"SECS/GEM : sc4"}
+2016/05/20 17:36:57 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/20 17:36:58 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"sc5","Param":null,"Message":"SECS/GEM : sc5"}
+2016/05/20 17:36:58 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"sc5","Param":null,"Message":"SECS/GEM : sc5"}
+2016/05/20 17:36:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/20 17:37:02 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"CONNECT","Param":null,"Message":"SECS/GEM : CONNECT"}
+2016/05/20 17:37:02 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"CONNECT","Param":null,"Message":"SECS/GEM : CONNECT"}
+2016/05/20 17:37:03 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/24 16:05:39 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LOADRECIPE","Param":"","Message":null}
+2016/05/24 16:05:39 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LOADRECIPE","Param":"","Message":null}
+2016/05/24 16:05:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/24 16:05:56 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LOADRECIPE","Param":"Recipe 4","Message":null}
+2016/05/24 16:05:56 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LOADRECIPE","Param":"Recipe 4","Message":null}
+2016/05/24 16:05:57 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/24 16:13:00 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"reset","Param":null,"Message":"robot cmd reset"}
+2016/05/24 16:13:00 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"reset","Param":null,"Message":"robot cmd reset"}
+2016/05/24 16:13:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/24 16:13:48 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"GRIP","Param":null,"Message":null}
+2016/05/24 16:13:48 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"GRIP","Param":null,"Message":null}
+2016/05/24 16:13:49 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/26 15:18:24 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/26 15:18:24 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/26 15:18:26 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/26 15:25:47 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/26 15:25:47 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/26 15:25:48 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/26 23:10:59 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/26 23:11:00 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/26 23:11:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 10:53:26 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 10:54:08 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 10:54:08 >> Socket disconnected.
+2016/05/27 10:54:32 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 10:54:32 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 10:54:32 >> Socket disconnected.
+2016/05/27 10:54:32 >> Socket disconnected.
+2016/05/27 10:54:34 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 10:54:34 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 10:54:34 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 10:54:34 >> Socket disconnected.
+2016/05/27 10:54:34 >> Socket disconnected.
+2016/05/27 10:54:34 >> Socket disconnected.
+2016/05/27 13:42:07 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:42:07 >> Socket disconnected.
+2016/05/27 13:43:44 >> WebSocket disconnected.
+2016/05/27 13:43:51 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:43:51 >> Socket disconnected.
+2016/05/27 13:43:55 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:43:55 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:43:55 >> Socket disconnected.
+2016/05/27 13:43:55 >> Socket disconnected.
+2016/05/27 13:44:50 >> WebSocket disconnected.
+2016/05/27 13:44:50 >> WebSocket disconnected.
+2016/05/27 13:47:09 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:47:09 >> Socket disconnected.
+2016/05/27 13:47:09 >> WebSocket disconnected.
+2016/05/27 13:47:48 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:47:48 >> Socket disconnected.
+2016/05/27 13:47:48 >> WebSocket disconnected.
+2016/05/27 13:51:13 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:51:13 >> Socket disconnected.
+2016/05/27 13:51:13 >> WebSocket disconnected.
+2016/05/27 13:51:31 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:51:31 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:51:31 >> Socket disconnected.
+2016/05/27 13:51:31 >> Socket disconnected.
+2016/05/27 13:51:31 >> WebSocket disconnected.
+2016/05/27 13:51:37 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:51:37 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:51:37 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:51:37 >> Socket disconnected.
+2016/05/27 13:51:37 >> Socket disconnected.
+2016/05/27 13:51:37 >> Socket disconnected.
+2016/05/27 13:51:37 >> WebSocket disconnected.
+2016/05/27 13:53:09 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:53:09 >> Socket disconnected.
+2016/05/27 13:53:09 >> WebSocket disconnected.
+2016/05/27 13:54:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:54:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:54:45 >> Socket disconnected.
+2016/05/27 13:54:45 >> Socket disconnected.
+2016/05/27 13:54:45 >> WebSocket disconnected.
+2016/05/27 13:55:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:55:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:55:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:55:01 >> Socket disconnected.
+2016/05/27 13:55:01 >> Socket disconnected.
+2016/05/27 13:55:01 >> Socket disconnected.
+2016/05/27 13:55:01 >> WebSocket disconnected.
+2016/05/27 13:57:17 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 13:57:17 >> Socket disconnected.
+2016/05/27 13:57:17 >> WebSocket disconnected.
+2016/05/27 14:01:19 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:01:19 >> Socket disconnected.
+2016/05/27 14:01:19 >> WebSocket disconnected.
+2016/05/27 14:02:29 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:02:29 >> Socket disconnected.
+2016/05/27 14:02:29 >> WebSocket disconnected.
+2016/05/27 14:02:42 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:02:42 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:02:42 >> Socket disconnected.
+2016/05/27 14:02:42 >> Socket disconnected.
+2016/05/27 14:02:42 >> WebSocket disconnected.
+2016/05/27 14:03:05 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:03:05 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:03:05 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:03:05 >> Socket disconnected.
+2016/05/27 14:03:05 >> Socket disconnected.
+2016/05/27 14:03:05 >> Socket disconnected.
+2016/05/27 14:03:05 >> WebSocket disconnected.
+2016/05/27 14:03:12 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:03:12 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:03:13 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:03:13 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:03:13 >> Socket disconnected.
+2016/05/27 14:03:13 >> Socket disconnected.
+2016/05/27 14:03:13 >> Socket disconnected.
+2016/05/27 14:03:13 >> Socket disconnected.
+2016/05/27 14:03:13 >> WebSocket disconnected.
+2016/05/27 14:31:20 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:31:20 >> Socket disconnected.
+2016/05/27 14:31:20 >> WebSocket disconnected.
+2016/05/27 14:35:44 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:35:44 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:35:44 >> Socket disconnected.
+2016/05/27 14:35:45 >> Socket disconnected.
+2016/05/27 14:35:45 >> WebSocket disconnected.
+2016/05/27 14:38:46 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:38:46 >> Socket disconnected.
+2016/05/27 14:38:46 >> WebSocket disconnected.
+2016/05/27 14:39:13 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:39:13 >> Socket disconnected.
+2016/05/27 14:39:13 >> WebSocket disconnected.
+2016/05/27 14:39:18 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:39:18 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:39:18 >> Socket disconnected.
+2016/05/27 14:39:18 >> Socket disconnected.
+2016/05/27 14:39:18 >> WebSocket disconnected.
+2016/05/27 14:40:00 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:40:00 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:40:00 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:40:00 >> Socket disconnected.
+2016/05/27 14:40:00 >> Socket disconnected.
+2016/05/27 14:40:00 >> Socket disconnected.
+2016/05/27 14:40:00 >> WebSocket disconnected.
+2016/05/27 14:40:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:40:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:40:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:40:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:40:04 >> Socket disconnected.
+2016/05/27 14:40:04 >> Socket disconnected.
+2016/05/27 14:40:04 >> Socket disconnected.
+2016/05/27 14:40:04 >> Socket disconnected.
+2016/05/27 14:40:04 >> WebSocket disconnected.
+2016/05/27 14:43:20 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:43:20 >> Socket disconnected.
+2016/05/27 14:43:20 >> WebSocket disconnected.
+2016/05/27 14:44:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:44:43 >> Socket disconnected.
+2016/05/27 14:44:43 >> WebSocket disconnected.
+2016/05/27 14:46:03 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:46:04 >> Socket disconnected.
+2016/05/27 14:46:04 >> WebSocket disconnected.
+2016/05/27 14:47:19 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:47:19 >> Socket disconnected.
+2016/05/27 14:47:19 >> WebSocket disconnected.
+2016/05/27 14:47:55 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:47:55 >> Socket disconnected.
+2016/05/27 14:47:55 >> WebSocket disconnected.
+2016/05/27 14:48:48 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:48:48 >> Socket disconnected.
+2016/05/27 14:48:48 >> WebSocket disconnected.
+2016/05/27 14:51:05 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:51:05 >> Socket disconnected.
+2016/05/27 14:51:05 >> WebSocket disconnected.
+2016/05/27 14:52:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:04 >> Socket disconnected.
+2016/05/27 14:52:04 >> WebSocket disconnected.
+2016/05/27 14:52:25 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:25 >> Socket disconnected.
+2016/05/27 14:52:25 >> WebSocket disconnected.
+2016/05/27 14:52:32 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:32 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:32 >> Socket disconnected.
+2016/05/27 14:52:32 >> Socket disconnected.
+2016/05/27 14:52:32 >> WebSocket disconnected.
+2016/05/27 14:52:36 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:36 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:36 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:36 >> Socket disconnected.
+2016/05/27 14:52:36 >> Socket disconnected.
+2016/05/27 14:52:36 >> Socket disconnected.
+2016/05/27 14:52:36 >> WebSocket disconnected.
+2016/05/27 14:52:38 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:38 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:38 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:38 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:38 >> Socket disconnected.
+2016/05/27 14:52:38 >> Socket disconnected.
+2016/05/27 14:52:38 >> Socket disconnected.
+2016/05/27 14:52:38 >> Socket disconnected.
+2016/05/27 14:52:38 >> WebSocket disconnected.
+2016/05/27 14:52:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:40 >> Socket disconnected.
+2016/05/27 14:52:40 >> Socket disconnected.
+2016/05/27 14:52:40 >> Socket disconnected.
+2016/05/27 14:52:40 >> Socket disconnected.
+2016/05/27 14:52:40 >> Socket disconnected.
+2016/05/27 14:52:40 >> WebSocket disconnected.
+2016/05/27 14:52:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:52:41 >> Socket disconnected.
+2016/05/27 14:52:42 >> Socket disconnected.
+2016/05/27 14:52:42 >> Socket disconnected.
+2016/05/27 14:52:42 >> Socket disconnected.
+2016/05/27 14:52:42 >> Socket disconnected.
+2016/05/27 14:52:42 >> Socket disconnected.
+2016/05/27 14:52:42 >> WebSocket disconnected.
+2016/05/27 14:53:12 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 14:53:12 >> Socket disconnected.
+2016/05/27 14:53:12 >> WebSocket disconnected.
+2016/05/27 15:04:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:04:43 >> Socket disconnected.
+2016/05/27 15:04:43 >> WebSocket disconnected.
+2016/05/27 15:04:54 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:04:54 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:04:54 >> Socket disconnected.
+2016/05/27 15:04:54 >> Socket disconnected.
+2016/05/27 15:04:54 >> WebSocket disconnected.
+2016/05/27 15:05:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:05:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:05:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:05:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:05:04 >> Socket disconnected.
+2016/05/27 15:05:04 >> Socket disconnected.
+2016/05/27 15:05:04 >> Socket disconnected.
+2016/05/27 15:05:04 >> Socket disconnected.
+2016/05/27 15:05:04 >> WebSocket disconnected.
+2016/05/27 15:05:04 >> WebSocket disconnected.
+2016/05/27 15:06:16 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:06:16 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:06:16 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:06:16 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:06:16 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:06:16 >> Socket disconnected.
+2016/05/27 15:06:16 >> Socket disconnected.
+2016/05/27 15:06:16 >> Socket disconnected.
+2016/05/27 15:06:16 >> Socket disconnected.
+2016/05/27 15:06:16 >> Socket disconnected.
+2016/05/27 15:06:16 >> WebSocket disconnected.
+2016/05/27 15:06:52 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:06:52 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:06:52 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:06:52 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:06:52 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:06:52 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:06:52 >> Socket disconnected.
+2016/05/27 15:06:52 >> Socket disconnected.
+2016/05/27 15:06:52 >> Socket disconnected.
+2016/05/27 15:06:52 >> Socket disconnected.
+2016/05/27 15:06:52 >> Socket disconnected.
+2016/05/27 15:06:52 >> Socket disconnected.
+2016/05/27 15:06:52 >> WebSocket disconnected.
+2016/05/27 15:07:26 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:07:26 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:07:26 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:07:26 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:07:26 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:07:26 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:07:27 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:07:27 >> Socket disconnected.
+2016/05/27 15:07:27 >> Socket disconnected.
+2016/05/27 15:07:27 >> Socket disconnected.
+2016/05/27 15:07:27 >> Socket disconnected.
+2016/05/27 15:07:27 >> Socket disconnected.
+2016/05/27 15:07:27 >> Socket disconnected.
+2016/05/27 15:07:27 >> Socket disconnected.
+2016/05/27 15:07:27 >> WebSocket disconnected.
+2016/05/27 15:08:17 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:17 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:17 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:17 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:17 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:17 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:17 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:17 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:17 >> Socket disconnected.
+2016/05/27 15:08:17 >> Socket disconnected.
+2016/05/27 15:08:17 >> Socket disconnected.
+2016/05/27 15:08:17 >> Socket disconnected.
+2016/05/27 15:08:17 >> Socket disconnected.
+2016/05/27 15:08:17 >> Socket disconnected.
+2016/05/27 15:08:17 >> Socket disconnected.
+2016/05/27 15:08:17 >> Socket disconnected.
+2016/05/27 15:08:17 >> WebSocket disconnected.
+2016/05/27 15:08:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:08:40 >> Socket disconnected.
+2016/05/27 15:08:40 >> Socket disconnected.
+2016/05/27 15:08:40 >> Socket disconnected.
+2016/05/27 15:08:40 >> Socket disconnected.
+2016/05/27 15:08:40 >> Socket disconnected.
+2016/05/27 15:08:40 >> Socket disconnected.
+2016/05/27 15:08:40 >> Socket disconnected.
+2016/05/27 15:08:40 >> Socket disconnected.
+2016/05/27 15:08:40 >> Socket disconnected.
+2016/05/27 15:08:40 >> WebSocket disconnected.
+2016/05/27 15:09:38 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:09:38 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:09:38 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:09:38 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:09:38 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:09:38 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:09:38 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:09:38 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:09:38 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:09:38 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:09:38 >> Socket disconnected.
+2016/05/27 15:09:38 >> Socket disconnected.
+2016/05/27 15:09:38 >> Socket disconnected.
+2016/05/27 15:09:38 >> Socket disconnected.
+2016/05/27 15:09:38 >> Socket disconnected.
+2016/05/27 15:09:38 >> Socket disconnected.
+2016/05/27 15:09:38 >> Socket disconnected.
+2016/05/27 15:09:38 >> Socket disconnected.
+2016/05/27 15:09:38 >> Socket disconnected.
+2016/05/27 15:09:38 >> Socket disconnected.
+2016/05/27 15:09:38 >> WebSocket disconnected.
+2016/05/27 15:13:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:13:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:13:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:13:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:13:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:13:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:13:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:13:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:13:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:13:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:13:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:13:01 >> Socket disconnected.
+2016/05/27 15:13:01 >> Socket disconnected.
+2016/05/27 15:13:01 >> Socket disconnected.
+2016/05/27 15:13:01 >> Socket disconnected.
+2016/05/27 15:13:01 >> Socket disconnected.
+2016/05/27 15:13:01 >> Socket disconnected.
+2016/05/27 15:13:01 >> Socket disconnected.
+2016/05/27 15:13:01 >> Socket disconnected.
+2016/05/27 15:13:01 >> Socket disconnected.
+2016/05/27 15:13:01 >> Socket disconnected.
+2016/05/27 15:13:01 >> Socket disconnected.
+2016/05/27 15:13:01 >> WebSocket disconnected.
+2016/05/27 15:15:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:15:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:15:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:15:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:15:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:15:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:15:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:15:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:15:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:15:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:15:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:15:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:15:47 >> Socket disconnected.
+2016/05/27 15:15:47 >> Socket disconnected.
+2016/05/27 15:15:47 >> Socket disconnected.
+2016/05/27 15:15:47 >> Socket disconnected.
+2016/05/27 15:15:47 >> Socket disconnected.
+2016/05/27 15:15:47 >> Socket disconnected.
+2016/05/27 15:15:47 >> Socket disconnected.
+2016/05/27 15:15:47 >> Socket disconnected.
+2016/05/27 15:15:47 >> Socket disconnected.
+2016/05/27 15:15:47 >> Socket disconnected.
+2016/05/27 15:15:47 >> Socket disconnected.
+2016/05/27 15:15:47 >> Socket disconnected.
+2016/05/27 15:15:47 >> WebSocket disconnected.
+2016/05/27 15:16:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:16:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:16:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:16:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:16:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:16:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:16:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:16:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:16:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:16:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:16:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:16:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:16:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:16:59 >> Socket disconnected.
+2016/05/27 15:16:59 >> Socket disconnected.
+2016/05/27 15:16:59 >> Socket disconnected.
+2016/05/27 15:16:59 >> Socket disconnected.
+2016/05/27 15:16:59 >> Socket disconnected.
+2016/05/27 15:17:00 >> Socket disconnected.
+2016/05/27 15:17:00 >> Socket disconnected.
+2016/05/27 15:17:00 >> Socket disconnected.
+2016/05/27 15:17:00 >> Socket disconnected.
+2016/05/27 15:17:00 >> Socket disconnected.
+2016/05/27 15:17:00 >> Socket disconnected.
+2016/05/27 15:17:00 >> Socket disconnected.
+2016/05/27 15:17:00 >> Socket disconnected.
+2016/05/27 15:17:00 >> WebSocket disconnected.
+2016/05/27 15:17:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:17:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:17:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:17:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:17:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:17:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:17:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:17:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:17:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:17:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:17:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:17:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:17:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:17:04 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:17:04 >> Socket disconnected.
+2016/05/27 15:17:04 >> Socket disconnected.
+2016/05/27 15:17:04 >> Socket disconnected.
+2016/05/27 15:17:04 >> Socket disconnected.
+2016/05/27 15:17:04 >> Socket disconnected.
+2016/05/27 15:17:04 >> Socket disconnected.
+2016/05/27 15:17:05 >> Socket disconnected.
+2016/05/27 15:17:05 >> Socket disconnected.
+2016/05/27 15:17:05 >> Socket disconnected.
+2016/05/27 15:17:05 >> Socket disconnected.
+2016/05/27 15:17:05 >> Socket disconnected.
+2016/05/27 15:17:05 >> Socket disconnected.
+2016/05/27 15:17:05 >> Socket disconnected.
+2016/05/27 15:17:05 >> Socket disconnected.
+2016/05/27 15:17:05 >> WebSocket disconnected.
+2016/05/27 15:18:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:18:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:18:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:18:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:18:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:18:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:18:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:18:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:18:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:18:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:18:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:18:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:18:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:18:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:18:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:18:43 >> Socket disconnected.
+2016/05/27 15:18:43 >> Socket disconnected.
+2016/05/27 15:18:43 >> Socket disconnected.
+2016/05/27 15:18:43 >> Socket disconnected.
+2016/05/27 15:18:43 >> Socket disconnected.
+2016/05/27 15:18:43 >> Socket disconnected.
+2016/05/27 15:18:43 >> Socket disconnected.
+2016/05/27 15:18:43 >> Socket disconnected.
+2016/05/27 15:18:43 >> Socket disconnected.
+2016/05/27 15:18:43 >> Socket disconnected.
+2016/05/27 15:18:43 >> Socket disconnected.
+2016/05/27 15:18:44 >> Socket disconnected.
+2016/05/27 15:18:44 >> Socket disconnected.
+2016/05/27 15:18:44 >> Socket disconnected.
+2016/05/27 15:18:44 >> Socket disconnected.
+2016/05/27 15:18:44 >> WebSocket disconnected.
+2016/05/27 15:19:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:19:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:19:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:19:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:19:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:19:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:19:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:19:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:19:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:19:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:19:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:19:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:19:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:19:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:19:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:19:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:19:45 >> Socket disconnected.
+2016/05/27 15:19:45 >> Socket disconnected.
+2016/05/27 15:19:45 >> Socket disconnected.
+2016/05/27 15:19:46 >> Socket disconnected.
+2016/05/27 15:19:46 >> Socket disconnected.
+2016/05/27 15:19:46 >> Socket disconnected.
+2016/05/27 15:19:46 >> Socket disconnected.
+2016/05/27 15:19:46 >> Socket disconnected.
+2016/05/27 15:19:46 >> Socket disconnected.
+2016/05/27 15:19:46 >> Socket disconnected.
+2016/05/27 15:19:46 >> Socket disconnected.
+2016/05/27 15:19:46 >> Socket disconnected.
+2016/05/27 15:19:46 >> Socket disconnected.
+2016/05/27 15:19:46 >> Socket disconnected.
+2016/05/27 15:19:46 >> Socket disconnected.
+2016/05/27 15:19:46 >> Socket disconnected.
+2016/05/27 15:19:46 >> WebSocket disconnected.
+2016/05/27 15:25:55 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:25:55 >> Socket disconnected.
+2016/05/27 15:25:55 >> WebSocket disconnected.
+2016/05/27 15:50:27 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:50:27 >> Socket disconnected.
+2016/05/27 15:50:27 >> WebSocket disconnected.
+2016/05/27 15:50:37 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:50:37 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:50:37 >> Socket disconnected.
+2016/05/27 15:50:37 >> Socket disconnected.
+2016/05/27 15:50:37 >> WebSocket disconnected.
+2016/05/27 15:50:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:50:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:50:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:50:40 >> Socket disconnected.
+2016/05/27 15:50:40 >> Socket disconnected.
+2016/05/27 15:50:40 >> Socket disconnected.
+2016/05/27 15:50:40 >> WebSocket disconnected.
+2016/05/27 15:50:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:50:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:50:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:50:43 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:50:43 >> Socket disconnected.
+2016/05/27 15:50:43 >> Socket disconnected.
+2016/05/27 15:50:43 >> Socket disconnected.
+2016/05/27 15:50:43 >> Socket disconnected.
+2016/05/27 15:50:43 >> WebSocket disconnected.
+2016/05/27 15:50:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:50:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:50:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:50:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:50:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:50:47 >> Socket disconnected.
+2016/05/27 15:50:47 >> Socket disconnected.
+2016/05/27 15:50:47 >> Socket disconnected.
+2016/05/27 15:50:47 >> Socket disconnected.
+2016/05/27 15:50:47 >> Socket disconnected.
+2016/05/27 15:50:47 >> WebSocket disconnected.
+2016/05/27 15:54:06 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:54:06 >> Socket disconnected.

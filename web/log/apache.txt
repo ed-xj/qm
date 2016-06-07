@@ -1,170 +1,942 @@
 
-2016/05/11 15:13:17 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"reset","Param":null,"Message":"robot cmd reset"}This file was created at 2016/05/11 15:13:17 >> 
-
-2016/05/11 15:13:17 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"reset","Param":null,"Message":"robot cmd reset"}
-2016/05/11 15:13:18 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/11 15:15:29 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"GO","Param":"reset","Message":null}
-2016/05/11 15:15:29 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"GO","Param":"reset","Message":null}
-2016/05/11 15:15:30 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/11 15:39:51 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"sc5","Param":null,"Message":"SECS/GEM cmd sc5"}
-2016/05/11 15:39:51 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"SECS/GEM","Cmd":"sc5","Param":null,"Message":"SECS/GEM cmd sc5"}
-2016/05/11 15:39:52 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/11 15:40:59 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"rcp","Param":null,"Message":"robot cmd rcp"}
-2016/05/11 15:40:59 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"rcp","Param":null,"Message":"robot cmd rcp"}
-2016/05/11 15:41:00 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/11 15:41:01 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"reset","Param":null,"Message":"robot cmd reset"}
-2016/05/11 15:41:01 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"ROBOT","Cmd":"reset","Param":null,"Message":"robot cmd reset"}
-2016/05/11 15:41:02 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/11 15:41:49 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LEARN_NEW","Param":null,"Message":null}
-2016/05/11 15:41:49 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LEARN_NEW","Param":null,"Message":null}
-2016/05/11 15:41:50 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/11 15:42:39 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LEARN","Param":null,"Message":null}
-2016/05/11 15:42:39 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LEARN","Param":null,"Message":null}
-2016/05/11 15:42:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 14:32:46 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 14:32:46 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 14:32:47 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 14:32:59 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 14:32:59 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 14:32:59 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 14:33:03 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDMEDIUM","Param":null,"Message":null}
-2016/05/12 14:33:03 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDMEDIUM","Param":null,"Message":null}
-2016/05/12 14:33:59 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 14:39:53 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
-2016/05/12 14:39:53 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
-2016/05/12 14:39:55 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 17:15:39 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 17:15:39 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 17:15:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 17:16:24 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 17:16:24 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 17:16:24 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 17:16:33 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 17:16:33 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 17:17:24 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 17:33:49 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 17:33:49 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 17:33:49 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 17:33:57 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDHIGH","Param":null,"Message":null}
-2016/05/12 17:33:57 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDHIGH","Param":null,"Message":null}
-2016/05/12 17:33:57 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 17:34:00 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDHIGH","Param":null,"Message":null}
-2016/05/12 17:34:00 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDHIGH","Param":null,"Message":null}
-2016/05/12 17:34:00 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 17:34:01 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDHIGH","Param":null,"Message":null}
-2016/05/12 17:34:01 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDHIGH","Param":null,"Message":null}
-2016/05/12 17:34:01 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 17:34:40 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 17:34:40 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 17:34:41 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 17:34:48 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 17:34:48 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 17:35:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 17:35:52 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 17:35:52 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 17:35:52 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 17:36:39 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 18:41:57 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 18:41:57 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 18:41:58 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 18:42:34 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 18:42:34 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 18:42:34 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:42:48 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 18:42:48 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 18:42:48 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:43:15 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 18:44:33 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 18:44:33 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
-2016/05/12 18:44:33 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:46:10 >> AJAX event receive from UI. {"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:46:37 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:46:37 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:46:37 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:46:45 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:46:45 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:46:45 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 18:46:50 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:46:50 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:46:50 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:46:50 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:46:55 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:46:55 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:46:55 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 18:47:16 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"Hello","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:47:16 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"Hello","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:47:17 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:47:17 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:47:35 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"Hello","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:47:35 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"Hello","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:47:35 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:47:49 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:47:49 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:47:49 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:47:52 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:47:52 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:47:52 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 18:47:58 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:47:58 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:47:59 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:47:59 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:00 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:00 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:00 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 18:48:02 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:02 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:02 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:02 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:12 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:12 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:14 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 18:48:24 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:24 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:25 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:25 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:28 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:28 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:28 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 18:48:35 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:35 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:35 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:35 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:36 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:36 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:36 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 18:48:37 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:37 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:37 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:37 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:37 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:37 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 18:48:38 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:38 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:38 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:38 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:39 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:39 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:39 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 18:48:39 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:39 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:39 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:39 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:40 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:40 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:40 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 18:48:40 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:40 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:40 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:41 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:41 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/12 18:48:41 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:41 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:41 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/12 18:48:42 >> Receive data from Socket(scheduler). Close Socket.{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
-2016/05/16 16:04:22 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LOADRECIPE","Param":"","Message":null}
-2016/05/16 16:04:22 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LOADRECIPE","Param":"","Message":null}
-2016/05/16 16:04:23 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
-2016/05/16 16:40:25 >> Connect Socket. Send data through Socket to scheduler. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LOADRECIPE","Param":"","Message":null}
-2016/05/16 16:40:25 >> AJAX event receive from UI. {"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"LOADRECIPE","Param":"","Message":null}
-2016/05/16 16:40:26 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:22 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:22 >> Socket disconnected.
+2016/05/27 15:55:22 >> WebSocket disconnected.
+2016/05/27 15:55:26 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:26 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:26 >> Socket disconnected.
+2016/05/27 15:55:26 >> Socket disconnected.
+2016/05/27 15:55:26 >> WebSocket disconnected.
+2016/05/27 15:55:35 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:35 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:35 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:35 >> Socket disconnected.
+2016/05/27 15:55:35 >> Socket disconnected.
+2016/05/27 15:55:35 >> Socket disconnected.
+2016/05/27 15:55:35 >> WebSocket disconnected.
+2016/05/27 15:55:37 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:37 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:37 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:37 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:37 >> Socket disconnected.
+2016/05/27 15:55:37 >> Socket disconnected.
+2016/05/27 15:55:37 >> Socket disconnected.
+2016/05/27 15:55:38 >> Socket disconnected.
+2016/05/27 15:55:38 >> WebSocket disconnected.
+2016/05/27 15:55:39 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:39 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:39 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:39 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:39 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:39 >> Socket disconnected.
+2016/05/27 15:55:39 >> Socket disconnected.
+2016/05/27 15:55:39 >> Socket disconnected.
+2016/05/27 15:55:39 >> Socket disconnected.
+2016/05/27 15:55:39 >> Socket disconnected.
+2016/05/27 15:55:39 >> WebSocket disconnected.
+2016/05/27 15:55:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:41 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 15:55:41 >> Socket disconnected.
+2016/05/27 15:55:41 >> Socket disconnected.
+2016/05/27 15:55:41 >> Socket disconnected.
+2016/05/27 15:55:41 >> Socket disconnected.
+2016/05/27 15:55:41 >> Socket disconnected.
+2016/05/27 15:55:41 >> Socket disconnected.
+2016/05/27 15:55:41 >> WebSocket disconnected.
+2016/05/27 16:02:25 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:02:25 >> Socket disconnected.
+2016/05/27 16:02:25 >> WebSocket disconnected.
+2016/05/27 16:02:29 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:02:29 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:02:29 >> Socket disconnected.
+2016/05/27 16:02:29 >> Socket disconnected.
+2016/05/27 16:02:29 >> WebSocket disconnected.
+2016/05/27 16:03:18 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:03:18 >> Socket disconnected.
+2016/05/27 16:03:19 >> WebSocket disconnected.
+2016/05/27 16:03:42 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:04:55 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:04:55 >> Socket disconnected.
+2016/05/27 16:04:55 >> WebSocket disconnected.
+2016/05/27 16:10:48 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:10:48 >> Socket closed.
+2016/05/27 16:10:48 >> WebSocket disconnected.
+2016/05/27 16:10:56 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:10:56 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:10:56 >> Socket closed.
+2016/05/27 16:10:56 >> Socket closed.
+2016/05/27 16:10:56 >> WebSocket disconnected.
+2016/05/27 16:18:47 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:18:47 >> Socket closed.
+2016/05/27 16:18:48 >> WebSocket disconnected.
+2016/05/27 16:18:52 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:18:52 >> Socket closed.
+2016/05/27 16:18:52 >> WebSocket disconnected.
+2016/05/27 16:18:55 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:18:55 >> Socket closed.
+2016/05/27 16:18:55 >> WebSocket disconnected.
+2016/05/27 16:18:57 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:18:57 >> Socket closed.
+2016/05/27 16:18:57 >> WebSocket disconnected.
+2016/05/27 16:19:01 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:19:01 >> Socket closed.
+2016/05/27 16:19:01 >> WebSocket disconnected.
+2016/05/27 16:20:20 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:20:20 >> Socket closed.
+2016/05/27 16:20:20 >> WebSocket disconnected.
+2016/05/27 16:20:29 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:20:29 >> Socket closed.
+2016/05/27 16:20:29 >> WebSocket disconnected.
+2016/05/27 16:20:32 >> Socket connection Error. {"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:20:32 >> Socket closed.
+2016/05/27 16:20:32 >> WebSocket disconnected.
+2016/05/27 16:49:42 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 16:49:42 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:49:42 >> [Socket] Socket Closed.
+2016/05/27 16:49:43 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 16:50:31 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 16:50:31 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:50:31 >> [Socket] Socket Closed.
+2016/05/27 16:50:31 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 16:53:00 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 16:53:00 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:53:00 >> [Socket] Socket Closed.
+2016/05/27 16:53:00 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 16:53:03 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 16:53:03 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:53:03 >> [Socket] Socket Closed.
+2016/05/27 16:53:03 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 16:59:04 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 16:59:04 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:59:04 >> [Socket] Socket Closed.
+2016/05/27 16:59:04 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 16:59:14 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 16:59:14 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 16:59:14 >> [Socket] Socket Closed.
+2016/05/27 16:59:14 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:09:16 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:09:16 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:09:16 >> [Socket] Socket Closed.
+2016/05/27 17:09:16 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:09:45 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:09:45 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:09:45 >> [Socket] Socket Closed.
+2016/05/27 17:09:45 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:09:53 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:09:53 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:09:53 >> [Socket] Socket Closed.
+2016/05/27 17:09:54 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:09:55 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:09:55 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:09:55 >> [Socket] Socket Closed.
+2016/05/27 17:09:55 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:09:56 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:09:56 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:09:56 >> [Socket] Socket Closed.
+2016/05/27 17:09:56 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:09:56 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:09:56 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:09:56 >> [Socket] Socket Closed.
+2016/05/27 17:09:56 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:09:56 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:09:56 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:09:56 >> [Socket] Socket Closed.
+2016/05/27 17:09:56 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:09:57 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:09:57 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:09:57 >> [Socket] Socket Closed.
+2016/05/27 17:09:57 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:09:57 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:09:57 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:09:57 >> [Socket] Socket Closed.
+2016/05/27 17:09:57 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:13:56 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:15:22 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:15:27 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:15:27 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:15:27 >> [Socket] Socket Closed.
+2016/05/27 17:15:27 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:17:17 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:17:22 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:17:22 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:17:22 >> [WebSocket] Receive msg from UI. 
+[object Object]
+2016/05/27 17:17:22 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:17:44 >> [WebSocket] Receive msg from UI. 
+[object Object]
+2016/05/27 17:17:45 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:18:55 >> [WebSocket] Receive msg from UI. 
+[object Object]
+2016/05/27 17:18:55 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:21:03 >> [WebSocket] Receive msg from UI. 
+[object Object]
+2016/05/27 17:21:03 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:21:39 >> [WebSocket] Receive msg from UI. 
+[object Object]
+2016/05/27 17:21:40 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:23:59 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:24:04 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:24:04 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:24:04 >> [WebSocket] Receive msg from UI. 
+[object Object]
+2016/05/27 17:24:04 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:24:49 >> [WebSocket] Receive msg from UI. 
+[object Object]
+2016/05/27 17:24:49 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:25:45 >> [WebSocket] Receive msg from UI. 
+[object Object]
+2016/05/27 17:25:45 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:26:19 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:26:19 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:26:19 >> [WebSocket] Receive msg from UI. 
+[object Object]
+2016/05/27 17:26:19 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:26:19 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:26:19 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:26:19 >> [Socket] Socket Closed.
+2016/05/27 17:26:19 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:26:23 >> [WebSocket] Receive msg from UI. 
+[object Object]
+2016/05/27 17:26:23 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:26:30 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:26:30 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:26:30 >> [WebSocket] Receive msg from UI. 
+[object Object]
+2016/05/27 17:26:30 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:26:30 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:26:30 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:26:30 >> [Socket] Socket Closed.
+2016/05/27 17:26:30 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:26:34 >> [WebSocket] Receive msg from UI. 
+[object Object]
+2016/05/27 17:26:34 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:26:35 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:26:35 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:26:35 >> [WebSocket] Receive msg from UI. 
+[object Object]
+2016/05/27 17:26:35 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:26:35 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:26:35 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:26:35 >> [Socket] Socket Closed.
+2016/05/27 17:26:35 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:26:43 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:26:43 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:26:43 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:40:33 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 17:40:33 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:42:32 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 17:42:32 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:42:59 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"RECOVER","Param":null,"Message":null}
+2016/05/27 17:42:59 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:43:00 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:43:00 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:43:00 >> [Socket] Socket Closed.
+2016/05/27 17:43:00 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:43:12 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 17:43:12 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:47:26 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 17:47:26 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:47:26 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:47:26 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:47:26 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:47:26 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:47:32 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:47:32 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:47:32 >> [Socket] Socket Closed.
+2016/05/27 17:47:32 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:47:36 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 17:47:36 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:47:50 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 17:47:50 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:48:04 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 17:48:04 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:48:41 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/27 17:48:41 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:49:29 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/27 17:49:29 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:49:29 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:49:29 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:49:38 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:49:38 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:49:38 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"Input1","Cmd":"MAPSTANDARD","Param":null,"Message":null}
+2016/05/27 17:49:38 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:49:38 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:49:38 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:49:38 >> [Socket] Socket Closed.
+2016/05/27 17:49:38 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:49:48 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"Input1","Cmd":"MAPSTANDARD","Param":null,"Message":null}
+2016/05/27 17:49:48 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:49:49 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"MAPPING","StationID":"stationid","Cmd":"MAPPING","Param":{"index":0,"status":[1,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,1],"waferID":["wafer1","","","","wafer","","","","","","wafer","","","","wafer","","","","","","wafer","","","","wafer25"]},"Message":"Mapping status"}
+2016/05/27 17:49:49 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"MAPPING","StationID":"stationid","Cmd":"MAPPING","Param":{"index":0,"status":[1,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,1],"waferID":["wafer1","","","","wafer","","","","","","wafer","","","","wafer","","","","","","wafer","","","","wafer25"]},"Message":"Mapping status"}
+2016/05/27 17:49:49 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"MAPPING","StationID":"stationid","Cmd":"MAPPING","Param":{"index":0,"status":[1,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,1],"waferID":["wafer1","","","","wafer","","","","","","wafer","","","","wafer","","","","","","wafer","","","","wafer25"]},"Message":"Mapping status"}
+2016/05/27 17:49:49 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"MAPPING","StationID":"stationid","Cmd":"MAPPING","Param":{"index":0,"status":[1,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,1],"waferID":["wafer1","","","","wafer","","","","","","wafer","","","","wafer","","","","","","wafer","","","","wafer25"]},"Message":"Mapping status"}
+2016/05/27 17:49:49 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"MAPPING","StationID":"stationid","Cmd":"MAPPING","Param":{"index":0,"status":[1,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,1],"waferID":["wafer1","","","","wafer","","","","","","wafer","","","","wafer","","","","","","wafer","","","","wafer25"]},"Message":"Mapping status"}
+2016/05/27 17:49:49 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"MAPPING","StationID":"stationid","Cmd":"MAPPING","Param":{"index":0,"status":[1,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,1],"waferID":["wafer1","","","","wafer","","","","","","wafer","","","","wafer","","","","","","wafer","","","","wafer25"]},"Message":"Mapping status"}
+2016/05/27 17:49:57 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:49:57 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:49:57 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"Input1","Cmd":"MAPSTANDARD","Param":null,"Message":null}
+2016/05/27 17:49:57 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:49:57 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:49:57 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:49:57 >> [Socket] Socket Closed.
+2016/05/27 17:49:57 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:50:03 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"Input1","Cmd":"GETSTANDARD","Param":{"index":21,"status":null,"waferID":"wafer"},"Message":null}
+2016/05/27 17:50:03 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:50:03 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"MAPPING","StationID":"stationid","Cmd":"MAPPING","Param":{"index":16,"status":0,"waferID":""},"Message":"Mapping status"}
+2016/05/27 17:50:03 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"MAPPING","StationID":"stationid","Cmd":"MAPPING","Param":{"index":16,"status":0,"waferID":""},"Message":"Mapping status"}
+2016/05/27 17:50:03 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"MAPPING","StationID":"stationid","Cmd":"MAPPING","Param":{"index":16,"status":0,"waferID":""},"Message":"Mapping status"}
+2016/05/27 17:50:03 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"MAPPING","StationID":"stationid","Cmd":"MAPPING","Param":{"index":16,"status":0,"waferID":""},"Message":"Mapping status"}
+2016/05/27 17:50:03 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"MAPPING","StationID":"stationid","Cmd":"MAPPING","Param":{"index":16,"status":0,"waferID":""},"Message":"Mapping status"}
+2016/05/27 17:50:03 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"MAPPING","StationID":"stationid","Cmd":"MAPPING","Param":{"index":16,"status":0,"waferID":""},"Message":"Mapping status"}
+2016/05/27 17:50:03 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"MAPPING","StationID":"stationid","Cmd":"MAPPING","Param":{"index":16,"status":0,"waferID":""},"Message":"Mapping status"}
+2016/05/27 17:50:03 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"MAPPING","StationID":"stationid","Cmd":"MAPPING","Param":{"index":16,"status":0,"waferID":""},"Message":"Mapping status"}
+2016/05/27 17:50:03 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"MAPPING","StationID":"stationid","Cmd":"MAPPING","Param":{"index":16,"status":0,"waferID":""},"Message":"Mapping status"}
+2016/05/27 17:50:03 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"MAPPING","StationID":"stationid","Cmd":"MAPPING","Param":{"index":16,"status":0,"waferID":""},"Message":"Mapping status"}
+2016/05/27 17:50:07 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:50:07 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:50:07 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"Input1","Cmd":"PUTSTANDARD","Param":{"index":16,"status":null,"waferID":""},"Message":null}
+2016/05/27 17:50:07 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:50:07 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:50:07 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:50:07 >> [Socket] Socket Closed.
+2016/05/27 17:50:07 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:58:18 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 17:58:19 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:58:19 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:19 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:19 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:19 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:19 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:19 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:19 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:22 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:58:22 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:58:22 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 17:58:22 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:58:23 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:58:23 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:58:23 >> [Socket] Socket Closed.
+2016/05/27 17:58:23 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:58:26 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 17:58:26 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:58:26 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:26 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:26 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:26 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:26 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:26 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:26 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:26 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:26 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:26 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:26 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:27 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:27 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:27 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:27 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:27 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:27 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:27 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:42 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:58:42 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:58:42 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 17:58:43 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:58:43 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:58:43 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:58:43 >> [Socket] Socket Closed.
+2016/05/27 17:58:43 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:58:44 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 17:58:44 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:58:44 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:44 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:44 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:44 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:44 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:44 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:44 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:44 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:44 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:44 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:45 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:45 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:45 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:45 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:45 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:45 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:45 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:45 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:45 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:45 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:45 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:45 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:47 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:58:47 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:58:47 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"RECOVER","Param":null,"Message":null}
+2016/05/27 17:58:47 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:58:47 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 17:58:47 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 17:58:47 >> [Socket] Socket Closed.
+2016/05/27 17:58:47 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 17:58:51 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"RECOVER","Param":null,"Message":null}
+2016/05/27 17:58:51 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 17:58:51 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:51 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:51 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:51 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:51 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:51 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:51 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:51 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:51 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:51 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:51 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:51 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:51 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:52 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:52 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:52 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:52 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:52 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:52 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:52 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:52 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:52 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:52 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:52 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:52 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 17:58:52 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:08 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:09:08 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:09:08 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 18:09:08 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:09:08 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:09:08 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:09:08 >> [Socket] Socket Closed.
+2016/05/27 18:09:08 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:09:09 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 18:09:09 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:09:09 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:10 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:11 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:11 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:11 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:09:12 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:09:12 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:09:12 >> [Socket] Socket Closed.
+2016/05/27 18:09:12 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:09:15 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"RECOVER","Param":null,"Message":null}
+2016/05/27 18:09:15 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:09:16 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:09:16 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:09:16 >> [Socket] Socket Closed.
+2016/05/27 18:09:16 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:09:17 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"RECOVER","Param":null,"Message":null}
+2016/05/27 18:09:18 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:09:18 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:09:18 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:09:18 >> [Socket] Socket Closed.
+2016/05/27 18:09:18 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:09:20 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"RECOVER","Param":null,"Message":null}
+2016/05/27 18:09:20 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:09:21 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:09:21 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:09:21 >> [Socket] Socket Closed.
+2016/05/27 18:09:21 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:09:23 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"RECOVER","Param":null,"Message":null}
+2016/05/27 18:09:23 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:09:24 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:09:24 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:09:24 >> [Socket] Socket Closed.
+2016/05/27 18:09:24 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:09:24 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"RECOVER","Param":null,"Message":null}
+2016/05/27 18:09:24 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:09:25 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:09:25 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:09:25 >> [Socket] Socket Closed.
+2016/05/27 18:09:25 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:09:29 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:09:29 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:09:29 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:09:29 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:09:29 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:09:29 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:09:30 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:09:34 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"RECOVER","Param":null,"Message":null}
+2016/05/27 18:09:34 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:09:35 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:09:35 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:09:35 >> [Socket] Socket Closed.
+2016/05/27 18:09:35 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:09:42 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 18:09:42 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:09:43 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:09:43 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:09:43 >> [Socket] Socket Closed.
+2016/05/27 18:09:43 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:13:17 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:17 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:17 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:17 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:18 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:19 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:20 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:20 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:20 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:20 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:20 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:20 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:20 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 18:13:20 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:13:35 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:13:35 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:13:35 >> [Socket] Socket Closed.
+2016/05/27 18:13:35 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:13:56 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"SPEEDSLOW","Param":null,"Message":null}
+2016/05/27 18:13:56 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:13:56 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:13:56 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:14:24 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:14:24 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:14:24 >> [Socket] Socket Closed.
+2016/05/27 18:14:24 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:14:29 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 18:14:29 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:14:29 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:14:29 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:14:29 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:14:29 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:14:29 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:14:29 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:14:33 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:14:33 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:14:33 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 18:14:34 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:14:34 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:14:34 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:14:34 >> [Socket] Socket Closed.
+2016/05/27 18:14:34 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:14:37 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 18:14:37 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:14:37 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:14:37 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:14:37 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:14:37 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:14:37 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:14:38 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:14:38 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:14:38 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:14:38 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:14:38 >> [WebSocket] Send msg to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"COMMAND","StationID":"stationid","Cmd":"MOVE","Param":{},"Message":"SCHD to UI"}
+2016/05/27 18:15:02 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:15:02 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:15:02 >> [Socket] Socket Closed.
+2016/05/27 18:15:02 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:15:04 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 18:15:04 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:15:05 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:15:05 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:15:05 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 18:15:05 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:15:05 >> [Socket] Socket Closed.
+2016/05/27 18:15:05 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:15:06 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 18:15:06 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:15:07 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:15:07 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:15:07 >> [Socket] Socket Closed.
+2016/05/27 18:15:07 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:15:07 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 18:15:07 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:15:08 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:15:08 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:15:08 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 18:15:08 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:15:08 >> [Socket] Socket Closed.
+2016/05/27 18:15:08 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:15:09 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 18:15:09 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:15:10 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:15:10 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:15:10 >> [Socket] Socket Closed.
+2016/05/27 18:15:10 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:15:29 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 18:15:29 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:15:29 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/05/27 18:15:30 >> [WebSocket] Error msg send to UI. (UI <-- apache server)
+{"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/05/27 18:15:30 >> [WebSocket] Receive msg from UI. 
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":null,"Cmd":"HOME","Param":null,"Message":null}
+2016/05/27 18:15:30 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/05/27 18:15:30 >> [Socket] Socket Closed.
+2016/05/27 18:15:30 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:16:37 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:16:37 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:16:37 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:16:37 >> [WebSocket] UI disconnected from websocket.
+2016/05/27 18:16:37 >> [WebSocket] UI disconnected from websocket.

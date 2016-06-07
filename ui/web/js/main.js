@@ -57,6 +57,22 @@ window.Router = Backbone.Router.extend({
         //     });
         //     console.log("Bye!")
         // })
+
+        // /////////////////////////////////////////////////////////////////////////////////////
+        // // WebSocket
+        // // if user is running mozilla then use it's built-in WebSocket
+        // window.WebSocket = window.WebSocket || window.MozWebSocket;
+
+        // // if browser doesn't support WebSocket, just show some notification and exit
+        // if (!window.WebSocket) {
+        //     console.log('Sorry, but your browser doesn support WebSockets.')
+        //     return;
+        // }
+
+        // // open connection
+        // var connection = new WebSocket('ws://localhost:5000');
+        // // WebSocket
+        // /////////////////////////////////////////////////////////////////////////////////////
     },
 
     darkPageWrapper: function() {
