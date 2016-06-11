@@ -3,6 +3,7 @@
 var systemInfo = Backbone.Model.extend({ 
 	//set default values of property 
 	defaults: { 
+		websocket:false,		// Websocket
 		sysStatus: null,
 		station: [],
 		recipe: ""
@@ -11,6 +12,10 @@ var systemInfo = Backbone.Model.extend({
 	initialize: function() {
 		this.set({station:this.stationInit()})
 		console.log('system model has been intialized');
+
+		// Websocket init
+		this.set({websocket:this.websocketinit()})
+		console.log('websocket has been intialized');
 
         // Hook up some event handers to listen to model change
         this.on('change',  function() {
@@ -24,6 +29,19 @@ var systemInfo = Backbone.Model.extend({
                 console.log('loaded recipe has been changed');
             }
         });
+	},
+
+	websocketinit : function() {
+        // if user is running mozilla then use it's built-in WebSocket
+        window.WebSocket = window.WebSocket || window.MozWebSocket;
+
+        // if browser doesn't support WebSocket, just show some notification and exit
+        if (!window.WebSocket) {
+            console.log('Sorry, but your browser doesn support WebSockets.')
+            return;
+        }
+
+		return new WebSocket('ws://localhost:5000');	// Error detect
 	},
 	 
 	stationInit : function() { 

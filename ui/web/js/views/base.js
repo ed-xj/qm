@@ -1,5 +1,12 @@
 window.BaseView = Backbone.View.extend({
+
+    initialize:function (moderator) {
+        this.moderator = moderator;
+    },
+
     ajaxCall: function(ajaxUrl, json, msg, succCallback, errCallback) {
+        ///////////////////////////////////////////////////////////////////////////////////
+        // AJAX 
         // $.ajax({
         //     url: ajaxUrl ||  "/cgi-bin/tcp_socket_client.js",
         //     type: "POST",
@@ -20,32 +27,34 @@ window.BaseView = Backbone.View.extend({
         //         // do something after ajax call complete
         //     }
         // });
-
+        // AJAX
+        /////////////////////////////////////////////////////////////////////////////////////
 
         /////////////////////////////////////////////////////////////////////////////////////
         // WebSocket
-        // if user is running mozilla then use it's built-in WebSocket
-        window.WebSocket = window.WebSocket || window.MozWebSocket;
+        var connection = false
+        // // if user is running mozilla then use it's built-in WebSocket
+        // window.WebSocket = window.WebSocket || window.MozWebSocket;
 
-        // // if browser doesn't support WebSocket, just show some notification and exit
+        // // // if browser doesn't support WebSocket, just show some notification and exit
         // if (!window.WebSocket) {
         //     console.log('Sorry, but your browser doesn support WebSockets.')
         //     return;
         // }
 
-        // TODO : This line should be moved to global variable.
-        // open connection
-        var connection = new WebSocket('ws://localhost:5000');
-        
+        // Besure that websocket is on, otherwise it will fail to reconnect.
+        connection = this.moderator.get("websocket")
+
+
         // send the message as an ordinary text
         if (connection.readyState === connection.OPEN) {
             connection.send(JSON.stringify(json));
-            console.log("msg sent.")
+            console.log("Websocket message sent.")
         }
         
         // WebSocket open event listener
         connection.onopen = function () {
-            console.log("Wbsocket open.")
+            console.log("Websocket open.")
             connection.send(JSON.stringify(json));
         };
 
@@ -53,6 +62,7 @@ window.BaseView = Backbone.View.extend({
         connection.onerror = function (error) {
             // just in there were some problems with conenction...
             console.log("Websocket error. " + error)
+            this.moderator.set("websocket", false);
             if (errCallback) errCallback(error);
         };
 
@@ -63,6 +73,14 @@ window.BaseView = Backbone.View.extend({
             console.log("websocket receive msg. " + JSON.stringify(msg))
             if (succCallback) succCallback(msg);
         };
+
+        // WebSocket message event listener
+        // most important part - incoming messages
+        connection.onclose = function () {
+            this.moderator.set("websocket", false)
+            console.log("Wbsocket close.")
+        };
+
 
         // setInterval(function() {
         //     if (connection.readyState !== 1) {

@@ -74,7 +74,7 @@ wsServer.on('request', function(request) {
     connection = request.accept(null, request.origin);
     // wsServer.unmount()
     // we need to know client index to remove them on 'close' event
-    var index = clients.push(connection) - 1;
+    var index = clients.push(connection);
     // var userName = false;
     // var userColor = false;
 
@@ -88,7 +88,7 @@ wsServer.on('request', function(request) {
 
     // user sent some message
     connection.on('message', function(message) {
-        console.log(message.utf8Data)
+        // console.log(message.utf8Data)
         var json_msg = JSON.parse(message.utf8Data)
 
         ////////////////////////////////////////////////////////////////////////////
@@ -144,8 +144,15 @@ wsServer.on('request', function(request) {
         log.appendToFile(now, msg);         
         log.checkFileCreatedTime(now);      
         ////////////////////////////////////////////////////////////////////////////
-        console.log("[Socket] Send msg to SCHD. (SCHD <-- apache server)")
-        client.write(JSON.stringify(json_msg));
+        console.log(msg)
+        if (client.writable)    // Reconnect to socket (apache <--> SCHD), if socket is disconnect.
+            client.write(JSON.stringify(json_msg));
+        else {
+            // start socket to SCHD
+            client.connect(PORT, HOST);
+            client.write(JSON.stringify(json_msg));
+        }
+
     });
 
     // user disconnected
@@ -167,7 +174,7 @@ wsServer.on('request', function(request) {
         log.appendToFile(now, msg);                 
         log.checkFileCreatedTime(now);              
         ////////////////////////////////////////////////////////////////////////////
-        console.log("[WebSocket] UI disconnected from websocket.")
+        console.log(msg)
     });
 
 
@@ -177,7 +184,6 @@ wsServer.on('request', function(request) {
     // 'data' is what scheduler respond back.
 
     // var testdata = []    // testing push and pop
-
     client.on('data', function (data) {
         // parse data from scheduler
         var parseddata = JSON.parse(data);
@@ -185,33 +191,32 @@ wsServer.on('request', function(request) {
         //////////////////////////////////////
         // Server Log
         //////////////////////////////////////                       
-        var msg = "[Socket] Receive msg from SCHD. (apache server <-- SCHD)\n"    
+        var msg = "[Socket] Receive msg from SCHD. (apache server <-- SCHD)"    
         var now = moment();                 
         log.fileExist(now);                 
         log.appendToFile(now, msg+JSON.stringify(parseddata));         
         log.checkFileCreatedTime(now);      
         //////////////////////////////////////
-        console.log("[Socket] Receive msg from SCHD. (apache server <-- SCHD)")
+        console.log(msg)
 
         //////////////////////////////////////
         // Server Log
         //////////////////////////////////////                       
-        var msg = "[WebSocket] Send msg to UI. (UI <-- apache server)\n"    
+        var msg = "[WebSocket] Send msg to UI. (UI <-- apache server)"    
         var now = moment();                 
         log.fileExist(now);                 
         log.appendToFile(now, msg+JSON.stringify(parseddata));         
         log.checkFileCreatedTime(now);      
         //////////////////////////////////////
-        console.log("[WebSocket] Send msg to UI. (UI <-- apache server)")
+        console.log(msg)
         connection.sendUTF(JSON.stringify(parseddata));
         // console out, send to browser
         // console.log(JSON.stringify(parseddata));
         // close socket
         // client.end();
     });
-});
 
-    // socket error event
+        // socket error event
     client.on('error', function() {
         ////////////////////////////////////////////////////////////////////////////
         // Server Log                       
@@ -222,7 +227,7 @@ wsServer.on('request', function(request) {
         log.appendToFile(now, msg);         
         log.checkFileCreatedTime(now);      
         ////////////////////////////////////////////////////////////////////////////
-        console.log("[Socket] Socket error. (apache server <-> SCHD)")
+        console.log(msg)
 
         // JSON encode
         var json = util.encodeJSON("UI", "ERROR", null, null, null, "Socket connection ERROR");
@@ -230,13 +235,13 @@ wsServer.on('request', function(request) {
         ////////////////////////////////////////////////////////////////////////////
         // Server Log          
         //////////////////////////////////////             
-        var msg = "[WebSocket] Error msg send to UI. (UI <-- apache server)\n"    
+        var msg = "[WebSocket] Error msg send to UI. (UI <-- apache server)"    
         var now = moment();                 
         log.fileExist(now);                 
         log.appendToFile(now, msg+JSON.stringify(json));         
         log.checkFileCreatedTime(now);      
         ////////////////////////////////////////////////////////////////////////////     
-        console.log("[WebSocket] Error msg send to UI. (UI <-- apache server)")
+        console.log(msg)
         connection.sendUTF(JSON.stringify(json));
     });
 
@@ -251,13 +256,16 @@ wsServer.on('request', function(request) {
         ////////////////////////////////////////////////////////////////////////////
         // Server Log
         //////////////////////////////////////                       
-        var msg = "[Socket] Socket Closed."    
+        var msg = "[Socket] Socket Closed. (apache server <-> SCHD)"    
         var now = moment();                 
         log.fileExist(now);               
         log.appendToFile(now, msg);         
         log.checkFileCreatedTime(now);      
         ////////////////////////////////////////////////////////////////////////////
-        console.log("[Socket] Socket closed. (apache server <-> SCHD)")
+        console.log(msg)
         // close websocket.
-        connection.close();
+        // connection.close();
     });
+
+});
+

@@ -12,7 +12,7 @@ window.iniJson = {
 
     "output": [
         "Output1",
-        "Outpu2"
+        "Output2"
     ],
 
     "aligner": [
