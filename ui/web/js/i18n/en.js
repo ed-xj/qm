@@ -7,6 +7,12 @@ I18N.en = {
         "robot"             : "Robot",
         "input1"            : "Input1",
         "input2"            : "Input2",
+        "input3"            : "Input3",
+        "input4"            : "Input4",
+        "input5"            : "Input5",
+        "input6"            : "Input6",
+        "input7"            : "Input7",
+        "input8"            : "Input8",
         "output1"           : "Output1",
         "output2"           : "Output2",
         "aligner"           : "Aligner",
@@ -27,6 +33,7 @@ I18N.en = {
 
     "dashboardView": {
         "system_status"  : "System Status",
+        "online_status"  : "Online Status",
         "error"          : "Error",
         "warning"        : "Idle",
         "normal"         : "Running",
@@ -45,7 +52,12 @@ I18N.en = {
         "speed"          : "Speed",
         "slow"           : "Slow",
         "medium"         : "Medium",
-        "high"           : "High"
+        "high"           : "High",
+        "online_local"   : "Online Local",
+        "online_remote"  : "Online Remote",
+        "offline"        : "Offline",
+        "select_recipe"  : "Please select a recipe.",
+        "done"           : "Done"
     },
 
     "robotView": {
@@ -55,8 +67,7 @@ I18N.en = {
         "select_a_recipe" : "Select a recipe",
         "start"           : "Start",
         "stop"            : "Stop",
-        "message"         : "Message",
-        "robot_command"   : "Robot Command",
+        "robot_message"   : "Robot Message",
         "enter_command"   : "Enter a robot command",
         "go"              : "Go!",
         "text"            : "text",
@@ -83,14 +94,118 @@ I18N.en = {
         "high-low"        : "High-Low"
     },
 
+    "input1View": {
+        "input_title"   : "INPUT STATION 1",
+        "wafer_type"    : "WAFER TYPE",
+        "cass_type"     : "CASSETTE TYPE",
+        "foup"          : "FOUP",
+        "cassette"      : "CASSETTE",
+        "door"          : "DOOR",
+        "data"          : "DATA",
+        "update"        : "UPDATE",
+        "slots"         : "SLOTS"
+    },
+    "input2View": {
+        "input_title"   : "INPUT STATION 2",
+        "wafer_type"    : "WAFER TYPE",
+        "cass_type"     : "CASSETTE TYPE",
+        "foup"          : "FOUP",
+        "cassette"      : "CASSETTE",
+        "door"          : "DOOR",
+        "data"          : "DATA",
+        "update"        : "UPDATE",
+        "slots"         : "SLOTS"
+    },
+    "input3View": {
+        "input_title"   : "INPUT STATION 3",
+        "wafer_type"    : "WAFER TYPE",
+        "cass_type"     : "CASSETTE TYPE",
+        "foup"          : "FOUP",
+        "cassette"      : "CASSETTE",
+        "door"          : "DOOR",
+        "data"          : "DATA",
+        "update"        : "UPDATE",
+        "slots"         : "SLOTS"
+    },
+    "input4View": {
+        "input_title"   : "INPUT STATION 4",
+        "wafer_type"    : "WAFER TYPE",
+        "cass_type"     : "CASSETTE TYPE",
+        "foup"          : "FOUP",
+        "cassette"      : "CASSETTE",
+        "door"          : "DOOR",
+        "data"          : "DATA",
+        "update"        : "UPDATE",
+        "slots"         : "SLOTS"
+    },
+    "input5View": {
+        "input_title"   : "INPUT STATION 5",
+        "wafer_type"    : "WAFER TYPE",
+        "cass_type"     : "CASSETTE TYPE",
+        "foup"          : "FOUP",
+        "cassette"      : "CASSETTE",
+        "door"          : "DOOR",
+        "data"          : "DATA",
+        "update"        : "UPDATE",
+        "slots"         : "SLOTS"
+    },
+    "input6View": {
+        "input_title"   : "INPUT STATION 6",
+        "wafer_type"    : "WAFER TYPE",
+        "cass_type"     : "CASSETTE TYPE",
+        "foup"          : "FOUP",
+        "cassette"      : "CASSETTE",
+        "door"          : "DOOR",
+        "data"          : "DATA",
+        "update"        : "UPDATE",
+        "slots"         : "SLOTS"
+    },
+    "input7View": {
+        "input_title"   : "INPUT STATION 7",
+        "wafer_type"    : "WAFER TYPE",
+        "cass_type"     : "CASSETTE TYPE",
+        "foup"          : "FOUP",
+        "cassette"      : "CASSETTE",
+        "door"          : "DOOR",
+        "data"          : "DATA",
+        "update"        : "UPDATE",
+        "slots"         : "SLOTS"
+    },
+    "input8View": {
+        "input_title"   : "INPUT STATION 8",
+        "wafer_type"    : "WAFER TYPE",
+        "cass_type"     : "CASSETTE TYPE",
+        "foup"          : "FOUP",
+        "cassette"      : "CASSETTE",
+        "door"          : "DOOR",
+        "data"          : "DATA",
+        "update"        : "UPDATE",
+        "slots"         : "SLOTS"
+    },
+
+    "alingerView": {
+        "aligner"       : "Aligner",
+        "align_wafer"   : "ALING<br>WAFER",
+        "degree"        : "degree",
+        "get_wafer"     : "GET WAFER",
+        "put_wafer"     : "PUT WAFER",
+        "get_top"       : "GET TOP",
+        "put_top"       : "PUT TOP",
+        "read_id"       : "READ ID",
+        "update_id"     : "UPDATE ID"
+    },
+
     "configView": {
         "config_title" : "Config",
+        "log_level"    : "Log Level",
         "system_log"   : "System Log Level",
         "warning"      : "Warning",
         "low"          : "Low",
         "medium"       : "Medium",
         "high"         : "High",
         "robot_log"    : "Robot Log Level",
-        "language"     : "Language"
+        "language"     : "Language",
+        "enter_secs_command": "Enter a SECS/GEM command",
+        "send"         : "Send"
     }
 };

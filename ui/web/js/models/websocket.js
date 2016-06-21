@@ -3,54 +3,31 @@
 var websocket = Backbone.Model.extend({ 
 	//set default values of property 
 	defaults: { 
-
+        websocket:false,        // Websocket
 	},
 
 	initialize: function() {
-		/////////////////////////////////////////////////////////////////////////////////////
-        // WebSocket
+		      // Websocket init
+        this.set({websocket:this.websocketinit()})
+	},
+
+    websocketinit : function() {
         // if user is running mozilla then use it's built-in WebSocket
         window.WebSocket = window.WebSocket || window.MozWebSocket;
 
         // if browser doesn't support WebSocket, just show some notification and exit
         if (!window.WebSocket) {
-            console.log("Sorry, but your browser doesn't support WebSockets.")
-            return;
+            console.log('Sorry, but your browser doesn support WebSockets. Please change to another browser.\nFirefox 7-9 (Old) (Protocol Version 8)\nFirefox 10+ (Protocol Version 13)\nChrome 14,15 (Old) (Protocol Version 8)\nChrome 16+ (Protocol Version 13)\nInternet Explorer 10+ (Protocol Version 13)\nSafari 6+ (Protocol Version 13)')
         }
 
-        // open connection
-        var connection = new WebSocket('ws://localhost:5000');
-        
-        // send the message as an ordinary text
-        if (connection.readyState === connection.OPEN) {
-            connection.send(JSON.stringify(json));
-            console.log("msg sent.")
-        }
-        
-        // WebSocket open event listener
-        connection.onopen = function () {
-            console.log("Wbsocket open.")
-            connection.send(JSON.stringify(json));
-        };
+        ws = new WebSocket('ws://localhost:5000',"qm-tool-protocol");  // Error detect
 
         // WebSocket error event listener
-        connection.onerror = function (error) {
-            // just in there were some problems with conenction...
-            console.log("Websocket error. " + error)
-            if (errCallback) errCallback(error);
-        };
-
-        // WebSocket message event listener
-        // most important part - incoming messages
-        connection.onmessage = function (message) {
-            var msg = JSON.parse(message.data)
-            console.log("websocket receive msg. " + JSON.stringify(msg))
-            if (succCallback) succCallback(msg);
-        };
-
-        // WebSocket
-        //////////////////////////////////////////////////////////////////////////////
-	},
+        ws.onerror = function (error) {
+            alert("Websocket ERROR. Please RELOAD this page.")
+        }
+        return ws
+    },
 	 
 
 });

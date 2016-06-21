@@ -1,6 +1,7 @@
 window.AlignerView = window.BaseView.extend({
     initialize: function (moderator) {
         this.moderator = moderator;
+        this.moderator.on('lang:change', this.onLangChange.bind(this));
     },
 
     events : {
@@ -13,6 +14,11 @@ window.AlignerView = window.BaseView.extend({
         "click #putWafer":"putWaferBtnClick",           // put wafer
         "click #getTop":"getTopBtnClick",               // get top
         "click #putTop":"putTopBtnClick"            // put top
+    },
+    
+    onLangChange: function() {
+        console.log('DashboardView::onLangChange');
+        this.render()
     },
 
     render: function () {

@@ -1,23 +1,29 @@
-// TODO
 //create a model 
 var systemInfo = Backbone.Model.extend({ 
 	//set default values of property 
 	defaults: { 
-		websocket:false,		// Websocket
-		sysStatus: null,
+		sysStatus: "",
 		station: [],
-		recipe: ""
+		recipe: "",
+		sysMsg:[],
+		robotMsg:[],
+		secsgemMsg:[],
+        websocket:null,        // Websocket
 	},
 
 	initialize: function() {
+		// this.set({sysStatus:this.statusInit()})
 		this.set({station:this.stationInit()})
+		// this.set({sysMsg:this.sysmsgInit()})
+		// this.set({robotMsg:this.robotmsgInit()})
+		// this.set({secsgemMsg:this.secsgemmsgInit()})
 		console.log('system model has been intialized');
 
-		// Websocket init
-		this.set({websocket:this.websocketinit()})
-		console.log('websocket has been intialized');
+	    // Websocket init
+        this.set({websocket:this.websocketinit()})
+		console.log('Websocket has been intialized');
 
-        // Hook up some event handers to listen to model change
+        // Hook up some event handlers to listen to model change
         this.on('change',  function() {
             if(this.hasChanged('sysStatus')){
                 console.log('sysStatus has been changed');
@@ -30,20 +36,7 @@ var systemInfo = Backbone.Model.extend({
             }
         });
 	},
-
-	websocketinit : function() {
-        // if user is running mozilla then use it's built-in WebSocket
-        window.WebSocket = window.WebSocket || window.MozWebSocket;
-
-        // if browser doesn't support WebSocket, just show some notification and exit
-        if (!window.WebSocket) {
-            console.log('Sorry, but your browser doesn support WebSockets.')
-            return;
-        }
-
-		return new WebSocket('ws://localhost:5000');	// Error detect
-	},
-	 
+	// Init
 	stationInit : function() { 
 		var slotMap = new Array()
 		var stationCount = 8	// dynamic load station count
@@ -58,8 +51,17 @@ var systemInfo = Backbone.Model.extend({
 		return slotMap
 	},
 
-	systemStatus: function () {
-		
+	statusInit: function() {
+		return "idle"
+	},
+	sysmsgInit: function() {
+		return new Array
+	},	
+	robotmsgInit: function() {
+		return new Array
+	},	
+	secsgemmsgInit: function() {
+		return new Array
 	},
 
 	getStation: function(stn) {
@@ -76,7 +78,7 @@ var systemInfo = Backbone.Model.extend({
 			alert('Erroring: map storing error!')
 		}
 		else {
-			alert('re-mapping station '+stn); 
+			alert('re-map station '+stn); 
 		}
 	}, 
 
@@ -87,7 +89,7 @@ var systemInfo = Backbone.Model.extend({
 		else {
 			if (this.station[stn-1].map[index] !== status) {
 				this.station[stn-1].map[index] = status
-				alert('re-mapping station'+stn); 
+				alert('re-map station'+stn); 
 			}
 			else
 				alert('slot mapping warning')
@@ -101,5 +103,24 @@ var systemInfo = Backbone.Model.extend({
 
 	show: function() {
 		console.log(JSON.stringify(this));
-	}
+	},
+
+	// websocket init
+	websocketinit : function() {
+        // if user is running mozilla then use it's built-in WebSocket
+        window.WebSocket = window.WebSocket || window.MozWebSocket;
+
+        // if browser doesn't support WebSocket, just show some notification and exit
+        if (!window.WebSocket) {
+            console.log('Sorry, but your browser doesn support WebSockets. Please change to another browser.\nFirefox 7-9 (Old) (Protocol Version 8)\nFirefox 10+ (Protocol Version 13)\nChrome 14,15 (Old) (Protocol Version 8)\nChrome 16+ (Protocol Version 13)\nInternet Explorer 10+ (Protocol Version 13)\nSafari 6+ (Protocol Version 13)')
+        }
+
+        ws = new WebSocket('ws://localhost:5000',"qm-tool-protocol");  // Error detect
+
+        // WebSocket error event listener
+        ws.onerror = function (error) {
+            alert("Websocket ERROR. Please RELOAD this page.")
+        }
+        return ws
+    },
 });

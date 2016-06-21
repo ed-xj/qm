@@ -1,10 +1,9 @@
-<% var t = window.I18N[window.currentLang]["configView"] %>
+<% var t = window.I18N[window.currentLang]["input4View"] %>
 <div class="container-fluid" style="padding-right:90px">
     <div class="row">
         <div class="col-xs-12">
             <h3 class="page-header">
-                    <!--<%= t["config_title"] %>-->
-                    Input Station 4
+                <%= t["input_title"] %>
             </h3>       
             <div class="row">
                 <div class="col-xs-4">
@@ -12,7 +11,7 @@
                         <div class="panel-body">
                             <form action="" class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-5" style="text-align:left;">Wafer Type</label>
+                                    <label class="control-label col-xs-5" style="text-align:left;"><%= t["wafer_type"] %></label>
                                     <div class="col-xs-7">
                                         <select class="form-control" id="waferType">
                                             <option value="STANDARD">Standard</option>
@@ -24,7 +23,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-xs-5 text-right" style="text-align:left;"><span>Cassette Type</span></label>
+                                    <label class="control-label col-xs-5 text-right" style="text-align:left;"><span><%= t["cass_type"] %></span></label>
                                     <div class="col-xs-7">
                                         <select class="form-control cassette-type" id="cassette-type">
                                             <!-- add more cassette if needed -->
@@ -38,7 +37,7 @@
                                 <div class="panel panel-default">
                                     <div class="panel-body"  id="foup-btn-group">
                                         <div class="form-group">
-                                            <label class="control-label col-xs-4 text-right" style="text-align:left;">FOUP</label>
+                                            <label class="control-label col-xs-4 text-right" style="text-align:left;"><%= t["foup"] %></label>
                                             <div class="col-xs-8">
                                                 <div class="btn-group btn-block">
                                                     <button class="btn btn-default btn-lg btn-block" id="openFoup" type="button">Open FOUP</button>
@@ -52,7 +51,7 @@
                                     </div>
                                     <div class="panel-body" id="cassette-btn-group" style="display:none;">
                                         <div class="form-group">
-                                            <label class="control-label col-xs-4 text-right" style="text-align:left;">CASSETTE</label>
+                                            <label class="control-label col-xs-4 text-right" style="text-align:left;"><%= t["cassette"] %></label>
                                             <div class="col-xs-8">
                                                 <div class="btn-group btn-block">
                                                     <button class="btn btn-default btn-lg btn-block" id="loadCasette" type="button">LOAD CASSETTE</button>
@@ -68,7 +67,7 @@
                             </form>
                             <form action="" class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-4 text-right" style="text-align:left;">DOOR</label>
+                                    <label class="control-label col-xs-4 text-right" style="text-align:left;"><%= t["door"] %></label>
                                     <div class="col-xs-8">
                                         <div class="btn-group btn-block">
                                             <button class="btn btn-default btn-lg btn-block" id="openDoor" type="button">OPEN DOOR</button>
@@ -82,7 +81,7 @@
                             </form>
                             <form action="" class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-4 text-right" style="text-align:left;">DATA</label>
+                                    <label class="control-label col-xs-4 text-right" style="text-align:left;"><%= t["data"] %></label>
                                     <div class="col-xs-8">
                                         <div class="btn-group btn-block">
                                             <button class="btn btn-default btn-lg btn-block" id="restoreData" type="button">RESTORE DATA</button>
@@ -92,7 +91,7 @@
                             </form>
                             <form action="" class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-4 text-right" style="text-align:left;">UPDATE</label>
+                                    <label class="control-label col-xs-4 text-right" style="text-align:left;"><%= t["update"] %></label>
                                     <div class="col-xs-8">
                                         <div class="btn-group btn-block">
                                             <button class="btn btn-default btn-lg btn-block" id="updateId" type="button">UPDATE ID</button>
@@ -110,7 +109,7 @@
                                 <thead>
                                     <tr>
                                         <th width="15%">#</th>
-                                        <th>SLOTS</th>
+                                        <th><%= t["slots"] %></th>
                                     </tr>
                                 </thead>
                                 <tbody id="slots">

@@ -6,6 +6,7 @@ window.DashboardView = window.BaseView.extend({
         this.moderator.on('lang:change', this.onLangChange.bind(this));
         this.logmsg = '';
         this.templateParams = {sysmsg: this.logmsg};
+        // this.moderator.on('change', _.bind(this.render, this))
         // this.genLogMsg();
 //        this.template = _.template(directory.utils.templateLoader.get('home'));
 //        this.template = templates['Home'];
@@ -47,6 +48,7 @@ window.DashboardView = window.BaseView.extend({
     activate: function() {
         // this.genLogMsg();
         // this.render();
+        this.loadsysmsg();
     },
 
     render:function () {
@@ -71,6 +73,17 @@ window.DashboardView = window.BaseView.extend({
         $("code[name='sysmsg']").append(d + arrow + data.Message + "<br>").trigger("change");
     },
 
+    loadsysmsg: function() {
+        console.log("system msg loaded")
+        var sysmsg = this.moderator.get("sysMsg")
+        console.log("sysmsg: "+sysmsg)
+        if ( sysmsg.length != 0) {
+            for (i=0; i< sysmsg.length; i++) {
+                $("code[name='sysmsg']").append(sysmsg[i] + "<br>").trigger("change");
+            }
+        }
+    },
+
     systemStatus: function () {
         // Build up JSON
         var json = this.encodeJSON("SCHD", "STATUS", null, "SYSSTATUS", null, null);
@@ -85,12 +98,12 @@ window.DashboardView = window.BaseView.extend({
     loadRecipeBtnClick:function () {
         //
         // model object for system status and slotmapping
-        console.log(this.moderator.get('sysStatus'))
-        var a = this.moderator.getStation(1)
-        console.log(a.map.toString())
-        a.station = 7
-        this.moderator.set('sysStatus',"running")       // write to systemInfo
-        console.log(this.moderator.get('sysStatus'))    // read from systemInfo
+        // console.log(this.moderator.get('sysStatus'))
+        // var a = this.moderator.getStation(1)
+        // console.log(a.map.toString())
+        // a.station = 7
+        // this.moderator.set('sysStatus',"running")       // write to systemInfo
+        // console.log(this.moderator.get('sysStatus'))    // read from systemInfo
         //
 
         var recipe = $('#recipeModal').val()

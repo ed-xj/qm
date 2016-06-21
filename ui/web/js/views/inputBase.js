@@ -7,7 +7,14 @@ window.InputBaseView = window.BaseView.extend({
 
     initialize: function (moderator) {
         this.moderator = moderator;
+        this.moderator.on('lang:change', this.onLangChange.bind(this));
         this.slotTarget = null;
+    },
+
+    onLangChange: function() {
+        var index = +this.model.get('viewName')[this.model.get('viewName').length-1];
+        console.log('Input'+index+'View::onLangChange');
+        this.render()
     },
 
     getStation: function() {

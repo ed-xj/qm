@@ -1,19 +1,19 @@
-<% var t = window.I18N[window.currentLang]["configView"] %>
+<% var t = window.I18N[window.currentLang]["alingerView"] %>
 <div class="container-fluid" style="padding-right:100px">
     <div class="row">
         <div class="col-xs-12">
-            <h3 class="page-header">Aligner</h3>
+            <h3 class="page-header"><%= t["aligner"]%></h3>
             <div class="row">
                 <div class="col-md-6 form-group">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Aligner</h3>
+                            <h3 class="panel-title"><%= t["aligner"]%></h3>
                         </div>
                         <div class="panel-body">
                             <form action="" class="form-horizontal" role="form">
                                 <div class = "form-group">
                                     <div class="col-xs-4">
-                                        <button class="btn btn-default btn-lg btn-block" id="alignWafer" type="button">ALIGN<br>WAFER</button>
+                                        <button class="btn btn-default btn-lg btn-block" id="alignWafer" type="button"><%= t["align_wafer"]%></button>
                                     </div>
                                     <div class="col-xs-8">
                                         <!-- Solution 1 -->
@@ -30,7 +30,7 @@
                                                 <button class="btn btn-default btn-lg" type="button"><i class="fa fa-caret-down"></i></button>
                                             </span>
                                             <input type="text" class="form-control input-lg" value="0" id="alignWaferId">
-                                            <span class="input-group-addon">° (degree)</span>
+                                            <span class="input-group-addon">° (<%= t["degree"]%>)</span>
                                             <span class="input-group-btn">
                                                 <button class="btn btn-default btn-lg" type="button"><i class="fa fa-caret-up"></i></button>
                                             </span>                                            
@@ -66,9 +66,9 @@
                                         <div class="panel panel-default">
                                             <div class="panel-body">
                                                 <div class = "form-group-vertical">
-                                                    <button class="btn btn-default btn-lg btn-block" id="getWafer" type="button">GET WAFER</button>
+                                                    <button class="btn btn-default btn-lg btn-block" id="getWafer" type="button"><%= t["get_wafer"]%></button>
                                                     <br>
-                                                    <button class="btn btn-default btn-lg btn-block" id="putWafer" type="button">PUT WAFER</button>
+                                                    <button class="btn btn-default btn-lg btn-block" id="putWafer" type="button"><%= t["put_wafer"]%></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -77,9 +77,9 @@
                                         <div class="panel panel-default">
                                             <div class="panel-body">
                                                 <div class = "form-group-vertical">
-                                                    <button class="btn btn-default btn-lg btn-block" id="getTop" type="button">GET TOP</button>
+                                                    <button class="btn btn-default btn-lg btn-block" id="getTop" type="button"><%= t["get_top"]%></button>
                                                     <br>
-                                                    <button class="btn btn-default btn-lg btn-block" id="putTop" type="button">PUT TOP</button>
+                                                    <button class="btn btn-default btn-lg btn-block" id="putTop" type="button"><%= t["put_top"]%></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -97,7 +97,7 @@
                         <div class="panel-body">
                             <div class = "form-group">
                                 <div class="col-xs-4">
-                                    <button class="btn btn-default btn-lg btn-block" id="readId" type="button">READ ID</button>
+                                    <button class="btn btn-default btn-lg btn-block" id="readId" type="button"><%= t["read_id"]%></button>
                                 </div>
                                 <div class="col-xs-4">
                                     &nbsp;
@@ -109,7 +109,7 @@
                             <div class = "form-group"> -->
                                 <div>&nbsp;</div>
                                 <div class="col-xs-4">
-                                    <button class="btn btn-default btn-lg btn-block" id="updateId" type="button">Update ID</button>
+                                    <button class="btn btn-default btn-lg btn-block" id="updateId" type="button"><%= t["update_id"]%></button>
                                 </div>
                                 <div class="col-xs-4">
                                     <label class="control-label" >Wafer ID</label>

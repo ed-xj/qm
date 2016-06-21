@@ -20,7 +20,7 @@ window.Router = Backbone.Router.extend({
         "*path"         : "handleDefaultRoute"
     },
 
-    moderator: _.extend((new systemInfo()), Backbone.Events),
+    moderator: _.extend(new systemInfo(), Backbone.Events),
 
     initialize: function () {
         ///////////////////////////////

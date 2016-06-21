@@ -32,7 +32,7 @@ window.BaseView = Backbone.View.extend({
 
         /////////////////////////////////////////////////////////////////////////////////////
         // WebSocket
-        var connection = false
+        // var connection = false
         // // if user is running mozilla then use it's built-in WebSocket
         // window.WebSocket = window.WebSocket || window.MozWebSocket;
 
@@ -43,8 +43,7 @@ window.BaseView = Backbone.View.extend({
         // }
 
         // Besure that websocket is on, otherwise it will fail to reconnect.
-        connection = this.moderator.get("websocket")
-
+        var connection = this.moderator.get("websocket")
 
         // send the message as an ordinary text
         if (connection.readyState === connection.OPEN) {
@@ -60,6 +59,7 @@ window.BaseView = Backbone.View.extend({
 
         // WebSocket error event listener
         connection.onerror = function (error) {
+            alert("Websocket ERROR. Please reload this page.")
             // just in there were some problems with conenction...
             console.log("Websocket error. " + error)
             this.moderator.set("websocket", false);
@@ -71,14 +71,16 @@ window.BaseView = Backbone.View.extend({
         connection.onmessage = function (message) {
             var msg = JSON.parse(message.data)
             console.log("websocket receive msg. " + JSON.stringify(msg))
+            // this.decodeJSON()
             if (succCallback) succCallback(msg);
         };
 
         // WebSocket message event listener
         // most important part - incoming messages
         connection.onclose = function () {
+            alert("Websocket Close. Please reload this page.")
             this.moderator.set("websocket", false)
-            console.log("Wbsocket close.")
+            console.log("Websocket close.")
         };
 
 
@@ -91,13 +93,8 @@ window.BaseView = Backbone.View.extend({
         //////////////////////////////////////////////////////////////////////////////
     },
 
-    // long polling
     systemStatus: function() { 
-        var GUI_LOG_URL = "/cgi-bin/system_status.js"
-        $.ajax({ url: GUI_LOG_URL, success: function(data){
-            //Update your dashboard gauge
-            // salesGauge.setValue(data.value);
-        }, dataType: "json", complete: systemStatus, timeout: 30000 }); 
+
     },
 
     // JSON encode and decode
@@ -112,33 +109,22 @@ window.BaseView = Backbone.View.extend({
         };
     },
 
-    // decodeJSON = function (json) {
-    //     if (json.CmdDest==="SCHD") {
-    //         switch (json.CmdType) {
-    //             case "ERROR":
-    //                 break;
-    //             case "MAPPING":
-    //                 break;
-    //             case "STATUS":
-    //                 break;
-    //             case "RECIPE":
-    //                 break;
-    //             case "COMMAND":
-    //                 break;
-    //         }
-    //     } else if (json.CmdDest==="UI") {
-    //         switch (json.CmdType) {
-    //             case "ERROR":
-    //                 break;
-    //             case "MAPPING":
-    //                 break;
-    //             case "STATUS":
-    //                 break;
-    //             case "RECIPE":
-    //                 break;
-    //             case "COMMAND":
-    //                 break;
-    //         }
-    //     }
-    // }
+    decodeJSON: function (json) {
+        if (json.CmdDest==="UI") {
+            switch (json.CmdType) {
+                case "ERROR":
+                    break;
+                case "MAPPING":
+                    break;
+                case "STATUS":
+                    break;
+                case "RECIPE":
+                    break;
+                case "COMMAND":
+                    break;
+                case "UPDATE":
+                    break;
+            }
+        };
+    }
 });

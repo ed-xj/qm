@@ -7,6 +7,12 @@ I18N.zh = {
         "robot"             : "机器人",
         "input1"            : "输入1",
         "input2"            : "输入2",
+        "input3"            : "输入3",
+        "input4"            : "输入4",
+        "input5"            : "输入5",
+        "input6"            : "输入6",
+        "input7"            : "输入7",
+        "input8"            : "输入8",
         "output1"           : "输出1",
         "output2"           : "输出2",
         "aligner"           : "定位仪",
@@ -27,6 +33,7 @@ I18N.zh = {
 
     "dashboardView": {
         "system_status"  : "系统状态",
+        "online_status"  : "在线状态",
         "error"          : "错误",
         "warning"        : "空置",
         "normal"         : "運作",
@@ -45,7 +52,12 @@ I18N.zh = {
         "speed"          : "速度",
         "slow"           : "慢",
         "medium"         : "中",
-        "high"           : "高"
+        "high"           : "高",
+        "online_local"   : "在线本机",
+        "online_remote"  : "在线遥控",
+        "offline"        : "离线",
+        "select_recipe"  : "请选择配方",
+        "done"           : "完成"
     },
 
     "robotView": {
@@ -55,9 +67,8 @@ I18N.zh = {
         "select_a_recipe" : "选择配方",
         "start"           : "开始",
         "stop"            : "停止",
-        "message"         : "消息",
-        "robot_command"   : "机器人命令",
-        "enter_command"   : "输入指令的机器人",
+        "robot_message"   : "机器人消息",
+        "enter_command"   : "输入机器人的指令",
         "go"              : "走！",
         "text"            : "文本",
         "refresh"         : "刷新",
@@ -68,29 +79,135 @@ I18N.zh = {
         "learn"           : "学习",
         "learn_new"       : "学习新",
         "motion"          : "运动",
-        "perch"           : "鲈鱼",
+        "perch"           : "位于",
         "inside"          : "内部",
         "high"            : "高",
         "low"             : "低",
         "move"            : "移动",
         "linear"          : "线性",
-        "index"           : "指数",
-        "pick"            : "匹克",
-        "place"           : "广场",
+        "index"           : "目录",
+        "pick"            : "取",
+        "place"           : "放",
         "search_for"      : "搜索...",
         "station"         : "站",
         "pose"            : "姿度",
         "high-low"        : "高低"
     },
 
+    "input1View": {
+        "input_title"   : "输入站1",
+        "wafer_type"    : "晶圆种类",
+        "cass_type"     : "卡带盒种类",
+        "foup"          : "FOUP",
+        "cassette"      : "卡带盒",
+        "door"          : "门",
+        "data"          : "资料",
+        "update"        : "刷新",
+        "slots"         : "插槽"
+    },
+
+    "input2View": {
+        "input_title"   : "输入站2",
+        "wafer_type"    : "晶圆种类",
+        "cass_type"     : "卡带盒种类",
+        "foup"          : "FOUP",
+        "cassette"      : "卡带盒",
+        "door"          : "门",
+        "data"          : "资料",
+        "update"        : "刷新",
+        "slots"         : "插槽"
+    },
+
+    "input3View": {
+        "input_title"   : "输入站3",
+        "wafer_type"    : "晶圆种类",
+        "cass_type"     : "卡带盒种类",
+        "foup"          : "FOUP",
+        "cassette"      : "卡带盒",
+        "door"          : "门",
+        "data"          : "资料",
+        "update"        : "刷新",
+        "slots"         : "插槽"
+    },
+    "input4View": {
+        "input_title"   : "输入站4",
+        "wafer_type"    : "晶圆种类",
+        "cass_type"     : "卡带盒种类",
+        "foup"          : "FOUP",
+        "cassette"      : "卡带盒",
+        "door"          : "门",
+        "data"          : "资料",
+        "update"        : "刷新",
+        "slots"         : "插槽"
+    },
+    "input5View": {
+        "input_title"   : "输入站5",
+        "wafer_type"    : "晶圆种类",
+        "cass_type"     : "卡带盒种类",
+        "foup"          : "FOUP",
+        "cassette"      : "卡带盒",
+        "door"          : "门",
+        "data"          : "资料",
+        "update"        : "刷新",
+        "slots"         : "插槽"
+    },
+    "input6View": {
+        "input_title"   : "输入站6",
+        "wafer_type"    : "晶圆种类",
+        "cass_type"     : "卡带盒种类",
+        "foup"          : "FOUP",
+        "cassette"      : "卡带盒",
+        "door"          : "门",
+        "data"          : "资料",
+        "update"        : "刷新",
+        "slots"         : "插槽"
+    },
+    "input7View": {
+        "input_title"   : "输入站7",
+        "wafer_type"    : "晶圆种类",
+        "cass_type"     : "卡带盒种类",
+        "foup"          : "FOUP",
+        "cassette"      : "卡带盒",
+        "door"          : "门",
+        "data"          : "资料",
+        "update"        : "刷新",
+        "slots"         : "插槽"
+    },
+    "input8View": {
+        "input_title"   : "输入站8",
+        "wafer_type"    : "晶圆种类",
+        "cass_type"     : "卡带盒种类",
+        "foup"          : "FOUP",
+        "cassette"      : "卡带盒",
+        "door"          : "门",
+        "data"          : "资料",
+        "update"        : "刷新",
+        "slots"         : "插槽"
+    },
+
+    "alingerView": {
+        "aligner"       : "定位仪",
+        "align_wafer"   : "定位晶圆",
+        "degree"        : "度",
+        "get_wafer"     : "取晶圆",
+        "put_wafer"     : "放晶圆",
+        "get_top"       : "上取",
+        "put_top"       : "下取",
+        "read_id"       : "读ID",
+        "update_id"     : "刷新ID"
+    },
+
     "configView": {
         "config_title" : "配置",
+        "log_level"    : "日志级别",
         "system_log"   : "系统日志级别",
         "warning"      : "警告",
         "low"          : "低",
         "medium"       : "中",
         "high"         : "高",
         "robot_log"    : "机器人日志级别",
-        "language"     : "语言"
+        "language"     : "语言",
+        "enter_secs_command" : "输入SECS/GEM的指令",
+        "send"         : "发送"
     }
 };
