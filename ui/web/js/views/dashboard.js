@@ -4,12 +4,14 @@ window.DashboardView = window.BaseView.extend({
         console.log('Initializing Dashboard View');
         this.moderator = moderator;
         this.moderator.on('lang:change', this.onLangChange.bind(this));
+        this.moderator.on('sysmsg:change', this.onSysMsgChange.bind(this));
+        this.sysmsg = [];
         this.logmsg = '';
         this.templateParams = {sysmsg: this.logmsg};
-        // this.moderator.on('change', _.bind(this.render, this))
-        // this.genLogMsg();
-//        this.template = _.template(directory.utils.templateLoader.get('home'));
-//        this.template = templates['Home'];
+       // 
+       // this.genLogMsg();
+       // this.template = _.template(directory.utils.templateLoader.get('home'));
+       // this.template = templates['Home'];
     },
 
     events:{
@@ -33,26 +35,37 @@ window.DashboardView = window.BaseView.extend({
         this.render()
     },
 
-    genLogMsg: function() {
-        // System Messages
-        for (var i=0; i<Math.floor((Math.random() * 1000) + 1); i++) {
-            var d = new Date()
-            d = d.getFullYear()+"/"+("0"+(d.getMonth()+1)).slice(-2)+"/"+("0"+d.getDate()).slice(-2)+" "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2)+":"+("0"+d.getSeconds()).slice(-2)
-            this.logmsg += ( d + ' >> system log messages ' + i);
-            this.logmsg += '<br>';
+    onSysMsgChange: function() {
+        console.log('DashboardView::onSysMsgChange');
+        this.sysmsg.push(this.moderator.get("sysMsg"))
+    }, 
+
+    subRender: function() {
+        if (this.sysmsg.length != 0) {
+            var temp
+            for (var i = 0; i <= this.sysmsg.length; i++) {
+                temp = this.sysmsg.shift()
+                this.callBack(temp)
+            };
         }
-       
-        this.templateParams = {sysmsg: this.logmsg};
     },
 
+    // genLogMsg: function() {
+    //     // System Messages
+    //     for (var i=0; i<Math.floor((Math.random() * 1000) + 1); i++) {
+    //         var d = new Date()
+    //         d = d.getFullYear()+"/"+("0"+(d.getMonth()+1)).slice(-2)+"/"+("0"+d.getDate()).slice(-2)+" "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2)+":"+("0"+d.getSeconds()).slice(-2)
+    //         this.logmsg += ( d + ' >> system log messages ' + i);
+    //         this.logmsg += '<br>';
+    //     }
+    //     this.templateParams = {sysmsg: this.logmsg};
+    // },
+
     activate: function() {
-        // this.genLogMsg();
-        // this.render();
-        this.loadsysmsg();
+
     },
 
     render:function () {
-        this.templateParams = {sysmsg: this.logmsg};
         $(this.el).html(this.template(this.templateParams));
         return this;
     },
@@ -73,23 +86,12 @@ window.DashboardView = window.BaseView.extend({
         $("code[name='sysmsg']").append(d + arrow + data.Message + "<br>").trigger("change");
     },
 
-    loadsysmsg: function() {
-        console.log("system msg loaded")
-        var sysmsg = this.moderator.get("sysMsg")
-        console.log("sysmsg: "+sysmsg)
-        if ( sysmsg.length != 0) {
-            for (i=0; i< sysmsg.length; i++) {
-                $("code[name='sysmsg']").append(sysmsg[i] + "<br>").trigger("change");
-            }
-        }
-    },
-
-    systemStatus: function () {
-        // Build up JSON
-        var json = this.encodeJSON("SCHD", "STATUS", null, "SYSSTATUS", null, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "status", this.callBack);
-    },
+    // systemStatus: function () {
+    //     // Build up JSON
+    //     var json = this.encodeJSON("SCHD", "STATUS", null, "SYSSTATUS", null, null);
+    //     // AJAX POST
+    //     this.ajaxCall(this.ajaxUrl, json, "status", this.callBack);
+    // },
 
     showRecipeModal: function () {
         $("#Modal-recipe").modal({show: true});

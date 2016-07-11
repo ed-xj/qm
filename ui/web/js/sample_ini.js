@@ -33,5 +33,5 @@ window.iniJson = {
 
     "recipe": [
         "Recipe"
-    ]
+    ],
 };

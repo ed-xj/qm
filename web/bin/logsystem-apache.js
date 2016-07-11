@@ -2,7 +2,8 @@
 // server side (Apache) logging system.
 
 const fs = require('fs');
-var moment = require('./moment.js');
+const path = require('path')
+const moment = require('./moment.js');
 
 // var now = moment();
 // var timestamp = String(now.format('YYYY-MM-DD HH:mm:ss '));
@@ -56,6 +57,28 @@ function renameAndSave(now) {
 		       return console.error(err);
 		   	}
 	});
+}
+
+// get log directory
+function getLogDirectory(local) {
+ 	var log = fs.readdirSync(local)
+ 	var folders = new Array()
+ 	var files = new Array()
+ 	console.log(log)
+ 	for (var i = 0; i < log.length; i++) {
+ 		if (path.extname(log[i]) === ".txt") {
+ 			files.push({name:log[i], isFile:true})
+ 		}
+ 		if (path.extname(log[i]) === ""){
+ 			folders.push({name:log[i], isFile:false})
+ 		}
+ 	}
+	return folders.concat(files)
+}
+
+// read file
+function getLogFile(filepath) {
+	return fs.readFileSync(filepath, 'utf8');
 }
 
 // // zip file
@@ -121,3 +144,5 @@ exports.appendToFile = appendToFile;
 exports.fileExist = fileExist;
 exports.checkFileCreatedTime = checkFileCreatedTime;
 exports.renameAndSave = renameAndSave;
+exports.getLogDirectory = getLogDirectory;
+exports.getLogFile = getLogFile;

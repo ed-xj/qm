@@ -17,7 +17,7 @@ window.AlignerView = window.BaseView.extend({
     },
     
     onLangChange: function() {
-        console.log('DashboardView::onLangChange');
+        console.log('AlingerView::onLangChange');
         this.render()
     },
 

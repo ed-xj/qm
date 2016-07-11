@@ -1,0 +1,87 @@
+<% var t = window.I18N[window.currentLang]["logView"] %>
+<div class="container-fluid" style="padding-right:90px; margin-top:40px;">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="page-header">
+                <!-- <%= t["config_title"] %> -->
+                LOG ( Under construction )
+            </h3>            
+            <div class="row">
+                 <div class = "row">
+                    <div class="col-xs-2">
+                        <button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="logModal"><!--<%= t["learn"] %>--> Find Log</button>
+                    </div><div class="col-xs-2">
+                        <button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="downloadLog" disabled><!--<%= t["learn"] %>--> Download</button>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="row">
+                    <!-- <div class="col-xs-2">
+                        <div class="panel panel-default">
+                            <div class="panel-heading input-group">
+                                <h3 class="panel-title"><%= t["log_level"] %>Directory</h3>
+                                <span class="input-group-btn" style="padding:0px; margin:0px; height:100%;">
+                                    <button type="button" class="btn btn-default btn-xs pull-right" id="refresh-directory"><i class="fa fa-refresh"></i></button>
+                                </span>
+                            </div>
+                            <div class="panel-body" id="show-log-directory" style="height:500px;">
+                                Directory
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title" id="show-log-file-title"><%= t["log_name"] %>file name</h3>
+                            </div>
+                            <div class="panel-body-sysmsg" id="show-log-file" style="background-color:white;height:700px;"><p>SHOW LOG FILE</p>
+                                <div class="row" style="padding-left:10px">
+                                    <code style="padding-left: 0px;color:black;background-color:transparent;display:none;">
+                                    </code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Log Modal -->
+<div id="Modal-log" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close btn-lg" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg" aria-hidden="true"></i></button>
+                <h4 class="modal-title"><%= t["select_recipe"] %>Please select a log file.</h4>
+            </div>
+            <div class="modal-body" style="y-overflow:scroll" id="show-log-directory" style="height:500px;">Directory
+                <!-- <table class="table">
+                    <tbody>
+                        <tr class="recipe-name">
+                            <td><h2>Recipe 1</h2></td>
+                        </tr>
+                        <tr class="recipe-name">
+                            <td><h2>Recipe 2</h2></td>
+                        </tr>
+                        <tr class="recipe-name">
+                            <td><h2>Recipe 3</h2></td>
+                        </tr>
+                        <tr class="recipe-name">
+                            <td><h2>Recipe 4</h2></td>
+                        </tr>
+                        <tr class="recipe-name">
+                            <td><h2>Recipe 5</h2></td>
+                        </tr>
+                    </tbody>
+                </table> -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info btn-lg" data-dismiss="modal" id="done"><%= t["done"] %>DONE</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<a id="download" href="" download=""></a>

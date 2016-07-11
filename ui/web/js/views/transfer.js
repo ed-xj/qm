@@ -3,6 +3,7 @@ window.TransferView = window.BaseView.extend({
     initialize: function (moderator) {
         this.mode = 'quicksort';
         this.moderator = moderator;
+        this.moderator.on('lang:change', this.onLangChange.bind(this));
         this.start = null;
         this.targetRecipe = 1;
     },
@@ -41,8 +42,14 @@ window.TransferView = window.BaseView.extend({
         var that = this;
         $(this.el).html(this.template());
         setTimeout(function() {
-            that.synchMode();
+            this.mode = 'quicksort';
+            that.synchMode(true, false);
         }, 1);
+    },
+
+    onLangChange: function() {
+        console.log('TransferView::onLangChange');
+        this.render()
     },
 
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
@@ -52,41 +59,17 @@ window.TransferView = window.BaseView.extend({
     },
 
     synchMode: function() {
-        // var splitPanel      = $('#splitPanel'),
-        //     mergePanel      = $('#mergePanel'),
         var quicksortPanel  = $('div[id=quicksortPanel]'),
             resequencePanel = $('#resequencePanel');
 
-        // if (this.mode === 'split') {
-        //     splitPanel.show();
-        //     mergePanel.hide();
-        //     resequencePanel.hide();
-        // } else if (this.mode === 'merge') {
-        //     splitPanel.hide();
-        //     mergePanel.show();
-        //     resequencePanel.hide();
         if (this.mode === 'quicksort') {
-            // splitPanel.show();
-            // mergePanel.hide();
             quicksortPanel.show();
             resequencePanel.hide();
         } else {
-            // splitPanel.hide();
-            // mergePanel.hide();
             quicksortPanel.hide();
             resequencePanel.show();
         }
     },
-
-    // handleSplitMode: function() {
-    //     this.mode = 'split';
-    //     this.synchMode(true, false, false);
-    // },
-
-    // handleMergeMode: function() {
-    //     this.mode = 'merge';
-    //     this.synchMode(false, true, false);
-    // },
 
     handleQuickSortMode: function() {
         this.mode = 'quicksort';
@@ -250,7 +233,7 @@ window.TransferView = window.BaseView.extend({
                     recipesArray.push($(this).text());
                 }
             });
-            var json = this.encodeJSON("SCHD", "COMMAND", null, "QUICKSORT", recipesArray, null);
+            var json = this.encodeJSON("SCHD", "COMMAND", "TRANSFER", "QUICKSORT", recipesArray, null);
             // AJAX POST
             this.ajaxCall(this.ajaxUrl, json, "transfer - quicksort");
             this.start = null;
@@ -378,7 +361,7 @@ window.TransferView = window.BaseView.extend({
             srcstation: Number($('#reqSrcStation').val().toUpperCase()),
             targetstation: Number($('#reqTargetStation').val().toUpperCase())
         }
-        var json = this.encodeJSON("SCHD", "COMMAND", null, "RESEQUENCE", reseq, null);
+        var json = this.encodeJSON("SCHD", "COMMAND", "TRANSFER", "RESEQUENCE", reseq, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "transfer - resequence", this.callBack);
     },

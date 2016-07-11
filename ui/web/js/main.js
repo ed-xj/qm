@@ -17,6 +17,9 @@ window.Router = Backbone.Router.extend({
         "Aligner"       : "Aligner",
         "Recipe"        : "Recipe",
         "Transfer"      : "Transfer",
+        "Packer"        : "Packer",
+        "Loadport"      : "Loadport",
+        "Log"           : "Log",
         "*path"         : "handleDefaultRoute"
     },
 
@@ -103,12 +106,12 @@ window.Router = Backbone.Router.extend({
         this.darkPageWrapper();
         if (((localStorage.user === undefined) || (localStorage.user === '')) &&
             ((localStorage.userRole === undefined) || (localStorage.userRole === ''))) {
-            $('#statusBar').hide();
             this.loginView = new LoginView(this.moderator);
             $("#content").html(this.loginView.render().el);
+             $('#statusBar').hide();
         } else {
-            $('#statusBar').show();
             this.navigate("#dashboard", {trigger: true});
+            $('#statusBar').show();
         }
     },
 
@@ -126,6 +129,7 @@ window.Router = Backbone.Router.extend({
         }
         $("#content").html(this.dashboardView.el);
         this.headerView.select('dashboard-menu');
+        this.dashboardView.subRender()
     },
 
     robot: function () {
@@ -141,6 +145,7 @@ window.Router = Backbone.Router.extend({
         }
         $("#content").html(this.robotView.el);
         this.headerView.select('robot-menu');
+        this.robotView.subRender()
     },
 
     config: function () {
@@ -156,6 +161,7 @@ window.Router = Backbone.Router.extend({
         }
         $('#content').html(this.configView.el);
         this.headerView.select('config-menu');
+        this.configView.subRender()
     },
 
     botcom: function () {
@@ -261,7 +267,41 @@ window.Router = Backbone.Router.extend({
         }
         $('#content').html(this.transferView.el);
         this.headerView.select('Transfer-menu');
-    }
+    },
+
+    Packer: function() {
+        this.renderInput(this.PackerView, 'Packer');
+    },
+
+    Loadport: function () {
+        this.header();
+        this.lightPageWrapper();
+
+        if (!this.loadportView) {
+            this.loadportView = new LoadportView(this.moderator);
+            this.loadportView.render();
+        } else {
+            this.loadportView.activate();
+            this.loadportView.delegateEvents(); // delegate events when the view is recycled
+        }
+        $("#content").html(this.loadportView.el);
+        this.headerView.select('Loadport-menu');
+    },
+
+    Log: function () {
+        this.header();
+        this.lightPageWrapper();
+
+        if (!this.logView) {
+            this.logView = new LogView(this.moderator);
+            this.logView.render();
+        } else {
+            this.logView.activate();
+            this.logView.delegateEvents(); // delegate events when the view is recycled
+        }
+        $('#content').html(this.logView.el);
+        this.headerView.select('log-menu');
+    },
 });
 
 templateLoader.load(["DashboardView",
@@ -281,7 +321,10 @@ templateLoader.load(["DashboardView",
                      "Input8View",
                      "AlignerView",
                      "RecipeView",
-                     "TransferView"
+                     "TransferView",
+                     "PackerView",
+                     "LoadportView",
+                     "LogView"
                     ], function () {
                         // load the server side configuration to drive the UI rendering
                         $.get('/cgi-bin/get-config.js', function(cfg) {

@@ -1,6 +1,8 @@
 window.ConfigView = window.BaseView.extend({
     initialize: function (moderator) {
         this.moderator = moderator;
+        this.moderator.on('secsgemmsg:change', this.onSecsgemMsgChange.bind(this));
+        this.secsgemmsg = []
         this.logmsg = "";
         this.templateParams = {secsgemmsg: this.logmsg};
     },
@@ -29,6 +31,21 @@ window.ConfigView = window.BaseView.extend({
     render:function () {
         $(this.el).html(this.template(this.templateParams));
         return this;
+    },
+
+    onSecsgemMsgChange: function() {
+        console.log('ConfidView::onSecsgemMsgChange');
+        this.secsgemmsg.push(this.moderator.get("secsgemMsg"))
+    }, 
+
+    subRender: function() {
+        if (this.secsgemmsg.length != 0) {
+            var temp
+            for (var i = 0; i <= this.secsgemmsg.length; i++) {
+                temp = this.secsgemmsg.shift()
+                this.callBack(temp)
+            };
+        }
     },
 
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",

@@ -5,6 +5,8 @@ window.HeaderView = Backbone.View.extend({
         this.moderator.on('lang:change', this.onLangChange.bind(this));
         this.moderator.on('syslog:change', this.onSysLogChange.bind(this));
         this.moderator.on('robotlog:change', this.onSysLogChange.bind(this));
+        // this.moderator.on('sysmsg:change', this.onSysMsgChange.bind(this));
+        // this.moderator.on('sysmsg:change', this.onSysMsgChange.bind(this));
     },
 
     activate: function() {
@@ -52,6 +54,10 @@ window.HeaderView = Backbone.View.extend({
         console.log('HeaderView::onRobotLogChange');
     },
 
+    // onSysMsgChange: function() {
+    //     console.log('HeaderView::onSysMsgChange');
+    // },
+
     onkeypress: function (event) {
         if (event.keyCode == 13) {
             event.preventDefault();
@@ -76,6 +82,10 @@ window.HeaderView = Backbone.View.extend({
         "loadport"  : "fa-upload",
         "reader"    : "fa-barcode",
         "process"   : "fa-cogs",
-        "recipe"    : "fa-list-ol"
+        "recipe"    : "fa-list-ol",
+        "transfer"  : "fa-exchange",
+        "packer"    : "fa-stack-overflow",
+        "loadport"  : "fa-stack-overflow",
+        "log"       : "fa-file-text-o"
     }
 });

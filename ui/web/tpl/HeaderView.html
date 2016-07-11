@@ -53,20 +53,19 @@
             </li>
             <% } %>
 
-              <% var types = ['input','output','aligner', 'loadport', 'recipe', 'transfer']; %>
+              <% var types = ['input','output','aligner', 'recipe', 'transfer','packer','loadport','log']; %>
 
               <% var type = types.shift(); %>
               <% while (type) { %>
                   <% var inputs = window.iniCfg[type] %>
                   <% if (inputs) { %>
                   <% var keys = _.keys(inputs); %>
-                  <% var type = 'input'; %>
                   <%  for (var i=0; i < keys.length; i++) { %>
                   <!--<%      console.log('input key:'+keys[i]+' value:'+inputs[keys[i]]); %>-->
 
             <% if (true || localStorage.userRole !== 'operator') { %>
                   <li class="<%= inputs[keys[i]] %>-menu <%= userRoleClassName %>" >
-                    <a href="#<%= inputs[keys[i]] %>"><i class="fa fa-fw <%= tabMapFontAwesome[type] %>"></i> <%= inputs[keys[i]] %></a>
+                    <a href="#<%= inputs[keys[i]] %>"><i class="fa fa-fw <%= tabMapFontAwesome[type] %>"></i><% var temp=inputs[keys[i]];%> <%= t[temp]%></a>
                   </li>
             <% } %>
 
@@ -85,8 +84,8 @@
     </div>
     <!-- /.navbar-collapse -->
 
-    <div id="statusBar" class="btn-group-vertical" style="margin-top:800px;width:81px;height:81px;position:fixed;z-index:100">
-        <button id="help" type="button" class="btn btn-default btn-ms btn-block" style="height:81px;"><i class="fa fa-question fa-2x" aria-hidden="true"></i><br>HELP</button>
+    <div id="statusBar" class="btn-group-vertical" style="margin-top:500px;width:81px;height:81px;position:fixed;z-index:100">
+        <button id="help" type="button" class="btn btn-default btn-ms btn-block" style="height:81px;"><i class="fa fa-question fa-2x" aria-hidden="true"></i><br> <%= t["help"]%></button>
     </div>
 </nav>
 

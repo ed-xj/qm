@@ -134,21 +134,21 @@ window.InputBaseView = window.BaseView.extend({
                 }
             }
             break;
-            case "ERROR":
-            // do something
+            case "UPDATE":
+                
             break;
         }
         // } else if (data.Cmd === "ERROR") {}
     },
 
     openFoupBtnCLick: function (e) {
+        $('select').attr('disabled', 'disabled');
         this.slotTarget = $(e.currentTarget);
         // clear slots color and text
         $(".wafer-id").text("")
         // $("#slots").children().children("td").removeClass("full");
         $("#slots").children("tr").removeClass("warning");  // bootstrap
         // Build up JSON
-        console.log("model:" + this.model.get('viewName'));
         var json = this.encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "OPENFOUP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "openFoup", this.callBack);
@@ -159,9 +159,12 @@ window.InputBaseView = window.BaseView.extend({
         var json = this.encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "CLOSEFOUP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "closeFoup", this.callBack);
+        // remove when sys status turn idle
+        $('select').removeAttr('disabled');
     },
 
     loadCasetteBtnCLick: function () {
+        $('select').attr('disabled', 'disabled');
         // clear slots color and text
         $(".wafer-id").text("")
         // $("#slots").children().children("td").removeClass("full");
@@ -177,6 +180,8 @@ window.InputBaseView = window.BaseView.extend({
         var json = this.encodeJSON("SCHD", "COMMAND", this.model.get('viewName'), "UNLOADCASETTE", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "unloadCasette", this.callBack);
+        // remove when sys status turn idle
+        $('select').removeAttr('disabled');
     },
 
     openDoorBtnCLick: function () {

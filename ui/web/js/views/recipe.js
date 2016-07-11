@@ -1,6 +1,7 @@
 window.RecipeView = window.BaseView.extend({
     initialize: function (moderator) {
         this.moderator = moderator;
+        this.moderator.on('lang:change', this.onLangChange.bind(this));
         this.unloadOrder1 = 'b2t';
         this.unloadOrder2 = 'b2t';
     },
@@ -26,6 +27,11 @@ window.RecipeView = window.BaseView.extend({
     render: function () {
         $(this.el).html(this.template());
         return this;
+    },
+
+    onLangChange: function() {
+        console.log('RecipeView::onLangChange');
+        this.render()
     },
 
     showRecipeModal: function () {
@@ -229,7 +235,6 @@ window.RecipeView = window.BaseView.extend({
         }
     },
     
-    // TODO
     saveRecipeBtnClick:function () {
         // Build up JSON
         var recipename = $('#recipeName').val()                 // recipe name
@@ -277,5 +282,6 @@ window.RecipeView = window.BaseView.extend({
     loadRecipeBtnClick:function () {
         // load up recipe
         console.log("load recipe btn pressed");
+        
     }
 });

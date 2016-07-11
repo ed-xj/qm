@@ -1,17 +1,17 @@
 <% var t = window.I18N[window.currentLang]["recipeView"] %>
-<div class="container-fluid" style="padding-right:100px">
+<div class="container-fluid" style="padding-right:90px; margin-top:40px;">
     <div class="row">
         <div class="col-xs-12">
-            <h3 class="page-header">Recipe</h3>
+            <h3 class="page-header"><%= t["recipe"]%></h3>
             <div class="row">
                 <div class="col-xs-12" style="text-align:center;">
                     <form class="form-inline">
                         <div class="form-group">
                             <label for="recipeName"></label>
-                            <input type="text" class="form-control input-lg" id="recipeName" placeholder="Please select a recipe.">
+                            <input type="text" class="form-control input-lg" id="recipeName" placeholder="<%= t['select_recipe']%>">
                         </div>
-                        <button class="btn btn-default btn-lg" id='saveRecipe'>SAVE RECIPE</button>
-                        <button class="btn btn-default btn-lg" id='loadRecipe'>LOAD RECIPE</button>
+                        <button class="btn btn-default btn-lg" id='saveRecipe'><%= t["save_recipe"]%></button>
+                        <button class="btn btn-default btn-lg" id='loadRecipe'><%= t["load_recipe"]%></button>
                     </form>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                 <div class="col-xs-2 form-group">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <label class="control-label col-xs-12" style="text-align:left;">UNLOAD ORDER</label>
+                            <label class="control-label col-xs-12" style="text-align:left;"><%= t["unload_order"]%></label>
                             <!-- <div class="radio">
                                 <label>
                                     <input type="radio" name="unloadOrder1" value="1" checked>BOTTOM-TOP
@@ -35,13 +35,13 @@
                             </div> -->
                             <div class="btn-group-vertical btn-block" data-toggle="buttons">
                                  <label class="btn btn-default btn-lg active" style="border:none;">
-                                    <input type="radio" name="unloadOrder1" value="1">BOTTOM-TOP
+                                    <input type="radio" name="unloadOrder1" value="1"><%= t["b_to_t"]%>
                                 </label>
                                 <label class="btn btn-default btn-lg" style="border:none;">
-                                    <input type="radio" name="unloadOrder1" value="2">TOP-BOTTOM
+                                    <input type="radio" name="unloadOrder1" value="2"><%= t["t_to_b"]%>
                                 </label>
                             </div>
-                            <label class="control-label col-xs-12" style="margin-top:10px;">SOURCE</label>
+                            <label class="control-label col-xs-12" style="margin-top:10px;"><%= t["source"]%></label>
                             <select name="src-stn" class="form-control input-lg">
                                 <!-- <option value="">input1</option>
                                 <option value="">input2</option>
@@ -56,7 +56,7 @@
                                         <% var keys = _.keys(inputs); %>
                                         <% var type = 'input'; %>
                                         <% for (var i=0; i < keys.length; i++) { %>
-                                            <option value="<%= inputs[keys[i]] %>"><%= inputs[keys[i]] %></option>
+                                            <option value="<%= inputs[keys[i]] %>"><% var temp=inputs[keys[i]]; %><%= t[temp]%></option>
                                         <% } %>
                                     <% } %>
                                     <% type = types.shift(); %>
@@ -93,7 +93,7 @@
                 <div class="col-xs-2 form-group">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <label class="control-label col-xs-12" style="text-align:left;">UNLOAD ORDER</label>
+                            <label class="control-label col-xs-12" style="text-align:left;"><%= t["unload_order"]%></label>
                             <!-- <div class="radio">
                                 <label>
                                     <input type="radio" name="unloadOrder2" value="1" checked>BOTTOM-TOP
@@ -106,13 +106,13 @@
                             </div> -->
                             <div class="btn-group-vertical btn-block" data-toggle="buttons">
                                  <label class="btn btn-default btn-lg active" style="border:none;">
-                                    <input type="radio" name="unloadOrder2" value="1">BOTTOM-TOP
+                                    <input type="radio" name="unloadOrder2" value="1"><%= t["b_to_t"]%>
                                 </label>
                                 <label class="btn btn-default btn-lg" style="border:none;">
-                                    <input type="radio" name="unloadOrder2" value="2">TOP-BOTTOM
+                                    <input type="radio" name="unloadOrder2" value="2"><%= t["t_to_b"]%>
                                 </label>
                             </div>
-                            <label class="control-label col-xs-12" style="margin-top:10px;">DESTINATION</label>
+                            <label class="control-label col-xs-12" style="margin-top:10px;"><%= t["destination"]%></label>
                             <select name="dest-stn" class="form-control input-lg">
                                 <!-- <option value="">input1</option>
                                 <option value="">input2</option>
@@ -164,7 +164,7 @@
                 <div class="col-xs-8 form-group" style="margin-bottom:10px">
                     <div class="panel panel-default" style="margin-bottom:0px">
                         <div class="panel-body">
-                            <label class="control-label col-xs-12" style="padding-left:0;">WAFER TYPE</label>
+                            <label class="control-label col-xs-12" style="padding-left:0;"><%= t["wafer_type"]%></label>
                             <!-- <div class="radio">
                                 <div class="radio-inline">
                                     <label>
@@ -189,10 +189,10 @@
                             </div> -->
                             <div class="btn-group col-xs-12" data-toggle="buttons" style="padding:0;">
                                  <label class="btn btn-default btn-lg col-xs-3 active">
-                                    <input type="radio" name="type" value="STD" checked>STD
+                                    <input type="radio" name="type" value="STD" checked><%= t["standard"]%>
                                 </label>
                                 <label class="btn btn-default btn-lg col-xs-3" style="margin-left:0px;">
-                                    <input type="radio" name="type" value="THIN">THIN
+                                    <input type="radio" name="type" value="THIN"><%= t["thin"]%>
                                 </label>
                                 <label class="btn btn-default btn-lg col-xs-3" style="margin-left:0px;">
                                     <input type="radio" name="type" value="A_TYPE">A_TYPE
@@ -207,9 +207,9 @@
                 <div class="col-xs-4 form-group">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <label class="control-label col-xs-4" style="padding-left:0; margin-top:10px;">PROCESS 1</label>
+                            <label class="control-label col-xs-4" style="padding-left:0; margin-top:10px;"><%= t["process"]%> 1</label>
                             <div class="col-xs-8">
-                                <label class="control-label col-xs-12" style="text-align:left; margin-top:10px;">USAGE</label>
+                                <label class="control-label col-xs-12" style="text-align:left; margin-top:10px;"><%= t["usage"]%></label>
                                 <!-- <div class="radio">
                                     <label>
                                         <input type="radio" name="usage1" value="1">DISABLE
@@ -222,23 +222,23 @@
                                 </div> -->
                                 <div class="btn-group" data-toggle="buttons">
                                     <label class="btn btn-default btn-lg col-xs-6" style="border:none">
-                                        <input type="radio" name="usage1" value="0">DISABLE
+                                        <input type="radio" name="usage1" value="0"><%= t["disable"]%>
                                     </label>
                                     <label class="btn btn-default btn-lg col-xs-6 active" style="border:none">
-                                        <input type="radio" name="usage1" value="1">ENABLE
+                                        <input type="radio" name="usage1" value="1"><%= t["enable"]%>
                                     </label>
                                 </div>
 
                             </div>
-                            <label class="control-label col-xs-12" style="padding-left:0">SEQUENCE 1</label>
+                            <label class="control-label col-xs-12" style="padding-left:0"><%= t["sequence"]%> 1</label>
                             <br>
                             <table class="table table-fixed" style="margin-bottom:0px">
                                 <thead>
                                     <tr>
                                         <th class="col-xs-1">#</th>
-                                        <th class="col-xs-3">CMD</th>
-                                        <th class="col-xs-6">DATA</th>
-                                        <th class="col-xs-2">GOTO</th>
+                                        <th class="col-xs-3"><%= t["cmd"]%></th>
+                                        <th class="col-xs-6"><%= t["data"]%></th>
+                                        <th class="col-xs-2"><%= t["goto"]%></th>
                                     </tr>
                                 </thead>
                                 <tbody style="height: 635px;" id="sequence1">
@@ -258,9 +258,9 @@
                 <div class="col-xs-4 form-group">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <label class="control-label col-xs-4" style="padding-left:0; margin-top:10px;">PROCESS 2</label>
+                            <label class="control-label col-xs-4" style="padding-left:0; margin-top:10px;"><%= t["process"]%> 2</label>
                             <div class="col-xs-8">
-                                <label class="control-label col-xs-12" style="text-align:left; margin-top:10px;">USAGE</label>
+                                <label class="control-label col-xs-12" style="text-align:left; margin-top:10px;"><%= t["usage"]%></label>
                                 <!-- <div class="radio">
                                     <label>
                                         <input type="radio" name="usage2" value="1">DISABLE
@@ -274,22 +274,22 @@
 
                                 <div class="btn-group" data-toggle="buttons">
                                     <label class="btn btn-default btn-lg col-xs-6" style="border:none">
-                                        <input type="radio" name="usage2" value="0">DISABLE
+                                        <input type="radio" name="usage2" value="0"><%= t["disable"]%>
                                     </label>
                                     <label class="btn btn-default btn-lg col-xs-6 active" style="border:none">
-                                        <input type="radio" name="usage2" value="1">ENABLE
+                                        <input type="radio" name="usage2" value="1"><%= t["enable"]%>
                                     </label>
                                 </div>
                             </div>
-                            <label class="control-label col-xs-12" style="padding-left:0">SEQUENCE 2</label>
+                            <label class="control-label col-xs-12" style="padding-left:0"><%= t["sequence"]%> 2</label>
                             <br>
                             <table class="table table-fixed" style="margin-bottom:0px">
                                 <thead>
                                     <tr>
                                         <th class="col-xs-1">#</th>
-                                        <th class="col-xs-3">CMD</th>
-                                        <th class="col-xs-6">DATA</th>
-                                        <th class="col-xs-2">GOTO</th>
+                                        <th class="col-xs-3"><%= t["cmd"]%></th>
+                                        <th class="col-xs-6"><%= t["data"]%></th>
+                                        <th class="col-xs-2"><%= t["goto"]%></th>
                                     </tr>
                                 </thead>
                                 <tbody style="height: 635px;" id="sequence2">
@@ -317,7 +317,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close btn-lg" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg" aria-hidden="true"></i></button>
-                <h4 class="modal-title">Please select a recipe.</h4>
+                <h4 class="modal-title"><%= t["select_recipe"]%></h4>
             </div>
             <div class="modal-body">
                 <div>Recipe 1</div>

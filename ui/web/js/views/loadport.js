@@ -1,11 +1,8 @@
-window.RobotView = window.BaseView.extend({
+window.LoadportView = window.BaseView.extend({
 
     initialize: function (moderator) {
-        console.log('Initializing Robot View');
         this.moderator = moderator;
         this.moderator.on('lang:change', this.onLangChange.bind(this));
-        this.moderator.on('robotmsg:change', this.onRobotMsgChange.bind(this));
-        this.robotmsg = []
         this.logmsg = '';
         this.templateParams = {robotmsg: this.logmsg};
         // this.genLogMsg();
@@ -42,32 +39,17 @@ window.RobotView = window.BaseView.extend({
         "keypress #cmd":"robotCommandEnter"     // robot command
     },
 
-    // genLogMsg: function() {
-    //     for (var i=0; i<Math.floor((Math.random() * 1000) + 1); i++) {
-    //         this.logmsg += ((new Date()) + ':system log messages ' + i);
-    //         this.logmsg += '<br>';
-    //     }
-    //     this.templateParams = {robotmsg: this.logmsg};
-    // },
+    genLogMsg: function() {
+        for (var i=0; i<Math.floor((Math.random() * 1000) + 1); i++) {
+            this.logmsg += ((new Date()) + ':system log messages ' + i);
+            this.logmsg += '<br>';
+        }
+        this.templateParams = {robotmsg: this.logmsg};
+    },
 
     activate: function() {
         // this.genLogMsg();
         // this.render();
-    },
-
-    onRobotMsgChange: function() {
-        console.log('RobotView::onRobotMsgChange');
-        this.robotmsg.push(this.moderator.get("robotMsg"))
-    }, 
-
-    subRender: function() {
-        if (this.robotmsg.length != 0) {
-            var temp
-            for (var i = 0; i <= this.robotmsg.length; i++) {
-                temp = this.robotmsg.shift()
-                this.callBack(temp)
-            };
-        }
     },
 
     onLangChange: function() {
@@ -89,7 +71,7 @@ window.RobotView = window.BaseView.extend({
     },
 
     render: function () {
-        // this.templateParams = {robotmsg: this.logmsg};
+        this.templateParams = {robotmsg: this.logmsg};
         $(this.el).html(this.template(this.templateParams));
         this.disableControls(localStorage.userRole);
         return this;

@@ -1,4 +1,7 @@
 // utility.js
+
+var log = require("./logsystem-apache.js")
+
 // encode and decode JSON
 // Build up JSON
 var encodeJSON = function (dest, type, id, cmd, param, msg) {
@@ -21,7 +24,7 @@ var encodeJSON = function (dest, type, id, cmd, param, msg) {
 // 		"Message":"some messages"
 //     };
 // decode JSON from Apache to UI
-var decodeJSON = function (json) {
+var decodeJSON = function (json, connection) {
 	if (json.CmdDest==="SCHD") {
 		switch (json.CmdType) {
 		    case "ERROR":
@@ -49,10 +52,22 @@ var decodeJSON = function (json) {
 			    break;
 		}
 	} else {
-		// switch (json.CmdType) {
-		//     case "LOGGING":
-		//         break;
-	 //    }
+		switch (json.CmdType) {
+		    case "LOG":
+		    	if (json.Cmd === "getdirectory") {
+		    		var logfiles = log.getLogDirectory(json.Param)
+		    		var resp = this.encodeJSON("UI", "LOG", "log", "UPDATE", logfiles, "Apache /log/ directory.")
+					// send back to UI
+		    		connection.sendUTF(JSON.stringify(resp)); 
+		    	}
+		    	if (json.Cmd === "getlogfile") {
+		    		var file = log.getLogFile(json.Param)
+		    		var resp = this.encodeJSON("UI", "LOG", "log", "LOGFILE", file, "Apache /log/ directory.")
+			    	// send back to UI
+		    		connection.sendUTF(JSON.stringify(resp)); 
+		    	}
+		    break;
+	    }
 	}
 };
 

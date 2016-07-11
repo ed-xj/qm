@@ -13,7 +13,7 @@ var http = require('http');
 ///////////////////////////////////////////////////////////////////////
 // Log System 
 var log = require('./logsystem-apache.js');
-var moment = require('./moment.js');
+const moment = require('./moment.js');
 //////////////////////////////////////////////////////////////////////
 // socket as client
 // check if socket is already connected. If not, create a new socket object.
@@ -21,14 +21,15 @@ var moment = require('./moment.js');
 // https://nodejs.org/api/net.html#net_net
 var net = require('net');
 // give server scheduler ip address and port.
-var HOST = '127.0.0.1';
-var PORT = 1337;
+const HOST = '127.0.0.1';
+const PORT = 1337;
 var client = new net.Socket();
 client.setEncoding('utf8');
 
 //////////////////////////////////////////////////////////////////////
 // JSON encode and decode
-var util = require('../../ui/web/lib/utility.js');
+var util = require('../../web/bin/utility.js');
+
 /**
  * Global variables
  */
@@ -117,37 +118,11 @@ wsServer.on('request', function(request) {
         log.checkFileCreatedTime(now);      
         ////////////////////////////////////////////////////////////////////////////
         console.log(lognow() + msg)
-        // if (message.type === 'utf8') { // accept only text
-        //     if (userName === false) { // first message sent by user is their name
-        //         // remember user name
-        //         userName = htmlEntities(message.utf8Data);
-        //         // get random color and send it back to the user
-        //         userColor = colors.shift();
-        //         connection.sendUTF(JSON.stringify({ type:'color', data: userColor }));
-        //         console.log((new Date()) + ' User is known as: ' + userName
-        //                     + ' with ' + userColor + ' color.');
 
-        //     } else { // log and broadcast the message
-        //         console.log((new Date()) + ' Received Message from '
-        //                     + userName + ': ' + message.utf8Data);
-                
-                // we want to keep history of all sent messages
-                // var obj = {
-                //     time: (new Date()).getTime(),
-                //     text: htmlEntities(message.utf8Data),
-                //     author: userName,
-                //     color: userColor
-                // };
-                // history.push(obj);
-                // history = history.slice(-100);
-
-                // broadcast message to all connected clients
-                // var json = JSON.stringify({ type:'message', data: obj });
-                // for (var i=0; i < clients.length; i++) {
-                //     clients[i].sendUTF(json);
-                // }
-            // }
-        // }
+        ///////////////////////////////////////////////////////////////////////////
+        // get log file directory
+        util.decodeJSON(json_msg, connection)
+        
         console.log("Connected user: "+clients.length)
         // socket to SCHD
         // send to scheduler through socket
@@ -224,7 +199,7 @@ client.on('data', function (data) {
     var msg = "[WebSocket] Send msg to UI. (UI <-- apache server)"    
     var now = moment();                 
     log.fileExist(now);                 
-    log.appendToFile(now, msg+JSON.stringify(parseddata));         
+    log.appendToFile(now, msg+JSON.stringify(parseddata));
     log.checkFileCreatedTime(now);      
     //////////////////////////////////////
     console.log(lognow() +msg)
@@ -250,7 +225,6 @@ client.on('error', function() {
 
     // JSON encode
     var json = util.encodeJSON("UI", "ERROR", null, null, null, "Socket connection ERROR");
-    // console.log(JSON.stringify(json));//{"Message":"Socket connection ERROR"}));
     ////////////////////////////////////////////////////////////////////////////
     // Server Log          
     //////////////////////////////////////             
@@ -259,9 +233,12 @@ client.on('error', function() {
     log.fileExist(now);                 
     log.appendToFile(now, msg+JSON.stringify(json));         
     log.checkFileCreatedTime(now);      
-    ////////////////////////////////////////////////////////////////////////////     
+    ////////////////////////////////////////////////////////////////////////////
+    // Not send
+    setTimeout(function() {
+        connection.sendUTF(JSON.stringify(json));    
+    }, 1000);
     console.log(lognow() +msg)
-    connection.sendUTF(JSON.stringify(json));
     client.destroy()
 });
 

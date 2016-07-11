@@ -12,11 +12,10 @@ var systemInfo = Backbone.Model.extend({
 	},
 
 	initialize: function() {
-		// this.set({sysStatus:this.statusInit()})
 		this.set({station:this.stationInit()})
-		// this.set({sysMsg:this.sysmsgInit()})
-		// this.set({robotMsg:this.robotmsgInit()})
-		// this.set({secsgemMsg:this.secsgemmsgInit()})
+		this.set({sysMsg:this.sysmsgInit()})
+		this.set({robotMsg:this.robotmsgInit()})
+		this.set({secsgemMsg:this.secsgemmsgInit()})
 		console.log('system model has been intialized');
 
 	    // Websocket init
@@ -24,18 +23,16 @@ var systemInfo = Backbone.Model.extend({
 		console.log('Websocket has been intialized');
 
         // Hook up some event handlers to listen to model change
-        this.on('change',  function() {
-            if(this.hasChanged('sysStatus')){
-                console.log('sysStatus has been changed');
-            }
-            if(this.hasChanged('station')){
-                console.log('stationMapping has been changed');
-            }
-            if(this.hasChanged('recipe')){
-                console.log('loaded recipe has been changed');
-            }
-        });
+        // this.on('change',  function() {
+        //     if(this.hasChanged('station')){
+        //         console.log('stationMapping has been changed');
+        //     }
+        //     if(this.hasChanged('recipe')){
+        //         console.log('loaded recipe has been changed');
+        //     }
+        // });
 	},
+
 	// Init
 	stationInit : function() { 
 		var slotMap = new Array()
@@ -51,9 +48,6 @@ var systemInfo = Backbone.Model.extend({
 		return slotMap
 	},
 
-	statusInit: function() {
-		return "idle"
-	},
 	sysmsgInit: function() {
 		return new Array
 	},	
@@ -120,6 +114,9 @@ var systemInfo = Backbone.Model.extend({
         // WebSocket error event listener
         ws.onerror = function (error) {
             alert("Websocket ERROR. Please RELOAD this page.")
+            $("#statusBar>.btn[value='3']").css('opacity', '1.0');
+            $("#statusBar>.btn[value='2']").css('opacity', '0.5');
+            $("#statusBar>.btn[value='1']").css('opacity', '0.5');
         }
         return ws
     },
