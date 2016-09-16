@@ -85,8 +85,9 @@ window.BaseView = Backbone.View.extend({
         // most important part - incoming messages
         connection.onmessage = function (message) {
             var msg = JSON.parse(message.data)
-            console.log("websocket receive msg. " + JSON.stringify(msg))
+            //console.log("websocket receive msg. " + JSON.stringify(msg))
             that.decodeJSON(msg)
+            console.log("receive from apache")
             if (succCallback) succCallback(msg);
         };
 
@@ -116,12 +117,12 @@ window.BaseView = Backbone.View.extend({
     // JSON encode and decode
     encodeJSON: function(dest, type, id, cmd, param, msg) {
         return json = {
-            "CmdDest":dest,
-            "CmdType":type,
-            "StationID":id,
-            "Cmd":cmd,
-            "Param":param,
-            "Message":msg,
+            "CmdDest":dest,     // UI/SCHD/OTHER
+            "CmdType":type,     // ERROR/STATUS/COMMAND/UPDATE/MAPPING
+            "StationID":id,     // send out page
+            "Cmd":cmd,          // command
+            "Param":param,      // parameter
+            "Message":msg,      // messages
         };
     },
 
@@ -160,28 +161,28 @@ window.BaseView = Backbone.View.extend({
                         this.moderator.set("sysStatus","Running")
                     }
                     break;
-                case "RECIPE":
-                    this.moderator.set("recipe", json.Param)
-                    break;
                 case "COMMAND":
                     break;
                 case "UPDATE":
-                    // TODO
                     var current = Backbone.history.fragment
                     console.log("Current page: "+ current)
                     if (json.StationID !== current) {
                         switch (json.StationID) {
                             case "dashboard":
                                 this.moderator.set("sysMsg", json)
-                                this.moderator.trigger('sysmsg:change');
+                                this.moderator.trigger('sysmsg:msg');
                                 break;
                             case "robot":
                                 this.moderator.set("robotMsg",json)
-                                this.moderator.trigger('robotmsg:change');
+                                this.moderator.trigger('robotmsg:msg');
                                 break;
                             case "config":
                                 this.moderator.set("secsgemMsg",json)
-                                this.moderator.trigger('secsgemmsg:change');
+                                this.moderator.trigger('secsgemmsg:msg');
+                                break;
+                            case "recipe":
+                                this.moderator.set("recipe", json);
+                                this.moderator.trigger('recipe:load');
                                 break;
                         }
                     }

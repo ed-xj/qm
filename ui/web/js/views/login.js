@@ -21,16 +21,17 @@ window.LoginView = Backbone.View.extend({
 
         localStorage.setItem("user", username);
         localStorage.setItem("userRole", window.iniCfg.userrole[username]);
-        $('#statusBar').show();
+        $("#statusBar[for='lighttower']").show();
         window.app.navigate("#dashboard", {trigger: true});
     },
 
     credentialsNotFound: function () {
         $("#warning").html("Credentials not found!");
     },
-
+    
     render: function () {
         $(this.el).html(this.template());
+        $("#statusBar[for='lighttower']").hide();
         return this;
     }
 });

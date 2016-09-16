@@ -1,33 +1,32 @@
 window.DashboardView = window.BaseView.extend({
-
     initialize:function (moderator) {
         console.log('Initializing Dashboard View');
         this.moderator = moderator;
         this.moderator.on('lang:change', this.onLangChange.bind(this));
-        this.moderator.on('sysmsg:change', this.onSysMsgChange.bind(this));
+        this.moderator.on('sysmsg:msg', this.onSysMsgChange.bind(this));
         this.sysmsg = [];
         this.logmsg = '';
         this.templateParams = {sysmsg: this.logmsg};
-       // 
-       // this.genLogMsg();
-       // this.template = _.template(directory.utils.templateLoader.get('home'));
-       // this.template = templates['Home'];
+        this.rootrecipepath = "../recipe";
     },
 
+    station_id: "dashboard",    // constant variable, for identify station
+
     events:{
-        "click #recipeModal": "showRecipeModal",       // recipe
-        "click #loadrecipe":"loadRecipeBtnClick",      // load recipe
-        "click #startrecipe":"startRecipeBtnClick",    // start recipe
-        "click #stoprecipe":"stopRecipeBtnClick",      // stop recipe
-        "click #home":"homeBtnClick",                   // home
-        "click #recover":"recoverBtnClick",             // recover
-        "click #slow":"slowBtnClick",       // set speed to slow
-        "click #medium":"mediumBtnClick",   // set speed to medium
-        "click #high":"highBtnClick",       // set speed to fast
-        "change input[name='secs']":"onlineStatus",     // online status
-        "change code[name='sysmsg']":"autoScrollDown",  // auto scroll to bottom
-        "click .recipe-name":"recipeClick",
-        "click .recipe-done":"modalDoneBtnClick"
+        "click #recipeModal"        :"showRecipeModal",     // modal - show recipe modal
+        "click #loadrecipe_btn"     :"loadRecipeBtnClick",  // load recipe buttom
+        "click #startrecipe_btn"    :"startRecipeBtnClick", // start recipe buttom
+        "click #stoprecipe_btn"     :"stopRecipeBtnClick",  // stop recipe buttom
+        "click #home_btn"           :"homeBtnClick",        // home buttom
+        "click #recover_btn"        :"recoverBtnClick",     // recover buttom
+        "click #speed_slow_btn"     :"slowBtnClick",        // set speed to slow
+        "click #speed_medium_btn"   :"mediumBtnClick",      // set speed to medium
+        "click #speed_high_btn"     :"highBtnClick",        // set speed to fast
+        "change input[name='secs']" :"onlineStatus",        // online status
+        "change code[name='sysmsg']":"autoScrollDown",      // auto scroll to bottom
+        "click .recipe-name"        :"recipeClick",         // modal - select recipe table
+        "click .recipe-done"        :"modalDoneBtnClick",   // modal - done button
+        "change #select-recipe"     :"recipeSelect"         // local file select
     },
 
     onLangChange: function() {
@@ -86,42 +85,60 @@ window.DashboardView = window.BaseView.extend({
         $("code[name='sysmsg']").append(d + arrow + data.Message + "<br>").trigger("change");
     },
 
-    // systemStatus: function () {
-    //     // Build up JSON
-    //     var json = this.encodeJSON("SCHD", "STATUS", null, "SYSSTATUS", null, null);
-    //     // AJAX POST
-    //     this.ajaxCall(this.ajaxUrl, json, "status", this.callBack);
-    // },
-
     showRecipeModal: function () {
+        // Show modal, select recipe
         $("#Modal-recipe").modal({show: true});
+
+        // Windows file select
+        // Check for the various File API support.
+        // if (window.File && window.FileReader && window.FileList && window.Blob) {
+        //   // Great success! All the File APIs are supported.
+        //     $("#select-recipe").click()
+            
+        // } else {
+        //     alert('The File APIs are not fully supported in this browser.');
+        //     return
+        // }
     },
 
-    loadRecipeBtnClick:function () {
-        //
-        // model object for system status and slotmapping
-        // console.log(this.moderator.get('sysStatus'))
-        // var a = this.moderator.getStation(1)
-        // console.log(a.map.toString())
-        // a.station = 7
-        // this.moderator.set('sysStatus',"running")       // write to systemInfo
-        // console.log(this.moderator.get('sysStatus'))    // read from systemInfo
-        //
+    // Windows file select
+    // recipeSelect: function (e) {
+    //     var filename = $("#select-recipe")
+    //     this.recipepath = filename
+    //     filename =  filename.val()
+    //     if (filename.substring(3,11) == 'fakepath' )    { 
+    //         filename = filename.substring(12); 
+    //     }
+    //     if ( /\.(rc|txt)$/i.test(filename) ) {
+    //         $("#recipeModal").val(filename)
+    //         this.readRecipe(e)
+    //     } else {
+    //         alert("Wrong data type!")
+    //         this.recipepath = ""
+    //     }
+    // },
 
+    loadRecipeBtnClick:function () {
         var recipe = $('#recipeModal').val()
         // update recipe name to systemInfo      
-        this.moderator.set("recipe",recipe)
+        this.moderator.set("recipename",recipe)
+        // read in recipe from SCHD
 
-        // Build up JSON
-        var json = this.encodeJSON("SCHD", "COMMAND", null, "LOADRECIPE", recipe, null);
-        // AJAX POST
-        this.ajaxCall(this.ajaxUrl, json, "load recipe", this.callBack);
+        // // Build up JSON
+        // var json = this.encodeJSON("SCHD", "COMMAND", this.station_id, "LOADRECIPE", recipe, null);
+        // // AJAX POST
+        // this.ajaxCall(this.ajaxUrl, json, "load recipe", this.callBack);
+    },
+
+    refreshDirectory: function (path) {
+        var json = this.encodeJSON("APACHE", "GET", this.station_id, "GETDIRECTORY", this.rootrecipepath, "request for recipe directory");
+        this.ajaxCall(this.ajaxUrl, json, "list of recipe", this.callBack);
     },
 
     startRecipeBtnClick:function () {
         // Build up JSON
         var recipe = $('#recipeModal').val()
-        var json = this.encodeJSON("SCHD", "COMMAND", null, "STARTRECIPE", recipe, null);
+        var json = this.encodeJSON("SCHD", "COMMAND", this.station_id, "STARTRECIPE", recipe, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "start recipe", this.callBack);
     },
@@ -129,42 +146,42 @@ window.DashboardView = window.BaseView.extend({
     stopRecipeBtnClick:function () {
         // Build up JSON
         var recipe = $('#recipeModal').val()
-        var json = this.encodeJSON("SCHD", "COMMAND", null, "STOPRECIPE", recipe, null);
+        var json = this.encodeJSON("SCHD", "COMMAND", this.station_id, "STOPRECIPE", recipe, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "stop recipe", this.callBack);
     },
 
     homeBtnClick: function () {
         // Build up JSON
-        var json = this.encodeJSON("SCHD", "COMMAND", null, "HOME", null, null);
+        var json = this.encodeJSON("SCHD", "COMMAND", this.station_id, "HOME", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "home", this.callBack);
     },
 
     recoverBtnClick: function () {
         // Build up JSON
-        var json = this.encodeJSON("SCHD", "COMMAND", null, "RECOVER", null, null);
+        var json = this.encodeJSON("SCHD", "COMMAND", this.station_id, "RECOVER", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "recover", this.callBack);
     },
 
     slowBtnClick:function () {
         // Build up JSON
-        var json = this.encodeJSON("SCHD", "COMMAND", null, "SPEEDSLOW", null, null);
+        var json = this.encodeJSON("SCHD", "COMMAND", this.station_id, "SPEEDSLOW", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "slow", this.callBack);
     },
 
     mediumBtnClick:function () {
         // Build up JSON
-        var json = this.encodeJSON("SCHD", "COMMAND", null, "SPEEDMEDIUM", null, null);
+        var json = this.encodeJSON("SCHD", "COMMAND", this.station_id, "SPEEDMEDIUM", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "medium", this.callBack);
     },
 
     highBtnClick:function () {
         // Build up JSON
-        var json = this.encodeJSON("SCHD", "COMMAND", null, "SPEEDHIGH", null, null);
+        var json = this.encodeJSON("SCHD", "COMMAND", this.station_id, "SPEEDHIGH", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "high", this.callBack);
     },
@@ -175,7 +192,7 @@ window.DashboardView = window.BaseView.extend({
             var status = $(e.currentTarget).attr("value");
 
             // Build up JSON
-            var json = this.encodeJSON("SCHD", "COMMAND", null, "TOOLSTATUS", status, null);
+            var json = this.encodeJSON("SCHD", "COMMAND", this.station_id, "TOOLSTATUS", status, null);
             // AJAX POST
             this.ajaxCall(this.ajaxUrl, json, "toolstatus", this.callBack);
             console.log("online status changed to "+status);

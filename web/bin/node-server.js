@@ -122,6 +122,7 @@ wsServer.on('request', function(request) {
         ///////////////////////////////////////////////////////////////////////////
         // get log file directory
         util.decodeJSON(json_msg, connection)
+        ///////////////////////////////////////////////////////////////////////////
         
         console.log("Connected user: "+clients.length)
         // socket to SCHD
@@ -144,7 +145,6 @@ wsServer.on('request', function(request) {
             client.connect(PORT, HOST);
             client.write(JSON.stringify(json_msg));
         }
-
     });
 
     // user disconnected

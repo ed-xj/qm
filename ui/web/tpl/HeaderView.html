@@ -15,7 +15,7 @@
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><%=localStorage.userRole%><b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li>
                     <a href="#"><i class="fa fa-fw fa-user"></i> <%= t["profile"] %></a>
@@ -43,49 +43,56 @@
                 <a href="#dashboard"><i class="fa fa-fw fa-dashboard"></i> <%= t["dashboard"] %></a>
             </li>
             <% if (localStorage.userRole == 'operator') { %>
-              <% var userRoleClassName = " operatorRole"; %>
+            <% var userRoleClassName = " operatorRole"; %>
             <% } else { %>
-              <% var userRoleClassName = '' %>
+            <% var userRoleClassName = '' %>
             <% } %>
             <% if (true || localStorage.userRole !== 'operator') { %>
             <li class="robot-menu <%= userRoleClassName %>">
-                <a href="#robot"><i class="fa fa-fw fa-server"></i> <%= t["robot"] %></a>
+              <a href="#robot"><i class="fa fa-fw fa-server"></i> <%= t["robot"] %></a>
             </li>
             <% } %>
 
-              <% var types = ['input','output','aligner', 'recipe', 'transfer','packer','loadport','log']; %>
+            <% var types = ['input','output','aligner', 'recipe', 'transfer','packer']; %>
 
-              <% var type = types.shift(); %>
-              <% while (type) { %>
-                  <% var inputs = window.iniCfg[type] %>
-                  <% if (inputs) { %>
-                  <% var keys = _.keys(inputs); %>
-                  <%  for (var i=0; i < keys.length; i++) { %>
-                  <!--<%      console.log('input key:'+keys[i]+' value:'+inputs[keys[i]]); %>-->
+            <% var type = types.shift(); %>
+            <% while (type) { %>
+            <% var inputs = window.iniCfg[type] %>
+            <% if (inputs) { %>
+            <% var keys = _.keys(inputs); %>
+            <%  for (var i=0; i < keys.length; i++) { %>
+            <!--<%      console.log('input key:'+keys[i]+' value:'+inputs[keys[i]]); %>-->
 
             <% if (true || localStorage.userRole !== 'operator') { %>
-                  <li class="<%= inputs[keys[i]] %>-menu <%= userRoleClassName %>" >
-                    <a href="#<%= inputs[keys[i]] %>"><i class="fa fa-fw <%= tabMapFontAwesome[type] %>"></i><% var temp=inputs[keys[i]];%> <%= t[temp]%></a>
-                  </li>
+            <li class="<%= inputs[keys[i]] %>-menu <%= userRoleClassName %>" >
+              <a href="#<%= inputs[keys[i]] %>"><i class="fa fa-fw <%= tabMapFontAwesome[type] %>"></i><% var temp=inputs[keys[i]];%> <%= t[temp]%></a>
+            </li>
             <% } %>
 
-                  <%  } %>
-                  <% } %>
-              <% type = types.shift(); %>
-              <% } %>
-
+            <%  } %>
+            <% } %>
+            <% type = types.shift(); %>
+            <% } %>
             <% if (localStorage.userRole !== 'operator') { %>
-              <li class="config-menu <%= userRoleClassName %>">
-                <a href="#config"><i class="fa fa-fw fa-sliders"></i> <%= t["config"] %></a>
-              </li>
-
+            <li class="loadport-menu <%= userRoleClassName %>">
+              <a href="#Loadport"><i class="fa fa-fw fa-file-text-o"></i> <%= t["Loadport"] %></a>
+            </li>
+            <% } %>
+            <% if (localStorage.userRole !== 'operator') { %>
+            <li class="log-menu <%= userRoleClassName %>">
+              <a href="#Log"><i class="fa fa-fw fa-file-text-o"></i> <%= t["Log"] %></a>
+            </li>
+            <% } %>
+            <% if (localStorage.userRole !== 'operator') { %>
+            <li class="config-menu <%= userRoleClassName %>">
+              <a href="#config"><i class="fa fa-fw fa-sliders"></i> <%= t["config"] %></a>
+            </li>
             <% } %>
         </ul>
     </div>
     <!-- /.navbar-collapse -->
-
-    <div id="statusBar" class="btn-group-vertical" style="margin-top:500px;width:81px;height:81px;position:fixed;z-index:100">
-        <button id="help" type="button" class="btn btn-default btn-ms btn-block" style="height:81px;"><i class="fa fa-question fa-2x" aria-hidden="true"></i><br> <%= t["help"]%></button>
+    <div id="statusBar" for="help" class="btn-group-vertical" style="margin-top:665px;width:81px;height:81px;position:fixed;z-index:100">
+        <button id="help_btn" type="button" class="btn btn-default btn-ms btn-block" style="height:81px;"><i class="fa fa-question fa-2x" aria-hidden="true"></i><br> <%= t["help"]%></button>
     </div>
 </nav>
 
@@ -93,12 +100,12 @@
 
 <div id="helpModal" class="modal fade">
   <div class="modal-dialog">
-    <div class="modal-content"  style="width:1000px; margin-left:-250px; height:1000px">
+    <div class="modal-content"  style="width:950px; margin-left:-180px; height:768px">
       <div class="modal-header">
         <button type="button" class="close btn-lg" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg" aria-hidden="true"></i></button>
                 <h4 class="modal-title">User Manual.</h4>
       </div>
-      <div class="modal-body" style="height:1000px">
+      <div class="modal-body" style="height:100%">
           <iframe id="helpIframe" src="" style="zoom:0.60" frameborder="0" height="90%" width="99.6%"></iframe>
       </div>
     </div><!-- /.modal-content -->

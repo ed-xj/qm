@@ -266,29 +266,59 @@ I18N.en = {
     },
 
     "packerView": {
-        "input_title"   : "INPUT STATION 1",
-        "wafer_type"    : "WAFER TYPE",
-        "cass_type"     : "CASSETTE TYPE",
-        "foup"          : "FOUP",
-        "cassette"      : "CASSETTE",
-        "door"          : "DOOR",
-        "data"          : "DATA",
-        "update"        : "UPDATE",
-        "slots"         : "SLOTS"
+		"pnl_CONFIG_TITLE"	: "Configers",
+		"lbl_SLOT_COUNT"	: "SLOT COUNT",
+		"lbl_WAFER_COUNT"	: "WAFER COUNT",
+		"btn_CONFIRM"		: "Confirm",
+		"pnl_COMMAND_TITLE"	: "Commands",
+		"lbl_GET_WAFER"		: "GET TOP",
+		"btn_GET_WAFER"		: "Get",
+		"lbl_PUT_WAFER"		: "PUT TOP",
+		"btn_PUT_WAFER"		: "Put",
+		"tbl_WAFER_TITLE"	: "WAFER ID",
     },
 
-    "loadportView": {
-        "input_title"   : "INPUT STATION 1",
-        "wafer_type"    : "WAFER TYPE",
-        "cass_type"     : "CASSETTE TYPE",
-        "foup"          : "FOUP",
-        "cassette"      : "CASSETTE",
-        "door"          : "DOOR",
-        "data"          : "DATA",
-        "update"        : "UPDATE",
-        "slots"         : "SLOTS"
+    "loadportView": {		
+        "btn_chg_PORT1"			: "PORT1",
+        "btn_chg_PORT2"			: "PORT2",
+        "btn_chg_PORT3"			: "PORT3",
+        "btn_chg_PORT4"			: "PORT4",
+		
+        "lbl_COMMAND"			: "Command",
+        "lbl_MANUAL_LOAD"		: "Manual Load",
+        "lbl_MANUAL_UNLOAD"		: "Manual UnLoad",
+        "lbl_MANUAL_UNLOAD"		: "Manual UnLoad",
+        "lbl_AUTO_LOAD_UNLOAD"	: "Auto Load UnLoad",
+        "lbl_CONTROLS"			: "Controls",
+        "lbl_GET_INFORMATION"	: "Get Information",
+        "lbl_INITIAL"			: "Initial",
+		
+        "btn_mov_PODCL"			: "PODCL",
+        "btn_mov_YDOOR"			: "YDOOR",
+        "btn_mov_VACON"			: "VACON",
+        "btn_mov_DOROP"			: "DOROP",
+        "btn_mov_DORBK"			: "DORBK",
+        "btn_mov_ZDRDW"			: "ZDRDW",
+        "btn_mov_ZDRUP"			: "ZDRUP",
+        "btn_mov_DORFW"			: "DORFW",
+        "btn_mov_DORCL"			: "DORCL",
+        "btn_mov_VACOF"			: "VACOF",
+        "btn_mov_YWAIT"			: "YWAIT",
+        "btn_mov_PODOP"			: "PODOP",		
+        "btn_set_FSBON"			: "FSBON",
+        "btn_set_FSBOF"			: "FSBOF",
+        "btn_mov_CLOAD"			: "CLOAD",
+        "btn_mov_CULOD"			: "CULOD",
+        "btn_mov_ABORG"			: "ABORG",
+        "btn_mov_ABORT"			: "ABORT",
+        "btn_set_RESET"			: "RESET",
+        "btn_mov_ORGSH"			: "ORGSH",
+        "btn_get_STATE"			: "STATE",
+		
+        "btn_SEND"				: "SEND",
+        "btn_CLEAR"				: "CLEAR",
     },
-
+	
     "configView": {
         "config_title" : "Config",
         "log_level"    : "Log Level",
@@ -304,6 +334,12 @@ I18N.en = {
     },
 
     "logView": {
-
+        "log"           : "LOG",
+        "find_log"      : "Find Log",
+        "download"      : "Download",
+        "logfile_name"  : "File Name",
+        "show_lolog" : "Please select a log file.",
+        "directory"     : "Directory",
+        "done"          : "DONE"
     }
 };

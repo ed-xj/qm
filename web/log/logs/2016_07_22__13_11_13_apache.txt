@@ -1,0 +1,315 @@
+
+2016/07/14 11:30:36 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 11:30:36 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 11:30:36 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 11:30:41 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"Input2","Cmd":"OPENFOUP","Param":null,"Message":null}
+2016/07/14 11:30:41 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/14 11:30:42 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 11:30:42 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 11:30:42 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 11:30:53 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"Input2","Cmd":"OPENFOUP","Param":null,"Message":null}
+2016/07/14 11:30:53 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/14 11:30:59 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 11:30:59 >> [WebSocket] Send msg to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 11:31:03 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"recipe","Cmd":"SAVERECIPE","Param":{"name":"","source":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"destination":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"type":"STD","process1":{"usage":"1","sequence":[]},"process2":{"usage":"1","sequence":[]}},"Message":null}
+2016/07/14 11:31:03 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/14 11:31:05 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 11:31:05 >> [WebSocket] Send msg to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 11:53:35 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 11:53:36 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 11:53:36 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 11:53:36 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 11:54:03 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 11:54:09 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 11:54:09 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 11:54:09 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 11:54:12 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 11:54:14 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"recipe","Cmd":"SAVERECIPE","Param":{"name":"","source":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"destination":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"type":"STD","process1":{"usage":"1","sequence":[]},"process2":{"usage":"1","sequence":[]}},"Message":null}
+2016/07/14 11:54:14 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/14 11:54:16 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 11:54:16 >> [WebSocket] Send msg to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 11:58:42 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 11:58:42 >> [WebSocket] Send msg to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 11:58:46 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 11:58:47 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 11:58:47 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 11:58:47 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 11:58:52 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"recipe","Cmd":"SAVERECIPE","Param":{"name":"","source":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"destination":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"type":"STD","process1":{"usage":"1","sequence":[]},"process2":{"usage":"1","sequence":[]}},"Message":null}
+2016/07/14 11:58:52 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/14 11:58:53 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 11:58:53 >> [WebSocket] Send msg to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 11:59:08 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 11:59:08 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 11:59:08 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 11:59:12 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 11:59:14 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"recipe","Cmd":"SAVERECIPE","Param":{"name":"","source":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"destination":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"type":"STD","process1":{"usage":"1","sequence":[]},"process2":{"usage":"1","sequence":[]}},"Message":null}
+2016/07/14 11:59:14 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/14 11:59:16 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 11:59:16 >> [WebSocket] Send msg to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:06:55 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 12:06:55 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 12:06:55 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 12:06:55 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 12:07:00 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 12:07:02 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"recipe","Cmd":"SAVERECIPE","Param":{"name":"","source":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"destination":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"type":"STD","process1":{"usage":"1","sequence":[]},"process2":{"usage":"1","sequence":[]}},"Message":null}
+2016/07/14 12:07:02 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/14 12:07:03 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:07:03 >> [WebSocket] Send msg to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:08:15 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 12:08:15 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 12:08:15 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 12:08:20 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 12:08:21 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"recipe","Cmd":"SAVERECIPE","Param":{"name":"","source":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"destination":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"type":"STD","process1":{"usage":"1","sequence":[]},"process2":{"usage":"1","sequence":[]}},"Message":null}
+2016/07/14 12:08:21 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/14 12:08:24 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:08:24 >> [WebSocket] Send msg to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:08:53 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 12:08:53 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 12:08:53 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 12:08:56 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 12:08:59 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"recipe","Cmd":"SAVERECIPE","Param":{"name":"","source":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"destination":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"type":"STD","process1":{"usage":"1","sequence":[]},"process2":{"usage":"1","sequence":[]}},"Message":null}
+2016/07/14 12:08:59 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/14 12:09:01 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:09:01 >> [WebSocket] Send msg to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:09:22 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 12:09:22 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 12:09:22 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 12:09:26 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 12:09:28 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"recipe","Cmd":"SAVERECIPE","Param":{"name":"","source":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"destination":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"type":"STD","process1":{"usage":"1","sequence":[]},"process2":{"usage":"1","sequence":[]}},"Message":null}
+2016/07/14 12:09:28 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/14 12:09:30 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"b2t","source":"Input3","index":[0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:09:30 >> [WebSocket] Send msg to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"b2t","source":"Input3","index":[0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:10:10 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 12:10:10 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 12:10:10 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 12:10:13 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 12:10:16 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"recipe","Cmd":"SAVERECIPE","Param":{"name":"","source":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"destination":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"type":"STD","process1":{"usage":"1","sequence":[]},"process2":{"usage":"1","sequence":[]}},"Message":null}
+2016/07/14 12:10:16 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/14 12:10:18 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:10:18 >> [WebSocket] Send msg to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:13:04 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 12:13:04 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 12:13:04 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 12:13:25 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 12:13:28 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"recipe","Cmd":"SAVERECIPE","Param":{"name":"","source":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"destination":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"type":"STD","process1":{"usage":"1","sequence":[]},"process2":{"usage":"1","sequence":[]}},"Message":null}
+2016/07/14 12:13:28 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/14 12:13:30 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:13:30 >> [WebSocket] Send msg to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:13:46 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 12:13:46 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 12:13:46 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 12:13:56 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 12:13:58 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"recipe","Cmd":"SAVERECIPE","Param":{"name":"","source":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"destination":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"type":"STD","process1":{"usage":"1","sequence":[]},"process2":{"usage":"1","sequence":[]}},"Message":null}
+2016/07/14 12:13:58 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/14 12:14:02 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:14:02 >> [WebSocket] Send msg to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:15:40 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 12:15:41 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 12:15:41 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 12:15:41 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 12:15:47 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"recipe","Cmd":"SAVERECIPE","Param":{"name":"","source":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"destination":{"order":"b2t","source":"Input1","index":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"type":"STD","process1":{"usage":"1","sequence":[]},"process2":{"usage":"1","sequence":[]}},"Message":null}
+2016/07/14 12:15:47 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/14 12:15:49 >> [Socket] Receive msg from SCHD. (apache server <-- SCHD){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:15:50 >> [WebSocket] Send msg to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"UPDATE","StationID":"recipe","Cmd":"1","Param":{"name":"testingrecipt.rc","source":{"order":"t2b","source":"Input3","index":[0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},"destination":{"order":"b2t","source":"Input8","index":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"type":"A_TYPE","process1":{"usage":"0","sequence":[]},"process2":{"usage":"1","sequence":[{"CMD":"1","DATA":"222","GOTO":"3"},{"CMD":"11","DATA":"2","GOTO":"3"}]}},"Message":"sys msg testing"}
+2016/07/14 12:20:33 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 12:20:34 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 12:20:34 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 12:20:34 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 12:21:01 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 12:21:03 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 12:21:03 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 12:21:03 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 13:42:40 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 13:42:41 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 13:42:41 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 13:42:41 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 13:43:21 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 13:43:22 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 13:43:22 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 13:43:22 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 13:46:10 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 13:46:12 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 13:46:12 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 13:46:12 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 13:47:02 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 13:47:03 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 13:47:03 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 13:47:03 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 13:51:41 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 13:51:43 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 13:51:43 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 13:51:43 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 13:54:57 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 13:54:59 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 13:54:59 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 13:54:59 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 13:55:04 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"dashboard","Cmd":"LOADRECIPE","Param":"","Message":null}
+2016/07/14 13:55:04 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/14 13:55:05 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 13:55:05 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 13:55:05 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 13:59:19 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 13:59:21 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 13:59:21 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 13:59:21 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 13:59:48 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 13:59:50 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 13:59:50 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 13:59:50 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:11:10 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:11:12 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:11:12 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:11:12 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:12:28 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:12:30 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:12:30 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:12:30 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:18:12 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:18:14 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:18:14 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:18:14 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:19:15 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:19:16 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:19:16 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:19:16 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:20:06 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:20:08 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:20:08 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:20:08 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:20:30 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:20:31 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:20:31 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:20:31 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:20:52 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:20:54 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:20:54 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:20:54 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:21:40 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:21:42 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:21:42 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:21:42 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:22:00 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:22:01 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:22:01 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:22:01 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:22:31 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:22:33 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:22:33 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:22:33 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:23:53 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:23:57 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:23:57 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:23:57 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:28:02 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:28:04 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:28:04 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:28:04 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:28:27 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:28:29 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:28:29 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:28:29 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:30:07 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:30:09 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:30:09 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:30:09 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:31:03 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:31:04 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:31:04 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:31:04 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:32:42 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:32:44 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:32:44 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:32:44 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:34:12 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:34:13 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:34:13 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:34:13 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:34:27 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:34:28 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:34:28 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:34:28 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:34:40 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:34:42 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:34:42 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:34:42 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:34:54 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:34:55 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:34:55 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:34:55 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:35:11 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:35:13 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:35:13 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:35:13 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:36:05 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:36:06 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:36:06 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:36:06 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:42:26 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:42:28 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:42:28 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:42:28 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:42:57 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:42:58 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:42:58 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:42:58 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:45:05 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:45:07 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:45:07 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:45:07 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:45:48 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 14:45:49 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:45:49 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:45:49 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 14:45:55 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"SCHD","CmdType":"COMMAND","StationID":"dashboard","Cmd":"LOADRECIPE","Param":"netgear.txt","Message":null}
+2016/07/14 14:45:55 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/14 14:45:56 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 14:45:56 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 14:45:56 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 15:23:23 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 15:23:24 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 15:23:24 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 15:23:24 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 15:24:38 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 15:24:40 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 15:24:40 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 15:24:40 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 15:28:11 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 15:28:12 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 15:28:12 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 15:28:12 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 15:28:39 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 15:28:40 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 15:28:40 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 15:28:40 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 15:29:00 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 15:29:01 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 15:29:01 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 15:29:01 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 15:29:31 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 15:29:33 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 15:29:33 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 15:29:33 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 15:31:34 >> [WebSocket] UI disconnected from websocket.
+2016/07/14 15:31:36 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/14 15:31:36 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/14 15:31:36 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/14 17:37:58 >> [WebSocket] UI disconnected from websocket.
+2016/07/22 13:11:13 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/22 13:11:14 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/22 13:11:14 >> [Socket] Socket Closed. (apache server <-> SCHD)

@@ -1,0 +1,74 @@
+
+2016/07/22 13:11:33 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/22 13:11:33 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/22 13:11:33 >> [Socket] Socket Closed. (apache server <-> SCHD)
+This file was created at 2016/07/22 13:11:33 >> 
+
+2016/07/22 13:11:38 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"OT","CmdType":"LOG","StationID":"log","Cmd":"getdirectory","Param":"../log","Message":"request for log directory"}
+2016/07/22 13:11:38 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/22 13:11:39 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/22 13:11:39 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/22 13:11:39 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/22 13:11:44 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"OT","CmdType":"LOG","StationID":"log","Cmd":"getlogfile","Param":"../log/apache.txt","Message":"request for log file"}
+2016/07/22 13:11:44 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/22 13:11:45 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/22 13:11:45 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/22 13:11:45 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/22 13:11:49 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"OT","CmdType":"LOG","StationID":"log","Cmd":"getdirectory","Param":"../log","Message":"request for log directory"}
+2016/07/22 13:11:49 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/22 13:11:50 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/22 13:11:50 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/22 13:11:50 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/22 13:11:50 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"OT","CmdType":"LOG","StationID":"log","Cmd":"getdirectory","Param":"../log/logs","Message":"request for log directory"}
+2016/07/22 13:11:50 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/22 13:11:51 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/22 13:11:51 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/22 13:11:51 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/22 13:11:56 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"OT","CmdType":"LOG","StationID":"log","Cmd":"getlogfile","Param":"../log/logs/2016_07_22__13_11_13_apache.txt","Message":"request for log file"}
+2016/07/22 13:11:56 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/22 13:11:57 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/22 13:11:57 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/22 13:11:57 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/25 12:13:13 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/25 12:13:13 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/25 12:13:13 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/25 12:13:13 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"OT","CmdType":"LOG","StationID":"log","Cmd":"getdirectory","Param":"../log","Message":"request for log directory"}
+2016/07/25 12:13:13 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/25 12:13:14 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/25 12:13:14 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/25 12:13:14 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/25 12:13:17 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"OT","CmdType":"LOG","StationID":"log","Cmd":"getlogfile","Param":"../log/apache.txt","Message":"request for log file"}
+2016/07/25 12:13:17 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/25 12:13:19 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/25 12:13:19 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/25 12:13:19 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/25 12:17:39 >> [WebSocket] UI disconnected from websocket.
+2016/07/25 12:17:41 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/25 12:17:41 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/25 12:17:41 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/25 12:17:42 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"OT","CmdType":"LOG","StationID":"log","Cmd":"getdirectory","Param":"../log","Message":"request for log directory"}
+2016/07/25 12:17:42 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/25 12:17:43 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/25 12:17:43 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/25 12:17:43 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/25 12:17:44 >> [WebSocket] Receive msg from UI (apache server <-- UI)
+{"CmdDest":"OT","CmdType":"LOG","StationID":"log","Cmd":"getlogfile","Param":"../log/apache.txt","Message":"request for log file"}
+2016/07/25 12:17:44 >> [Socket] Send msg to SCHD. (SCHD <-- apache server)
+2016/07/25 12:17:45 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/25 12:17:45 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/25 12:17:45 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/07/25 12:20:00 >> [WebSocket] UI disconnected from websocket.
+2016/07/25 12:20:01 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/07/25 12:20:01 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/07/25 12:20:01 >> [Socket] Socket Closed. (apache server <-> SCHD)
+2016/09/15 11:31:55 >> [Socket] Socket error. (apache server <-> SCHD)
+2016/09/15 11:31:55 >> [WebSocket] Error msg send to UI. (UI <-- apache server){"CmdDest":"UI","CmdType":"ERROR","StationID":null,"Cmd":null,"Param":null,"Message":"Socket connection ERROR"}
+2016/09/15 11:31:55 >> [Socket] Socket Closed. (apache server <-> SCHD)

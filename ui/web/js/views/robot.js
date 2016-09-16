@@ -4,7 +4,7 @@ window.RobotView = window.BaseView.extend({
         console.log('Initializing Robot View');
         this.moderator = moderator;
         this.moderator.on('lang:change', this.onLangChange.bind(this));
-        this.moderator.on('robotmsg:change', this.onRobotMsgChange.bind(this));
+        this.moderator.on('robotmsg:msg', this.onRobotMsgChange.bind(this));
         this.robotmsg = []
         this.logmsg = '';
         this.templateParams = {robotmsg: this.logmsg};
@@ -22,7 +22,6 @@ window.RobotView = window.BaseView.extend({
 
     events:{
         "click #go_btn":"goBtnClick",           // go
-        // "click #robotHelpModal": "showHelpModal",// help
         "click #refresh":"refershBtnClick",     // refresh
         "click #reset_f_12":"resetf12BtnClick", // resetF12
         "click #grip":"gripBtnClick",           // grip
@@ -38,6 +37,7 @@ window.RobotView = window.BaseView.extend({
         "click #pick":"pickBtnClick",           // pick
         "click #place":"placeBtnClick",         // place
         "click #robotCmd":"robotCmdBtnClick",
+        "click #script_btn":"scriptBtnClick",
         "change code[name='robotmsg']":"autoScrollDown",// auto scroll to bottom
         "keypress #cmd":"robotCommandEnter"     // robot command
     },
@@ -51,6 +51,7 @@ window.RobotView = window.BaseView.extend({
     // },
 
     activate: function() {
+        this.disableControls(localStorage.userRole);
         // this.genLogMsg();
         // this.render();
     },
@@ -77,7 +78,7 @@ window.RobotView = window.BaseView.extend({
 
     disableControls: function(role) {
         if (role && role.toLowerCase() === 'operator') {
-            $(this.el).find('input, button').each(function(index){
+            $(this.el).find('input, button, table').each(function(index){
                 $(this).prop('disabled', true);
                 // console.log( index + ": " + $( this ).text() );
             });
@@ -85,6 +86,11 @@ window.RobotView = window.BaseView.extend({
 //                $(this).prop('disabled', true);
 //                // console.log( index + ": " + $( this ).text() );
 //            });
+        } else {
+            $(this.el).find('input, button, table').each(function(index){
+                $(this).prop('disabled', false);
+                // console.log( index + ": " + $( this ).text() );
+            });
         }
     },
 
@@ -141,12 +147,6 @@ window.RobotView = window.BaseView.extend({
             console.log("command sent: " + command);
             $('#cmd').val("")
         // }
-    },
-
-    showHelpModal: function () {
-        var frameSrc = "/ui/help/index.htm#t=Safety%2FDefinitions.htm";
-        $("#myIframe").attr("src", frameSrc);
-        $("#myModal").modal({show: true});
     },
 
     refershBtnClick: function () {
@@ -277,6 +277,15 @@ window.RobotView = window.BaseView.extend({
         var json = this.encodeJSON("SCHD", "COMMAND", "ROBOT", robotCmd, null, msg);
         //AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "robotCmd", this.callBack);
+    },
+
+    scriptBtnClick: function (e) {
+        var scriptcmd = $(e.currentTarget).val()
+        var msg = "Script "+scriptcmd
+        // Build up JSON
+        var json = this.encodeJSON("SCHD", "COMMAND", "ROBOT", scriptcmd, null, msg);
+        //AJAX POST
+        this.ajaxCall(this.ajaxUrl, json, "robotScript", this.callBack);
     },
 
     autoScrollDown: function (e) {

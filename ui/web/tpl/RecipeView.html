@@ -2,27 +2,30 @@
 <div class="container-fluid" style="padding-right:90px; margin-top:40px;">
     <div class="row">
         <div class="col-xs-12">
-            <h3 class="page-header"><%= t["recipe"]%></h3>
+            <!-- <h3 class="page-header" style="margin-bottom:5px"><%= t["recipe"]%></h3> -->
             <div class="row">
-                <div class="col-xs-12" style="text-align:center;">
+                <div class="col-xs-3">
+                    <h3 class="page-header" class="col-xs-2" style="margin-bottom:5px"><%= t["recipe"]%></h3>
+                </div>
+                <div class="col-xs-7" style="text-align:center; top:17px;">
                     <form class="form-inline">
+                        <button class="btn btn-default /*btn-lg*/" id='loadRecipe'><%= t["load_recipe"]%></button>
                         <div class="form-group">
                             <label for="recipeName"></label>
-                            <input type="text" class="form-control input-lg" id="recipeName" placeholder="<%= t['select_recipe']%>">
+                            <input type="text" class="form-control /*input-lg*/" id="recipeName" placeholder="<%= t['select_recipe']%>">
                         </div>
-                        <button class="btn btn-default btn-lg" id='saveRecipe'><%= t["save_recipe"]%></button>
-                        <button class="btn btn-default btn-lg" id='loadRecipe'><%= t["load_recipe"]%></button>
+                        <button class="btn btn-default /*btn-lg*/" id='saveRecipe'><%= t["save_recipe"]%></button>
                     </form>
+                </div>
+                <div class="col-xs-2">
+                    <h3 class="page-header" style="margin-bottom:5px">&nbsp;</h3>
                 </div>
             </div>
             <div class="row">
-                <div>&nbsp;</div>
-            </div>
-            <div class="row">
-                <div class="col-xs-2 form-group">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <label class="control-label col-xs-12" style="text-align:left;"><%= t["unload_order"]%></label>
+                <div class="col-xs-2 form-group" style="padding:5px;margin-bottom:0px">
+                    <div class="panel panel-default" style="margin-bottom:0px">
+                        <div class="panel-body" style="padding-top:10px;padding-bottom:5px">
+                            <label class="control-label col-xs-12" style="text-align:center;font-size:84%;padding:0px"><%= t["unload_order"]%></label>
                             <!-- <div class="radio">
                                 <label>
                                     <input type="radio" name="unloadOrder1" value="1" checked>BOTTOM-TOP
@@ -33,67 +36,75 @@
                                     <input type="radio" name="unloadOrder1" value="2">TOP-BOTTOM
                                 </label>
                             </div> -->
-                            <div class="btn-group-vertical btn-block" data-toggle="buttons">
-                                 <label class="btn btn-default btn-lg active" style="border:none;">
-                                    <input type="radio" name="unloadOrder1" value="1"><%= t["b_to_t"]%>
+                            <div class="btn-group btn-block" data-toggle="buttons">
+                                <label class="btn btn-default col-xs-6 /*btn-lg*/ active" style="border:none;">
+                                    <input type="radio" name="unloadOrder1" value="1">BtoT
+                                    <!--<%= t["b_to_t"]%>-->
                                 </label>
-                                <label class="btn btn-default btn-lg" style="border:none;">
-                                    <input type="radio" name="unloadOrder1" value="2"><%= t["t_to_b"]%>
+                                <label class="btn btn-default col-xs-6 /*btn-lg*/" style="border:none;">
+                                    <input type="radio" name="unloadOrder1" value="2">TtoB
+                                    <!--<%= t["t_to_b"]%>-->
                                 </label>
                             </div>
-                            <label class="control-label col-xs-12" style="margin-top:10px;"><%= t["source"]%></label>
-                            <select name="src-stn" class="form-control input-lg">
-                                <!-- <option value="">input1</option>
-                                <option value="">input2</option>
-                                <option value="">input3</option>
-                                <option value="">input4</option>
-                                <option value="">input5</option> -->
+                            <label class="control-label col-xs-12" style="margin-top:10px;padding:0px;text-align:center;"><%= t["source"]%></label>
+                            <select name="src-stn" class="form-control /*input-lg*/">
+                                <option value="ND">No Destination</option>
                                 <% var types = ['input', 'output']; %>
                                 <% var type = types.shift(); %>
                                 <% while (type) { %>
-                                    <% var inputs = window.iniCfg[type] %>
-                                    <% if (inputs) { %>
-                                        <% var keys = _.keys(inputs); %>
-                                        <% var type = 'input'; %>
-                                        <% for (var i=0; i < keys.length; i++) { %>
-                                            <option value="<%= inputs[keys[i]] %>"><% var temp=inputs[keys[i]]; %><%= t[temp]%></option>
-                                        <% } %>
-                                    <% } %>
-                                    <% type = types.shift(); %>
+                                <% var inputs = window.iniCfg[type] %>
+                                <% if (inputs) { %>
+                                <% var keys = _.keys(inputs); %>
+                                <% var type = 'input'; %>
+                                <% for (var i=0; i < keys.length; i++) { %>
+                                <option value="<%= inputs[keys[i]] %>"><% var temp=inputs[keys[i]]; %><%= t[temp]%></option>
+                                <% } %>
+                                <% } %>
+                                <% type = types.shift(); %>
                                 <% } %>
                             </select>
-                            <!-- <br> -->
+                            <div class="btn-group row" data-toggle="buttons" name="unloadOrder1" style="width:100%;padding:0px;margin:0px;">
+                                <label class="btn btn-default /*btn-lg*/ col-xs-4 chk-all" style="border:none;padding-left:8px">
+                                    <input type="radio" value="0" style="font-size:85%;"><span style="font-size:1vw;">ALL</span>
+                                </label>
+                                <label class="btn btn-default /*btn-lg*/ col-xs-4 chk-odd" style="border:none;padding-left:8px">
+                                    <input type="radio" value="1" style="font-size:50%;"><span style="font-size:1vw;">ODD</span>
+                                </label>
+                                <label class="btn btn-default /*btn-lg*/ col-xs-4 chk-none active" style="border:none;padding-left:5px">
+                                    <input type="radio" value="2" style=""><span style="font-size:1vw">NONE</span>
+                                </label>
+                            </div>
                             <div class="col-xs-12 chk-group" id="unloadOrder1" style="overflow-y:auto;padding-bottom:4px;">
-                                <div class="checkbox">
-                                  <label class="checkbox-inline">
-                                    <input class="chk-all chk-lg" type="checkbox" value="">ALL
-                                  </label>
-                                <!-- </div>
-                                <div class="checkbox-inline col-xs-6"> -->
-                                  <label class="checkbox-inline">
-                                    <input class="chk-odd chk-lg" type="checkbox" value="">ODD
-                                  </label>
+                                <!-- <div class="checkbox">
+                                    <label class="checkbox-inline">
+                                        <input class="chk-all /*chk-lg*/" type="checkbox" value="">ALL
+                                    </label>
+                                    </div>
+                                    <div class="checkbox-inline col-xs-6">
+                                    <label class="checkbox-inline">
+                                        <input class="chk-odd /*chk-lg*/" type="checkbox" value="">ODD
+                                    </label>
                                 </div>
                                 <div class="checkbox">
-                                  <label>
-                                    <input class="chk-none chk-lg" type="checkbox" value="" checked>NONE
-                                  </label>
-                                </div>
+                                    <label>
+                                        <input class="chk-none /*chk-lg*/" type="checkbox" value="" checked>NONE
+                                    </label>
+                                </div> -->
                                 <% for (var i=0; i < 25; i++) { %>
-                                <div class="checkbox">
-                                  <label>
-                                    <input class="chk-element chk-lg" type="checkbox" value="<%= i+1 %>"><%= i+1 %>
-                                  </label>
+                                <div class="checkbox" style="margin:3.5px;">
+                                    <label>
+                                        <input class="chk-element /*chk-lg*/" type="checkbox" value="<%= i+1 %>"><%= i+1 %>
+                                    </label>
                                 </div>
                                 <% } %>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-2 form-group">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <label class="control-label col-xs-12" style="text-align:left;"><%= t["unload_order"]%></label>
+                <div class="col-xs-2 form-group" style="padding:5px;margin-bottom:0px">
+                    <div class="panel panel-default" style="margin-bottom:0px">
+                        <div class="panel-body" style="padding-top:10px;padding-bottom:5px">
+                            <label class="control-label col-xs-12" style="text-align:center;font-size:84%;padding:0px"><%= t["unload_order"]%></label>
                             <!-- <div class="radio">
                                 <label>
                                     <input type="radio" name="unloadOrder2" value="1" checked>BOTTOM-TOP
@@ -104,66 +115,74 @@
                                     <input type="radio" name="unloadOrder2" value="2">TOP-BOTTOM
                                 </label>
                             </div> -->
-                            <div class="btn-group-vertical btn-block" data-toggle="buttons">
-                                 <label class="btn btn-default btn-lg active" style="border:none;">
-                                    <input type="radio" name="unloadOrder2" value="1"><%= t["b_to_t"]%>
+                            <div class="btn-group btn-block" data-toggle="buttons">
+                                <label class="btn btn-default col-xs-6 /*btn-lg*/ active" style="border:none;">
+                                    <input type="radio" name="unloadOrder2" value="1">BtoT
+                                    <!--<%= t["b_to_t"]%>-->
                                 </label>
-                                <label class="btn btn-default btn-lg" style="border:none;">
-                                    <input type="radio" name="unloadOrder2" value="2"><%= t["t_to_b"]%>
+                                <label class="btn btn-default col-xs-6 /*btn-lg*/" style="border:none;">
+                                    <input type="radio" name="unloadOrder2" value="2">TtoB
+                                    <!--<%= t["t_to_b"]%>-->
                                 </label>
                             </div>
-                            <label class="control-label col-xs-12" style="margin-top:10px;"><%= t["destination"]%></label>
-                            <select name="dest-stn" class="form-control input-lg">
-                                <!-- <option value="">input1</option>
-                                <option value="">input2</option>
-                                <option value="">input3</option>
-                                <option value="">input4</option>
-                                <option value="">input5</option> -->
-                                <% var types = ['input']; %>
+                            <label class="control-label col-xs-12" style="margin-top:10px;padding:0px;text-align:center;"><%= t["destination"]%></label>
+                            <select name="dest-stn" class="form-control /*input-lg*/">
+                                <option value="ND">No Destination</option>
+                                <% var types = ['input', 'output']; %>
                                 <% var type = types.shift(); %>
                                 <% while (type) { %>
-                                    <% var inputs = window.iniCfg[type] %>
-                                    <% if (inputs) { %>
-                                        <% var keys = _.keys(inputs); %>
-                                        <% var type = 'input'; %>
-                                        <%  for (var i=0; i < keys.length; i++) { %>
-                                            <option value="<%= inputs[keys[i]] %>"><%= inputs[keys[i]] %></option>
-                                        <% } %>
-                                    <% } %>
-                                    <% type = types.shift(); %>
+                                <% var inputs = window.iniCfg[type] %>
+                                <% if (inputs) { %>
+                                <% var keys = _.keys(inputs); %>
+                                <% var type = 'input'; %>
+                                <% for (var i=0; i < keys.length; i++) { %>
+                                <option value="<%= inputs[keys[i]] %>"><% var temp=inputs[keys[i]]; %><%= t[temp]%></option>
+                                <% } %>
+                                <% } %>
+                                <% type = types.shift(); %>
                                 <% } %>
                             </select>
-                            <!-- <br> -->
+                            <div class="btn-group row" data-toggle="buttons" name="unloadOrder2" style="width:100%;padding:0px;margin:0px;">
+                                <label class="btn btn-default /*btn-lg*/ col-xs-4 chk-all" style="border:none;padding-left:8px">
+                                    <input type="radio" value="0" style="font-size:85%;"><span style="font-size:1vw;">ALL</span>
+                                </label>
+                                <label class="btn btn-default /*btn-lg*/ col-xs-4 chk-odd" style="border:none;padding-left:8px">
+                                    <input type="radio" value="1" style="font-size:50%;"><span style="font-size:1vw;">ODD</span>
+                                </label>
+                                <label class="btn btn-default /*btn-lg*/ col-xs-4 chk-none active" style="border:none;padding-left:5px">
+                                    <input type="radio" value="2" style=""><span style="font-size:1vw">NONE</span>
+                                </label>
+                            </div>
                             <div class="col-xs-12 chk-group" id="unloadOrder2" style="overflow-y:auto; padding-bottom:4px">
-                                <div class="checkbox">
-                                  <label class="checkbox-inline">
-                                    <input class="chk-all chk-lg" type="checkbox" value="">ALL
-                                  </label>
-                                <!-- </div>
-                                <div class="checkbox-inline col-xs-6"> -->
-                                  <label class="checkbox-inline">
-                                    <input class="chk-odd chk-lg" type="checkbox" value="">ODD
-                                  </label>
+                                <!-- <div class="checkbox">
+                                    <label class="checkbox-inline">
+                                        <input class="chk-all /*chk-lg*/" type="checkbox" value="">ALL
+                                    </label>
+                                    </div>
+                                    <div class="checkbox-inline col-xs-6">
+                                    <label class="checkbox-inline">
+                                        <input class="chk-odd /*chk-lg*/" type="checkbox" value="">ODD
+                                    </label>
                                 </div>
                                 <div class="checkbox">
-                                  <label>
-                                    <input class="chk-none chk-lg" type="checkbox" value="" checked>NONE
-                                  </label>
-                                </div>
+                                    <label>
+                                        <input class="chk-none /*chk-lg*/" type="checkbox" value="" checked>NONE
+                                    </label>
+                                </div> -->
                                 <% for (var i=0; i < 25; i++) { %>
-                                <div class="checkbox">
-                                  <label>
-                                    <input class="chk-element chk-lg" type="checkbox" value="<%= i+1 %>"><%= i+1 %>
-                                  </label>
+                                <div class="checkbox" style="margin:3.5px;">
+                                    <label>
+                                        <input class="chk-element /*chk-lg*/" type="checkbox" value="<%= i+1 %>"><%= i+1 %>
+                                    </label>
                                 </div>
                                 <% } %>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-8 form-group" style="margin-bottom:10px">
+                <div class="col-xs-8 form-group" style="margin-bottom:0px;padding:5px">
                     <div class="panel panel-default" style="margin-bottom:0px">
-                        <div class="panel-body">
+                        <div class="panel-body" style="padding-top:10px">
                             <label class="control-label col-xs-12" style="padding-left:0;"><%= t["wafer_type"]%></label>
                             <!-- <div class="radio">
                                 <div class="radio-inline">
@@ -188,79 +207,84 @@
                                 </div>
                             </div> -->
                             <div class="btn-group col-xs-12" data-toggle="buttons" style="padding:0;">
-                                 <label class="btn btn-default btn-lg col-xs-3 active">
-                                    <input type="radio" name="type" value="STD" checked><%= t["standard"]%>
+                                <label class="btn btn-default /*btn-lg*/ col-xs-3 active">
+                                    <input type="radio" name="type" value="STD"><%= t["standard"]%>
                                 </label>
-                                <label class="btn btn-default btn-lg col-xs-3" style="margin-left:0px;">
+                                <label class="btn btn-default /*btn-lg*/ col-xs-3" style="margin-left:0px;">
                                     <input type="radio" name="type" value="THIN"><%= t["thin"]%>
                                 </label>
-                                <label class="btn btn-default btn-lg col-xs-3" style="margin-left:0px;">
+                                <label class="btn btn-default /*btn-lg*/ col-xs-3" style="margin-left:0px;">
                                     <input type="radio" name="type" value="A_TYPE">A_TYPE
                                 </label>
-                                <label class="btn btn-default btn-lg col-xs-3" style="margin-left:0px;">
+                                <label class="btn btn-default /*btn-lg*/ col-xs-3" style="margin-left:0px;">
                                     <input type="radio" name="type" value="B_TYPE">B_TYPE
                                 </label>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-4 form-group">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <label class="control-label col-xs-4" style="padding-left:0; margin-top:10px;"><%= t["process"]%> 1</label>
-                            <div class="col-xs-8">
-                                <label class="control-label col-xs-12" style="text-align:left; margin-top:10px;"><%= t["usage"]%></label>
-                                <!-- <div class="radio">
-                                    <label>
-                                        <input type="radio" name="usage1" value="1">DISABLE
+                <div class="col-xs-4 form-group" style="padding:5px;margin-bottom:0px">
+                    <div class="panel panel-default" style="margin-bottom:0px">
+                        <div class="panel-body" style="height:565px; padding-top:5px">
+                            <label class="control-label col-xs-4" style="padding:0; margin-top:5px;"><%= t["process"]%> 1</label>
+                            <div class="col-xs-8" style="text-align:center;">
+                                <label class="control-label col-xs-12" style="margin-top:5px;"><%= t["usage"]%></label>
+                                    <!-- <div class="radio">
+                                        <label>
+                                            <input type="radio" name="usage1" value="1">DISABLE
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="usage1" value="2">ENABLE
+                                        </label>
+                                    </div> -->
+                                <div class="btn-group" data-toggle="buttons" style="text-align:center;">
+                                    <label class="btn btn-default /*btn-lg*/ col-xs-6" style="border:none">
+                                        <input type="radio" name="usage1" value="0"><span style="font-size:1vw"><%= t["disable"]%></span>
+                                    </label>
+                                    <label class="btn btn-default /*btn-lg*/ col-xs-6 active" style="border:none">
+                                        <input type="radio" name="usage1" value="1"><span style="font-size:1vw"><%= t["enable"]%></span>
                                     </label>
                                 </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="usage1" value="2">ENABLE
-                                    </label>
-                                </div> -->
-                                <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-default btn-lg col-xs-6" style="border:none">
-                                        <input type="radio" name="usage1" value="0"><%= t["disable"]%>
-                                    </label>
-                                    <label class="btn btn-default btn-lg col-xs-6 active" style="border:none">
-                                        <input type="radio" name="usage1" value="1"><%= t["enable"]%>
-                                    </label>
-                                </div>
-
                             </div>
                             <label class="control-label col-xs-12" style="padding-left:0"><%= t["sequence"]%> 1</label>
                             <br>
-                            <table class="table table-fixed" style="margin-bottom:0px">
-                                <thead>
-                                    <tr>
-                                        <th class="col-xs-1">#</th>
-                                        <th class="col-xs-3"><%= t["cmd"]%></th>
-                                        <th class="col-xs-6"><%= t["data"]%></th>
-                                        <th class="col-xs-2"><%= t["goto"]%></th>
-                                    </tr>
-                                </thead>
-                                <tbody style="height: 635px;" id="sequence1">
-                                    <% for (var i=0; i < 50; i++) { %>
-                                    <tr>
-                                        <td class="col-xs-1" style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
-                                        <td class="col-xs-3"><input class="form-control" type="text"></td>
-                                        <td class="col-xs-6"><input class="form-control" type="text"></td>
-                                        <td class="col-xs-2"><input class="form-control" type="text"></td>
-                                    </tr>
-                                    <% } %>
-                                </tbody>
-                            </table>
+                            <div class="row" style="width:28vw;height:475px;padding:0;overflow-y:scroll">
+                                <table class="table table-condensed table-bordered" style="margin-bottom:0px;">
+                                    <thead>
+                                        <tr>
+                                            <th width="10%">#</th>
+                                            <th width="20%"><%= t["cmd"]%></th>
+                                            <th width="50%"><%= t["data"]%></th>
+                                            <th width="20%"><%= t["goto"]%></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="sequence1">
+                                        <% for (var i=0; i < 50; i++) { %>
+                                        <tr>
+                                            <td style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
+                                            <td><input class="form-control" type="text"></td>
+                                            <td><input class="form-control" type="text"></td>
+                                            <td><input class="form-control" type="text"></td>
+                                            <!-- <th style="text-align: center; vertical-align: middle;"><%= i+1 %></th>
+                                            <td contenteditable='true' id=""></td>
+                                            <td contenteditable='true' id=""></td>
+                                            <td contenteditable='true' id=""></td> -->
+                                        </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-4 form-group">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <label class="control-label col-xs-4" style="padding-left:0; margin-top:10px;"><%= t["process"]%> 2</label>
-                            <div class="col-xs-8">
-                                <label class="control-label col-xs-12" style="text-align:left; margin-top:10px;"><%= t["usage"]%></label>
+                <div class="col-xs-4 form-group" style="padding:5px;margin-bottom:0px">
+                    <div class="panel panel-default" style="margin-bottom:0px">
+                        <div class="panel-body" style="height:565px; padding-top:5px">
+                            <label class="control-label col-xs-4" style="padding:0; margin-top:5px;"><%= t["process"]%> 2</label>
+                            <div class="col-xs-8" style="text-align:center;">
+                                <label class="control-label col-xs-12" style="margin-top:5px;"><%= t["usage"]%></label>
                                 <!-- <div class="radio">
                                     <label>
                                         <input type="radio" name="usage2" value="1">DISABLE
@@ -272,61 +296,80 @@
                                     </label>
                                 </div> -->
 
-                                <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-default btn-lg col-xs-6" style="border:none">
-                                        <input type="radio" name="usage2" value="0"><%= t["disable"]%>
+                                <div class="btn-group" data-toggle="buttons" style="text-align:center;">
+                                    <label class="btn btn-default /*btn-lg*/ col-xs-6" style="border:none">
+                                        <input type="radio" name="usage2" value="0"><span style="font-size:1vw"><%= t["disable"]%></span>
                                     </label>
-                                    <label class="btn btn-default btn-lg col-xs-6 active" style="border:none">
-                                        <input type="radio" name="usage2" value="1"><%= t["enable"]%>
+                                    <label class="btn btn-default /*btn-lg*/ col-xs-6 active" style="border:none">
+                                        <input type="radio" name="usage2" value="1"><span style="font-size:1vw"><%= t["enable"]%></span>
                                     </label>
                                 </div>
                             </div>
                             <label class="control-label col-xs-12" style="padding-left:0"><%= t["sequence"]%> 2</label>
                             <br>
-                            <table class="table table-fixed" style="margin-bottom:0px">
-                                <thead>
-                                    <tr>
-                                        <th class="col-xs-1">#</th>
-                                        <th class="col-xs-3"><%= t["cmd"]%></th>
-                                        <th class="col-xs-6"><%= t["data"]%></th>
-                                        <th class="col-xs-2"><%= t["goto"]%></th>
-                                    </tr>
-                                </thead>
-                                <tbody style="height: 635px;" id="sequence2">
-                                    <% for (var i=0; i < 50; i++) { %>
-                                    <tr>
-                                        <td class="col-xs-1" style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
-                                        <td class="col-xs-3"><input class="form-control" type="text"></td>
-                                        <td class="col-xs-6"><input class="form-control" type="text"></td>
-                                        <td class="col-xs-2"><input class="form-control" type="text"></td>
-                                    </tr>
-                                    <% } %>
-                                </tbody>
-                            </table>
+                            <div class="row" style="width:28vw;height:475px;padding:0;overflow-y:scroll">
+                                <table class="table table-condensed table-bordered" style="margin-bottom:0px">
+                                    <thead>
+                                        <tr>
+                                            <th width="10%">#</th>
+                                            <th width="20%"><%= t["cmd"]%></th>
+                                            <th width="50%"><%= t["data"]%></th>
+                                            <th width="20%"><%= t["goto"]%></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="sequence2">
+                                        <% for (var i=0; i < 50; i++) { %>
+                                        <tr>
+                                            <td style="text-align: center; vertical-align: middle;"><%= i+1 %></td>
+                                            <td><input class="form-control" type="text"></td>
+                                            <td><input class="form-control" type="text"></td>
+                                            <td><input class="form-control" type="text"></td>
+                                        </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+            </div>  <!-- row -->
+        </div>  <!-- col-xs-12 -->
+    </div>  <!-- row -->
+</div>  <!-- container-fluid -->
 
 <!-- Recipe Modal -->
-<div id="myModal" class="modal fade">
+<div id="recipeModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close btn-lg" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg" aria-hidden="true"></i></button>
+                <button type="button" class="close /*btn-lg*/" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg" aria-hidden="true"></i></button>
                 <h4 class="modal-title"><%= t["select_recipe"]%></h4>
             </div>
             <div class="modal-body">
-                <div>Recipe 1</div>
-                <div>Recipe 2</div>
-                <div>Recipe 3</div>
-                <div>Recipe 4</div>
+
+                <table class='table-condensed table-striped' style="width:100%;">
+                    <tbody>
+                        <tr class="recipe-name">
+                            <td><h2>Recipe 1</h2></td>
+                        </tr>
+                        <tr class="recipe-name">
+                            <td><h2>Recipe 2</h2></td>
+                        </tr>
+                        <tr class="recipe-name">
+                            <td><h2>Recipe 3</h2></td>
+                        </tr>
+                        <tr class="recipe-name">
+                            <td><h2>Recipe 4</h2></td>
+                        </tr>
+                        <tr class="recipe-name">
+                            <td><h2>Recipe 5</h2></td>
+                        </tr>
+                    </tbody>
+                </table>
+
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Done</button>
+                <button type="button" class="btn btn-primary /*btn-lg*/" data-dismiss="modal">Done</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

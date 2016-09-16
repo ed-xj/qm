@@ -60,8 +60,3 @@ stdin.on('data', function (data) {
 		console.log(toString(data));
 	});
 });
-
-
-
-
-"SyntaxError: Unexpected token case\n    at exports.runInThisContext (vm.js:53:16)\n    at Module._compile (module.js:373:25)\n    at Object.Module._extensions..js (module.js:416:10)\n    at Module.load (module.js:343:32)\n    at Function.Module._load (module.js:300:12)\n    at Module.require (module.js:353:17)\n    at require (internal/module.js:12:17)\n    at Object.<anonymous> (c:\wamp64\www\web\bin\node-server.js:31:12)\n    at Module._compile (module.js:409:26)\n    at Object.Module._extensions..js (module.js:416:10)"

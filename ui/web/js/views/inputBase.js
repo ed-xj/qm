@@ -134,8 +134,7 @@ window.InputBaseView = window.BaseView.extend({
                 }
             }
             break;
-            case "UPDATE":
-                
+            case "UPDATE":                
             break;
         }
         // } else if (data.Cmd === "ERROR") {}

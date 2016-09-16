@@ -29,7 +29,7 @@ function fileExist(now) {
 	// fs.access("../log/"+filename+".txt", fs.F_OK, function (err) {
 	fs.access("../log/apache.txt", fs.F_OK, function (err) {
 		if(err) {	// if not exist apache.txt, create new apache.txt.
-			var message = "This file was created at " + timestamp + "\r\n";
+			var message = "\r\nThis file was created at " + timestamp + "\r\n";
 			fs.appendFileSync("../log/apache.txt", message);
 		}
 	});
@@ -51,7 +51,7 @@ function checkFileCreatedTime(now) {
 
 function renameAndSave(now) {
 	var filename = String(now.format('YYYY_MM_DD__HH_mm_ss'));
-	fs.renameSync('../log/apache.txt', '../log/archived_logs/'+ filename +'_apache.txt'); 
+	fs.renameSync('../log/apache.txt', '../log/logs/'+ filename +'_apache.txt'); 
 	fs.unlink('../log/apache.txt', function(err) {
 	   if (err) {
 		       return console.error(err);
@@ -64,7 +64,6 @@ function getLogDirectory(local) {
  	var log = fs.readdirSync(local)
  	var folders = new Array()
  	var files = new Array()
- 	console.log(log)
  	for (var i = 0; i < log.length; i++) {
  		if (path.extname(log[i]) === ".txt") {
  			files.push({name:log[i], isFile:true})

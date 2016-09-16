@@ -5,15 +5,20 @@ window.AlignerView = window.BaseView.extend({
     },
 
     events : {
+        "click button[for='changeAngle']":"changeAngleBtnClick", // up btn
         "click #readId":"readIdBtnClick",               // read it
         "click #alignWafer":"alignWaferBtnClick",       // align wafer
-        "change #alignWaferId":"alignWaferIdChg",
+        "keypress #alignWaferAngle":"InputTextKeyPress",
+		"focus #alignWaferAngle":"InputTextFocus",
+        "change #alignWaferAngle":"alignWaferAngleChg",
         "input input[name='w-angle']":"alignWaferSliderChg",
         "click #updateId":"updateIDBtnClick",
         "click #getWafer":"getWaferBtnClick",           // get wafer
         "click #putWafer":"putWaferBtnClick",           // put wafer
         "click #getTop":"getTopBtnClick",               // get top
-        "click #putTop":"putTopBtnClick"            // put top
+        "click #putTop":"putTopBtnClick",            // put top
+		"focus #readIdText":"InputTextFocus",
+		"focus #updateIdText":"InputTextFocus",
     },
     
     onLangChange: function() {
@@ -21,40 +26,51 @@ window.AlignerView = window.BaseView.extend({
         this.render()
     },
 
+    activate: function() {
+        this.disableControls(localStorage.userRole);
+    },
+
     render: function () {
-        var callback = function(){
-            // Solution 1
-            // this.$('.spinner span .btn:first-of-type').on('click', function() {
-            //     var val =  parseInt(this.$('.spinner input').val(), 10);
-            //     if (val < 359)
-            //         this.$('.spinner input').val( val + 1);
-            // }.bind(this));
-            // this.$('.spinner span .btn:last-of-type').on('click', function() {
-            //     var val =  parseInt(this.$('.spinner input').val(), 10);
-            //     if (val > 1)
-            //         this.$('.spinner input').val( val - 1);
-            // }.bind(this));}.bind(this);
-
-            // Solution 2
-            this.$('.fa-caret-up').parent('button').on('click', function() {
-                var val =  parseInt(this.$('#alignWaferId').val(), 10);
-                if (val < 359)
-                    this.$('#alignWaferId').val( val + 1);
-                $("input[name='w-angle']").val(this.$('#alignWaferId').val())
-            }.bind(this));
-            this.$('.fa-caret-down').parent('button').on('click', function() {
-                var val =  parseInt(this.$('#alignWaferId').val(), 10);
-                if (val > 0)
-                    this.$('#alignWaferId').val( val - 1);
-                $("input[name='w-angle']").val(this.$('#alignWaferId').val())
-            }.bind(this));}.bind(this);
-
         $(this.el).html(this.template());
-        setTimeout(callback, 1);
+        this.disableControls(localStorage.userRole);
         return this;
     },
 
+    disableControls: function(role) {
+        if (role && role.toLowerCase() === 'operator') {
+            $(this.el).find('input, button, table').each(function(index){
+                $(this).prop('disabled', true);
+                // console.log( index + ": " + $( this ).text() );
+            });
+//            $(this.el).find('button').each(function(index){
+//                $(this).prop('disabled', true);
+//                // console.log( index + ": " + $( this ).text() );
+//            });
+        } else {
+            $(this.el).find('input, button, table').each(function(index){
+                $(this).prop('disabled', false);
+                // console.log( index + ": " + $( this ).text() );
+            });
+        }
+    },
+
+    callback: function(){
+
+    },
+
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
+
+    changeAngleBtnClick: function (e) {
+        var val =  parseInt($('#alignWaferAngle').val(), 10);
+        if ($(e.currentTarget).children("i").hasClass("fa-caret-up")) {
+            if (val < 359)
+                this.$('#alignWaferAngle').val( val + 1);
+        } else {
+            if (val > 0)
+                this.$('#alignWaferAngle').val( val - 1);
+        }
+        $("input[name='w-angle']").val($('#alignWaferAngle').val())
+    },
     
     readIdBtnClick:function () {
         var text = $('#readIdText').val()
@@ -65,25 +81,26 @@ window.AlignerView = window.BaseView.extend({
     },
     
     alignWaferBtnClick:function () {
-        var alignWaferId = $('#alignWaferId').val()
-        // var alignWaferIdField = $("#alignWaferIdField").val();
-        console.log(alignWaferId)
-        if (alignWaferId >359 || alignWaferId <0) {
+        var alignWaferAngle = $('#alignWaferAngle').val()
+        // var alignWaferAngleField = $("#alignWaferAngleField").val();
+        console.log(alignWaferAngle)
+        if (alignWaferAngle >359 || alignWaferAngle <0) {
             alert("Warning: align angle should be between 0° and 359°")
         } else {
             // Build up JSON
-            var json = this.encodeJSON("SCHD", "COMMAND", "Aligner", "ALIGNWAFER", alignWaferId, null);
+            var json = this.encodeJSON("SCHD", "COMMAND", "Aligner", "ALIGNWAFER", alignWaferAngle, null);
             // AJAX POST
             this.ajaxCall(this.ajaxUrl, json, "alignWafer");
         }
     },
 
-    alignWaferIdChg: function (e) {
+    alignWaferAngleChg: function (e) {
+		if (Number($(e.currentTarget).val()) > 359) {$(e.currentTarget).val(359)}
         $("input[name='w-angle']").val($(e.currentTarget).val())
     },
 
     alignWaferSliderChg: function (e) {
-        $("#alignWaferId").val($(e.currentTarget).val())
+        $("#alignWaferAngle").val($(e.currentTarget).val())
     },
 
     updateIDBtnClick: function() {
@@ -123,5 +140,15 @@ window.AlignerView = window.BaseView.extend({
         var json = this.encodeJSON("SCHD", "COMMAND", "Aligner", "PUTTOP", null, null);
         // AJAX POST
         this.ajaxCall(this.ajaxUrl, json, "putTop");
-    }
+    },
+	
+    InputTextKeyPress: function (e) {
+        // enter key
+		var key = e.which;
+		if ((key<48 || key>57) && key!=13){e.preventDefault();}
+    },
+	
+    InputTextFocus: function (e) {
+		$(e.currentTarget).select();
+    },
 });

@@ -21,6 +21,9 @@ I18N.zh = {
         "process1"          : "处理1",
         "Recipe"            : "食谱",
         "Transfer"          : "传递",
+        "Packer"            : "Packer",
+        "Loadport"          : "Loadport",
+        "Log"               : "日志",
         "config"            : "配置",
         "toggle_navigation" : "拨动导航",
         "view_all"          : "查看全部",
@@ -273,7 +276,14 @@ I18N.zh = {
     },
 
     "logView": {
-
+        "log"           : "日志",
+        "find_log"      : "找寻日志",
+        "download"      : "下载日志",
+        "logfile_name"  : "日志名称",
+        "show_log_file" : "显示日志",
+        "select_log"    : "请选择配方",
+        "directory"     : "目录",
+        "done"          : "完成"
     },
 
     "configView": {

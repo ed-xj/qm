@@ -13,7 +13,10 @@ window.LogView = window.BaseView.extend({
         "click #isFolder"           : "expendFolder",       // show child folder content
         "click #isFile"             : "showtxtFile",         // show file
         "click #done"               : "doneBtnClick",
-        "click #downloadLog"        : "htmltoCSV"
+        "click #downloadLog"        : "htmltofile",
+        "change #txt_START_DATE"	: "SearchTableHandler",
+        "change #txt_END_DATE"		: "SearchTableHandler",
+        "keyup #txt_SEARCH"		: "SearchTableHandler",
     },
 
     activate: function() {
@@ -24,9 +27,14 @@ window.LogView = window.BaseView.extend({
         $(this.el).html(this.template());
         return this;
     },
-
+	
     ajaxUrl: "/cgi-bin/tcp_socket_client.js",
 
+    left: function (str, num)
+    {
+        return str.substring(0,num)
+    },
+    
     callBack: function(data) {
         if ( (data.StationID === "log") && (data.Cmd === "UPDATE") ) {
             var tree = data.Param
@@ -48,18 +56,48 @@ window.LogView = window.BaseView.extend({
         }
         if ( (data.StationID === "log") && (data.Cmd === "LOGFILE") ) {
             $("#show-log-file P").hide()
-            $("code").show()
             $("#show-log-file-title").text($(".info").text())
-            var codetable = "<table class='table-condensed table-striped' id='html-log-table'><tbody>"
-            var len = data.Param.split(/(?:\r\n|\r|\n)/g)
-            for (var i = 1; i < len.length-1; i++) {
-                codetable+=("<tr><th style='vertical-align: top; text-align: left;'>"+(i)+"</th><td>"+len[i+1]+"</td></tr>")
+			$('#html-log-table>tbody').remove();
+			var dataTable = $('#html-log-table');
+			var len = data.Param.split(/(?:\r\n)/g)
+            for (var i = 0; i < len.length; i++)
+			{
+				if (len[i].length > 18 && len[i][2] == '/')
+				{
+					var tr = $(document.createElement('tr'));
+					var tdTime = $(document.createElement('td'));
+					tdTime.text(formatDate(new Date(Date.parse(len[i].substring(0,17))),"yyyy-MM-dd hh:mm:ss"));
+					tdTime.appendTo(tr);
+					var tdData = $(document.createElement('td'));
+					tdData.text(len[i].substring(18).trim());
+					tdData.appendTo(tr);
+					tr.appendTo(dataTable);
+				}
             };
-            codetable += "</tbody></table>"
-            $("code").html(codetable)            
         }
     },
 
+    SearchTableHandler: function (e) {
+		var startDate = Date.parse($('#txt_START_DATE').val(), 10);
+		var endDate = Date.parse($('#txt_END_DATE').val(), 10);
+		var node = $('#html-log-table>tbody tr');
+		for (var i=0,len=node.length;i<len;i++){
+			// var columnDate = Date.parse(node[i].childNodes[0].innerText) || 0;
+			var columnDate = Date.parse(node[i].childNodes[0].innerText);
+			var searchDate = $('#txt_SEARCH').val().trim().toLowerCase();
+			if (((isNaN(startDate) && isNaN(endDate)) ||
+				(isNaN(startDate) && columnDate <= endDate) ||
+				(startDate <= columnDate && isNaN(endDate)) ||
+				(startDate <= columnDate && columnDate <= endDate)) &&
+				(searchDate.length>0 && node[i].childNodes[1].innerText.toLowerCase().indexOf(searchDate)<0 ? false : true)) {
+				node[i].hidden = false;
+			}
+			else {
+				node[i].hidden = true;
+			}
+		}
+	},
+	
     showLogModal: function() {
         $("#Modal-log").modal({show: true});
         this.refreshDirectory(this.path)
@@ -105,45 +143,100 @@ window.LogView = window.BaseView.extend({
         this.ajaxCall(this.ajaxUrl, json, "log", this.callBack);
     },
 
-    htmltoCSV: function () {
-        var csv='"';
-        tab = $('#html-log-table > tbody > tr > td') // id of table
-        var spl
-        for(var j = 0 ; j < tab.length ; j++) 
-        {
-            spl = tab[j].innerText.split(" >> ")
-            csv+=(spl[0]+"','"+spl[1]+"'\r\n'")
-        }
-
-        // csv= csv.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
-        // csv= csv.replace(/<img[^>]*>/gi,""); // remove if u want images in your table
-        // csv= csv.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
-
-        // var ua = window.navigator.userAgent;
-        // var msie = ua.indexOf("MSIE "); 
-
-        // if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
-        // {
-        //     txtArea1.document.open("txt/html","replace");
-        //     txtArea1.document.write(csv);
-        //     txtArea1.document.close();
-        //     txtArea1.focus(); 
-        //     sa=txtArea1.document.execCommand("SaveAs",true,"Say Thanks to Sumit.xls");
-        // }  
-        // else                 //other browser not tested on IE 11
-        var uri = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);            
-        window.open(uri+";filename="+ $('#show-log-file-title').text().slice(0, -4)+".csv,"); 
-        // var filename = $('#show-log-file-title').text().slice(0, -4)+".csv";
-        // $('#show-log-file-title').append("<a id='download' href='"+uri+"' download='"+filename+"'>a</a>")
-
-        // downloadLink.href = uri;
-        // downloadLink.download = $('show-log-file-title').text().slice(0, -4)+".csv";
-        // $("#download").attr({
-        //         'download': $('#show-log-file-title').text().slice(0, -4)+".csv",
-        //         'href': uri
-        // })
-
-        // $("#download").click();
-//         $("#download").remove()
-    }
+    htmltofile: function () {
+		if($("#show-log-file-title").text().indexOf('.')>0)this.exportTableToCSV($('#html-log-table'),$("#show-log-file-title").text().trim().split('.')[0] + ".csv");
+    },
+	
+	exportTableToCSV: function ($table, filename) {
+		var $rows = $table.find('tr:has(td)');
+		// Temporary delimiter characters unlikely to be typed by keyboard
+		// This is to avoid accidentally splitting the actual contents
+		tmpColDelim = String.fromCharCode(11); // vertical tab character
+		tmpRowDelim = String.fromCharCode(0); // null character
+		// actual delimiter characters for CSV format
+		colDelim = '","';
+		rowDelim = '"\r\n"';
+		// Grab text from table into CSV formatted string
+		var csv = '"';
+		for (var i=0,len=$rows.length ; i<len ; i++){
+			// var columnDate = Date.parse(node[i].childNodes[0].innerText) || 0;
+			if (!$rows[i].hidden){
+				csv += $rows[i].childNodes[0].innerText + colDelim + $rows[i].childNodes[1].innerText + rowDelim
+			}
+		}
+		csv = csv.slice(0, -1);
+/* 		
+		// Grab text from table into CSV formatted string
+		var csv = '"' + $rows.map(function (i, row) {
+			var $row = $(row), $cols = $row.find('td');
+			return $cols.map(function (j, col) {
+				var $col = $(col), text = $col.text();
+				return text.replace(/"/g, '""'); // escape double quotes
+			}).get().join(tmpColDelim);
+		}).get().join(tmpRowDelim).split(tmpRowDelim).join(rowDelim).split(tmpColDelim).join(colDelim) + '"';
+*/
+		// Data URI
+		var uri = 'data:application/csv;charset=utf-8,' + encodeURIComponent(csv);		
+		var link = document.createElement('a');
+		if (typeof link.download === 'string') {
+			document.body.appendChild(link); // Firefox requires the link to be in the body
+			link.download = filename;
+			link.href = uri;
+			link.click();
+			document.body.removeChild(link); // remove the link when done
+		} else {location.replace(uri);}
+	},
 });
+
+function formatDate(date,format) {
+	function LZ(x) {return(x<0||x>9?"":"0")+x}
+	format=format+"";
+	var result="";
+	var i_format=0;
+	var c="";
+	var token="";
+	var y=date.getYear()+"";
+	var M=date.getMonth()+1;
+	var d=date.getDate();
+	var E=date.getDay();
+	var H=date.getHours();
+	var m=date.getMinutes();
+	var s=date.getSeconds();
+	var yyyy,yy,MMM,MM,dd,hh,h,mm,ss,ampm,HH,H,KK,K,kk,k;
+	// Convert real date parts into formatted versions
+	var value=new Object();
+	if (y.length < 4) {y=""+(y-0+1900);}
+	value["y"]=""+y;
+	value["yyyy"]=y;
+	value["yy"]=y.substring(2,4);
+	value["M"]=M;
+	value["MM"]=LZ(M);
+	value["d"]=d;
+	value["dd"]=LZ(d);
+	value["H"]=H;
+	value["HH"]=LZ(H);
+	if (H==0){value["h"]=12;}
+	else if (H>12){value["h"]=H-12;}
+	else {value["h"]=H;}
+	value["hh"]=LZ(value["h"]);
+	if (H>11){value["K"]=H-12;} else {value["K"]=H;}
+	value["k"]=H+1;
+	value["KK"]=LZ(value["K"]);
+	value["kk"]=LZ(value["k"]);
+	if (H > 11) { value["a"]="PM"; }
+	else { value["a"]="AM"; }
+	value["m"]=m;
+	value["mm"]=LZ(m);
+	value["s"]=s;
+	value["ss"]=LZ(s);
+	while (i_format < format.length) {
+		c=format.charAt(i_format);
+		token="";
+		while ((format.charAt(i_format)==c) && (i_format < format.length)) {
+			token += format.charAt(i_format++);
+			}
+		if (value[token] != null) { result=result + value[token]; }
+		else { result=result + token; }
+		}
+	return result;
+};

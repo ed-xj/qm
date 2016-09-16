@@ -2,244 +2,187 @@
 <div class="container-fluid" style="padding-right:90px; margin-top:40px;">
   <h3 class="page-header">
     <!-- <%= t["robot_title"] %>  -->
-    LoadPort ( Under construction )
+    LoadPort
   </h3>
     <div class="row">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-6">
+            <div class="row">       
+                <div class="col-xs-6" style="Height:94%">
+					<div class="panel panel-default" style="margin:0;">   
+						<div class="panel-body" style="padding:0;">    
+							<div class="btn-group col-xs-12" data-toggle="buttons" style="padding:0;">
+								<label class="btn btn-default /*btn-lg*/ col-xs-3 active">
+									<input type="radio" name="PORT_DEFINED" value=1 checked><span style = "font-size : 1vw;"><%= t["btn_chg_PORT1"]%></span>
+								</label>
+								<label class="btn btn-default /*btn-lg*/ col-xs-3" style="margin-left:0px;">
+									<input type="radio" name="PORT_DEFINED" value=2><span style = "font-size : 1vw;"><%= t["btn_chg_PORT2"]%></span>
+								</label>
+								<label class="btn btn-default /*btn-lg*/ col-xs-3" style="margin-left:0px;">
+									<input type="radio" name="PORT_DEFINED" value=3><span style = "font-size : 1vw;"><%= t["btn_chg_PORT3"]%></span>
+								</label>
+								<label class="btn btn-default /*btn-lg*/ col-xs-3" style="margin-left:0px;">
+									<input type="radio" name="PORT_DEFINED" value=4><span style = "font-size : 1vw;"><%= t["btn_chg_PORT4"]%></span>
+								</label>
+							</div>
+						</div>
+					</div>
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><%= t["position"] %></h3>
+                            <h3 class="panel-title"><span style = "font-size : 1vw;"><%= t["lbl_COMMAND"]%></span></h3>
                         </div>
                         <div class="panel-body">
-                          <div class="row">
-                            <div class="col-sm-4">
-                              <div class="panel panel-default">
-                                  <div class="panel-body">
-                                    <div class="form-group" style="margin:auto;">
-                                      <button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="learn"><%= t["learn"] %></button><br>
-                                      <button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="learn_new"><%= t["learn_new"] %></button>
-                                    </div>
-                                  </div>
-                              </div>
-                            </div>
-                            <!-- <div class="row">&nbsp;</div> -->
-                            <!-- <div class="row">&nbsp;</div> -->
-                            <div class="col-sm-4">
-                              <div class="panel panel-default">
-                                <div class="panel-body">
-                                  <div class="form-group" style="margin:auto;">
-                                    <button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="refresh"><%= t["refresh"] %></button><br>
-                                    <button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="reset_f_12"><%= t["reset_f_12"] %></button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                      <div class="form-group" style="margin:auto;">
-                                        <button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="grip"><%= t["grip"] %></button><br>
-                                        <button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="ungrip"><%= t["ungrip"] %></button>
-                                      <div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="row">&nbsp;</div> -->
-                            <!-- <div class="row">&nbsp;</div> -->
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div></div>
-                <div class="col-xs-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                          <h3 class="panel-title"><%= t["motion"] %></h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <!-- move button -->
-                                    <div class="col-xs-3">
-                                      <button type="button" class="btn btn-default btn-lg btn-block" id="move" action="/"><%= t["move"] %></button>
-                                    </div>
-                                    <!-- station index -->
-                                    <div class="col-xs-3">
-                                      <div class="dropdown">
-                                          <button class="btn btn-default btn-lg btn-block dropdown-toggle" type="button" id="stationMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                              <%= t["station"] %>
-                                              <span class="caret"></span>
-                                          </button>
-                                          <ul class="dropdown-menu" aria-labelledby="stationMenu">
-                                              <!-- <li><a value="stn1">Station1</a></li>
-                                              <li><a value="stn2">Station2</a></li>
-                                              <li><a value="stn3">Station3</a></li>
-                                              <li><a value="stn4">Station4</a></li> -->
-                                              <% var types = ['input','output']; %>
-                                              <% var type = types.shift(); %>
-                                              <% while (type) { %>
-                                                  <% var inputs = window.iniCfg[type] %>
-                                                  <% if (inputs) { %>
-                                                      <% var keys = _.keys(inputs); %>
-                                                      <% var type = 'input'; %>
-                                                      <%  for (var i=0; i < keys.length; i++) { %>
-                                                        <li><a value="<%= inputs[keys[i]] %>"><%= inputs[keys[i]] %></a></li>
-                                                      <% } %>
-                                                  <% } %>
-                                                  <% type = types.shift(); %>
-                                              <% } %>
-                                          </ul>
-                                      </div>
-                                    </div>
-                                    <!-- pose -->
-                                    <div class="col-xs-3">
-                                      <div class="dropdown">
-                                          <button class="btn btn-default btn-lg btn-block dropdown-toggle" type="button" id="poseMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                              <%= t["pose"] %>
-                                              <span class="caret"></span>
-                                          </button>
-                                          <ul class="dropdown-menu" aria-labelledby="poseMenu">
-                                              <li><a value="perch"><%= t["perch"] %></a></li>
-                                              <li><a value="inside"><%= t["inside"] %></a></li>
-                                          </ul>
-                                      </div>
-                                    </div>
-                                    <!-- high low -->
-                                    <div class="col-xs-3">
-                                      <div class="dropdown">
-                                          <button class="btn btn-default btn-lg btn-block dropdown-toggle" type="button" id="highlowMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                              <!-- <%= t["high-low"] %> -->
-                                              <%= t["high"] %>
-                                              <span class="caret"></span>
-                                          </button>
-                                          <ul class="dropdown-menu" aria-labelledby="highlowMenu">
-                                              <li><a value="high"><%= t["high"] %></a></li>
-                                              <li><a value="low"><%= t["low"] %></a></li>
-                                          </ul>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- <div class="row">
-                                <div class="col-xs-6">
-                                    <div class="checkbox">
-                                        <label>
-                                          <input type="checkbox" id="linearCheckbox"> <%= t["linear"] %>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-xs-6">
-                                    <div class="dropdown">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="indexMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            <%= t["index"] %>
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="indexMenu">
-                                          <% for (var i=1; i <= 25; i++) { %>
-                                            <li><a value="idx<%= i %>">Index<%= i%></a></li>
-                                          <% } %>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <div class="col-xs-8" style="padding:0;">
-                              <div class="panel panel-default">
-                                  <div class="panel-body">
-                                    <div class="col-xs-6">
-                                      <div class="form-group" style="margin:auto;">
-                                          <button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="pick"><%= t["pick"] %></button><br>
-                                          <button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="place"><%= t["place"] %></button>
-                                      </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                      <div class="dropdown">
-                                          <button class="btn btn-default btn-lg btn-block dropdown-toggle" type="button" id="indexMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                              <%= t["index"] %>
-                                              <span class="caret"></span>
-                                          </button>
-                                          <ul class="dropdown-menu" aria-labelledby="indexMenu">
-                                            <% for (var i=1; i <= 25; i++) { %>
-                                              <li><a value="idx<%= i %>">Index<%= i%></a></li>
-                                            <% } %>
-                                          </ul>
-                                      </div>
-                                      <!-- <div class="checkbox">
-                                        <label>
-                                          <input type="checkbox" id="linearCheckbox"> <%= t["linear"] %>
-                                        </label>
-                                      </div> -->
-                                    </div>
-                                  </div>
-                              </div>
-                            </div>
+							<div class="row">
+								<!-- <div class="row">&nbsp;</div> -->
+								<div class="col-sm-4">
+									<div class="panel panel-default">
+										<h3 class="panel-title"><span style = "font-size : 1vw;"><%= t["lbl_MANUAL_LOAD"]%></span></h3>
+										<div class="panel-body">
+											<div class="form-group" style="margin:auto;">
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_PODCL"><span style = "font-size : 1vw;"><%= t["btn_mov_PODCL"]%></span></button>
+												<br>
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_YDOOR"><span style = "font-size : 1vw;"><%= t["btn_mov_YDOOR"]%></span></button>
+												<br>
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_VACON"><span style = "font-size : 1vw;"><%= t["btn_mov_VACON"]%></span></button>
+												<br>
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_DOROP"><span style = "font-size : 1vw;"><%= t["btn_mov_DOROP"]%></span></button>
+												<br>
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_DORBK"><span style = "font-size : 1vw;"><%= t["btn_mov_DORBK"]%></span></button>
+												<br>
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_ZDRDW"><span style = "font-size : 1vw;"><%= t["btn_mov_ZDRDW"]%></span></button>
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<h3 class="panel-title"><span style = "font-size : 1vw;"><%= t["lbl_INITIAL"]%></span></h3>
+										<div class="panel-body">
+											<div class="form-group" style="margin:auto;">
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_ABORG"><span style = "font-size : 1vw;"><%= t["btn_mov_ABORG"]%></span></button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="row">&nbsp;</div> -->
+								<div class="col-sm-4">
+									<div class="panel panel-default">
+										<h3 class="panel-title"><span style = "font-size : 1vw;"><%= t["lbl_MANUAL_UNLOAD"]%></span></h3>
+										<div class="panel-body">
+											<div class="form-group" style="margin:auto;">
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_PODOP"><span style = "font-size : 1vw;"><%= t["btn_mov_PODOP"]%></span></button>
+												<br>
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_YWAIT"><span style = "font-size : 1vw;"><%= t["btn_mov_YWAIT"]%></span></button>
+												<br>
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_VACOF"><span style = "font-size : 1vw;"><%= t["btn_mov_VACOF"]%></span></button>
+												<br>
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_DORCL"><span style = "font-size : 1vw;"><%= t["btn_mov_DORCL"]%></span></button>
+												<br>
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_DORFW"><span style = "font-size : 1vw;"><%= t["btn_mov_DORFW"]%></span></button>
+												<br>
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_ZDRUP"><span style = "font-size : 1vw;"><%= t["btn_mov_ZDRUP"]%></span></button>
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<h3 class="panel-title"><span style = "font-size : 1vw;"><%= t["lbl_GET_INFORMATION"]%></span></h3>
+										<div class="panel-body">
+											<div class="form-group" style="margin:auto;">
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_get_STATE"><span style = "font-size : 1vw;"><%= t["btn_get_STATE"]%></span></button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="row">&nbsp;</div> -->
+								<div class="col-sm-4">
+									<div class="panel panel-default">
+										<h3 class="panel-title"><span style = "font-size : 1vw;"><%= t["lbl_AUTO_LOAD_UNLOAD"]%></span></h3>
+										<div class="panel-body">
+											<div class="form-group" style="margin:auto;">
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_set_FSBON"><span style = "font-size : 1vw;"><%= t["btn_set_FSBON"]%></span></button>
+												<br>
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_set_FSBOF"><span style = "font-size : 1vw;"><%= t["btn_set_FSBOF"]%></span></button>
+												<br>
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_CLOAD"><span style = "font-size : 1vw;"><%= t["btn_mov_CLOAD"]%></span></button>
+												<br>
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_CULOD"><span style = "font-size : 1vw;"><%= t["btn_mov_CULOD"]%></span></button>
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<h3 class="panel-title"><span style = "font-size : 1vw;"><%= t["lbl_CONTROLS"]%></span></h3>
+										<div class="panel-body">
+											<div class="form-group" style="margin:auto;">
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_ABORT"><span style = "font-size : 1vw;"><%= t["btn_mov_ABORT"]%></span></button>
+												<br>
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_set_RESET"><span style = "font-size : 1vw;"><%= t["btn_set_RESET"]%></span></button>
+												<br>
+												<button type="button" class="btn btn-default btn-lg btn-block h-spacer" id="btn_mov_ORGSH"><span style = "font-size : 1vw;"><%= t["btn_mov_ORGSH"]%></span></button>
+											<div>
+										</div>
+									</div>
+								</div>
+							</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div>
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"> <%= t["robot_message"] %></h3>
+        <div class="col-xs-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title" id="pnl_LOG_TITLE"><span style = "font-size : 1vw;">PORTID:1</span></h3>
+                </div>
+                <div class="panel-body panel-body-sysmsg" style="background-color:black;height: 540px;" id = "pnl_LOG_BODY_1">
+                    <div class="row" name="PORT_LOG" value=1 style="padding-left: 10px;">
+                        <code style="background-color:black; padding-left: 0px;">
+                        <!--<textarea class="form-control form-control-sysmsg" name="sysmsg" rows="10" readonly>-->
+                            <%= robotmsg %>
+                        <!--</textarea>-->
+                        </code>
                     </div>
-                    <div class="panel-body panel-body-sysmsg" style="background-color:black;">
-                        <div class="row" style="padding-left: 10px;">
-                            <code name="robotmsg" style="background-color:black; padding-left: 0px;">
-                            <!--<textarea class="form-control form-control-sysmsg" name="sysmsg" rows="10" readonly>-->
-                                <%= robotmsg %>
-                            <!--</textarea>-->
-                            </code>
-                        </div>
+                </div>
+                <div class="panel-body panel-body-sysmsg" style="background-color:black;height: 540px;display:none" id = "pnl_LOG_BODY_2">
+                    <div class="row" name="PORT_LOG" value=2 style="padding-left: 10px;">
+                        <code style="background-color:black; padding-left: 0px;">
+                        <!--<textarea class="form-control form-control-sysmsg" name="sysmsg" rows="10" readonly>-->
+                            <%= robotmsg %>
+                        <!--</textarea>-->
+                        </code>
                     </div>
-                    <div class="btn-group btn-group-justified">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-danger" id="robotCmd" name="rc1" value="reset">RESET</button>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default" id="robotCmd" name="rc2" value="rcp">RCP</button>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default" id="robotCmd" name="rc3" value="getstation">GETSTATION</button>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default" id="robotCmd" name="rc4" value="lcm">LCM</button>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default" id="robotCmd" name="rc5" value="rc5">robot command 5</button>
-                        </div>
+                </div>
+                <div class="panel-body panel-body-sysmsg" style="background-color:black;height: 540px;display:none" id = "pnl_LOG_BODY_3">
+                    <div class="row" name="PORT_LOG" value=3 style="padding-left: 10px;">
+                        <code style="background-color:black; padding-left: 0px;">
+                        <!--<textarea class="form-control form-control-sysmsg" name="sysmsg" rows="10" readonly>-->
+                            <%= robotmsg %>
+                        <!--</textarea>-->
+                        </code>
                     </div>
-                    <div class="form-group" style="margin-bottom:0px;padding:15px 0; background-color: #f5f5f5;">
-                      <!-- <form class="form-horizontal" role="form"> -->
-                          <!-- <div class="form-group"> -->
-                              <!-- <label class="control-label col-xs-2" for="cmd"><%= t["robot_command"] %></label> -->
-                              <div class="input-group col-xs-offset-2 col-xs-8">
-                                  <input type="text" class="form-control" id="cmd" placeholder="<%= t["enter_command"] %>">
-                                  <span class="input-group-btn">
-                                  <button class="btn btn-default" type="button" id="go_btn"><%= t["go"] %></button>
-                                  <!-- <button id="robotHelpModal" class="btn btn-default" type="button"> -->
-                                  <i class="fa fa-question"></i>
-                                  </button>
-                                  </span>
-                              </div>
-                          <!-- </div> -->
-                      <!-- </form> -->
+                </div>
+                <div class="panel-body panel-body-sysmsg" style="background-color:black;height: 540px;display:none" id = "pnl_LOG_BODY_4">
+                    <div class="row" name="PORT_LOG" value=4 style="padding-left: 10px;">
+                        <code style="background-color:black; padding-left: 0px;">
+                        <!--<textarea class="form-control form-control-sysmsg" name="sysmsg" rows="10" readonly>-->
+                            <%= robotmsg %>
+                        <!--</textarea>-->
+                        </code>
                     </div>
                 </div>
             </div>
+
+			<div class="form-group" style="margin-bottom:0px;padding:15px 0; background-color: #f5f5f5;">
+				<div class="input-group col-xs-offset-2 col-xs-8">
+					<input type="text" class="form-control" id="txt_COMMAND" style="text-transform:uppercase">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button" id="btn_SEND"><span style = "font-size : 1vw;"><%= t["btn_SEND"]%></span></button>
+						<button class="btn btn-default" type="button" id="btn_CLEAR"><span style = "font-size : 1vw;"><%= t["btn_CLEAR"]%></span></button>
+					</span>
+				</div>
+			</div>
         </div>
     </div>
 </div>
 
-
 <!-- Robot Help Modal -->
-
 <div id="myModal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -252,5 +195,4 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
 <!-- /.container-fluid -->

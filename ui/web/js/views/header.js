@@ -3,10 +3,10 @@ window.HeaderView = Backbone.View.extend({
     initialize: function (moderator) {
         this.moderator = moderator;
         this.moderator.on('lang:change', this.onLangChange.bind(this));
-        this.moderator.on('syslog:change', this.onSysLogChange.bind(this));
-        this.moderator.on('robotlog:change', this.onSysLogChange.bind(this));
-        // this.moderator.on('sysmsg:change', this.onSysMsgChange.bind(this));
-        // this.moderator.on('sysmsg:change', this.onSysMsgChange.bind(this));
+        this.moderator.on('robotmsg:msg', this.onRobotMsgChange.bind(this));
+        this.moderator.on('sysmsg:msg', this.onSysMsgChange.bind(this));
+        this.moderator.on('secsgemmsg:msg', this.onSecsgemMsgChange.bind(this));
+        this.moderator.on('recipe:load', this.onRecipeLoad.bind(this));
     },
 
     activate: function() {
@@ -19,10 +19,11 @@ window.HeaderView = Backbone.View.extend({
     },
 
     events: {
-        "keyup .search-query": "search",
+        "keyup .search-query"   : "search",
         "keypress .search-query": "onkeypress",
-        "click #logout": "logout",
-        "click #help": "showHelpModal"
+        "click #logout"         : "logout",
+        "click #help_btn"       : "showHelpModal",
+        "load body"             : "showClock"
     },
 
     search: function () {
@@ -37,26 +38,28 @@ window.HeaderView = Backbone.View.extend({
     logout: function() {
         localStorage.setItem("user", "");
         localStorage.setItem("userRole", "");
+        $("#statusBar[for='lighttower']").hide();
         $('.header').hide();
         window.app.navigate("/", {trigger: true});
     },
 
+    // global event listener
     onLangChange: function() {
         console.log('HeaderView::onLangChange');
         this.render();
     },
-
-    onSysLogChange: function() {
-        console.log('HeaderView::onSysLogChange');
+    onRobotMsgChange: function() {
+        console.log('HeaderView::onRobotMsgChange');
+    },    
+    onSecsgemMsgChange: function() {
+        console.log('HeaderView::onSecsgemMsgChange');
     },
-
-    onRobotLogChange: function() {
-        console.log('HeaderView::onRobotLogChange');
+    onSysMsgChange: function() {
+        console.log('HeaderView::onSysMsgChange');
     },
-
-    // onSysMsgChange: function() {
-    //     console.log('HeaderView::onSysMsgChange');
-    // },
+    onRecipeLoad: function() {
+        console.log('HeaderView::onRecipeLoad');
+    },
 
     onkeypress: function (event) {
         if (event.keyCode == 13) {
@@ -75,6 +78,23 @@ window.HeaderView = Backbone.View.extend({
         $("#helpModal").modal({show: true});
     },
 
+    showClock: function () {
+        checkTime = function (i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+        }
+
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        $('clock').innerHTML =
+        h + ":" + m + ":" + s;
+        var t = setTimeout(startTime, 500);
+    },
+
     tabMapFontAwesome: {
         "input"     : "fa-caret-square-o-right",
         "output"    : "fa-caret-square-o-left",
@@ -85,7 +105,7 @@ window.HeaderView = Backbone.View.extend({
         "recipe"    : "fa-list-ol",
         "transfer"  : "fa-exchange",
         "packer"    : "fa-stack-overflow",
-        "loadport"  : "fa-stack-overflow",
-        "log"       : "fa-file-text-o"
+        "loadport"  : "fa-stack-overflow"
+        // "log"       : "fa-file-text-o"
     }
 });

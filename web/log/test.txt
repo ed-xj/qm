@@ -1,0 +1,80 @@
+05/02/16 09:37:55 CHECK OUTSTANDING JOBS. NO OUTSTANDING JOBS.
+05/02/16 09:37:56 LOAD RECOVER SCRIPT
+05/02/16 09:37:56 1>
+05/02/16 09:38:00 !E ERROR 100 - 1 RESET: Reset command failed. Possible hardware failure
+05/02/16 09:38:00 MOXTEC : MESSAGE SENT : !E ERROR - TOOL ERROR.  YOU MUST NOW RECOVER THE TOOL.
+
+
+ : Len 55
+05/02/16 09:38:00 !E ERROR 51 - Prealigner-Unit-1 : Prealigner not responding to init: Error initializing prealigner
+05/02/16 09:38:00 !E ERROR 109 - Bad response from gripper: Could not connect to flipper/gripper
+05/02/16 09:38:00 !E ERROR 51 - Prealigner-Unit-1 : Prealigner not responding to init: Error initializing prealigner
+05/02/16 09:38:00 !E ERROR 100 - 1 RESET: Reset command failed. Possible hardware failure
+05/02/16 09:38:00 !E ERROR 271 - 1 RESET: Abort called
+05/02/16 09:38:00 !E ERROR 4 - 1 RESET: First command after fault, abort, master or power-up must be RESET
+05/02/16 09:38:00 !E ERROR 51 - Prealigner-Unit-1 : Prealigner not responding to init: Error initializing prealigner
+05/02/16 09:38:00 !E ERROR 100 - 2 RESET: Reset command failed. Possible hardware failure
+05/02/16 09:38:00 !E ERROR 271 - 2 RESET: Abort called
+05/02/16 09:38:00 !E ERROR 4 - 2 RESET: First command after fault, abort, master or power-up must be RESET
+05/02/16 09:38:00 !E ERROR 51 - Prealigner-Unit-1 : Prealigner not responding to init: Error initializing prealigner
+05/02/16 09:38:00 !E ERROR 100 - 1 RESET: Reset command failed. Possible hardware failure
+05/02/16 09:38:13 LOAD HOME SCRIPT
+05/02/16 09:38:13 2>
+05/02/16 09:38:18 !E ERROR 100 - 2 RESET: Reset command failed. Possible hardware failure
+05/02/16 09:38:18 MOXTEC : MESSAGE SENT : !E ERROR - TOOL ERROR.  YOU MUST NOW RECOVER THE TOOL.
+
+
+ : Len 55
+05/02/16 09:38:18 !E ERROR 51 - Prealigner-Unit-1 : Prealigner not responding to init: Error initializing prealigner
+05/02/16 09:38:18 !E ERROR 109 - Bad response from gripper: Could not connect to flipper/gripper
+05/02/16 09:38:18 !E ERROR 51 - Prealigner-Unit-1 : Prealigner not responding to init: Error initializing prealigner
+05/02/16 09:38:18 !E ERROR 100 - 1 RESET: Reset command failed. Possible hardware failure
+05/02/16 09:38:18 !E ERROR 271 - 1 RESET: Abort called
+05/02/16 09:38:18 !E ERROR 4 - 1 RESET: First command after fault, abort, master or power-up must be RESET
+05/02/16 09:38:18 !E ERROR 51 - Prealigner-Unit-1 : Prealigner not responding to init: Error initializing prealigner
+05/02/16 09:38:18 !E ERROR 100 - 2 RESET: Reset command failed. Possible hardware failure
+05/02/16 09:38:18 !E ERROR 271 - 2 RESET: Abort called
+05/02/16 09:38:18 !E ERROR 4 - 2 RESET: First command after fault, abort, master or power-up must be RESET
+05/02/16 09:38:18 !E ERROR 51 - Prealigner-Unit-1 : Prealigner not responding to init: Error initializing prealigner
+05/02/16 09:38:18 !E ERROR 100 - 1 RESET: Reset command failed. Possible hardware failure
+05/02/16 09:38:18 !E ERROR 271 - 1 RESET: Abort called
+05/02/16 09:38:18 !E ERROR 4 - 1 RESET: First command after fault, abort, master or power-up must be RESET
+05/02/16 09:38:18 !E ERROR 51 - Prealigner-Unit-1 : Prealigner not responding to init: Error initializing prealigner
+05/02/16 09:38:18 !E ERROR 100 - 2 RESET: Reset command failed. Possible hardware failure
+05/02/16 09:39:39 MODULE FOR BIT UPDATE IS : 7  MASK IS : 117
+05/02/16 09:39:39 MODULE FOR BIT UPDATE IS : 7  MASK IS : 117
+05/02/16 09:39:48 MOXTEC : MESSAGE SENT : !E END-DoorClose
+
+
+ : Len 17
+05/02/16 09:39:59 STOP
+05/02/16 09:39:59 MOXTEC : MESSAGE SENT : !E END-StopRecipe
+
+
+ : Len 18
+05/02/16 09:40:07 REFRESH OUTPUT BUTTON
+05/02/16 09:40:07 MODULE FOR BIT UPDATE IS : 4  MASK IS : 0
+05/02/16 09:40:07 CHECK OUTSTANDING JOBS. NO OUTSTANDING JOBS.
+05/02/16 09:40:07 MODULE FOR BIT UPDATE IS : 6  MASK IS : 185
+05/02/16 09:40:10 SET OUTPUT 9
+05/02/16 09:40:10 CHECK OUTSTANDING JOBS. NO OUTSTANDING JOBS.
+05/02/16 09:40:16 SET OUTPUT 16
+05/02/16 09:40:16 CHECK OUTSTANDING JOBS. NO OUTSTANDING JOBS.
+05/02/16 09:40:20 SET OUTPUT 12
+05/02/16 09:40:20 CHECK OUTSTANDING JOBS. NO OUTSTANDING JOBS.
+05/02/16 09:40:22 SET OUTPUT 13
+05/02/16 09:40:22 CHECK OUTSTANDING JOBS. NO OUTSTANDING JOBS.
+05/02/16 09:40:23 SET OUTPUT 14
+05/02/16 09:40:23 CHECK OUTSTANDING JOBS. NO OUTSTANDING JOBS.
+05/02/16 09:40:57 REFRESH OUTPUT BUTTON
+05/02/16 09:40:58 MODULE FOR BIT UPDATE IS : 4  MASK IS : 0
+05/02/16 09:40:58 CHECK OUTSTANDING JOBS. NO OUTSTANDING JOBS.
+05/02/16 09:40:58 MODULE FOR BIT UPDATE IS : 6  MASK IS : 0
+05/02/16 09:40:59 REFRESH INPUT BUTTON
+05/02/16 09:40:59 MODULE FOR BIT UPDATE IS : 1  MASK IS : 4
+05/02/16 09:41:00 MODULE FOR BIT UPDATE IS : 3  MASK IS : 4
+05/02/16 09:41:01 MODULE FOR BIT UPDATE IS : 5  MASK IS : 4
+05/02/16 09:41:02 MODULE FOR BIT UPDATE IS : 7  MASK IS : 117
+05/02/16 09:41:03 MODULE FOR BIT UPDATE IS : 9  MASK IS : 117
+05/02/16 09:41:04 CHECK OUTSTANDING JOBS. NO OUTSTANDING JOBS.
+迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋迋?

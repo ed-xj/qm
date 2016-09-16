@@ -6,36 +6,65 @@ window.TransferView = window.BaseView.extend({
         this.moderator.on('lang:change', this.onLangChange.bind(this));
         this.start = null;
         this.targetRecipe = 1;
+        this.updatedInven = false;
+        this.sourceSlot = []
+        this.stepCount = []
+        this.groupSelect = false
     },
 
     events: {
-        // "click #splitRadio":"handleSplitMode",
-        // "click #mergeRadio":"handleMergeMode",
-        "click #quicksortRadio":"handleQuickSortMode",
-        "click #resequenceRadio":"handleResequenceMode",
+        "change label>#quicksortRadio":"handleQuickSortMode",
+        "change label>#resequenceRadio":"handleResequenceMode",
+        "click #go":"goBtnClick",
         // quick sort
-        "click #onoff":"onoffStations",
+        // "click #onoff":"onoffStations",
+        "click #show-slide-panel":"slideOut",
         "click #slots tr > td":"slotClick",
+        "click input[for='selection']":"selectionChkClick",
+        "click .onlyCheckbox":"onlyChkClick",
+        "click input[for='move']":"moveChkClick",
+        "click input[for='order']":"orderChkClick",
+        "click #currentRecipeBtn":"showCurrentRecipeClick",
         "click #updateInventoryBtn":"updateInventoryClick",
         "click #submitBtn":"submitBtnClick",
         "click #executeBtn":"executeBtnClick",
         "click #removelastBtn":"removelastBtnClick",
-        "click #startBtn":"startBtnClick",
-        "click #finishBtn":"finishBtnClick",
-        // // split
-        // "click #slots tr td:nth-child(7n+2)":"slotClick",   // slot click
-        // // Merge
-        // "click #srcMergeStationPills li":"pillsSelected",
-        // "click #targetMergeStationPills li":"pillsSelected",
-        // "click #addSrcStationBtn":"addSrcStationBtnClick",
-        // "click #removeSrcStationBtn":"removeSrcStationBtnClick",
-        // "click #addTargetStationBtn":"addTargetStationBtnClick",
-        // "click #removeTargetStationBtn":"removeTargetStationBtnClick",
-        // "click #slotsSrc tr > td":"slotClick",              // source slot click
-        // "click #slotsTarget tr > td":"slotClick",           // target slot click
-        //resequence
-        // add handle radio btn click function
-        "click #go":"goBtnClick"
+        // "click #startBtn":"startBtnClick",
+        // "click #finishBtn":"finishBtnClick",
+        // "dragstart #slots tr > td": "slotDrag",
+        // "drop #slots tr > td": "slotDrop",
+        // "dragover #slots tr > td": "slotAllowDrop",
+        "contextmenu #slots tr > td":"slotRightClick"
+    },
+
+    slideOut: function () {   
+        var panel = $('#slide-panel');
+        if (!panel.hasClass("visible")) {
+            panel.addClass('visible').animate({'margin-left':'-300px'});
+        } else {
+            panel.removeClass('visible').animate({'margin-left':'0px'});
+        }
+    },
+
+    slotAllowDrop: function (e) {
+        e.preventDefault();
+    },
+
+    slotDrag: function (e) {
+        var slot = $(e.currentTarget)
+    },
+
+    slotDrop: function (e) {
+        e.preventDefault();
+        // $(e.currentTarget).text(this.sourceSlot[0]+this.sourceSlot[1]+this.sourceSlot[2])
+        var slot = $(e.currentTarget)
+        var msg = this.sourceSlot[0]+this.sourceSlot[1]+this.sourceSlot[2]
+        var finish = [slot.parent().parent().attr("class"), slot.attr("id"), slot.text()]
+        slot.addClass("success").text("From:"+this.sourceSlot[0]+this.sourceSlot[1])
+        $(".start").attr("name",this.sourceSlot[2])
+        $(".start").addClass("success").removeClass("info").text("To:"+finish[0]+finish[1]).removeClass("start")
+        this.start = false
+        this.submitBtnClick(this.sourceSlot, finish)
     },
 
     render: function () {
@@ -59,7 +88,7 @@ window.TransferView = window.BaseView.extend({
     },
 
     synchMode: function() {
-        var quicksortPanel  = $('div[id=quicksortPanel]'),
+        var quicksortPanel  = $('#quicksortPanel'),
             resequencePanel = $('#resequencePanel');
 
         if (this.mode === 'quicksort') {
@@ -81,14 +110,14 @@ window.TransferView = window.BaseView.extend({
         this.synchMode(false, true);
     },
 
-    onoffStations: function (e) {
-        var station = $(e.currentTarget);
-        if (station.hasClass('active')) {
-            $("td#"+station.val()).hide()
-        } else {
-            $("td#"+station.val()).show()
-        }
-    },
+    // onoffStations: function (e) {
+    //     var station = $(e.currentTarget);
+    //     if (station.hasClass('active')) {
+    //         $("td#"+station.val()).hide()
+    //     } else {
+    //         $("td#"+station.val()).show()
+    //     }
+    // },
 
     stnSlotMapping: function () {
         var stncount = this.moderator.get('station').length
@@ -98,43 +127,18 @@ window.TransferView = window.BaseView.extend({
         };
     },
 
-    // Split
-    // splitInfo: function () {
-    //     // bind all data
-    //     var splitInfoArray = new Array();
-    //     $("#slots tr").each(function(){
-    //         if ($(this).hasClass('selected')) {
-    //             var thisSlot = $(this).children('th').text()
-    //             // build up JSON
-    //             splitInfoArray.push({
-    //                 targetstn : Number($('#targetStationForSlot'+thisSlot).val()),
-    //                 targetslot : Number($('#targetSlotForSlot'+thisSlot).val()),
-    //                 align : $(this).children('td:eq(3)').children().children().is(':checked'),
-    //                 ocr : $(this).children('td:eq(4)').children().children().is(':checked'),
-    //                 flip : $(this).children('td:last').children().children().is(':checked')
-    //             })
-    //         } else {
-    //             splitInfoArray.push(null);
-    //         }
-    //     });
-    //     // Build up JSON
-    //     var json = this.encodeJSON("SCHD", "COMMAND", "station"+$('#srcStation').val(), "SPLIT", splitInfoArray, null);
-    //     // AJAX POST
-    //     this.ajaxCall(this.ajaxUrl, json, "transfer - split");
-    // },
-
     slotMapping: function (data) {
         var map = data.map
         var waferid = data.waferID 
         var stnid = ".stn"+data.stationID
         // clear slots color and text
         $(stnid).children().children("td").text("")
-        $(stnid).children().children("td").removeClass("full");
+        $(stnid).children().children("td").removeClass("warning");
         // render slots color with yellow if there is a wafer
         for (i=0; i<map.length; i++) {
             if (map[i]===1) {
                 $(stnid).children().children("#slot"+(i+1)).text(waferid[i]); //waferid
-                $(stnid).children().children("#slot"+(i+1)).addClass('full');
+                $(stnid).children().children("#slot"+(i+1)).addClass('warning');
             } else if (waferid[i] === "X") {
                  $(stnid).children().children("#slot"+(i+1)).addClass('disable');
                   $(stnid).children().children("#slot"+(i+1)).text("X");
@@ -143,33 +147,151 @@ window.TransferView = window.BaseView.extend({
     },
 
     slotClick: function (e) {
-        if (this.start !== null) {
-            var slotTarget = $(e.currentTarget);
-            if (!slotTarget.hasClass('disable') && !slotTarget.hasClass('doing')) {
-                var station = slotTarget.parent().parent().attr("class");
-                if (this.start && slotTarget.hasClass('full')) {
-                    if (slotTarget.hasClass('start')) {
-                        $('.start').removeClass('start')
-                        $('#startfield').val("")
-                    } else {
-                        $('.start').removeClass('start')
-                        slotTarget.addClass('start');
-                        $('#startfield').val(station+slotTarget.attr('id'));
-                        console.log("select start:"+station + ', ' +  slotTarget.attr('id'));
+        var slot = $(e.currentTarget)
+        if (!slot.hasClass('disable')) {
+            if (!this.groupSelect) {
+                if (!this.start) {
+                    if (slot.hasClass("warning")) {
+                        slot.removeClass("warning")
+                        this.sourceSlot = [slot.parent().parent().attr("class"), slot.attr("id"), slot.text()]
+                        slot.addClass("info")
+                        slot.addClass("start")
+                        this.start = true
                     }
-                } else if (!this.start && !slotTarget.hasClass('full')) {
-                    if (slotTarget.hasClass('finish')) {
-                        $('.finish').removeClass('finish')
-                        $('#finishfield').val("");
+                } else {
+                    if (slot.hasClass("warning")) {
+                        alert("Warning! This slot could not be selected. Please select another slot.")
+                    } else if (slot.hasClass("info")) {
+                        slot.addClass("warning").removeClass("info").removeClass("start")
+                        this.start = false
                     } else {
-                        $('.finish').removeClass('finish')
-                        slotTarget.addClass('finish');
-                        $('#finishfield').val(station+slotTarget.attr('id'));
-                        console.log("select finish:"+station + ', ' +  slotTarget.attr('id'));
+                        var msg = this.sourceSlot[0]+this.sourceSlot[1]+this.sourceSlot[2]
+                        var finish = [slot.parent().parent().attr("class"), slot.attr("id"), slot.text()]
+                        slot.addClass("success").text("From:"+this.sourceSlot[0]+this.sourceSlot[1])
+                        $(".start").attr("name",this.sourceSlot[2])
+                        $(".start").addClass("success").removeClass("info").text("To:"+finish[0]+finish[1]).removeClass("start")
+                        this.start = false
+                        this.stepCount.push(1)
+                        this.submitBtnClick(this.sourceSlot, finish)
+                    }
+                }
+            } else {
+                if ((this.sourceSlot[0] === slot.parent().parent().attr("class")) && this.start) {
+                    var to = 0
+                    var from = 0 
+                    if (Number(slot.attr("id").substring(4)) > Number(this.sourceSlot[1].substring(4))) {
+                        from = Number(this.sourceSlot[1].substring(4))
+                        to = Number(slot.attr("id").substring(4))
+                    } else {
+                        to = Number(this.sourceSlot[1].substring(4))
+                        from = Number(slot.attr("id").substring(4))
+                    }
+                    for (var i = from; i <= to; i++) {
+                        $("."+this.sourceSlot[0]+" #slot"+i).removeClass("warning").addClass("info")
+                    }
+                    this.stepCount.push((to - from)+1)
+                    // this.start = false
+                } else {
+                    // if (!this.start) {
+                    //     alert("Warning! Group mode can not select to another station.")
+                    // } else {
+
+                    // }
+                    if (slot.hasClass("warning")) {
+                        slot.removeClass("warning")
+                        this.sourceSlot = [slot.parent().parent().attr("class"), slot.attr("id"), slot.text()]
+                        slot.addClass("info")
+                        slot.addClass("start")
+                        this.start = true
+                    } else {
+                        // render
+                        this.start = false
                     }
                 }
             }
+        } else {
+            alert("Warning! This slot is not available, please select another slot.")
         }
+    },    
+
+    slotRightClick: function (e) {
+        e.preventDefault();
+        var slot = $(e.currentTarget)
+        if (!slot.hasClass('disable')) {
+            if (!this.start) {
+                if (slot.hasClass("warning")) {
+                    slot.removeClass("warning")
+                    this.sourceSlot = [slot.parent().parent().attr("class"), slot.attr("id"), slot.text()]
+                    slot.addClass("info")
+                    slot.addClass("start")
+                    // this.start = true
+                    this.groupSelect = true
+                } else {
+                    alert("Warning! This slot is not available")
+                }
+            }
+        }
+    },
+
+    selectionChkClick: function (e) {        
+        var selection = $(e.currentTarget).attr("id")
+        if ($("#"+selection).is(":checked")) {
+            $("input[for='selection']").prop("checked", "")
+            $("#"+selection).prop("checked", "checked")
+        } else {
+            $("#"+selection).prop("checked", "")
+        }
+
+        if ($("#groupCheckbox").is(":checked")) {
+            this.groupSelect = true
+        } else {
+            this.groupSelect = false
+        }
+    },
+
+    onlyChkClick: function (e) {
+        var only = $(e.currentTarget).attr("for")
+
+        if (only==="ocr") {
+            if ($("input[for='ocr']").is(":checked")) {
+                $(".onlyCheckbox").prop("checked", "")
+                $("input[for='ocr']").prop("checked", "checked")
+            } else {
+                $("input[for='ocr']").prop("checked", "")
+            }
+        } 
+        if (only==="align") {
+            if ($("input[for='align']").is(":checked")) {
+                $(".onlyCheckbox").prop("checked", "")
+                $("input[for='align']").prop("checked", "checked")
+            } else{
+                $("input[for='align']").prop("checked", "")
+            }           
+        }
+
+        $("input[for='move']").prop("checked", "");   
+        $("input[for='order']").prop("checked", "");
+    },
+
+    moveChkClick: function () {
+        $(".onlyCheckbox").prop("checked", "")
+        $("input[for='order']").prop("checked", "");
+    },
+
+    orderChkClick: function (e) {
+        var order = $(e.currentTarget).attr("id")
+        if ($("#"+order).is(":checked")) {
+            $("input[for='order']").prop("checked", "")
+            $("#"+order).prop("checked", "checked")
+        } else {
+            $("#"+order).prop("checked", "")
+        }
+        $("input[for='move']").prop("checked", "");   
+        $(".onlyCheckbox").prop("checked", "")
+    },
+
+    showCurrentRecipeClick: function () {
+        $("#currentRecipeModal").modal({show: true});
     },
 
     updateInventoryClick: function () {
@@ -181,47 +303,26 @@ window.TransferView = window.BaseView.extend({
         console.log("inventory updated.")
     },
 
-    submitBtnClick: function () {
-        var start = $('#startfield').val(),
-            finish = $('#finishfield').val();
-        if (start === "") {
-            alert("please input start slot")
-            if (finish === "")
-                    alert("please input finish slot")
-        } else {
-            if (finish === "")
-                alert("please input finish slot")
-            else {
-                var recipe = start+","+finish;
-                if ($('#ocrCheckbox').is(':checked'))
-                    recipe = recipe+",O"
-                if($('#alignCheckbox').is(':checked'))
-                    recipe = recipe+",A"
-                if($('#flipCheckbox').is(':checked'))
-                    recipe = recipe+",F"
-                
-                $('#recipe'+this.targetRecipe).text(recipe);
-                $('.start').text("S"+this.targetRecipe);
-                $('.finish').text("T"+this.targetRecipe);
-                $('.start').addClass('recipe'+this.targetRecipe);
-                $('.finish').addClass('recipe'+this.targetRecipe);
-                $('.recipe'+this.targetRecipe).addClass('doing');
-                this.targetRecipe++;
-                if (this.targetRecipe > 25) {
-                    this.targetRecipe = 25;
-                    alert("no more space");
-                }
-                $('.start').removeClass('start');
-                $('.finish').removeClass('finish');
-                this.start = null;
-                $('#startfield').val("");
-                $('#finishfield').val("");
-                $('#startfield').css('background-color','white');
-                $('#finishfield').css('background-color','white');
-                $('#updateInventoryBtn').prop('disabled', true);
-                $('button[id=onoff]').prop('disabled', true);
-            }
+    submitBtnClick: function (start, finish) {
+        start = start[0]+"_"+start[1]+"_"+start[2]
+        finish = +finish[0]+"_"+finish[1]+"_"+finish[2]
+        var recipe = start+","+finish;
+        if ($('#ocrCheckbox').is(':checked'))
+            recipe = recipe+",O"
+        if($('#alignCheckbox').is(':checked'))
+            recipe = recipe+",A"
+        if($('#flipCheckbox').is(':checked'))
+            recipe = recipe+",F"
+        
+        $('#recipe'+this.targetRecipe).text(recipe);
+        $('.recipe'+this.targetRecipe).addClass('doing');
+        this.targetRecipe++;
+        if (this.targetRecipe > 25) {
+            this.targetRecipe = 25;
+            alert("no more space");
         }
+        $('.start').removeClass('start');
+        this.start = null;
     },
 
     executeBtnClick: function () {
@@ -237,120 +338,37 @@ window.TransferView = window.BaseView.extend({
             // AJAX POST
             this.ajaxCall(this.ajaxUrl, json, "transfer - quicksort");
             this.start = null;
-            $('#startfield').css('background-color','white');
-            $('#finishfield').css('background-color','white');
         } else {
             alert("no repies to execute")
         }
     },
 
     removelastBtnClick: function () {
-        var that = this;
-        $('#recipe'+(this.targetRecipe-1)).text("");    // recipe table (right)
+        if (this.targetRecipe === 1) {
+            alert("Warning! No recipe to remove.")
+        } else {
+                var recipe, recipe_arr, finish_arr, start_arr, start, finish
+            for (var i = 0; i < this.stepCount.pop(); i++) { 
+                recipe = $('#recipe'+(this.targetRecipe-1)).text()
+                $('#recipe'+(this.targetRecipe-1)).text("");
+                recipe_arr = recipe.split(",")
+                finish_arr = recipe_arr[1].split("_")
+                start_arr = recipe_arr[0].split("_")
+                start = $("."+start_arr[1]+" #"+start_arr[2])
+                finish = $("."+finish_arr[1]+" #"+finish_arr[2])
+                start.addClass("warning").removeClass("success")
+                start.text(start.attr("name"))
+                finish.removeClass("success").text("")
 
-        $('.recipe'+(this.targetRecipe-1)).each( function () {
-            if ($(this).hasClass('full')) {
-                var stn = $(this).parent().parent('tbody').attr('class');
-                var slot = $(this).siblings('th').text();
-                stn = stn.match(/\d+$/);
-                var wid = that.moderator.get('station')[stn-1].waferID[parseInt(slot,10)-1];
-                $(this).text(wid);
-            }
-            else
-                $(this).text("")
-        })     // station slot (left)
-        $('.recipe'+(this.targetRecipe-1)).removeClass('doing');
-        $('.recipe'+(this.targetRecipe-1)).removeClass('recipe'+(this.targetRecipe-1));     // station slot (left)
-        this.targetRecipe--;
-        if (this.targetRecipe < 1) {
-            this.targetRecipe = 1;
-            alert("no recipes")
-        } else if (this.targetRecipe === 1) {
-            $('#updateInventoryBtn').prop('disabled', false);
-            $('button[id=onoff]').prop('disabled', false);
-        }
-        this.start = null;
-    },
-
-   startBtnClick: function () {
-        if (!this.start || this.start === null) {
-            this.start = true;
-            $('#startfield').css('background-color','lightblue')
-            $('#finishfield').css('background-color','white')
-            console.log("start selecting...")
+                this.targetRecipe--;
+                if (this.targetRecipe < 1) {
+                    this.targetRecipe = 1;
+                    alert("no recipes")
+                }
+            };            
+            this.start = null;
         }
     },
-
-    finishBtnClick: function () {
-        if (this.start) {
-            if ($('#startfield').val() !== "") {
-                this.start = false;
-                $('#startfield').css('background-color','white')
-                $('#finishfield').css('background-color','lightblue')
-                console.log("finish selecting...")
-            }
-        }
-    },
-
-    // Merge
-    // mergeInfo: function () {
-
-    // },
-
-    // pillsSelected: function (e) {
-    //     var li = $(e.currentTarget)
-    //     if (li.hasClass('selected'))
-    //         li.removeClass('selected')
-    //     else
-    //         li.addClass('selected')
-    // },
-
-    // addSrcStationBtnClick: function () {
-    //     var exist = $('#srcMergeStationPills li a').text()
-    //     var srcstn = "Station" + $('#srcMergeStation').val()
-    //     if (exist.search(srcstn) < 0)
-    //         $('#srcMergeStationPills').append("<li><a href='#'>"+srcstn+"</a></li>")
-    //     else
-    //         alert(srcstn+" is already in the list.")
-    // },
-
-    // removeSrcStationBtnClick: function () {
-    //     var exist = $('#srcMergeStationPills li a').text()
-    //     var srcstn = "Station" + $('#srcMergeStation').val()
-    //     var index = exist.search(srcstn)
-        
-    //     if ($('#srcMergeStationPills li').hasClass('selected'))
-    //         $('#srcMergeStationPills li.selected').remove()
-    //     else {
-    //         if (index >= 0)
-    //             $('#srcMergeStationPills li:nth-child('+((index/8)+1)+')').remove()
-    //         else
-    //             alert(srcstn+" is not in the list.")
-    //     }
-    // },
-
-    // addTargetStationBtnClick: function () {
-    //     var exist = $('#targetMergeStationPills li a').text()
-    //     var srcstn = "Station" + $('#targetMergeStation').val()
-    //     if (exist.search(srcstn) < 0)
-    //         $('#targetMergeStationPills').append("<li><a href='#'>"+srcstn+"</a></li>")
-    //     else
-    //         alert(srcstn+" is already in the list.")
-    // },
-
-    // removeTargetStationBtnClick: function () {
-    //     var exist = $('#targetMergeStationPills li a').text()
-    //     var srcstn = "Station" + $('#targetMergeStation').val()
-    //     var index = exist.search(srcstn)
-    //     if ($('#targetMergeStationPills li').hasClass('selected'))
-    //         $('#targetMergeStationPills li.selected').remove()
-    //     else {
-    //         if (index >= 0)
-    //             $('#targetMergeStationPills li:nth-child('+((index/8)+1)+')').remove()
-    //         else
-    //             alert(srcstn+" is not in the list.")
-    //     }
-    // },
 
     // Resequence
     resequence: function() {

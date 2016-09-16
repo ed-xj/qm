@@ -108,10 +108,9 @@ window.Router = Backbone.Router.extend({
             ((localStorage.userRole === undefined) || (localStorage.userRole === ''))) {
             this.loginView = new LoginView(this.moderator);
             $("#content").html(this.loginView.render().el);
-             $('#statusBar').hide();
         } else {
             this.navigate("#dashboard", {trigger: true});
-            $('#statusBar').show();
+            $("#statusBar[for='lighttower']").show();
         }
     },
 
@@ -146,22 +145,6 @@ window.Router = Backbone.Router.extend({
         $("#content").html(this.robotView.el);
         this.headerView.select('robot-menu');
         this.robotView.subRender()
-    },
-
-    config: function () {
-        this.header();
-        this.lightPageWrapper();
-
-        if (!this.configView) {
-            this.configView = new ConfigView(this.moderator);
-            this.configView.render();
-        } else {
-            this.configView.activate();
-            this.configView.delegateEvents(); // delegate events when the view is recycled
-        }
-        $('#content').html(this.configView.el);
-        this.headerView.select('config-menu');
-        this.configView.subRender()
     },
 
     botcom: function () {
@@ -234,6 +217,7 @@ window.Router = Backbone.Router.extend({
             this.alignerView = new AlignerView(this.moderator);
             this.alignerView.render();
         } else {
+            this.alignerView.activate();
             this.alignerView.delegateEvents(); // delegate events when the view is recycled
         }
         $('#content').html(this.alignerView.el);
@@ -270,7 +254,18 @@ window.Router = Backbone.Router.extend({
     },
 
     Packer: function() {
-        this.renderInput(this.PackerView, 'Packer');
+        this.header();
+        this.lightPageWrapper();
+
+        if (!this.packerView) {
+            this.packerView = new PackerView(this.moderator);
+            this.packerView.render();
+        } else {
+            this.packerView.delegateEvents();
+        }
+        $('#content').html(this.packerView.el);
+        this.headerView.select('Packer-menu');
+
     },
 
     Loadport: function () {
@@ -286,6 +281,7 @@ window.Router = Backbone.Router.extend({
         }
         $("#content").html(this.loadportView.el);
         this.headerView.select('Loadport-menu');
+        this.loadportView.subRender()
     },
 
     Log: function () {
@@ -301,6 +297,22 @@ window.Router = Backbone.Router.extend({
         }
         $('#content').html(this.logView.el);
         this.headerView.select('log-menu');
+    },
+
+    config: function () {
+        this.header();
+        this.lightPageWrapper();
+
+        if (!this.configView) {
+            this.configView = new ConfigView(this.moderator);
+            this.configView.render();
+        } else {
+            this.configView.activate();
+            this.configView.delegateEvents(); // delegate events when the view is recycled
+        }
+        $('#content').html(this.configView.el);
+        this.headerView.select('config-menu');
+        this.configView.subRender()
     },
 });
 

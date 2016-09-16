@@ -1,7 +1,8 @@
 window.ConfigView = window.BaseView.extend({
     initialize: function (moderator) {
         this.moderator = moderator;
-        this.moderator.on('secsgemmsg:change', this.onSecsgemMsgChange.bind(this));
+        this.moderator.on('lang:change', this.onLangChange.bind(this));
+        this.moderator.on('secsgemmsg:msg', this.onSecsgemMsgChange.bind(this));
         this.secsgemmsg = []
         this.logmsg = "";
         this.templateParams = {secsgemmsg: this.logmsg};
@@ -37,6 +38,9 @@ window.ConfigView = window.BaseView.extend({
         console.log('ConfidView::onSecsgemMsgChange');
         this.secsgemmsg.push(this.moderator.get("secsgemMsg"))
     }, 
+    onLangChange: function() {
+        console.log('ConfidView::onLangChange');
+    },
 
     subRender: function() {
         if (this.secsgemmsg.length != 0) {
